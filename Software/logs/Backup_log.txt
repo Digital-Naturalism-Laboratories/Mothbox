@@ -1,0 +1,193 @@
+/media/pi/686D-3881
+59579170816
+Largest Storage: /media/pi/686D-3881
+59579170816
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	22678863872
+External Total Storage: 	62911283200
+External Available Storage: 	59579170816
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+Largest Storage: None
+0
+No external storage found with enough space, exiting.
+/media/pi/686D-3881
+60019572736
+Largest Storage: /media/pi/686D-3881
+60019572736
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21658685440
+External Total Storage: 	62911283200
+External Available Storage: 	60019572736
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59978678272
+Largest Storage: /media/pi/686D-3881
+59978678272
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21618475008
+External Total Storage: 	62911283200
+External Available Storage: 	59978678272
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59937390592
+Largest Storage: /media/pi/686D-3881
+59937390592
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21575168000
+External Total Storage: 	62911283200
+External Available Storage: 	59937390592
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59896627200
+Largest Storage: /media/pi/686D-3881
+59896627200
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21535121408
+External Total Storage: 	62911283200
+External Available Storage: 	59896627200
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59855339520
+Largest Storage: /media/pi/686D-3881
+59855339520
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21495525376
+External Total Storage: 	62911283200
+External Available Storage: 	59855339520
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59814576128
+Largest Storage: /media/pi/686D-3881
+59814576128
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21455429632
+External Total Storage: 	62911283200
+External Available Storage: 	59814576128
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59773288448
+Largest Storage: /media/pi/686D-3881
+59773288448
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21424738304
+External Total Storage: 	62911283200
+External Available Storage: 	59773288448
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59480735744
+Largest Storage: /media/pi/686D-3881
+59480735744
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21385011200
+External Total Storage: 	62911283200
+External Available Storage: 	59480735744
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59439448064
+Largest Storage: /media/pi/686D-3881
+59439448064
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21342973952
+External Total Storage: 	62911283200
+External Available Storage: 	59439448064
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+59396194304
+Largest Storage: /media/pi/686D-3881
+59396194304
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21300711424
+External Total Storage: 	62911283200
+External Available Storage: 	59396194304
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+58976108544
+Largest Storage: /media/pi/686D-3881
+58976108544
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21255626752
+External Total Storage: 	62911283200
+External Available Storage: 	58976108544
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+58930102272
+Largest Storage: /media/pi/686D-3881
+58930102272
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21208600576
+External Total Storage: 	62911283200
+External Available Storage: 	58930102272
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+58415906816
+Largest Storage: /media/pi/686D-3881
+58415906816
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21149130752
+External Total Storage: 	62911283200
+External Available Storage: 	58415906816
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+58355351552
+Largest Storage: /media/pi/686D-3881
+58355351552
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	21056241664
+External Total Storage: 	62911283200
+External Available Storage: 	58355351552
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+57686622208
+Largest Storage: /media/pi/686D-3881
+57686622208
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20955373568
+External Total Storage: 	62911283200
+External Available Storage: 	57686622208
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+57584648192
+Largest Storage: /media/pi/686D-3881
+57584648192
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20866273280
+External Total Storage: 	62911283200
+External Available Storage: 	57584648192
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+56781832192
+Largest Storage: /media/pi/686D-3881
+56781832192
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20769923072
+External Total Storage: 	62911283200
+External Available Storage: 	56781832192
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up
+/media/pi/686D-3881
+56684576768
+Largest Storage: /media/pi/686D-3881
+56684576768
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20727422976
+External Total Storage: 	62911283200
+External Available Storage: 	56684576768
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+More than 4GB remain so original files are kept in desktop after backing up

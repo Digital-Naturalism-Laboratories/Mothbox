@@ -1,0 +1,3666 @@
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308155822
+Flash On
+
+Flash Off
+
+picture take time: 0.8922319412231445
+240308155824
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308155824.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308160020
+Flash On
+
+Flash Off
+
+picture take time: 0.8926107883453369
+240308160022
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308160022.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308160219
+Flash On
+
+Flash Off
+
+picture take time: 0.8935387134552002
+240308160221
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308160221.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308160420
+Flash On
+
+Flash Off
+
+picture take time: 0.8936965465545654
+240308160421
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308160421.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308160620
+Flash On
+
+Flash Off
+
+picture take time: 1.101994276046753
+240308160621
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308160621.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308160819
+Flash On
+
+Flash Off
+
+picture take time: 1.0571908950805664
+240308160821
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308160821.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308161019
+Flash On
+
+Flash Off
+
+picture take time: 1.0650572776794434
+240308161021
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308161021.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308161220
+Flash On
+
+Flash Off
+
+picture take time: 0.8931334018707275
+240308161221
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308161221.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308161420
+Flash On
+
+Flash Off
+
+picture take time: 0.8923702239990234
+240308161421
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308161421.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308161620
+Flash On
+
+Flash Off
+
+picture take time: 0.8963141441345215
+240308161621
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308161621.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308161820
+Flash On
+
+Flash Off
+
+picture take time: 0.8960905075073242
+240308161822
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308161822.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308163820
+Flash On
+
+Flash Off
+
+picture take time: 0.9009556770324707
+240308163822
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308163822.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308164020
+Flash On
+
+Flash Off
+
+picture take time: 0.9092113971710205
+240308164021
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308164021.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308164220
+Flash On
+
+Flash Off
+
+picture take time: 0.8949832916259766
+240308164222
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308164222.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308164419
+Flash On
+
+Flash Off
+
+picture take time: 0.9466769695281982
+240308164421
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308164421.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308164619
+Flash On
+
+Flash Off
+
+picture take time: 1.042529582977295
+240308164621
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308164621.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308164820
+Flash On
+
+Flash Off
+
+picture take time: 0.8931124210357666
+240308164821
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308164821.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308165019
+Flash On
+
+Flash Off
+
+picture take time: 1.0560104846954346
+240308165021
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308165021.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308165219
+Flash On
+
+Flash Off
+
+picture take time: 0.8925683498382568
+240308165221
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308165221.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308165420
+Flash On
+
+Flash Off
+
+picture take time: 0.895798921585083
+240308165421
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308165421.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308165619
+Flash On
+
+Flash Off
+
+picture take time: 0.8923211097717285
+240308165621
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308165621.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308165819
+Flash On
+
+Flash Off
+
+picture take time: 0.8934648036956787
+240308165821
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308165821.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308170020
+Flash On
+
+Flash Off
+
+picture take time: 0.8966472148895264
+240308170021
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308170021.jpg
+mothbox08
+Setup The Relay Module is [success]
+(1.0, 64.0, None)
+cam started
+240308170219
+Flash On
+
+Flash Off
+
+picture take time: 0.8940169811248779
+240308170221
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240308170221.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309121805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.953357458114624
+240309121823
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309121823.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309200208
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1005098819732666
+240309200212
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309200212.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309200405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.620767593383789
+240309200409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309200409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309200605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.472381830215454
+240309200609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309200609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309200805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.211740016937256
+240309200810
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309200810.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309201004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6319630146026611
+240309201009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309201009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309201204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6297249794006348
+240309201209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309201209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309201404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1007914543151855
+240309201408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309201408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309201605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.470252513885498
+240309201609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309201609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309201805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.632129192352295
+240309201809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309201809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309202005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6344835758209229
+240309202009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309202009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309202205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4694297313690186
+240309202209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309202209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309202404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4709293842315674
+240309202408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309202408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309202605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6322808265686035
+240309202609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309202609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309202805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4705595970153809
+240309202809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309202809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309203005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.099928379058838
+240309203009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309203009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309203204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.472109317779541
+240309203208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309203208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309203405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.63279390335083
+240309203409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309203409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309203605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1007957458496094
+240309203609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309203609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309203804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4713051319122314
+240309203808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309203808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309204005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.470571517944336
+240309204009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309204009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309204205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4704923629760742
+240309204209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309204209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309204405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6338293552398682
+240309204409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309204409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309204605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.47074556350708
+240309204609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309204609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309204805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1028225421905518
+240309204808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309204808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309205005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4716594219207764
+240309205009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309205009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309205205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1016285419464111
+240309205209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309205209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309205405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4733912944793701
+240309205409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309205409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309205605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6251273155212402
+240309205609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309205609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309205805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1010494232177734
+240309205809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309205809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309210005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1042873859405518
+240309210009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309210009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309220208
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.101372480392456
+240309220212
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309220212.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309220405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4702143669128418
+240309220409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309220409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309220604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4704506397247314
+240309220609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309220609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309220804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.2568166255950928
+240309220808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309220808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309221005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6331019401550293
+240309221009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309221009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309221205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6331181526184082
+240309221209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309221209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309221405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1006603240966797
+240309221408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309221408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309221605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6324541568756104
+240309221609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309221609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309221805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706518650054932
+240309221809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309221809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309222005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1012322902679443
+240309222009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309222009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309222204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4713258743286133
+240309222208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309222208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309222405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1006574630737305
+240309222409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309222409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309222604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1008777618408203
+240309222608
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309222608.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309222805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706342220306396
+240309222809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309222809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309223005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1019647121429443
+240309223009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309223009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309223204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6326971054077148
+240309223209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309223209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309223405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4713983535766602
+240309223409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309223409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309223605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4724421501159668
+240309223609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309223609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309223805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4710822105407715
+240309223809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309223809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309224004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6330935955047607
+240309224009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309224009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309224204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4713513851165771
+240309224209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309224209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309224405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6237623691558838
+240309224409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309224409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309224605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4710419178009033
+240309224609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309224609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309224805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4700849056243896
+240309224809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309224809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309225005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4708483219146729
+240309225009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309225009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309225204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4707777500152588
+240309225208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309225208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309225405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6338329315185547
+240309225409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309225409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309225605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4712717533111572
+240309225609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309225609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309225805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.47111177444458
+240309225809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309225809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240309230005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.100903034210205
+240309230009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240309230009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310000208
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1549720764160156
+240310000211
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310000211.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310000404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4707989692687988
+240310000409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310000409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310000604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.471677541732788
+240310000608
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310000608.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310000805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.472757339477539
+240310000809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310000809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310001005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4680755138397217
+240310001009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310001009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310001205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1006882190704346
+240310001208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310001208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310001405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1026298999786377
+240310001409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310001409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310001604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1014862060546875
+240310001608
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310001608.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310001805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4707956314086914
+240310001809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310001809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310002005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.100602626800537
+240310002008
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310002008.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310002205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1007568836212158
+240310002209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310002209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310002404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1012318134307861
+240310002408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310002408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310002605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.472391128540039
+240310002609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310002609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310002805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.635171890258789
+240310002809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310002809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310003005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.102924108505249
+240310003009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310003009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310003204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.471940517425537
+240310003209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310003209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310003405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.470407247543335
+240310003409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310003409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310003605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.100907564163208
+240310003609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310003609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310003804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4705450534820557
+240310003808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310003808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310004005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6318995952606201
+240310004009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310004009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310004205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6325082778930664
+240310004209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310004209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310004405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4704468250274658
+240310004409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310004409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310004605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.626296043395996
+240310004609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310004609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310004805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1003923416137695
+240310004808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310004808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310005005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4713361263275146
+240310005009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310005009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310005205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4715001583099365
+240310005209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310005209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310005405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706618785858154
+240310005409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310005409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310005605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.469447135925293
+240310005609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310005609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310005804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1003410816192627
+240310005808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310005808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310010006
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1010730266571045
+240310010010
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310010010.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310030208
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1495130062103271
+240310030212
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310030212.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310030404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.469834327697754
+240310030408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310030408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310030605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4711296558380127
+240310030609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310030609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310030805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.2112834453582764
+240310030810
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310030810.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310031004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4703340530395508
+240310031008
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310031008.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310031205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6328542232513428
+240310031209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310031209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310031405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.099802017211914
+240310031409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310031409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310031604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4721498489379883
+240310031608
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310031608.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310031805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6328067779541016
+240310031809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310031809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310032005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.0998990535736084
+240310032009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310032009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310032205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.632577896118164
+240310032209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310032209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310032405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4701223373413086
+240310032409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310032409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310032604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1005263328552246
+240310032608
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310032608.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310032805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1011593341827393
+240310032808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310032808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310033005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1091649532318115
+240310033009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310033009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310033205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6264433860778809
+240310033209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310033209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310033405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706127643585205
+240310033409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310033409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310033605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4708373546600342
+240310033609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310033609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310033804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4697504043579102
+240310033808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310033808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310034005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4716072082519531
+240310034009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310034009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310034205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6320221424102783
+240310034209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310034209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310034405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4701457023620605
+240310034409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310034409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310034605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4701042175292969
+240310034609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310034609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310034804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6297392845153809
+240310034809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310034809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310035004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1001839637756348
+240310035008
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310035008.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310035205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.470787525177002
+240310035209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310035209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310035404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1007251739501953
+240310035408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310035408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310035605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6328446865081787
+240310035609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310035609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310035805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4710791110992432
+240310035809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310035809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310040005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.100158452987671
+240310040009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310040009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310040204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1003308296203613
+240310040208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310040208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310040405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6267461776733398
+240310040409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310040409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310040605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.470548152923584
+240310040609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310040609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310040804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6319594383239746
+240310040809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310040809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310041004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1003670692443848
+240310041008
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310041008.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310041205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1003806591033936
+240310041208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310041208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310041405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4714093208312988
+240310041409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310041409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310041605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1001951694488525
+240310041609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310041609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310041804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4718871116638184
+240310041808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310041808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310042005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4707810878753662
+240310042009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310042009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310042205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.100285291671753
+240310042209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310042209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310042404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1005744934082031
+240310042408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310042408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310042605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6275970935821533
+240310042609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310042609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310042805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4705848693847656
+240310042809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310042809.jpg
+                                                                                                                                                                                                                                                                                                    mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310200208
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1005706787109375
+240310200212
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310200212.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310200405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6342461109161377
+240310200409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310200409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310200605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1012496948242188
+240310200609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310200609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310200804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1007273197174072
+240310200808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310200808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310201005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.471181869506836
+240310201009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310201009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310201205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.63529634475708
+240310201209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310201209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310201405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1011195182800293
+240310201408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310201408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310201605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4743726253509521
+240310201609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310201609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310201805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1016554832458496
+240310201809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310201809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310202004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1014723777770996
+240310202008
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310202008.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310202205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.471323013305664
+240310202209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310202209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310202405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1007108688354492
+240310202408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310202408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310202605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4716980457305908
+240310202609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310202609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310202805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4726698398590088
+240310202809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310202809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310203005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1077604293823242
+240310203009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310203009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310203205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.100797414779663
+240310203208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310203208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310203405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4707393646240234
+240310203409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310203409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310203605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1017546653747559
+240310203609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310203609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310203805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1008074283599854
+240310203809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310203809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310204005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4711976051330566
+240310204009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310204009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310204204
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.471827507019043
+240310204209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310204209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310204404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4715378284454346
+240310204408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310204408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310204605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6340603828430176
+240310204609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310204609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310204805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4731533527374268
+240310204809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310204809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310205005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.633918046951294
+240310205009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310205009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310205205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.471806287765503
+240310205209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310205209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310205404
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706804752349854
+240310205409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310205409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310205604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4712307453155518
+240310205608
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310205608.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310205805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1009578704833984
+240310205809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310205809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310210006
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1025774478912354
+240310210010
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310210010.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310220208
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1858830451965332
+240310220212
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310220212.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310220405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4709584712982178
+240310220409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310220409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310220605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706120491027832
+240310220609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310220609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310220804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.2116458415985107
+240310220809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310220809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310221005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6284725666046143
+240310221009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310221009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310221205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4706249237060547
+240310221209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310221209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310221405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1002912521362305
+240310221408
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310221408.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310221605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1008548736572266
+240310221609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310221609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310221804
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.632375717163086
+240310221809
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310221809.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310222004
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4709370136260986
+240310222009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310222009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310222205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4702892303466797
+240310222209
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310222209.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310222405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.6328654289245605
+240310222409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310222409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310222605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4722404479980469
+240310222609
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310222609.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310222805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1005191802978516
+240310222808
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310222808.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310223005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1066021919250488
+240310223009
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310223009.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310223205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1024234294891357
+240310223208
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310223208.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310223405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.1014995574951172
+240310223409
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310223409.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310223605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.9520487785339355
+240310223620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310223620.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310223805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.5847585201263428
+240310223820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310223820.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310224005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4730243682861328
+240310224019
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310224019.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310224205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4719023704528809
+240310224219
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310224219.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310224405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.3701765537261963
+240310224420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310224420.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310224604
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 1.4716370105743408
+240310224618
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310224618.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310224805
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.211169958114624
+240310224820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310224820.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310225005
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.5829098224639893
+240310225020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310225020.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310225205
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.951953172683716
+240310225221
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310225221.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310225405
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 2.5823934078216553
+240310225420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310225420.jpg
+mothbox08
+Setup The Relay Module is [success]
+Error: CSV file not found: camera_settings.csv
+cam started
+240310225605
+can't set controls
+Flash On
+
+Flash Off
+
+picture take time: 0.7365086078643799
+240310225619
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310225619.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240310225804
+Flash On
+
+Flash Off
+
+picture take time: 2.589566230773926
+240310225820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240310225820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311000208
+Flash On
+
+Flash Off
+
+picture take time: 2.7427327632904053
+240311000223
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311000223.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311000404
+Flash On
+
+Flash Off
+
+picture take time: 2.3920962810516357
+240311000419
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311000419.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311000604
+Flash On
+
+Flash Off
+
+picture take time: 2.3804290294647217
+240311000619
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311000619.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311000805
+Flash On
+
+Flash Off
+
+picture take time: 2.379652500152588
+240311000820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311000820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311001005
+Flash On
+
+Flash Off
+
+picture take time: 1.4772553443908691
+240311001019
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311001019.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311001205
+Flash On
+
+Flash Off
+
+picture take time: 2.3760910034179688
+240311001220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311001220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311001405
+Flash On
+
+Flash Off
+
+picture take time: 1.6286976337432861
+240311001419
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311001419.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311001605
+Flash On
+
+Flash Off
+
+picture take time: 2.381504774093628
+240311001620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311001620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311001805
+Flash On
+
+Flash Off
+
+picture take time: 2.3725099563598633
+240311001820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311001820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311002005
+Flash On
+
+Flash Off
+
+picture take time: 2.9574055671691895
+240311002020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311002020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311002205
+Flash On
+
+Flash Off
+
+picture take time: 1.4757421016693115
+240311002219
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311002219.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311002405
+Flash On
+
+Flash Off
+
+picture take time: 2.588355302810669
+240311002420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311002420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311002605
+Flash On
+
+Flash Off
+
+picture take time: 1.478010654449463
+240311002619
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311002619.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311002805
+Flash On
+
+Flash Off
+
+picture take time: 1.4763751029968262
+240311002819
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311002819.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311003005
+Flash On
+
+Flash Off
+
+picture take time: 1.6097500324249268
+240311003020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311003020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311003205
+Flash On
+
+Flash Off
+
+picture take time: 2.588167667388916
+240311003220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311003220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311003405
+Flash On
+
+Flash Off
+
+picture take time: 2.587764263153076
+240311003420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311003420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311003605
+Flash On
+
+Flash Off
+
+picture take time: 2.587265729904175
+240311003620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311003620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311003805
+Flash On
+
+Flash Off
+
+picture take time: 2.5842342376708984
+240311003820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311003820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311004005
+Flash On
+
+Flash Off
+
+picture take time: 2.3707315921783447
+240311004020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311004020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311004205
+Flash On
+
+Flash Off
+
+picture take time: 2.3789288997650146
+240311004220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311004220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311004405
+Flash On
+
+Flash Off
+
+picture take time: 2.3533833026885986
+240311004420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311004420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311004605
+Flash On
+
+Flash Off
+
+picture take time: 2.377446174621582
+240311004620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311004620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311004804
+Flash On
+
+Flash Off
+
+picture take time: 2.587064743041992
+240311004819
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311004819.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311005004
+Flash On
+
+Flash Off
+
+picture take time: 2.587942361831665
+240311005020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311005020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311005204
+Flash On
+
+Flash Off
+
+picture take time: 2.5877349376678467
+240311005220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311005220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311005405
+Flash On
+
+Flash Off
+
+picture take time: 2.3789987564086914
+240311005420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311005420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311005604
+Flash On
+
+Flash Off
+
+picture take time: 2.3785688877105713
+240311005619
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311005619.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311005804
+Flash On
+
+Flash Off
+
+picture take time: 1.4756240844726562
+240311005818
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311005818.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311030208
+Flash On
+
+Flash Off
+
+picture take time: 1.846423864364624
+240311030223
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311030223.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311030405
+Flash On
+
+Flash Off
+
+picture take time: 2.379289150238037
+240311030420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311030420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311030605
+Flash On
+
+Flash Off
+
+picture take time: 2.378633499145508
+240311030620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311030620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311030805
+Flash On
+
+Flash Off
+
+picture take time: 2.9576380252838135
+240311030821
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311030821.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311031004
+Flash On
+
+Flash Off
+
+picture take time: 1.4741122722625732
+240311031018
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311031018.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311031205
+Flash On
+
+Flash Off
+
+picture take time: 2.377798318862915
+240311031220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311031220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311031405
+Flash On
+
+Flash Off
+
+picture take time: 2.2165520191192627
+240311031420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311031420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311031604
+Flash On
+
+Flash Off
+
+picture take time: 2.58668851852417
+240311031620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311031620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311031805
+Flash On
+
+Flash Off
+
+picture take time: 2.3727612495422363
+240311031820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311031820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311032004
+Flash On
+
+Flash Off
+
+picture take time: 2.9577457904815674
+240311032020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311032020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311032205
+Flash On
+
+Flash Off
+
+picture take time: 1.4763519763946533
+240311032219
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311032219.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311032405
+Flash On
+
+Flash Off
+
+picture take time: 2.5886666774749756
+240311032420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311032420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311032605
+Flash On
+
+Flash Off
+
+picture take time: 2.9574384689331055
+240311032620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311032620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311032805
+Flash On
+
+Flash Off
+
+picture take time: 2.3807332515716553
+240311032820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311032820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311033005
+Flash On
+
+Flash Off
+
+picture take time: 1.8538129329681396
+240311033020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311033020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311033205
+Flash On
+
+Flash Off
+
+picture take time: 1.4767260551452637
+240311033219
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311033219.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311033405
+Flash On
+
+Flash Off
+
+picture take time: 2.5878589153289795
+240311033420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311033420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311033605
+Flash On
+
+Flash Off
+
+picture take time: 2.378035545349121
+240311033620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311033620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311033805
+Flash On
+
+Flash Off
+
+picture take time: 1.8458824157714844
+240311033819
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311033819.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311034005
+Flash On
+
+Flash Off
+
+picture take time: 2.5871071815490723
+240311034020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311034020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311034205
+Flash On
+
+Flash Off
+
+picture take time: 2.378401041030884
+240311034220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311034220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311034405
+Flash On
+
+Flash Off
+
+picture take time: 2.3813250064849854
+240311034420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311034420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311034605
+Flash On
+
+Flash Off
+
+picture take time: 2.5867931842803955
+240311034620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311034620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311034805
+Flash On
+
+Flash Off
+
+picture take time: 1.4780378341674805
+240311034819
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311034819.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311035005
+Flash On
+
+Flash Off
+
+picture take time: 2.5869557857513428
+240311035020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311035020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311035205
+Flash On
+
+Flash Off
+
+picture take time: 2.587676763534546
+240311035220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311035220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311035405
+Flash On
+
+Flash Off
+
+picture take time: 1.4771175384521484
+240311035419
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311035419.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311035605
+Flash On
+
+Flash Off
+
+picture take time: 2.58788800239563
+240311035620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311035620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311035805
+Flash On
+
+Flash Off
+
+picture take time: 2.379801034927368
+240311035820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311035820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311040005
+Flash On
+
+Flash Off
+
+picture take time: 2.216771364212036
+240311040020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311040020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311040205
+Flash On
+
+Flash Off
+
+picture take time: 2.369771957397461
+240311040220
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311040220.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311040405
+Flash On
+
+Flash Off
+
+picture take time: 2.3696062564849854
+240311040420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311040420.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311040604
+Flash On
+
+Flash Off
+
+picture take time: 2.377939462661743
+240311040619
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311040619.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311040805
+Flash On
+
+Flash Off
+
+picture take time: 2.3800501823425293
+240311040820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311040820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311041005
+Flash On
+
+Flash Off
+
+picture take time: 2.2162516117095947
+240311041020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311041020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311041204
+Flash On
+
+Flash Off
+
+picture take time: 1.4751570224761963
+240311041219
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311041219.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311041404
+Flash On
+
+Flash Off
+
+picture take time: 2.3713295459747314
+240311041419
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311041419.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311041605
+Flash On
+
+Flash Off
+
+picture take time: 2.3781685829162598
+240311041620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311041620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311041805
+Flash On
+
+Flash Off
+
+picture take time: 2.3786845207214355
+240311041820
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311041820.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311042004
+Flash On
+
+Flash Off
+
+picture take time: 1.4756834506988525
+240311042018
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311042018.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311042205
+Flash On
+
+Flash Off
+
+picture take time: 2.956939458847046
+240311042221
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311042221.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311042404
+Flash On
+
+Flash Off
+
+picture take time: 2.37861967086792
+240311042419
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311042419.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311042605
+Flash On
+
+Flash Off
+
+picture take time: 2.378617763519287
+240311042620
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311042620.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311042805
+Flash On
+
+Flash Off
+
+picture take time: 1.4762208461761475
+240311042819
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311042819.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311043006
+Flash On
+
+Flash Off
+
+picture take time: 1.479198932647705
+240311043020
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311043020.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311102609
+Flash On
+
+Flash Off
+
+picture take time: 0.746941089630127
+240311102623
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311102623.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311102805
+Flash On
+
+Flash Off
+
+picture take time: 2.5871615409851074
+240311102821
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311102821.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311104253
+Flash On
+
+Flash Off
+
+picture take time: 2.2172489166259766
+240311104308
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311104308.jpg
+mothbox08
+Setup The Relay Module is [success]
+cam started
+240311104405
+Flash On
+
+Flash Off
+
+picture take time: 2.381305456161499
+240311104420
+Image saved to /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_240311104420.jpg
