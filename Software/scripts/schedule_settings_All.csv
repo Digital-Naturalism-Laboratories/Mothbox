@@ -1,0 +1,8 @@
+SETTING,VALUE,DETAILS
+second, 0,
+minute,42, specify a specific minute, or you can replace the 'minute' key in the arguments dictionary with 'minute_period'
+hour,8;10;1;3,specify what hour you want things to turn on in 24 timeframe separate multi values with a semicolon or write "EVER_HOUR"
+day,3;14;2, specify what days of the month you want to wakeup or write 'EVERY_DAY' or you can change the entry on the leftmost to say "weekday" and specify a number(s) 1-7
+
+utc_off,-5,(currently does nothing) put your UTC offset for whereever you are based The pijuice just uses raw UTC
+runtime, 35, put how long you want each session to go (in minutes) before it shuts the pi back down.

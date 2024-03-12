@@ -171,9 +171,15 @@ def takePhoto_Manual():
     ''''''
 
     picam2.start()
+    #important note, to actually 100% lock down an AWB you need to set ColourGains! (0,0) works well for plain white LEDS
+    gains = 0,0
+    picam2.set_controls({"ColourGains": gains})
+    
     #"AfTrigger" Start an autofocus cycle. Only has any effect when in auto mode
     #picam2.set_controls({"AfTrigger": 0})
-    time.sleep(2)
+
+
+    time.sleep(5)
 
     start = time.time()
 
@@ -182,7 +188,7 @@ def takePhoto_Manual():
     request = picam2.capture_request(flush=True)
     #picam2.capture_array("raw")
     flashOff()
-    
+
     
     flashtime=time.time()-start
 
@@ -193,7 +199,6 @@ def takePhoto_Manual():
     now = datetime.datetime.now()
     timestamp = now.strftime("%y%m%d%H%M%S")
     print(timestamp)
-
 
     #save the image
     folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron

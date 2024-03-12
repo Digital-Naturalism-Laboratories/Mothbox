@@ -2,24 +2,21 @@
 
 import os
 import logging
+import time
 from time import sleep
 from pijuice import PiJuice
 
 #first before we shut down, let's back everything up!
-
+import sys
 import subprocess
-# Path to your script
-script_path = "/home/pi/Desktop/Mothbox/Backup_Files.py"
 
-# Run the script using subprocess.run()
-subprocess.run(["python", script_path])
-print("Backed everything up, now shut down")
-
+print(" now shut down")
+time.sleep(5)
 logging.basicConfig(
-	filename = '/home/pi/pistatus.log',
-	level = logging.DEBUG,
-	format = '%(asctime)s %(message)s',
-	datefmt = '%d/%m/%Y %H:%M:%S')
+    filename = '/home/pi/pistatus.log',
+    level = logging.DEBUG,
+    format = '%(asctime)s %(message)s',
+    datefmt = '%d/%m/%Y %H:%M:%S')
 
 pj = PiJuice(1,0x14)
 
