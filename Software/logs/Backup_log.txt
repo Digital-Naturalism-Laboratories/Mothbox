@@ -1,193 +1,1221 @@
-/media/pi/686D-3881
-59579170816
-Largest Storage: /media/pi/686D-3881
-59579170816
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:14:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	22678863872
-External Total Storage: 	62911283200
-External Available Storage: 	59579170816
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-Largest Storage: None
-0
-No external storage found with enough space, exiting.
-/media/pi/686D-3881
-60019572736
-Largest Storage: /media/pi/686D-3881
-60019572736
+Desktop Available Storage: 	20382863360
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:15:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21658685440
-External Total Storage: 	62911283200
-External Available Storage: 	60019572736
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59978678272
-Largest Storage: /media/pi/686D-3881
-59978678272
+Desktop Available Storage: 	20377341952
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:16:02
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21618475008
-External Total Storage: 	62911283200
-External Available Storage: 	59978678272
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59937390592
-Largest Storage: /media/pi/686D-3881
-59937390592
+Desktop Available Storage: 	20371316736
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:17:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21575168000
-External Total Storage: 	62911283200
-External Available Storage: 	59937390592
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59896627200
-Largest Storage: /media/pi/686D-3881
-59896627200
+Desktop Available Storage: 	20365348864
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:18:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21535121408
-External Total Storage: 	62911283200
-External Available Storage: 	59896627200
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59855339520
-Largest Storage: /media/pi/686D-3881
-59855339520
+Desktop Available Storage: 	20359409664
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:19:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21495525376
-External Total Storage: 	62911283200
-External Available Storage: 	59855339520
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59814576128
-Largest Storage: /media/pi/686D-3881
-59814576128
+Desktop Available Storage: 	20353495040
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:20:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21455429632
-External Total Storage: 	62911283200
-External Available Storage: 	59814576128
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59773288448
-Largest Storage: /media/pi/686D-3881
-59773288448
+Desktop Available Storage: 	20347588608
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:21:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21424738304
-External Total Storage: 	62911283200
-External Available Storage: 	59773288448
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59480735744
-Largest Storage: /media/pi/686D-3881
-59480735744
+Desktop Available Storage: 	20341690368
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:22:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21385011200
-External Total Storage: 	62911283200
-External Available Storage: 	59480735744
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59439448064
-Largest Storage: /media/pi/686D-3881
-59439448064
+Desktop Available Storage: 	20336136192
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:23:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21342973952
-External Total Storage: 	62911283200
-External Available Storage: 	59439448064
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-59396194304
-Largest Storage: /media/pi/686D-3881
-59396194304
+Desktop Available Storage: 	20330504192
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:24:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21300711424
-External Total Storage: 	62911283200
-External Available Storage: 	59396194304
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-58976108544
-Largest Storage: /media/pi/686D-3881
-58976108544
+Desktop Available Storage: 	20324499456
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:25:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21255626752
-External Total Storage: 	62911283200
-External Available Storage: 	58976108544
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-58930102272
-Largest Storage: /media/pi/686D-3881
-58930102272
+Desktop Available Storage: 	20319047680
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:26:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21208600576
-External Total Storage: 	62911283200
-External Available Storage: 	58930102272
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-58415906816
-Largest Storage: /media/pi/686D-3881
-58415906816
+Desktop Available Storage: 	20313505792
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:27:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21149130752
-External Total Storage: 	62911283200
-External Available Storage: 	58415906816
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-58355351552
-Largest Storage: /media/pi/686D-3881
-58355351552
+Desktop Available Storage: 	20307918848
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:28:02
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	21056241664
-External Total Storage: 	62911283200
-External Available Storage: 	58355351552
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-57686622208
-Largest Storage: /media/pi/686D-3881
-57686622208
+Desktop Available Storage: 	20301840384
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:29:02
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	20955373568
-External Total Storage: 	62911283200
-External Available Storage: 	57686622208
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-57584648192
-Largest Storage: /media/pi/686D-3881
-57584648192
+Desktop Available Storage: 	20295757824
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:30:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	20866273280
-External Total Storage: 	62911283200
-External Available Storage: 	57584648192
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-56781832192
-Largest Storage: /media/pi/686D-3881
-56781832192
+Desktop Available Storage: 	20289695744
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:31:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	20769923072
-External Total Storage: 	62911283200
-External Available Storage: 	56781832192
-Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
-/media/pi/686D-3881
-56684576768
-Largest Storage: /media/pi/686D-3881
-56684576768
+Desktop Available Storage: 	20284170240
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:32:01
 Desktop Total    Storage: 	30842867712
-Desktop Available Storage: 	20727422976
-External Total Storage: 	62911283200
-External Available Storage: 	56684576768
+Desktop Available Storage: 	20278157312
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:33:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20272185344
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:34:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20266278912
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:35:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20260720640
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:36:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20255154176
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:37:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20249829376
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:38:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20244267008
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:39:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20238708736
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:40:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20233142272
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:41:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20227747840
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:42:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20222173184
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:43:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20216823808
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:44:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20211257344
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:45:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20205682688
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:46:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20200116224
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:47:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20194766848
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:48:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20189200384
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:49:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20183629824
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:50:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20178030592
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:51:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20172464128
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:52:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20166889472
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:56:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20161368064
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:57:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20156076032
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:58:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20150702080
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 11:59:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20145164288
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:00:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20139839488
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:01:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20134285312
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:02:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20128722944
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:03:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20123156480
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:04:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20117794816
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:05:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20112461824
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:06:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20106899456
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:07:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20101328896
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:10:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20095795200
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:11:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20090466304
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:12:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20084899840
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:13:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20079341568
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:14:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20073771008
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:15:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20068200448
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:16:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20062814208
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:17:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20057206784
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:20:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20051668992
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:21:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20046376960
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:22:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20040835072
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:23:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20035264512
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:24:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	20029947904
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:26:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19999313920
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:27:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19993980928
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:28:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19989291008
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:29:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19983962112
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:30:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19978383360
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:31:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19972788224
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:32:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19967451136
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:33:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19962073088
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:34:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19956744192
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:35:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19951362048
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:36:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19945877504
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:37:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19941109760
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:38:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19935662080
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:39:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19930345472
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:40:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19925655552
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:41:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19920060416
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:42:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19914719232
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:43:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19909120000
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:45:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19920334848
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:48:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19914735616
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:49:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19909455872
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:50:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19904163840
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:51:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19898593280
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:52:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19893272576
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:54:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19870892032
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:55:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19865591808
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:56:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19860021248
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:57:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19854434304
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:58:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19848810496
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 12:59:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19843227648
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:00:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19837632512
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:01:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19832291328
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:02:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19826958336
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:03:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19821621248
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:04:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19816030208
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:05:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19810435072
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:06:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19804831744
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:07:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19799236608
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:08:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19793608704
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:09:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19787984896
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:10:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19782344704
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:11:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19782344704
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:12:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19771080704
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:13:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19759751168
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:14:02
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19749396480
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:15:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19743989760
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:16:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19738337280
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:17:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19732963328
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:18:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19727360000
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:19:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19722444800
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:20:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19717033984
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:21:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19711422464
+~~~sorting disks~~~~~~
+No external drives found.
+stuff never worked out with this backup, your files are not properly backedup
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:22:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19705774080
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 55246061568 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		703827596
 Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
-More than 4GB remain so original files are kept in desktop after backing up
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_16_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_08_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_01_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_49_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_09_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_34_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__03_47_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_12_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_36_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_39_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_27_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_24_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_22_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_22_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_13_02.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_45_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_20_23.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_35_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_06_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_06_19.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_17_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_24_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_12_38.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_59_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_40_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_44_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_21_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_45_18.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_23_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_07_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_18_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_02_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_03_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_58_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_11_39.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_57_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_11_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_13_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_40_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_51_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_12_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_23_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_18_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_05_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_15_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_57_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_28_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_52_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_17_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_16_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_32_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_05_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_15_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_56_22.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_38_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_08_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_10_16.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_17_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_00_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_48_16.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_09_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_13_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_15_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_41_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_01_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_06_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_46_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_21_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_59_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_20_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_07_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_11_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_10_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_26_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_19_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_47_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_34_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_14_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_00_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_31_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_25_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_16_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_33_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_07_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_32_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_55_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_12_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_26_17.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_42_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_41_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_52_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_04_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_28_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_29_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_49_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_30_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_03_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_27_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_54_17.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_11_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_39_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_14_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_35_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_50_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_02_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_29_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_31_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_37_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_04_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_21_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_43_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_42_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_22_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_43_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_38_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_36_13.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_20_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_37_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_50_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_33_11.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_58_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_30_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_56_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_14_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_48_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__11_51_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_19_12.jpg
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__12_13_13.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:23:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19700109312
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54533816320 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		0
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:24:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19694481408
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54533816320 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5631929
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_23_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:25:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19688837120
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54528180224 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5639564
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_24_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:26:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19683176448
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54522413056 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5647204
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_25_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:27:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19677548544
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54516645888 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5653291
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_26_13.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:28:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19671904256
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54510878720 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5656839
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_27_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:29:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19666210816
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54505111552 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5663775
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_28_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:30:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19660505088
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54499344384 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5663255
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_29_13.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:31:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19654475776
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54493577216 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		6002104
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_30_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:32:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19648434176
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54487547904 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		6000520
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_31_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:33:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19648413696
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54481518592 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		0
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:34:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19648401408
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54481518592 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		0
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:35:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19642634240
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54481518592 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5762071
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_34_12.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end
+----------------- STARTING BACKUP FILES-------------------
+Current time: 2024-03-14 13:36:01
+Desktop Total    Storage: 	30842867712
+Desktop Available Storage: 	19636895744
+~~~sorting disks~~~~~~
+External Drives (Ranked by Total Size - Descending):
+/media/pi/686D-3881: total size 62911283200 GB - available size 54475751424 GB
+~~~sorted~~~~~~
+chosen Disk: /media/pi/686D-3881
+total available 	62911283200
+total needed 		5698640
+Photos successfully copied to backup folder: /media/pi/686D-3881/photos_backup
+Photos successfully copied to backup folder: /home/pi/Desktop/Mothbox/photos_backedup
+removing files from fresh folder
+Deleted: /home/pi/Desktop/Mothbox/photos/ManFocus_mothbox08_2024_03_14__13_35_13.jpg
+More than 1GB remain so original files are also kept in internal storage after backing up to external storage
+we have finished backing up! yay!
+stuff worked out BACKUP COMPLETE
+end

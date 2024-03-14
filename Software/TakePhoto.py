@@ -5,11 +5,20 @@ from libcamera import controls
 
 import time
 import datetime
+from datetime import datetime
+
 computerName = "mothbox"
 import cv2
 
 
 import csv
+
+
+print("----------------- STARTING TAKEPHOTO-------------------")
+now = datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time}")
 
 
 import os, platform
@@ -18,6 +27,7 @@ if platform.system() == "Windows":
 else:
 	computerName = os.uname()[1]
 	print(os.uname()[1])   # doesnt work on windows
+
 
 
 #GPIO
@@ -37,6 +47,18 @@ GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
 
+global onlyflash
+onlyflash=False
+
+
+def get_control_values(filename):
+    """Reads key-value pairs from the control file."""
+    control_values = {}
+    with open(filename, "r") as file:
+        for line in file:
+            key, value = line.strip().split("=")
+            control_values[key] = value
+    return control_values
 
 
 def flashOn():
@@ -105,7 +127,10 @@ def load_camera_settings(filename):
         return None
 
 
-    
+control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
+if(onlyflash):
+    print("operating in always on flash mode")
 
 picam2 = Picamera2()
 
@@ -127,6 +152,10 @@ min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
 '''
 #camera_settings = load_camera_settings("camera_settings.csv")#CRONTAB CAN'T TAKE RELATIVE LINKS! 
 camera_settings = load_camera_settings("/home/pi/Desktop/Mothbox/camera_settings.csv")
+
+
+
+
 if camera_settings:
     picam2.set_controls(camera_settings)
 
@@ -156,8 +185,9 @@ picam2.configure(capture_config)
 
 def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
-    now = datetime.datetime.now()
-    timestamp = now.strftime("%y%m%d%H%M%S")
+    now = datetime.now()
+    timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
+    #timestamp = now.strftime("%y%m%d%H%M%S")
     print(timestamp)
 
     # for the CSV AfTrigger,0,AfTriggerStart = 0 AfTriggerCancel = 1 Start an autofocus cycle Only has any effect
@@ -187,7 +217,9 @@ def takePhoto_Manual():
 
     request = picam2.capture_request(flush=True)
     #picam2.capture_array("raw")
-    flashOff()
+    
+    if not onlyflash:
+        flashOff()
 
     
     flashtime=time.time()-start
@@ -196,10 +228,11 @@ def takePhoto_Manual():
     #array = request.make_array('main')
     array = request.make_array('main')
     #now save the photo with Timestamp
-    now = datetime.datetime.now()
-    timestamp = now.strftime("%y%m%d%H%M%S")
-    print(timestamp)
 
+    now = datetime.now()
+    timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
+    #timestamp = now.strftime("%y%m%d%H%M%S")
+    print(timestamp)
     #save the image
     folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
     filepath = folderPath+"ManFocus_"+computerName+"_"+timestamp+".jpg"

@@ -5,10 +5,17 @@ from pijuice import PiJuice
 import csv
 import schedule
 import time
+import datetime
+from datetime import datetime
 import subprocess
 from subprocess import Popen  # For executing external scripts
 import os
 
+print("----------------- STARTING Scheduler!-------------------")
+now = datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time}")
 
 
 #pijuice stuff, i don;t really know what it is doing
@@ -26,14 +33,7 @@ data = stat['data']
 
 utc_off=0 #this is the offsett from UTC time we use to set the alarm
 runtime=0 #this is how long to run the mothbox in minutes for once we wakeup 0 is forever
-
-def handle_sigterm(signal_number, frame):
-  """Handles SIGTERM signal by stopping the script gracefully."""
-  print("Received SIGTERM signal. Terminating Scheduler.py...")
-  # Add any cleanup tasks here (e.g., saving data, closing connections)
-  # ...
-  exit(0)
-
+onlyflash=0
 
 #load in the schedule CSV
 def load_settings(filename):
@@ -67,10 +67,11 @@ def load_settings(filename):
                     file_path=default_path
 
 
-    global runtime, utc_off
+    global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
     utc_off=0 #this is the offsett from UTC time we use to set the alarm
     runtime=0 #this is how long to run the mothbox in minutes for once we wakeup 0 is forever
-
+    newwifidetected=False
+    onlyflash=0
     try:
         #with open(filename) as csv_file:
         with open(file_path) as csv_file:
@@ -90,9 +91,16 @@ def load_settings(filename):
                 elif setting == "runtime":
                     runtime=int(value)
                     print(runtime)
-
                 elif setting == "utc_off":
                     utc_off=int(value)
+                elif setting == "ssid":
+                    newwifidetected=True
+                    ssid=value
+                elif setting == "wifipass":
+                    newwifidetected=True
+                    wifipass=value
+                elif setting == "onlyflash":
+                    onlyflash=int(value)
                 else:
                     print(f"Warning: Unknown setting: {setting}. Ignoring.")
 
@@ -104,20 +112,83 @@ def load_settings(filename):
         print(f"Error: CSV file not found: {filename}")
         return None
     
+def get_control_values(filename):
+    """Reads key-value pairs from the control file."""
+    control_values = {}
+    with open(filename, "r") as file:
+        for line in file:
+            key, value = line.strip().split("=")
+            control_values[key] = value
+    return control_values
+
+
 def schedule_shutdown(minutes):
   """Schedules the execution of '/home/pi/Desktop/Mothbox/TurnEverythingOff.py' after the specified delay in minutes."""
   schedule.every(minutes).minutes.do(run_shutdown)
 
   try:
     while True:
+      control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+      shutdown_enabled = control_values.get("shutdown_enabled", "True").lower() == "true"
+      if not shutdown_enabled:
+          print("Shutdown scheduling stopped.")
+          break
+      
       schedule.run_pending()
       time.sleep(1)
   except KeyboardInterrupt:
-    print("Backup scheduling stopped.")
+    print("Shutdown scheduling stopped.")
 
 def run_shutdown():
   """Executes the '/home/pi/Desktop/Mothbox/TurnEverythingOff.py' script."""
+  print("about to launch the shutdown")
   subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])  # Replace with the correct path to your "backup.py" script
+
+def enable_shutdown():
+    with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
+        lines = file.readlines()
+
+    with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith("shutdown_enabled="):
+                file.write("shutdown_enabled=True\n")  # Replace with False
+                print("enabling shutown in controls.txt")
+            else:
+                file.write(line)  # Keep other lines unchanged
+def enable_onlyflash():
+    with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
+        lines = file.readlines()
+
+    with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith("OnlyFlash="):
+                if(onlyflash==1):
+                    file.write("OnlyFlash=True\n")  # Replace with False
+                    print("enabling onlyflash attraction controls.txt")
+                else:
+                    file.write("OnlyFlash=False\n")  # Replace with False
+
+            else:
+                file.write(line)  # Keep other lines unchanged
+
+def add_wifi_credentials(ssid, password):
+  """Adds a new WiFi network configuration to the Raspberry Pi using NetworkManager (Bookworm).
+
+  Args:
+      ssid: The SSID of the WiFi network.
+      password: The password of the WiFi network.
+  """
+
+  # Add the new connection with nmcli
+  command = ["nmcli", "dev", "wifi", "connect", ssid, "password", password]
+  try:
+    subprocess.run(command, check=True)
+    print(f"Successfully added WiFi network: {ssid}")
+  except subprocess.CalledProcessError as error:
+    print(f"Failed to connect to WiFi network: {ssid}. Error: {error}")
+
 
 
 def modify_hours(data, offsett_value, key="hour"):
@@ -151,6 +222,8 @@ def modify_hours(data, offsett_value, key="hour"):
 
   return data  # Return the modified dictionary (or original if no modification)
 
+
+
 #do the scheduling
 settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
 if "runtime" in settings:
@@ -169,9 +242,17 @@ if settings:
     pj.rtcAlarm.SetAlarm(settings)
 
 pj.rtcAlarm.SetWakeupEnabled(True) #just re-doing this in case this flag gets shut off due to a full power-outage
-print("Wakeup Alarms have been set! Stuff will run for "+str(runtime)+" minutes before shutdown")
+print("Wakeup Alarms have been set!")
 
+if(newwifidetected):
+    add_wifi_credentials(ssid, wifipass)
+
+enable_onlyflash()
 
 if(runtime > 0):
+    enable_shutdown()
+    print("Stuff will run for "+str(runtime)+" minutes before shutdown")
     schedule_shutdown(runtime)
+else:
+    print("no shutdown scheduled, will run indefinitley")
     

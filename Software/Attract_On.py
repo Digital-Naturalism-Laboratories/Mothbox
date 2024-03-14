@@ -1,6 +1,17 @@
 #GPIO
 import RPi.GPIO as GPIO
 import time
+import datetime
+from datetime import datetime
+
+print("----------------- STARTING Scheduler!-------------------")
+now = datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time}")
+
+global onlyflash
+onlyflash=False
 
 Relay_Ch1 = 26
 Relay_Ch2 = 20
@@ -16,20 +27,41 @@ GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
 
+def get_control_values(filename):
+    """Reads key-value pairs from the control file."""
+    control_values = {}
+    with open(filename, "r") as file:
+        for line in file:
+            key, value = line.strip().split("=")
+            control_values[key] = value
+    return control_values
 
 
-def UVOn():
+def AttractOn():
     GPIO.output(Relay_Ch3,GPIO.LOW)
-    GPIO.output(Relay_Ch2,GPIO.HIGH)
+    if(onlyflash):
+        GPIO.output(Relay_Ch2,GPIO.LOW)
+        print("Always Flash mode is on")
+    else:
+        GPIO.output(Relay_Ch2,GPIO.HIGH)
+
     GPIO.output(Relay_Ch1,GPIO.LOW)
-    print("UV On\n")
+    print("Attract Lights On\n")
     
-def UVOff():
+def AttractOff():
     GPIO.output(Relay_Ch1,GPIO.HIGH)
+    if(onlyflash):
+        GPIO.output(Relay_Ch2,GPIO.HIGH)
+        print("Always Flash mode is on")
+    else:
+        GPIO.output(Relay_Ch2,GPIO.HIGH)
     GPIO.output(Relay_Ch3,GPIO.HIGH)
 
-    print("UV Off\n")
-    
-UVOn()
-#UVOff()
+    print("Attract Lights Off\n")
+
+
+control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
+AttractOn()
+#AttractOff()
 
