@@ -29,6 +29,8 @@ import os
 import subprocess
 import shutil
 from pathlib import Path
+from datetime import datetime
+
 
 # Define paths
 desktop_path = Path(
@@ -39,6 +41,12 @@ backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
 internal_storage_minimum = 1
+
+print("----------------- STARTING BACKUP FILES-------------------")
+now = datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time}")
 
 
 def get_storage_info(path):
@@ -97,7 +105,7 @@ def rsync_photos_to_backup(source_dir, dest_dir):
     
     #rsync_cmd = ["rsync", "-av", str(source_dir) + "/", dest_dir]
     #if you don't want as many slow print commands, turn off verbose mode
-    rsync_cmd = ["rsync", "-az", str(source_dir) + "/", dest_dir]
+    rsync_cmd = ["rsync", "-avz", str(source_dir) + "/", dest_dir]
 
     # Call rsync using subprocess
     try:
@@ -124,7 +132,7 @@ def rsync_copy_and_delete_files(source_dir, dest_dir):
     # rsync_cmd = ["rsync", "-avz", "--delete", source_dir, dest_dir] # copies the whole folder, not just files inside
     
     #rsync_cmd = ["rsync", "-av", str(source_dir) + "/", dest_dir] #verbose
-    rsync_cmd = ["rsync", "-az", str(source_dir) + "/", dest_dir]
+    rsync_cmd = ["rsync", "-avz", str(source_dir) + "/", dest_dir]
 
     
     # Call rsync using subprocess
@@ -162,6 +170,31 @@ def copy_photos_to_backup(source_folder, target_folder):
         source_path = os.path.join(source_folder, filename)
         target_path = os.path.join(target_folder, filename)
         shutil.copy2(source_path, target_path)  # Preserves file metadata
+        
+        
+def delete_files_after_check(source_dir, dest_dir):
+    """
+
+    Args:
+      source_dir: The source directory containing the files to copy.
+      dest_dir: The destination directory to copy the files to.
+
+    """
+    print("removing files from fresh folder")
+    for root, _, files in os.walk(source_dir):
+        for filename in files:
+            source_file = os.path.join(root, filename)
+            dest_file = os.path.join(dest_dir, filename)
+            # Check if the file was successfully copied (exists in destination)
+            if os.path.isfile(dest_file):
+                try:
+                    os.remove(source_file)
+                    print(f"Deleted: {source_file}")
+                except OSError as e:
+                    print(f"Error deleting {source_file}: {e}")
+
+    #return process.returncode
+
 
 
 def delete_original_photos(source_folder):
@@ -171,6 +204,7 @@ def delete_original_photos(source_folder):
     Args:
         source_folder: The path to the source folder.
     """
+    print("trying to delete fresh")
     for filename in os.listdir(source_folder):
         file_path = os.path.join(source_folder, filename)
         try:
@@ -178,7 +212,24 @@ def delete_original_photos(source_folder):
                 os.remove(file_path)
         except OSError as e:
             print(f"Error deleting file {file_path}: {e}")
+            
+def get_dir_size(dir_path):
+  """
+  Calculates the total size of a directory and its subdirectories.
 
+  Args:
+      dir_path: The path to the directory.
+
+  Returns:
+      The total size of the directory in bytes.
+  """
+  total_size = 0
+  for dirpath, dirnames, filenames in os.walk(dir_path):
+    for filename in filenames:
+      file_path = os.path.join(dirpath, filename)
+      if not os.path.islink(file_path):  # Skip symbolic links (optional)
+        total_size += os.path.getsize(file_path)
+  return total_size
 
 if __name__ == "__main__":
     # Check if "photos" folder exists
@@ -224,7 +275,6 @@ if __name__ == "__main__":
         )
 
         exit(1)
-
     print("~~~sorted~~~~~~")
 
     thingsworkedok = False
@@ -232,29 +282,33 @@ if __name__ == "__main__":
     # iterate through the disks, starting with the largest
     # see if it has enough available space, if not, choose the next largest
     for disk_name, capacity in sorted_disks:
+        print("chosen Disk: "+str(disk_name))
         total_available, external_available = capacity
+        print("total available \t"+str(total_available)) 
+        
         # Check if external storage has more available space than desktop
-        if external_available > sum(
-            os.path.getsize(f) for f in photos_folder.iterdir() if f.is_file()
-        ):
-
+        dir_path = photos_folder
+        total_size_bytes = get_dir_size(dir_path)
+        
+        
+        print("total needed \t\t"+str(total_size_bytes))
+        if external_available > total_size_bytes:
             # Create backup folder on external storage
             external_backup_folder = disk_name / backup_folder_name
+            
+            #using the non-rsync way for now because rsync was giving errors
+            copy_photos_to_backup(photos_folder, external_backup_folder)
+            print(f"Photos successfully copied to backup folder: {external_backup_folder}")
+            copy_photos_to_backup(photos_folder, backedup_photos_folder)
+            print(f"Photos successfully copied to backup folder: {backedup_photos_folder}")
 
-            try:
-                rsync_photos_to_backup(photos_folder, external_backup_folder)
-                # Proceed to the next step if successful
-                print(
-                    f"Photos successfully copied to backup folder: {external_backup_folder}"
-                )
+            #now we can remove them from the fresh folder
+            #delete_original_photos(photos_folder)
+            #should prob have more integrity checks than this
+            delete_files_after_check(photos_folder, backedup_photos_folder)
 
-                # since we were successful, move backed up images here!
-                rsync_copy_and_delete_files(photos_folder, backedup_photos_folder)
-                print(
-                    f"Photos successfully copied to backed_up folder and deleted from fresh folder: {backedup_photos_folder}"
-                )
-                thingsworkedok = True
-
+            thingsworkedok=True
+            if(thingsworkedok):
                 # After we backed up, we can check on our internal storage and see if we need to clean up
                 # Check if internal storage has less than X GB left
                 x = internal_storage_minimum
@@ -271,20 +325,15 @@ if __name__ == "__main__":
                     )
                 print("we have finished backing up! yay!")
                 break
-            except subprocess.CalledProcessError as err:
-                print(
-                    "Error during backup, moving to next available storage if there is one!:",
-                    err,
-                )
-                thingsworkedok = False
-        else:
-            print(
-                "This External storage doesn't have enough space for backup.\n Trying next available storage if there is one "
-            )
 
+        else:
+            print("This External storage doesn't have enough space for backup.\n Trying next available storage if there is one ")
     if thingsworkedok == False:
         print(
             "stuff never worked out with this backup, your files are not properly backedup"
         )
     else:
-        print("BACKUP COMPLETE")
+        print("stuff worked out BACKUP COMPLETE")
+    
+    print("end")
+
