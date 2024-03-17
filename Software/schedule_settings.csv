@@ -7,7 +7,7 @@ weekday,1;2;3;4;5;6;7, (theres currently an error where you cant do multiple day
 
 utc_off,-5, put your UTC offset for whereever you are based The pijuice just uses raw UTC
 runtime, 47, (prime numbers are good) put how long you want each session to go (in minutes) before it shuts the pi back down.
-ssid, CasaMarilyn, write an SSID of a wifi you want to add to the pi
-wifipass, Mamonroe, write the wifi password
+ssid, EXAMPLEWIFI, write an SSID of a wifi you want to add to the pi
+wifipass, examplepass42, write the wifi password
 onlyflash,1,switch to using only the flash for the attraction by setting to 1
 
