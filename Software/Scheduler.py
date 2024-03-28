@@ -31,6 +31,60 @@ while pjOK == False:
 
 data = stat['data']
 
+#-----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
+
+import RPi.GPIO as GPIO
+# Set pin numbering mode (BCM or BOARD)
+GPIO.setmode(GPIO.BCM)
+
+# Define GPIO pin for checking
+off_pin = 16
+debug_pin = 12
+mode= "ARMED" # possible modes are OFF or DEBUG or ARMED
+# Set GPIO pin as input
+GPIO.setup(off_pin, GPIO.IN)
+GPIO.setup(debug_pin, GPIO.IN)
+
+# Function to check for connection to ground
+def off_connected_to_ground():
+  # Set an internal pull-up resistor (optional, some circuits might have one already)
+  GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+  # Read the pin value
+  pin_value = GPIO.input(off_pin)
+
+  # If pin value is LOW (0), then it's connected to ground
+  return pin_value == 0
+
+def debug_connected_to_ground():
+  # Set an internal pull-up resistor (optional, some circuits might have one already)
+  GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+  # Read the pin value
+  pin_value = GPIO.input(debug_pin)
+
+  # If pin value is LOW (0), then it's connected to ground
+  return pin_value == 0
+
+# Check for connection
+if debug_connected_to_ground():
+  print("GPIO pin", off_pin, "DEBUG connected to ground.")
+  mode= "DEBUG"
+else:
+  print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
+
+
+# Check for connection
+if off_connected_to_ground():
+  print("GPIO pin", off_pin, "OFF PIN connected to ground.")
+  mode = "OFF" #this check comes second as the OFF state should override the DEBUG state in case both are attached
+else:
+  print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
+  
+print("Current Mothbox MODE: ", mode)
+
+#----------END SWITCH CHECK----------------
+
 utc_off=0 #this is the offsett from UTC time we use to set the alarm
 runtime=0 #this is how long to run the mothbox in minutes for once we wakeup 0 is forever
 onlyflash=0
@@ -142,7 +196,7 @@ def schedule_shutdown(minutes):
 def run_shutdown():
   """Executes the '/home/pi/Desktop/Mothbox/TurnEverythingOff.py' script."""
   print("about to launch the shutdown")
-  subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])  # Replace with the correct path to your "backup.py" script
+  subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"]) 
 
 def enable_shutdown():
     with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
@@ -172,6 +226,10 @@ def enable_onlyflash():
 
             else:
                 file.write(line)  # Keep other lines unchanged
+def stopcron():
+  """Executes the '/home/pi/Desktop/Mothbox/StopCron.py' script."""
+  print("stopping cron, you need to enable it yourself if needed, or reboot")
+  subprocess.run(["python", "/home/pi/Desktop/Mothbox/StopCron.py"])  
 
 def add_wifi_credentials(ssid, password):
   """Adds a new WiFi network configuration to the Raspberry Pi using NetworkManager (Bookworm).
@@ -249,7 +307,20 @@ if(newwifidetected):
 
 enable_onlyflash()
 
-if(runtime > 0):
+#Toggle System MODE, shut down if in off mode
+if mode == "OFF":
+ print("System is in OFF MODE")
+ run_shutdown()
+ #quit()
+elif mode == "DEBUG":
+ print("System is in DEBUG mode")
+ stopcron()
+elif mode == "ARMED":
+ print("System is armed")
+else:
+ print("Invalid mode")
+
+if(runtime > 0 and mode !="DEBUG"):
     enable_shutdown()
     print("Stuff will run for "+str(runtime)+" minutes before shutdown")
     schedule_shutdown(runtime)
