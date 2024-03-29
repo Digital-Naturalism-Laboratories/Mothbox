@@ -7,12 +7,16 @@ import time
 import datetime
 from datetime import datetime
 
-computerName = "mothbox"
+computerName = "mothboxD"
 import cv2
 
 
 import csv
 
+#HDR Controls
+num_photos = 3
+exposuretime_width = 10000
+global middleexposure # 500 #minimum exposure time for Hawkeye camera 64mp arducam
 
 print("----------------- STARTING TAKEPHOTO-------------------")
 now = datetime.now()
@@ -113,6 +117,8 @@ def load_camera_settings(filename):
                 elif setting == "ExposureTime":
                     try:
                         value = int(value)
+                        middleexposure = value
+                        print("middleexposurevalue ", middleexposure)
                     except ValueError:
                         raise ValueError(f"Invalid value for ExposureTime: {value}")
                 else:
@@ -179,84 +185,108 @@ picam2.stop()
 picam2.configure(capture_config)
 #start = time.time()
 
+def list_exposuretimes(middle_exposuretime, num_photos, exposure_width):
+  """
+  This function calculates exposure times for HDR photos.
 
+  Args:
+      middle_exposuretime: The middle exposure time in microseconds.
+      num_photos: The number of photos to take.
+      exposure_width: The exposure width in steps (added/subtracted to middle time).
 
-#picam2.capture_file("test_Auto_Tom.jpg")
+  Returns:
+      A list of exposure times in microseconds for each HDR photo.
+  """
+  
+  exposure_times = []
+  half_num_photos =  int((num_photos -1) / 2)  # Ensure at least one photo on each side
+  #print(half_num_photos)
+  # Start with middle exposure for the first photo
+  current_exposure = middle_exposuretime
+  exposure_times.append(current_exposure)
+
+  # Loop for positive adjustments (excluding middle)
+  for i in range(1, half_num_photos+1):
+    direction = 1
+    current_exposure = middle_exposuretime+ direction * exposure_width * i
+    exposure_times.append(current_exposure)
+
+  # Loop for negative adjustments (excluding middle, if applicable)
+  for i in range(half_num_photos):
+    direction = -1
+    current_exposure = middle_exposuretime+direction * exposure_width * (i + 1)  # Adjust index for missing middle photo
+    exposure_times.append(current_exposure)
+  return exposure_times
+
 
 def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
     now = datetime.now()
     timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
     #timestamp = now.strftime("%y%m%d%H%M%S")
-    print(timestamp)
+    print("About to take HDR photo:  ",timestamp)
 
-    # for the CSV AfTrigger,0,AfTriggerStart = 0 AfTriggerCancel = 1 Start an autofocus cycle Only has any effect
-    #picam2.capture_file("ManFocus_"+""+"_"+"_"+computerName+"_"+timestamp+".jpg")
-    #picam2.capture_array("main")
     ''''''
     if camera_settings:
         picam2.set_controls(camera_settings)
     else:
         print("can't set controls")
     ''''''
-    gains = 2.25943877696990967, 1.500129925489425659 #This possibly needs to be floats not ints! if one of these is 0.0 it seems to disable everything  1,0 looks good and white for us!
-    picam2.set_controls({"ColourGains": gains})
-    picam2.start()
+    min_exp, max_exp, default_exp = picam2.camera_controls["ExposureTime"]
+    #print(min_exp,"   ", max_exp,"   ", default_exp)
+
+
     #important note, to actually 100% lock down an AWB you need to set ColourGains! (0,0) works well for plain white LEDS
+    cgains = 2.25943877696990967, 1.500129925489425659
+    picam2.set_controls({"ColourGains": cgains})
+   
+    middleexposure = camera_settings["ExposureTime"]
+    exposure_times = list_exposuretimes(middleexposure, num_photos,exposuretime_width)
+    print(exposure_times)
     
-    
-    
-    
-    '''colour_gains = picam2.capture_metadata()['ColourGains']
-    print("colour gains for CLOUDY is ") #(1.5943877696990967, 2.129925489425659)
-    print(colour_gains)
-    '''
-    #"AfTrigger" Start an autofocus cycle. Only has any effect when in auto mode
-    #picam2.set_controls({"AfTrigger": 0})
-
-
+    time.sleep(5)
+    picam2.start()
+        
     time.sleep(5)
 
     start = time.time()
-
-    flashOn()
-
-    request = picam2.capture_request(flush=True)
-    #picam2.capture_array("raw")
     
-    if not onlyflash:
-        flashOff()
+    exposureset_delay=5
+    #request =[num_photos]
+    #HDR loop
+    for i in range(num_photos):
+        #middleexposure = camera_settings["ExposureTime"]
+        
+        picam2.set_controls({"ExposureTime":exposure_times[i] })
+        print("exp  ",exposure_times[i],"  ",i)
+        time.sleep(exposureset_delay)#need some time for the settings to sink into the camera)
+        flashOn()
 
-    
-    flashtime=time.time()-start
+        request = picam2.capture_request(flush=True)
+        #picam2.capture_array("raw")
+        
+        if not onlyflash:
+            flashOff()
 
-    print("picture take time: "+str(flashtime))
-    #array = request.make_array('main')
-    array = request.make_array('main')
-    #now save the photo with Timestamp
+        
+        flashtime=time.time()-start
 
-    now = datetime.now()
-    timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
-    #timestamp = now.strftime("%y%m%d%H%M%S")
-    print(timestamp)
-    #save the image
-    folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
-    filepath = folderPath+"ManFocus_"+computerName+"_"+timestamp+".jpg"
-    
-    #for YUV conversion
-    '''
-    image_yuv=array
-    image_rgb = cv2.cvtColor(image_yuv, cv2.COLOR_YUV2RGB_I420)
-    cv2.imwrite("image_rgb.jpg", image_rgb)
-    '''
-    request.save("main", filepath)
-    print("Image saved to "+filepath)
+        print("picture take time: "+str(flashtime))
+        
+        folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
+        filepath = folderPath+"ManFocus_"+computerName+"_"+timestamp+"_HDR"+str(i)+".jpg"
+
+        request.save("main", filepath)
+        print("Image saved to "+filepath)
+        request.release()
+
 
 
 
 #flashOn()
 time.sleep(.5)
 takePhoto_Manual()
+
 
 picam2.stop()
 
