@@ -7,12 +7,21 @@ import time
 import datetime
 from datetime import datetime
 
-computerName = "mothbox"
+computerName = "mothboxD"
 import cv2
-
 
 import csv
 
+
+import io
+from PIL import Image
+import piexif
+
+
+#HDR Controls
+num_photos = 3
+exposuretime_width = 18000
+global middleexposure # 500 #minimum exposure time for Hawkeye camera 64mp arducam
 
 print("----------------- STARTING TAKEPHOTO-------------------")
 now = datetime.now()
@@ -51,10 +60,10 @@ global onlyflash
 onlyflash=False
 
 
-def get_control_values(filename):
+def get_control_values(filepath):
     """Reads key-value pairs from the control file."""
     control_values = {}
-    with open(filename, "r") as file:
+    with open(filepath, "r") as file:
         for line in file:
             key, value = line.strip().split("=")
             control_values[key] = value
@@ -71,12 +80,12 @@ def flashOff():
     print("Flash Off\n")
     
     
-def load_camera_settings(filename):
+def load_camera_settings():
     """
     Reads camera settings from a CSV file and converts them to appropriate data types.
 
     Args:
-        filename (str): Path to the CSV file containing camera settings.
+        filepath (str): Path to the CSV file containing camera settings.
 
     Returns:
         dict: Dictionary containing camera settings with converted data types.
@@ -84,9 +93,34 @@ def load_camera_settings(filename):
     Raises:
         ValueError: If an invalid value is encountered in the CSV file.
     """
+    
+    
+    #first look for any updated CSV files on external media, we will prioritize those
+    external_media_paths = ("/media", "/mnt")  # Common external media mount points
+    default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
+    file_path=default_path
+
+    found = 0
+    for path in external_media_paths:
+        if(found==0):
+            files=os.listdir(path) #don't look for files recursively, only if new settings in top level
+            if "camera_settings.csv" in files:
+                file_path = os.path.join(root, "camera_settings.csv")
+                print(f"Found settings on external media: {file_path}")
+                found=1
+                break
+            else:
+                print("No external settings here...")
+                file_path=default_path
+
+    if(found==0):
+        #redundant but being extra safe
+        print("No external settings, using internal csv")
+        file_path=default_path
+
 
     try:
-        with open(filename) as csv_file:
+        with open(file_path) as csv_file:
             reader = csv.DictReader(csv_file)
             camera_settings = {}
             for row in reader:
@@ -105,7 +139,7 @@ def load_camera_settings(filename):
                         raise ValueError(f"Invalid value for AnalogueGain: {value}")
                 elif setting == "AeEnable" or setting == "AwbEnable":
                     value = value.lower() == "true"  # Convert to bool (adjust logic if needed)
-                elif setting == "AwbMode"or setting == "AfTrigger" or setting == "AfRange"  or setting == "AfSpeed" or setting == "AfMode":
+                elif setting == "AwbMode" or setting == "AfTrigger" or setting == "AfRange"  or setting == "AfSpeed" or setting == "AfMode":
                     value=int(value)
                     #value = getattr(controls.AwbModeEnum, value)  # Access enum value
                     # Assuming AwbMode is a string representing an enum value
@@ -113,6 +147,8 @@ def load_camera_settings(filename):
                 elif setting == "ExposureTime":
                     try:
                         value = int(value)
+                        middleexposure = value
+                        print("middleexposurevalue ", middleexposure)
                     except ValueError:
                         raise ValueError(f"Invalid value for ExposureTime: {value}")
                 else:
@@ -123,7 +159,7 @@ def load_camera_settings(filename):
         return camera_settings
 
     except FileNotFoundError as e:
-        print(f"Error: CSV file not found: {filename}")
+        print(f"Error: CSV file not found: {file_path}")
         return None
 
 
@@ -151,106 +187,176 @@ print(picam2.camera_controls["AnalogueGain"])
 min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
 '''
 #camera_settings = load_camera_settings("camera_settings.csv")#CRONTAB CAN'T TAKE RELATIVE LINKS! 
-camera_settings = load_camera_settings("/home/pi/Desktop/Mothbox/camera_settings.csv")
+camera_settings = load_camera_settings()
 
-
-
-
+#remove settings that aren't actually in picamera2
+num_photos = int(camera_settings.pop("HDR",num_photos)) #defaults to what is set above if not in the files being read
+exposuretime_width = int(camera_settings.pop("HDR_width",exposuretime_width))
+if(num_photos<1 or num_photos==2):
+    num_photos=1
+    
 if camera_settings:
     picam2.set_controls(camera_settings)
 
-#picam2.set_controls({"AnalogueGain": 1.0,"AeEnable": False,"AwbEnable": False,"AwbMode": controls.AwbModeEnum.Cloudy, "ExposureTime": 8000,"LensPosition": 7.82})
-#picam2.set_controls(camera_settings)
-
-
- 
-
-
-#capture_config = picam2.create_still_configuration(main={"size": (9152, 6944), "format": "YUV420"}, buffer_count=1)
-#raw_format = SensorFormat(picam2.sensor_format)
-#raw_format.packing = None
-#capture_config = picam2.create_still_configuration(raw={"size": (9152, 6944)}, buffer_count=1)
-#capture_config = picam2.create_still_configuration(main={"format": 'RGB888',"size": (9152, 6944)})
-
 picam2.start()
+time.sleep(.1)
+
 print("cam started");
 
 picam2.stop()
 picam2.configure(capture_config)
 #start = time.time()
 
+def list_exposuretimes(middle_exposuretime, num_photos, exposure_width):
+  """
+  This function calculates exposure times for HDR photos.
 
+  Args:
+      middle_exposuretime: The middle exposure time in microseconds.
+      num_photos: The number of photos to take.
+      exposure_width: The exposure width in steps (added/subtracted to middle time).
 
-#picam2.capture_file("test_Auto_Tom.jpg")
+  Returns:
+      A list of exposure times in microseconds for each HDR photo.
+  """
+  
+  exposure_times = []
+  half_num_photos =  int((num_photos -1) / 2)  # Ensure at least one photo on each side
+  #print(half_num_photos)
+  # Start with middle exposure for the first photo
+  current_exposure = middle_exposuretime
+  exposure_times.append(current_exposure)
+
+  # Loop for positive adjustments (excluding middle)
+  for i in range(1, half_num_photos+1):
+    direction = 1
+    current_exposure = middle_exposuretime+ direction * exposure_width * i
+    exposure_times.append(current_exposure)
+
+  # Loop for negative adjustments (excluding middle, if applicable)
+  for i in range(half_num_photos):
+    direction = -1
+    current_exposure = middle_exposuretime+direction * exposure_width * (i + 1)  # Adjust index for missing middle photo
+    exposure_times.append(current_exposure)
+  return exposure_times
+
 
 def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
     now = datetime.now()
     timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
     #timestamp = now.strftime("%y%m%d%H%M%S")
-    print(timestamp)
+    
+    
 
-    # for the CSV AfTrigger,0,AfTriggerStart = 0 AfTriggerCancel = 1 Start an autofocus cycle Only has any effect
-    #picam2.capture_file("ManFocus_"+""+"_"+"_"+computerName+"_"+timestamp+".jpg")
-    #picam2.capture_array("main")
     ''''''
     if camera_settings:
         picam2.set_controls(camera_settings)
     else:
         print("can't set controls")
     ''''''
-    gains = 2.25943877696990967, 1.500129925489425659 #This possibly needs to be floats not ints! if one of these is 0.0 it seems to disable everything  1,0 looks good and white for us!
-    picam2.set_controls({"ColourGains": gains})
-    picam2.start()
+    min_exp, max_exp, default_exp = picam2.camera_controls["ExposureTime"]
+    #print(min_exp,"   ", max_exp,"   ", default_exp)
+
+
     #important note, to actually 100% lock down an AWB you need to set ColourGains! (0,0) works well for plain white LEDS
+    cgains = 2.25943877696990967, 1.500129925489425659
+    picam2.set_controls({"ColourGains": cgains})
+   
+    middleexposure = camera_settings["ExposureTime"]
+    exposure_times = list_exposuretimes(middleexposure, num_photos,exposuretime_width)
+    print(exposure_times)
     
-    
-    
-    
-    '''colour_gains = picam2.capture_metadata()['ColourGains']
-    print("colour gains for CLOUDY is ") #(1.5943877696990967, 2.129925489425659)
-    print(colour_gains)
-    '''
-    #"AfTrigger" Start an autofocus cycle. Only has any effect when in auto mode
-    #picam2.set_controls({"AfTrigger": 0})
-
-
-    time.sleep(5)
+    time.sleep(1)
+    picam2.start()
+        
+    time.sleep(3)
 
     start = time.time()
 
-    flashOn()
+    if(num_photos>2):
+        print("About to take HDR photo:  ",timestamp)
+    else:
+        print("About to take single photo:  ",timestamp)
 
-    request = picam2.capture_request(flush=True)
-    #picam2.capture_array("raw")
-    
-    if not onlyflash:
-        flashOff()
 
-    
-    flashtime=time.time()-start
 
-    print("picture take time: "+str(flashtime))
-    #array = request.make_array('main')
-    array = request.make_array('main')
-    #now save the photo with Timestamp
+    exposureset_delay=.3 #values less than 5 don't seem to work! (unless you restart the cam!)
+    requests = []  # Create an empty list to store requests
+    PILs = []
+    metadatas = []
+    #HDR loop
+    for i in range(num_photos):
+        #middleexposure = camera_settings["ExposureTime"]
+        
+        picam2.set_controls({"ExposureTime":exposure_times[i] })
+        print("exp  ",exposure_times[i],"  ",i)
+        picam2.set_controls({"NoiseReductionMode":controls.draft.NoiseReductionModeEnum.HighQuality})
+        picam2.start() #need to restart camera or wait a couple frames for settings to change
 
-    now = datetime.now()
-    timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
-    #timestamp = now.strftime("%y%m%d%H%M%S")
-    print(timestamp)
-    #save the image
-    folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
-    filepath = folderPath+"ManFocus_"+computerName+"_"+timestamp+".jpg"
-    
-    #for YUV conversion
-    '''
-    image_yuv=array
-    image_rgb = cv2.cvtColor(image_yuv, cv2.COLOR_YUV2RGB_I420)
-    cv2.imwrite("image_rgb.jpg", image_rgb)
-    '''
-    request.save("main", filepath)
-    print("Image saved to "+filepath)
+        time.sleep(exposureset_delay)#need some time for the settings to sink into the camera)
+        
+        flashOn()
+        request = picam2.capture_request(flush=True)
+
+
+        if not onlyflash:
+            flashOff()
+        flashtime=time.time()-start
+
+        pilImage = request.make_image("main")
+        PILs.append(pilImage)
+        #image_buffer = request.make_array("main")
+        #requests.append(image_buffer)
+        
+        #print(request.get_metadata()) # this is the metadata for this image
+        metadatas.append(request.get_metadata())
+        request.release()
+
+        picam2.stop()
+        print("picture take time: "+str(flashtime))
+        
+    # Saving loop (can be done later)
+    i=0
+    for img in PILs:  
+          exif_data=metadatas[i]
+          pil_image = img
+          # Save the image using PIL to get the image data on disk
+          folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
+          filepath = folderPath+"ManFocus_"+computerName+"_"+timestamp+"_HDR"+str(i)+".jpg"
+ 
+        
+          print(exif_data)
+          print(camera_settings.get("LensPosition"))
+          #https://github.com/hMatoba/Piexif/blob/3422fbe7a12c3ebcc90532d8e1f4e3be32ece80c/piexif/_exif.py#L406
+          #https://piexif.readthedocs.io/en/latest/functions.html#dump
+          zeroth_ifd = {piexif.ImageIFD.Make: u"MothboxV3",
+              }
+          exif_ifd = {#piexif.ExifIFD.DateTimeOriginal: u"2099:09:29 10:10:10",
+            #piexif.ExifIFD.LensMake: u"LensMake",
+            piexif.ExifIFD.ExposureTime: (1,int(1/(exposure_times[i]/1000000))),
+            piexif.ExifIFD.FocalLength: (int(camera_settings.get("LensPosition")*100), 10),
+            piexif.ExifIFD.ISOSpeed: int(camera_settings.get("AnalogueGain")*100),
+            piexif.ExifIFD.ISOSpeedRatings: int(camera_settings.get("AnalogueGain")*100),
+
+            }
+          gps_ifd = {
+           #piexif.GPSIFD.GPSVersionID: (2, 0, 0, 0),
+           #piexif.GPSIFD.GPSAltitudeRef: 1,
+           #piexif.GPSIFD.GPSDateStamp: u"1999:99:99 99:99:99",
+           }
+          first_ifd = {piexif.ImageIFD.Make: u"Arducam64mp",
+             #piexif.ImageIFD.XResolution: (40, 1),
+             #piexif.ImageIFD.YResolution: (40, 1),
+             piexif.ImageIFD.Software: u"piexif"
+             }
+          
+          exif_dict = {"0th":zeroth_ifd, "Exif":exif_ifd, "GPS":gps_ifd, "1st":first_ifd}
+          exif_bytes = piexif.dump(exif_dict)
+          img.save(filepath,exif=exif_bytes)
+          print("Image saved to "+filepath)
+          i=i+1
+
 
 
 
@@ -258,7 +364,7 @@ def takePhoto_Manual():
 time.sleep(.5)
 takePhoto_Manual()
 
+
 picam2.stop()
 
-#flashOff()
 quit()
