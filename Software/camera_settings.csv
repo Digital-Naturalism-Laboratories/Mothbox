@@ -8,3 +8,4 @@ AfRange,1,AfRangeNormal = 0 AfRangeMacro = 1 AfRangeFull = 2
 AwbEnable,0,
 HDR,3,0 is off 3 is HDR with 3 photos -  1-2 is also off  3 and up is that many photos to take
 HDR_width,18000, duration of exposure to shift on both sides doesnt do anything if HDR is not enabled
+Name,MB46,name of the mothbox used to tag photos just numbers and letters no special characters

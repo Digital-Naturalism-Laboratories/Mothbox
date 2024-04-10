@@ -170,10 +170,7 @@ if(onlyflash):
 
 picam2 = Picamera2()
 
-#capture_main = {"size": (9000, 6000), "format": "RGB888"}
-#capture_main = {"size": (9152, 6944), "format": "RGB888"}
-capture_main = {"size": (9000, 6000), "format": "RGB888"}
-
+capture_main = {"size": (4920, 3264), "format": "RGB888"}
 capture_config = picam2.create_still_configuration(main=capture_main)
 #preview_main = {"format": 'YUV420',"size": (640, 480)}
 #preview_raw = {'size': (2312, 1736)}
@@ -193,8 +190,6 @@ min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
 camera_settings = load_camera_settings()
 
 #remove settings that aren't actually in picamera2
-computerName = camera_settings.pop("Name",computerName) #defaults to what is set above if not in the files being read
-
 num_photos = int(camera_settings.pop("HDR",num_photos)) #defaults to what is set above if not in the files being read
 exposuretime_width = int(camera_settings.pop("HDR_width",exposuretime_width))
 if(num_photos<1 or num_photos==2):
@@ -296,7 +291,7 @@ def takePhoto_Manual():
         
         picam2.set_controls({"ExposureTime":exposure_times[i] })
         print("exp  ",exposure_times[i],"  ",i)
-        #picam2.set_controls({"NoiseReductionMode":controls.draft.NoiseReductionModeEnum.HighQuality})
+        picam2.set_controls({"NoiseReductionMode":controls.draft.NoiseReductionModeEnum.HighQuality})
         picam2.start() #need to restart camera or wait a couple frames for settings to change
 
         time.sleep(exposureset_delay)#need some time for the settings to sink into the camera)
@@ -328,7 +323,7 @@ def takePhoto_Manual():
           pil_image = img
           # Save the image using PIL to get the image data on disk
           folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
-          filepath = folderPath+computerName+"_"+timestamp+"_HDR"+str(i)+".jpg"
+          filepath = folderPath+"16MPManFocus_"+computerName+"_"+timestamp+"_HDR"+str(i)+".jpg"
  
         
           print(exif_data)
