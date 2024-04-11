@@ -358,7 +358,9 @@ def takePhoto_Manual():
           
           exif_dict = {"0th":zeroth_ifd, "Exif":exif_ifd, "GPS":gps_ifd, "1st":first_ifd}
           exif_bytes = piexif.dump(exif_dict)
-          img.save(filepath,exif=exif_bytes)
+          #img.save(filepath,exif=exif_bytes, )
+	  img.save(filepath,exif=exif_bytes, quality=95)
+
           print("Image saved to "+filepath)
           i=i+1
 
