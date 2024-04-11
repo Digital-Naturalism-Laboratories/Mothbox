@@ -28,6 +28,7 @@ Note:
 import os
 import subprocess
 import shutil
+import psutil
 from pathlib import Path
 from datetime import datetime
 
@@ -79,13 +80,15 @@ def find_largest_external_storage():
 
     for mount_point in os.listdir("/media/pi"):
         path = Path(f"/media/pi/{mount_point}")
-        if path.is_dir():
-            total_size, available_size = get_storage_info(path)
-            print(path)
-            print(available_size)
-            if available_size > largest_size:
-                largest_storage = path
-                largest_size = available_size
+        # Check if the mount point is actually mounted
+        if is_mounted(path):
+            if path.is_dir():
+                total_size, available_size = get_storage_info(path)
+                print(path)
+                print(available_size)
+                if available_size > largest_size:
+                    largest_storage = path
+                    largest_size = available_size
             """
       if total_size > largest_size:
         largest_storage = path
@@ -95,6 +98,22 @@ def find_largest_external_storage():
     print(largest_size)
     return largest_storage
 
+def is_mounted(path):
+  """
+  Checks if the given path is currently mounted.
+
+  Args:
+      path: The path to check for mount status.
+
+  Returns:
+      True if the path is mounted, False otherwise.
+  """
+  # Use psutil library to check mounted devices
+  partitions = psutil.disk_partitions()
+  for partition in partitions:
+    if partition.mountpoint == str(path):
+      return True
+  return False
 
 def rsync_photos_to_backup(source_dir, dest_dir):
     if not os.path.exists(dest_dir):
@@ -254,7 +273,7 @@ if __name__ == "__main__":
     # Check potential mount points for external drives (adjust based on your system)
     for mount_point in os.listdir("/media/pi"):
         path = Path(f"/media/pi/{mount_point}")
-        if path.is_dir():
+        if path.is_dir() and is_mounted(path):
             total_size, available_size = get_storage_info(path)
             disks[path] = total_size, available_size
 
@@ -336,3 +355,4 @@ if __name__ == "__main__":
         print("stuff worked out BACKUP COMPLETE")
     
     print("end")
+
