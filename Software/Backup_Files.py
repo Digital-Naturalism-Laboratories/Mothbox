@@ -185,12 +185,15 @@ def copy_photos_to_backup(source_folder, target_folder):
     """
     if not os.path.exists(target_folder):
         os.makedirs(target_folder)
+        os.chmod(target_folder, 0o777) # mode=0o777 for read write for all users
+
     for filename in os.listdir(source_folder):
         source_path = os.path.join(source_folder, filename)
         target_path = os.path.join(target_folder, filename)
         shutil.copy2(source_path, target_path)  # Preserves file metadata
-        
-        
+        # Set read-write permissions for all users
+        os.chmod(target_path, 0o777) # mode=0o777 for read write for all users
+
 def delete_files_after_check(source_dir, dest_dir):
     """
 
@@ -314,7 +317,7 @@ if __name__ == "__main__":
         if external_available > total_size_bytes:
             # Create backup folder on external storage
             external_backup_folder = disk_name / backup_folder_name
-            
+            print("doing the backup...")
             #using the non-rsync way for now because rsync was giving errors
             copy_photos_to_backup(photos_folder, external_backup_folder)
             print(f"Photos successfully copied to backup folder: {external_backup_folder}")
@@ -355,4 +358,3 @@ if __name__ == "__main__":
         print("stuff worked out BACKUP COMPLETE")
     
     print("end")
-
