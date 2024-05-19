@@ -5,7 +5,10 @@ parent: Building Mothbox
 has_children: true
 nav_order: 6
 ---
+# Mothbox Tools and Materials
 
+The Mothbox 3.21 uses a Raspberry pi 4, Pijuice, Talentcell Battery, as its core.
+The entire materials cost is about $400
 
 **Mothbox Bill of Materials / Parts List**
 
