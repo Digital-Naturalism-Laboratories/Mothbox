@@ -119,7 +119,7 @@ liquid:
 back_to_top: true
 back_to_top_text: "Back to top"
 
-footer_content: "All designs are open and free to use by the Mothbox team and www.Dinalab.net, 2024"
+footer_content: "All designs are open and free to use by the Mothbox team and www.dinalab.net, 2024"
 
 # Footer last edited timestamp
 last_edit_timestamp: true # show or hide edit time - page must have `last_modified_date` defined in the frontmatter
