@@ -28,5 +28,3 @@ After this set of WIKI tutorials, you should be able to make your own set of mot
 <img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="50%">
 
 
-<img src="" width="50%">
-
