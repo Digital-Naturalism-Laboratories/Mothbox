@@ -1,6 +1,6 @@
 theme: just-the-docs
-title: Just the Docs
-description: A Jekyll theme for documentation
+title: Mothbox: Open Source Insect Monitor
+description: Low Cost, DIY nocturnal insect monitoring
 baseurl: "/Mothbox" # the subpath of your site, e.g. /blog
 url: "https://digital-naturalism-laboratories.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 repository: just-the-docs/just-the-docs # for github-metadata
