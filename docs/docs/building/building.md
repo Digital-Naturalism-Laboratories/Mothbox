@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Building Mothbox
-parent: Building Mothbox
+nav_order: 3
 has_children: true
-nav_order: 6
+permalink: /docs/building
 ---
+
 # Assembly
 This guide will show you how to construct a mothbox from scratch!
