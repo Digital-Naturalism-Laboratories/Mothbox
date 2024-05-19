@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Basic Use
-parent: UI Components
+parent: Using Mothbox
 has_children: true
 nav_order: 6
 ---
