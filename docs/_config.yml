@@ -1,6 +1,6 @@
 theme: just-the-docs
-title: Mothbox Open Source Insect Monitor
-description: Low Cost DIY nocturnal insect monitoring
+title: Mothbox
+description: Open Source Low Cost DIY Nocturnal Insect Monitoring
 baseurl: "/Mothbox" # the subpath of your site, e.g. /blog
 url: "https://digital-naturalism-laboratories.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 repository: just-the-docs/just-the-docs # for github-metadata
@@ -105,8 +105,8 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
-  - title: Just the Docs on GitHub
-    url: https://github.com/just-the-docs/just-the-docs
+  - title: Mothbox GitHub
+    url: https://github.com/Digital-Naturalism-Laboratories/Mothbox
 
 liquid:
    error_mode: strict
@@ -130,8 +130,8 @@ last_edit_time_format: "%b %e %Y at %I:%M %p" # uses ruby's time format: https:/
 # Footer "Edit this page on GitHub" link text
 gh_edit_link: true # show or hide edit this page link
 gh_edit_link_text: "Edit this page on GitHub"
-gh_edit_repository: "https://github.com/just-the-docs/just-the-docs" # the github URL for your repo
-gh_edit_branch: "main" # the branch that your docs is served from
+gh_edit_repository: "https://digital-naturalism-laboratories.github.io/Mothbox/" # the github URL for your repo
+gh_edit_branch: "docs" # the branch that your docs is served from
 # gh_edit_source: docs # the source that your files originate from
 gh_edit_view_mode: "tree" # "tree" or "edit" if you want the user to jump into the editor immediately
 
