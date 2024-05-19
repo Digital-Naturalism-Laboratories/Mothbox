@@ -6,7 +6,7 @@ description: "The Mothbox is a low cost DIY insect monitor"
 permalink: /
 ---
 
-#Mothbox
+# Mothbox
 This Mothbox documentation will provide you with documentation for how to source, build, program, and use your mothbox!
 
 Get started building your mothbox!
@@ -26,5 +26,8 @@ After this set of WIKI tutorials, you should be able to make your own set of mot
 
 <img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377d497f-c3d9-40a8-ac65-a5af2f1f43ef" width="50%">
 <img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="50%">
+
+We are also building an open-source low cost light for mothlighting, the Mothbeam
+![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/fab3c9ac-f879-4768-abee-1e61d8d63172)
 
 
