@@ -9,9 +9,7 @@ permalink: /
 # Mothbox
 This Mothbox documentation will provide you with documentation for how to source, build, program, and use your mothbox!
 
-Get started building your mothbox!
-
-https://github.com/Digital-Naturalism-Laboratories/Mothbox/wiki/Assembly-%E2%80%90-Externals
+[Get started building your mothbox!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building)
 
 <img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b228871f-8424-435f-ba6c-6eb39d7c05a6" height="300">
 After following these guides, you should be able to make your own set of mothboxes to conduct your own biodiversity studies!
