@@ -36,7 +36,7 @@ exclude:
    - fixtures/
 
 # Set a path/url to a logo that will be displayed instead of the title
-logo: "/assets/images/logo/wideText_11-27-08.06.09%7E2.png"
+logo: "/assets/images/logo/Mothbox Logo Wide.svg"
 
 # Enable or disable the site search
 # Supports true (default) or false
