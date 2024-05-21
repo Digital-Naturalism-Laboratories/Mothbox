@@ -3,7 +3,7 @@ layout: default
 title: Using Mothbox
 nav_order: 2
 has_children: true
-permalink: /docs/usage
+permalink: /docs/previousversions/v3.21/using
 ---
 
 # Using the Mothbox
