@@ -3,7 +3,7 @@ layout: default
 title: Programming Mothbox
 nav_order: 3
 has_children: true
-permalink: /docs/previousversions/v3.21/programming
+permalink: /docs/previousversions/v3/programming
 ---
 
 # Using and Programming Mothbox Software
