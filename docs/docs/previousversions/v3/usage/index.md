@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Using Mothbox
+title: v3 Using Mothbox
 nav_order: 2
 has_children: true
 parent: v3

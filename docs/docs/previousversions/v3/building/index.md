@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Building Mothbox
+title: v3 Building Mothbox
 nav_order: 3
 has_children: true
 permalink: /docs/previousversions/v3/building

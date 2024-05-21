@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Programming Mothbox
+title: v3 Programming Mothbox
 nav_order: 3
 has_children: true
 permalink: /docs/previousversions/v3/programming
