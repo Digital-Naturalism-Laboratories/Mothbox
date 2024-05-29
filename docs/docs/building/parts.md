@@ -77,40 +77,28 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
 24. Plastic for laser cutting (the design is currently set for 3mm acrylic)
 25. 1/4in bolts and nuts
     27. bolts
-    28. wingnuts
     29. hex nuts
-    30. Socket "Tee Nut" [https://www.mcmaster.com/products/tee-nuts/thread-size~1-4-20/](https://www.mcmaster.com/products/tee-nuts/thread-size~1-4-20/)
-        1. For the custom tripod attachment on bottom of mothbox
-        2. We used the kind with 3 prongs, but you can also use a flat round weld nut
-    31. 
-26. Optional - you can get [waterproof connectors for the boxes like these](https://www.amazon.com/MAKERELE-NPT-Waterproof-Adjustable-Connectors/dp/B08R84YJ7X/ref=sr_1_1_sspa?crid=3DH8JJZ6OKHN9&keywords=waterproof%2Belectronic%2Bhole%2Bplugs&qid=1683518981&sprefix=waterproof%2Belectronic%2Bhole%2Bplugs%2Caps%2C87&sr=8-1-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFBWTAzSEdMNzYwQVgmZW5jcnlwdGVkSWQ9QTAwNTQ5MDVXU05VQzFIV1BIMjImZW5jcnlwdGVkQWRJZD1BMDU3NDUyOTE0UjBWQzdIUTRWSEImd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl&th=1), or we are just going to epoxy the holes after we run the wires through
+7. M2 M2.5 and M3 Screws and nuts and Electronics Spacers
+   8. e.g [Nylon Standoffs and nuts for Raspberry Pi](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
+   9. [Set of m2 m2.5 m3 bolts and nuts](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
+9. Zip ties
+10. [5.5x2.1mm cables](https://www.amazon.com/TalentCell-Adapter-5-5x2-1mm-5-5x2-5mm-Splitter/dp/B0BTBQJBSF/ref=sr_1_2?keywords=TalentCell+Power+Adapter+Cable%2C+DC+5.5x2.1mm+Male+to+DC+5.5x2.5mm+Male+Cable%2C+DC5521+1+Female+to+2+Male+Power+Supply+Y+Splitter+Cord%2C+DC5521+Male+to+DC4017+Male+Cable+for+CCTV+Camera%2C+LED+Strip+Light&qid=1682353719&sr=8-2)** **
 
 
-### Electrical Connections
-14. USB accessories
-
-USB Micro Cable
-
-    12. Old USB cables to slice apart (we need a USB A plug)
-    13. or these are useful and easier to build with than cutting your own USB cables
-    14. [Female USB socket with Pigtails ](https://www.amazon.com/gp/product/B0BD756DQR/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
-    15. [USB cable extender (Female USB port)](https://www.amazon.com/AmazonBasics-Extension-Cable-Male-Female/dp/B00NH136GE/ref=sr_1_1_ffob_sspa?crid=1HSHOAK18Q9AR&keywords=usb+cable+extender&qid=1683518620&sprefix=%2Caps%2C362&sr=8-1-spons&psc=1&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFORDhWQUVBVFVMRlgmZW5jcnlwdGVkSWQ9QTAzNDA0NTIxQkZTU1dIREg5Q0RaJmVuY3J5cHRlZEFkSWQ9QTA5ODExMzkzU0lDVEVENVZWMjImd2lkZ2V0TmFtZT1zcF9hdGYmYWN0aW9uPWNsaWNrUmVkaXJlY3QmZG9Ob3RMb2dDbGljaz10cnVl)
-    16. [USB Cable Splitter ( very handy in case you want Two Black lights)](https://www.amazon.com/gp/product/B07CKQSTCB/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
-15. [5.5x2.1mm cables](https://www.amazon.com/TalentCell-Adapter-5-5x2-1mm-5-5x2-5mm-Splitter/dp/B0BTBQJBSF/ref=sr_1_2?keywords=TalentCell+Power+Adapter+Cable%2C+DC+5.5x2.1mm+Male+to+DC+5.5x2.5mm+Male+Cable%2C+DC5521+1+Female+to+2+Male+Power+Supply+Y+Splitter+Cord%2C+DC5521+Male+to+DC4017+Male+Cable+for+CCTV+Camera%2C+LED+Strip+Light&qid=1682353719&sr=8-2)** **
 ## Tools for Construction
 **1x the following:**
 
-1. [Dielectric grease](https://www.amazon.com/Mission-Automotive-Dielectric-Silicone-Waterproof/dp/B016E5E59G/)
-2. [ IP68 Waterproof Electrical Junction Box, 3 Way Line Quick Wiring Connector](https://www.amazon.com/gp/product/B0C9ZVS7MN/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
-2. [White cotton fine-weave sheet](https://www.amazon.com/Plushy-Comfort-Luxury-Sheets-Egyptian/dp/B07J5HQRKT/?th=1)
-3. 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
-4. Plastic epoxy
-5. Spools of Wire
+
+2. [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
+   3. minimum 205x305mm (8x12in)    
+4. 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+5. Plastic epoxy
+6. Spools of Wire
     1. Red
     2. Black
-6. Wago connectors 
+7. Wago connectors 
     3. [https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1](https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1)
     4. [(or cheaper knock offs should work fine with low voltage like this)](https://www.amazon.com/Connectors-Delgada-Conductor-Connector-Electrical/dp/B09TS9YKV1/ref=sxin_14_sbv_search_btf?content-id=amzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59%3Aamzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59&crid=14GVQPDXZMRQ4&cv_ct_cx=wago%2Bconnectors&keywords=wago%2Bconnectors&pd_rd_i=B09TS9YKV1&pd_rd_r=e648f2b2-c3a9-45f5-ad6a-cc2c01313274&pd_rd_w=juJLN&pd_rd_wg=YJ3Yz&pf_rd_p=6ca944f8-539c-499e-a3a4-26a566d1de59&pf_rd_r=2FNDQ7ZAN1YRNZK0V47C&qid=1704033576&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=wago%2Bconne%2Caps%2C189&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776&th=1)
-7. M2 M2.5 and M3 Screws and nuts 
-8. Zip ties
-9. Materials Holder (Tripod or Big stake with 1/4in bolt)
+
+11. Strap (To attach to tree)
+1. [Dielectric grease (for additional waterproofing)](https://www.amazon.com/Mission-Automotive-Dielectric-Silicone-Waterproof/dp/B016E5E59G/)
