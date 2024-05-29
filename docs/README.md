@@ -1,4 +1,4 @@
-# Mothbox
+# Mothbox v4.0
 Developing an open source,low cost automated system for Moth-Lighting photography 
 ![1000064185](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b228871f-8424-435f-ba6c-6eb39d7c05a6)
 
