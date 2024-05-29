@@ -106,8 +106,8 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
-  - title: Mothbox GitHub
-    url: https://github.com/Digital-Naturalism-Laboratories/Mothbox
+  - title: Prev v3.21
+    url: https://digital-naturalism-laboratories.github.io/Mothboxv3.21/
 
 liquid:
    error_mode: strict
