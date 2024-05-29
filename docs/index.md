@@ -6,7 +6,7 @@ description: "The Mothbox is a low cost DIY insect monitor"
 permalink: /
 ---
 
-# Mothbox 3.21
+# Mothbox 4.0
 This Mothbox documentation will provide you with documentation for how to source, build, program, and use your mothbox!
 
 [Get started building your mothbox!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building)
