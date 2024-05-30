@@ -2,7 +2,7 @@
 layout: default
 title: Electronics Wiring
 parent: Building Mothbox
-has_children: true
+#has_children: true
 nav_order: 9
 ---
 
