@@ -1,67 +1,25 @@
 ---
 layout: default
-title: Physical Assembly
+title: Exterior
 parent: Building Mothbox
 has_children: true
 nav_order: 6
 ---
 
+The external design of the Mothbox 4.0 is much more streamlined than the previous 3.0 version.
 
-# Box bottom connector 
-
-Peel protective plastic of box connectors 
-![1000056124](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2eb399fb-99c9-4c32-9592-3107cd90a916)
-Stack box connectors in order F-A
-
-Layer F is the part That will be on the bottom making contact with the tripod.
-
-Layer A will be the top part of this that contacts the box.
-I generally assemble them starting from the bottom. 
-All the layers should face the same direction with the etching facing in the same direction. The only exception is between layers d and C where you want the etching sides to face each other to make a larger pocket for the Tee nut.
-Add ¼ socket Tee nut between layers D and C
-![1000056120](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/397c3a9f-e466-47bd-a7eb-b90b26fed4a4)
-![1000056118](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/759bc300-568c-444c-acf5-c9078ed29a04)
-![1000056119](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/93f8549b-c75b-4a8b-9632-10112371bde3)
-
-Stack box connectors A-F (use zip tie to line up)
+The mothbox consists of 3 main *external parts*
+* Target Display
+* Arms
+* Modified Plan 1460-00 box
 
 
-![1000056126](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/65fb41ad-23f9-4ae0-8d5d-84374c35beee)
-
-
-Add side flanges (face them towards flat side of layers a-f)
-![1000056128](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/c370bc74-9b08-48a6-b039-0d4cb1621984)
-
-
-Secure sides with ¼ bolt + nut (loosely is fine)
-![1000056082](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/68d93a1f-a599-49e1-9336-8ca7d610ff7b)
-
-(Optional) attach tripod shoe
-![1000056132](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4c48e2a6-cc34-489f-915b-352f51355e2b)
 
 # Modify the Box
 
-## cutting the base holes
-
-We need to make two holes for quarter inch bolts in the bottom of the waterproof box.
-
-After you assembled the bottom base structure, You can use it to set on the bottom of the box to align where your holes need to go. 
-![1000056706](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/da57f386-067d-4ccd-ada6-7ddcebd790cd)
-![1000056694](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/367d7ba5-7752-4f82-b034-8001880e7af5)
+## cutting arm holes
 
 
-Make sure that everything in the laser cut assembly is flush against the bottom of your box. 
-![1000056703](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f7310c0e-0551-4b90-9c0a-542ded2b2136)
-
-Then you can put a drill bit through the two holes (circled in this image), to lightly drill a mark into the bottom of the box. 
-![1000056700](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/072e6194-560a-4e90-a00c-f92d849c054f)
-
-You don't need to drill all the way through at this point just make a reference mark.
-![1000056697](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/26a4a96c-9789-4bb4-8cac-0a9ebcfa0e9a)
-Next, drill all the way through both of these areas that you have marked.
-
-![1000056763](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3163603f-b1fc-4ef3-a04f-c41181e6b975)
-![1000056764](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/31294baf-8da8-4c7a-acdd-68f36fa7fa2a)
 
 
 ## drill front lens hole
