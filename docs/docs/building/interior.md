@@ -37,3 +37,61 @@ Finally, using two M2 screws, you can attach the Camera into place
 ## Disassemble RingLight
 
 ## Connect Ringlight
+
+### First Side
+Feed the wires of the ringlight through the hole and position it flat against the mainboard.
+![PXL_20240528_220841309](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4f6cf390-ff8e-4120-af89-6f4546f5224c)
+
+Add zipties in these two locations to secure it.
+![PXL_20240528_220848536](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/7361216e-7226-4c31-bc23-418397c1125e)
+
+One rightlight should be finished and attached like this!
+
+
+![PXL_20240528_220852183](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/abac79cb-3ceb-478f-b910-7bbc837a81e8)
+
+### Second Side
+Place the second ring light with the wires towards the big open gap
+
+![PXL_20240528_221239622](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2f16ea18-048b-4787-a625-1ef429a1bd6d)
+You can zip its wires in place to stop them from getting tangled in things and help protect them
+![PXL_20240528_221257355](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/92ea5c0a-3e20-48d7-a837-731dcb4ba20e)
+
+Add zipties through these two holes
+![PXL_20240528_221243294](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b241f36d-b417-4dda-8d66-3a8db11dbfd6)
+
+
+# Connect the Raspberry Pi
+It sits in the corner. The four holes it connects to are marked with an extra tiny hole so you know which holes to line up.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b8fccf42-da9d-4776-9406-c5989ae9c8a8)
+
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bc582088-5682-4764-ad5f-4dd90c205dc5)
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/fffef7b3-921b-49cc-8629-786a10ecbf41)
+
+
+We will only connect 3 of the holes of the Raspberry Pi, because one is hidden behind the ringlight. (If you wish to connect the 4th hole, make sure to use a plastic bolt.)
+
+![PXL_20240528_221654951](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/7b368f8d-57c8-43cb-b7c4-463ab8504b19)
+
+Add three of the spacers on top of the Pi's holes like this.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/05b1540c-ab99-4aa9-9acb-91b6bbcc82f7)
+
+Screw them in from the other side
+![PXL_20240528_221455180](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1eea97a5-2d5c-49d1-970c-071a9e4d9f7c)
+
+# Trim Your Zip ties
+Now is a good time to trim up the ends of the zip ties you have sticking around
+![PXL_20240528_221836961](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b8328173-9122-4dd3-b99b-1df50e9d9fef)
+
+![PXL_20240528_221844778](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/064be564-d7e5-4d0b-a572-92959821fdf0)
+
+# Connect the Battery
+
+Unscrew these three screws from the bottom of your Battery
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a54fb25a-e785-4e21-a92b-25b139c71ca9)
+save the screws.
+Now screw the screws back in, connecting the battery to the mainboard.
+![PXL_20240528_222120764](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0970c63b-8e7e-4ce5-9636-8ad1c59c7ecb)
+
+# Add the Clips
+
