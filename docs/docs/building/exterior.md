@@ -10,16 +10,35 @@ The external design of the Mothbox 4.0 is much more streamlined than the previou
 
 The mothbox consists of 3 main *external parts*
 * Target Display
-* Arms
 * Modified Plan 1460-00 box
+* Arms
 
+# Assemble the Target
+This part is easy. You just glue the target material to the target. Using a spray adhesive tends to work well.
+
+1. Spray one side of your target material with glue.
+2. Make sure the protective plastic is peeled off the acrylic target
+3. lay the target material on top of the side of the target with the inverted logo. (you are covering up the logo)
+4. lay some heavy flat things on top of the target (to help make it extra flat)
+5. Let dry for a couple hours
 
 
 # Modify the Box
 
-## cutting arm holes
+## Drilling Arm Holes
+You should start with 4 laser cut arms. Each arm of the mothbox is made from 2 arms. This is for strength as well as redundancy. If one arm breaks in the field, you already have a backup!
+
+Lay an arm against the outside of the large plastic flanges.
+![PXL_20240528_232317327](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2726dd3f-8744-4ed5-91b6-420dca7e3246)
+
+Use a marker to mark exactly where the holes are.
+Using a 1/4in drill bit (6.5mm), cut two holes for the arm.
+Slide two 1/4in bolts through the holes and secure the arms
+![PXL_20240528_232310419-1](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d47191a6-9a04-4449-9628-6e883f4fed9b)
 
 
+Now you should be able to attach the target to the arms easily!
+![PXL_20240528_232346083](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ca003c30-0f24-4224-835c-1d6ec9733f67)
 
 
 ## drill front lens hole
