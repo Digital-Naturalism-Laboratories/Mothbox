@@ -93,5 +93,27 @@ save the screws.
 Now screw the screws back in, connecting the battery to the mainboard.
 ![PXL_20240528_222120764](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0970c63b-8e7e-4ce5-9636-8ad1c59c7ecb)
 
-# Add the Clips
+# Add the Clips to Mainboard
+Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
+
+![PXL_20240528_222623305](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/08c951be-c403-4b7e-a8e8-cc931cdb81f3)
+
+# Connect the camera cable to the Raspberry Pi
+Connect the ribbon cable to the raspberry pi
+if you are using a Pi5, make sure to connect to the first slot labeled "Cam0"
+![PXL_20240528_231930368](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f4a7a9ed-f9fc-4d4a-a23b-6be467ee18d4)
+
+# Attach Relay hat to Pi
+Place the relay hat on top of the Pi. Line up the GPIO pins, and press softly down.
+
+![PXL_20240528_232203873](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/12e258b0-b87f-45e9-a33e-db4c4d5466ff)
+![PXL_20240528_232157880](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b109ecf8-15d7-4353-881d-2379ee54c4f4)
+
+
+Be careful to not pinch the ribbon cable going to the camera
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1f5279fc-eac0-405d-94f5-5e2c0c5b5452)
+
+
+# Internals Constructed!
+Next you just need to [wire all your electronics together!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
 
