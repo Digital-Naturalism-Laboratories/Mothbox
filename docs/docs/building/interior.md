@@ -10,7 +10,12 @@ The inside of the mothbox has also been improved in version 4.0
 
 There is only one laser cut mainboard, and it fits more securely inside the box.
 
-There are 10 laser cut pieces you will assemble with electronics parts.
+There are 11 laser cut pieces you will assemble with electronics parts.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/883f6db1-aa59-4cb9-9e27-78b6f542c146)
+
+* Main board
+* 4 clips attach to main board
+* 6 camera glare blocker circles
 
 # Camera Glare Blocker
 
