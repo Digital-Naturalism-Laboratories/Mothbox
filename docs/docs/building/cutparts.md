@@ -20,6 +20,8 @@ The cam glare blockers should be cut out of OPAQUE acrylic if possible (or you c
 The arms should be cut out of CLEAR acrylic if possible. 
 
 Otherwise the colors don't really matter.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/08837630-b135-4a8a-92ae-f1c68122296e)
+
 
 # Felt
 The only other part to cut out is the felt cover for the target. Find some white acrylic felt, and cut out the file that says "Target Material"
