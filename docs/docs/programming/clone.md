@@ -22,9 +22,10 @@ use pishrink to shrink the file
 https://sigkillit.com/2022/10/13/shrink-a-raspberry-pi-or-retropie-img-on-windows-with-pishrink/
 c:/RPI/ is where our images are stored
 
+```
 cd /mnt/c/rpi
 sudo ./pishrink.sh retropie48.img
-
+```
 that shrinks it
 
 
