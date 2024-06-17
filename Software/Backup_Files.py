@@ -41,7 +41,7 @@ photos_folder = desktop_path / "photos"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
-internal_storage_minimum = 1
+internal_storage_minimum = 5
 
 print("----------------- STARTING BACKUP FILES-------------------")
 now = datetime.now()

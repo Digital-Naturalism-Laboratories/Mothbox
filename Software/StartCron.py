@@ -2,7 +2,7 @@
 
 import subprocess
 
-def stop_cron():
+def start_cron():
     """Runs the command 'service cron stop' to stop the cron service."""
     try:
         subprocess.run(["sudo", "service", "cron", "start"], check=True)
@@ -11,4 +11,4 @@ def stop_cron():
         print("Error starting cron service:", error)
 
 if __name__ == "__main__":
-    stop_cron()
+    start_cron()
