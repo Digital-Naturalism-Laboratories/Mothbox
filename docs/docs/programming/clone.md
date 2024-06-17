@@ -27,6 +27,15 @@ sudo ./pishrink.sh retropie48.img
 
 that shrinks it
 
+
+
+# Clean a mothbox data before cloning
+
+Clear the logs via
+```
+journalctl --vacuum-size=50M
+```
+
 then use win32 disk imager to put the image on a fresh SD card (can be different sizes too!)
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/caee452a-fef6-45ab-bd17-b40850fbc59d)
