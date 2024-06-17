@@ -32,6 +32,9 @@ that shrinks it
 
 # Clean a mothbox data before cloning
 
+This has good tips
+https://fleetstack.io/blog/disk-space-cleanup-raspberry-pi
+
 Clear the logs via
 ```
 journalctl --vacuum-size=50M
