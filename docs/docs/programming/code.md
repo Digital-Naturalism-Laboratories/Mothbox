@@ -34,18 +34,21 @@ yes
 Let's install some things
 ### Fix the GPIO pins for Pi5
 
+```
 sudo apt remove python3-rpi.gpio 
-
-sudo apt install python3-rpi-lgpio #this is the format change from pip3 install...
-
+sudo apt install python3-rpi-lgpio 
+#this is the format change from pip3 install...
+```
 ### Open CV and other Picamera Dependencies
-
+```
+sudo apt install python3-opencv
 sudo apt install -y python3-kms++
 sudo apt install -y python3-pyqt5 python3-prctl libatlas-base-dev ffmpeg python3-pip
 sudo apt install python3-numpy --upgrade
 sudo apt install python3-picamera2 --upgrade
 
-
+sudo apt install python3-crontab
+sudo apt install python3-schedule
 ```
 sudo nano /boot/firmware/config.txt
 (or if Pi 4)
@@ -53,6 +56,7 @@ sudo nano /boot/config.txt
 
 
 find this line and add the cam-512 part
+```
 dtoverlay=vc4-kms-v3d, cma-512
 
 
@@ -67,12 +71,11 @@ dtparam=rtc_bbat_vchg=3000000
 
 
 
-
-dtoverlay=ov64a40,cam0,link-frequency=456000000
+dtoverlay=ov64a40,cam0,link-frequency=360000000
+#camera_auto_detect=0 #I haven't needed this line
 
 (If you have a second camera you can also add it by adding a second line like this:
 dtoverlay=ov64a40,cam1,link-frequency=456000000
-#camera_auto_detect=0 #I haven't needed this line
 
 ```
 hit CTRL+X and save the file
@@ -94,6 +97,20 @@ sudo reboot now
 ```
 The pi should reboot, and now we should be able to go on the desktop with VNC
 ## Desktop Time
+open RealVNC
+
+mothbox.local
+pi and luna
+check save passowrd
+
+
+try a command like
+```
+libcamera-hello --info-text "lens %lp" -t 0
+```
+and it should open fine and display the image. If there is just a black screen, REALvnc might need to update.
+
+
 
 Make a folder on the Desktop called "Mothbox"
 
@@ -101,11 +118,8 @@ Paste everything from Software in the github code repo in there
 
 
 
-enter the command
-```
-cat /proc/meminfo
-```
-and your CmaTotal: should say something like 524288 kB (if not, double check your /boot/config.txt was saved correctly and restart)
+run TakePhoto.py inside the Mothbox folder. It should take some photos and save them in the photos folder
+
 
 
 
@@ -153,7 +167,7 @@ sudo reboot
 
 open RealVNC
 
-mothbox01.local
+mothbox.local
 
 save passowrd
 
@@ -269,7 +283,7 @@ sudo python Relay_Module.py
 ## Schedule Library
 `sudo apt install python3-schedule`
 
-Low Power Things:
+# Low Power Things:
 /usr/bin/tvservice -o
 
 sudo ifconfig wlan0 up // might not kill power
@@ -281,12 +295,12 @@ dtoverlay=disable-wifi
 dtoverlay=disable-bt
 
 # RPI OS Bookworm 64 bit - 01/03/2024
-mothbox01.local User: pi Pass: luna
+mothbox.local User: pi Pass: luna
 
-ssh pi@mothbox01.local
+ssh pi@mothbox.local
 type yes
 
-gimmemoths
+luna
 
 sudo raspi-config
 
