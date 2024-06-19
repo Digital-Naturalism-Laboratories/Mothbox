@@ -13,6 +13,8 @@ mothbox.local
 user: pi
 pass: luna
 
+## Terminal Time
+
 ```
 ssh pi@mothbox01.local
 sudo raspi-config
@@ -28,6 +30,21 @@ sudo apt-get upgrade
 yes
 ```
 (Wait for any updates)
+
+Let's install some things
+### Fix the GPIO pins for Pi5
+
+sudo apt remove python3-rpi.gpio 
+
+sudo apt install python3-rpi-lgpio #this is the format change from pip3 install...
+
+### Open CV and other Picamera Dependencies
+
+sudo apt install -y python3-kms++
+sudo apt install -y python3-pyqt5 python3-prctl libatlas-base-dev ffmpeg python3-pip
+sudo apt install python3-numpy --upgrade
+sudo apt install python3-picamera2 --upgrade
+
 
 ```
 sudo nano /boot/firmware/config.txt
@@ -76,6 +93,22 @@ hit CTRL+X and save the file
 sudo reboot now
 ```
 The pi should reboot, and now we should be able to go on the desktop with VNC
+## Desktop Time
+
+Make a folder on the Desktop called "Mothbox"
+
+Paste everything from Software in the github code repo in there
+
+
+
+enter the command
+```
+cat /proc/meminfo
+```
+and your CmaTotal: should say something like 524288 kB (if not, double check your /boot/config.txt was saved correctly and restart)
+
+
+
 
 
 -----------------------------------------------
@@ -248,7 +281,7 @@ dtoverlay=disable-wifi
 dtoverlay=disable-bt
 
 # RPI OS Bookworm 64 bit - 01/03/2024
-mothbox01.local User: pi Pass: gimmemoths
+mothbox01.local User: pi Pass: luna
 
 ssh pi@mothbox01.local
 type yes
