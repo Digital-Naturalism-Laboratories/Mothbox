@@ -5,9 +5,81 @@ parent: Programming Mothbox
 has_children: true
 nav_order: 6
 ---
-Instructions for a Mothbox v3.21 Image on a Raspberry Pi 4
-
+Instructions for a Mothbox v4.o Image on a Raspberry Pi 5 (and hopefully works on a 4 too!)
 Most of the time you can just clone an image to an SD card of a mothbox, but if you want to code your own from scratch starting from a fresh install of a raspberry pi, follow these instructions
+# RPI 5 Bookworm from scratch
+
+mothbox.local
+user: pi
+pass: luna
+
+```
+ssh pi@mothbox01.local
+sudo raspi-config
+interface options
+VNC
+enable
+exit
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+yes
+```
+(Wait for any updates)
+
+```
+sudo nano /boot/firmware/config.txt
+(or if Pi 4)
+sudo nano /boot/config.txt
+
+
+find this line and add the cam-512 part
+dtoverlay=vc4-kms-v3d, cma-512
+
+
+#Find the line: [all], add the following items under it:
+
+#Disable Bluetooth
+dtoverlay=disable-bt
+
+#This sets us the rechargable RTC battery to charge itself
+dtparam=rtc_bbat_vchg=3000000
+#3000000 indicates the maximum voltage, charging to 3V will disable charging, and the voltage lower than 3V will start to trickle charging
+
+
+
+
+dtoverlay=ov64a40,cam0,link-frequency=456000000
+
+(If you have a second camera you can also add it by adding a second line like this:
+dtoverlay=ov64a40,cam1,link-frequency=456000000
+#camera_auto_detect=0 #I haven't needed this line
+
+```
+hit CTRL+X and save the file
+
+now we edit a different file to make the pi5 handle its power more efficiently and let us wake it up
+```
+#To support low-power mode for wake-up alerts, go to configuration:
+
+sudo -E rpi-eeprom-config --edit
+
+#Add the following two lines:
+POWER_OFF_ON_HALT=1
+WAKE_ON_GPIO=0
+```
+hit CTRL+X and save the file
+
+```
+sudo reboot now
+```
+The pi should reboot, and now we should be able to go on the desktop with VNC
+
+
+-----------------------------------------------
+
 
 (Follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
 
@@ -314,6 +386,8 @@ To support low-power mode for wake-up alerts, add the configuration:
 Add the following two lines:
 `POWER_OFF_ON_HALT=1`
 `WAKE_ON_GPIO=0`
+
+
 
 You can use the following method to test the function:  
 `echo +600 | sudo tee /sys/class/rtc/rtc0/wakealarm`
