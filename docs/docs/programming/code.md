@@ -14,9 +14,9 @@ Most of the time you can just clone an image to an SD card of a mothbox, but if 
 # RPI legacy Bullseye 32bit os
 flash with
 
-mothbox01.local
+mothbox.local
 User: pi
-Pass: gimmemoths
+Pass: luna
 
 ssh pi@mothbox01.local
 
