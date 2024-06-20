@@ -54,7 +54,7 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(Relay_Ch1,GPIO.OUT)
 GPIO.setup(Relay_Ch2,GPIO.OUT)
-GPIO.setup(Relay_Ch3,GPIO.OUT)
+#GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
 
