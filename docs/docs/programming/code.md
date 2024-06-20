@@ -7,7 +7,7 @@ nav_order: 6
 ---
 Instructions for a Mothbox v4.o Image on a Raspberry Pi 5 (and hopefully works on a 4 too!)
 Most of the time you can just clone an image to an SD card of a mothbox, but if you want to code your own from scratch starting from a fresh install of a raspberry pi, follow these instructions
-# RPI 5 Bookworm from scratch
+# RPI 5 Bookworm from scratch (June 20, 2024)
 
 mothbox.local
 user: pi
@@ -140,6 +140,8 @@ upon reboot everthing should be working in mothbox mode!
 
 if somethign isn't working, check the logs and see if there's a problem.
 for instance my photos weren't taking, and in the TakePhoto.log, i got an error that said "Permission denied" so i righ clicked takephoto.py, and set its permissions to allow execution, and it worked great!
+
+
 
 
 ## Clean up the image (cut the fat)
@@ -390,66 +392,8 @@ sudo apt update
 
 ------------------------------------------------------------
 
-# Making the mothbox its own wifi
-from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
-
-download
-curl "https://www.raspberryconnect.com/images/scripts/AccessPopup.tar.gz" -o AccessPopup.tar.gz
-
-unarchive with
-tar -xvf ./AccessPopup.tar.gz
-change to the AccessPopup folder
-cd AccessPopup
-Run the Installer script
-sudo ./installconfig.sh
-
-The menu options below will be presented. Use option 1 to install the AccessPopup scripts.
-This will automatically start monitoring the wifi connection every 2 minutes. It will also check the wifi at startup and then at every 2 minute intervals.
-
-![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/19c3634d-27ad-4be7-b759-41f9e4c235f7)
-
-mothboxwifi
-luna
-
-Sometimes it is useful to be able to use the AccessPoint even though the Pi is in range of a known WiFi network.
-This can be done by opening a terminal window and entering the command:
-sudo accesspopup -a
-
-to go back to normal use, just run the script without the -a argument.
-sudo accesspopup
-
-alternately use option 4 "Live Switch..." on this installer script.
-
-## to connect to the wifi hotspot
-
-just vnc to
-mothbox
-
-or if that is being weird for some reason, go to the default ip address
-the default IP address is 192.168.50.5
-`ssh pi@192.168.50.5`
-or vnc to
-
-`192.168.50.5`
 
 
-## To add new Wifi to the pi
-
-
-cd AccessPopup
-Run the Installer script
-sudo ./installconfig.sh
-
-choose OPTION 5 and you can add a new wifi
-
-## To start up the hotspot manually
-`sudo accesspopup -a`
-
-to stop the hotspot
-`sudo accesspopup`
-
-## Add crontab library
-`sudo apt install python3-crontab`
 
 # RPI 5 Coding
 
@@ -511,5 +455,69 @@ dtoverlay=ov64a40,cam1,link-frequency=456000000
 https://forums.raspberrypi.com/viewtopic.php?p=2160578#p2160578
 `sudo apt remove python3-rpi.gpio`
 `sudo apt install python3-rpi-lgpio #this is the format change from pip3 install...`
+
+## Make pi its own wifi hotspot
+
+from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
+
+download
+curl "https://www.raspberryconnect.com/images/scripts/AccessPopup.tar.gz" -o AccessPopup.tar.gz
+
+unarchive with
+tar -xvf ./AccessPopup.tar.gz
+change to the AccessPopup folder
+cd AccessPopup
+Run the Installer script
+sudo ./installconfig.sh
+
+The menu options below will be presented. Use option 1 to install the AccessPopup scripts.
+This will automatically start monitoring the wifi connection every 2 minutes. It will also check the wifi at startup and then at every 2 minute intervals.
+
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/19c3634d-27ad-4be7-b759-41f9e4c235f7)
+
+mothboxwifi
+luna
+
+to make sure it runs you might have to add this to cron
+```
+*/2 * * * * sudo /usr/bin/accesspopup >/dev/null 2>&1
+```
+
+Sometimes it is useful to be able to use the AccessPoint even though the Pi is in range of a known WiFi network.
+This can be done by opening a terminal window and entering the command:
+sudo accesspopup -a
+
+to go back to normal use, just run the script without the -a argument.
+sudo accesspopup
+
+alternately use option 4 "Live Switch..." on this installer script.
+
+## to connect to the wifi hotspot
+
+just vnc to
+mothbox
+
+or if that is being weird for some reason, go to the default ip address
+the default IP address is 192.168.50.5
+`ssh pi@192.168.50.5`
+or vnc to
+
+`192.168.50.5`
+
+
+## To add new Wifi to the pi
+
+
+cd AccessPopup
+Run the Installer script
+sudo ./installconfig.sh
+
+choose OPTION 5 and you can add a new wifi
+
+## To start up the hotspot manually
+`sudo accesspopup -a`
+
+to stop the hotspot
+`sudo accesspopup`
 
 
