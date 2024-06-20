@@ -12,14 +12,39 @@ We worked hard to keep the electronics as simple as possible so many people will
 Follow along and fear not!
 
 # Overview
-Here's a temporary diagram
+Here's a temporary diagram. You are basically connecting the Attractor lights and the Flash lights to the battery's 12V power source via the relays that we can switch on and off.
 ![PXL_20240615_195332839](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/58deee13-4b66-4fa3-883e-b2eaaa2e85b1)
 
 
-# Start from the Battery Output
+# Wiring Guide
+## Start from the OUTPUT of the battery
+![PXL_20240620_141719276](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bda29859-2576-4e1f-9fcf-eb3ed73a26cf)
+
+Start with a barrel plug wire with two free ends. (I actually chopped my barrel plug wire from one that came with a power supply for the LED ring lights!)
+This is the plug that will go into the OUTPUT of the battery. Don't plug it into the battery yet, we want to safely connect everything first and then connect it!
+
+![PXL_20240620_141746112](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/361faa84-31e9-440d-b031-0833ef7a540e)
+
+Attach two lever nuts to each wire. For the positive (+) red wire, you just need a lever nut with 3 ports. For the black (-) negative wire, you want a lever nut with at least 4 ports because many of the grounds get tied together here.
+![PXL_20240620_142426165](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377c88cd-af71-43a1-9f9f-e62d86212ffe)
+
+## Connect the centers of the relays
+
+with the two wires coming out of the + positive red wire, you can send these to the middle ports of the middle and left relays.
+![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/e6988309-325d-49a0-8c6f-51e9147334ad)
 
 
+## Connect the Ring Lights
+Use an Inline lever nut to connect the negative and positive wires coming from the control board of each LED ring light.
+![PXL_20240620_143116025](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5f14c01b-00cc-4b98-81df-b84dc81b4b2b)
+![PXL_20240620_143121252](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/572008a0-f0d9-403b-9b24-95547c1f4353)
 
+Now connect a wire (preferably red) to the positive side of each of the ring lights' lever nuts, and connect that wire to the middle relay's left-most hole. You can jam both wires into the hole. And then tighten it down.
+![PXL_20240620_143842735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bada9af1-6a8b-40d0-803c-05b4fa02eb03)
+
+![PXL_20240620_143859392](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a6a50e01-838d-4e9f-8eb0-c50d824af6cd)
+
+![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3fb5a7c0-a3e1-4060-9ebb-d3ec70d6756b)
 
 
 
