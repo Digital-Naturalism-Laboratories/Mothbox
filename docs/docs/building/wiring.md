@@ -31,7 +31,7 @@ Attach two lever nuts to each wire. For the positive (+) red wire, you just need
 ## Connect the centers of the relays
 
 with the two wires coming out of the + positive red wire, you can send these to the middle ports of the middle and left relays.
-![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/e6988309-325d-49a0-8c6f-51e9147334ad)
+![PXL_20240620_143402254](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/8a32a930-fdc2-45b0-ae3c-8fb9755ab6b8)
 
 
 ## Connect the Ring Lights
@@ -46,9 +46,33 @@ Now connect a wire (preferably red) to the positive side of each of the ring lig
 
 ![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3fb5a7c0-a3e1-4060-9ebb-d3ec70d6756b)
 
+## Connect the UV Attractor Light
+connect the positive wire from the UV light to the left most hole of the left most relay (channel 3)
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b762c973-733c-46cc-b772-a1bd11b6d4e7)
+
+## Connect all the NEGATIVE GROUND wires together
+Now we will attach a black wire to each of the LED ring lights connecting to their negative (-) ground wire in the lever nut.
+![PXL_20240620_144525576](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0a34f1ac-130c-40ae-bf7f-38df4cf32cee)
+After you connect a wire to both ring lights, you can then connect the wires to the lever nut that connects to the battery plug. Connect the negative black wire from the UV light too.
+![PXL_20240620_144648932](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b3aa68ac-4c4c-46dd-94dc-d66e3dddd796)
+
+All the black negative wires all connect together at the lever nut that plugs into the battery.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0d2fb85f-1de3-48aa-ad94-c87a5f8dcd19)
+
+# Connect to Battery
+Yay the main wiring is mostly done. You can connect the plug to the OUT port of the battery,
+![PXL_20240620_150405167](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d7341c03-60b4-4ac5-95bc-074fe199cf7a)
 
 
-# Add charging port
+and also plug a USB cable into the raspberry pi and connect it to the battery's USB port.
+![PXL_20240620_150426860](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4673a506-74e9-4d02-bd75-125442b1d69e)
+
+When you flip the switch, everything should turn on.
+![PXL_20240620_150447777](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/733881f7-a3d0-4b95-9e71-31fe0f7f33eb)
+
+You probably want to add a charging port though, so check out the next step.
+
+# Add charging port (Optional, but nice)
 a nice waterproof charging port will make it much easier to use the mothbox! It's not too difficult to add either!
 ![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
 ![PXL_20240620_193450178](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/599533bd-8736-4c59-a80a-1b78619faf76)
@@ -92,8 +116,13 @@ When you aren't charging it, you can put the rubber cap over the port to protect
 
 
 Hooray, your charging port should be all set!
+![PXL_20240620_191035108](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/43c57308-e4ac-49f0-9e67-e7706c96459d)
+
 
 # Test everything
-You should now be able to put an [SD card with a latest image]()
-![PXL_20240620_191035108](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/43c57308-e4ac-49f0-9e67-e7706c96459d)
+You should now be able to put an [SD card with a latest image](https://drive.google.com/drive/u/0/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF)
+and turn on the battery, and everything should start blinking and flashing after just a couple minutes of startup!
+![PXL_20240620_150959340](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d4d6866a-229f-4dd8-9291-b56a2386925b)
+![PXL_20240620_151225454](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f3e75100-5bcb-4b72-a5e4-8ae6af3690f2)
+
 
