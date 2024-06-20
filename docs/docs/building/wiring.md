@@ -43,9 +43,21 @@ You can use a razor blade to remove any burrs from the edges of the hole you mad
 ![PXL_20240620_185721979](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/e548a86a-03da-4662-8dc4-59c851655ff2)
 
 Slide the socket into place. The rubber stopper and gasket should be on the outside, and the metal washer and nut should come on the inside after it. Tighten it well.
-![Uploading image.png…]()
-![Uploading image.png…]()
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4876edc3-8cdb-4c24-a8a7-d3b466d5fd8a)
+If you are really paranoid about moisture, you can hot glue or silicone around your port to make it extra secure.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/59105d35-93fc-433c-bc66-981e39d7e803)
 
+## Wiring
+use an inline lever nut to connect the socket to the plug
+
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ef06751f-ea85-4ae8-89ce-63c4495adaf8)
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/dda78c19-a41c-4487-97c4-7330b2ab44c9)
+
+Now you can connect the plug to the IN port of your battery.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/658a6754-0f17-4b44-ab27-db76b8c48800)
+
+Try it out, your battery should charge now when it is connected to the external port.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b6aa7c63-54ab-48ab-a8bf-e5a2a70c4ab6)
 
 
 When you aren't charging it, you can put the rubber cap over the port to protect it from moisture.
@@ -54,6 +66,9 @@ When you aren't charging it, you can put the rubber cap over the port to protect
 ![PXL_20240620_191745790](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2236189f-2b7f-4016-8910-c8cb9f18bcbd)
 
 
-Hooray, your charging port should be all set
+Hooray, your charging port should be all set!
+
+# Test everything
+You should now be able to put an [SD card with a latest image]()
 ![PXL_20240620_191035108](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/43c57308-e4ac-49f0-9e67-e7706c96459d)
 
