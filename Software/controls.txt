@@ -1,5 +1,5 @@
 shutdown_enabled=True
 minutes=69
 OnlyFlash=False
-LastCalibration=1718634975.2648125
-name=studyCod
+LastCalibration=1718882597.0852063
+name=flatHāpuku

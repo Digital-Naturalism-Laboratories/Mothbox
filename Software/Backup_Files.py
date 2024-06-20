@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """
 Backupper Script
 This script is for folks collecting lots of data automatically that needs to get backed up at certain intervals
@@ -41,7 +43,7 @@ photos_folder = desktop_path / "photos"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
-internal_storage_minimum = 5
+internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
 
 print("----------------- STARTING BACKUP FILES-------------------")
 now = datetime.now()
