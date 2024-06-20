@@ -5,18 +5,166 @@ parent: Programming Mothbox
 has_children: true
 nav_order: 6
 ---
-Instructions for a Mothbox v3.21 Image on a Raspberry Pi 4
-
+Instructions for a Mothbox v4.o Image on a Raspberry Pi 5 (and hopefully works on a 4 too!)
 Most of the time you can just clone an image to an SD card of a mothbox, but if you want to code your own from scratch starting from a fresh install of a raspberry pi, follow these instructions
+# RPI 5 Bookworm from scratch
 
-(Follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
+mothbox.local
+user: pi
+pass: luna
+
+## Terminal Time
+
+```
+ssh pi@mothbox01.local
+sudo raspi-config
+interface options
+VNC
+enable
+exit
+
+sudo apt-get update
+
+sudo apt-get upgrade
+
+yes
+```
+(Wait for any updates)
+
+Let's install some things
+### Fix the GPIO pins for Pi5
+
+```
+sudo apt remove python3-rpi.gpio 
+sudo apt install python3-rpi-lgpio 
+#this is the format change from pip3 install...
+```
+### Open CV and other Picamera Dependencies
+```
+sudo apt install python3-opencv
+sudo apt install -y python3-kms++
+sudo apt install -y python3-pyqt5 python3-prctl libatlas-base-dev ffmpeg python3-pip
+sudo apt install python3-numpy --upgrade
+sudo apt install python3-picamera2 --upgrade
+
+sudo apt install python3-crontab
+sudo apt install python3-schedule
+```
+sudo nano /boot/firmware/config.txt
+(or if Pi 4)
+sudo nano /boot/config.txt
+
+
+find this line and add the cam-512 part
+```
+dtoverlay=vc4-kms-v3d, cma-512
+
+
+#Find the line: [all], add the following items under it:
+
+#Disable Bluetooth
+dtoverlay=disable-bt
+
+#This sets us the rechargable RTC battery to charge itself
+dtparam=rtc_bbat_vchg=3000000
+#3000000 indicates the maximum voltage, charging to 3V will disable charging, and the voltage lower than 3V will start to trickle charging
+
+
+
+dtoverlay=ov64a40,cam0,link-frequency=360000000
+#camera_auto_detect=0 #I haven't needed this line
+
+(If you have a second camera you can also add it by adding a second line like this:
+dtoverlay=ov64a40,cam1,link-frequency=456000000
+
+```
+hit CTRL+X and save the file
+
+now we edit a different file to make the pi5 handle its power more efficiently and let us wake it up
+```
+#To support low-power mode for wake-up alerts, go to configuration:
+
+sudo -E rpi-eeprom-config --edit
+
+#Add the following two lines:
+POWER_OFF_ON_HALT=1
+WAKE_ON_GPIO=0
+```
+hit CTRL+X and save the file
+
+```
+sudo reboot now
+```
+The pi should reboot, and now we should be able to go on the desktop with VNC
+## Desktop Time
+open RealVNC
+
+mothbox.local
+pi and luna
+check save passowrd
+
+
+try a command like
+```
+libcamera-hello --info-text "lens %lp" -t 0
+```
+and it should open fine and display the image. If there is just a black screen, REALvnc might need to update.
+
+
+
+Make a folder on the Desktop called "Mothbox"
+
+Paste everything from Software in the github code repo in there
+
+
+
+run TakePhoto.py inside the Mothbox folder. It should take some photos and save them in the photos folder
+
+## set up the crontab
+
+make sure to do SUDO crontab -e not just crontab -e because our scripts need to run as root because they change system things like wakeup times
+```
+sudo crontab -e
+```
+add these lines for a default scheduling
+```
+*/1 * * * * cd /home/pi/Desktop/Mothbox && python3 Backup_Files.py >> /home/pi/Desktop/Mothbox/logs/Backup_log.txt 2>&1
+*/1 * * * * cd /home/pi/Desktop/Mothbox && python3 Attract_On.py >> /home/pi/Desktop/Mothbox/logs/Attract_On_log.txt 2>&1
+*/1 * * * * /home/pi/Desktop/Mothbox/TakePhoto.py >> /home/pi/Desktop/Mothbox/logs/TakePhoto_log.txt 2>&1
+@reboot /usr/bin/python3 /home/pi/Desktop/Mothbox/Scheduler_Pi5.py >> /home/pi/Desktop/Mothbox/logs/Scheduler_log.txt 2>&1
+```
+change that last line to SchedulerPi4.py if using a pi4 instead.
+hit CTRL+X and save, and reboot.
+
+upon reboot everthing should be working in mothbox mode!
+
+if somethign isn't working, check the logs and see if there's a problem.
+for instance my photos weren't taking, and in the TakePhoto.log, i got an error that said "Permission denied" so i righ clicked takephoto.py, and set its permissions to allow execution, and it worked great!
+
+
+## Clean up the image (cut the fat)
+
+sudo apt-get clean
+
+sudo apt-get autoremove
+
+sudo apt-get remove --purge firefox
+
+ sudo apt-get remove --purge chromium-browser
+
+ sudo  truncate  -s 0 *.log
+-----------------------------------------------
+
+
+
 
 # RPI legacy Bullseye 32bit os
+(Follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
 flash with
 
-mothbox01.local
+mothbox.local
 User: pi
-Pass: gimmemoths
+Pass: luna
 
 ssh pi@mothbox01.local
 
@@ -48,7 +196,7 @@ sudo reboot
 
 open RealVNC
 
-mothbox01.local
+mothbox.local
 
 save passowrd
 
@@ -164,7 +312,7 @@ sudo python Relay_Module.py
 ## Schedule Library
 `sudo apt install python3-schedule`
 
-Low Power Things:
+# Low Power Things:
 /usr/bin/tvservice -o
 
 sudo ifconfig wlan0 up // might not kill power
@@ -176,12 +324,12 @@ dtoverlay=disable-wifi
 dtoverlay=disable-bt
 
 # RPI OS Bookworm 64 bit - 01/03/2024
-mothbox01.local User: pi Pass: gimmemoths
+mothbox.local User: pi Pass: luna
 
-ssh pi@mothbox01.local
+ssh pi@mothbox.local
 type yes
 
-gimmemoths
+luna
 
 sudo raspi-config
 
@@ -240,6 +388,7 @@ sudo apt update
  `sudo apt install libreoffice-calc`
 
 
+------------------------------------------------------------
 
 # Making the mothbox its own wifi
 from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
@@ -314,6 +463,8 @@ To support low-power mode for wake-up alerts, add the configuration:
 Add the following two lines:
 `POWER_OFF_ON_HALT=1`
 `WAKE_ON_GPIO=0`
+
+
 
 You can use the following method to test the function:  
 `echo +600 | sudo tee /sys/class/rtc/rtc0/wakealarm`
