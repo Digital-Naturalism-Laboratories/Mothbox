@@ -120,17 +120,46 @@ Paste everything from Software in the github code repo in there
 
 run TakePhoto.py inside the Mothbox folder. It should take some photos and save them in the photos folder
 
+## set up the crontab
+
+make sure to do SUDO crontab -e not just crontab -e because our scripts need to run as root because they change system things like wakeup times
+```
+sudo crontab -e
+```
+add these lines for a default scheduling
+```
+*/1 * * * * cd /home/pi/Desktop/Mothbox && python3 Backup_Files.py >> /home/pi/Desktop/Mothbox/logs/Backup_log.txt 2>&1
+*/1 * * * * cd /home/pi/Desktop/Mothbox && python3 Attract_On.py >> /home/pi/Desktop/Mothbox/logs/Attract_On_log.txt 2>&1
+*/1 * * * * /home/pi/Desktop/Mothbox/TakePhoto.py >> /home/pi/Desktop/Mothbox/logs/TakePhoto_log.txt 2>&1
+@reboot /usr/bin/python3 /home/pi/Desktop/Mothbox/Scheduler_Pi5.py >> /home/pi/Desktop/Mothbox/logs/Scheduler_log.txt 2>&1
+```
+change that last line to SchedulerPi4.py if using a pi4 instead.
+hit CTRL+X and save, and reboot.
+
+upon reboot everthing should be working in mothbox mode!
+
+if somethign isn't working, check the logs and see if there's a problem.
+for instance my photos weren't taking, and in the TakePhoto.log, i got an error that said "Permission denied" so i righ clicked takephoto.py, and set its permissions to allow execution, and it worked great!
 
 
+## Clean up the image (cut the fat)
 
+sudo apt-get clean
 
+sudo apt-get autoremove
 
+sudo apt-get remove --purge firefox
+
+ sudo apt-get remove --purge chromium-browser
+
+ sudo  truncate  -s 0 *.log
 -----------------------------------------------
 
 
-(Follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
+
 
 # RPI legacy Bullseye 32bit os
+(Follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
 flash with
 
 mothbox.local
@@ -359,6 +388,7 @@ sudo apt update
  `sudo apt install libreoffice-calc`
 
 
+------------------------------------------------------------
 
 # Making the mothbox its own wifi
 from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
