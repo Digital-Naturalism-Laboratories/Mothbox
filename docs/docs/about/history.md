@@ -1,7 +1,7 @@
 ---
 layout: default
 title: History
-parent: About
+parent: About the Mothbox
 has_children: false
 nav_order: 6
 ---
