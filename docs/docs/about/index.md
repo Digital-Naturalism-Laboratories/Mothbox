@@ -1,7 +1,7 @@
 ---
 layout: default
 title: About the Mothbox
-nav_order: 99
+nav_order: 10
 has_children: true
 permalink: /docs/about
 ---
