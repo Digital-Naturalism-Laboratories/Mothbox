@@ -57,7 +57,7 @@ It also started showing us just some of the power of this device, when, on one o
 
 **$16,000 USD**
 
-In late 2023 we recieved an Experiment.com micro-grant for 10K for continued development of the mothbox with Moth researcher Yash Sondhi. This money was put towards the development of a more robust version of the mothbox. Dr. Daisy Dent also contributed 6k of her lab money to sponsore more development and testing of the Mothbox.
+In late 2023 we recieved an Experiment.com micro-grant for 10K for continued development of the mothbox with Moth researcher Yash Sondhi. This money was put towards the development of a more robust version of the mothbox. Dr. Daisy Dent also contributed 6k of her lab money to sponsor more development and testing of the Mothbox.
 
 ![Mothbox on BCI, Panama](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/60553b50-f6b1-440c-9f87-c0ffdbee861e)
 
