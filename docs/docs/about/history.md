@@ -87,6 +87,7 @@ The v4 has many features that improved upon previous versiions such as
 * clearer documentation
 * Improved power management in the software
 * Ability to function as its own hotspot for debugging
+* Refined options for UV attractants (Mothbeam, external or internal attractors)
 
 
 # Acknowledgements
