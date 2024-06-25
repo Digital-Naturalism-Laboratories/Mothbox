@@ -74,6 +74,20 @@ We began deploying v3 Mothboxes in western panama in conjunction with Hubert's b
 
 Bri Johns, Dinalab's visiting Fulbright researcher is also joining the project to help facilitate the V4 development of the mothbox by also leading community workshops in Panama to train folks on its use and development. Yash Sondhi is also hiring Andy from Dinalab to run a workshop with scientists at Georgia Tech to build an armada of mothboxes to deploy in other locations.
 
+The v4 has many features that improved upon previous versiions such as
+* works with Pi 5 without a pijuice (or backwards compatible with a Pijuice and Pi4 combination)
+* works with Hawkeye 64mp cameras or newer Owlsight cameras
+* Automatically generates unique, human readable names for each Mothbox in English, Spanish, or Spanglish combinations
+* Parts costs has been reduced by over 30%
+* 60% less custom materials to produce in its design
+* tougher parts, and fewer breakable parts
+* much quicker construction (1-2 hours)
+* Easier to carry
+* Lighter weight
+* clearer documentation
+* Improved power management in the software
+* Ability to function as its own hotspot for debugging
+
 
 # Acknowledgements
 
