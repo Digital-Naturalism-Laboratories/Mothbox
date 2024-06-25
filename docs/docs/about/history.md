@@ -55,16 +55,43 @@ It also started showing us just some of the power of this device, when, on one o
 # V3
 *2023 Q3-4*
 
-**$15,000 USD**
+**$16,000 USD**
 
-Experiment.com and Daisy Dent
+In late 2023 we recieved an Experiment.com micro-grant for 10K for continued development of the mothbox with Moth researcher Yash Sondhi. This money was put towards the development of a more robust version of the mothbox. Dr. Daisy Dent also contributed 6k of her lab money to sponsore more development and testing of the Mothbox.
+
+The v3 featured more refined lazer cut components that could be quickly assembled and dissasembled in the field. It used a Pi4 and Pijuice for scheduling its power.
+![PXL_20240308_033243240 NIGHT](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/88267578-e909-4a7c-b93d-7ade287dd59f)
+
+
 
 # V4
 *2024 Q1 -2025 Q1*
 
 **$70,000 USD**
 
-Wildlabs Grant and Continued Daisy Dent
+
+We began deploying v3 Mothboxes in western panama in conjunction with Hubert's biodiversity reserach with Pro-eco azuero and Ponterra. We also applied to and won the top tier of the Wildlab's 2024 grants. This gave us 60K to develop, test and document the mothbox to take the project to the next level in global use as a ubiquitous tool. Daisy Dent also contributed another 7k from her lab's funds to help further develop the Mothbox's hardware and software.
+
+Bri Johns, Dinalab's visiting Fulbright researcher is also joining the project to help facilitate the V4 development of the mothbox by also leading community workshops in Panama to train folks on its use and development. Yash Sondhi is also hiring Andy from Dinalab to run a workshop with scientists at Georgia Tech to build an armada of mothboxes to deploy in other locations.
 
 
-Wildlabs
+# Acknowledgements
+
+The Mothbox has been made possibly with help from many individuals and groups like 
+* Andrew Quitmeyer
+* Hubert Szczgiel
+* Kitty Quitmeyer
+* Daisy Dent
+* Yash Sondhi
+* Crowther Lab
+* Owen Mcmillan
+* Sol Parra Santos
+* Experiment.com
+* Wildlabs.net
+* GOSH community openhardware.science
+* Christopher Lawrence
+* Phoebe Zarnetske
+* Pro-eco azuero
+* Ponterra
+* Beetlepalooza
+
