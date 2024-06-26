@@ -33,7 +33,7 @@ import shutil
 import psutil
 from pathlib import Path
 from datetime import datetime
-
+import sys
 
 # Define paths
 desktop_path = Path(
@@ -175,51 +175,94 @@ def rsync_copy_and_delete_files(source_dir, dest_dir):
 
     return process.returncode
 
-
-# older way of just copying items in the folder
 def copy_photos_to_backup(source_folder, target_folder):
-    """
-    Copies all files from the source folder to the target folder.
+  """
+  Copies all files and subfolders from the source folder to the target folder recursively,
+  handling existing dated folders and copying their contents.
 
-    Args:
-        source_folder: The path to the source folder.
-        target_folder: The path to the target folder.
-    """
-    if not os.path.exists(target_folder):
-        os.makedirs(target_folder)
-        os.chmod(target_folder, 0o777) # mode=0o777 for read write for all users
+  Args:
+      source_folder: The path to the source folder.
+      target_folder: The path to the target folder.
+  """
+  if not os.path.exists(target_folder):
+    os.makedirs(target_folder)
+    os.chmod(target_folder, 0o777)  # mode=0o777 for read write for all users
 
-    for filename in os.listdir(source_folder):
-        source_path = os.path.join(source_folder, filename)
-        target_path = os.path.join(target_folder, filename)
-        shutil.copy2(source_path, target_path)  # Preserves file metadata
-        # Set read-write permissions for all users
-        os.chmod(target_path, 0o777) # mode=0o777 for read write for all users
+  for item in os.listdir(source_folder):
+    source_path = os.path.join(source_folder, item)
+    target_path = os.path.join(target_folder, item)
 
-def delete_files_after_check(source_dir, dest_dir):
-    """
+    if os.path.isfile(source_path):
+      shutil.copy2(source_path, target_path)  # Copy files
+      os.chmod(target_path, 0o777)  # Set permissions for copied files
+    else:
+      # Handle existing dated folders
+      if not os.path.exists(target_path):
+        shutil.copytree(source_path, target_path)  # Copy subdirectory if not exists
+      else:
+        # Copy contents of existing subdirectory
+        for inner_item in os.listdir(source_path):
+          inner_source_path = os.path.join(source_path, inner_item)
+          inner_target_path = os.path.join(target_path, inner_item)
+          if os.path.isfile(inner_source_path):
+            shutil.copy2(inner_source_path, inner_target_path)
+            os.chmod(inner_target_path, 0o777)  # Set permissions for copied files
 
-    Args:
-      source_dir: The source directory containing the files to copy.
-      dest_dir: The destination directory to copy the files to.
+def verify_copy(source_folder, destination_folder):
+  """
+  Compares the contents of a source folder and its subdirectories with the destination folder to verify successful copy.
 
-    """
-    print("removing files from fresh folder")
-    for root, _, files in os.walk(source_dir):
-        for filename in files:
-            source_file = os.path.join(root, filename)
-            dest_file = os.path.join(dest_dir, filename)
-            # Check if the file was successfully copied (exists in destination)
-            if os.path.isfile(dest_file):
-                try:
-                    os.remove(source_file)
-                    print(f"Deleted: {source_file}")
-                except OSError as e:
-                    print(f"Error deleting {source_file}: {e}")
+  Args:
+      source_folder: The path to the source folder.
+      destination_folder: The path to the destination folder.
 
-    #return process.returncode
+  Returns:
+      A list of any differences found between the source and destination folders.
+  """
+  source_path = Path(source_folder)
+  dest_path = Path(destination_folder)
+  differences = []
+
+  # Check if source folder exists
+  if not source_path.exists():
+    differences.append(f"Error: Source folder '{source_folder}' does not exist.")
+    return differences
+
+  # Compare files and subdirectories recursively
+  for root, dirs, files in os.walk(source_path):
+    rel_path = os.path.relpath(root, source_path)
+    dest_dir = os.path.join(dest_path, rel_path)
+
+    # Check if corresponding directory exists in destination
+    if not os.path.exists(dest_dir):
+      differences.append(f"Missing directory in destination: {dest_dir}")
+      continue
+
+    # Compare files within the directory
+    for filename in files:
+      source_file = os.path.join(root, filename)
+      dest_file = os.path.join(dest_dir, filename)
+
+      # Check if file exists in destination
+      if not os.path.isfile(dest_file):
+        differences.append(f"Missing file in destination: {dest_file}")
+  return differences
 
 
+def delete_folder_contents(folder_path):
+  """
+  Deletes all contents (files and subdirectories) from a folder.
+
+  Args:
+      folder_path: The path to the folder to be emptied.
+  """
+  for root, dirs, files in os.walk(folder_path, topdown=False):
+    for filename in files:
+      file_path = os.path.join(root, filename)
+      os.remove(file_path)
+    for dir in dirs:
+      dir_path = os.path.join(root, dir)
+      os.rmdir(dir_path)
 
 def delete_original_photos(source_folder):
     """
@@ -254,6 +297,46 @@ def get_dir_size(dir_path):
       if not os.path.islink(file_path):  # Skip symbolic links (optional)
         total_size += os.path.getsize(file_path)
   return total_size
+
+
+def backup_and_delete(source_folder, destination_folder):
+    # Ensure source and destination folders exist
+    if not os.path.exists(source_folder):
+        print(f"Source folder '{source_folder}' does not exist.")
+        return
+    if not os.path.exists(destination_folder):
+        os.makedirs(destination_folder)
+        print(f"Created destination folder '{destination_folder}'.")
+
+    try:
+        # Copy the contents of the source folder to the destination folder
+        for item in os.listdir(source_folder):
+            src_path = os.path.join(source_folder, item)
+            dest_path = os.path.join(destination_folder, item)
+            if os.path.isdir(src_path):
+                shutil.copytree(src_path, dest_path)
+            else:
+                shutil.copy2(src_path, dest_path)
+        print(f"All contents of '{source_folder}' successfully copied to '{destination_folder}'.")
+
+        # Verify the copy
+        src_items = set(os.listdir(source_folder))
+        dest_items = set(os.listdir(destination_folder))
+        if not src_items.issubset(dest_items):
+            print("Error: Not all items were copied successfully.")
+            return
+
+        # Delete the contents of the source folder
+        for item in os.listdir(source_folder):
+            src_path = os.path.join(source_folder, item)
+            if os.path.isdir(src_path):
+                shutil.rmtree(src_path)
+            else:
+                os.remove(src_path)
+        print(f"All contents of '{source_folder}' have been deleted.")
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
 
 if __name__ == "__main__":
     # Check if "photos" folder exists
@@ -323,13 +406,24 @@ if __name__ == "__main__":
             #using the non-rsync way for now because rsync was giving errors
             copy_photos_to_backup(photos_folder, external_backup_folder)
             print(f"Photos successfully copied to backup folder: {external_backup_folder}")
+            #backup_and_delete(photos_folder, backedup_photos_folder)
             copy_photos_to_backup(photos_folder, backedup_photos_folder)
             print(f"Photos successfully copied to backup folder: {backedup_photos_folder}")
+            differences = verify_copy(photos_folder, backedup_photos_folder)
+            
+            
+            if differences:
+              print("Differences found:")
+              for difference in differences:
+                print(difference)
+            else:
+              print("Copy verification successful! No differences found.")
+              print("deleting original files then")
+              delete_folder_contents(photos_folder)
 
             #now we can remove them from the fresh folder
             #delete_original_photos(photos_folder)
             #should prob have more integrity checks than this
-            delete_files_after_check(photos_folder, backedup_photos_folder)
 
             thingsworkedok=True
             if(thingsworkedok):
@@ -337,7 +431,8 @@ if __name__ == "__main__":
                 # Check if internal storage has less than X GB left
                 x = internal_storage_minimum
                 if desktop_available < x * 1024**3:  # x GB in bytes
-                    delete_original_photos(backedup_photos_folder)
+                    delete_folder_contents(backedup_photos_folder)
+                    #delete_original_photos(backedup_photos_folder)
                     print(
                         "Original photos deleted after being backed up due to low internal storage."
                     )

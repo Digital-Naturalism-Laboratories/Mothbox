@@ -6,8 +6,7 @@ from libcamera import Transform
 
 import time
 import datetime
-from datetime import datetime
-
+from datetime import datetime, timedelta
 computerName = "mothboxNOTSET"
 import cv2
 
@@ -440,6 +439,28 @@ def list_exposuretimes(middle_exposuretime, num_photos, exposure_width):
     exposure_times.append(current_exposure)
   return exposure_times
 
+def create_dated_folder(base_path):
+  """
+  Creates a folder with the current date in the format YYYY-MM-DD if it doesn't exist.
+
+  Args:
+      base_path: The base path where the folder will be created.
+
+  Returns:
+      The full path to the created folder.
+  """
+  now = datetime.now()
+  # Adjust for time between 12:00 pm and 11:59 am next day
+  if 12 <= now.hour < 24:
+    date_str = now.strftime("%Y-%m-%d")
+  else:
+    # Add a day if time is between 12:00 pm and next day's 11:59 am
+    date_str = (now - timedelta(days=1)).strftime("%Y-%m-%d")
+  folder_path = os.path.join(base_path, date_str)
+  if not os.path.exists(folder_path):
+    os.makedirs(folder_path)
+  os.chmod(folder_path, 0o777)  # mode=0o777 for read write for all users
+  return folder_path+"/"
 
 def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
@@ -524,6 +545,12 @@ def takePhoto_Manual():
           pil_image = img
           # Save the image using PIL to get the image data on disk
           folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
+          if not os.path.exists(folderPath):
+            os.makedirs(folderPath)
+          os.chmod(folderPath, 0o777)  # mode=0o777 for read write for all users
+
+          folderPath = create_dated_folder(folderPath)
+          
           
           print(ImageFileType)
           if ImageFileType==1: #png
