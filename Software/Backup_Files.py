@@ -186,7 +186,7 @@ def copy_photos_to_backup(source_folder, target_folder):
   """
   if not os.path.exists(target_folder):
     os.makedirs(target_folder)
-    os.chmod(target_folder, 0o777)  # mode=0o777 for read write for all users
+  os.chmod(target_folder, 0o777)  # mode=0o777 for read write for all users
 
   for item in os.listdir(source_folder):
     source_path = os.path.join(source_folder, item)
