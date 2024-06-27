@@ -520,4 +520,12 @@ choose OPTION 5 and you can add a new wifi
 to stop the hotspot
 `sudo accesspopup`
 
+# Crontab Tips
+## Export CRONTAB to file
+
+sudo crontab -l > /home/pi/Desktop/Mothbox/crontab.bak
+
+## Import it from the new user:
+crontab /some/shared/location/crontab.bak
+
 
