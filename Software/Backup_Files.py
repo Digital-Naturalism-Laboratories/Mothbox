@@ -174,7 +174,56 @@ def rsync_copy_and_delete_files(source_dir, dest_dir):
                         print(f"Error deleting {source_file}: {e}")
 
     return process.returncode
+def move_folder_contents(source_folder, destination_folder):
+  """
+  Moves the entire contents of a folder to a new folder, overwriting existing files.
 
+  Args:
+      source_folder (str): Path to the source folder.
+      destination_folder (str): Path to the destination folder.
+  """
+  print("moving folder contents")
+  for filename in os.listdir(source_folder):
+    source_path = os.path.join(source_folder, filename)
+    destination_path = os.path.join(destination_folder, filename)
+
+    if os.path.isfile(source_path):
+      # Move the file, overwrite if exists
+      shutil.move(source_path, destination_path)
+    elif os.path.isdir(source_path):
+      # Create destination directory if it doesn't exist
+      os.makedirs(destination_path, exist_ok=True)
+      os.chmod(destination_path, 0o777)
+      # Recursively move contents of subfolders
+      move_folder_contents(source_path, destination_path)
+    else:
+      print(f"Skipping unknown item: {filename}")
+      
+
+def move_photos_to_backup(source_folder, target_folder):
+  """
+  Copies all files and subfolders from the source folder to the target folder recursively,
+  handling existing dated folders and copying their contents.
+
+  Args:
+      source_folder: The path to the source folder.
+      target_folder: The path to the target folder.
+  """
+  if not os.path.exists(target_folder):
+    os.makedirs(target_folder)
+  os.chmod(target_folder, 0o777)  # mode=0o777 for read write for all users
+  # Move all contents (files and subfolders)
+  try:
+    shutil.move(source_folder, target_folder)
+    print("Contents moved successfully!")
+    
+    #recreate the empty photos folder
+    if not os.path.exists(source_folder):
+        os.makedirs(source_folder)
+    os.chmod(source_folder, 0o777)
+  except OSError as e:
+    print("Error moving contents:", e)
+  
 def copy_photos_to_backup(source_folder, target_folder):
   """
   Copies all files and subfolders from the source folder to the target folder recursively,
@@ -404,12 +453,14 @@ if __name__ == "__main__":
             external_backup_folder = disk_name / backup_folder_name
             print("doing the backup...")
             #using the non-rsync way for now because rsync was giving errors
+            
             copy_photos_to_backup(photos_folder, external_backup_folder)
-            print(f"Photos successfully copied to backup folder: {external_backup_folder}")
-            #backup_and_delete(photos_folder, backedup_photos_folder)
-            copy_photos_to_backup(photos_folder, backedup_photos_folder)
-            print(f"Photos successfully copied to backup folder: {backedup_photos_folder}")
-            differences = verify_copy(photos_folder, backedup_photos_folder)
+            print(f"Photos successfully copied to external backup folder: {external_backup_folder}")
+            
+            
+            #copy_photos_to_backup(photos_folder, backedup_photos_folder)
+            
+            differences = verify_copy(photos_folder, external_backup_folder)
             
             
             if differences:
@@ -418,12 +469,14 @@ if __name__ == "__main__":
                 print(difference)
             else:
               print("Copy verification successful! No differences found.")
-              print("deleting original files then")
-              delete_folder_contents(photos_folder)
+              print("moving original files to backedup_photos_folder")
+              move_folder_contents(photos_folder, backedup_photos_folder)
+              print(f"Photos successfully copied to internal backup folder: {backedup_photos_folder}")
+
+              #delete_folder_contents(photos_folder)
 
             #now we can remove them from the fresh folder
             #delete_original_photos(photos_folder)
-            #should prob have more integrity checks than this
 
             thingsworkedok=True
             if(thingsworkedok):
@@ -455,3 +508,4 @@ if __name__ == "__main__":
         print("stuff worked out BACKUP COMPLETE")
     
     print("end")
+quit()
