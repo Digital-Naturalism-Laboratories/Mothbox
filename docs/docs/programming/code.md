@@ -120,6 +120,14 @@ Paste everything from Software in the github code repo in there
 
 run TakePhoto.py inside the Mothbox folder. It should take some photos and save them in the photos folder
 
+## Install Power monitoring
+
+sudo pip3 install adafruit-circuitpython-ina260 --break-system-packages
+
+add this to crontab 
+*/1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
+
+
 ## set up the crontab
 
 make sure to do SUDO crontab -e not just crontab -e because our scripts need to run as root because they change system things like wakeup times
@@ -132,6 +140,8 @@ add these lines for a default scheduling
 */1 * * * * cd /home/pi/Desktop/Mothbox && python3 Attract_On.py >> /home/pi/Desktop/Mothbox/logs/Attract_On_log.txt 2>&1
 */1 * * * * /home/pi/Desktop/Mothbox/TakePhoto.py >> /home/pi/Desktop/Mothbox/logs/TakePhoto_log.txt 2>&1
 @reboot /usr/bin/python3 /home/pi/Desktop/Mothbox/Scheduler_Pi5.py >> /home/pi/Desktop/Mothbox/logs/Scheduler_log.txt 2>&1
+
+*/1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
 ```
 change that last line to SchedulerPi4.py if using a pi4 instead.
 hit CTRL+X and save, and reboot.
@@ -141,6 +151,55 @@ upon reboot everthing should be working in mothbox mode!
 if somethign isn't working, check the logs and see if there's a problem.
 for instance my photos weren't taking, and in the TakePhoto.log, i got an error that said "Permission denied" so i righ clicked takephoto.py, and set its permissions to allow execution, and it worked great!
 
+
+## Wifi Control hotspot and limiting
+from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
+
+download
+curl "https://www.raspberryconnect.com/images/scripts/AccessPopup.tar.gz" -o AccessPopup.tar.gz
+
+unarchive with
+tar -xvf ./AccessPopup.tar.gz
+change to the AccessPopup folder
+cd AccessPopup
+Run the Installer script
+sudo ./installconfig.sh
+
+The menu options below will be presented. Use option 1 to install the AccessPopup scripts.
+This will automatically start monitoring the wifi connection every 2 minutes. It will also check the wifi at startup and then at every 2 minute intervals.
+
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/19c3634d-27ad-4be7-b759-41f9e4c235f7)
+
+mothboxwifi
+lunaluna
+
+to make sure it runs you might have to add this to cron
+```
+*/1 * * * * sudo /usr/bin/accesspopup >/dev/null 2>&1
+```
+
+## Kill wifi after a while (Limit wifi)
+
+from MothPower folder
+sudo cp lowpower.service /etc/systemd/system/
+
+sudo cp lowpower.timer /etc/systemd/system/
+
+sudo cp lowpower.sh /usr/bin/
+
+sudo chmod +x /usr/bin/lowpower.sh
+
+sudo systemctl enable lowpower.timer
+
+copy low_in_one.sh powerup.sh & stop_lowpower.sh to a convenient place.
+stop_lowpower.sh 
+    is used to stop the timer during the 10 minute countdown. or issue the command sudo systemctl stop lowpower.timer
+    restarting the timer after 10 minutes is not possible as it is from boot up time.
+powerup.sh
+    is used to switch wifi and bluetooth back on if needed
+low_in_one.sh
+    this will switch off wifi and bluetooth in 1 minutes time. End the cammand with a & otherwise it will block you enter further commands. use ctrl C to stop it.
+use: low_in_one.sh & 
 
 
 
