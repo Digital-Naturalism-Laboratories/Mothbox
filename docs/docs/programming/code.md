@@ -216,7 +216,12 @@ low_in_one.sh
     this will switch off wifi and bluetooth in 1 minutes time. End the cammand with a & otherwise it will block you enter further commands. use ctrl C to stop it.
 use: low_in_one.sh & 
 
+finally add this to crontab
 
+```
+@reboot cd /home/pi/Desktop/Mothbox/scripts/MothPower && ./powerup_wifi.sh
+
+```
 
 ## Clean up the image (cut the fat)
 
