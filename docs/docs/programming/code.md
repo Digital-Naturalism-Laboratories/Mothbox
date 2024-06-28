@@ -156,15 +156,20 @@ for instance my photos weren't taking, and in the TakePhoto.log, i got an error 
 from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
 
 download
+```
 curl "https://www.raspberryconnect.com/images/scripts/AccessPopup.tar.gz" -o AccessPopup.tar.gz
 
 unarchive with
+
 tar -xvf ./AccessPopup.tar.gz
 change to the AccessPopup folder
-cd AccessPopup
-Run the Installer script
-sudo ./installconfig.sh
 
+cd AccessPopup
+
+Run the Installer script
+
+sudo ./installconfig.sh
+```
 The menu options below will be presented. Use option 1 to install the AccessPopup scripts.
 This will automatically start monitoring the wifi connection every 2 minutes. It will also check the wifi at startup and then at every 2 minute intervals.
 
@@ -179,6 +184,16 @@ to make sure it runs you might have to add this to cron
 ```
 
 ## Kill wifi after a while (Limit wifi)
+
+you need to edit the access popup script:
+
+sudo nano /usr/bin/accesspopup
+On line 22 it says
+re_enable_wifi='y'
+change this to 'n'
+so your wifi stays off. I would also do this to the accesspopup file in the downloaded AccessPopup folder so it installs as n as well.
+
+
 
 from MothPower folder
 sudo cp lowpower.service /etc/systemd/system/
