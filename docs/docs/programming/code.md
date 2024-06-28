@@ -476,7 +476,7 @@ This will automatically start monitoring the wifi connection every 2 minutes. It
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/19c3634d-27ad-4be7-b759-41f9e4c235f7)
 
 mothboxwifi
-luna
+lunaluna
 
 to make sure it runs you might have to add this to cron
 ```
@@ -519,6 +519,35 @@ choose OPTION 5 and you can add a new wifi
 
 to stop the hotspot
 `sudo accesspopup`
+
+# Kill wifi after a while
+
+curl "https://www.raspberryconnect.com/images/scripts/MothPower.tar.xz" -o MothPower.tar.xz
+
+tar -xvf ./MothPower.tar.xz 
+
+sudo cp lowpower.service /etc/systemd/system/
+
+sudo cp lowpower.timer /etc/systemd/system/
+
+sudo cp lowpower.sh /usr/bin/
+
+sudo chmod +x /usr/bin/lowpower.sh
+
+sudo systemctl enable lowpower.timer
+
+Then copy low_in_one.sh powerup.sh & stop_lowpower.sh to a convenient place.
+stop_lowpower.sh 
+    is used to stop the timer during the 10 minute countdown. or issue the command sudo systemctl stop lowpower.timer
+    restarting the timer after 10 minutes is not possible as it is from boot up time.
+powerup.sh
+    is used to switch wifi and bluetooth back on if needed
+low_in_one.sh
+    this will switch off wifi and bluetooth in 1 minutes time. End the cammand with a & otherwise it will block you enter further commands. use ctrl C to stop it.
+use: low_in_one.sh & 
+
+
+
 
 # Crontab Tips
 ## Export CRONTAB to file
