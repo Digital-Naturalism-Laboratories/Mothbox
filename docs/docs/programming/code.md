@@ -125,8 +125,13 @@ run TakePhoto.py inside the Mothbox folder. It should take some photos and save 
 sudo pip3 install adafruit-circuitpython-ina260 --break-system-packages
 
 add this to crontab 
+```
 */1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
+```
 
+sudo raspi-config
+
+enable SPI enable i2c
 
 ##### note! this breaks GPIO in pi5 so to fix
 cd /usr/local/lib/python3.11/dist-packages/RPi
