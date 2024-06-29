@@ -128,6 +128,26 @@ add this to crontab
 */1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
 
 
+##### note! this breaks GPIO in pi5 so to fix
+cd /usr/local/lib/python3.11/dist-packages/RPi
+
+and just started deleting stuff until the GPIO pins started working again.
+
+this meant deleting
+
+sudo rm _GPIO.cpython-311-aarch64-linux-gnu.so
+
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $ cd GPIO
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi/GPIO $ ls
+__init__.py __pycache__
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi/GPIO $ sudo rm __init__.py
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi/GPIO $ sudo rm * -r
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi/GPIO $ cd ..
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $ sudo rm __init__.py
+pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $
+
+Obviously im not the smartest hacker out there, but hey it works fine now it seems!
+
 ## set up the crontab
 
 make sure to do SUDO crontab -e not just crontab -e because our scripts need to run as root because they change system things like wakeup times
