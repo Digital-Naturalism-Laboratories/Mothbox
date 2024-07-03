@@ -93,6 +93,27 @@ def flashOff():
     GPIO.output(Relay_Ch2,GPIO.HIGH)
     print("Flash Off\n")
 
+def find_file(path, filename, depth=1):
+  """
+  Recursively searches for a file within a directory and its subdirectories 
+  up to a specified depth.
+
+  Args:
+      path: The path to start searching from.
+      filename: The name of the file to find.
+      depth: The maximum depth of subdirectories to search (default 1).
+
+  Returns:
+      The full path to the file if found, otherwise None.
+  """
+  for root, dirs, files in os.walk(path):
+    if filename in files and len(root.split(os.sep)) - len(path.split(os.sep)) <= depth:
+      return os.path.join(root, filename)
+    if depth > 1:
+      # Prune directories beyond the specified depth
+      dirs[:] = [d for d in dirs if len(os.path.join(root, d).split(os.sep)) - len(path.split(os.sep)) <= depth]
+  return None
+
   
 def load_camera_settings():
     """
@@ -112,25 +133,20 @@ def load_camera_settings():
     #first look for any updated CSV files on external media, we will prioritize those
     external_media_paths = ("/media", "/mnt")  # Common external media mount points
     default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
+    search_depth = 2 #only want to look in the top directory of an external drive, two levels gets us there while still looking through any media
+
     file_path=default_path
 
     found = 0
     for path in external_media_paths:
-        if(found==0):
-            files=os.listdir(path) #don't look for files recursively, only if new settings in top level
-            if "camera_settings.csv" in files:
-                file_path = os.path.join(root, "camera_settings.csv")
-                print(f"Found settings on external media: {file_path}")
-                found=1
-                break
-            else:
-                print("No external settings here...")
-                file_path=default_path
-
-    if(found==0):
-        #redundant but being extra safe
-        print("No external settings, using internal csv")
-        file_path=default_path
+        file_path = find_file(path, "camera_settings.csv", depth=search_depth)
+        if file_path:
+            print(f"Found settings on external media: {file_path}")
+            break
+        else:
+            print("No external settings, using internal csv")
+            file_path=default_path
+    
     
     #set the global path to the one we chose
     chosen_settings_path = file_path
