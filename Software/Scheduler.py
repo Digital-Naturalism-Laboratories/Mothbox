@@ -108,6 +108,29 @@ utc_off=0 #this is the offsett from UTC time we use to set the alarm
 runtime=0 #this is how long to run the mothbox in minutes for once we wakeup 0 is forever
 onlyflash=0
 
+def find_file(path, filename, depth=1):
+  """
+  Recursively searches for a file within a directory and its subdirectories 
+  up to a specified depth.
+
+  Args:
+      path: The path to start searching from.
+      filename: The name of the file to find.
+      depth: The maximum depth of subdirectories to search (default 1).
+
+  Returns:
+      The full path to the file if found, otherwise None.
+  """
+  for root, dirs, files in os.walk(path):
+    if filename in files and len(root.split(os.sep)) - len(path.split(os.sep)) <= depth:
+      return os.path.join(root, filename)
+    if depth > 1:
+      # Prune directories beyond the specified depth
+      dirs[:] = [d for d in dirs if len(os.path.join(root, d).split(os.sep)) - len(path.split(os.sep)) <= depth]
+  return None
+
+
+
 #load in the schedule CSV
 def load_settings(filename):
     """
@@ -126,19 +149,17 @@ def load_settings(filename):
     
     external_media_paths = ("/media", "/mnt")  # Common external media mount points
     default_path = "/home/pi/Desktop/Mothbox/schedule_settings.csv"
+    search_depth = 2 #only want to look in the top directory of an external drive, two levels gets us there while still looking through any media
     found = 0
     for path in external_media_paths:
-        if(found==0):
-            for root, dirs, files in os.walk(path):
-                if "schedule_settings.csv" in files:
-                    file_path = os.path.join(root, "schedule_settings.csv")
-                    print(f"Found settings on external media: {file_path}")
-                    found=1
-                    break
-                else:
-                    print("No external settings, using internal csv")
-                    file_path=default_path
-
+        file_path = find_file(path, "schedule_settings.csv", depth=search_depth)
+        if file_path:
+            print(f"Found settings on external media: {file_path}")
+            break
+        else:
+            print("No external settings, using internal csv")
+            file_path=default_path
+        
 
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
     utc_off=0 #this is the offsett from UTC time we use to set the alarm
