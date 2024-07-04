@@ -15,11 +15,11 @@ from crontab import CronTab
 import numpy as np
 import logging
 
-print("----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------")
+logging.info("----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
-print(f"Current time: {formatted_time}")
+logging.info(f"Current time: {formatted_time}")
 
 
 #These all get set in the loaded settings
@@ -186,6 +186,28 @@ def generate_unique_name(serial, lang):
   return finalCombo
 
 
+def find_file(path, filename, depth=1):
+  """
+  Recursively searches for a file within a directory and its subdirectories 
+  up to a specified depth.
+
+  Args:
+      path: The path to start searching from.
+      filename: The name of the file to find.
+      depth: The maximum depth of subdirectories to search (default 1).
+
+  Returns:
+      The full path to the file if found, otherwise None.
+  """
+  for root, dirs, files in os.walk(path):
+    if filename in files and len(root.split(os.sep)) - len(path.split(os.sep)) <= depth:
+      return os.path.join(root, filename)
+    if depth > 1:
+      # Prune directories beyond the specified depth
+      dirs[:] = [d for d in dirs if len(os.path.join(root, d).split(os.sep)) - len(path.split(os.sep)) <= depth]
+  return None
+
+
   
 #load in the schedule CSV
 def load_settings(filename):
@@ -205,18 +227,18 @@ def load_settings(filename):
     
     external_media_paths = ("/media", "/mnt")  # Common external media mount points
     default_path = "/home/pi/Desktop/Mothbox/schedule_settings.csv"
+    search_depth = 2 #only want to look in the top directory of an external drive, two levels gets us there while still looking through any media
     found = 0
+
     for path in external_media_paths:
-        if(found==0):
-            files=os.listdir(path) #don't look for files recursively, only if new settings in top level
-            if "schedule_settings.csv" in files:
-                file_path = os.path.join(root, "schedule_settings.csv")
-                print(f"Found settings on external media: {file_path}")
-                found=1
-                break
-            else:
-                print("No external settings, using internal csv")
-                file_path=default_path
+        file_path = find_file(path, "schedule_settings.csv", depth=search_depth)
+        if file_path:
+            print(f"Found settings on external media: {file_path}")
+            break
+        else:
+            print("No external settings, using internal csv")
+            file_path=default_path
+        
 
 
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
@@ -417,7 +439,7 @@ def set_wakeup_alarm(epoch_time):
   with open("/sys/class/rtc/rtc0/wakealarm", "w") as f:
     # Write the epoch time in seconds
     f.write(str(epoch_time))
-  logging.warning('Set the Wakeup Alarm' + str(epoch_time))
+  logging.info('Set the Wakeup Alarm' + str(epoch_time))
 
 
 
@@ -484,8 +506,7 @@ if time.time() < next_epoch_time:
   set_wakeup_alarm(next_epoch_time)
 else:
   print("Current time is past the scheduled event. Script needs to be run before the event.")
-
-
+  logging.info("Current time is past the scheduled event. Script needs to be run before the event.")
 print("Wakeup Alarms have been set!")
 
 #wifi feature not working right now
@@ -497,8 +518,9 @@ enable_onlyflash()
 
 if(runtime > 0):
     enable_shutdown()
-    print("Stuff will run for "+str(runtime)+" minutes before shutdown")
+    logging.info("Stuff will run for "+str(runtime)+" minutes before shutdown")
     schedule_shutdown(runtime)
 else:
-    print("no shutdown scheduled, will run indefinitley")
+    logging.info("no shutdown scheduled, will run indefinitley")
     
+
