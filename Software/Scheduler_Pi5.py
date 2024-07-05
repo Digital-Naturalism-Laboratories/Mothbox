@@ -15,12 +15,17 @@ from crontab import CronTab
 import numpy as np
 import logging
 
-logging.info("----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------")
+#logging.info("----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------")
+print("----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------")
+
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
-logging.info(f"Current time: {formatted_time}")
+#logging.info(f"Current time: {formatted_time}")
+print(f"Current time: {formatted_time}")
 
+#need to add a delay to let the external drives mount!
+time.sleep(10)
 
 #These all get set in the loaded settings
 utc_off=0 #this is the offsett from UTC time we use to set the alarm
@@ -519,8 +524,12 @@ enable_onlyflash()
 if(runtime > 0):
     enable_shutdown()
     logging.info("Stuff will run for "+str(runtime)+" minutes before shutdown")
+    print("Stuff will run for "+str(runtime)+" minutes before shutdown")
+
     schedule_shutdown(runtime)
 else:
     logging.info("no shutdown scheduled, will run indefinitley")
+    print("no shutdown scheduled, will run indefinitley")
+
     
 
