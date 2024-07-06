@@ -156,6 +156,10 @@ Obviously im not the smartest hacker out there, but hey it works fine now it see
 ## set up the crontab
 
 make sure to do SUDO crontab -e not just crontab -e because our scripts need to run as root because they change system things like wakeup times
+
+in the @reboot command for the scheduler, make sure to add "-u" after python to make the logs function properly
+
+
 ```
 sudo crontab -e
 ```
@@ -164,7 +168,7 @@ add these lines for a default scheduling
 */1 * * * * cd /home/pi/Desktop/Mothbox && python3 Backup_Files.py >> /home/pi/Desktop/Mothbox/logs/Backup_log.txt 2>&1
 */1 * * * * cd /home/pi/Desktop/Mothbox && python3 Attract_On.py >> /home/pi/Desktop/Mothbox/logs/Attract_On_log.txt 2>&1
 */1 * * * * /home/pi/Desktop/Mothbox/TakePhoto.py >> /home/pi/Desktop/Mothbox/logs/TakePhoto_log.txt 2>&1
-@reboot /usr/bin/python3 /home/pi/Desktop/Mothbox/Scheduler_Pi5.py >> /home/pi/Desktop/Mothbox/logs/Scheduler_log.txt 2>&1
+@reboot /usr/bin/python3 -u /home/pi/Desktop/Mothbox/Scheduler_Pi5.py >> /home/pi/Desktop/Mothbox/logs/Scheduler_log.txt 2>&1
 
 */1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
 ```
