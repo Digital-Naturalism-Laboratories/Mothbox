@@ -108,6 +108,9 @@ utc_off=0 #this is the offsett from UTC time we use to set the alarm
 runtime=0 #this is how long to run the mothbox in minutes for once we wakeup 0 is forever
 onlyflash=0
 
+#need to add a delay to let the external drives mount!
+time.sleep(10)
+
 def find_file(path, filename, depth=1):
   """
   Recursively searches for a file within a directory and its subdirectories 
