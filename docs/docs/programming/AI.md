@@ -28,10 +28,47 @@ Open X-Anylabelling. Click "open directory"
 
 
 # Organizing Files
+```
+│   ├───moths20
+│   │   ├───images
+│   │   │   ├───test
+│   │   │   ├───train
+│   │   │   └───val
+│   │   └───labels
+│   │       ├───test
+│   │       ├───train
+│   │       └───val
+│   └───moths700
+│       ├───images
+│       │   ├───test
+│       │   ├───train
+│       │   └───val
+│       └───labels
+│           ├───test
+│           ├───train
+│           └───val
+├───predictme
+├───predictme_crops
+├───all_images
+    └───all your images
+    └───all your images annotations
+
+├───backgrounds
+├───prepare_yolo_Backgroundstoo.py
+
+└───runs
+    └───obb
+        ├───train
+        │   └───weights
+        ├───train10
+        │   └───weights
+
+```
 
 Put all your labelled image into two folders:
-All Images
-Backgrounds
+one called
+all_images
+backgrounds
 
 Run the Yolo Preparation script
 
@@ -43,11 +80,27 @@ Make sure python is installed. Then you can install yolo by opening the CMD prom
 type this and hit enter
 `pip install ultralytics`
 
+This will probably take a bit to download and install.
 
+now in a terminal or command prompt enter
 
+`yolo settings`
 
+If it gives an error, it means the ultralytics didn't install correctly. If it did install correctly, you should see some information pop up like this
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/8b46420b-3015-47a7-b3ea-965f475728ea)
 
+Importantly, it shows you where all the Ultralytics settings are located in a special "settings.yaml" file
+for instance my settings file is located here
+`Printing 'C:\Users\andre\AppData\Roaming\Ultralytics\settings.yaml'`
 
+## Change database directory to where you want
+you should find that file on your computer and open it in a text editor.
+
+Change the "datasets_dir" to the folder where you want to do your AI work.
+
+for instance mine is here
+
+`C:\YoloTesting\datasets`
 
 # Detection
 
