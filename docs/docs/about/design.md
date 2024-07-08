@@ -5,12 +5,18 @@ parent: About the Mothbox
 has_children: false
 nav_order: 6
 ---
+The Mothbox is a tool for studying insect biodiversity, but the way in which is was created aimed to incorporate several key design concepts.
 
-# Open Source
+# Replicable
+## Open Source
+First and foremost, this is an open-source science project! Like **EVERY** scientific tool, all the information in the hardware and software should be freely available. This is extremely important as the scientific process is broken if the tools used to conduct research are not open and accessible. All the software, hardware designs, and documentation is provided free to use and at your own risk without warantee. 
+
+The Open source nature of this is also important to science since it allows other researchers to remix and redesign this project to fit the purposes of other projects. For instance, another researcher is already remixing a mothbox to take high resolution scans of 96-well plates growing various fungi.
 
 
-# Off-the-shelf parts
+## Off-the-shelf parts
 
+## Low Cost
 
 # Simple Flat Design
 
