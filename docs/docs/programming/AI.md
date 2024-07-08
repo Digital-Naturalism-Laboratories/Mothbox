@@ -17,7 +17,7 @@ Download the open source code editing software, [Visual Studio Code](https://cod
 download [Python](https://www.python.org/downloads/release/python-3124/)
 
 ## Labelling Software
-First Download the open-source software called ["X-anylabeling"](https://github.com/CVHub520/X-AnyLabeling) 
+First Download the open-source software called ["X-anylabeling"](https://github.com/CVHub520/X-AnyLabeling)  We have a [backup of their software here](https://drive.google.com/drive/u/0/folders/1S-hydQn86FPouFTvcRPVPRE3tScCVNHC)
 
 # Labelling Images
 
