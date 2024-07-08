@@ -6,7 +6,7 @@ has_children: false
 nav_order: 6
 ---
 
-The exact specifications of the mothbox may change depending on factors like which
+The exact specifications of the mothbox may change depending on factors like which microcontroller or power source you choose.
 
 * Weight: 2750 grams
 * Size: 11"L x 7"W x 4"H (box)
@@ -17,3 +17,5 @@ The exact specifications of the mothbox may change depending on factors like whi
 * Camera: Arducam 64mp Owlsight OV64A40
 * Image resolution: 9152×6944 (Pi5)  9000x6000 (Pi4)
 * Microcontroller: Pi5 or Pi4
+* Lens Adapter size: 55mm
+
