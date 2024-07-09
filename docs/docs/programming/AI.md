@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Setup Machine Vision
-parent: Programming
+parent: Programming Mothbox
 has_children: true
 nav_order: 6
 ---
