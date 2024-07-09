@@ -26,7 +26,7 @@ def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_fold
 
   # Get image list
   image_files = [f for f in os.listdir(image_folder) if f.endswith(".jpg")]
-
+  print(len(image_files))
   # Randomly select image-label pairs
   selected_images = random.sample(image_files, total_images)
 
