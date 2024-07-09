@@ -26,8 +26,8 @@ if __name__ == '__main__':
 
     # Load the model
     model = YOLO("runs/obb/train23/weights/best.pt")
-    input_path = "predictme"
-    output_path = "predictme_crops"
+    input_path = "detect_me"
+    output_path = "detected_and_cropped_images"
     img_list = os.listdir(input_path)
     i=1
     for file in img_list:

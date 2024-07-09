@@ -59,48 +59,49 @@ def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_fold
   print("sprinkling backgrounds")
   # Get background images
   background_files = [f for f in os.listdir(backgrounds_folder) if f.endswith(".jpg")]
+  print("num background files "+str(len(background_files)))
 
-  # Get number of background images to add 
-  num_background_images = int(total_images * bg_ratio)
+  if len(background_files)<1:
+     print("no background files included")
+  else:
+    # Get number of background images to add 
+    num_background_images = int(total_images * bg_ratio)
+    if num_background_images>=len(background_files):
+      print("adjusting for lower number of backgrounds")
+      num_background_images=len(background_files)
+    
+    # Randomly select background images
+    selected_backgrounds = random.sample(background_files, num_background_images)
 
-  # Randomly select background images
-  selected_backgrounds = random.sample(background_files, num_background_images)
+    # Distribute background images proportionally to train/test/val
+    train_background_count = int(num_background_images * train_ratio)
+    test_background_count = int(num_background_images * test_ratio)
+    val_background_count = num_background_images - train_background_count - test_background_count
 
-  # Distribute background images proportionally to train/test/val
-  train_background_count = int(num_background_images * train_ratio)
-  test_background_count = int(num_background_images * test_ratio)
-  val_background_count = num_background_images - train_background_count - test_background_count
+    # Add background images to respective folders
+    for i in range(train_background_count):
+        background_image = random.choice(selected_backgrounds)
+        destination = os.path.join(output_folder, "images/train", background_image)
+        shutil.copy(os.path.join(backgrounds_folder, background_image), destination)
+        print(f"Copied {background_image}  to {destination}")
 
-  # Add background images to respective folders
-  for i in range(train_background_count):
-      background_image = random.choice(selected_backgrounds)
-      destination = os.path.join(output_folder, "images/train", background_image)
-      shutil.copy(os.path.join(backgrounds_folder, background_image), destination)
-      print(f"Copied {background_image}  to {destination}")
+    for i in range(test_background_count):
+        background_image = random.choice(selected_backgrounds)
+        shutil.copy(os.path.join(backgrounds_folder, background_image), os.path.join(output_folder, "images/test", background_image))
 
-  for i in range(test_background_count):
-      background_image = random.choice(selected_backgrounds)
-      shutil.copy(os.path.join(backgrounds_folder, background_image), os.path.join(output_folder, "images/test", background_image))
-
-  for i in range(val_background_count):
-      background_image = random.choice(selected_backgrounds)
-      shutil.copy(os.path.join(backgrounds_folder, background_image), os.path.join(output_folder, "images/val", background_image))
-
-
-
-
-
-
-
+    for i in range(val_background_count):
+        background_image = random.choice(selected_backgrounds)
+        shutil.copy(os.path.join(backgrounds_folder, background_image), os.path.join(output_folder, "images/val", background_image))
+  
 # Get user input
 total_images = int(input("Enter the total number of images to prepare: "))
 
 # Prepare data
 prepare_yolo_data(
-  image_folder="ALLIMAGES",
+  image_folder="all_labeled_images",
   label_folder="labels",
   backgrounds_folder="backgrounds",
-  output_folder="ready_to_yolo",
+  output_folder="datasets/moths"+str(total_images),
   total_images=total_images
 )
 
