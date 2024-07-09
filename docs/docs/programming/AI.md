@@ -7,6 +7,8 @@ nav_order: 6
 ---
 Here's how to build an AI machine vision program from scratch. This will let you use open source projects like YOLO to automatically detect insects in your high resolution photos. This will show you the basics of machine learning programs from setting up your computer, organizing files, training the AI, and processing images.
 
+All the scripts and folders referenced are available on the [Mothbox Github](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI) under "AI"
+
 This guide is written using a Windows computer using Linux. Most of this should work on a windows or linux machine (and probably a Mac machine too, you just might need to tweak some things).
 
 # Motivation
@@ -88,11 +90,8 @@ All you have to do is run that python script, and type in the number of images y
 Now you will have a new folder in your datasets directory with all your data organized just how the AI likes it!
 
 
-
-
-
-
 # Training Images
+Yay! You finished organizing stuff! You are ready to start doing AI stuff (which frankly, is just more organizing stuff)
 
 ## Install Yolo
 Make sure python is installed. Then you can install yolo by opening the CMD prompt (hit windows key and type "cmd" hit enter)
@@ -113,7 +112,7 @@ Importantly, it shows you where all the Ultralytics settings are located in a sp
 for instance my settings file is located here
 `Printing 'C:\Users\andre\AppData\Roaming\Ultralytics\settings.yaml'`
 
-## Change database directory to where you want
+## Change "datasets" directory to where you want
 you should find that file on your computer and open it in a text editor.
 
 Change the "datasets_dir" to the folder where you want to do your AI work.
@@ -122,12 +121,72 @@ for instance mine is here
 
 `C:\YoloMoths\datasets`
 
-So I went and edited that file and changed it myself:
+So I went and edited that file and changed it myself to point to the "datasets" folder in our main folder:
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/87db68a3-05db-4235-8421-5278b4132d58)
+
+## Create / Edit your YAML file
+We provided an example, but you can make your own YAML file
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bda05275-5997-490f-a2cd-07119ff2a46c)
+
+### Change Path
+The main thing you need to do in this YAML file is change the "path" to the specific dataset you just created.
+for instance, I will change mine to "moths100"
+
+### Change Classes
+You also need to make sure your classes are listed correctly.
+they should be in the same order as the "classes.txt" file you made earlier.
+You should also have the variable "nc" point to a number representing the "number of classes" you are using. We just have one class "creature" so our nc is just 1
+
+## Start Training
+Open the "MothboxYoloTrain.py" file in visual studio code
+
+### Choose a model
+if you are not doing oriented bounding boxes, you might need to switch the code to use a different model
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/058b3d53-23bb-4fef-96ee-4025259fc1ea)
+
+also we are using the yolo8s model. You can choose different models. The letter after the number stands for the size of the model. n = nano, s=small, m = medium, L = large, xl = extra large. My old computer could only handle "s," but you might want to play with this.
+
+## Train it already!
+Run the program! Depending on how large your dataset is, the training can take 5 minutes to several hours or days!
+
+## Post training
+After it finished all the epochs it will output some data you can look at about how well it was trained. these are in the "runs" folder I don't know what most of the graphs are about, but there's two things I check to see if my training was any good.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ace63426-f207-4455-8482-766f5aeaf1b4)
+
+### Confusion Matrix: Background vs other classes matrix
+This is an easy chart. It shows how correctly it guessed your class correctly as the right thing vs the background. If that top corner isn't mostly correct, maybe something went wrong, or you need a 
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/6a5accf3-618a-42a1-a617-2c8c210f9baf)
+
+### Sample Images
+at the end of the data it generates it also gives you some example images showing you how its predicted detections work vs the ground truth. If these are way off, you prob need more training.
+![val_batch2_pred](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/53120e91-09ec-4eab-af32-2bb93eeb9c37)
+
 
 
 
 # Detection
+
+The real thing that comes out of your training, the magic gem of crystalized knowledge, is in your "runs/weights" folder and it is just called "best.pt"
+
+This is the trained thing we can use to start running quick detections on brand new data!
+
+## Load up images
+Put whatever images you want to Detect things into the folder called "detect_me" (it's so easy!)
+I put in just a couple example images, but you can put in 1000's if you want!
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/21c2cf2d-1c23-4a3c-a120-8fedb3ab4618)
+
+
+## Detection Script
+Open the "Mothbox_YoloPredict_OBB" script.
+point the path for the model to your best.pt that you created during training
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bb4e396a-4280-4c4a-abc3-7e53187ff3a0)
+
+## Run the Script!
+The images will get processed, and cropped images of your detections will pop out in the "detected_and_cropped_images" folder! You can modify the script to do other things with your detections if you want, like visualize them!
+
+Look at all those cool detections
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/527bb543-fbbc-45f5-9ff1-2272afc4afa1)
+
 
 
 
