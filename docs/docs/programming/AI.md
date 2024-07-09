@@ -15,7 +15,7 @@ I asked around all over the place for advice on how to set up an AI image detect
 Also many tutorials for AI systems rely on first having to organize all your data in online proprietary websites (like Roboflow). We don't always have good internet out in the field, and the idea of uploading 7 GB from each mothbox, each night, can be pretty impossible (I'm currently writing this tutorial on a laptop tethered to a phone because the power and internet is out!). Instead we wanted something you can run locally on even an old computer! (mine is 6 years old!)
 
 
-So I wrote this up so that you can make your
+So I wrote this up so that you can make your own, robust, offline, local detector. Next steps will be programming your own image identifier too! (Though after the insects are cropped out, the data is vastly smaller and could possibly be done with online tools too!)
 
 # Setting up your computer
 
