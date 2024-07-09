@@ -32,53 +32,64 @@ First Download the open-source software called ["X-anylabeling"](https://github.
 Make a folder of images you want to use for training. call it "all_training_images".
 Put your images you want to label in there.
 
+Make another folder called "backgrounds" and put any images in there that do not have any objects to label (they are blank "background" images)
+
 Open X-Anylabelling. Click "open directory"
+You will see a interface with your first photo pulled up. The bottom right corner shows a checkbox next to images you have already labeled.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bcf9eb25-00ab-4334-b04c-e1bf20e221ce)
+
+## Draw rectangles and rotations
+If you are doing *normal detection* and don't care about the rotation or orientation of your thing you want to detect, the easiest thing is to just draw regular rectangles around the object. After you draw the rectangle it will pop up a dialog box asking you how to classify this object you just rectangled. Type a new class in, or choose an existing one. All ours are called "creature"
+
+If you are doing *slightly more advanced detection* and want to specify the *angle or orientation of your boxes* instead of drawing a regular rectangle, choose "rotation." You draw a rectangle like before, and give it a class. but then after, you can press "z" or "v" to rotate your box until it looks right.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/c64d029b-6133-4791-ab15-37f54144899d)
+
+Label all your images. (This may take a while)
+
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5eb6b6a1-49ad-41c7-8a6d-3238bd92aedb)
+
+## Create a Classes file
+Go to your folder with all your images and create a new text file called "classes.txt"
+In this file, just list one word on each line for each class your organized your data into.
+We only had one class of object "creature" so our classes file just has one line that says "creature."
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3d66afa8-981a-49be-86d2-16123e13b8cd)
+
+
+## Export your data
+After you have labeled all your data in X-AnyLabeling, you can look in your "all images" folder and see that all the images have a new little .json file next to them. That stores all the data about the rectangles you made on each image. This data format works for X-AnyLabeling, but other programs need the data organized differently. So at the top of the program select: "Export Yolo Annotations"
+
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/44ffb616-c166-4986-8d2a-bc327149696f)
+
+
+and choose the "classes.txt" file we created earlier 
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/330f56d0-46fd-4d6f-a6d4-07cf9506b774)
+
+Now you will notice there is a new folder next to your "all images" folder called "labels." Inside there is a text document for each photo you labeled.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0c55ad5f-96a8-45c7-8163-e5fe069f3bcb)
+
+
 
 
 # Organizing Files
-```
-│   ├───moths20
-│   │   ├───images
-│   │   │   ├───test
-│   │   │   ├───train
-│   │   │   └───val
-│   │   └───labels
-│   │       ├───test
-│   │       ├───train
-│   │       └───val
-│   └───moths700
-│       ├───images
-│       │   ├───test
-│       │   ├───train
-│       │   └───val
-│       └───labels
-│           ├───test
-│           ├───train
-│           └───val
-├───predictme
-├───predictme_crops
-├───all_images
-    └───all your images
-    └───all your images annotations
-
-├───backgrounds
-├───prepare_yolo_Backgroundstoo.py
-
-└───runs
-    └───obb
-        ├───train
-        │   └───weights
-        ├───train10
-        │   └───weights
+Your working folder should be eventually organized like this (The github AI folder for the mothbox is organized like this for you as well)
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5f517898-f393-47ac-893b-a50bfa8783de)
 
 ```
 
-Put all your labelled image into two folders:
-one called
-all_images
-backgrounds
+```
 
-Run the Yolo Preparation script
+##Run the Dataset preparation script
+The way that AI's are trained means they need their training data organized in special weird ways. I made a script to help organize that automatically for you!
+Open a code editor like Visual Studio Code, and open the file "Mothbox_prepare_yolo_dataset.py"
+
+All you have to do is run that python script, and type in the number of images you want to use for training. For instance I typed in 100.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b342f959-96ac-4e20-80c2-38e73b8753bf)
+Now you will have a new folder in your datasets directory with all your data organized just how the AI likes it!
+
+
+
+
+
 
 # Training Images
 
@@ -108,7 +119,12 @@ Change the "datasets_dir" to the folder where you want to do your AI work.
 
 for instance mine is here
 
-`C:\YoloTesting\datasets`
+`C:\YoloMoths\datasets`
+
+So I went and edited that file and changed it myself:
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/87db68a3-05db-4235-8421-5278b4132d58)
+
+
 
 # Detection
 
