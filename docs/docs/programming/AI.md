@@ -7,7 +7,15 @@ nav_order: 6
 ---
 Here's how to build an AI machine vision program from scratch. This will let you use open source projects like YOLO to automatically detect insects in your high resolution photos. This will show you the basics of machine learning programs from setting up your computer, organizing files, training the AI, and processing images.
 
-This guide is written using a Windows computer using Linux. Most of this should work on a windows or linux machine (and probably a Mac machine too, you just might need to tweak some things)
+This guide is written using a Windows computer using Linux. Most of this should work on a windows or linux machine (and probably a Mac machine too, you just might need to tweak some things).
+
+# Motivation
+I asked around all over the place for advice on how to set up an AI image detector on my own, and couldn't get any guides for exactly how to do it. It turns out it's NOT a difficult thing programmatically (as some people might have you fear!) instead, the biggest challenge is about **data organization** and the special way you have to organize the files and point the program's paths towards things to make it work. 
+
+Also many tutorials for AI systems rely on first having to organize all your data in online proprietary websites (like Roboflow). We don't always have good internet out in the field, and the idea of uploading 7 GB from each mothbox, each night, can be pretty impossible (I'm currently writing this tutorial on a laptop tethered to a phone because the power and internet is out!). Instead we wanted something you can run locally on even an old computer! (mine is 6 years old!)
+
+
+So I wrote this up so that you can make your
 
 # Setting up your computer
 
