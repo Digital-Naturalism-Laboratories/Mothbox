@@ -100,7 +100,7 @@ Unscrew these three screws from the bottom of your Battery
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a54fb25a-e785-4e21-a92b-25b139c71ca9)
 save the screws.
 Now screw the screws back in, connecting the battery to the mainboard.
-![PXL_20240528_222120764](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0970c63b-8e7e-4ce5-9636-8ad1c59c7ecb)
+![image](https://github.com/user-attachments/assets/9d443341-2b62-4a2f-be2c-140cb7a30071)
 
 # Add the Clips to Mainboard
 Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
