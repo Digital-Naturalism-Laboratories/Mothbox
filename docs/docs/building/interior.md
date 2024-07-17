@@ -76,13 +76,17 @@ It sits in the corner. The four holes it connects to are marked with an extra ti
 
 We will only connect 3 of the holes of the Raspberry Pi, because one is hidden behind the ringlight. (If you wish to connect the 4th hole, make sure to use a plastic bolt.)
 
-![PXL_20240528_221654951](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/7b368f8d-57c8-43cb-b7c4-463ab8504b19)
 
 Add three of the spacers on top of the Pi's holes like this.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/05b1540c-ab99-4aa9-9acb-91b6bbcc82f7)
 
 Screw them in from the other side
 ![PXL_20240528_221455180](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1eea97a5-2d5c-49d1-970c-071a9e4d9f7c)
+
+## Connect the RTC battery
+Make sure to plug the battery into the Pi5's little battery slot. This battery keeps the clock accurate even if the pi loses power.
+![PXL_20240528_221654951](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/7b368f8d-57c8-43cb-b7c4-463ab8504b19)
+
 
 # Trim Your Zip ties
 Now is a good time to trim up the ends of the zip ties you have sticking around
