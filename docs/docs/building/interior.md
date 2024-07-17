@@ -111,14 +111,36 @@ if you are using a Pi5, make sure to connect to the first slot labeled "Cam0"
 ![PXL_20240528_231930368](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f4a7a9ed-f9fc-4d4a-a23b-6be467ee18d4)
 
 # Attach Relay hat to Pi
+You will now connect the sockets on the relay hat to all the shiny metal pins sticking out of the pi.
+First move the camera ribbon cable to the side of the bolt sticking out of the pi
+![image](https://github.com/user-attachments/assets/8f082ca1-ee8c-4688-bc48-480ec85297f6)
+
 Place the relay hat on top of the Pi. Line up the GPIO pins, and press softly down.
+![image](https://github.com/user-attachments/assets/7de25d12-9dfd-4662-9fbb-b311f2383b07)
+
+> [!WARNING]  
+> Be careful to not pinch the ribbon cable going to the camera
+ 
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1f5279fc-eac0-405d-94f5-5e2c0c5b5452)
+
+![image](https://github.com/user-attachments/assets/25b1946b-7199-40fa-9a8a-1135d0a3c0fd)
+
 
 ![PXL_20240528_232203873](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/12e258b0-b87f-45e9-a33e-db4c4d5466ff)
 ![PXL_20240528_232157880](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b109ecf8-15d7-4353-881d-2379ee54c4f4)
 
 
-Be careful to not pinch the ribbon cable going to the camera
-![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1f5279fc-eac0-405d-94f5-5e2c0c5b5452)
+## Tape the RTC battery on top of the relays
+
+This is just to keep it out of the way. and to stop it from getting tangled.
+
+Attach a piece of double sided tape to the little battery.
+![image](https://github.com/user-attachments/assets/77edf203-c352-4862-b33e-d91cd66cfc32)
+> [!NOTE]  
+> This image kinda looks like there are too many fingers.
+
+stick it on top of the relay.
+![image](https://github.com/user-attachments/assets/b669fba1-ea48-4d0b-b80c-711225a3045b)
 
 
 
