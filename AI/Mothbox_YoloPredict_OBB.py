@@ -25,13 +25,22 @@ def crop_rect(img, rect):
 if __name__ == '__main__':
 
     # Load the model
-    model = YOLO("runs/obb/train23/weights/best.pt")
+    model = YOLO("runs/obb/train4/weights/best.pt")
     input_path = "detect_me"
-    output_path = "detected_and_cropped_images"
-    img_list = os.listdir(input_path)
+    output_folder="detected_and_cropped_images"
+    output_path = input_path+"/"+output_folder
+    # Create the output directory if it doesn't exist
+    if not os.path.exists(output_path):
+        os.makedirs(output_path)
+    
+    #img_list = os.listdir(input_path)
+    img_list = [f for f in os.listdir(input_path) if f.endswith(".jpg")]
+
     i=1
     for file in img_list:
         filename = os.path.splitext(file)[0]
+        print(filename)
+        #if(filename==output_folder)
         data = os.path.join(input_path, file)
         print("\n img # "+str(i)+"  out of "+str(len(img_list)))
         i=i+1
