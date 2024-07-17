@@ -146,11 +146,25 @@ stick it on top of the relay.
 
 # Add the Clips to Mainboard
 Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
+> [!NOTE]  
+> If your mainboard still has protective plastic, you might need to peel it off from the mainboard before attaching the clips. Sometimes the protective plastic makes the acrylic sheets too thick for the clips.
+
+![image](https://github.com/user-attachments/assets/8d70328f-8d61-4bc9-8903-00d8cb5a583f)
+
+There are 2 LARGE clips and 2 SMALL clips
+
+The locations of the LARGE clips have RED arrows 
+BLUE arrows point to SMALL clips
+![image](https://github.com/user-attachments/assets/5375f3c6-1564-45a6-8d23-fdfe0249dbe3)
+
+
+![image](https://github.com/user-attachments/assets/ef525765-24d1-422e-b7c4-e1c1d46a2afe)
+
 
 ![PXL_20240528_222623305](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/08c951be-c403-4b7e-a8e8-cc931cdb81f3)
 
-> [!NOTE]  
-> You might need to peel any protective plastic from the mainboard before attaching the clips if they are difficult to connect.
+
+
 
 # Internals Constructed!
 Next you just need to [wire all your electronics together!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
