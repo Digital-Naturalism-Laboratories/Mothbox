@@ -99,13 +99,11 @@ Now is a good time to trim up the ends of the zip ties you have sticking around
 Unscrew these three screws from the bottom of your Battery
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a54fb25a-e785-4e21-a92b-25b139c71ca9)
 save the screws.
+> [!IMPORTANT]  
+> Make sure to press down firmly when unscrewing the screws so you do not strip the heads.
+
 Now screw the screws back in, connecting the battery to the mainboard.
 ![image](https://github.com/user-attachments/assets/9d443341-2b62-4a2f-be2c-140cb7a30071)
-
-# Add the Clips to Mainboard
-Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
-
-![PXL_20240528_222623305](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/08c951be-c403-4b7e-a8e8-cc931cdb81f3)
 
 # Connect the camera cable to the Raspberry Pi
 Connect the ribbon cable to the raspberry pi
@@ -122,6 +120,15 @@ Place the relay hat on top of the Pi. Line up the GPIO pins, and press softly do
 Be careful to not pinch the ribbon cable going to the camera
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1f5279fc-eac0-405d-94f5-5e2c0c5b5452)
 
+
+
+# Add the Clips to Mainboard
+Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
+
+![PXL_20240528_222623305](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/08c951be-c403-4b7e-a8e8-cc931cdb81f3)
+
+> [!NOTE]  
+> You might need to peel any protective plastic from the mainboard before attaching the clips if they are difficult to connect.
 
 # Internals Constructed!
 Next you just need to [wire all your electronics together!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
