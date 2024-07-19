@@ -28,6 +28,10 @@ This is the plug that will go into the OUTPUT of the battery. Don't plug it into
 Attach two lever nuts to each wire. For the positive (+) red wire, you just need a lever nut with 3 ports. For the black (-) negative wire, you want a lever nut with at least 4 ports because many of the grounds get tied together here.
 ![PXL_20240620_142426165](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377c88cd-af71-43a1-9f9f-e62d86212ffe)
 
+From the red, positive (+) wire's lever nut, attach two 12cm red wires
+![image](https://github.com/user-attachments/assets/708a7314-a89e-4bf0-b0db-606fe59bddbf)
+
+
 ## Connect the centers of the relays
 
 with the two wires coming out of the + positive red wire, you can send these to the middle ports of the middle and left relays.
