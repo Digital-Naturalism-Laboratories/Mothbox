@@ -129,6 +129,9 @@ Attach a piece of double sided tape to the little battery.
 > This image kinda looks like there are too many fingers.
 
 stick it on top of the relay.
+> [!IMPORTANT]  
+> Don't block the screw holes on top of the relay.
+
 ![image](https://github.com/user-attachments/assets/b669fba1-ea48-4d0b-b80c-711225a3045b)
 
 # Connect the Battery
