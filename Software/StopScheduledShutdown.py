@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
     lines = file.readlines()

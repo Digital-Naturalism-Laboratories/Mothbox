@@ -1,5 +1,4 @@
-# SPDX-FileCopyrightText: 2021 ladyada for Adafruit Industries
-# SPDX-License-Identifier: MIT
+#!/usr/bin/python
 
 import datetime
 from datetime import datetime

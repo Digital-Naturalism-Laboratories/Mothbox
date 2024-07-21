@@ -1,2 +1,136 @@
- now shut down
- now shut down
+----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------
+Current time: 2024-07-19 13:44:40
+No external settings, using internal csv
+No external settings, using internal csv
+second 1
+minute1;30
+hour9;7;19;22;1;4
+weekday1;2;3;4;5;6;7
+0
+{'second': ' 1', 'minute': '1;30', 'hour': '9;7;19;22;1;4', 'weekday': '1;2;3;4;5;6;7', 'ssid': ' examplessid', 'wifipass': ' examplepass', 'onlyflash': '0'}
+Unique name for device: gradoVerdín
+shutdown_enabled=True
+
+minutes=69
+
+OnlyFlash=False
+
+LastCalibration=1721341339.528016
+
+name=gradoVerdín
+
+set name gradoVerdín
+10 15 * * *
+1,30 9,7,19,22,1,4 * * 1,2,3,4,5,6,7
+Next event scheduled for: 2024-07-19 19:01:00
+Wakeup Alarms have been set!
+no shutdown scheduled, will run indefinitley
+----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------
+Current time: 2024-07-19 19:52:50
+No external settings, using internal csv
+No external settings, using internal csv
+second 1
+minute1;30
+hour9;7;19;22;1;4
+weekday1;2;3;4;5;6;7
+0
+{'second': ' 1', 'minute': '1;30', 'hour': '9;7;19;22;1;4', 'weekday': '1;2;3;4;5;6;7', 'ssid': ' examplessid', 'wifipass': ' examplepass', 'onlyflash': '0'}
+Unique name for device: gradoVerdín
+shutdown_enabled=True
+
+minutes=69
+
+OnlyFlash=False
+
+LastCalibration=1721433616.3286517
+
+name=gradoVerdín
+
+set name gradoVerdín
+10 15 * * *
+1,30 9,7,19,22,1,4 * * 1,2,3,4,5,6,7
+Next event scheduled for: 2024-07-19 22:01:00
+Wakeup Alarms have been set!
+no shutdown scheduled, will run indefinitley
+----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------
+Current time: 2024-07-19 22:36:41
+No external settings, using internal csv
+No external settings, using internal csv
+second 1
+minute1;30
+hour9;7;19;22;1;4
+weekday1;2;3;4;5;6;7
+0
+{'second': ' 1', 'minute': '1;30', 'hour': '9;7;19;22;1;4', 'weekday': '1;2;3;4;5;6;7', 'ssid': ' examplessid', 'wifipass': ' examplepass', 'onlyflash': '0'}
+Unique name for device: gradoVerdín
+shutdown_enabled=True
+
+minutes=69
+
+OnlyFlash=False
+
+LastCalibration=1721442256.0879176
+
+name=gradoVerdín
+
+set name gradoVerdín
+10 15 * * *
+1,30 9,7,19,22,1,4 * * 1,2,3,4,5,6,7
+Next event scheduled for: 2024-07-20 01:01:00
+Wakeup Alarms have been set!
+no shutdown scheduled, will run indefinitley
+----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------
+Current time: 2024-07-20 09:52:40
+No external settings, using internal csv
+No external settings, using internal csv
+second 1
+minute1;30
+hour9;7;19;22;1;4
+weekday1;2;3;4;5;6;7
+0
+{'second': ' 1', 'minute': '1;30', 'hour': '9;7;19;22;1;4', 'weekday': '1;2;3;4;5;6;7', 'ssid': ' examplessid', 'wifipass': ' examplepass', 'onlyflash': '0'}
+Unique name for device: gradoVerdín
+shutdown_enabled=True
+
+minutes=69
+
+OnlyFlash=False
+
+LastCalibration=1721486536.2009234
+
+name=gradoVerdín
+
+set name gradoVerdín
+10 15 * * *
+1,30 9,7,19,22,1,4 * * 1,2,3,4,5,6,7
+Next event scheduled for: 2024-07-20 19:01:00
+Wakeup Alarms have been set!
+no shutdown scheduled, will run indefinitley
+----------------- STARTING Scheduler for Pi5 (no Pijuice!)-------------------
+Current time: 2024-07-21 14:07:11
+No external settings, using internal csv
+No external settings, using internal csv
+second 1
+minute1;30
+hour9;7;19;22;1;4
+weekday1;2;3;4;5;6;7
+0
+{'second': ' 1', 'minute': '1;30', 'hour': '9;7;19;22;1;4', 'weekday': '1;2;3;4;5;6;7', 'ssid': ' examplessid', 'wifipass': ' examplepass', 'onlyflash': '0'}
+Unique name for device: gradoVerdín
+shutdown_enabled=False
+
+minutes=69
+
+OnlyFlash=False
+
+LastCalibration=1721487197.9187484
+
+name=gradoVerdín
+
+set name gradoVerdín
+10 15 * * *
+1,30 9,7,19,22,1,4 * * 1,2,3,4,5,6,7
+Next event scheduled for: 2024-07-21 19:01:00
+Wakeup Alarms have been set!
+no shutdown scheduled, will run indefinitley
+/usr/bin/python3: can't open file '/home/pi/Desktop/Mothbox/Scheduler_Pi.py': [Errno 2] No such file or directory

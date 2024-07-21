@@ -1,5 +1,5 @@
 shutdown_enabled=True
 minutes=69
 OnlyFlash=False
-LastCalibration=1718882597.0852063
-name=flatHāpuku
+LastCalibration=1721589316.573644
+name=gradoVerdín
