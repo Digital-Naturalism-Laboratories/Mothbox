@@ -8,7 +8,7 @@ It should work on a Pi5 whose EEPROM is configured
 
  POWER_OFF_ON_HALT=1
 WAKE_ON_GPIO=0
-It also tries to set the EEPROM correctly too!
+It also tries to set the EEPROM correctly too! So you don't have to do anything!
 
 It should work on a Pi4 if it has a pijuice attached and installed
 
@@ -169,7 +169,7 @@ GPIO.setup(debug_pin, GPIO.IN)
 
 # Check for connection
 if debug_connected_to_ground():
-  print("GPIO pin", off_pin, "DEBUG connected to ground.")
+  print("GPIO pin", debug_pin, "DEBUG connected to ground.")
   mode= "DEBUG"
 else:
   print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
@@ -717,7 +717,7 @@ elif mode == "DEBUG":
  # Define the path to your script (replace 'path/to/script' with the actual path)
  debug_script_path = "/home/pi/Desktop/Mothbox/DebugMode.py"
  # Call the script using subprocess.run
- subprocess.run([script_path])
+ subprocess.run([debug_script_path])
  #stopcron()
 elif mode == "ARMED":
  print("System is armed")
@@ -731,3 +731,4 @@ if(runtime > 0 and mode !="DEBUG"):
 else:
     print("no shutdown scheduled, will run indefinitley")
     
+
