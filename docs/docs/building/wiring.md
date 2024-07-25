@@ -12,9 +12,11 @@ We worked hard to keep the electronics as simple as possible so many people will
 Follow along and fear not!
 
 # Overview
-Here's a full circuit diagram. You are basically connecting the Attractor lights and the Flash lights to the battery's 12V power source via the relays that we can switch on and off.
+Here's a full circuit diagram of the **basic wiring**. You are basically connecting the Attractor lights and the Flash lights to the battery's 12V power source via the relays that we can switch on and off.
 ![image](https://github.com/user-attachments/assets/aa502498-299c-49f2-9ff4-01c33dac4519)
 
+And here's the full circuit diagram if you are using a **12V Regulator**
+![image](https://github.com/user-attachments/assets/fb5ca51b-cd33-489f-a2d8-3ad79a540979)
 
 
 # Wiring Guide
