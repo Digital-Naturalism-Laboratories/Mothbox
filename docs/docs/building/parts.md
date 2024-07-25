@@ -24,7 +24,8 @@ Below we try to include an up to date list for building N-copies of a Mothbox.
 
 OR
 * [Raspberry Pi 4 (4GB and up)](https://www.sparkfun.com/products/15447) ($55)
-* **plus** a [Pijuice](https://www.sparkfun.com/products/14803) ($100) [Info Software](https://github.com/PiSupply/PiJuice)
+* **plus** a [Pijuice](https://www.sparkfun.com/products/14803) ($100)
+   * [Info Software](https://github.com/PiSupply/PiJuice)
 
 #### Camera
 
@@ -37,7 +38,11 @@ OR
     * [Buy](https://www.amazon.com/RPi-Relay-Board-Raspberry-3-CH/dp/B085QJFWBC/ref=sr_1_2?crid=AMFLD6YHJSZE&keywords=waveshare+relay&qid=1696772113&sprefix=waveshare+relay%2Caps%2C185&sr=8-2)
     * [Info](https://www.waveshare.com/wiki/RPi_Relay_Board)
     * Remember you can also wire individual relays, but not solid state relays (they can't switch low dc voltage)
-
+* 12V regulator / Step-Up Voltage Booster
+   * [Buy](https://www.amazon.com/dp/B01EFUHFW6?ref=ppx_yo2ov_dt_b_product_details&th=1)
+   * This extends your battery life by keeping power to the 12V lights even if your battery voltage starts dipping low.
+* (Optional) Power sensor for monitoring battery levels
+   *[Buy](https://www.amazon.com/gp/product/B07S8QYDF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)    
 ### Lighting ($60)
 * Photography Lights (2x)
   * 2x [12V 144 LED ringlight](https://www.amazon.com/Vision-Scientific-VMLIFR-09B-Adjustable-Microscope/dp/B07VR2LJJL/ref=sr_1_3?dib=eyJ2IjoiMSJ9.DbiY5JtmTyqdia8Ee8UuPpsoJM8OTk10ORY71iWG_mlVi8JpX9GsduTgfaqexSTuxIIwEXeeQxym52IUA-Yo9VWqxdLGL_8hGdoWaERt2zJLFEAj-nfKJU61L5OdAJpPrMNhk8d1OflupD8g-uksQH-57MFpgWmp23_Y2CtZatQVDPGVU8x2WEf09ujR0e-bCdWRp5TCan7V7R8_u9b7dqUM2he2iJkMw2qtBGOoj2U.zj3zCDFoME_grkL8IN7mYiOwL4_cmaemrzDmBTPF0h0&dib_tag=se&keywords=144+led+microscope+light&qid=1716984108&sr=8-3) ($23)
@@ -48,7 +53,7 @@ OR
     * 12V
         * Any UV light that accepts a 12V input will work easily
               * [Cheap 12V Waterproof UV flood](https://www.amazon.com/dp/B07KHVZ7TG?psc=1&ref=ppx_yo2ov_dt_b_product_details) ($13)
-        *  We are also using out custom "Mothbeams" which are like powerful bespoke, low cost- lepileds
+        *  We are also using out custom "Mothbeams" which are like powerful, open source, bespoke, low cost- lepileds
 
     * 5V
         * to reduce costs and additional parts, we do not design around an extra 5V output
@@ -93,14 +98,14 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
 
 
    
-4. 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
-5. Plastic epoxy
-6. Spools of Wire
-    1. Red
-    2. Black
-7. Wago connectors 
-    3. [https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1](https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1)
-    4. [(or cheaper knock offs should work fine with low voltage like this)](https://www.amazon.com/Connectors-Delgada-Conductor-Connector-Electrical/dp/B09TS9YKV1/ref=sxin_14_sbv_search_btf?content-id=amzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59%3Aamzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59&crid=14GVQPDXZMRQ4&cv_ct_cx=wago%2Bconnectors&keywords=wago%2Bconnectors&pd_rd_i=B09TS9YKV1&pd_rd_r=e648f2b2-c3a9-45f5-ad6a-cc2c01313274&pd_rd_w=juJLN&pd_rd_wg=YJ3Yz&pf_rd_p=6ca944f8-539c-499e-a3a4-26a566d1de59&pf_rd_r=2FNDQ7ZAN1YRNZK0V47C&qid=1704033576&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=wago%2Bconne%2Caps%2C189&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776&th=1)
+* 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+* Plastic epoxy
+* Spools of Wire
+    * Red
+    * Black
+* Wago connectors 
+   * [https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1](https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1)
+   * [(or cheaper knock offs should work fine with low voltage like this)](https://www.amazon.com/Connectors-Delgada-Conductor-Connector-Electrical/dp/B09TS9YKV1/ref=sxin_14_sbv_search_btf?content-id=amzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59%3Aamzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59&crid=14GVQPDXZMRQ4&cv_ct_cx=wago%2Bconnectors&keywords=wago%2Bconnectors&pd_rd_i=B09TS9YKV1&pd_rd_r=e648f2b2-c3a9-45f5-ad6a-cc2c01313274&pd_rd_w=juJLN&pd_rd_wg=YJ3Yz&pf_rd_p=6ca944f8-539c-499e-a3a4-26a566d1de59&pf_rd_r=2FNDQ7ZAN1YRNZK0V47C&qid=1704033576&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=wago%2Bconne%2Caps%2C189&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776&th=1)
 
 11. Strap (To attach to tree)
 1. [Dielectric grease (for additional waterproofing)](https://www.amazon.com/Mission-Automotive-Dielectric-Silicone-Waterproof/dp/B016E5E59G/)
