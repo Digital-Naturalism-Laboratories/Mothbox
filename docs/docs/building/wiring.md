@@ -12,8 +12,9 @@ We worked hard to keep the electronics as simple as possible so many people will
 Follow along and fear not!
 
 # Overview
-Here's a temporary diagram. You are basically connecting the Attractor lights and the Flash lights to the battery's 12V power source via the relays that we can switch on and off.
-![PXL_20240615_195332839](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/58deee13-4b66-4fa3-883e-b2eaaa2e85b1)
+Here's a full circuit diagram. You are basically connecting the Attractor lights and the Flash lights to the battery's 12V power source via the relays that we can switch on and off.
+![image](https://github.com/user-attachments/assets/aa502498-299c-49f2-9ff4-01c33dac4519)
+
 
 
 # Wiring Guide
