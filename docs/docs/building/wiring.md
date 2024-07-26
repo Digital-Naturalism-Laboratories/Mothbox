@@ -125,6 +125,42 @@ When you aren't charging it, you can put the rubber cap over the port to protect
 Hooray, your charging port should be all set!
 ![PXL_20240620_191035108](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/43c57308-e4ac-49f0-9e67-e7706c96459d)
 
+# (Bonus) 12V Regulator (Double your runtime!)
+The mothbox uses a 12V li-ion battery to power its lights. This is because Li-ion batteries (like the talentcell) tend to be the cheapest and most energy dense batteries you can find. One problem though is that 12V Li-Ion batteries should more properly be called ["11 Volt batteries"](https://www.youtube.com/attribution_link?a=G0DWLOO3a0ScxCY2&u=/watch%3Fv%3D2Zm-tGT40No%26lc%3DUgwB3-ckr_Ck6Ppx6i94AaABAg.A5vYqUjaMj6A5zKF_KWXfb%26feature%3Dem-comments). This is because as they discharge, most of the battery life is spent **11.9 volts and under** 
+![image](https://github.com/user-attachments/assets/67dfe2b8-616e-4239-9f19-c5cfc2d424a9)
+
+A lot of 12 v equipment is tolerant of slightly lower voltage, but things like light can dim. Thus, if you want your mothbox to run for longer and have consistently bright lights (which can be important for experiments!), there is a pretty easy fix! You can just add in a 12V regulator booster. This is a $11 device you can add inbetween the battery's output and the rest of the mothbox connections.
+
+Refer back to the [wiring diagram above](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/#overview)
+
+First, connect the positive red wire from the battery's output to the postive red input wire of the regulator.
+
+![image](https://github.com/user-attachments/assets/417be1b0-aee6-4d3b-8201-97d8f270d976)
+
+next, replace the Positive wire from the battery's output with the *Yellow output wire* of the 12V Regulator.
+![image](https://github.com/user-attachments/assets/0cfb0ca0-cb6a-415a-b0f8-be98ba2cd4b4)
+
+Then, connect both black wires from the regulator to the main set of black ground wires in the mothbox's wiring.
+
+
+
+Finally add a piece of double sided tape, and just stick it onto the battery so it doesn't jiggle around.
+![image](https://github.com/user-attachments/assets/9f4b5281-c51e-462e-8547-a9ed2b04add0)
+![image](https://github.com/user-attachments/assets/a680bb35-4173-4417-a2c5-d3688e77c56f)
+
+
+
+# (Optional) Monitor your voltage!
+The mothbox images are programmed to monitor and log their voltages. This doesn't affect their use, but there may be situations for advanced users where you might want to only turn your mothbox on, if it has a certain percentage of its battery charged. For instance if you connect a solar panel to your Mothbox, you might want to wait until your battery is fully charged before arming it to run for an entire night.
+
+If you want to add this optional ability to your mothbox here's how to do it!
+
+Purchase a $12 [Adafruit power sensor](https://www.amazon.com/gp/product/B07S8QYDF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1). Solder its parts together. 
+
+Follow the [wiring guide from Adafruit](https://learn.adafruit.com/adafruit-ina260-current-voltage-power-sensor-breakout/python-circuitpython) for how to connect the 3.3V GND SDA and SCL wires.
+![sensors_INA260_RPi_cropped](https://github.com/user-attachments/assets/292e525b-dba3-4347-93f4-cb72fbd9c690)
+
+Run the MeasurePower.py script included on the Mothbox Github.
 
 # Test everything
 You should now be able to put an [SD card with a latest image](https://drive.google.com/drive/u/0/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF)
