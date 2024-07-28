@@ -12,6 +12,8 @@ The entire materials cost is **about $350** per mothbox.
 
 Below we try to include an up to date list for building N-copies of a Mothbox.
 
+Here's a [link to a list of most of the parts collected for you.](https://www.amazon.com/hz/wishlist/ls/3J2HLUOYNFFZG?ref_=wl_share)
+
 
 ## Electronics
 **N-x the following:**
