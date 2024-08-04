@@ -125,8 +125,11 @@ if __name__ == '__main__':
     # Load the model
     model = YOLO("runs/obb/train4/weights/best.pt")
 
-    input_path="D:\Mothbox Photos to Backup\CuervoCinifre DinalabBY"
+    input_path=r"D:\Mothbox Photos to Backup\GradoVerdin\2024-07-29 --Moth Class Girls Tena" #raw string
+    print(input_path)
+    #input_path = input_path.encode('utf-8').decode('mbcs')
     input_path= os.path.normpath(input_path)
+    print(input_path)
     output_folder="detected_and_cropped_images"
     output_path = input_path+"/"+output_folder
 
