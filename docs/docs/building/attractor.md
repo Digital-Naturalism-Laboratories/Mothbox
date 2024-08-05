@@ -41,7 +41,68 @@ unscrew very easily and consist of just a simple circuit board connected with th
 
 Using the [same method for adding an additional charging port](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/#add-charging-port-optional-but-nice) we described earlier, you can add an additional OUTPUT port to the bottom of your mothbox. This new external port should be connected to the same relay as you would hook up any of the attractor options. Then you can simply use a DC cable to connect whatever 12 V light you wish to use outside of the mothbox.
 
-For instance these [inexpensive 10W flood lights](https://www.amazon.com/gp/product/B01LT53312/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 
-![PXL_20240625_214150615](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/dcb9633a-840a-45e2-9c1b-f5d94a2c536a)
+Here's a step-by-step guide for how to add an External 12V UV Light
 
-are 12V powered and are semi waterproofed and could be connected externally.
+You need
+* 12 V UV Light [inexpensive 10W waterproof flood lights](https://www.amazon.com/gp/product/B01LT53312/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 
+* Waterproof connectors [e.g. [these twist on connectors are easy](https://www.amazon.com/gp/product/B0CNHW1FBF/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)]
+* DC barrel jack cable plug
+* Extra DC barrel jack waterproof socket
+![PXL_20240805_164551924 MP](https://github.com/user-attachments/assets/076f806f-456b-4292-a4bb-c8c4f6970c01)
+
+## Prepare the external light
+We are using these twist-on waterproof connectors because they are about the easiest way to connect wires in a waterproof way. They are full of a silicone goo that keeps water out.
+![PXL_20240805_164603120 MP](https://github.com/user-attachments/assets/9fca7c4c-737a-4936-8bb3-4e58199f76c2)
+
+Take your red wire from your light and the red wire from the barrel jack cable and twist them together.
+
+![image](https://github.com/user-attachments/assets/76fe4cf9-9e57-4729-98dd-dcc382085b7f)
+
+Twist the black wires together as well. And then stick them inside the connectors, and keep twisting until they feel connected tightly.
+![image](https://github.com/user-attachments/assets/8329cbcc-c6ec-44fc-8d79-c0822f1749ec)
+
+### Test the light
+Plug it in to a battery to make sure it works!
+![PXL_20240805_164951918 MP](https://github.com/user-attachments/assets/37b42b61-5824-4f07-9af4-4cbd4f3bdf77)
+
+
+### Seal it up even more if you are paranoid
+you can heat shrink it
+
+![image](https://github.com/user-attachments/assets/c92ea508-49fe-45ba-9068-5446de20b2fd)
+
+and even fill it full of hot glue if you are worried about water (like if you live in the rainforest!). But honestly the twist nuts full of the silicone goo is probably good enough.
+![image](https://github.com/user-attachments/assets/18d93928-0bd7-4296-8231-fbfe89ed0fc8)
+
+![image](https://github.com/user-attachments/assets/5444ad09-e965-4836-bbfe-74a7971c8e94)
+
+
+## Add an External Attractor Port
+
+Following the instructions for adding the charging port we described earlier, just drill another hole next to that one.
+![image](https://github.com/user-attachments/assets/50acc3ef-6d6b-4cde-93c5-52c9ef887440)
+
+Take another DC socket. To keep myself from confusing the charging port and this new UV OUTPUT PORT I color it purple with a marker.
+![image](https://github.com/user-attachments/assets/038efde0-fd61-470a-bd82-4b7a706989a5)
+
+Your internal charging port should already be connected to a barrel plug. Add a lever nut to your new attractor port, 
+![PXL_20240805_171126747 MP](https://github.com/user-attachments/assets/109b0fa4-a9f5-486f-9947-edb5022b231a)
+
+and add a red and black wire to it.
+![PXL_20240805_171341509 MP](https://github.com/user-attachments/assets/ccf83526-7038-4a9e-8334-0a098dc698c7)
+
+connect the black wire to the ground (or the extra ground wire of the voltage regulator).
+![PXL_20240805_171434485 MP](https://github.com/user-attachments/assets/0f1aeddd-52d0-4571-a809-238ab8d46917)
+
+connect the red wire to the attractor port of the relay
+![image](https://github.com/user-attachments/assets/fc2904b2-8d37-479c-b78a-546dcad3e81d)
+
+Test it all out! It should light up when the mothbox turns itself on and starts running its routines.
+![PXL_20240805_171728517 MP](https://github.com/user-attachments/assets/e6862d49-6db9-49af-9416-cae0144ee04c)
+
+
+
+
+
+
+
