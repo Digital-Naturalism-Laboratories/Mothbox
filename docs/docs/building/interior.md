@@ -107,7 +107,7 @@ First move the camera ribbon cable to the side of the bolt sticking out of the p
 Place the relay hat on top of the Pi. Line up the GPIO pins, and press softly down.
 ![image](https://github.com/user-attachments/assets/7de25d12-9dfd-4662-9fbb-b311f2383b07)
 
-> [!WARNING]  
+{: .warning }
 > Be careful to not pinch the ribbon cable going to the camera
  
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1f5279fc-eac0-405d-94f5-5e2c0c5b5452)
@@ -125,11 +125,11 @@ This is just to keep it out of the way. and to stop it from getting tangled.
 
 Attach a piece of double sided tape to the little battery.
 ![image](https://github.com/user-attachments/assets/77edf203-c352-4862-b33e-d91cd66cfc32)
-> [!NOTE]  
+{: .note }
 > This image kinda looks like there are too many fingers.
 
 stick it on top of the relay.
-> [!IMPORTANT]  
+{: .important }
 > Don't block the screw holes on top of the relay.
 
 ![image](https://github.com/user-attachments/assets/b669fba1-ea48-4d0b-b80c-711225a3045b)
@@ -139,7 +139,7 @@ stick it on top of the relay.
 Unscrew these three screws from the bottom of your Battery
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a54fb25a-e785-4e21-a92b-25b139c71ca9)
 save the screws.
-> [!IMPORTANT]  
+{: .important } 
 > Make sure to press down firmly when unscrewing the screws so you do not strip the heads.
 
 Now screw the screws back in, connecting the battery to the mainboard.
@@ -147,7 +147,7 @@ Now screw the screws back in, connecting the battery to the mainboard.
 
 # Add the Clips to Mainboard
 Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
-> [!NOTE]  
+{: .note } 
 > If your mainboard still has protective plastic, you might need to peel it off from the mainboard before attaching the clips. Sometimes the protective plastic makes the acrylic sheets too thick for the clips.
 
 ![image](https://github.com/user-attachments/assets/8d70328f-8d61-4bc9-8903-00d8cb5a583f)
