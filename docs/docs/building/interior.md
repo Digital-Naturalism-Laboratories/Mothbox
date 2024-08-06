@@ -125,6 +125,7 @@ This is just to keep it out of the way. and to stop it from getting tangled.
 
 Attach a piece of double sided tape to the little battery.
 ![image](https://github.com/user-attachments/assets/77edf203-c352-4862-b33e-d91cd66cfc32)
+
 {: .note }
 > This image kinda looks like there are too many fingers.
 
@@ -139,6 +140,7 @@ stick it on top of the relay.
 Unscrew these three screws from the bottom of your Battery
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a54fb25a-e785-4e21-a92b-25b139c71ca9)
 save the screws.
+
 {: .important } 
 > Make sure to press down firmly when unscrewing the screws so you do not strip the heads.
 
@@ -147,6 +149,7 @@ Now screw the screws back in, connecting the battery to the mainboard.
 
 # Add the Clips to Mainboard
 Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
+
 {: .note } 
 > If your mainboard still has protective plastic, you might need to peel it off from the mainboard before attaching the clips. Sometimes the protective plastic makes the acrylic sheets too thick for the clips.
 
