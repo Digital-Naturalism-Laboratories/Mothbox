@@ -130,6 +130,7 @@ Attach a piece of double sided tape to the little battery.
 > This image kinda looks like there are too many fingers.
 
 stick it on top of the relay.
+
 {: .important }
 > Don't block the screw holes on top of the relay.
 
