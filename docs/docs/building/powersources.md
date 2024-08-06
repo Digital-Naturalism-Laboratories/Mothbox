@@ -17,14 +17,16 @@ This is pretty easy to do! Simply plug a DC barrel jack cable from your panel to
 That's it!
 
 We talked to the Talentcell people who make the batteries, they said lots of solar panels will work, especially 18V panels up to 60Watts.**
-> [!IMPORTANT]  
+
+{: .important }
 > Panels should be max 18V and 60 watts
 
 
 # Add Extra Batteries
 
 This is also quite an easy addition. You can just plug a DC barrel jack cable from the output of one talentcell battery to the input port of another! Easy as that! You just need to make sure that both batteries are fully charged.
-> [!IMPORTANT]  
+
+{: .important }
 > All batteries need to be fully charged if you connect them
 
 ## Build a waterproof battery pack
