@@ -101,4 +101,7 @@ With the extra large target, it might make sense to use the [External Attractor]
 
 
 # Just Point it at Something
-
+Depending on your setup, you might not actually need a dedicated target! We have used the Mothbox by just pointing it at a white wall with a bright light that insects were attracted to. Many people want to just point their mothbox at a sheet that have hung up for traditional Mothlighting. This can totally work, BUT some things to keep in mind:
+* The mothbox will autocalibrate its focus and exposure, but it only does this about every 6 minutes. Thus if it is pointing at a surface that sways or moves back and forth (possibly like a sheet in a light breeze) many of these images will not be in focus.
+* The Mothbox is trying to image a full surface which is different than when you try to take pics individually of specific insects on a moth sheet. Its visual field should be of a surface that is **as flat as possible** or else parts of the image may by occluded by wrinkles
+* The lighting near the edges of a surface may not be as well illuminated as those near the middle.
