@@ -53,6 +53,11 @@ Place something flat and heavy on top of them.
 
 ![PXL_20240808_201146040 MP](https://github.com/user-attachments/assets/cd41611a-f291-4487-97a8-2300885f11e8)
 
+## Prepare Arms for Dual Target
+
+The dual target can fit at the end of the arms in their standard configuration, but they will fill up the camera image entirely. If you want to have a safe margin around the edges of the dual target, you can adjust the arms one notch outward (it moves them about 7 cm outward).
+
+
 
 # Quad Target
 ![PXL_20240808_233028726 MP](https://github.com/user-attachments/assets/7841afdd-23c8-4bab-b746-9db37406b0d7)
