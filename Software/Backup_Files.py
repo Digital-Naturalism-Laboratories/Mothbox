@@ -3,9 +3,7 @@
 """
 Backupper Script
 This script is for folks collecting lots of data automatically that needs to get backed up at certain intervals
-
 for instance saving a bunch of files to a folder, but then automatically copying them to larger external devices
-
 This script first defines paths for the desktop, photos folder, and backup folder name. Then, it defines functions to:
 
     Get the storage information (total and available space) of a path.
@@ -16,17 +14,12 @@ This script first defines paths for the desktop, photos folder, and backup folde
     Copy all the files from the internal storage to the external storage
     Move the files from the directory of "fresh" files to the internal "backedup" folder
     if the internal storage gets too small, delete the internal "backedup" folder
-
 Finally, the script checks if the photos folder exists and then finds the largest external storage. It compares the total space and available space on both the desktop and the external storage to determine if the external storage has enough space for the backup. If so, it creates a backup folder on the external storage and copies the photos. Otherwise, it informs the user about insufficient space.
 
 Note:
-
     This script assumes the user running the script has read and write permissions to the desktop and any external storage devices.
     You might need to adjust the user name in desktop_path depending on your Raspberry Pi setup.
-
-
 """
-
 import os
 import subprocess
 import shutil
@@ -51,29 +44,24 @@ formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as neede
 
 print(f"Current time: {formatted_time}")
 
-
 def get_storage_info(path):
     """
     Gets the total and available storage space of a path.
-
     Args:
         path: The path to the storage device.
 
     Returns:
         A tuple containing the total and available storage in bytes.
     """
-
     try:
         stat = os.statvfs(path)
         return stat.f_blocks * stat.f_bsize, stat.f_bavail * stat.f_bsize
     except OSError:
         return 0, 0  # Handle non-existent or inaccessible storages
 
-
 def find_largest_external_storage():
     """
     Finds the largest external storage device connected to the Raspberry Pi.
-
     Returns:
         The path to the largest storage device or None if none is found.
     """
@@ -103,7 +91,6 @@ def find_largest_external_storage():
 def is_mounted(path):
   """
   Checks if the given path is currently mounted.
-
   Args:
       path: The path to check for mount status.
 
@@ -120,25 +107,17 @@ def is_mounted(path):
 def rsync_photos_to_backup(source_dir, dest_dir):
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
-
-    # Build the rsync command with options for recursive copy, delete on source, and verbose output
-    # rsync_cmd = ["rsync", "-avz", "--delete", source_dir, dest_dir] # copies the whole folder, not just files inside
-    
-    #rsync_cmd = ["rsync", "-av", str(source_dir) + "/", dest_dir]
     #if you don't want as many slow print commands, turn off verbose mode
     rsync_cmd = ["rsync", "-avz", str(source_dir) + "/", dest_dir]
-
     # Call rsync using subprocess
     try:
         process = subprocess.run(rsync_cmd, check=True)
     except subprocess.CalledProcessError as err:
         raise RuntimeError(f"Oh no! Mothbox couldn't backup your files!") from err
 
-
 def rsync_copy_and_delete_files(source_dir, dest_dir):
     """
     This function uses rsync to copy files from source_dir to dest_dir and then deletes the originals from source_dir if successful.
-
     Args:
       source_dir: The source directory containing the files to copy.
       dest_dir: The destination directory to copy the files to.
@@ -149,13 +128,9 @@ def rsync_copy_and_delete_files(source_dir, dest_dir):
     if not os.path.exists(dest_dir):
         os.makedirs(dest_dir)
 
-    # Build the rsync command with options for recursive copy, delete on source, and verbose output
-    # rsync_cmd = ["rsync", "-avz", "--delete", source_dir, dest_dir] # copies the whole folder, not just files inside
-    
-    #rsync_cmd = ["rsync", "-av", str(source_dir) + "/", dest_dir] #verbose
+    # Build the rsync command with options for recursive copy, delete on source, and verbose output    
     rsync_cmd = ["rsync", "-avz", str(source_dir) + "/", dest_dir]
 
-    
     # Call rsync using subprocess
     process = subprocess.run(rsync_cmd, check=True)
 
@@ -177,7 +152,6 @@ def rsync_copy_and_delete_files(source_dir, dest_dir):
 def move_folder_contents(source_folder, destination_folder):
   """
   Moves the entire contents of a folder to a new folder, overwriting existing files.
-
   Args:
       source_folder (str): Path to the source folder.
       destination_folder (str): Path to the destination folder.
@@ -198,13 +172,11 @@ def move_folder_contents(source_folder, destination_folder):
       move_folder_contents(source_path, destination_path)
     else:
       print(f"Skipping unknown item: {filename}")
-      
 
 def move_photos_to_backup(source_folder, target_folder):
   """
   Copies all files and subfolders from the source folder to the target folder recursively,
   handling existing dated folders and copying their contents.
-
   Args:
       source_folder: The path to the source folder.
       target_folder: The path to the target folder.
@@ -228,7 +200,6 @@ def copy_photos_to_backup(source_folder, target_folder):
   """
   Copies all files and subfolders from the source folder to the target folder recursively,
   handling existing dated folders and copying their contents.
-
   Args:
       source_folder: The path to the source folder.
       target_folder: The path to the target folder.
@@ -260,11 +231,9 @@ def copy_photos_to_backup(source_folder, target_folder):
 def verify_copy(source_folder, destination_folder):
   """
   Compares the contents of a source folder and its subdirectories with the destination folder to verify successful copy.
-
   Args:
       source_folder: The path to the source folder.
       destination_folder: The path to the destination folder.
-
   Returns:
       A list of any differences found between the source and destination folders.
   """
@@ -297,11 +266,9 @@ def verify_copy(source_folder, destination_folder):
         differences.append(f"Missing file in destination: {dest_file}")
   return differences
 
-
 def delete_folder_contents(folder_path):
   """
   Deletes all contents (files and subdirectories) from a folder.
-
   Args:
       folder_path: The path to the folder to be emptied.
   """
@@ -316,7 +283,6 @@ def delete_folder_contents(folder_path):
 def delete_original_photos(source_folder):
     """
     Deletes all files from the source folder.
-
     Args:
         source_folder: The path to the source folder.
     """
@@ -332,10 +298,8 @@ def delete_original_photos(source_folder):
 def get_dir_size(dir_path):
   """
   Calculates the total size of a directory and its subdirectories.
-
   Args:
       dir_path: The path to the directory.
-
   Returns:
       The total size of the directory in bytes.
   """
@@ -347,8 +311,13 @@ def get_dir_size(dir_path):
         total_size += os.path.getsize(file_path)
   return total_size
 
-
 def backup_and_delete(source_folder, destination_folder):
+  """
+  Back up files and delete them
+  Args:
+      source_folder: path to the original location
+      destination_folder: path to backup location
+  """
     # Ensure source and destination folders exist
     if not os.path.exists(source_folder):
         print(f"Source folder '{source_folder}' does not exist.")
@@ -356,7 +325,6 @@ def backup_and_delete(source_folder, destination_folder):
     if not os.path.exists(destination_folder):
         os.makedirs(destination_folder)
         print(f"Created destination folder '{destination_folder}'.")
-
     try:
         # Copy the contents of the source folder to the destination folder
         for item in os.listdir(source_folder):
@@ -367,14 +335,12 @@ def backup_and_delete(source_folder, destination_folder):
             else:
                 shutil.copy2(src_path, dest_path)
         print(f"All contents of '{source_folder}' successfully copied to '{destination_folder}'.")
-
         # Verify the copy
         src_items = set(os.listdir(source_folder))
         dest_items = set(os.listdir(destination_folder))
         if not src_items.issubset(dest_items):
             print("Error: Not all items were copied successfully.")
             return
-
         # Delete the contents of the source folder
         for item in os.listdir(source_folder):
             src_path = os.path.join(source_folder, item)
@@ -383,7 +349,6 @@ def backup_and_delete(source_folder, destination_folder):
             else:
                 os.remove(src_path)
         print(f"All contents of '{source_folder}' have been deleted.")
-
     except Exception as e:
         print(f"An error occurred: {e}")
 
@@ -392,13 +357,8 @@ if __name__ == "__main__":
     if not os.path.exists(photos_folder):
         print("Photos folder not found, exiting.")
         exit(1)
-
-    # Find largest external storage
-    # largest_storage = find_largest_external_storage()
-
     # Get total and available space on desktop and external storage
     desktop_total, desktop_available = get_storage_info(desktop_path)
-    # external_total,external_available = get_storage_info(largest_storage)
     print("Desktop Total    Storage: \t" + str(desktop_total))
     print("Desktop Available Storage: \t" + str(desktop_available))
 
@@ -406,7 +366,6 @@ if __name__ == "__main__":
   Finds storage capacity of all external drives and ranks them by size.
   """
     disks = {}  # Dictionary to store disk name and capacity
-
     # Check potential mount points for external drives (adjust based on your system)
     for mount_point in os.listdir("/media/pi"):
         path = Path(f"/media/pi/{mount_point}")
@@ -432,7 +391,6 @@ if __name__ == "__main__":
 
         exit(1)
     print("~~~sorted~~~~~~")
-
     thingsworkedok = False
     # this is the loop where we make stuff happen
     # iterate through the disks, starting with the largest
@@ -441,12 +399,9 @@ if __name__ == "__main__":
         print("chosen Disk: "+str(disk_name))
         total_available, external_available = capacity
         print("total available \t"+str(total_available)) 
-        
         # Check if external storage has more available space than desktop
         dir_path = photos_folder
         total_size_bytes = get_dir_size(dir_path)
-        
-        
         print("total needed \t\t"+str(total_size_bytes))
         if external_available > total_size_bytes:
             # Create backup folder on external storage
@@ -455,14 +410,8 @@ if __name__ == "__main__":
             #using the non-rsync way for now because rsync was giving errors
             
             copy_photos_to_backup(photos_folder, external_backup_folder)
-            print(f"Photos successfully copied to external backup folder: {external_backup_folder}")
-            
-            
-            #copy_photos_to_backup(photos_folder, backedup_photos_folder)
-            
+            print(f"Photos successfully copied to external backup folder: {external_backup_folder}")            
             differences = verify_copy(photos_folder, external_backup_folder)
-            
-            
             if differences:
               print("Differences found:")
               for difference in differences:
@@ -472,12 +421,6 @@ if __name__ == "__main__":
               print("moving original files to backedup_photos_folder")
               move_folder_contents(photos_folder, backedup_photos_folder)
               print(f"Photos successfully copied to internal backup folder: {backedup_photos_folder}")
-
-              #delete_folder_contents(photos_folder)
-
-            #now we can remove them from the fresh folder
-            #delete_original_photos(photos_folder)
-
             thingsworkedok=True
             if(thingsworkedok):
                 # After we backed up, we can check on our internal storage and see if we need to clean up
@@ -485,7 +428,6 @@ if __name__ == "__main__":
                 x = internal_storage_minimum
                 if desktop_available < x * 1024**3:  # x GB in bytes
                     delete_folder_contents(backedup_photos_folder)
-                    #delete_original_photos(backedup_photos_folder)
                     print(
                         "Original photos deleted after being backed up due to low internal storage."
                     )
@@ -497,15 +439,11 @@ if __name__ == "__main__":
                     )
                 print("we have finished backing up! yay!")
                 break
-
         else:
             print("This External storage doesn't have enough space for backup.\n Trying next available storage if there is one ")
     if thingsworkedok == False:
-        print(
-            "stuff never worked out with this backup, your files are not properly backedup"
-        )
+        print("stuff never worked out with this backup, your files are not properly backedup")
     else:
         print("stuff worked out BACKUP COMPLETE")
-    
     print("end")
 quit()

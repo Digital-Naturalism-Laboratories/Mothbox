@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-'''
+"""
 This script will schedule the next wakeups for the Mothbox
 It should work on a Pi5 whose EEPROM is configured
 
@@ -12,9 +12,7 @@ It also tries to set the EEPROM correctly too! So you don't have to do anything!
 
 It should work on a Pi4 if it has a pijuice attached and installed
 
-
-'''
-
+"""
 import time
 from time import sleep
 import csv
@@ -30,7 +28,6 @@ import schedule
 import time
 from time import sleep
 
-
 import crontab
 from crontab import CronTab
 import logging
@@ -38,7 +35,6 @@ import re
 
 print("----------------- STARTING Scheduler!-------------------")
 #First figure out if this is a Pi4 or a Pi5
-
 def determinePiModel():
 
   # Check Raspberry Pi model using CPU info
@@ -79,9 +75,8 @@ print(f"Current time: {formatted_time} on a RPi model "+str(rpiModel))
 if(rpiModel==4):
   from pijuice import PiJuice
 
-  #pijuice stuff, i don;t really know what it is doing
+  #Set up the pijuice
   pj = PiJuice(1,0x14)
-
   pjOK = False
   while pjOK == False:
     stat = pj.status.GetStatus()
@@ -89,7 +84,6 @@ if(rpiModel==4):
         pjOK = True
     else:
         sleep(0.1)
-
 
 ### ~~~~~~~~~~ TODO: SET THE EEPROM TO WAKE UP ~~~~~~~~~~~~~~
 def check_eeprom_settings():
@@ -114,7 +108,6 @@ def set_eeprom_settings(settings):
 
     subprocess.run(["sudo", "rpi-eeprom-config", "--apply", "/tmp/eeprom_config.txt"])
 
-
 if(rpiModel==5):
   desired_settings = {"POWER_OFF_ON_HALT": "1", "WAKE_ON_GPIO": "0"}
   current_settings = check_eeprom_settings()
@@ -129,8 +122,6 @@ if(rpiModel==5):
     print("EEPROM settings updated.")
 
 #-----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
-
-
 
 # Function to check for connection to ground
 def off_connected_to_ground():
@@ -153,8 +144,6 @@ def debug_connected_to_ground():
   # If pin value is LOW (0), then it's connected to ground
   return pin_value == 0
 
-
-
 import RPi.GPIO as GPIO
 # Set pin numbering mode (BCM or BOARD)
 GPIO.setmode(GPIO.BCM)
@@ -173,7 +162,6 @@ if debug_connected_to_ground():
   mode= "DEBUG"
 else:
   print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
-
 
 # Check for connection
 if off_connected_to_ground():
@@ -216,7 +204,6 @@ def read_csv_into_lists(filename, encoding='utf-8'):
   return data
 
 
-
 def get_serial_number():
   """
   This function retrieves the Raspberry Pi's serial number from the CPU info file.
@@ -229,10 +216,8 @@ def get_serial_number():
   except (IOError, IndexError):
     return None
 
-
 def word_to_seed(word, encoding='utf-8'):
   """Converts a word to a number suitable for np.random.seed using encoding, sum, and modulo.
-
   Args:
       word: The string to be converted.
       encoding: The character encoding of the word (default: 'utf-8').
@@ -242,8 +227,8 @@ def word_to_seed(word, encoding='utf-8'):
   """
   encoded_word = word.encode(encoding)
   seed = sum(encoded_word)
-  max_seed_value = 2**32 - 1 #np.random.default_rng().bit_generator.state_size  # Get max seed value
-  return seed #% max_seed_value
+  max_seed_value = 2**32 - 1 
+  return seed 
 
 def set_computerName(filepath,compname):
     with open(filepath, "r") as file:
@@ -259,31 +244,19 @@ def set_computerName(filepath,compname):
                 file.write(line)  # Keep other lines unchanged
 
 
-
-
 def generate_unique_name(serial, lang):
   """
   Generates a unique name based on the Raspberry Pi's serial number.
-
   Args:
       serial: The Raspberry Pi's serial number as a string.
 
   Returns:
       A string containing a random word and a suffix based on the serial number.
   """
-
   # Use the serial number to create a unique seed for the random word generation.
-  #word_seed = int(serial.replace("-", ""), 16)
-  #max_seed_value = 2**32 - 1
   word_seed=word_to_seed(serial)
-  #word_seed=hash(serial) % max_seed_value
-  #print(word_seed)
   np.random.seed(word_seed)
-
-  #os.urandom(word_seed)  # Fallback: use os.urandom for randomness
-
   #Create two word phrases
-
   if(lang==0): #English
     extra=adjectives+colors+verbs
     random_extra = str(np.random.choice(extra,1)[0]).lower()
@@ -300,26 +273,19 @@ def generate_unique_name(serial, lang):
     random_extra = np.random.choice(extra,1)[0]
     random_animal=np.random.choice(dosanimales,1)[0]
     finalCombo=str(random_extra).lower()+str(random_animal).capitalize()
-
   return finalCombo
 
 filename ="/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
 data = read_csv_into_lists(filename)
 
 # Access data by category (column name)
-#animals = data["Animal"]
 animals = data["Animal2"]
-#print(animals)
 
 adjectives = data["Adjectives"]
-#print(adjectives)
 
 colors = data["Colors"]
-#print(colors)
 
 verbs = data["Verbs"]
-#print(verbs)
-
 
 animales = data["Animales"]
 #print(animales)
@@ -336,7 +302,6 @@ colores = data["Colores"]
 sustantivos = data["Sustantivos"]
 #print(sustantivos)
 
-
 #SetRaspberrypiName    
 serial_number = get_serial_number()
 #0 is english 1 is spanish 2 is either spanish or enlgish 3 is spanglish
@@ -346,16 +311,12 @@ print(f"Unique name for device: {unique_name}")
 # Change it in controls
 set_computerName("/home/pi/Desktop/Mothbox/controls.txt", unique_name)
 
-
-
-
 #~~~~~~~~~~~~ Figuring out Scheduling Details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 def find_file(path, filename, depth=1):
   """
   Recursively searches for a file within a directory and its subdirectories 
   up to a specified depth.
-
   Args:
       path: The path to start searching from.
       filename: The name of the file to find.
@@ -372,12 +333,10 @@ def find_file(path, filename, depth=1):
       dirs[:] = [d for d in dirs if len(os.path.join(root, d).split(os.sep)) - len(path.split(os.sep)) <= depth]
   return None
 
-
 #load in the schedule CSV
 def load_settings(filename):
     """
     Reads schedule settings from a CSV file and converts them to appropriate data types.
-
     Args:
         filename (str): Path to the CSV file containing settings.
 
@@ -401,7 +360,6 @@ def load_settings(filename):
         else:
             print("No external settings, using internal csv")
             file_path=default_path
-        
 
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
     utc_off=0 #this is the offsett from UTC time we use to set the alarm
@@ -449,14 +407,16 @@ def load_settings(filename):
         return None
     
 def get_control_values(filename):
-    """Reads key-value pairs from the control file."""
+    """Reads key-value pairs from the control file.
+      Args:
+      filename:  Name of the control file
+      """
     control_values = {}
     with open(filename, "r") as file:
         for line in file:
             key, value = line.strip().split("=")
             control_values[key] = value
     return control_values
-
 
 def schedule_shutdown(minutes):
   """Schedules the execution of '/home/pi/Desktop/Mothbox/TurnEverythingOff.py' after the specified delay in minutes."""
@@ -485,12 +445,16 @@ def run_shutdown_pi4():
   subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"]) 
   
 def run_shutdown_pi5():
+  """
+    Shut down the raspberry pi
+  """
   print("about to launch the shutdown")
   #subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"]) 
   os.system("sudo shutdown -h now")
-  
+
 
 def enable_shutdown():
+    """Enable Shutdown """
     with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
         lines = file.readlines()
 
@@ -503,19 +467,9 @@ def enable_shutdown():
             else:
                 file.write(line)  # Keep other lines unchanged
 
-def enable_shutdown():
-    with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
-        lines = file.readlines()
 
-    with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
-        for line in lines:
-            #print(line)
-            if line.startswith("shutdown_enabled="):
-                file.write("shutdown_enabled=True\n")  # Replace with False
-                print("enabling shutown in controls.txt")
-            else:
-                file.write(line)  # Keep other lines unchanged
 def enable_onlyflash():
+    """Enable Flash """
     with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
         lines = file.readlines()
 
@@ -531,6 +485,7 @@ def enable_onlyflash():
 
             else:
                 file.write(line)  # Keep other lines unchanged
+
 def stopcron():
   """Executes the '/home/pi/Desktop/Mothbox/StopCron.py' script."""
   print("stopping cron, you need to enable it yourself if needed, or reboot")
@@ -538,7 +493,6 @@ def stopcron():
 
 def add_wifi_credentials(ssid, password):
   """Adds a new WiFi network configuration to the Raspberry Pi using NetworkManager (Bookworm).
-
   Args:
       ssid: The SSID of the WiFi network.
       password: The password of the WiFi network.
@@ -552,12 +506,10 @@ def add_wifi_credentials(ssid, password):
   except subprocess.CalledProcessError as error:
     print(f"Failed to connect to WiFi network: {ssid}. Error: {error}")
 
-
 def modify_hours(data, offsett_value, key="hour"):
   """
   Modifies a list of hours stored in a dictionary value by subtracting a static number from each hour,
   but only if the key matches the provided key (default: "hour").
-
   Args:
       data: A dictionary containing a key with a value as a string representing hours separated by semicolons.
       offsett_value: The static value to subtract from each hour (integer).
@@ -572,13 +524,11 @@ def modify_hours(data, offsett_value, key="hour"):
     hours = [int(hour) for hour in data[key].split(";")]
 
     # Subtract the static value from each hour
-    #modified_hours = [hour - offsett_value for hour in hours]
     modified_hours = [(hour - offsett_value) % 24 for hour in hours]
     
     # Ensure hours are between 0 and 24 (negative numbers become 24-hour format)
     modified_hours = [hour if hour >= 0 else hour + 24 for hour in modified_hours]
 
-    
     # Update the dictionary value with the modified list
     data[key] = ";".join(str(hour) for hour in modified_hours)
 
@@ -590,16 +540,13 @@ def modify_hours(data, offsett_value, key="hour"):
 def calculate_next_event(cron_expression):
   """
   Calculates the next scheduled time based on the cron expression.
-
   Args:
       cron_expression: A string representing the cron expression.
-
   Returns:
       A unix timestamp (epoch time) of the next scheduled event.
   """
   # Create a cron object from the expression
   cron = CronTab(user='root')
-  #cron = CronTab()
   job = cron.new(command='echo hello_world')
   job.setall(cron_expression)
   # Get the next scheduled time as a datetime object
@@ -628,11 +575,6 @@ def set_wakeup_alarm(epoch_time):
     f.write(str(epoch_time))
   logging.info('Set the Wakeup Alarm' + str(epoch_time))
 
-
-
-
-
-
 # ~~~~~~ Do the code!~~~~~~~~
 
 utc_off=0 #this is the offsett from UTC time we use to set the alarm
@@ -656,15 +598,12 @@ if(rpiModel==4):
   print(modified_dict)
   settings=modified_dict
   if settings:
-      #pj.rtcAlarm.SetAlarm({'second': 0, 'minute': 0, 'hour': '0;4', 'weekday': '1;4'})
-      #pj.rtcAlarm.SetAlarm({'day': '1;3'})
       pj.rtcAlarm.SetAlarm(settings)
 
   pj.rtcAlarm.SetWakeupEnabled(True) #just re-doing this in case this flag gets shut off due to a full power-outage
 
 if(rpiModel==5):
   #don't need to modify the hours to UTC like we do for pijuice
-
   #Build Cron expression
   # The cron expression is made of five fields. Each field can have the following values.
   # minute (0-59) |	hour (0 - 23)	|day of the month (1 - 31)	| month (1 - 12)	| day of the week (0 - 6)
@@ -675,35 +614,20 @@ if(rpiModel==5):
     if isinstance(value, str) and ';' in value:
       # Replace semicolons with commas
       settings[key] = value.replace(';', ',')
-  #print(settings)
-  #note cron has no seconds!
   cron_expression = str(settings['minute'])+" "+str(settings['hour'])+" "+"*"+" "+"*"+" "+str(settings['weekday'])
-
   print(cron_expression)
   next_epoch_time = calculate_next_event(cron_expression)
 
   # Clear existing wakeup alarm (assuming sudo access)
   clear_wakeup_alarm()
 
-  # Check if we're running the script before the next event
-  # I don't think we need this
-  '''
-  if time.time() < next_epoch_time:
-    print(f"Next event scheduled for: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(next_epoch_time))}")
-    set_wakeup_alarm(next_epoch_time)
-  else:
-    print("Current time is past the scheduled event. Script needs to be run before the event.")
-    logging.info("Current time is past the scheduled event. Script needs to be run before the event.")
-  '''
 print(f"Next wakeup event scheduled for: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(next_epoch_time))}")
 set_wakeup_alarm(next_epoch_time)
 print("Wakeup Alarms have been set!")
 
 # Scheduling complete, now set all the other settings
-
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
-
 #Toggle System MODE, shut down if in OFF/DISARMED mode
 if mode == "OFF":
  print("System is in OFF MODE")
@@ -730,5 +654,3 @@ if(runtime > 0 and mode !="DEBUG"):
     schedule_shutdown(runtime)
 else:
     print("no shutdown scheduled, will run indefinitley")
-    
-

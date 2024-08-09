@@ -34,7 +34,6 @@ data = stat['data']
 
 # Make sure wakeup_enabled and wakeup_on_charge have the correct values
 pj.rtcAlarm.SetWakeupEnabled(True)
-#pj.power.SetWakeUpOnCharge(0)
 
 # Make sure power to the Raspberry Pi is stopped to not deplete
 # the battery
@@ -43,4 +42,3 @@ pj.power.SetPowerOff(20)
 
 # Now turn off the system
 os.system("sudo shutdown -h now")
-

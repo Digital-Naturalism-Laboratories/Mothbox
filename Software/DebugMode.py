@@ -1,31 +1,26 @@
 #!/usr/bin/python3
 
-'''
-This is a special script to debug mothboxes with which will
--Stop cron
--Stop the internet from going off
--Turning off the bright UV 
--stop the mothbox from shutting down
-'''
-
+###
+# This is a debugging script, functions here include: 
+#- stops the cron
+#- Stop the internet from going off
+#- Turning off/on the bright UV 
+#- Stop the mothbox from shutting down
+###
 
 import subprocess
 
-
 #GPIO
-import RPi.GPIO as GPIO
 import time
 import datetime
 from datetime import datetime
-
-
+import RPi.GPIO as GPIO
 
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
 print(f"Current time: {formatted_time}")
 print("----------------- STOP CRON-------------------")
-
 
 def stop_cron():
     """Runs the command 'service cron stop' to stop the cron service."""
@@ -37,10 +32,7 @@ def stop_cron():
 
 stop_cron()
 
-
-
 print("----------------- ATTRACT OFF-------------------")
-
 
 Relay_Ch1 = 26
 Relay_Ch2 = 20
@@ -51,14 +43,12 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(Relay_Ch1,GPIO.OUT)
 GPIO.setup(Relay_Ch2,GPIO.OUT)
-
 GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
 
-
-
 def AttractOn():
+    """Turn off the UV light"""
     GPIO.output(Relay_Ch3,GPIO.LOW)
     if(onlyflash):
         GPIO.output(Relay_Ch2,GPIO.LOW)
@@ -70,22 +60,16 @@ def AttractOn():
     print("Attract Lights On\n")
     
 def AttractOff():
+    """Turns off the UV light"""
     GPIO.output(Relay_Ch1,GPIO.HIGH)
-
     GPIO.output(Relay_Ch2,GPIO.HIGH)
     GPIO.output(Relay_Ch3,GPIO.HIGH)
 
     print("Attract Lights Off\n")
-
-
-
-#AttractOn()
 AttractOff()
-
 
 ## STOP THE INTERNET FROM STOPPING
 print("----------------- KEEP INTERNET ON-------------------")
-
 # Define the path to your script (replace 'path/to/script' with the actual path)
 script_path = "/home/pi/Desktop/Mothbox/scripts/MothPower/stop_lowpower.sh"
 
@@ -94,15 +78,10 @@ subprocess.run([script_path])
 
 print("WIFI Script execution completed!")
 
-
 # STOP SCHEDULED SHUTDOWN
-## STOP THE PI FROM STOPPING
 print("----------------- KEEP PI ON INDEFINITLEY-------------------")
-
-
 with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
     lines = file.readlines()
-
 with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
     for line in lines:
         print(line)

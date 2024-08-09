@@ -12,11 +12,9 @@ import cv2
 
 import csv
 
-
 import io
 from PIL import Image
 import piexif
-
 
 #HDR Controls
 num_photos = 3
@@ -37,8 +35,6 @@ else:
 	computerName = os.uname()[1]
 	print(os.uname()[1])   # doesnt work on windows
 
-
-
 #GPIO
 import RPi.GPIO as GPIO
 import time
@@ -58,7 +54,6 @@ print("Setup The Relay Module is [success]")
 
 global onlyflash
 onlyflash=False
-
 
 def get_control_values(filepath):
     """Reads key-value pairs from the control file."""
@@ -93,8 +88,6 @@ def load_camera_settings():
     Raises:
         ValueError: If an invalid value is encountered in the CSV file.
     """
-    
-    
     #first look for any updated CSV files on external media, we will prioritize those
     external_media_paths = ("/media", "/mnt")  # Common external media mount points
     default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
@@ -118,7 +111,6 @@ def load_camera_settings():
         print("No external settings, using internal csv")
         file_path=default_path
 
-
     try:
         with open(file_path) as csv_file:
             reader = csv.DictReader(csv_file)
@@ -141,7 +133,6 @@ def load_camera_settings():
                     value = value.lower() == "true"  # Convert to bool (adjust logic if needed)
                 elif setting == "AwbMode" or setting == "AfTrigger" or setting == "AfRange"  or setting == "AfSpeed" or setting == "AfMode":
                     value=int(value)
-                    #value = getattr(controls.AwbModeEnum, value)  # Access enum value
                     # Assuming AwbMode is a string representing an enum value
                     #pass  # No conversion needed for string
                 elif setting == "ExposureTime":
@@ -175,40 +166,28 @@ def get_serial_number():
   except (IOError, IndexError):
     return None
 
-
-
 control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
 onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
 if(onlyflash):
     print("operating in always on flash mode")
 
 picam2 = Picamera2()
-
-#capture_main = {"size": (9000, 6000), "format": "RGB888"}
-#capture_main = {"size": (9152, 6944), "format": "RGB888"}
 capture_main = {"size": (9000, 6000), "format": "RGB888"}
 
 capture_config = picam2.create_still_configuration(main=capture_main)
-#preview_main = {"format": 'YUV420',"size": (640, 480)}
-#preview_raw = {'size': (2312, 1736)}
-#preview_raw = {'size': (640, 480)}
-#preview_config = picam2.create_preview_configuration(main=preview_main, raw=preview_raw, buffer_count=2)
-#picam2.configure(preview_config)
 picam2.configure(capture_config)
 
 
 
-'''
+"""
 #This is for getting min and max details for certain settings, (See the picam pdf manual)
 print(picam2.camera_controls["AnalogueGain"])
 min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
-'''
-#camera_settings = load_camera_settings("camera_settings.csv")#CRONTAB CAN'T TAKE RELATIVE LINKS! 
+"""
 camera_settings = load_camera_settings()
 
 #remove settings that aren't actually in picamera2
 computerName = camera_settings.pop("Name",computerName) #defaults to what is set above if not in the files being read
-
 num_photos = int(camera_settings.pop("HDR",num_photos)) #defaults to what is set above if not in the files being read
 exposuretime_width = int(camera_settings.pop("HDR_width",exposuretime_width))
 if(num_photos<1 or num_photos==2):
@@ -224,7 +203,6 @@ print("cam started");
 
 picam2.stop()
 picam2.configure(capture_config)
-#start = time.time()
 
 def list_exposuretimes(middle_exposuretime, num_photos, exposure_width):
   """
@@ -241,7 +219,6 @@ def list_exposuretimes(middle_exposuretime, num_photos, exposure_width):
   
   exposure_times = []
   half_num_photos =  int((num_photos -1) / 2)  # Ensure at least one photo on each side
-  #print(half_num_photos)
   # Start with middle exposure for the first photo
   current_exposure = middle_exposuretime
   exposure_times.append(current_exposure)
@@ -264,20 +241,17 @@ def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
     now = datetime.now()
     timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
-    #timestamp = now.strftime("%y%m%d%H%M%S")
     serial_number = get_serial_number()
     lastfivedigits=serial_number[-5:]
 
 
-    ''''''
+    """
     if camera_settings:
         picam2.set_controls(camera_settings)
     else:
         print("can't set controls")
-    ''''''
+    """
     min_exp, max_exp, default_exp = picam2.camera_controls["ExposureTime"]
-    #print(min_exp,"   ", max_exp,"   ", default_exp)
-
 
     #important note, to actually 100% lock down an AWB you need to set ColourGains! (0,0) works well for plain white LEDS
     cgains = 2.25943877696990967, 1.500129925489425659
@@ -299,8 +273,6 @@ def takePhoto_Manual():
     else:
         print("About to take single photo:  ",timestamp)
 
-
-
     exposureset_delay=.3 #values less than 5 don't seem to work! (unless you restart the cam!)
     requests = []  # Create an empty list to store requests
     PILs = []
@@ -311,7 +283,6 @@ def takePhoto_Manual():
         
         picam2.set_controls({"ExposureTime":exposure_times[i] })
         print("exp  ",exposure_times[i],"  ",i)
-        #picam2.set_controls({"NoiseReductionMode":controls.draft.NoiseReductionModeEnum.HighQuality})
         picam2.start() #need to restart camera or wait a couple frames for settings to change
 
         time.sleep(exposureset_delay)#need some time for the settings to sink into the camera)
@@ -319,17 +290,13 @@ def takePhoto_Manual():
         flashOn()
         request = picam2.capture_request(flush=True)
 
-
         if not onlyflash:
             flashOff()
         flashtime=time.time()-start
 
         pilImage = request.make_image("main")
         PILs.append(pilImage)
-        #image_buffer = request.make_array("main")
-        #requests.append(image_buffer)
         
-        #print(request.get_metadata()) # this is the metadata for this image
         metadatas.append(request.get_metadata())
         request.release()
 
@@ -344,7 +311,6 @@ def takePhoto_Manual():
           # Save the image using PIL to get the image data on disk
           folderPath= "/home/pi/Desktop/Mothbox/photos/" #can't use relative directories with cron
           filepath = folderPath+"mb"+lastfivedigits+"_"+timestamp+"_HDR"+str(i)+".jpg"
- 
         
           print(exif_data)
           print(camera_settings.get("LensPosition"))
@@ -361,13 +327,8 @@ def takePhoto_Manual():
 
             }
           gps_ifd = {
-           #piexif.GPSIFD.GPSVersionID: (2, 0, 0, 0),
-           #piexif.GPSIFD.GPSAltitudeRef: 1,
-           #piexif.GPSIFD.GPSDateStamp: u"1999:99:99 99:99:99",
            }
           first_ifd = {piexif.ImageIFD.Make: u"Arducam64mp",
-             #piexif.ImageIFD.XResolution: (40, 1),
-             #piexif.ImageIFD.YResolution: (40, 1),
              piexif.ImageIFD.Software: u"piexif"
              }
           
@@ -377,14 +338,8 @@ def takePhoto_Manual():
           print("Image saved to "+filepath)
           i=i+1
 
-
-
-
-#flashOn()
 time.sleep(.5)
 takePhoto_Manual()
 
-
 picam2.stop()
-
 quit()
