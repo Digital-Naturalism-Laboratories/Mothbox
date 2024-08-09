@@ -16,7 +16,11 @@ We share four main options for your target:
 
 The Standard Target is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
 
-The Dual Target doesn't require any additional materials other than cutting an extra Target shape.
+The Dual Target doesn't require any additional materials other than cutting an extra Target shape. It can also fold in half so it doesn't take up much more room than the Standard Target! So you can pretty much double your target area with minimal changes.
+
+The Quad Target is 4X bigger than the standard target. Because of its size though, it is not as easy to travel with. This large target also needs to be positioned further away from the Mothbox which means the amount of pixels per insect will be reduced. It can work great for areas where you are looking for larger and abundant moths.
+
+The "Just Point it at Something" option works if you have some other surface you are using as a moth target. You can use the arms to measure a distance if you want, but you can just point the mothbox at a wall or sheet. 
 
 # Standard Target
 Building the targets are mostly straightforward. You just glue the target material to the target. Using a spray adhesive tends to work well.
