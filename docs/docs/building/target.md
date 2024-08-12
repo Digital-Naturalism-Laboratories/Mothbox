@@ -16,13 +16,13 @@ There's many ways to use your Mothbox! The Mothbox's default state will automati
 
 We share four main options for your target:
 
-The [Standard Target](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/docs/building/target.md#standard-target) is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
+The [Standard Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#standard-target) is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
 
-The [Dual Target](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/docs/building/target.md#dual-target) doesn't require any additional materials other than cutting an extra Target shape. It can also fold in half so it doesn't take up much more room than the Standard Target! So you can pretty much double your target area with minimal changes.
+The [Dual Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/dual-target) doesn't require any additional materials other than cutting an extra Target shape. It can also fold in half so it doesn't take up much more room than the Standard Target! So you can pretty much double your target area with minimal changes.
 
-The [Quad Target](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/docs/building/target.md#quad-target) is 4X bigger than the standard target. Because of its size though, it is not as easy to travel with. This large target also needs to be positioned further away from the Mothbox which means the amount of pixels per insect will be reduced. It can work great for areas where you are looking for larger and abundant moths.
+The [Quad Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#quad-target) is 4X bigger than the standard target. Because of its size though, it is not as easy to travel with. This large target also needs to be positioned further away from the Mothbox which means the amount of pixels per insect will be reduced. It can work great for areas where you are looking for larger and abundant moths.
 
-The ["Just Point it at Something"](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/docs/building/target.md#standard-target) option works if you have some other surface you are using as a moth target. You can use the arms to measure a distance if you want, but you can just point the mothbox at a wall or sheet. 
+The ["Just Point it at Something"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#just-point-it-at-something) option works if you have some other surface you are using as a moth target. You can use the arms to measure a distance if you want, but you can just point the mothbox at a wall or sheet. 
 
 # Standard Target
 Building the targets are mostly straightforward. You just glue the target material to the target. Using a spray adhesive tends to work well.
@@ -101,4 +101,7 @@ With the extra large target, it might make sense to use the [External Attractor]
 
 
 # Just Point it at Something
-
+Depending on your setup, you might not actually need a dedicated target! We have used the Mothbox by just pointing it at a white wall with a bright light that insects were attracted to. Many people want to just point their mothbox at a sheet that have hung up for traditional Mothlighting. This can totally work, BUT some things to keep in mind:
+* The mothbox will autocalibrate its focus and exposure, but it only does this about every 6 minutes. Thus if it is pointing at a surface that sways or moves back and forth (possibly like a sheet in a light breeze) many of these images will not be in focus.
+* The Mothbox is trying to image a full surface which is different than when you try to take pics individually of specific insects on a moth sheet. Its visual field should be of a surface that is **as flat as possible** or else parts of the image may by occluded by wrinkles
+* The lighting near the edges of a surface may not be as well illuminated as those near the middle.
