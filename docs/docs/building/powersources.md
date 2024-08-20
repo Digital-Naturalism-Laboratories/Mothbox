@@ -13,8 +13,13 @@ Well its very easy to add solar panels or extra batteries to the mothbox!
 # Add a Solar Panel
 
 This is pretty easy to do! Simply plug a DC barrel jack cable from your panel to the charging port.
+![PXL_20240810_225301762 MP](https://github.com/user-attachments/assets/6fe86a50-f36a-453a-a169-69ff1430e684)
 
 That's it!
+
+![PXL_20240810_225422782 MP](https://github.com/user-attachments/assets/ea53d3fa-eea0-4b08-8bbd-a0d0955e9d77)
+
+
 
 We talked to the Talentcell people who make the batteries, they said lots of solar panels will work, especially 18V panels up to 60Watts.**
 
