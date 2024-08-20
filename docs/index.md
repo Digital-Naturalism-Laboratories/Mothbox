@@ -7,6 +7,22 @@ permalink: /
 ---
 
 # Mothbox 4.0
+The Mothbox is a low-cost, high-performance insect monitor. It's power efficient and lightweight design lets you deploy it in the depths of the junlges, and its low-cost nature means you can build one to study the biodiversity at your home!
+![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
+
+
+## What it Does
+
+The Mothbox stays in an ultra low-power state until your schedule tells it which nights to wake up. Then it triggers an insect lure (usually a bright UV light) and then takes ultra-high resolution photos of the visitors it attracts. 
+
+
+
+Next we created some open-source AI scripts that process these insects for you. First, a trained YOLO v8 detects where all the insects are in the images, and then we use BioCLIP to help you automatically group and ID the insects to different taxonomic levels!
+
+
+# Build it Yourself!
+![PXL_20240810_155421647 MP](https://github.com/user-attachments/assets/f37ec4d5-4761-4eab-b0ae-179b05b3d1cf)
+
 This Mothbox documentation will provide you with documentation for how to source, build, program, and use your mothbox!
 
 [Get started building your mothbox!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building)
@@ -15,7 +31,7 @@ This Mothbox documentation will provide you with documentation for how to source
 
 After following these guides, you should be able to make your own set of mothboxes to conduct your own biodiversity studies!
 
-<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2e1cacf2-35dd-48b0-83c7-29b5320fa36c" height="300">
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2e1cacf2-35dd-48b0-83c7-29b5320fa36c" width="45%">
 
 
 
