@@ -28,6 +28,7 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Lee Wilkins
 * Julian Stirling
 * Wildlives Rhode Island group
+* Matt Flagg
 * Pro-eco azuero
 * Ponterra
 * Beetlepalooza (Sponsored by Imageomics Lab at Ohio State University)
