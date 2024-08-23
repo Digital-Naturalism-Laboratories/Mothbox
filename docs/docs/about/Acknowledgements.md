@@ -22,11 +22,12 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Experiment.com
 * Wildlabs.net
 * ARM
-* GOSH community openhardware.science
 * Christopher Lawrence
 * Phoebe Zarnetske and the Michigan X-prize group
+* GOSH community openhardware.science
 * Lee Wilkins
 * Julian Stirling
+* Wildlives Rhode Island group
 * Pro-eco azuero
 * Ponterra
 * Beetlepalooza (Sponsored by Imageomics Lab at Ohio State University)
