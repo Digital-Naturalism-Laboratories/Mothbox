@@ -15,6 +15,7 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Kitty Quitmeyer
 * Daisy Dent
 * Yash Sondhi
+* Bri Johns
 * Crowther Lab
 * Owen Mcmillan
 * Sol Parra Santos
@@ -23,12 +24,16 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * ARM
 * GOSH community openhardware.science
 * Christopher Lawrence
-* Phoebe Zarnetske
+* Phoebe Zarnetske and the Michigan X-prize group
+* Lee Wilkins
+* Julian Stirling
 * Pro-eco azuero
 * Ponterra
-* Beetlepalooza
-* Autodesk Foundation
-* Julian Stirling
+* Beetlepalooza (Sponsored by Imageomics Lab at Ohio State University)
+* Bucket of Bugs Beetlepalooza group
+  * Elizabeth Campolongo, Ernie Parke, Andy Quitmeyer, Matt Thompson
+* Autodesk Foundation (Software Donation)
+* University of Washington (Project Storage Space)
 
 
 
