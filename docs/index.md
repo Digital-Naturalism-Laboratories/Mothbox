@@ -7,7 +7,10 @@ permalink: /
 ---
 
 # Mothbox 4.0
-The Mothbox is a low-cost, high-performance insect monitor. It's power efficient and lightweight design lets you deploy it in the depths of the junlges, and its low-cost nature means you can build one to study the biodiversity at your home!
+The Mothbox is a low-cost, high-performance insect monitor. It features a power efficient and lightweight design meant to help field biologists deploy it in the depths of the jungles, and its low-cost nature means you can build one to study the biodiversity at your home!
+
+All the physical designs, electronics schematics, Pi Scripts, and insect-IDing Artificial Intelligence are provided free and open source, so you can build, share and improve on these designs yourself!
+
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
 
