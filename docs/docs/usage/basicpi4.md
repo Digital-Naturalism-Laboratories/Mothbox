@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Basic Use
+title: (Pi4 Version) Basic Use
 parent: Using Mothbox
 has_children: true
-nav_order: 6
+nav_order: 8
 ---
 
 # Turning the Mothbox on and Off
