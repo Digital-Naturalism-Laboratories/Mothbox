@@ -36,6 +36,3 @@ Collect
 - [ ] Charge for the next deployment.
 
 
-
-# Turning the Mothbox on and Off
-Because the Pijuice is connected, you c
