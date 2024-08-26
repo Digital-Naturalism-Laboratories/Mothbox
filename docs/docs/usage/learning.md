@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Learning Mothbox
+title: Detailed Use
 parent: Using Mothbox
-nav_order: 1
+nav_order: 3
 ---
 
 # Basics
@@ -13,12 +13,12 @@ It works by turning on a bright, attractive light, and then taking photos of wha
 
 ## Arm the Mothbox
 The mothbox has two main states:
-* "Off" Mode
+* "Standby" Mode
 * "On" Mode
 
-When the Mothbox is not in use we put it in a "Off" mode so that it doesn't use all its battery when we don't want.
+When the Mothbox is not in use we put it in a "Standby" mode so that it doesn't use all its battery when we don't want.
 
-In "Off" mode, there will be a wire that connects the pins in the top row that are 3 and 4 spaces from the right.
+In "Standby" mode, there will be a wire that connects the pins in the top row that are 3 and 4 spaces from the right.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/027ee3a5-ac9b-4ae3-aac0-1c87ad6ddbed)
 
 
@@ -33,7 +33,7 @@ _**Note: It is important that there is not a wire connecting those two pins befo
 
 `"Armed" mode - pin 4 only plug plugged in, or any other configuration than off mode`
 
-`"Off" mode - pins 3 and 4 plugged in`
+`"Standby" mode - pins 3 and 4 plugged in`
 
 
 ## Physically Setup the Mothbox
@@ -113,7 +113,7 @@ The mothboxes also have set of 4 green lights on them. These lights are NOT reli
 
 Each Mothbox battery takes about 6 hours to charge fully.
 
-# More Advanced
+# Inspecting the Mothbox
 
 ## Inspecting a Mothbox BEFORE deploying
 Deploying a Mothbox
@@ -165,5 +165,3 @@ can change the times it photographs with the schedule setting file on the USB st
 
 If not making any changes, file name should read "no_schedule_settings". If making a change to the schedule, change file name to "schedule_settings"
 
-
-Inspecting While a Mothbox is Running
