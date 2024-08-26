@@ -5,7 +5,7 @@ parent: Building Mothbox
 #has_children: true
 nav_order: 1
 ---
-# Mothbox Tools and Materials
+# Materials
 
 The Mothbox uses a Raspberry pi 4 or 5, Pijuice (if using a 4), a Talentcell Battery, and a 3 channel relay as its core.
 The entire materials cost is **about $375** per mothbox. (Depends on your options you go with and prices you get where you live)
@@ -55,11 +55,12 @@ OR
     * 12V
         * Any UV light that accepts a 12V input will work easily
               * [Cheap 12V Waterproof UV flood](https://www.amazon.com/dp/B07KHVZ7TG?psc=1&ref=ppx_yo2ov_dt_b_product_details) ($13)
-        *  We are also using out custom "Mothbeams" which are like powerful, open source, bespoke, low cost- lepileds
+        *  We are also using out custom "Mothbeams" which are like powerful, open source, bespoke, low cost- lepileds. They currently cost about $80 to order them from Moritz at LabLab in Berlin [moritz at lablab.eu]
+          *  Or you can order them from [Circuithub](https://circuithub.com/projects/Moritz/Mothbeam/revisions/57895/parts) but there they cost about $200-$400  
 
-    * 5V
+    * 5V (Not Officially Integrated)
         * to reduce costs and additional parts, we do not design around an extra 5V output
-        * UV lights that take a 5V input can also work with a [high power 12V to 5V adapter](https://www.amazon.com/gp/product/B076ZLHLD3/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+        * You can hack the system to use UV lights that take a 5V input pretty easily though with just an inexpensive [high power 12V to 5V adapter](https://www.amazon.com/gp/product/B076ZLHLD3/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
         * These light bars are the absolute cheapest ones we can find that attract moths ($5) (395nm) [https://www.amazon.com/Black-Light-Bar-Glow-Party/dp/B09BCND2J9/](https://www.amazon.com/Black-Light-Bar-Glow-Party/dp/B09BCND2J9/)
         * Lepileds can also be connected
 
@@ -77,37 +78,40 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
 * UV Lens Protector and Mount 
     * Lens rings [https://www.amazon.com/dp/B005IMNI4K?psc=1&ref=ppx_yo2ov_dt_b_product_details](https://www.amazon.com/dp/B005IMNI4K?psc=1&ref=ppx_yo2ov_dt_b_product_details) ($3)
     * UV filter [Amazon.com : Tiffen 55UVP 55mm UV Protection Filter : Camera Lens Sky And Uv Filters : Electronics](https://www.amazon.com/dp/B00004ZCJH?psc=1&ref=ppx_yo2ov_dt_b_product_details) ($8)
-   * [Lens Hood (includes lens cap)](https://www.amazon.com/gp/product/B082HRGFP7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) ($9)
+   * Lens Hood - not strictly necessary, but helps keep extra rain off lens when deployed.
+     * [buy (includes lens cap)](https://www.amazon.com/gp/product/B082HRGFP7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) ($9)
 
 
 ## Additional Parts
-24. Plastic for laser cutting (the design is currently set for 3mm acrylic)
-   25. one 50x60cm piece of acrylic can fit all the parts, but you could cut from many scraps too
-26. [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
-   3. minimum 205x305mm (8x12in) 
-27. 1/4in bolts and nuts
-    27. bolts
-    29. hex nuts
-7. M2 M2.5 and M3 Screws and nuts and Electronics Spacers
-   8. e.g [Nylon Standoffs and nuts for Raspberry Pi](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
-   9. [Set of m2 m2.5 m3 bolts and nuts](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
-9. Zip ties
-10. [5.5x2.1mm cables](https://www.amazon.com/TalentCell-Adapter-5-5x2-1mm-5-5x2-5mm-Splitter/dp/B0BTBQJBSF/ref=sr_1_2?keywords=TalentCell+Power+Adapter+Cable%2C+DC+5.5x2.1mm+Male+to+DC+5.5x2.5mm+Male+Cable%2C+DC5521+1+Female+to+2+Male+Power+Supply+Y+Splitter+Cord%2C+DC5521+Male+to+DC4017+Male+Cable+for+CCTV+Camera%2C+LED+Strip+Light&qid=1682353719&sr=8-2)** **
+* Plastic for laser cutting (the design is currently set for 3mm acrylic)
+   * one 50x60cm piece of acrylic can fit all the parts, but you could cut from many scraps too
+* [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
+   * minimum 205x305mm (8x12in) 
+* 1/4in bolts and nuts
+    * bolts
+    * hex nuts
+* M2 M2.5 and M3 Screws and nuts and Electronics Spacers
+   * e.g [Nylon Standoffs and nuts for Raspberry Pi](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
+   * [Set of m2 m2.5 m3 bolts and nuts](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
+* Zip ties
+* [5.5x2.1mm cables](https://www.amazon.com/TalentCell-Adapter-5-5x2-1mm-5-5x2-5mm-Splitter/dp/B0BTBQJBSF/ref=sr_1_2?keywords=TalentCell+Power+Adapter+Cable%2C+DC+5.5x2.1mm+Male+to+DC+5.5x2.5mm+Male+Cable%2C+DC5521+1+Female+to+2+Male+Power+Supply+Y+Splitter+Cord%2C+DC5521+Male+to+DC4017+Male+Cable+for+CCTV+Camera%2C+LED+Strip+Light&qid=1682353719&sr=8-2)** **
+* Strap (To attach to tree)
+* Lock (to attach to Tree in places you are worried it might get taken)
 
-
-## Tools for Construction
+# Tools for Construction
 **1x the following:**
-
-
+Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you 
    
 * 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
+* Drill Bits for Plastic
+  * Most of the holes drilled are 3/8 in (just over 1/4in) in size, but using something like a [Tapered drill bit](https://www.amazon.com/Driak-16-30-5-Titanium-Umbrella-Chamfering/dp/B07RX7GRHG/ref=sr_1_3?crid=83U1JCJ12NOB&dib=eyJ2IjoiMSJ9.-pf_Mb_p4_foNAND-5Rt3-CNXQ2gymZ_nVBYQjQSsaLgpZhNxi_Pj6JT-giPRr34JD2BPbkZ6LByDz3r1qLNFz_9x9ENClJjz2hQI47xabnZ_BY923YtnP7MZXMzj_p1aBOrAlms_qb59qkde5fS0NVSL3qNio-cDU2V7X3f2xE99g3GlkzSyFjGyjDzriK6uMf1gucmPaO56bs83YbFfr53uXvv4e1yLviuniWImdN5gxeNupKfeBlybrtgs553XNm5FANSmwDFTHJSiODyVYmCEbxnyq7HGGerPMeX7VY.1RjroFEetFS0gD9GJ0T3ERW4cSGoVm-TUY6yFRy1Tl0&dib_tag=se&keywords=stepless+drill+bit&qid=1724644407&sprefix=stepless+drill+b%2Caps%2C422&sr=8-3) can be the easiest, as it goes through plastic well, and allows you to adjust the sizes of your holes very finely.    
+* Wire Strippers
 * Plastic epoxy
-* Spools of Wire
+* Spools of Solid-Core Wire
     * Red
     * Black
-* Wago connectors 
+* Lever Nut Connectors 
    * [https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1](https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1)
    * [(or cheaper knock offs should work fine with low voltage like this)](https://www.amazon.com/Connectors-Delgada-Conductor-Connector-Electrical/dp/B09TS9YKV1/ref=sxin_14_sbv_search_btf?content-id=amzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59%3Aamzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59&crid=14GVQPDXZMRQ4&cv_ct_cx=wago%2Bconnectors&keywords=wago%2Bconnectors&pd_rd_i=B09TS9YKV1&pd_rd_r=e648f2b2-c3a9-45f5-ad6a-cc2c01313274&pd_rd_w=juJLN&pd_rd_wg=YJ3Yz&pf_rd_p=6ca944f8-539c-499e-a3a4-26a566d1de59&pf_rd_r=2FNDQ7ZAN1YRNZK0V47C&qid=1704033576&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=wago%2Bconne%2Caps%2C189&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776&th=1)
 
-* Strap (To attach to tree)
 * [Dielectric grease (for additional waterproofing)](https://www.amazon.com/Mission-Automotive-Dielectric-Silicone-Waterproof/dp/B016E5E59G/)
