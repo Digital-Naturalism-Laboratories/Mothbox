@@ -6,15 +6,17 @@ parent: Building Mothbox
 nav_order: 3
 ---
 
-There's many ways to use your Mothbox! The Mothbox's default state will automatically calibrate its focus and exposure to whatever kind of target is positioned in front of it. The main thing is that it should probably be 
+There's many ways to use your Mothbox! The Mothbox's default software will automatically calibrate its focus and exposure to whatever kind of target is positioned in front of it. The main thing is that it should probably be 
 * white
 * flat
 * easy for insects to perch on
 
 ![PXL_20240808_232453558 MP](https://github.com/user-attachments/assets/1d23e170-a371-4cf1-be4c-54380ec98b32)
 
+We have found that acrylic felt works quite well for insects to walk around on, to stay clean and not mold, and as a bright, light-diffusing backdrop.
 
-We share four main options for your target:
+# Target Options
+We share four main options for your target. We have done most of our testing with the Standard Target, so the other options are still a bit more experimental.
 
 The [Standard Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#standard-target) is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
 
@@ -53,6 +55,8 @@ Place something flat and heavy on top of them.
 
 ![PXL_20240808_201146040 MP](https://github.com/user-attachments/assets/cd41611a-f291-4487-97a8-2300885f11e8)
 
+Now the Double Wide target material functions as a sort of hinge you can use to close the target and protect it when in transit. You probably need to tape the back when deployed to keep it rigidly open. This probably could use a design tweak.
+
 ## Prepare Arms for Dual Target
 
 The dual target can fit at the end of the arms in their standard configuration, but they will fill up the camera image entirely. If you want to have a safe margin around the edges of the dual target, you can adjust the arms one notch outward (it moves them about 7 cm outward).
@@ -89,7 +93,7 @@ Lay a flat heavy thing on top.
 
 Let dry for a couple hours.
 
-## Prepare Arms
+## Prepare Arms for Quad Target
 Stagger your arms with some extra bolts
 
 ![PXL_20240808_190821702 MP](https://github.com/user-attachments/assets/f19342e9-dcbc-4e7d-9e46-a8dbcc1a8a9c)
