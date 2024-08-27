@@ -7,8 +7,8 @@ nav_order: 1
 ---
 # Materials
 
-The Mothbox uses a Raspberry pi 4 or 5, Pijuice (if using a 4), a Talentcell Battery, and a 3 channel relay as its core.
-The entire materials cost is **about $375** per mothbox. (Depends on your options you go with and prices you get where you live)
+The Mothbox uses a Raspberry Pi 5 (or Pi4 and Pijuice), a Talentcell Battery, and a 3 channel relay as its core.
+The entire materials cost is **about $375** per mothbox. (Depends on your options you go with and prices you get where you live). Note that many other similar tools for insect monitoring can cost between $7-$15K!
 
 Below we try to include an up to date list for building N-copies of a Mothbox.
 
