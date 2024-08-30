@@ -19,6 +19,10 @@ Partially automated Insect ID is still a relatively new field, but we are trying
 
 All the data collected is unique in a specific time and place. Each time-period that a Mothbox is set into the field and then collected is called a "Deployment." A deployment could last several days or even weeks. 
 
+Within space, we currently organizes deployments into different zones.
+
+Country-> Area -> Point
+
 
 For each individual photo of a single insect we collect, we want it tied to the following information as well:
 
