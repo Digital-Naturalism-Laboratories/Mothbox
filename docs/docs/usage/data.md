@@ -23,12 +23,23 @@ Within space, we currently organizes deployments into different zones.
 
 Country-> Area -> Point
 
+A "raw photo" data looks like this:
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="48%">
 
-For each individual photo of a single insect we collect, we want it tied to the following information as well:
+We send those images to an insect detecting AI, which then creates "individual photos" of each creature detected in the raw image. It would look like this:
+![gradoVerdín_2024_07_25__21_12_05_HDR0_crop_0](https://github.com/user-attachments/assets/29d89307-5bc3-422a-839a-c67c49860f08)
 
-* occurrenceID
-* basisOfRecord
-* deployment	eventDate	raw_photo	identified	cv_confidence	class	order	family	genus	species	commonName	scientificName
+
+For each individual photo of a single insect we collect, we eventually want it tied to the following information as well:
+
+* occurrenceID (file name with unique timestamp of the specific individual photo "gradoVerdín_2024_07_25__21_12_05_HDR0_crop_0.jpg")
+* basisOfRecord (i.e. MACHINE_DETECTED)
+* deployment ID
+* eventDate (timestamp)
+* raw_photo (location of the original "raw photo")
+* identifier (Who did the most up to date ID? i.e. "Mothbot" or "Hubert Szczygiel"
+* cv_confidence (how confident the AI was in detecting this if machine detected)
+* Taxonomic information: class	order	family	genus	species	commonName	scientificName
 
 # Inventory of Mothboxes
 If you are running a project with many Mothboxes (more than let's say, 4) you probably want to start keeping an inventory. Field equipment can get lost, forgotten, or busted up, so it's handy to know what you have available if a new opportunity strikes!
