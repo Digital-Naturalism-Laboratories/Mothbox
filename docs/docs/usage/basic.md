@@ -9,7 +9,7 @@ nav_order: 1
 # Preparation
 Before you go to the field here's a checklist of things you go through to make sure it is ready for deployment!
 
-- [ ] The battery should always be ON. Open the mothbox make sure the battery switch it ON (if it's not already on). 
+- [ ] The battery should always be ON. Open the mothbox make sure the battery switch is ON (if it's not already on). 
 - [ ] Charge your mothbox. This usually takes several hours. Plug it in. Only use Mothbox charger to charge. If the plug's indicator is red, the mothbox is charging. When charger light turns green, the mothbox is fully charged!
 - [ ] USB Storage. Make sure there is external storage plugged in to the Pi's USB to record your photos.
 - [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms.
