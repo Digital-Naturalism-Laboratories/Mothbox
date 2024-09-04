@@ -12,6 +12,10 @@ Before you go to the field here's a checklist of things you go through to make s
 - [ ] The battery should always be ON. Open the mothbox make sure the battery switch is ON (if it's not already on). 
 - [ ] Charge your mothbox. This usually takes several hours. Plug it in. Only use Mothbox charger to charge. If the plug's indicator is red, the mothbox is charging. When charger light turns green, the mothbox is fully charged!
 - [ ] USB Storage. Make sure there is external storage plugged in to the Pi's USB to record your photos.
+- [ ] Check Lights. The RED STANDYBY LEDs should always be on. The mothbox is set to run according to a schedule automatically, so it probably won't be running when you are setting it up, but you can visually check that things are ok, because there should be a RED led light on the Pi (the pi's off light) and the battery's green lights should always be on. (Older models with a Pijuice may also have a BLUE light on as well in standby mode)
+
+![PXL_20240901_112119774 NIGHT](https://github.com/user-attachments/assets/504fa0ed-6ae1-4d51-bca0-1a6bb7000d89)
+
 - [X] Item Checklist. Make sure to have all these parts with you BEFORE you go into the field
   - [ ] Mothbox
   - [ ] USB Storage
@@ -31,7 +35,7 @@ Before you go to the field here's a checklist of things you go through to make s
 
 
 - [ ] Add Silica. Add packet of silica drying gel inside box.
-- [ ] Check Lights. The RED STANDYBY LEDs should always be on. The mothbox is set to run according to a schedule automatically, so it probably won't be running when you are setting it up, but you can visually check that things are ok, because there should be a RED led light on the Pi (the pi's off light) and the battery's green lights should always be on.
+
 - [ ] Close Box. Make sure box is fully closed and no wires are caught in the door.
 - [ ] Inspect Lens. Check lens for dirt and clean if necessary.
   
