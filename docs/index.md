@@ -19,7 +19,9 @@ All the physical designs, electronics schematics, Pi Scripts, and insect-IDing A
 Insect populations can be used as an ultra high resolution sensor for changes in environments.
 
 ### Insects (Especially Moths and Beetles) are Hyperdiverse
-Of all life on earth (including bacteria) there are about 2 million species scientists have described and [half of the species are insects!](https://ourworldindata.org/how-many-species-are-there#:~:text=In%20the%20chart%2C%20we%20see,reptiles%2C%20and%20over%206%2C000%20mammals.) What's more, if you look at **just Moths** there are about 144,000 species, meaning **about 1 in every 14 species in the world is a moth!** Using creatures with a super diverse gene pool allows us to make sophisticated insights into the health of different areas. Combining the activity of thousands of species of insects with other data like climate, acoustic, or soil analysis, can provide deep analysis into how environments can be repaired.
+Of all life on earth (including bacteria) there are about 2 million species scientists have described and [half of the species are insects!](https://ourworldindata.org/how-many-species-are-there#:~:text=In%20the%20chart%2C%20we%20see,reptiles%2C%20and%20over%206%2C000%20mammals.) What's more, if you look at **just Moths** there are about 144,000 species, meaning **about 1 in every 14 species in the world is a moth!** For reference there are only about 11,000 bird species, and only 6500 species of mammals (and half are bats and rodents). 
+
+Using creatures with a super diverse gene pool allows us to make sophisticated insights into the health of different areas. Combining the activity of thousands of species of insects with other data like climate, acoustic, or soil analysis, can provide deep analysis into how environments can be repaired.
 
 ### Offer Highly Localized Insights
 Because they tend to have short lives and often limited ranges, insects can provide super localized data. 
