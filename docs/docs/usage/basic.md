@@ -37,9 +37,13 @@ Before you go to the field here's a checklist of things you go through to make s
 - [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms.
 ![PXL_20240902_193651155 MP](https://github.com/user-attachments/assets/2052454f-9bc5-4f7f-b6ca-ba1a5494c5fb)
 
-- [ ] Hang Mothbox. Strap mothbox to a tree or tripod. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target.
+- [ ] Hang Mothbox. Strap mothbox to a tree or tripod. Using the Handle. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target.
 
 ![PXL_20240902_191549638 MP](https://github.com/user-attachments/assets/aed25711-c6c8-450f-bb45-c1efcd3cef86)
+
+Adding a little wrap of the strap around the handle (The Margaret Technique) adds stability to the mothbox
+![PXL_20240902_155747765 MP](https://github.com/user-attachments/assets/172b3386-7b98-475f-a8a2-4ea301a5ae27)
+
 
 - [ ] Connect Target. Attaching the target should be one of the last things you do because you want to protect it from getting dirty. If you have it connected earlier, it could easily bump into wet or dirty plants and get mud on it.
 
