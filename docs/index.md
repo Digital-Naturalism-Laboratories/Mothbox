@@ -14,6 +14,24 @@ All the physical designs, electronics schematics, Pi Scripts, and insect-IDing A
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
 
+
+## Why Study Insects for Conservation?
+Insect populations can be used as an ultra high resolution sensor for changes in environments.
+
+### Insects (Especially Moths and Beetles) are Hyperdiverse
+Of all life on earth (including bacteria) there are about 2 million species scientists have described and [half of the species are insects!](https://ourworldindata.org/how-many-species-are-there#:~:text=In%20the%20chart%2C%20we%20see,reptiles%2C%20and%20over%206%2C000%20mammals.) What's more, if you look at **just Moths** there are about 144,000 species, meaning **about 1 in every 14 species in the world is a moth!** Using creatures with a super diverse gene pool allows us to make sophisticated insights into the health of different areas. Combining the activity of thousands of species of insects with other data like climate, acoustic, or soil analysis, can provide deep analysis into how environments can be repaired.
+
+### Offer Highly Localized Insights
+Because they tend to have short lives and often limited ranges, insects can provide super localized data. 
+
+For comparison, think about something like a Jaguar, which is a rare find and scientifically valuable to see on a wildlife camera, but they have large ranges and long lives. The presence of a Jaguar does not necessarily tell us much about the health of the environment where it was spotted. It could simply be travelling across disturbed farmland to escape from a destroyed habitat elsewhere. 
+
+Having an insect sensor (like a Mothbox), however, that could compare the activity of thousands of different species of insects can highlight differences in environmental health in areas just a couple kilometers apart.
+
+### They are Easy to Attract
+Humans have long ago discovered that many nocturnal insects like Moths seem to be attracted to lights. We now know this is because [bright lights disorient their natural steering mechanism](https://www.nature.com/articles/s41467-024-44785-3). Scientists have used bright artificial lights for over a century now to take censuses of insect populations. The problem with this type of "Mothlighting" is that it can be incredibly time consuming (a scientist has to hang out all night and note which insects are visiting). Instead we have an automated device that does all this work for you!
+
+
 ## What it Does
 
 The Mothbox stays in an ultra low-power state until your schedule tells it which nights to wake up. Then it triggers an insect lure (usually a bright UV light) and then takes ultra-high resolution photos of the visitors it attracts. 
