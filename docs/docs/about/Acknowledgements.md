@@ -30,12 +30,17 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Wildlives Rhode Island group
 * Matt Flagg
 * Pro-eco azuero
+*Totumas Crew
+ * Jessie Tejara-Fabian
+ * Jeff Dietrich
+ * Mulget Amaru
 * Ponterra
 * Beetlepalooza (Sponsored by Imageomics Lab at Ohio State University)
 * Bucket of Bugs Beetlepalooza group
   * Elizabeth Campolongo, Ernie Parke, Andy Quitmeyer, Matt Thompson
 * Autodesk Foundation (Software Donation)
 * University of Washington (Project Storage Space)
+* 
 
 
 
