@@ -15,11 +15,9 @@ Before you go to the field here's a checklist of things you go through to make s
 - [ ]  Arm Mothbox. The mothbox has two jumper wires that keep it from turning itself on until it is deployed. Arm your mothbox by disconnecting the wires from each other putting them in the "armed" position.
 - [ ] Check Lights. The RED STANDYBY LEDs should always be on. The mothbox is set to run according to a schedule automatically, so it probably won't be running when you are setting it up, but you can visually check that things are ok, because there should be a RED led light on the Pi (the pi's off light) and the battery's green lights should always be on. (Older models with a Pijuice may also have a BLUE light on as well in standby mode)
 
-
+- [ ] Add Silica. Add packet of silica drying gel inside box.
 ![PXL_20240902_191451479 MP](https://github.com/user-attachments/assets/43e72e61-5635-4adb-af17-6f3f6c60c568)
 
-
-- [ ] Add Silica. Add packet of silica drying gel inside box.
 
 - [ ] Close Box. Make sure box is fully closed and no wires are caught in the door.
 
