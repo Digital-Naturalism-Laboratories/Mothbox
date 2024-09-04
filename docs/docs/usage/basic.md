@@ -12,17 +12,45 @@ Before you go to the field here's a checklist of things you go through to make s
 - [ ] The battery should always be ON. Open the mothbox make sure the battery switch is ON (if it's not already on). 
 - [ ] Charge your mothbox. This usually takes several hours. Plug it in. Only use Mothbox charger to charge. If the plug's indicator is red, the mothbox is charging. When charger light turns green, the mothbox is fully charged!
 - [ ] USB Storage. Make sure there is external storage plugged in to the Pi's USB to record your photos.
-- [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms.
+- [ ] Item Checklist. Make sure to have all these parts with you BEFORE you go into the field
+  - [ ] Mothbox
+  - [ ] 4 Arms
+  - [ ] 4 Bolts
+  - [ ] 4 Nuts
+  - [ ] Target
+  - [ ] Strap
+  - [ ] Security Chain (if in places where theft may be an issue)
+
 
 
 # Deploy
 - [ ] Arm Mothbox. The mothbox has two jumper wires that keep it from turning itself on until it is deployed. Arm your mothbox by disconnecting the wires from each other putting them in the "armed" position.
+
+![PXL_20240902_191451479 MP](https://github.com/user-attachments/assets/43e72e61-5635-4adb-af17-6f3f6c60c568)
+
+
 - [ ] Add Silica. Add packet of silica drying gel inside box.
-- [ ] Check Lights. The mothbox is set to run according to a schedule automatically, so it probably won't be running when you are setting it up, but you can visually check that things are ok, because there should be a RED led light on the Pi (the pi's off light) and the battery's green lights should always be on.
+- [ ] Check Lights. The RED STANDYBY LEDs should always be on. The mothbox is set to run according to a schedule automatically, so it probably won't be running when you are setting it up, but you can visually check that things are ok, because there should be a RED led light on the Pi (the pi's off light) and the battery's green lights should always be on.
 - [ ] Close Box. Make sure box is fully closed and no wires are caught in the door.
 - [ ] Inspect Lens. Check lens for dirt and clean if necessary.
+  
+- [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms.
+![PXL_20240902_193651155 MP](https://github.com/user-attachments/assets/2052454f-9bc5-4f7f-b6ca-ba1a5494c5fb)
+
 - [ ] Hang Mothbox. Strap mothbox to a tree or tripod. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target.
-- [ ] Log
+
+![PXL_20240902_191549638 MP](https://github.com/user-attachments/assets/aed25711-c6c8-450f-bb45-c1efcd3cef86)
+
+- [ ] Connect Target. Attaching the target should be one of the last things you do because you want to protect it from getting dirty. If you have it connected earlier, it could easily bump into wet or dirty plants and get mud on it.
+
+![PXL_20240902_194008047 MP](https://github.com/user-attachments/assets/1e865c0a-829d-42a7-a484-5b36da4a4b80)
+
+![PXL_20240902_191925903 MP](https://github.com/user-attachments/assets/068a13cb-1bf7-4cda-a30d-ad4f98f4ffbd)
+
+- [ ] Log Data. Write down all the metadata about this deployment on your field sheet.
+![image](https://github.com/user-attachments/assets/3e5fb55d-29c4-403d-9358-bbac697e2ceb)
+
+
 
 {: .warning }
 > warning: Don't look directly at UV light. UV is very bright but invisible to your eye. Can cause eye pain or headaches with long exposure. Use eye protection if working with mothbox for extended periods while it's on.
