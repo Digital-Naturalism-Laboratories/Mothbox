@@ -36,11 +36,17 @@ Humans have long ago discovered that many nocturnal insects like Moths seem to b
 
 The Mothbox stays in an ultra low-power state until your schedule tells it which nights to wake up. Then it triggers an insect lure (usually a bright UV light) and then takes ultra-high resolution photos of the visitors it attracts. 
 ![PXL_20240607_025924783 NIGHT-EDIT](https://github.com/user-attachments/assets/cb7f6a03-849b-4b2a-99b9-9580aa245816)
-<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="48%">
 <img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/51e8c15e-0119-4b5e-a4a7-d44e4a261776" width="48%">
 
 
-Next we created some open-source AI scripts that process these insects for you. First, a trained YOLO v8 detects where all the insects are in the images, and then we use BioCLIP to help you automatically group and ID the insects to different taxonomic levels!
+Next we created some open-source AI scripts that process these insects for you. First, a trained YOLO v8 detects where all the insects are in the images and crops them out. 
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="48%">
+<img src="https://github.com/user-attachments/assets/3d0936ce-e89c-411a-8529-a932acc6e9c8" width="48%">
+
+Then we use a special version of BioCLIP with a user interface to help you automatically group and ID the insects to different taxonomic levels!
+![image](https://github.com/user-attachments/assets/93728753-8a70-4686-b493-1e3de177627e)
+
+
 
 
 # Build it Yourself!
