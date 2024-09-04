@@ -12,8 +12,9 @@ Before you go to the field here's a checklist of things you go through to make s
 - [ ] The battery should always be ON. Open the mothbox make sure the battery switch is ON (if it's not already on). 
 - [ ] Charge your mothbox. This usually takes several hours. Plug it in. Only use Mothbox charger to charge. If the plug's indicator is red, the mothbox is charging. When charger light turns green, the mothbox is fully charged!
 - [ ] USB Storage. Make sure there is external storage plugged in to the Pi's USB to record your photos.
-- [ ] Item Checklist. Make sure to have all these parts with you BEFORE you go into the field
+- [X] Item Checklist. Make sure to have all these parts with you BEFORE you go into the field
   - [ ] Mothbox
+  - [ ] USB Storage
   - [ ] 4 Arms
   - [ ] 4 Bolts
   - [ ] 4 Nuts
