@@ -26,3 +26,5 @@ Otherwise the colors don't really matter.
 # Felt
 The only other part to cut out is the felt cover for the target. Find some white acrylic felt, and cut out the file that says "Target Material"
 Acrylic felt cuts really easily and cleanly in the laser cutter.
+![PXL_20240808_162242291 MP](https://github.com/user-attachments/assets/0c0db399-83e2-4cb4-a545-34d977cbb181)
+
