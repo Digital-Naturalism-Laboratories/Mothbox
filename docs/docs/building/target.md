@@ -105,7 +105,28 @@ With the extra large target, it might make sense to use the [External Attractor]
 
 
 # Just Point it at Something
-Depending on your setup, you might not actually need a dedicated target! We have used the Mothbox by just pointing it at a white wall with a bright light that insects were attracted to. Many people want to just point their mothbox at a sheet that have hung up for traditional Mothlighting. This can totally work, BUT some things to keep in mind:
+Depending on your setup, you might not actually need a dedicated target! We have used the Mothbox by just pointing it at a **white wall** with a bright light that insects were attracted to. Many people want to just point their mothbox at a sheet that have hung up for traditional Mothlighting. This can totally work, BUT some things to keep in mind:
 * The mothbox will autocalibrate its focus and exposure, but it only does this about every 6 minutes. Thus if it is pointing at a surface that sways or moves back and forth (possibly like a sheet in a light breeze) many of these images will not be in focus.
 * The Mothbox is trying to image a full surface which is different than when you try to take pics individually of specific insects on a moth sheet. Its visual field should be of a surface that is **as flat as possible** or else parts of the image may by occluded by wrinkles
 * The lighting near the edges of a surface may not be as well illuminated as those near the middle.
+
+![PXL_20240905_120604101 MP](https://github.com/user-attachments/assets/9d89a5e9-f570-4dc9-b7f5-d0a11ec5a205)
+
+
+# Cleaning Target
+Moths can be a bit grosser than you might think. They can poop a LOT. Look at this target I came back to one night. It got real gross.
+![image](https://github.com/user-attachments/assets/8b2ba4c5-addd-4186-ae77-c4d05b0d7cbd)
+
+## Bleach
+
+You can use a 20% solution of bleach to scrub out most stains. Try not to rub too hard or the felt can get too fluffy, but in general it's quite easy to clean.
+![PXL_20240828_212120926 MP](https://github.com/user-attachments/assets/99d67d77-e947-4768-8419-66092bb793cb)
+
+## Have Backups Ready
+
+Felt is cheap and lightweight and you should probably have extra target material cut and on hand in case your current target accidentally gets messy.
+
+We even upcycled our old felt together with old acrylic by just melting them all together with acetone.
+![PXL_20240822_162510025 MP](https://github.com/user-attachments/assets/10cd89d3-9d03-47ec-8ed0-c8841f98ffdd)
+
+
