@@ -14,19 +14,25 @@ There are 11 laser cut pieces you will assemble with electronics parts.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/883f6db1-aa59-4cb9-9e27-78b6f542c146)
 
 * Main board
-* 4 clips attach to main board
+* 4 clips attach to main board (2 wide 2 thin)
 * 6 camera glare blocker circles
 
 # Camera Glare Blocker
 
 ## Assemble Camera Lens Glare Blocker
-
-![PXL_20240528_214804231](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/885e2b93-387a-4b99-97db-643c3f4a1909)
-![PXL_20240528_214758314](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b44d4001-3a20-4970-92cd-68133f908384)
-
+Take your six circles and stack them on top of each other.
 ![PXL_20240528_214750138](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f74b7170-a7b1-42f2-93e7-60995fc66354)
 
-Finally, using two M2 screws, you can attach the Camera into place 
+{: .note }
+> There is a small arrow with a dot at the top of each camera glare blocker circle. All the arrows should be lined up on top of each other.
+
+![PXL_20240528_214804231](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/885e2b93-387a-4b99-97db-643c3f4a1909)
+
+Place two zip ties through the side holes of the small glare blocker circles to connect all 6 circles together. 
+
+![PXL_20240528_214758314](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b44d4001-3a20-4970-92cd-68133f908384)
+
+Finally, using two M2 screws, you can attach the Camera into place. You can use 4 screws if you really want, but 2 is sufficient.
 ![PXL_20240528_214812935](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/89230aff-adc9-4328-8fb4-aac0a06448c6)
 
 
