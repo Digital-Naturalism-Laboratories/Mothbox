@@ -50,15 +50,22 @@ Using the two holes directly to the side of the vertical center holes at the top
 # Ringlights
 These two circular lights function to evenly illuminate the target area to get high quality images of the moths. We use these ring lights which are originally sold as inexpensive illuminators for microscopes. They are some of the cheapest and highest density bright LEDs we can find, and work well for taking photos of our moths.
 
+{: .note }
+> **More Built-in Redundancy** Each mothbox ideally uses two ring lights to illuminate the target. If necessary, though, (for instance if one light breaks in the field and you have no other options) one ring light can be used and placed directly around the Camera Glare Blocker.
+
+These 144 LEDs seem to be a pretty standardly manufactured light around the world, but we have found that they come in two slightly different forms. One with LEDs that are longer than the others. Don't worry though, from version 4.0 and up of the Mothbox can handle either length LED. 
+![1000056739](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/eed1812a-ff1c-4ad6-8c1e-63b90c30cac5)
+
+
+{: .note }
+> It's best to use 2 ringlights of the exact same brand, as some can be slightly brighter or differently colored than others leading to uneveness in image quality.
+
 ## Prepare Ring Lights
 ![1000056735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/74dedc06-9cac-48b0-a95c-d2e9a93ded6f)
 
-Each mothbox ideally uses two ring lights to illuminate the target. If necessary though one ring light can be used and fit around the camera module.
-
 We need to disassemble the ring lights before we can add them to our mothbox. This is so we can make them smaller and controllable.
 
-Unfortunately found out that these ring lights come in two slightly different forms. And one the LEDs are longer than the others. And so we have slightly different build instructions for each.
-![1000056739](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/eed1812a-ff1c-4ad6-8c1e-63b90c30cac5)
+
 
 # Ring light (long Led Style)
 To take apart these ring lights first you need to find the hidden screw. The screw is located underneath the sticker on the front.
