@@ -18,6 +18,7 @@ There are 11 laser cut pieces you will assemble with electronics parts.
 * 6 camera glare blocker circles
 
 # Camera Glare Blocker
+The function of the camera glare blocker is to set the camera a little bit in front of the super bright lights so that they don't cause a glare that interferes with the image quality.
 
 ## Assemble Camera Lens Glare Blocker
 Take your six circles and stack them on top of each other.
@@ -36,19 +37,20 @@ Finally, using two M2 screws, you can attach the Camera into place. You can use 
 ![PXL_20240528_214812935](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/89230aff-adc9-4328-8fb4-aac0a06448c6)
 
 
-## Attach Camera to Mainboard
-
+## Attach Camera Glare Blocker to Mainboard
+Using the two holes directly to the side of the vertical center holes at the top and bottom, secure the Camera Glare Blocker to the mainboard.
 ![PXL_20240528_215159502](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/602bb1a6-52e2-4492-9d3d-9cbed59656d9)
+
+{: .note }
+> The Camera Glare Blocker needs to be lined up correctly with the main board. You can use the small arrow to line it up with the mainboard. And the arrow also points to the Mothbox Logo.
 
 ![PXL_20240528_215218496](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/78121c28-dd95-473a-9bdc-4e2f1634b0f7)
 ![PXL_20240528_215207220](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/8e654101-e517-492b-99b2-0abe002b68f2)
 
 # Ringlights
+These two circular lights function to evenly illuminate the target area to get high quality images of the moths. We use these ring lights which are originally sold as inexpensive illuminators for microscopes. They are some of the cheapest and highest density bright LEDs we can find, and work well for taking photos of our moths.
 
-
-# Photography Lights 
 ## Prepare Ring Lights
-We use these ring lights which are originally sold as inexpensive illuminators for microscopes. They are some of the cheapest and highest density bright LEDs we can find, and work well for taking photos of our moths.
 ![1000056735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/74dedc06-9cac-48b0-a95c-d2e9a93ded6f)
 
 Each mothbox ideally uses two ring lights to illuminate the target. If necessary though one ring light can be used and fit around the camera module.
