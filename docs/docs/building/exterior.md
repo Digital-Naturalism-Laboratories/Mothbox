@@ -15,14 +15,22 @@ The Mothbox has 2 main *external parts*
 # Modify the Box
 
 ## Drilling Arm Holes
-You should start with 4 laser cut arms. Each arm of the mothbox is made from 2 arms. This is for strength as well as redundancy. If one arm breaks in the field, you already have a backup!
+You should start with 4 laser cut arms. 
+
+{: .note }
+> Each arm of the mothbox is made from 2 arms. This is for strength as well as redundancy. If one arm breaks in the field, you already have a backup!
 
 Lay an arm against the outside of the large plastic flanges.
 ![PXL_20240528_232317327](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2726dd3f-8744-4ed5-91b6-420dca7e3246)
 
 Use a marker to mark exactly where the holes are.
 Using a 1/4in drill bit (6.5mm), cut two holes for the arm.
-Slide two 1/4in bolts through the holes and secure the arms
+
+{: .note }
+> I actually use a drill bit that is slightly larger than 1/4in, like 5/16in because my measuring and aligning abilities aren't always that great, and this gives you a little wiggle room.
+
+
+Slide two 1/4in bolts through the holes and secure the arms.
 ![PXL_20240528_232310419-1](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d47191a6-9a04-4449-9628-6e883f4fed9b)
 
 
@@ -30,9 +38,9 @@ Now you should be able to attach the target to the arms easily!
 ![PXL_20240528_232346083](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ca003c30-0f24-4224-835c-1d6ec9733f67)
 
 
-## drill front lens hole
-These boxes our manufactured with a little dot directly in the center of the back of the box. 
-You can use this. As a reference to drill a small pilot hole. When drilling this side of the box for the lens make sure to always use a light pressure as you don't want to press too hard and crack the box. 
+## Drill Front Lens Hole
+These boxes are manufactured with a little dot directly in the center of the back of the box. 
+You can use this as a reference point to drill a small pilot hole. When drilling this side of the box for the lens make sure to always use a light pressure as you don't want to press too hard and crack the box. 
 ![1000056684](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/77a53c7b-021e-48bc-b008-b97cb8be1ae7)
 
 After you have drilled the pilot hole, You can get out your 53 mm hole cutter bit. Align this bit with the pilot hole and drill out your hole.
@@ -70,5 +78,5 @@ Once it is in place, and the epoxy is nice and smooth and thick, let it sit asid
 ![PXL_20240114_200004987](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/1cac398f-b5e9-40b9-884e-d221d03a2a30)
 
 
-After the epoxy has dried, sometimes you may notice some white smudges inside your mothbox. These are from the fumes of some glues attaching to oils left from your fingers. This is actually how people do fingerprinting sometimes! You can just wipe it off with a clean, damp cloth
+After the epoxy has dried, sometimes you may notice some white smudges inside your mothbox. It's not a big problem. These are from the fumes of some glues attaching to oils left from your fingers. This is actually how people do fingerprinting sometimes! You can just wipe it off with a clean, damp cloth.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/203ba16e-c704-4216-b1ff-720d673cf75f)
