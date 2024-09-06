@@ -60,15 +60,12 @@ These 144 LEDs seem to be a pretty standardly manufactured light around the worl
 {: .note }
 > It's best to use 2 ringlights of the exact same brand, as some can be slightly brighter or differently colored than others leading to uneveness in image quality.
 
-## Prepare Ring Lights
+## Disassemble Ring Lights
 ![1000056735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/74dedc06-9cac-48b0-a95c-d2e9a93ded6f)
 
 We need to disassemble the ring lights before we can add them to our mothbox. This is so we can make them smaller and controllable.
 
-
-
-# Ring light (long Led Style)
-To take apart these ring lights first you need to find the hidden screw. The screw is located underneath the sticker on the front.
+For most of the ring lights you just need to figure out how to pop the plastic container off. Usually there are a couple small screws you can use to disconnect the plastic. Some have a hidden screw that can be found underneath a sticker.
 
 Peel back the sticker and then unscrew the screw.
 ![1000056715](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/41fb74be-5ddd-4345-8320-5fc0087d1eee)
@@ -78,37 +75,22 @@ Peel back the sticker and then unscrew the screw.
 The front cover of the ring light should easily pop off now.
 ![1000056721](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/6e5529c9-5f16-4233-8026-f26ae4776633)
 
-There's one screw left connected to the little circuit board inside the ring light.
-Unscrew it and remove it.
+Some ringlights will now have all the electronics free. Some may still have some internal screws left connecting the circuit boards to the plastic. Unscrew them and remove it.
 ![1000056723](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5a252e0a-faa9-4687-8a61-7e5e6fd3bd46)
 
-Now use some kind of thin tool or flat screwdriver to pry off the front of the ring light. 
+Now use some kind of thin tool (e.g. a spudger) or flat screwdriver to pry off the front plastic cover of the ring light. 
 
 ![1000056725](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5641466f-eb30-4dfc-a8b0-d096bd2c8361)
 ![1000056736](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bbd83fbd-7199-444c-a392-d829fdeff9d6)
 ![1000056726](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/8e355324-5e54-4a0d-b219-23f3e65a5a77)
 
-Finally there are two wires you need to snip that go to the  barrel jack. Snip them off, and remove the entire ring light electronics.
+### Identify the Power Source
+Some lights have a barrel jack and others have a USB cable. Either way they will lead to a red and black wire. Snip them off so you still have plenty of wire connected to the LEDs. Remove all the electronics from the plastic.
 
 ![1000056729](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/6a4bde56-2a23-467b-8522-1f193531e2ab)
 ![1000056728](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/eef8e5c8-6978-4158-999f-c53cbc523dfd)
 
 
-## remove the knob
-Turn the knob all the way clockwise. This sets it to max output.
-
-Next pull the plastic knob straight off  this will prevent it from rotating later. If you are worried about it potentially rotating on its own you could also add a little bit of super glue to this potentiometer's metal knob to keep it in place, but this should be unnecessary.
-![1000056740](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2ef5664c-f44c-42af-a783-ff1cc7e40921)
-
-Some of the knobs might be secured with a bit of glue. It's ok you can yank it straight off. You might need to use a tool as a kind of lever to pry the knob off.
-
-![1000056731](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/e1bc261f-36cb-4072-97e4-4f5371c4b17e)
-![1000056734](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/443bcc27-dad3-464b-9277-d4eebe7c84d7)
-
-
-
-
-## Disassemble RingLight
 
 ## Connect Ringlight
 
