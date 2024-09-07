@@ -110,23 +110,25 @@ One rightlight should be finished and attached like this!
 Place the second ring light with the wires towards the big open gap
 
 ![PXL_20240528_221239622](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2f16ea18-048b-4787-a625-1ef429a1bd6d)
+
 You can zip its wires in place to stop them from getting tangled in things and help protect them
 ![PXL_20240528_221257355](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/92ea5c0a-3e20-48d7-a837-731dcb4ba20e)
 
 Add zipties through these two holes
 ![PXL_20240528_221243294](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b241f36d-b417-4dda-8d66-3a8db11dbfd6)
 
+After your ringlights have been physically connected in place, just let their wires dangle out the backside. We will connect them in the next step, [wiring](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
 
 # Connect the Raspberry Pi
-It sits in the corner. The four holes it connects to are marked with an extra tiny hole so you know which holes to line up.
+It sits in the corner of the mainboard. The connection points for the raspberry pi all have a tiny extra hole right next to them. This helps you locate the exact holes for the Raspberry Pi.
+
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b8fccf42-da9d-4776-9406-c5989ae9c8a8)
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bc582088-5682-4764-ad5f-4dd90c205dc5)
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/fffef7b3-921b-49cc-8629-786a10ecbf41)
 
-
-We will only connect 3 of the holes of the Raspberry Pi, because one is hidden behind the ringlight. (If you wish to connect the 4th hole, make sure to use a plastic bolt.)
-
+{: .note }
+> We will only connect 3 of the holes of the Raspberry Pi, because one is hidden behind the ringlight. (If you wish to connect the 4th hole, make sure to use a plastic bolt.)
 
 Add three of the spacers on top of the Pi's holes like this.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/05b1540c-ab99-4aa9-9acb-91b6bbcc82f7)
@@ -145,14 +147,17 @@ Now is a good time to trim up the ends of the zip ties you have sticking around
 
 ![PXL_20240528_221844778](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/064be564-d7e5-4d0b-a572-92959821fdf0)
 
+{: .note }
+> You want to make sure no zip tie parts are sticking out too far where they will get in the way of the camera glare blocker when the internals are loaded into the box.
+ 
 # Connect the camera cable to the Raspberry Pi
-Connect the ribbon cable to the raspberry pi
-if you are using a Pi5, make sure to connect to the first slot labeled "Cam0"
+Connect the ribbon cable to the Raspberry Pi. If you are using a Pi5,** make sure to connect to the first slot labeled "Cam0"**
+
 ![PXL_20240528_231930368](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f4a7a9ed-f9fc-4d4a-a23b-6be467ee18d4)
 
 # Attach Relay hat to Pi
-You will now connect the sockets on the relay hat to all the shiny metal pins sticking out of the pi.
-First move the camera ribbon cable to the side of the bolt sticking out of the pi
+You will now connect the sockets on the relay hat to all the shiny metal pins sticking out of the Pi. First move the camera ribbon cable to the side of the bolt sticking out of the Pi.
+
 ![image](https://github.com/user-attachments/assets/8f082ca1-ee8c-4688-bc48-480ec85297f6)
 
 Place the relay hat on top of the Pi. Line up the GPIO pins, and press softly down.
@@ -174,33 +179,36 @@ Place the relay hat on top of the Pi. Line up the GPIO pins, and press softly do
 
 This is just to keep it out of the way. and to stop it from getting tangled.
 
-Attach a piece of double sided tape to the little battery.
+Attach a piece of double sided tape to the little battery. Then stick it on top of the relay. Make sure the battery and the wires are not blocking the screw holes or entrance to the battery.
+
+
 ![image](https://github.com/user-attachments/assets/77edf203-c352-4862-b33e-d91cd66cfc32)
 
 {: .note }
-> This image kinda looks like there are too many fingers.
-
-stick it on top of the relay.
-
-{: .important }
-> Don't block the screw holes on top of the relay.
+> In this image, it kinda looks like there are too many fingers.
 
 ![image](https://github.com/user-attachments/assets/b669fba1-ea48-4d0b-b80c-711225a3045b)
 
+{: .important }
+> Don't block the screw holes on top of the relay.
+ 
 # Connect the Battery
 
 Unscrew these three screws from the bottom of your Battery
+
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a54fb25a-e785-4e21-a92b-25b139c71ca9)
-save the screws.
+
+Save the screws for the next step.
 
 {: .important } 
 > Make sure to press down firmly when unscrewing the screws so you do not strip the heads.
 
-Now screw the screws back in, connecting the battery to the mainboard.
+Now screw the screws back in, connecting the battery to the mainboard. You don't need to screw it in too tight or you might strip the internals of the battery. Just tighten them so the battery is firmly connected.
+
 ![image](https://github.com/user-attachments/assets/9d443341-2b62-4a2f-be2c-140cb7a30071)
 
 # Add the Clips to Mainboard
-Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place inside the plastic box.
+Now you can attach all the little plastic standoff clips to the edges of the mainboard. These hold the mothbox electronics firmly in place, with the camera and lights in the correct positions inside the plastic box.
 
 {: .note } 
 > If your mainboard still has protective plastic, you might need to peel it off from the mainboard before attaching the clips. Sometimes the protective plastic makes the acrylic sheets too thick for the clips.
@@ -209,8 +217,9 @@ Now you can attach all the little plastic standoff clips to the edges of the mai
 
 There are 2 LARGE clips and 2 SMALL clips
 
-The locations of the LARGE clips have RED arrows 
-BLUE arrows point to SMALL clips
+The locations of the LARGE clips have RED arrows. 
+BLUE arrows point to SMALL clips.
+
 ![image](https://github.com/user-attachments/assets/5375f3c6-1564-45a6-8d23-fdfe0249dbe3)
 
 
@@ -218,8 +227,6 @@ BLUE arrows point to SMALL clips
 
 
 ![PXL_20240528_222623305](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/08c951be-c403-4b7e-a8e8-cc931cdb81f3)
-
-
 
 
 # Internals Constructed!
