@@ -10,13 +10,22 @@ The next step may vary from Mothbox to Mothbox. It's about choosing what type of
 
 There are three basic options for your attractor
 
-{: .no_toc .text-delta }
 
-1. TOC
+- TOC
 {:toc}
 
 #  Internal Mothbeam
+We have been using the awesome Mothbeam made by Moritz at [LabLab](https://lablab.eu/). He designed these PCBs to be super low cost, high power, modular, adapatable insect attractors! We have been using pairs with one PCB with a range of UV, and another PCB with an array of useful visible light.
 
+To get one you can
+* order them from him by emailing him (moritz@lablab.eu) (the cheapest way) and they are about $90 for a pair.
+* [order them from circuithub](https://circuithub.com/projects/Moritz/Mothbeam/revisions/57895/parts) (the most expensive way)
+* or because it's open source, you can get the files from circuithub and make the PCBs yourself! The tricky part is that because they are high power LEDs though, they are made on a heat-dissipating aluminum substrate. Keep that in mind!
+
+What's nice is you can arrange them in different ways. You can put them together in a container and use it just like a Lepiled or other portable insect attractors.
+
+
+Or you can lay them flat, connect them to a heatsink like some aluminum we cut into a strip, put some thermal silicone pads between them, and screw them together.
 
 ![PXL_20240625_214349957](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a7dfa04f-3062-460d-ae4f-5dbac1b4157c)
 
@@ -26,9 +35,7 @@ There are three basic options for your attractor
 # Internal 12V UV Light
 You can purchase 12V UV LEDs easily with many commercially available options. Often many will be too large to fit inside the Mothbox, BUT most of the design of these devices is just a large metal case that works as a heatsink. If you take them apart, you will often find the actualy 12V LED is just a thin part.
 
-for instance
-
-these [inexpensive 10W flood lights](https://www.amazon.com/gp/product/B01LT53312/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 
+for instance these [inexpensive 10W flood lights](https://www.amazon.com/gp/product/B01LT53312/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4a2a69cb-d2a5-42db-90ee-46c9ac06e351)
 
 unscrew very easily and consist of just a simple circuit board connected with thermal glue to the metal case. You can take these apart, and using thermal silicone double sided tape (and maybe a little extra glue or screws) connect these UV leds to a piece of metal mounted inside the mothbox like with the method described above for an Internal Mothbeam.
@@ -54,6 +61,8 @@ You need
 ![PXL_20240805_164551924 MP](https://github.com/user-attachments/assets/076f806f-456b-4292-a4bb-c8c4f6970c01)
 
 ## Prepare the external light
+{: .no_toc .text-delta }
+
 We are using these twist-on waterproof connectors because they are about the easiest way to connect wires in a waterproof way. They are full of a silicone goo that keeps water out.
 ![PXL_20240805_164603120 MP](https://github.com/user-attachments/assets/9fca7c4c-737a-4936-8bb3-4e58199f76c2)
 
@@ -65,12 +74,16 @@ Twist the black wires together as well. And then stick them inside the connector
 ![image](https://github.com/user-attachments/assets/8329cbcc-c6ec-44fc-8d79-c0822f1749ec)
 
 ### Test the light
+{: .no_toc .text-delta }
+
 Plug it in to a battery to make sure it works!
 ![PXL_20240805_164951918 MP](https://github.com/user-attachments/assets/37b42b61-5824-4f07-9af4-4cbd4f3bdf77)
 
 
 ### Seal it up even more if you are paranoid
-you can heat shrink it
+{: .no_toc .text-delta }
+
+You can heat shrink it
 
 ![image](https://github.com/user-attachments/assets/c92ea508-49fe-45ba-9068-5446de20b2fd)
 
@@ -81,6 +94,7 @@ and even fill it full of hot glue if you are worried about water (like if you li
 
 
 ## Add an External Attractor Port
+{: .no_toc .text-delta }
 
 Following the instructions for adding the charging port we described earlier, just drill another hole next to that one.
 ![image](https://github.com/user-attachments/assets/50acc3ef-6d6b-4cde-93c5-52c9ef887440)
