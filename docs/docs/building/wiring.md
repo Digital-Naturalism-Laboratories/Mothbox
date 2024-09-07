@@ -12,11 +12,11 @@ We worked hard to keep the electronics as simple as possible so many people will
 Follow along and fear not!
 
 # Overview
-Here's a full circuit diagram of the **basic wiring**. You are basically connecting the Attractor lights and the Flash lights to the battery's 12V power source via the relays that we can switch on and off.
-![image](https://github.com/user-attachments/assets/aa502498-299c-49f2-9ff4-01c33dac4519)
+Here's a full circuit diagram of the **mothbox wiring**. You basically connect the battery to a 12V regulator (which gives consistent brightness over the life of the battery and extends its life). This 12 Volt power goes to the relays which then switch the  Attractor lights and the Flash lights switch on and off.
+![wiringdiagram_mothbox_withregulator_directRinglight](https://github.com/user-attachments/assets/1d50eaef-ac1e-4fd8-963c-0a81c0f3242e)
 
-And here's the full circuit diagram if you are using a **12V Regulator**
-![image](https://github.com/user-attachments/assets/fb5ca51b-cd33-489f-a2d8-3ad79a540979)
+If you have a older setup there are some other diagrams available for [wiring without a 12V regulator](https://github.com/user-attachments/assets/aa502498-299c-49f2-9ff4-01c33dac4519), or if you decide to [keep the brightness knobs on your ring lights](https://github.com/user-attachments/assets/fb5ca51b-cd33-489f-a2d8-3ad79a540979)
+
 
 
 # Wiring Guide
