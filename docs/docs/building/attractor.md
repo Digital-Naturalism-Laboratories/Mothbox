@@ -10,6 +10,9 @@ The next step may vary from Mothbox to Mothbox. It's about choosing what type of
 
 There are three basic options for your attractor
 
+{: .no_toc .text-delta }
+
+1. TOC
 {:toc}
 
 #  Internal Mothbeam
