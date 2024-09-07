@@ -28,6 +28,37 @@ This is the plug that will go into the OUTPUT of the battery. Don't plug it into
 
 ![PXL_20240620_141746112](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/361faa84-31e9-440d-b031-0833ef7a540e)
 
+
+--------
+NEW REGULATOR INSTRUCTIONS 
+
+
+# (Bonus) 12V Regulator (Double your runtime!)
+The mothbox uses a 12V li-ion battery to power its lights. This is because Li-ion batteries (like the talentcell) tend to be the cheapest and most energy dense batteries you can find. One problem though is that 12V Li-Ion batteries should more properly be called ["11 Volt batteries"](https://www.youtube.com/attribution_link?a=G0DWLOO3a0ScxCY2&u=/watch%3Fv%3D2Zm-tGT40No%26lc%3DUgwB3-ckr_Ck6Ppx6i94AaABAg.A5vYqUjaMj6A5zKF_KWXfb%26feature%3Dem-comments). This is because as they discharge, most of the battery life is spent **11.9 volts and under** 
+![image](https://github.com/user-attachments/assets/67dfe2b8-616e-4239-9f19-c5cfc2d424a9)
+
+A lot of 12 v equipment is tolerant of slightly lower voltage, but things like light can dim. Thus, if you want your mothbox to run for longer and have consistently bright lights (which can be important for experiments!), there is a pretty easy fix! You can just add in a 12V regulator booster. This is a $11 device you can add inbetween the battery's output and the rest of the mothbox connections.
+
+Refer back to the [wiring diagram above](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/#overview)
+
+First, connect the positive red wire from the battery's output to the postive red input wire of the regulator.
+
+![image](https://github.com/user-attachments/assets/417be1b0-aee6-4d3b-8201-97d8f270d976)
+
+next, replace the Positive wire from the battery's output with the *Yellow output wire* of the 12V Regulator.
+![image](https://github.com/user-attachments/assets/0cfb0ca0-cb6a-415a-b0f8-be98ba2cd4b4)
+
+Then, connect both black wires from the regulator to the main set of black ground wires in the mothbox's wiring.
+
+
+
+Finally add a piece of double sided tape, and just stick it onto the battery so it doesn't jiggle around.
+![image](https://github.com/user-attachments/assets/9f4b5281-c51e-462e-8547-a9ed2b04add0)
+![image](https://github.com/user-attachments/assets/a680bb35-4173-4417-a2c5-d3688e77c56f)
+
+
+----------
+
 Attach two lever nuts to each wire. For the positive (+) red wire, you just need a lever nut with 3 ports. For the black (-) negative wire, you want a lever nut with at least 4 ports because many of the grounds get tied together here.
 ![PXL_20240620_142426165](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377c88cd-af71-43a1-9f9f-e62d86212ffe)
 
@@ -79,8 +110,8 @@ When you flip the switch, everything should turn on.
 
 You probably want to add a charging port though, so check out the next step.
 
-# Add charging port (Optional, but nice)
-a nice waterproof charging port will make it much easier to use the mothbox! It's not too difficult to add either!
+# Add Charging Port
+A nice waterproof charging port makes it much easier to use the mothbox! It's not too difficult to add either!
 ![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
 ![PXL_20240620_193450178](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/599533bd-8736-4c59-a80a-1b78619faf76)
 
@@ -90,21 +121,24 @@ You need a plug and a socket DC barrel jack cables. And you can also use a inlin
 Mark your spot for the port. You can use a marker to note the spot. Though right between the big gap between the flanges is a good spot. You might notice my pen mark is a bit to the left. That works, but actually around where i put the red dot should be easier.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/10b70c21-9337-485a-9186-2324bf1b0e06)
 
-
-
 Drill a hole. Our socket is a little over 3/8 in in diameter, so i used a 3/8 in drill bit to make a hole, and then wiggled it around a bit to make it large enough to fit. 
+
 ![PXL_20240620_185611055](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f55ffc26-adcb-4c15-96ca-ddbc6bb00e10)
 
 You can use a razor blade to remove any burrs from the edges of the hole you made.
+
 ![PXL_20240620_185721979](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/e548a86a-03da-4662-8dc4-59c851655ff2)
 
 Slide the socket into place. The rubber stopper and gasket should be on the outside, and the metal washer and nut should come on the inside after it. Tighten it well.
+
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4876edc3-8cdb-4c24-a8a7-d3b466d5fd8a)
+
 If you are really paranoid about moisture, you can hot glue or silicone around your port to make it extra secure.
+
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/59105d35-93fc-433c-bc66-981e39d7e803)
 
 ## Wiring
-use an inline lever nut to connect the socket to the plug
+Use an inline lever nut to connect the socket to the plug.
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ef06751f-ea85-4ae8-89ce-63c4495adaf8)
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/dda78c19-a41c-4487-97c4-7330b2ab44c9)
@@ -124,30 +158,6 @@ When you aren't charging it, you can put the rubber cap over the port to protect
 
 Hooray, your charging port should be all set!
 ![PXL_20240620_191035108](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/43c57308-e4ac-49f0-9e67-e7706c96459d)
-
-# (Bonus) 12V Regulator (Double your runtime!)
-The mothbox uses a 12V li-ion battery to power its lights. This is because Li-ion batteries (like the talentcell) tend to be the cheapest and most energy dense batteries you can find. One problem though is that 12V Li-Ion batteries should more properly be called ["11 Volt batteries"](https://www.youtube.com/attribution_link?a=G0DWLOO3a0ScxCY2&u=/watch%3Fv%3D2Zm-tGT40No%26lc%3DUgwB3-ckr_Ck6Ppx6i94AaABAg.A5vYqUjaMj6A5zKF_KWXfb%26feature%3Dem-comments). This is because as they discharge, most of the battery life is spent **11.9 volts and under** 
-![image](https://github.com/user-attachments/assets/67dfe2b8-616e-4239-9f19-c5cfc2d424a9)
-
-A lot of 12 v equipment is tolerant of slightly lower voltage, but things like light can dim. Thus, if you want your mothbox to run for longer and have consistently bright lights (which can be important for experiments!), there is a pretty easy fix! You can just add in a 12V regulator booster. This is a $11 device you can add inbetween the battery's output and the rest of the mothbox connections.
-
-Refer back to the [wiring diagram above](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/#overview)
-
-First, connect the positive red wire from the battery's output to the postive red input wire of the regulator.
-
-![image](https://github.com/user-attachments/assets/417be1b0-aee6-4d3b-8201-97d8f270d976)
-
-next, replace the Positive wire from the battery's output with the *Yellow output wire* of the 12V Regulator.
-![image](https://github.com/user-attachments/assets/0cfb0ca0-cb6a-415a-b0f8-be98ba2cd4b4)
-
-Then, connect both black wires from the regulator to the main set of black ground wires in the mothbox's wiring.
-
-
-
-Finally add a piece of double sided tape, and just stick it onto the battery so it doesn't jiggle around.
-![image](https://github.com/user-attachments/assets/9f4b5281-c51e-462e-8547-a9ed2b04add0)
-![image](https://github.com/user-attachments/assets/a680bb35-4173-4417-a2c5-d3688e77c56f)
-
 
 
 # (Optional) Monitor your voltage!
