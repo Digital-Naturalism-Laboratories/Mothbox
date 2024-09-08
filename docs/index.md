@@ -65,7 +65,7 @@ After following these guides, you should be able to make your own set of mothbox
 
 
 # Mothbeam
-We are also building an open-source, portable low cost light for mothlighting, the Mothbeam!
+We are also building an open-source, portable low cost light for mothlighting, the Mothbeam! Some early documentation for [making your own Mothbeam is here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/#internal-mothbeam)
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/fab3c9ac-f879-4768-abee-1e61d8d63172)
 
 ![PXL_20240718_190826331 MP](https://github.com/user-attachments/assets/5201d9bb-20fc-43ae-8e99-69f6ac24126e)
