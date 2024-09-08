@@ -11,6 +11,8 @@ The Mothbox is a low-cost, [high-performance insect monitor](https://digital-nat
 
 All the physical designs, electronics schematics, Pi Scripts, and insect-IDing Artificial Intelligence are **provided free and open source**, so you can build, share and improve on these designs yourself!
 
+See the [full specifications of what it can do here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/)
+
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
 
