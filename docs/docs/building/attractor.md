@@ -22,10 +22,20 @@ To get one you can
 * [order them from circuithub](https://circuithub.com/projects/Moritz/Mothbeam/revisions/57895/parts) (the most expensive way)
 * or because it's open source, you can get the files from circuithub and make the PCBs yourself! The tricky part is that because they are high power LEDs though, they are made on a heat-dissipating aluminum substrate. Keep that in mind!
 
-What's nice is you can arrange them in different ways. You can put them together in a container and use it just like a Lepiled or other portable insect attractors.
+What's nice is you can arrange them in different ways. You can put them together in a container and use it just like a Lepiled or other portable insect attractors. You could then connect these assembled "Mothbeams" as an ["External Attractor"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/#external-12v-uv-light)
 
+<img src="https://github.com/user-attachments/assets/fd2c6542-056e-49ad-9002-5586bc7ca017" width="45%">
+<img src="https://github.com/user-attachments/assets/bd0e494e-6192-494c-b266-e6fd57c3014c" width="45%">
 
-Or you can lay them flat, connect them to a heatsink like some aluminum we cut into a strip, put some thermal silicone pads between them, and screw them together.
+## Build Mothbeam
+They need to dissipate heat, and fit flat in the front of the Mothbox. 
+* Cut a thin piece of metal that fits at the top of the mothbox. We use perforated aluminum and some metal shears.
+* put a piece of thermal silicone on the back of each mothbeam pcb. (remove the protective plastic first)
+* screw them to the piece of aluminum.
+* connect the aluminum to the mothbox.
+* route the wires through the little gap near the top.
+* connect the negative wire to all the other negative wires.
+* connect the positive wire to the attractor relay on the far left.
 
 ![PXL_20240625_214349957](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a7dfa04f-3062-460d-ae4f-5dbac1b4157c)
 
@@ -110,6 +120,9 @@ and add a red and black wire to it.
 
 connect the black wire to the ground (or the extra ground wire of the voltage regulator).
 ![PXL_20240805_171434485 MP](https://github.com/user-attachments/assets/0f1aeddd-52d0-4571-a809-238ab8d46917)
+
+{:.note}
+> I colored the attractor port purple with a permanent marker so that I wouldn't confuse it with the charging port.
 
 connect the red wire to the attractor port of the relay
 ![image](https://github.com/user-attachments/assets/fc2904b2-8d37-479c-b78a-546dcad3e81d)
