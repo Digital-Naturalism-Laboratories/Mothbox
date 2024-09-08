@@ -18,71 +18,76 @@ Here's a full circuit diagram of the **mothbox wiring**. You basically connect t
 If you have a older setup there are some other diagrams available for [wiring without a 12V regulator](https://github.com/user-attachments/assets/aa502498-299c-49f2-9ff4-01c33dac4519), or if you decide to [keep the brightness knobs on your ring lights](https://github.com/user-attachments/assets/fb5ca51b-cd33-489f-a2d8-3ad79a540979)
 
 
-
-# Wiring Guide
+# Battery Output to Regulator
 ## Start from the OUTPUT of the battery
 ![PXL_20240620_141719276](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bda29859-2576-4e1f-9fcf-eb3ed73a26cf)
 
 Start with a barrel plug wire with two free ends. (I actually chopped my barrel plug wire from one that came with a power supply for the LED ring lights!)
-This is the plug that will go into the OUTPUT of the battery. Don't plug it into the battery yet, we want to safely connect everything first and then connect it!
+
+![PXL_20240908_230151540 MP](https://github.com/user-attachments/assets/07571660-1b45-4f3d-aa34-7ea843932285)
+
+
+This is the plug that will go into the OUTPUT of the battery. **Don't plug it into the battery yet,** we want to safely connect everything first and then connect it!
 
 ![PXL_20240620_141746112](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/361faa84-31e9-440d-b031-0833ef7a540e)
 
+Next we will prepare the 12V regulator.
+## (New!) 12V Regulator
+The mothbox uses a 12V li-ion battery to power its lights. This is because Li-ion batteries (like the talentcell) tend to be the cheapest and most energy dense batteries you can find. One problem though is that 12V Li-Ion batteries should more properly be called ["11 Volt batteries"](https://www.youtube.com/attribution_link?a=G0DWLOO3a0ScxCY2&u=/watch%3Fv%3D2Zm-tGT40No%26lc%3DUgwB3-ckr_Ck6Ppx6i94AaABAg.A5vYqUjaMj6A5zKF_KWXfb%26feature%3Dem-comments). This is because as they discharge, most of the battery life is spent **11.9 volts and under**
 
---------
-NEW REGULATOR INSTRUCTIONS 
-
-
-# (Bonus) 12V Regulator (Double your runtime!)
-The mothbox uses a 12V li-ion battery to power its lights. This is because Li-ion batteries (like the talentcell) tend to be the cheapest and most energy dense batteries you can find. One problem though is that 12V Li-Ion batteries should more properly be called ["11 Volt batteries"](https://www.youtube.com/attribution_link?a=G0DWLOO3a0ScxCY2&u=/watch%3Fv%3D2Zm-tGT40No%26lc%3DUgwB3-ckr_Ck6Ppx6i94AaABAg.A5vYqUjaMj6A5zKF_KWXfb%26feature%3Dem-comments). This is because as they discharge, most of the battery life is spent **11.9 volts and under** 
 ![image](https://github.com/user-attachments/assets/67dfe2b8-616e-4239-9f19-c5cfc2d424a9)
 
 A lot of 12 v equipment is tolerant of slightly lower voltage, but things like light can dim. Thus, if you want your mothbox to run for longer and have consistently bright lights (which can be important for experiments!), there is a pretty easy fix! You can just add in a 12V regulator booster. This is a $11 device you can add inbetween the battery's output and the rest of the mothbox connections.
 
-Refer back to the [wiring diagram above](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/#overview)
+## Prepare the 12V Regulator
 
-First, connect the positive red wire from the battery's output to the postive red input wire of the regulator.
-
-![image](https://github.com/user-attachments/assets/417be1b0-aee6-4d3b-8201-97d8f270d976)
-
-next, replace the Positive wire from the battery's output with the *Yellow output wire* of the 12V Regulator.
-![image](https://github.com/user-attachments/assets/0cfb0ca0-cb6a-415a-b0f8-be98ba2cd4b4)
-
-Then, connect both black wires from the regulator to the main set of black ground wires in the mothbox's wiring.
+The regulator looks like this black box with 4 wires coming out. 1 Red, 2 Black, and 1 Yellow.
+![PXL_20240908_225805285 MP](https://github.com/user-attachments/assets/71dc08a6-680f-4d5d-8f04-461501f0f781)
 
 
-
-Finally add a piece of double sided tape, and just stick it onto the battery so it doesn't jiggle around.
-![image](https://github.com/user-attachments/assets/9f4b5281-c51e-462e-8547-a9ed2b04add0)
-![image](https://github.com/user-attachments/assets/a680bb35-4173-4417-a2c5-d3688e77c56f)
+Often these devices only have a little bit of wire sticking out, and it's necessary to use wire strippers to trim the ends so we have about 1cm of bare wire to work with.
+![PXL_20240908_225906321 MP](https://github.com/user-attachments/assets/f51b9a81-bae1-4a76-b8e8-62587faec1d1)
 
 
-----------
+## Connect Regulator and Barrel Jack Plug
+Use an inline wire nut to connect the red and black wires from the Barrel Jack to the red and black wires on the left side of the regulator.
 
-Attach two lever nuts to each wire. For the positive (+) red wire, you just need a lever nut with 3 ports. For the black (-) negative wire, you want a lever nut with at least 4 ports because many of the grounds get tied together here.
-![PXL_20240620_142426165](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377c88cd-af71-43a1-9f9f-e62d86212ffe)
+![PXL_20240908_231305779 MP](https://github.com/user-attachments/assets/5609a1f4-28fd-407a-a7a6-0cf40404ebcb)
 
-From the red, positive (+) wire's lever nut, attach two 12cm red wires
-![image](https://github.com/user-attachments/assets/708a7314-a89e-4bf0-b0db-606fe59bddbf)
+# Regulator to Relays
+On the Yellow wire of the 12V relay, connect a lever nut with at least 3 ports.
+On the Black wire of the 12V relay, connect a lever nut with as many ports as you can (ours has 5). 
+![PXL_20240908_231730313 MP](https://github.com/user-attachments/assets/7a038602-3b39-4b9b-96fd-6ff0049e44f4)
+
+{:.note}
+>If you end up needing more ground ports, you can always connect another lever nut to this nut with another black wire.
+
+![image](https://github.com/user-attachments/assets/2d124d71-5dec-48f5-891a-920a621b366f)
+
+Cut two red wires that are about 10cm long and stick them into the lever nut connecting to the yellow wire.
+![PXL_20240908_232626850 MP](https://github.com/user-attachments/assets/bd663eb5-1343-47b4-89bd-43343fd9e290)
+
 
 
 ## Connect the centers of the relays
+Now connect these two red wires to the centers of the two relays on the left side of the board as pictured below.
 
-with the two wires coming out of the + positive red wire, you can send these to the middle ports of the middle and left relays.
-![PXL_20240620_143402254](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/8a32a930-fdc2-45b0-ae3c-8fb9755ab6b8)
+![PXL_20240908_232829553 MP](https://github.com/user-attachments/assets/1ff6e4a5-e387-41e6-a01f-7da7bba63e35)
+
+(You are halfway done with the electronics wiring! Congrats!)
+
+# Connect the Ring Lights
+
+## Chop the Ring light Knob (if you haven't already)
+If you haven't already, chop the control knob electronics that came with your ring light. In older versions of the Mothbox we used to keep this, as it regulates the power to the ring LEDs. But now that we use a 12V regulator, we don't need this part. Those control knobs were also finnicky and often were manufactured with wimpy wires. They resulted in about 90% of the failures we saw in the field. So good riddance!
+![PXL_20240908_233422021 MP](https://github.com/user-attachments/assets/0326c9ce-4fae-4736-bbf4-271b05cf4d6e)
+
+Make sure to trim the wires sticking out of the ring lights so you have at least 1 cm of bare wire to work with
+
+![PXL_20240908_233536107 MP-1](https://github.com/user-attachments/assets/18bb031f-cd77-40a1-9fd1-8b2ffa0361ac)
 
 
-## Connect the Ring Lights
-Use an Inline lever nut to connect the negative and positive wires coming from the control board of each LED ring light.
-![PXL_20240620_143116025](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5f14c01b-00cc-4b98-81df-b84dc81b4b2b)
-![PXL_20240620_143121252](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/572008a0-f0d9-403b-9b24-95547c1f4353)
 
-Now connect a wire (preferably red) to the positive side of each of the ring lights' lever nuts, and connect that wire to the middle relay's left-most hole. You can jam both wires into the hole. And then tighten it down.
-![PXL_20240620_143842735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bada9af1-6a8b-40d0-803c-05b4fa02eb03)
-
-![PXL_20240620_143859392](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a6a50e01-838d-4e9f-8eb0-c50d824af6cd)
-
-![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3fb5a7c0-a3e1-4060-9ebb-d3ec70d6756b)
 
 ## Connect the UV Attractor Light
 connect the positive wire from the UV light to the left most hole of the left most relay (channel 3)
@@ -97,7 +102,14 @@ After you connect a wire to both ring lights, you can then connect the wires to 
 All the black negative wires all connect together at the lever nut that plugs into the battery.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0d2fb85f-1de3-48aa-ad94-c87a5f8dcd19)
 
+## Stick down the Regulator
+Finally add a piece of double sided tape, and just stick it onto the battery so it doesn't jiggle around.
+![image](https://github.com/user-attachments/assets/9f4b5281-c51e-462e-8547-a9ed2b04add0)
+![image](https://github.com/user-attachments/assets/a680bb35-4173-4417-a2c5-d3688e77c56f)
+
+
 # Connect to Battery
+
 Yay the main wiring is mostly done. You can connect the plug to the OUT port of the battery,
 ![PXL_20240620_150405167](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d7341c03-60b4-4ac5-95bc-074fe199cf7a)
 
@@ -179,5 +191,47 @@ You should now be able to put an [SD card with a latest image](https://drive.goo
 and turn on the battery, and everything should start blinking and flashing after just a couple minutes of startup!
 ![PXL_20240620_150959340](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d4d6866a-229f-4dd8-9291-b56a2386925b)
 ![PXL_20240620_151225454](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f3e75100-5bcb-4b72-a5e4-8ae6af3690f2)
+
+
+
+
+
+
+--------
+NEW REGULATOR INSTRUCTIONS 
+
+
+# (Bonus) 12V Regulator (Double your runtime!)
+
+
+First, connect the positive red wire from the battery's output to the postive red input wire of the regulator.
+
+![image](https://github.com/user-attachments/assets/417be1b0-aee6-4d3b-8201-97d8f270d976)
+
+next, replace the Positive wire from the battery's output with the *Yellow output wire* of the 12V Regulator.
+![image](https://github.com/user-attachments/assets/0cfb0ca0-cb6a-415a-b0f8-be98ba2cd4b4)
+
+Then, connect both black wires from the regulator to the main set of black ground wires in the mothbox's wiring.
+
+
+
+
+Attach two lever nuts to each wire. For the positive (+) red wire, you just need a lever nut with 3 ports. For the black (-) negative wire, you want a lever nut with at least 4 ports because many of the grounds get tied together here.
+![PXL_20240620_142426165](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377c88cd-af71-43a1-9f9f-e62d86212ffe)
+
+From the red, positive (+) wire's lever nut, attach two 12cm red wires
+![image](https://github.com/user-attachments/assets/708a7314-a89e-4bf0-b0db-606fe59bddbf)
+----------
+
+Use an Inline lever nut to connect the negative and positive wires coming from the control board of each LED ring light.
+![PXL_20240620_143116025](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5f14c01b-00cc-4b98-81df-b84dc81b4b2b)
+![PXL_20240620_143121252](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/572008a0-f0d9-403b-9b24-95547c1f4353)
+
+Now connect a wire (preferably red) to the positive side of each of the ring lights' lever nuts, and connect that wire to the middle relay's left-most hole. You can jam both wires into the hole. And then tighten it down.
+![PXL_20240620_143842735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bada9af1-6a8b-40d0-803c-05b4fa02eb03)
+
+![PXL_20240620_143859392](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a6a50e01-838d-4e9f-8eb0-c50d824af6cd)
+
+![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3fb5a7c0-a3e1-4060-9ebb-d3ec70d6756b)
 
 
