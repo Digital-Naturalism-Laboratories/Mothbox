@@ -22,7 +22,7 @@ The exact specifications of the mothbox may change depending on factors like whi
 * [Additional Power Inputs](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/):
   * Solar (up to 18V 60 watts),
   * Extra Batteries
-    * can daisy chain up to 3 Talentcell PB120B1 batteries
+    * can [daisy chain up to 3 Talentcell PB120B1 batteries](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/#build-a-waterproof-battery-pack)
     * or connect other DC batteries (like a car battery)
   * continuous DC power (can plug into a wall if near a power grid)
 * Sleep time: 6 months
