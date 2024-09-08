@@ -116,9 +116,11 @@ A nice waterproof charging port makes it much easier to use the mothbox! It's no
 ![PXL_20240620_193450178](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/599533bd-8736-4c59-a80a-1b78619faf76)
 
 You need a plug and a socket DC barrel jack cables. And you can also use a inline lever nut to connect them.
+
 ![PXL_20240620_195858657](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a6376891-2706-4e3e-a003-0edd4d46b674)
 
 Mark your spot for the port. You can use a marker to note the spot. Though right between the big gap between the flanges is a good spot. You might notice my pen mark is a bit to the left. That works, but actually around where i put the red dot should be easier.
+
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/10b70c21-9337-485a-9186-2324bf1b0e06)
 
 Drill a hole. Our socket is a little over 3/8 in in diameter, so i used a 3/8 in drill bit to make a hole, and then wiggled it around a bit to make it large enough to fit. 
