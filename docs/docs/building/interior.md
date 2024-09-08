@@ -115,6 +115,7 @@ You can zip its wires in place to stop them from getting tangled in things and h
 ![PXL_20240528_221257355](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/92ea5c0a-3e20-48d7-a837-731dcb4ba20e)
 
 Add zipties through these two holes
+
 ![PXL_20240528_221243294](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b241f36d-b417-4dda-8d66-3a8db11dbfd6)
 
 After your ringlights have been physically connected in place, just let their wires dangle out the backside. We will connect them in the next step, [wiring](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
