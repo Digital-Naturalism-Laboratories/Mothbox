@@ -54,6 +54,16 @@ The world famous research island has also been home to Mothbox tests!
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f1e5e95e-a7eb-4db1-b431-9e58b7b3dfa0)
 
 
+## La Fortuna Ecological Reserve, Panama
+Several mothboxes are being deployed by the technician, Bady, at a massive reserve with an incredible elevation gradient. This unique forest in western panama goes from 90m to over 2000m, and features weather that seems to change every 10 minutes. 
+![image](https://github.com/user-attachments/assets/bac4e950-2982-4915-bbb6-744dc5a8acce)
+
+Accoring to the PI overseeing work in this area, Jim Daling, it's probably one of the most moth-rich places in Panama!
+![PXL_20240905_213414890 MP](https://github.com/user-attachments/assets/e0de6394-7871-43d9-98fd-45963bc44037)
+
+
+
+
 
 # Ecuador
 ## Amazonas, Ecuador
