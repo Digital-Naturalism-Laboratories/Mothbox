@@ -6,7 +6,7 @@ has_children: false
 nav_order: 2
 ---
 
-From its inception, the Mothbox was (and always will be) a fully open hardware and software project that anyone is free to use and build or modify themselves. Its core development was made possible through much volunteer work by Digital Naturalism Laboratories. Its continued development has been made possible througha series of small to large grants from different organizations.
+From its inception, the Mothbox was (and always will be) a fully open hardware and software project that anyone is free to use and build or modify themselves. Its core development was made possible through much volunteer work by Digital Naturalism Laboratories. Its continued development has been made possible through a series of small to large grants from different organizations.
 
 # Inspiration
 Hubert's initial inspiration came from a paper by [Bjerge et al, "An Automated Light Trap
