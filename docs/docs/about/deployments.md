@@ -3,7 +3,7 @@ layout: default
 title: Deployments
 parent: About the Mothbox
 has_children: false
-nav_order: 8
+nav_order: 3
 ---
 
 This is a list of just some places the Mothbox has been so far!
