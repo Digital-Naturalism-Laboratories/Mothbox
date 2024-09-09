@@ -83,7 +83,7 @@ The Mothbeam was also tested to a resounding success in Madre De Dios
 # USA
 
 ## Providence, Rhode Island
-Our friends are building at the libraries there wtih their Wildlives class that sets up camera traps with children
+Our friends in Rhode Island run a program called "Wildlives" where they set up camera traps with children. They do this with local libraries and are now building a mothbox with the kids too!
 ![Untitled](https://github.com/user-attachments/assets/36149ac6-2f1e-44c0-8ce8-cbbfcc682b6d)
 
 ## Columbus, Ohio
