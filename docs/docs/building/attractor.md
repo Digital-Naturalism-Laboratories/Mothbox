@@ -43,6 +43,7 @@ They need to dissipate heat, and fit flat in the front of the Mothbox.
 
 ![PXL_20240625_214416540](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/812643f0-97a6-436f-9704-b43d0e971c41)
 
+![PXL_20240806_160534615 MP](https://github.com/user-attachments/assets/cf9875fe-b846-4f1a-91f6-2ef84f9b533e)
 
 # Internal 12V UV Light
 You can purchase 12V UV LEDs easily with many commercially available options. Often many will be too large to fit inside the Mothbox, BUT most of the design of these devices is just a large metal case that works as a heatsink. If you take them apart, you will often find the actualy 12V LED is just a thin part.
