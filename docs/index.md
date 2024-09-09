@@ -26,7 +26,7 @@ Of all life on earth (including bacteria) there are about 2 million species scie
 Using creatures with a super diverse gene pool allows us to make sophisticated insights into the health of different areas. Combining the activity of thousands of species of insects with other data like climate, acoustic, or soil analysis, can provide deep analysis into how environments can be repaired.
 
 ### Offer Highly Localized Insights
-Because they tend to have short lives and often limited ranges, insects can provide super localized data. 
+Because they tend to have short lives and often limited ranges, insects can provide super localized data. Moths, in particular, are great indicators of overall biodiversity because they are often host-specific as caterpillars. This means they only feed on one or a limited number of plant species. So, by monitoring moths, you are getting a proxy of the local plant community.
 
 For comparison, think about something like a Jaguar, which is a rare find and scientifically valuable to see on a wildlife camera, but they have large ranges and long lives. The presence of a Jaguar does not necessarily tell us much about the health of the environment where it was spotted. It could simply be travelling across disturbed farmland to escape from a destroyed habitat elsewhere. 
 
