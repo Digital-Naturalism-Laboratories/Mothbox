@@ -174,6 +174,28 @@ When you aren't charging it, you can put the rubber cap over the port to protect
 Hooray, your charging port should be all set!
 ![PXL_20240620_191035108](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/43c57308-e4ac-49f0-9e67-e7706c96459d)
 
+# Add Arming/Disarming Wires
+The default behavior of the mothbox is to turn on whenever its schedule dictates (or when there is a change in power, or the power button has been pressed), and then start illuminating the attractor and taking photos every minute.
+
+Sometimes you want to temporarily disable the mothbox from running. For instance if you are travelling overnight somewhere, you might not want 20 mothboxes to start lighting up in the backseat of your car. So there is a simple way to add two wires that let you ARM and DISARM the Mothbox.
+
+Get two jumper wires. One wire should be SOCKET-PIN, and the other should be SOCKET-SOCKET.
+![image](https://github.com/user-attachments/assets/fed20af5-1c17-413b-9e68-c53d89bb37c3)
+
+Plug the SOCKET-SOCKET plug into the pin labelled P27 (Third pin from the left)
+![image](https://github.com/user-attachments/assets/62263ef1-b8a2-4088-bffe-b28102945136)
+
+Plug the SOCKET-PIN plug into the pin labelled GND (Fourth pin from the left)
+![image](https://github.com/user-attachments/assets/5cc4fe01-de1a-4149-8c03-2731bee584cd)
+
+So you should have a wire plugged into both P27 and GND now. 
+
+Whenever those two pins are UNCONNECTED from each other, the Mothbox is ARMED and ready to go!
+![PXL_20240909_044023484 MP](https://github.com/user-attachments/assets/805e8e3e-fdaa-4231-804d-794ae3e4ab5c)
+
+If you CONNECT these two wires together (grounding pin P27), then the Mothbox will be DISARMED and will never turn on (until these pins are eventually disconnected from each other.)
+![image](https://github.com/user-attachments/assets/26756b7a-420e-4777-8e77-7c83ecd224b0)
+
 
 # Test everything
 
