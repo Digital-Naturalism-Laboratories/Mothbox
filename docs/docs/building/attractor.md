@@ -28,6 +28,8 @@ What's nice is you can arrange them in different ways. You can put them together
 <img src="https://github.com/user-attachments/assets/bd0e494e-6192-494c-b266-e6fd57c3014c" width="45%">
 
 ## Build Mothbeam
+{: .no_toc .text-delta }
+
 They need to dissipate heat, and fit flat in the front of the Mothbox. 
 * Cut a thin piece of metal that fits at the top of the mothbox. We use perforated aluminum and some metal shears.
 * put a piece of thermal silicone on the back of each mothbeam pcb. (remove the protective plastic first)
