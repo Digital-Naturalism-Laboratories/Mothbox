@@ -16,7 +16,6 @@ Here's a [link to a list of most of the parts collected for you.](https://www.am
 
 
 ## Electronics
-**N-x the following:**
 
 ### Core Electronics ($233)
 
@@ -100,7 +99,7 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
 
 # Tools for Construction
 **1x the following:**
-Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you 
+Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you only need one of these tools no matter how many you make.
    
 * 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 * Drill Bits for Plastic
