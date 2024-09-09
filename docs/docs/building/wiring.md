@@ -196,6 +196,9 @@ Whenever those two pins are UNCONNECTED from each other, the Mothbox is ARMED an
 If you CONNECT these two wires together (grounding pin P27), then the Mothbox will be DISARMED and will never turn on (until these pins are eventually disconnected from each other.)
 ![image](https://github.com/user-attachments/assets/26756b7a-420e-4777-8e77-7c83ecd224b0)
 
+Next you can decide if you want to add a voltage Monitor (below), or a [Solar Panel or Extra Battery](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/), or if you haven't yet made your [UV attractor, it's time to do that!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/)
+
+
 # (Optional) Monitor your voltage!
 The mothbox images are programmed to monitor and log their voltages. This doesn't affect their use, but there may be situations for advanced users where you might want to only turn your mothbox on, if it has a certain percentage of its battery charged. For instance if you connect a solar panel to your Mothbox, you might want to wait until your battery is fully charged before arming it to run for an entire night.
 
