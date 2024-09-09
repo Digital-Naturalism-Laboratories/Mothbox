@@ -79,4 +79,5 @@ Once it is in place, and the epoxy is nice and smooth and thick, let it sit asid
 
 
 After the epoxy has dried, sometimes you may notice some white smudges inside your mothbox. It's not a big problem. These are from the fumes of some glues attaching to oils left from your fingers. This is actually how people do fingerprinting sometimes! You can just wipe it off with a clean, damp cloth.
+
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/203ba16e-c704-4216-b1ff-720d673cf75f)
