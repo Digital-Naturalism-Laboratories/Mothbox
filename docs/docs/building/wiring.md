@@ -70,13 +70,13 @@ Cut two red wires that are about 10cm long and stick them into the lever nut con
 
 
 ## Connect the centers of the relays
-Now connect these two red wires to the centers of the two relays on the left side of the board as pictured below.
+Now connect these two red wires to the centers of the two relays on the left side of the board as pictured below. Use a screwdriver to tighten the connection.
 
 ![PXL_20240908_232829553 MP](https://github.com/user-attachments/assets/1ff6e4a5-e387-41e6-a01f-7da7bba63e35)
 
 (You are halfway done with the electronics wiring! Congrats!)
 
-# Connect the Ring Lights
+# Connect the Lights
 
 ## Chop the Ring light Knob (if you haven't already)
 If you haven't already, chop the control knob electronics that came with your ring light. In older versions of the Mothbox we used to keep this, as it regulates the power to the ring LEDs. But now that we use a 12V regulator, we don't need this part. Those control knobs were also finnicky and often were manufactured with wimpy wires. They resulted in about 90% of the failures we saw in the field. So good riddance!
@@ -86,29 +86,42 @@ Make sure to trim the wires sticking out of the ring lights so you have at least
 
 ![PXL_20240908_233536107 MP-1](https://github.com/user-attachments/assets/18bb031f-cd77-40a1-9fd1-8b2ffa0361ac)
 
+## Start with Ring Light Near front of Battery
+Now add an inline lever nut connector to the Ring light that is in front of the battery. Connect a red and black wire that are each 10cm long to this.
 
+![PXL_20240908_233803873 MP](https://github.com/user-attachments/assets/c4df335d-003a-4d1f-9d9b-c6eba1cf924e)
+
+## Ring Light Under Battery
+Now add another inline lever nut to connect the ring light that is below the battery. This light should have a red and black wire coming out of it that are both **20cm long**
+![PXL_20240908_234115204 MP](https://github.com/user-attachments/assets/eb55d41d-fde5-4d91-9420-6e8f2498be4c)
+
+## Connect Both Ring Lights to Relay
+Take both the RED wires from each Ring light and make them go into the left port of the center relay (as shown below)
+
+![PXL_20240908_235626674 MP](https://github.com/user-attachments/assets/5bf8f784-8326-4303-ab31-113324b4e84a)
+
+Both wires can fit in this port together, just tighten down the screw and make sure to give a tug test to make sure neither of the wires are loose.
+![PXL_20240908_235632082 MP](https://github.com/user-attachments/assets/1b49cb18-1389-4853-8f5b-cb35932bb81a)
 
 
 ## Connect the UV Attractor Light
-connect the positive wire from the UV light to the left most hole of the left most relay (channel 3)
-![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b762c973-733c-46cc-b772-a1bd11b6d4e7)
+There's a couple different options for [what kind of UV attractor light you want (Internal, External,etc...)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/) No matter which option you go with, your attractor light will have a RED/PURPLE (Postive) and BLACK (negative) wire coming out of them. I used a purple wire for my UV attractor light so I would remember it is for a UV light, and it shows up easier in the documentation photos below to let you understand what I am talking about. You can use a red wire if you want though. 
 
-## Connect all the NEGATIVE GROUND wires together
-Now we will attach a black wire to each of the LED ring lights connecting to their negative (-) ground wire in the lever nut.
-![PXL_20240620_144525576](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0a34f1ac-130c-40ae-bf7f-38df4cf32cee)
-After you connect a wire to both ring lights, you can then connect the wires to the lever nut that connects to the battery plug. Connect the negative black wire from the UV light too.
-![PXL_20240620_144648932](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b3aa68ac-4c4c-46dd-94dc-d66e3dddd796)
+Take the positive (red or purple) wire from the UV attractor light, and connect it to the left most slot in the left most relay. (Shown as the purple wire in the photo below).
+![PXL_20240909_000014650 MP](https://github.com/user-attachments/assets/48a4640f-f316-42ea-b15b-c742ce8d131d)
 
-All the black negative wires all connect together at the lever nut that plugs into the battery.
-![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0d2fb85f-1de3-48aa-ad94-c87a5f8dcd19)
 
-## Stick down the Regulator
+# Connect all the NEGATIVE GROUND wires together
+Finally, take all the Black wires from the 2 ring lights and the UV attractor light and connect them to the black wire coming from the 12V regulator.
+![PXL_20240908_235821006 MP](https://github.com/user-attachments/assets/e4dffe47-9152-447b-a3d4-bac44adf6d30)
+
+
+# Stick down the Regulator
 Finally add a piece of double sided tape, and just stick it onto the battery so it doesn't jiggle around.
 ![image](https://github.com/user-attachments/assets/9f4b5281-c51e-462e-8547-a9ed2b04add0)
 ![image](https://github.com/user-attachments/assets/a680bb35-4173-4417-a2c5-d3688e77c56f)
 
-
-You probably want to add a charging port though, so check out the next step.
+Most of the wiring has been completed! Only one part to go!
 
 # Add Charging Port
 A nice waterproof charging port makes it much easier to use the mothbox! It's not too difficult to add either!
@@ -139,7 +152,7 @@ If you are really paranoid about moisture, you can hot glue or silicone around y
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/59105d35-93fc-433c-bc66-981e39d7e803)
 
-## Wiring
+## Wiring the Charging Port
 Use an inline lever nut to connect the socket to the plug.
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ef06751f-ea85-4ae8-89ce-63c4495adaf8)
@@ -257,5 +270,17 @@ Now connect a wire (preferably red) to the positive side of each of the ring lig
 ![PXL_20240620_143859392](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a6a50e01-838d-4e9f-8eb0-c50d824af6cd)
 
 ![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3fb5a7c0-a3e1-4060-9ebb-d3ec70d6756b)
+
+
+
+
+
+Now we will attach a black wire to each of the LED ring lights connecting to their negative (-) ground wire in the lever nut.
+![PXL_20240620_144525576](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0a34f1ac-130c-40ae-bf7f-38df4cf32cee)
+After you connect a wire to both ring lights, you can then connect the wires to the lever nut that connects to the battery plug. Connect the negative black wire from the UV light too.
+![PXL_20240620_144648932](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b3aa68ac-4c4c-46dd-94dc-d66e3dddd796)
+
+All the black negative wires all connect together at the lever nut that plugs into the battery.
+![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0d2fb85f-1de3-48aa-ad94-c87a5f8dcd19)
 
 
