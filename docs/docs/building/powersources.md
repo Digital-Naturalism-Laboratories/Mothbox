@@ -3,7 +3,7 @@ layout: default
 title: Solar and Extra Batteries
 parent: Building Mothbox
 #has_children: true
-nav_order: 9
+nav_order: 8
 ---
 
 The Mothbox has an internal battery that can sample for about 4 nights on its own (22 hours of runtime). BUT maybe you want a SUPER POWERED mothbox that can last even longer?!
