@@ -95,6 +95,5 @@ The v4 has many features that improved upon previous versiions such as
 # Mothbeam
 The Mothbeam is an open-source ultra-low cost Lepiled alternative. It developed in parallel with the Mothbox after Led Designer, Mortiz Buttlar, heard of the Mothbox and offered to contribute his expertise. He developed an ultra low cost set of modular PCBs that could be waterproofed and cooled when manufactured with low cost methods. It's not a partially standalone project as well as integrated into the Mothbox as a UV attractor.
 
-* Julian Stirling
-* Moritz Buttlar Lablab
+* [Moritz Buttlar Lablab](https://lablab.eu/)
 
