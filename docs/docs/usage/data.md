@@ -19,9 +19,10 @@ or alternatively fill out the [online version of the form (bilingue)](https://do
 {:.important}
 > Remember to collect this metadata for EVERY SINGLE DEPLOYMENT or else it is not useful in the end!
 
-# Structuring Data
 {:.important}
 > All photos from a single deployment should be in a folder named with the convention: "AREA_POINT_MOTHBOXID_YYYY-MM-DD"
+
+# Structuring Data
 
 Semi-Automated Insect Identification is still a relatively new field so there's not many standard to follow to help us organize our data. So, we are trying to base our meta-data formats off existing types of scientific data collection and processing such as camera trap data.
 
