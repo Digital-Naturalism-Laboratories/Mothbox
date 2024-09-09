@@ -219,6 +219,9 @@ After a couple minutes though, the operating system will have loaded up, and the
 
 If something is not lighting up, check your connections you wired up!
 
+Next you can decide if you want to add a voltage Monitor (below), or a [Solar Panel or Extra Battery](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/), or if you haven't yet made your [UV attractor, it's time to do that!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/)
+
+And if you are all set with those options, it's time to start [USING YOUR MOTHBOX](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/basic/)
 
 # (Optional) Monitor your voltage!
 The mothbox images are programmed to monitor and log their voltages. This doesn't affect their use, but there may be situations for advanced users where you might want to only turn your mothbox on, if it has a certain percentage of its battery charged. For instance if you connect a solar panel to your Mothbox, you might want to wait until your battery is fully charged before arming it to run for an entire night.
@@ -231,56 +234,4 @@ Follow the [wiring guide from Adafruit](https://learn.adafruit.com/adafruit-ina2
 ![sensors_INA260_RPi_cropped](https://github.com/user-attachments/assets/292e525b-dba3-4347-93f4-cb72fbd9c690)
 
 Run the MeasurePower.py script included on the Mothbox Github.
-
-
-
---------
-NEW REGULATOR INSTRUCTIONS 
-
-
-# (Bonus) 12V Regulator (Double your runtime!)
-
-
-First, connect the positive red wire from the battery's output to the postive red input wire of the regulator.
-
-![image](https://github.com/user-attachments/assets/417be1b0-aee6-4d3b-8201-97d8f270d976)
-
-next, replace the Positive wire from the battery's output with the *Yellow output wire* of the 12V Regulator.
-![image](https://github.com/user-attachments/assets/0cfb0ca0-cb6a-415a-b0f8-be98ba2cd4b4)
-
-Then, connect both black wires from the regulator to the main set of black ground wires in the mothbox's wiring.
-
-
-
-
-Attach two lever nuts to each wire. For the positive (+) red wire, you just need a lever nut with 3 ports. For the black (-) negative wire, you want a lever nut with at least 4 ports because many of the grounds get tied together here.
-![PXL_20240620_142426165](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/377c88cd-af71-43a1-9f9f-e62d86212ffe)
-
-From the red, positive (+) wire's lever nut, attach two 12cm red wires
-![image](https://github.com/user-attachments/assets/708a7314-a89e-4bf0-b0db-606fe59bddbf)
-----------
-
-Use an Inline lever nut to connect the negative and positive wires coming from the control board of each LED ring light.
-![PXL_20240620_143116025](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5f14c01b-00cc-4b98-81df-b84dc81b4b2b)
-![PXL_20240620_143121252](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/572008a0-f0d9-403b-9b24-95547c1f4353)
-
-Now connect a wire (preferably red) to the positive side of each of the ring lights' lever nuts, and connect that wire to the middle relay's left-most hole. You can jam both wires into the hole. And then tighten it down.
-![PXL_20240620_143842735](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bada9af1-6a8b-40d0-803c-05b4fa02eb03)
-
-![PXL_20240620_143859392](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a6a50e01-838d-4e9f-8eb0-c50d824af6cd)
-
-![PXL_20240620_143719942](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/3fb5a7c0-a3e1-4060-9ebb-d3ec70d6756b)
-
-
-
-
-
-Now we will attach a black wire to each of the LED ring lights connecting to their negative (-) ground wire in the lever nut.
-![PXL_20240620_144525576](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0a34f1ac-130c-40ae-bf7f-38df4cf32cee)
-After you connect a wire to both ring lights, you can then connect the wires to the lever nut that connects to the battery plug. Connect the negative black wire from the UV light too.
-![PXL_20240620_144648932](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b3aa68ac-4c4c-46dd-94dc-d66e3dddd796)
-
-All the black negative wires all connect together at the lever nut that plugs into the battery.
-![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/0d2fb85f-1de3-48aa-ad94-c87a5f8dcd19)
-
 
