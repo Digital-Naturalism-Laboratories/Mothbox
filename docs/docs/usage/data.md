@@ -8,11 +8,16 @@ nav_order: 7
 # Documenting Deployments
 Equally as important as the photographic data you collect is the metadata about your deployments.
 
-We have printable forms field technicians can take to their sites, or alternatively fill out online like this:
+We have printable forms field technicians can take to their sites, 
 
-https://docs.google.com/forms/d/e/1FAIpQLSdgCwPrF7kEagmb3gvLT0CNaEj_S5SUKgE84Er7Go7YfueTxg/viewform?usp=sf_link
+* [English Metadata Field Sheet (Printable)](https://docs.google.com/document/d/138JZj5jImSbsMy4HENhGG927nZ7LnpokHBwIVP40MgM/edit?usp=sharing)
+* [Hoja de metadatos de campo en español (imprimible)](https://docs.google.com/document/d/1a0biZUbMgTlj4iQnYNFXaaA3HtSSpRODiZAXmBr1tMo/edit?usp=sharing)
 
-Remember to collect data for EVERY DEPLOYMENT or else it is not useful in the end!
+
+or alternatively fill out the [online version of the form (bilingue)](https://docs.google.com/forms/d/e/1FAIpQLSdgCwPrF7kEagmb3gvLT0CNaEj_S5SUKgE84Er7Go7YfueTxg/viewform?usp=sf_link).
+
+{:.important}
+> Remember to collect this metadata for EVERY SINGLE DEPLOYMENT or else it is not useful in the end!
 
 # Structuring Data
 Partially automated Insect ID is still a relatively new field, but we are trying to base our meta-data formats off existing types of scientific data collection and processing such as camera trap data.
