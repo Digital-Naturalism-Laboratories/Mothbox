@@ -7,4 +7,4 @@ permalink: /docs/programming
 ---
 
 # Using and Programming Mothbox Software
-This guide will show you how you can install and modify software on your mothbox and change its settings.
+For **ADVANCED USERS** These guides show how we made some of the software and AI post-processing tools. They will show you how you can install and modify software on your mothbox and change its settings.
