@@ -22,6 +22,16 @@ or alternatively fill out the [online version of the form (bilingue)](https://do
 {:.important}
 > All photos from a single deployment should be in a folder named with the convention: "AREA_POINT_MOTHBOXID_YYYY-MM-DD"
 
+#Mothbox ID
+The Mothboxes all have a unique, persistant name (based on the Pi's serial number). The names are in the format of (descriptiveword+animal) and are made from the thousand most common descriptive words and animals in both english and spanish.
+
+This is why you will have names like "CoolJirafa" or "PrizeCrab"
+The name should be written on a sticker on the Mothbox. Like "FondoGorila"
+
+![PXL_20240909_045245636 MP](https://github.com/user-attachments/assets/691bfe74-70c5-4f82-8cdb-def6d7871c8d)
+
+
+
 # Structuring Data
 
 Semi-Automated Insect Identification is still a relatively new field so there's not many standard to follow to help us organize our data. So, we are trying to base our meta-data formats off existing types of scientific data collection and processing such as camera trap data.
