@@ -3,7 +3,7 @@ layout: default
 title: Specifications
 parent: About the Mothbox
 has_children: false
-nav_order: 6
+nav_order: 1
 ---
 
 The exact specifications of the mothbox may change depending on factors like which microcontroller or power source you choose.
