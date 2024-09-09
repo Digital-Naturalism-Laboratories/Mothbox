@@ -196,55 +196,6 @@ Whenever those two pins are UNCONNECTED from each other, the Mothbox is ARMED an
 If you CONNECT these two wires together (grounding pin P27), then the Mothbox will be DISARMED and will never turn on (until these pins are eventually disconnected from each other.)
 ![image](https://github.com/user-attachments/assets/26756b7a-420e-4777-8e77-7c83ecd224b0)
 
-
-# Test everything
-
-## Flash the Raspberry Pi Image onto an SD Card
-Download the [latest Mothbox Image](https://drive.google.com/drive/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF?usp=sharing) to your computer. You may need an [unzipping software like 7zip](https://7-zip.org/download.html) to unzip the image after you download it.
-
-Download Software to flash the the Image. You can use the traditional, [Raspberry Pi Imager](https://www.raspberrypi.com/software/), or I often use [Win32DiskImager](https://win32diskimager.org/).
-
-Get an SD card (at least 16GB). Connect it to your computer.
-
-Start the Imaging software. 
-![image](https://github.com/user-attachments/assets/520fc1cd-9f31-4f2e-8cb3-610de16be118)
-If you are using Raspberry Pi Imager, click "Choose OS." Then scroll all the way down to choose "Use Custom."
-Click "Choose Storage" and choose the SD card you have connected.
-Click "Next."
-
-If it asks you to apply customization options, just click no. 
-
-Now it will start flashing your SD card. This should take about 5-10 mins.
-
-![PXL_20240909_004008143 MP](https://github.com/user-attachments/assets/fc2c9574-9feb-4faa-b8c2-8186f039e98c)
-
-
-Put this newly flashed SD card into the bottom of your Pi and push it all the way in.
-![PXL_20240909_000146089 MP](https://github.com/user-attachments/assets/bd77b567-ce00-4ab9-afe6-6e14f0ccf1ef)
-
-# Connect to Battery
-Let's see if everything works! You can connect the plug to the OUT port of the battery,
-![PXL_20240620_150405167](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d7341c03-60b4-4ac5-95bc-074fe199cf7a)
-
-and also plug a USB cable into the raspberry pi and connect it to the battery's USB port.
-![PXL_20240620_150426860](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/4673a506-74e9-4d02-bd75-125442b1d69e)
-
-When you flip the battery's switch to "on", everything should turn on!
-![PXL_20240620_150447777](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/733881f7-a3d0-4b95-9e71-31fe0f7f33eb)
-
-At first just the little LEDs on the Pi and the Relay will turn on.
-
-After a couple minutes though, the operating system will have loaded up, and the whole device should go into "Mothbox Mode," turning on the UV attractor and flashing the Ring Lights every minute.
-
-![PXL_20240620_150959340](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d4d6866a-229f-4dd8-9291-b56a2386925b)
-![PXL_20240620_151225454](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/f3e75100-5bcb-4b72-a5e4-8ae6af3690f2)
-
-If something is not lighting up, check your connections you wired up!
-
-Next you can decide if you want to add a voltage Monitor (below), or a [Solar Panel or Extra Battery](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/), or if you haven't yet made your [UV attractor, it's time to do that!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/)
-
-And if you are all set with those options, it's time to start [USING YOUR MOTHBOX](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/basic/)
-
 # (Optional) Monitor your voltage!
 The mothbox images are programmed to monitor and log their voltages. This doesn't affect their use, but there may be situations for advanced users where you might want to only turn your mothbox on, if it has a certain percentage of its battery charged. For instance if you connect a solar panel to your Mothbox, you might want to wait until your battery is fully charged before arming it to run for an entire night.
 
