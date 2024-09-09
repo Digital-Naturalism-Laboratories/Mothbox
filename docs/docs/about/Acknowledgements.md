@@ -3,7 +3,7 @@ layout: default
 title: Acknowledgements
 parent: About the Mothbox
 has_children: false
-nav_order: 6
+nav_order: 9
 ---
 
 
