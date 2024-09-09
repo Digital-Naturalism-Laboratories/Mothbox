@@ -3,7 +3,7 @@ layout: default
 title: Test
 parent: Building Mothbox
 #has_children: true
-nav_order: 9
+nav_order: 8
 ---
 
 # Connect to Battery
