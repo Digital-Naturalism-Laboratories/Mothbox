@@ -4,7 +4,7 @@ import os
 
 import random
 import time
-
+import unicodedata
 num_rows=0
 num_cols=0
 
@@ -12,12 +12,12 @@ cell_width=0
 cell_height=0
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\Totumas_cleaned_noholes\data"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\bigmessofmoths"
 
 
 OUTPUT_SIZE=(1080, 1920)
-SUBSAMPLE_SIZE=150 
-UPDATE_INTERVAL=10
+SUBSAMPLE_SIZE=180 
+UPDATE_INTERVAL=1
 
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
     """Visualizes all images in a folder as a single collage.
@@ -52,8 +52,20 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
     #print(f"Output image shape: {output_image.shape}")
     # Iterate over images and place them in the grid
     for i, image_file in enumerate(image_files):
-        image_path = os.path.join(IMAGE_FOLDER, image_file)
-        image = cv2.imread(image_path)
+        random_image_file = random.choice(image_files)
+
+        #image_path = os.path.join(IMAGE_FOLDER, image_file)
+        image_path = os.path.join(IMAGE_FOLDER, random_image_file)
+
+        #random_image = cv2.imread(np.fromfile(os.path.join(image_folder, normalized_filename),dtype=np.uint8))
+
+        f = open(image_path, "rb")  # have to do this silly stuff where we open it because imread cannot read paths with accents!
+        b = f.read()
+        f.close()
+
+        b = np.frombuffer(b, dtype=np.uint8)
+        image = cv2.imdecode(b, cv2.IMREAD_COLOR)
+        #image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
 
         # Check if the image was loaded successfully
         if image is None:
@@ -138,8 +150,19 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
             y_start = output_size[0] - cell_height
 
         random_image_file = random.choice(image_files)
-        random_image = cv2.imread(os.path.join(image_folder, random_image_file))
 
+        f = open(os.path.join(image_folder, random_image_file), "rb")
+        b = f.read()
+        f.close()
+
+        b = np.frombuffer(b, dtype=np.uint8)
+        random_image = cv2.imdecode(b, cv2.IMREAD_COLOR);
+
+
+
+        #normalized_filename = unicodedata.normalize('NFKD', random_image_file).encode('utf-8', 'ignore').decode('utf-8')
+        #random_image = cv2.imread(os.path.join(image_folder, normalized_filename), cv2.IMREAD_UNCHANGED)
+       #np.fromfile(os.path.join("data/chapter_1/capd_yard_signs", filename).replace('\\','/'), dtype=np.uint8
         # Resize image to fit the cell
         resized_image = cv2.resize(random_image, (cell_width, cell_height))
 
