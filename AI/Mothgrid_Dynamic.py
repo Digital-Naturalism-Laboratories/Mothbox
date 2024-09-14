@@ -12,11 +12,11 @@ cell_width=0
 cell_height=0
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_2024-09-01\2024-09-01\detected_and_cropped_images"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\Totumas_cleaned_noholes\data"
 
 
 OUTPUT_SIZE=(1080, 1920)
-SUBSAMPLE_SIZE=200 
+SUBSAMPLE_SIZE=100 
 UPDATE_INTERVAL=10
 
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
@@ -49,7 +49,7 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
 
     # Create output image
     output_image = np.zeros(output_size + (3,), dtype=np.uint8)
-    print(f"Output image shape: {output_image.shape}")
+    #print(f"Output image shape: {output_image.shape}")
     # Iterate over images and place them in the grid
     for i, image_file in enumerate(image_files):
         image_path = os.path.join(IMAGE_FOLDER, image_file)
@@ -57,14 +57,14 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
 
         # Check if the image was loaded successfully
         if image is None:
-            print(f"Error loading image: {image_path}")
+            #print(f"Error loading image: {image_path}")
             continue  # Skip to the next image
 
         # Resize image to fit the cell
         resized_image = cv2.resize(image, (cell_width, cell_height))
 
         
-        print(f"resized image shape: {resized_image.shape}")
+        #print(f"resized image shape: {resized_image.shape}")
 
 
         # Calculate position in the output image
@@ -81,8 +81,8 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
         if y_start + cell_height > output_size[0]:
             y_start = output_size[0] - cell_height
 
-        print(x_start)
-        print(cell_width)
+        #print(x_start)
+        #print(cell_width)
         if abs(resized_image.shape[0] - cell_height) <= tolerance and abs(resized_image.shape[1] - cell_width) <= tolerance:
         # Paste the resized image
                 # Place resized image in the output image
@@ -139,6 +139,12 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
 
         # Replace the cell with a random image
         collage[y_start:y_start + cell_height, x_start:x_start + cell_width] = resized_image
+
+
+        # Create the window in fullscreen mode
+        cv2.namedWindow("Dynamic Collage", cv2.WND_PROP_FULLSCREEN)
+        cv2.setWindowProperty("Dynamic Collage", cv2.WND_PROP_FULLSCREEN, cv2.WINDOW_FULLSCREEN)
+
 
         # Display the updated collage
         cv2.imshow("Dynamic Collage", collage)
