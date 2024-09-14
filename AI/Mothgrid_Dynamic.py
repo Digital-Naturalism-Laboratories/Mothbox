@@ -16,7 +16,7 @@ IMAGE_FOLDER = r"C:\Users\andre\Desktop\Totumas_cleaned_noholes\data"
 
 
 OUTPUT_SIZE=(1080, 1920)
-SUBSAMPLE_SIZE=100 
+SUBSAMPLE_SIZE=150 
 UPDATE_INTERVAL=10
 
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
@@ -95,7 +95,7 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
     return output_image
 
 
-def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_size=100, update_interval=50):
+def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_size=100, update_interval=50,video_filename="collage.mp4"):
     """Creates a dynamic collage that updates with random images.
 
     Args:
@@ -113,6 +113,12 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
 
     # Create initial collage
     collage = visualize_all_images(image_files, output_size, subsample_size)
+
+    # Create a VideoWriter object
+    fourcc = cv2.VideoWriter_fourcc(*'mp4v')
+    video_writer = cv2.VideoWriter(video_filename, cv2.VideoWriter_fourcc('m','p','4','v'),10.0, (output_size[1],output_size[0]))  # 10 FPS
+
+
 
     # Continuously update the collage
     while True:
@@ -140,6 +146,9 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
         # Replace the cell with a random image
         collage[y_start:y_start + cell_height, x_start:x_start + cell_width] = resized_image
 
+        # Write the frame to the video
+        video_writer.write(collage)
+
 
         # Create the window in fullscreen mode
         cv2.namedWindow("Dynamic Collage", cv2.WND_PROP_FULLSCREEN)
@@ -152,7 +161,9 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
         # Wait for the update interval
         if cv2.waitKey(update_interval) == 27:
             break
-
+    # Release the video writer and destroy windows
+    video_writer.release()
+    cv2.destroyAllWindows()
 # Example usage
 #output_image = visualize_all_images(image_folder)
 

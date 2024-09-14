@@ -3,8 +3,8 @@ from ultralytics import YOLO
 import numpy as np
 import os
 
-input_path=r"C:\Users\andre\Desktop\Mothbox data\Panama_Gamboa_Dinalab_GrisMejon_2024-08-08" #raw string
-
+input_path=r"C:\Users\andre\Documents\GitHub\Mothbox\AI\detect_me" #raw string
+YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\runs\obb\train23\weights\best.pt"
 
 def crop_rect_old(img, rect):
     # get the parameter of the small rectangle
@@ -126,7 +126,7 @@ def process_files_in_directory(subdirectory_path):
 if __name__ == '__main__':
 
     # Load the model
-    model = YOLO(r"C:\Users\andre\Documents\GitHub\Mothbox\AI\runs\obb\train23\weights\best.pt")
+    model = YOLO(YOLO_MODEL)
 
     print(input_path)
     #input_path = input_path.encode('utf-8').decode('mbcs')
