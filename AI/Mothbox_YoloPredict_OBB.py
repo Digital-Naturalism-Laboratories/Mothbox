@@ -3,6 +3,9 @@ from ultralytics import YOLO
 import numpy as np
 import os
 
+input_path=r"C:\Users\andre\Desktop\Mothbox data\Panama_Gamboa_Dinalab_GrisMejon_2024-08-08" #raw string
+
+
 def crop_rect_old(img, rect):
     # get the parameter of the small rectangle
     center, size, angle = rect[0], rect[1], rect[2]
@@ -123,9 +126,8 @@ def process_files_in_directory(subdirectory_path):
 if __name__ == '__main__':
 
     # Load the model
-    model = YOLO("runs/obb/train4/weights/best.pt")
+    model = YOLO(r"C:\Users\andre\Documents\GitHub\Mothbox\AI\runs\obb\train23\weights\best.pt")
 
-    input_path=r"D:\Mothbox Photos to Backup\GradoVerdin\2024-07-29 --Moth Class Girls Tena" #raw string
     print(input_path)
     #input_path = input_path.encode('utf-8').decode('mbcs')
     input_path= os.path.normpath(input_path)

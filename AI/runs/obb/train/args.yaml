@@ -1,12 +1,12 @@
 task: obb
 mode: train
-model: yolov8s-obb.yaml
-data: moths.yaml
+model: yolov8n-obb.yaml
+data: dota8.yaml
 epochs: 100
 time: null
 patience: 100
 batch: 16
-imgsz: 1024
+imgsz: 640
 save: true
 save_period: -1
 cache: false
