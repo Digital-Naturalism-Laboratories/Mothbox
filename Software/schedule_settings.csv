@@ -1,7 +1,7 @@
 SETTING,VALUE,DETAILS
 second, 1,
 minute,1, specify a specific minute or you can replace the 'minute' key in the arguments dictionary with 'minute_period'
-hour,19;21;23;2;4,specify what hour you want things to turn on in 24 timeframe separate multi values with a semicolon or write "EVERY_HOUR"
+hour,19;21;23;2;4,specify what hour you want things to turn on in 24 timeframe separate multi values with a semicolon or write EVERY_HOUR
 weekday,1;2;3;4;5;6;7, (theres currently an error where you cant do multiple days of a month) specify what days of the month you want to wakeup or write 'EVERY_DAY' or you can change the entry on the leftmost to say "weekday" and specify a number(s) 1-7
 
 
