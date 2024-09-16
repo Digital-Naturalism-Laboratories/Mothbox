@@ -16,6 +16,12 @@ The exact specifications of the mothbox may change depending on factors like whi
   * Dual: 41cm x 29cm
   * Quad XL: 54cm x 41cm
 
+
+## Cost
+
+* Approximate cost: $375
+* Off-the-shelf parts.
+
 ## Power
 
 * Battery: Talentcell PB120B1 - 12V Lithium ion, Rechargeable 142.08Wh 38400mAh
