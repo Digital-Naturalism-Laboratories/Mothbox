@@ -34,6 +34,7 @@ OR
 
 #### Power
 * Battery : [Talentcell 12V Lithium ion Battery PB120B1](https://www.amazon.com/gp/aw/d/B07H8F5HYJ?psc=1&ref=ppx_pop_mob_b_asin_title) ($90)
+* OR [Talentcell PB240b1](https://www.amazon.com/gp/product/B07SWBS55F/ref=ppx_yo_dt_b_asin_title_o00_s00?ie=UTF8&psc=1)  The PB120B1 started going out of stock sometimes, but this updated model should do fine (and has more battery capacity!)
 
 * Relay Expansion Pi Hat (Waveshare 3x relay) ($18)
     * [Buy](https://www.amazon.com/RPi-Relay-Board-Raspberry-3-CH/dp/B085QJFWBC/ref=sr_1_2?crid=AMFLD6YHJSZE&keywords=waveshare+relay&qid=1696772113&sprefix=waveshare+relay%2Caps%2C185&sr=8-2)
