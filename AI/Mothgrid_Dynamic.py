@@ -15,8 +15,8 @@ cell_height=0
 IMAGE_FOLDER = r"C:\Users\andre\Desktop\bigmessofmoths"
 
 
-OUTPUT_SIZE=(1080, 1920)
-SUBSAMPLE_SIZE=180 
+OUTPUT_SIZE=(1080, 1080) # height then width
+SUBSAMPLE_SIZE=16 
 UPDATE_INTERVAL=1
 
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
@@ -107,7 +107,7 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
     return output_image
 
 
-def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_size=100, update_interval=50,video_filename="collage.mp4"):
+def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_size=100, update_interval=30,video_filename="collage.mp4"):
     """Creates a dynamic collage that updates with random images.
 
     Args:
@@ -128,7 +128,7 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
 
     # Create a VideoWriter object
     fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-    video_writer = cv2.VideoWriter(video_filename, cv2.VideoWriter_fourcc('m','p','4','v'),10.0, (output_size[1],output_size[0]))  # 10 FPS
+    video_writer = cv2.VideoWriter(video_filename, cv2.VideoWriter_fourcc('m','p','4','v'),30.0, (output_size[1],output_size[0]))  # 30 FPS
 
 
 
