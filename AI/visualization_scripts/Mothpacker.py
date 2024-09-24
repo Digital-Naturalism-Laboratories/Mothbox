@@ -5,6 +5,7 @@ import cv2
 import os
 import glob
 from rectpack import newPacker
+import rectpack
 import pickle
 import numpy as np
 import argparse
@@ -13,7 +14,7 @@ import argparse
 
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
 BACKGROUND_COLOR = (28, 242, 167)
 OUTPUT_WIDTH=15200
 
@@ -29,7 +30,7 @@ parser = argparse.ArgumentParser(description='Montage creator with rectpack')
 parser.add_argument('--width', help='Output image width', default=OUTPUT_WIDTH, type=int)
 parser.add_argument('--aspect', help='Output image aspect ratio, \
     e.g. height = <width> * <aspect>', default=1.0, type=float)
-parser.add_argument('--output', help='Output image name', default=IMAGE_FOLDER+'output.png')
+parser.add_argument('--output', help='Output image name', default=IMAGE_FOLDER+'/0_output.png')
 parser.add_argument('--input_dir', help='Input directory with images', default=IMAGE_FOLDER)
 parser.add_argument('--debug', help='Draw "debug" info', default=False, type=bool)
 parser.add_argument('--border', help='Border around images in px', default=0, type=int)
@@ -58,9 +59,13 @@ for image_path in files:
 #sizes = [(im_file, cv2.imread(im_file).shape) for im_file in files]
 
 # NOTE: you could pick a different packing algo by setting pack_algo=..., e.g. pack_algo=rectpack.SkylineBlWm
-packer = newPacker(rotation=False)
+
+#packer = newPacker(rotation=True, pack_algo=rectpack.GuillotineBssfSas)
+packer = newPacker(rotation=False, sort_algo=rectpack.SORT_NONE)
+
 #print(sizes)
 
+print("adding rects")
 for i, r in enumerate(sizes):
     #print(i)
     #print(r[1])
@@ -137,5 +142,10 @@ for rect in packer.rect_list():
 output_im=background_image
 print('used %d of %d images' % (len(used), len(files)))
 print('writing image output %s:...' % args.output)
-cv2.imwrite(args.output, output_im)
+
+sub_output_path = IMAGE_FOLDER+"/visualizations"
+if not os.path.exists(sub_output_path):
+    os.makedirs(sub_output_path)
+
+cv2.imwrite(sub_output_path+"/output.png", output_im)
 print('done.')
