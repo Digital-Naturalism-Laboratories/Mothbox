@@ -12,12 +12,13 @@ cell_width=0
 cell_height=0
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
 
 
-OUTPUT_SIZE=(1080, 1080) # height then width
-SUBSAMPLE_SIZE=64 
+OUTPUT_SIZE=(1080, 1920) # height then width
+SUBSAMPLE_SIZE=600 
 UPDATE_INTERVAL=1
+BACKGROUND_COLOR = (240, 74, 229)
 
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
     """Visualizes all images in a folder as a single collage.
@@ -49,7 +50,15 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
 
     # Create output image
     output_image = np.zeros(output_size + (3,), dtype=np.uint8)
-    #print(f"Output image shape: {output_image.shape}")
+
+    rgb_color=BACKGROUND_COLOR
+    # Since OpenCV uses BGR, convert the color first
+    color = tuple(reversed(rgb_color))
+    # Fill image with color
+    background_image = np.zeros(output_size + (3,), dtype=np.uint8)
+    background_image[:] = color
+
+
     # Iterate over images and place them in the grid
     for i, image_file in enumerate(image_files):
         random_image_file = random.choice(image_files)
@@ -64,7 +73,7 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
         f.close()
 
         b = np.frombuffer(b, dtype=np.uint8)
-        image = cv2.imdecode(b, cv2.IMREAD_COLOR)
+        image = cv2.imdecode(b, cv2.IMREAD_UNCHANGED)
         #image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
 
         # Check if the image was loaded successfully
@@ -75,8 +84,9 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
         # Resize image to fit the cell
         resized_image = cv2.resize(image, (cell_width, cell_height))
 
-        
-        #print(f"resized image shape: {resized_image.shape}")
+        overlay_color=resized_image[:, :, :3]
+        overlay_alpha = resized_image[:, :, 3]
+
 
 
         # Calculate position in the output image
@@ -93,8 +103,22 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
         if y_start + cell_height > output_size[0]:
             y_start = output_size[0] - cell_height
 
+
+        # Get the region of interest (ROI) from the background
+        roi = background_image[y_start:y_start+cell_height, x_start:x_start+cell_width]
+
+        # Create masks and inverse masks using the alpha channel
+        mask = overlay_alpha / 255.0
+        inv_mask = 1.0 - mask
+        # Blend the overlay with the ROI
+        for c in range(0, 3):
+            roi[:, :, c] = (overlay_color[:, :, c] * mask + roi[:, :, c] * inv_mask)
+        # Replace the ROI in the background with the blended ROI
+        background_image[y_start:y_start+cell_height, x_start:x_start+cell_width] = roi
         #print(x_start)
         #print(cell_width)
+        
+        '''
         if abs(resized_image.shape[0] - cell_height) <= tolerance and abs(resized_image.shape[1] - cell_width) <= tolerance:
         # Paste the resized image
                 # Place resized image in the output image
@@ -102,8 +126,8 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
             #print(i)
         else:
             print(f"Image {image_file} dimensions mismatch: {resized_image.shape} vs. {(cell_height, cell_width)}")
-
-
+        '''
+    output_image=background_image
     return output_image
 
 
