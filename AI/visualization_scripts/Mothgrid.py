@@ -2,7 +2,7 @@ import cv2
 import numpy as np
 import os
 
-def visualize_all_images(image_folder, output_size=(1080, 1920)):
+def visualize_all_images(image_folder, output_size=(640, 640)):
     """Visualizes all images in a folder as a single collage.
 
     Args:
@@ -14,7 +14,7 @@ def visualize_all_images(image_folder, output_size=(1080, 1920)):
     """
 
     # Get a list of image files
-    image_files = [f for f in os.listdir(image_folder) if f.endswith('.jpg')]
+    image_files = [f for f in os.listdir(image_folder) if f.endswith('.jpg') or f.endswith('.png')]
 
     # Calculate grid dimensions
     num_images = len(image_files)
@@ -73,7 +73,7 @@ def visualize_all_images(image_folder, output_size=(1080, 1920)):
     return output_image
 
 # Example usage
-image_folder = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_2024-09-01\2024-09-01\detected_and_cropped_images"
+image_folder = r"C:\Users\andre\Desktop\x-anylabeling-matting"
 output_image = visualize_all_images(image_folder)
 
 # Display or save the output image
