@@ -12,11 +12,11 @@ cell_width=0
 cell_height=0
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\bigmessofmoths"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
 
 
 OUTPUT_SIZE=(1080, 1080) # height then width
-SUBSAMPLE_SIZE=16 
+SUBSAMPLE_SIZE=64 
 UPDATE_INTERVAL=1
 
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
@@ -121,7 +121,7 @@ def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_siz
     """
 
     # Load all images
-    image_files = [f for f in os.listdir(image_folder) if f.endswith('.jpg')]
+    image_files = [f for f in os.listdir(image_folder) if f.endswith('.jpg') or f.endswith('.png')]
 
     # Create initial collage
     collage = visualize_all_images(image_files, output_size, subsample_size)
