@@ -1,3 +1,5 @@
+# based off https://www.morethantechnical.com/blog/2020/03/21/packing-better-montages-than-imagemagick-with-python-rect-packer/
+
 import cv2
 #import rpack
 import os
@@ -11,8 +13,9 @@ import argparse
 
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
-
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
+BACKGROUND_COLOR = (28, 242, 167)
+OUTPUT_WIDTH=15200
 
 
 def crop(image):
@@ -23,10 +26,10 @@ def crop(image):
 
 
 parser = argparse.ArgumentParser(description='Montage creator with rectpack')
-parser.add_argument('--width', help='Output image width', default=9200, type=int)
+parser.add_argument('--width', help='Output image width', default=OUTPUT_WIDTH, type=int)
 parser.add_argument('--aspect', help='Output image aspect ratio, \
     e.g. height = <width> * <aspect>', default=1.0, type=float)
-parser.add_argument('--output', help='Output image name', default='output.png')
+parser.add_argument('--output', help='Output image name', default=IMAGE_FOLDER+'output.png')
 parser.add_argument('--input_dir', help='Input directory with images', default=IMAGE_FOLDER)
 parser.add_argument('--debug', help='Draw "debug" info', default=False, type=bool)
 parser.add_argument('--border', help='Border around images in px', default=0, type=int)
@@ -56,11 +59,11 @@ for image_path in files:
 
 # NOTE: you could pick a different packing algo by setting pack_algo=..., e.g. pack_algo=rectpack.SkylineBlWm
 packer = newPacker(rotation=False)
-print(sizes)
+#print(sizes)
 
 for i, r in enumerate(sizes):
-    print(i)
-    print(r[1])
+    #print(i)
+    #print(r[1])
 
     packer.add_rect(r[1][1] + args.border * 2, r[1][0] + args.border * 2, rid=i)
 out_w = args.width
@@ -72,6 +75,19 @@ packer.add_bin(out_w, out_h)
 print('packing...')
 packer.pack()
 output_im = np.full((out_h, out_w, 4), 255, np.uint8)
+
+rgb_color=BACKGROUND_COLOR
+# Since OpenCV uses BGR, convert the color first
+color = tuple(reversed(rgb_color))
+# Fill image with color
+background_image = np.full((out_h, out_w, 3), 255, np.uint8)
+background_image[:] = color
+
+
+
+
+
+
 used = []
 
 
@@ -91,10 +107,34 @@ for rect in packer.rect_list():
     im = cv2.imdecode(b, cv2.IMREAD_UNCHANGED)
     im=crop(im)
 
-    output_im[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = im
+
+    overlay_color=im[:, :, :3]
+    overlay_alpha = im[:, :, 3]
+    # Create masks and inverse masks using the alpha channel
+    mask = overlay_alpha / 255.0
+    inv_mask = 1.0 - mask
+
+    #output_im[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = im
+
+    # Get the region of interest (ROI) from the background
+    roi = background_image[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border]
+
+
+    # Blend the overlay with the ROI
+    for c in range(0, 3):
+        roi[:, :, c] = (overlay_color[:, :, c] * mask + roi[:, :, c] * inv_mask)
+
+    background_image[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = roi
+
+
+    
+    
     if args.debug:
         cv2.rectangle(output_im, (x,out_h - y - h), (x+w,out_h - y), (255,0,0), 3)
         cv2.putText(output_im, "%d"%rid, (x, out_h - y), cv2.FONT_HERSHEY_PLAIN, 3.0, (0,0,255), 2)
+
+
+output_im=background_image
 print('used %d of %d images' % (len(used), len(files)))
 print('writing image output %s:...' % args.output)
 cv2.imwrite(args.output, output_im)

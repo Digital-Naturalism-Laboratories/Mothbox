@@ -20,6 +20,14 @@ SUBSAMPLE_SIZE=600
 UPDATE_INTERVAL=1
 BACKGROUND_COLOR = (240, 74, 229)
 
+
+def crop(image):
+    th =20 
+    y_nonzero, x_nonzero, _ = np.nonzero(image>th)
+    return image[np.min(y_nonzero):np.max(y_nonzero), np.min(x_nonzero):np.max(x_nonzero)]
+
+
+
 def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=300):
     """Visualizes all images in a folder as a single collage.
 
@@ -129,6 +137,11 @@ def visualize_all_images(image_files, output_size=(1080, 1920), subsample_size=3
         '''
     output_image=background_image
     return output_image
+
+
+
+
+
 
 
 def create_dynamic_collage(image_folder, output_size=(1080, 1920), subsample_size=100, update_interval=30,video_filename="collage.mp4"):
