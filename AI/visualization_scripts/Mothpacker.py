@@ -1,11 +1,10 @@
 # based off https://www.morethantechnical.com/blog/2020/03/21/packing-better-montages-than-imagemagick-with-python-rect-packer/
 
 import cv2
-#import rpack
 import os
 import glob
 from rectpack import newPacker
-import rectpack
+import rectpack #https://github.com/secnot/rectpack
 import pickle
 import numpy as np
 import argparse
@@ -15,17 +14,18 @@ import argparse
 
 
 IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
-#BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
+BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
 #BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
 #BACKGROUND_COLOR =(230, 242, 28) #nice pastel yellow
 #BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
 #BACKGROUND_COLOR =(29, 241, 242) #nice pastel blue
-BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
-BACKGROUND_COLOR =(242, 29, 139) #hot pink
-OUTPUT_WIDTH=9200
+#BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
+#BACKGROUND_COLOR =(242, 29, 139) #hot pink
+OUTPUT_WIDTH=10000
 ASPECT_RATIO=0.6
 IMAGE_SCALE_PERCENT=25
+SORT_ALGO = 0
 
 def crop(image):
     th =20 
@@ -82,7 +82,22 @@ for image_path in files:
 
 #packer = newPacker(rotation=True, pack_algo=rectpack.GuillotineBssfSas)#Cannot currently do rotation because it confuses the algo and switches their locations)
 
-packer = newPacker(rotation=False, sort_algo=rectpack.SORT_LSIDE) 
+if(SORT_ALGO==0):
+    sortalgorithm=rectpack.SORT_NONE
+elif(SORT_ALGO==1):
+    sortalgorithm=rectpack.SORT_AREA
+elif(SORT_ALGO==2):
+    sortalgorithm=rectpack.SORT_PERI
+elif(SORT_ALGO==3):
+    sortalgorithm=rectpack.SORT_SSIDE
+elif(SORT_ALGO==4):
+    sortalgorithm=rectpack.SORT_LSIDE
+elif(SORT_ALGO==5):
+    sortalgorithm=rectpack.SORT_RATIO
+
+
+
+packer = newPacker(rotation=False, sort_algo=sortalgorithm) 
 #print(sizes)
 
 print("adding rects")
@@ -168,11 +183,14 @@ for rect in packer.rect_list():
 
 output_im=background_image
 print('used %d of %d images' % (len(used), len(files)))
-print('writing image output %s:...' % args.output)
 
 sub_output_path = IMAGE_FOLDER+"/visualizations"
 if not os.path.exists(sub_output_path):
     os.makedirs(sub_output_path)
 
-cv2.imwrite(sub_output_path+"/output_cropped.png", output_im)
+print('writing image output '+sub_output_path+"/output_"+str(IMAGE_SCALE_PERCENT)+ "percent_"+str(SORT_ALGO)+"sort.png")
+
+
+
+cv2.imwrite(sub_output_path+"/output_"+str(IMAGE_SCALE_PERCENT)+ "percent_"+str(SORT_ALGO)+"sort.png", output_im)
 print('done.')
