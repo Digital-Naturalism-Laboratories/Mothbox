@@ -14,7 +14,7 @@ import argparse
 
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
 #BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
 #BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
@@ -22,9 +22,10 @@ IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
 #BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
 #BACKGROUND_COLOR =(29, 241, 242) #nice pastel blue
 BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
-
-OUTPUT_WIDTH=15200
-
+BACKGROUND_COLOR =(242, 29, 139) #hot pink
+OUTPUT_WIDTH=9200
+ASPECT_RATIO=0.6
+IMAGE_SCALE_PERCENT=25
 
 def crop(image):
     th =20 
@@ -36,7 +37,7 @@ def crop(image):
 parser = argparse.ArgumentParser(description='Montage creator with rectpack')
 parser.add_argument('--width', help='Output image width', default=OUTPUT_WIDTH, type=int)
 parser.add_argument('--aspect', help='Output image aspect ratio, \
-    e.g. height = <width> * <aspect>', default=1.0, type=float)
+    e.g. height = <width> * <aspect>', default=ASPECT_RATIO, type=float)
 parser.add_argument('--output', help='Output image name', default=IMAGE_FOLDER+'/0_output.png')
 parser.add_argument('--input_dir', help='Input directory with images', default=IMAGE_FOLDER)
 parser.add_argument('--debug', help='Draw "debug" info', default=False, type=bool)
@@ -60,6 +61,14 @@ for image_path in files:
     image = cv2.imdecode(b, cv2.IMREAD_UNCHANGED)
 
     image=crop(image)
+
+    #optionally scale the images
+    if(IMAGE_SCALE_PERCENT!=100):
+        width = int(image.shape[1] * IMAGE_SCALE_PERCENT / 100)
+        height = int(image.shape[0] * IMAGE_SCALE_PERCENT / 100)
+        dim = (width, height)
+        image = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
+
 
     filename_and_shape=[image_path,image.shape]
     sizes.append(filename_and_shape)
@@ -123,6 +132,13 @@ for rect in packer.rect_list():
     im = cv2.imdecode(b, cv2.IMREAD_UNCHANGED)
     im=crop(im)
 
+    #optionally scale the images
+    if(IMAGE_SCALE_PERCENT!=100):
+        width = int(im.shape[1] * IMAGE_SCALE_PERCENT / 100)
+        height = int(im.shape[0] * IMAGE_SCALE_PERCENT / 100)
+        dim = (width, height)
+        im = cv2.resize(im, dim, interpolation = cv2.INTER_AREA)
+
 
     overlay_color=im[:, :, :3]
     overlay_alpha = im[:, :, 3]
@@ -158,5 +174,5 @@ sub_output_path = IMAGE_FOLDER+"/visualizations"
 if not os.path.exists(sub_output_path):
     os.makedirs(sub_output_path)
 
-cv2.imwrite(sub_output_path+"/output.png", output_im)
+cv2.imwrite(sub_output_path+"/output_cropped.png", output_im)
 print('done.')
