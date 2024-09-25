@@ -27,6 +27,7 @@ ASPECT_RATIO=0.6
 IMAGE_SCALE_PERCENT=25
 SORT_ALGO = 0
 
+# This is a handy function that crops images edges if they are all black or alpha to get to the core of the image
 def crop(image):
     th =20 
     y_nonzero, x_nonzero, _ = np.nonzero(image>th)
