@@ -15,7 +15,14 @@ import argparse
 
 
 IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
-BACKGROUND_COLOR = (28, 242, 167)
+#BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
+#BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
+#BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
+#BACKGROUND_COLOR =(230, 242, 28) #nice pastel yellow
+#BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
+#BACKGROUND_COLOR =(29, 241, 242) #nice pastel blue
+BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
+
 OUTPUT_WIDTH=15200
 
 
@@ -58,11 +65,15 @@ for image_path in files:
     sizes.append(filename_and_shape)
 #sizes = [(im_file, cv2.imread(im_file).shape) for im_file in files]
 
+
+# Prepare the Packer
+#----------------------------
+
 # NOTE: you could pick a different packing algo by setting pack_algo=..., e.g. pack_algo=rectpack.SkylineBlWm
 
-#packer = newPacker(rotation=True, pack_algo=rectpack.GuillotineBssfSas)
-packer = newPacker(rotation=False, sort_algo=rectpack.SORT_NONE)
+#packer = newPacker(rotation=True, pack_algo=rectpack.GuillotineBssfSas)#Cannot currently do rotation because it confuses the algo and switches their locations)
 
+packer = newPacker(rotation=False, sort_algo=rectpack.SORT_LSIDE) 
 #print(sizes)
 
 print("adding rects")
