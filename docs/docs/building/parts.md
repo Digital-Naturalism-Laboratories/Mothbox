@@ -94,7 +94,9 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
    * e.g [Nylon Standoffs and nuts for Raspberry Pi](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
    * [Set of m2 m2.5 m3 bolts and nuts](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
 * Zip ties
-* [5.5x2.1mm cables](https://www.amazon.com/TalentCell-Adapter-5-5x2-1mm-5-5x2-5mm-Splitter/dp/B0BTBQJBSF/ref=sr_1_2?keywords=TalentCell+Power+Adapter+Cable%2C+DC+5.5x2.1mm+Male+to+DC+5.5x2.5mm+Male+Cable%2C+DC5521+1+Female+to+2+Male+Power+Supply+Y+Splitter+Cord%2C+DC5521+Male+to+DC4017+Male+Cable+for+CCTV+Camera%2C+LED+Strip+Light&qid=1682353719&sr=8-2)** **
+* [5.5 x 2.1 DC barrel jack cables](https://www.amazon.com/gp/aw/d/B0BZYGRYSQ?psc=1&ref=ppx_pop_mob_b_asin_image)
+    * 2x socket ports
+    * 2x plug ports
 * Strap (To attach to tree)
 * Lock (to attach to Tree in places you are worried it might get taken)
 
