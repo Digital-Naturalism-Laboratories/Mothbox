@@ -10,7 +10,7 @@ nav_order: 1
 The Mothbox uses a Raspberry Pi 5 (or Pi4 and Pijuice), a Talentcell Battery, and a 3 channel relay as its core.
 The entire materials cost is **about $375** per mothbox. (Depends on your options you go with and prices you get where you live). Note that many other similar tools for insect monitoring can cost between $7-$15K!
 
-Below we try to include an up to date list for building N-copies of a Mothbox.
+Below we try to include an up to date list for building an arbitrary number of Mothboxes.
 
 Here's a [link to a list of most of the parts collected for you.](https://www.amazon.com/hz/wishlist/ls/3J2HLUOYNFFZG?ref_=wl_share)
 
@@ -86,8 +86,7 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
    * Lens Hood - not strictly necessary, but helps keep extra rain off lens when deployed.
      * [buy (includes lens cap)](https://www.amazon.com/gp/product/B082HRGFP7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) ($9)
 
-
-## Additional Parts
+## Construction Materials
 * Plastic for laser cutting (the design is currently set for 3mm acrylic)
    * one 50x60cm piece of acrylic can fit all the parts, but you could cut from many scraps too
 * [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
@@ -100,29 +99,35 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
    * [Set of m2 m2.5 m3 bolts and nuts](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
 * Zip ties
 * [5.5 x 2.1 DC barrel jack cables](https://www.amazon.com/gp/aw/d/B0BZYGRYSQ?psc=1&ref=ppx_pop_mob_b_asin_image)
-    * 2x socket ports
+    * 2x socket ports (You actually only need 1 socket if you are keeping your UV light internal)
     * 2x plug ports
 * Strap (To attach to tree)
 * Lock (to attach to Tree in places you are worried it might get taken)
 
-* USB storage 64GB and higher 
+
+## Data
+* Micro SD Card (Reccomended 64 GB and higher)
+  * e.g. [128gb Microsd cards](https://www.amazon.com/gp/product/B0BYJH4ZJL/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+* USB storage (reccomended 64GB and higher)
     * e.g. [usb thumb drive](https://www.amazon.com/gp/aw/d/B09LLWTMXQ?psc=1&ref=ppx_pop_mob_b_asin_title)
 * [Short USB extension](https://www.amazon.com/gp/aw/d/B00CJG2ZYM?psc=1&ref=ppx_pop_mob_b_asin_title) (can make taking usb drive in and out easier)
 
 # Tools for Construction
-**1x the following:**
-Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you only need one of these tools no matter how many you make.
+Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you likely only need one of these tools no matter how many you make.
    
 * 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 * Drill Bits for Plastic
   * Most of the holes drilled are 3/8 in (just over 1/4in) in size, but using something like a [Tapered drill bit](https://www.amazon.com/Driak-16-30-5-Titanium-Umbrella-Chamfering/dp/B07RX7GRHG/ref=sr_1_3?crid=83U1JCJ12NOB&dib=eyJ2IjoiMSJ9.-pf_Mb_p4_foNAND-5Rt3-CNXQ2gymZ_nVBYQjQSsaLgpZhNxi_Pj6JT-giPRr34JD2BPbkZ6LByDz3r1qLNFz_9x9ENClJjz2hQI47xabnZ_BY923YtnP7MZXMzj_p1aBOrAlms_qb59qkde5fS0NVSL3qNio-cDU2V7X3f2xE99g3GlkzSyFjGyjDzriK6uMf1gucmPaO56bs83YbFfr53uXvv4e1yLviuniWImdN5gxeNupKfeBlybrtgs553XNm5FANSmwDFTHJSiODyVYmCEbxnyq7HGGerPMeX7VY.1RjroFEetFS0gD9GJ0T3ERW4cSGoVm-TUY6yFRy1Tl0&dib_tag=se&keywords=stepless+drill+bit&qid=1724644407&sprefix=stepless+drill+b%2Caps%2C422&sr=8-3) can be the easiest, as it goes through plastic well, and allows you to adjust the sizes of your holes very finely.    
+
+# Electronics Tools
 * Wire Strippers
 * Plastic epoxy
 * Spools of Solid-Core Wire
-    * Red
-    * Black
+  * [22 Gauge Solid Core works well](https://www.amazon.com/gp/product/B07JNB712X/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
+  * Spool of Red
+  * Spool of Black
 * Lever Nut Connectors 
    * [https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1](https://www.amazon.com/LEVER-NUTS-Compact-Splicing-Connector-Assortment/dp/B0957T1S9C/ref=sr_1_1_pp?crid=14GVQPDXZMRQ4&keywords=wago+connectors&qid=1704033576&sprefix=wago+conne%2Caps%2C189&sr=8-1)
    * [(or cheaper knock offs should work fine with low voltage like this)](https://www.amazon.com/Connectors-Delgada-Conductor-Connector-Electrical/dp/B09TS9YKV1/ref=sxin_14_sbv_search_btf?content-id=amzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59%3Aamzn1.sym.6ca944f8-539c-499e-a3a4-26a566d1de59&crid=14GVQPDXZMRQ4&cv_ct_cx=wago%2Bconnectors&keywords=wago%2Bconnectors&pd_rd_i=B09TS9YKV1&pd_rd_r=e648f2b2-c3a9-45f5-ad6a-cc2c01313274&pd_rd_w=juJLN&pd_rd_wg=YJ3Yz&pf_rd_p=6ca944f8-539c-499e-a3a4-26a566d1de59&pf_rd_r=2FNDQ7ZAN1YRNZK0V47C&qid=1704033576&sbo=RZvfv%2F%2FHxDF%2BO5021pAnSA%3D%3D&sprefix=wago%2Bconne%2Caps%2C189&sr=1-1-5190daf0-67e3-427c-bea6-c72c1df98776&th=1)
 
-* [Dielectric grease (for additional waterproofing)](https://www.amazon.com/Mission-Automotive-Dielectric-Silicone-Waterproof/dp/B016E5E59G/)
+* [Dielectric grease (optional for additional waterproofing)](https://www.amazon.com/Mission-Automotive-Dielectric-Silicone-Waterproof/dp/B016E5E59G/)
