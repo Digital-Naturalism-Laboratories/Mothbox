@@ -5,7 +5,6 @@ parent: Building Mothbox
 #has_children: true
 nav_order: 1
 ---
-# Materials
 
 The Mothbox uses a Raspberry Pi 5 (or Pi4 and Pijuice), a Talentcell Battery, and a 3 channel relay as its core.
 The entire materials cost is **about $375** per mothbox. (Depends on your options you go with and prices you get where you live). Note that many other similar tools for insect monitoring can cost between $7-$15K!
@@ -43,8 +42,13 @@ OR
 * 12V regulator / Step-Up Voltage Booster
    * [Buy](https://www.amazon.com/dp/B01EFUHFW6?ref=ppx_yo2ov_dt_b_product_details&th=1)
    * This extends your battery life by keeping power to the 12V lights even if your battery voltage starts dipping low.
+* [5.5 x 2.1 DC barrel jack cables](https://www.amazon.com/gp/aw/d/B0BZYGRYSQ?psc=1&ref=ppx_pop_mob_b_asin_image)
+    * 2x socket ports (You actually only need 1 socket if you are keeping your UV light internal)
+    * 2x plug ports
 * (Optional) Power sensor for monitoring battery levels
    *[Buy](https://www.amazon.com/gp/product/B07S8QYDF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)    
+
+
 ### Lighting ($60)
 * Photography Lights (2x)
   * 2x [12V 144 LED ringlight](https://www.amazon.com/Vision-Scientific-VMLIFR-09B-Adjustable-Microscope/dp/B07VR2LJJL/ref=sr_1_3?dib=eyJ2IjoiMSJ9.DbiY5JtmTyqdia8Ee8UuPpsoJM8OTk10ORY71iWG_mlVi8JpX9GsduTgfaqexSTuxIIwEXeeQxym52IUA-Yo9VWqxdLGL_8hGdoWaERt2zJLFEAj-nfKJU61L5OdAJpPrMNhk8d1OflupD8g-uksQH-57MFpgWmp23_Y2CtZatQVDPGVU8x2WEf09ujR0e-bCdWRp5TCan7V7R8_u9b7dqUM2he2iJkMw2qtBGOoj2U.zj3zCDFoME_grkL8IN7mYiOwL4_cmaemrzDmBTPF0h0&dib_tag=se&keywords=144+led+microscope+light&qid=1716984108&sr=8-3) ($23)
@@ -86,7 +90,7 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
    * Lens Hood - not strictly necessary, but helps keep extra rain off lens when deployed.
      * [buy (includes lens cap)](https://www.amazon.com/gp/product/B082HRGFP7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) ($9)
 
-## Construction Materials
+## Building Materials
 * Plastic for laser cutting (the design is currently set for 3mm acrylic)
    * one 50x60cm piece of acrylic can fit all the parts, but you could cut from many scraps too
 * [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
@@ -98,9 +102,8 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
    * e.g [Nylon Standoffs and nuts for Raspberry Pi](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
    * [Set of m2 m2.5 m3 bolts and nuts](https://www.amazon.com/HVAZI-240pcs-Standoffs-Assortment-Male-Female/dp/B07JYSFMRY/ref=sr_1_2?crid=1PL66CQEL4ZE2&dib=eyJ2IjoiMSJ9.pyXMukWPG2ANsjFMort6wWSJO4JaR6oQ5SljjHsGsDqL-pfOPJJP9dIc29BJBgFh6XSzcGasAmYrR96UADPiTg2nIZYWm7PureGhTCNJO_IJu7Yul9uXdSjGP90B4uo72ZRScOcI8PyUzlMBduhpqiJ92132oiNnzi5sIysICTCDVLieb_RrHFcUw9mmzScCPRzKvdA6_9kWrQuGbuy6RSV-umk-n8rhk68n7IJg4Lq4-DxUhOep5TOWcbcJaRLCPIoQsxNXgYUTJ_C4OEqFo8UFGdlfjB-GSvfy0P6xmLs.OUTFgOndKr7LAwQAswNQodMnI4IrMMk5BZvpQbwWCys&dib_tag=se&keywords=m2.5+plastic+standoffs&qid=1716986718&s=industrial&sprefix=m2.5+plastic+standoff%2Cindustrial%2C162&sr=1-2)
 * Zip ties
-* [5.5 x 2.1 DC barrel jack cables](https://www.amazon.com/gp/aw/d/B0BZYGRYSQ?psc=1&ref=ppx_pop_mob_b_asin_image)
-    * 2x socket ports (You actually only need 1 socket if you are keeping your UV light internal)
-    * 2x plug ports
+  * 
+
 * Strap (To attach to tree)
 * Lock (to attach to Tree in places you are worried it might get taken)
 
@@ -114,12 +117,13 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
 
 # Tools for Construction
 Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you likely only need one of these tools no matter how many you make.
-   
+
+## Cutting Tools
 * 53mm hole saw bit [https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_d53etails](https://www.amazon.com/dp/B07R5RZNQK?psc=1&ref=ppx_yo2ov_dt_b_product_details)
 * Drill Bits for Plastic
   * Most of the holes drilled are 3/8 in (just over 1/4in) in size, but using something like a [Tapered drill bit](https://www.amazon.com/Driak-16-30-5-Titanium-Umbrella-Chamfering/dp/B07RX7GRHG/ref=sr_1_3?crid=83U1JCJ12NOB&dib=eyJ2IjoiMSJ9.-pf_Mb_p4_foNAND-5Rt3-CNXQ2gymZ_nVBYQjQSsaLgpZhNxi_Pj6JT-giPRr34JD2BPbkZ6LByDz3r1qLNFz_9x9ENClJjz2hQI47xabnZ_BY923YtnP7MZXMzj_p1aBOrAlms_qb59qkde5fS0NVSL3qNio-cDU2V7X3f2xE99g3GlkzSyFjGyjDzriK6uMf1gucmPaO56bs83YbFfr53uXvv4e1yLviuniWImdN5gxeNupKfeBlybrtgs553XNm5FANSmwDFTHJSiODyVYmCEbxnyq7HGGerPMeX7VY.1RjroFEetFS0gD9GJ0T3ERW4cSGoVm-TUY6yFRy1Tl0&dib_tag=se&keywords=stepless+drill+bit&qid=1724644407&sprefix=stepless+drill+b%2Caps%2C422&sr=8-3) can be the easiest, as it goes through plastic well, and allows you to adjust the sizes of your holes very finely.    
 
-# Electronics Tools
+## Electronics Tools
 * Wire Strippers
 * Plastic epoxy
 * Spools of Solid-Core Wire
