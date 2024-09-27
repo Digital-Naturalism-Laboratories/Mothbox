@@ -100,6 +100,10 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
 * Strap (To attach to tree)
 * Lock (to attach to Tree in places you are worried it might get taken)
 
+* USB storage 64GB and higher 
+    * e.g. [usb thumb drive](https://www.amazon.com/gp/aw/d/B09LLWTMXQ?psc=1&ref=ppx_pop_mob_b_asin_title)
+* [Short USB extension](https://www.amazon.com/gp/aw/d/B00CJG2ZYM?psc=1&ref=ppx_pop_mob_b_asin_title) (can make taking usb drive in and out easier)
+
 # Tools for Construction
 **1x the following:**
 Here's a list of the tools you need to actually create a Mothbox. If you are building **multiple** mothboxes, you only need one of these tools no matter how many you make.
