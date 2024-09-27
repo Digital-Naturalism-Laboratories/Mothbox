@@ -80,8 +80,13 @@ OR
    * To be as compact as possible, we designed around the Plano 1460-00 case. It's cheap, waterproof, CLEAR, [quite available internationally](https://www.amazon.co.uk/Plano-Waterproof-Polycarbonate-Storage-Yellow/dp/B003FYMVXM/ref=sr_1_1?crid=2E5PYBSX845ZS&dib=eyJ2IjoiMSJ9.0Mvt9HNdyLRRHMIsdw_cx2V2wa_AOajxudBJxMqbKXtobMazdnnmL4AK9vRT5NhxXDSrTu7YyvHwq7XCBXQ0gbDkhDh3xHr1f_KMfMoAyR4uGkSX8iNjirVwyKczaOvZGWN3yPrjZScHEVoSCyK76mI3ptkgvx0TsuZRHxHvwWb-4uEweEdw23izkp6CwsEix_okDFsYfqJ_pHniz_ZuFt3jT4DTiyHkHnsOERq9SoCZD1K3NjaLOoFfkyhr_q2OoKz8PEhB1RHucUU2_TF9DF1F86FhvpvAgkidJ22V6Hk.gJl_g-E11HPRA4RAzrS-1yH8-3nik0Z4A160Rn9mqvo&dib_tag=se&keywords=plano%2B1460&qid=1716985872&sprefix=plano%2B1460%2Caps%2C246&sr=8-1&th=1), and as compact as possible
    * (sometimes called plano 3600) 11"L x 7"W x 4"H </span>
 
+## Chassis, Arms, and Target Materials
+* Plastic for laser cutting (the design is currently set for 3mm acrylic)
+   * one 50x60cm piece of acrylic can fit all the parts, but you could cut from many scraps too
+* [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
+   * minimum 205x305mm (8x12in)
 
-# Camera Lens Gear ($20)
+## Camera Lens Gear ($20)
 _We are turning the box into a kind of 55mm lens camera so accessories that work for a 55mm lens should work_
 
 * UV Lens Protector and Mount 
@@ -90,25 +95,19 @@ _We are turning the box into a kind of 55mm lens camera so accessories that work
    * Lens Hood - not strictly necessary, but helps keep extra rain off lens when deployed.
      * [buy (includes lens cap)](https://www.amazon.com/gp/product/B082HRGFP7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) ($9)
 
+## Field Additions
+* Strap (Optional-To attach to tree)
+  * [e.g.] (https://www.amazon.com/gp/product/B08BYHZGC4/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+* Lock (optional - to attach to Tree in places you are worried it might get taken)
+  * [e.g.](https://www.amazon.com/gp/product/B000XTPNZK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 
+
+
 # Data
 * Micro SD Card (Reccomended 64 GB and higher)
   * e.g. [128gb Microsd cards](https://www.amazon.com/gp/product/B0BYJH4ZJL/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 * USB storage (reccomended 64GB and higher)
     * e.g. [usb thumb drive](https://www.amazon.com/gp/aw/d/B09LLWTMXQ?psc=1&ref=ppx_pop_mob_b_asin_title)
 * [Short USB extension](https://www.amazon.com/gp/aw/d/B00CJG2ZYM?psc=1&ref=ppx_pop_mob_b_asin_title) (can make taking usb drive in and out easier)
-
-# Chassis, Arms, and Target Materials
-* Plastic for laser cutting (the design is currently set for 3mm acrylic)
-   * one 50x60cm piece of acrylic can fit all the parts, but you could cut from many scraps too
-* [White Felt Acrylic sheets](https://www.amazon.com/9x12-Acrylic-Material-Fabric-Supplies-Halloween-Costumes-6PC/dp/B0848X2RFN/ref=sr_1_3?dib=eyJ2IjoiMSJ9.gFS8P-cDoFB4XpA7_W0gvBc_9vw2ipuLmQLHM1oH6WHm-rpvhojtFsw4-VVYN9RgzJqgeoZfQc-GgKlQYuri9de4n18XFwN3aR03TLqK5BZaFgvoQXJy5a8tuNzAw5aR07WMdnspB5j3RxqIaLdzq8EOqznuT63eXJA9c8d9X3sTNLpGbgu4AdZUEwb1ip86jgKdqpxE46HevLf8UHZ-uIXDX4Imd3afNMkHfYujeh6qedpbEy-KCbJFIFpRRuz9l24l7I1MhT5wjfhtY9DYpBNLplxBYQqFiTJ8oO9Utn8.2GSAKUNBlrddVj12orRDku6HokEvOe8WTteX10cGpfA&dib_tag=se&keywords=white%2Bacrylic%2Bfelt&qid=1716986941&sr=8-3&th=1)
-   * minimum 205x305mm (8x12in) 
-
-# Field Additions
-* Strap (Optional-To attach to tree)
-  * [e.g.] (https://www.amazon.com/gp/product/B08BYHZGC4/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
-* Lock (optional - to attach to Tree in places you are worried it might get taken)
-  * [e.g.](https://www.amazon.com/gp/product/B000XTPNZK/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1) 
-
 
 
 # Tools for Construction
@@ -143,7 +142,6 @@ Here's a list of the tools you need to actually create a Mothbox. If you are bui
 
 
 ## Electronics Tools
-* Wire Strippers
 * Spools of Solid-Core Wire
   * [22 Gauge Solid Core works well](https://www.amazon.com/gp/product/B07JNB712X/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
   * Spool of Red
