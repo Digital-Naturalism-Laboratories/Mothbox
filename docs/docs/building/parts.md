@@ -57,14 +57,19 @@ OR
               * [Cheap 12V Waterproof UV flood](https://www.amazon.com/dp/B07KHVZ7TG?psc=1&ref=ppx_yo2ov_dt_b_product_details) ($13)
         *  We are also using out custom "Mothbeams" which are like powerful, open source, bespoke, low cost- lepileds. They currently cost about $80 to order them from Moritz at LabLab in Berlin [moritz at lablab.eu]
           *  Or you can order them from [Circuithub](https://circuithub.com/projects/Moritz/Mothbeam/revisions/57895/parts) but there they cost about $200-$400  
-
     * 5V (Not Officially Integrated)
-        * to reduce costs and additional parts, we do not design around an extra 5V output
+        * to reduce costs and additional parts, we do not design around an extra 5V output, though you can install one yourself pretty easy.
         * You can hack the system to use UV lights that take a 5V input pretty easily though with just an inexpensive [high power 12V to 5V adapter](https://www.amazon.com/gp/product/B076ZLHLD3/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
         * These light bars are the absolute cheapest ones we can find that attract moths ($5) (395nm) [https://www.amazon.com/Black-Light-Bar-Glow-Party/dp/B09BCND2J9/](https://www.amazon.com/Black-Light-Bar-Glow-Party/dp/B09BCND2J9/)
         * Lepileds can also be connected
 
-
+* DIY Heatsink (For internal UV Lights)
+  * Perforated Metal
+    * [1-1.5mm Aluminum works well](https://www.amazon.com/dp/B0CN4RMFYQ/ref=dp_iou_view_item?ie=UTF8&th=1)
+  * Metal Shears are Handy
+    * [Example 'Avaiation' Shears](https://www.amazon.com/Hurricane-02-024-Aviation-Straight-Vanadium/dp/B07GDDF5JB/ref=sr_1_1?dib=eyJ2IjoiMSJ9.a1vWmvqVNa5sGXM5WG40OoZY1L1NOjuQIz-e-Obi0U9GnRRBLZ95BlMAPgel8OueY1w72UQZld6cBGEf1Hv1VqYi8_aFrjbn5KtQYRV8Ar-SWjUiG_geGoSglDiIgZW9hjmpGyDdNxzPUyQool1ip6jqAxX9Ei0WAnucgPnDp7aYiuOslfHT9MYu4vJap2wTiRBTSff59aJbVmTouaLZ966iFvnZ0qYT0qOF3A2k9btWoLp70LTELYepj_PY7I_UkXJ7ZhS5buUrJwcaaGFQWYl_AnyOzGyU_917HSn0dfU.NHMySyFtabocb9YukcylSsjB1dBC36yCFKCenmV1-2g&dib_tag=se&keywords=metal+shears&qid=1727455711&sr=8-1)
+  * [Thermal Silicone Strips](https://www.amazon.com/gp/product/B094PWW9TM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
+  
 ## The Box ($25)
 
 * [Plano 1460-00](https://www.amazon.com/gp/product/B003FYMVXM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1) ($25)
