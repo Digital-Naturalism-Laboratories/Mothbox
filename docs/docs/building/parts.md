@@ -40,7 +40,7 @@ OR
     * [Info](https://www.waveshare.com/wiki/RPi_Relay_Board)
     * Remember you can also wire individual relays, but not solid state relays (they can't switch low dc voltage)
 * 12V regulator / Step-Up Voltage Booster
-   * [Buy](https://www.amazon.com/dp/B01EFUHFW6?ref=ppx_yo2ov_dt_b_product_details&th=1)
+   * [Buy](https://www.amazon.com/Stabilizer-DROK-Waterproof-Transformer-Television/dp/B081RG8XP5/ref=sr_1_11?crid=1YE3J0Y3J6045&dib=eyJ2IjoiMSJ9.s05JMf0YpfVZfSbd90E-wPFeaPSxIeeoXKjczfeyYnEq5hCff0TxHcsMZZMaWBXSvtl5zJJI-5Um8s0hNCOSKX8KJfYwYYCYtY5tz2x-jbFwBvGczDHt6VNRxO90ccbogbqGA_K8ysKdUXKHd6Ow0cZ99_8NxB5d8p0M2JPpbWes1U9J4eXp-4QY-maVbAAW2g2jSZFENMq4ovgic0yDj3klwuLxAdqGtg1vSf2ytus.XST-QcpyQcgcK3Jhu7bjCjQvhwmcGneEWyd6RwvNQ7o&dib_tag=se&keywords=12v%2Bboost&qid=1727823266&sprefix=12v%2Bboos%2Caps%2C185&sr=8-11&th=1)
    * This extends your battery life by keeping power to the 12V lights even if your battery voltage starts dipping low.
 * [5.5 x 2.1 DC barrel jack cables](https://www.amazon.com/gp/aw/d/B0BZYGRYSQ?psc=1&ref=ppx_pop_mob_b_asin_image)
     * 2x socket ports (You actually only need 1 socket if you are keeping your UV light internal)
