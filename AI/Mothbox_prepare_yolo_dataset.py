@@ -2,7 +2,11 @@ import os
 import random
 import shutil
 
-def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_folder, train_ratio=0.5, test_ratio=0.3, val_ratio=0.2, bg_ratio=.2, total_images=1000):
+DATA_PATH= r"D:/Databases/Database_1.8_StillMessy"
+
+TOTAL_IMAGES=10
+
+def prepare_yolo_data(image_folder, backgrounds_folder, train_ratio=0.5, test_ratio=0.3, val_ratio=0.2, bg_ratio=.2, total_images_Def=1000):
   """
   Prepares images and labels for YOLO training.
 
@@ -15,6 +19,15 @@ def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_fold
     val_ratio: Ratio of images for validation (default: 0.2).
     total_images: Total number of image-label pairs to process.
   """
+  # Get image list
+  image_files = [f for f in os.listdir(image_folder) if f.endswith(".jpg")]
+  print(len(image_files))
+  # Get user input
+
+  global TOTAL_IMAGES 
+  TOTAL_IMAGES = int(input("Enter the total number of images to prepare: "))
+
+  output_folder=  DATA_PATH+"/moths"+str(TOTAL_IMAGES)
 
   # Create output folders (ensure parents exist)
   os.makedirs(os.path.join(output_folder, "images/train"), exist_ok=True)
@@ -24,21 +37,21 @@ def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_fold
   os.makedirs(os.path.join(output_folder, "labels/test"), exist_ok=True)
   os.makedirs(os.path.join(output_folder, "labels/val"), exist_ok=True)
 
-  # Get image list
-  image_files = [f for f in os.listdir(image_folder) if f.endswith(".jpg")]
-  print(len(image_files))
+
+
+
   # Randomly select image-label pairs
-  selected_images = random.sample(image_files, total_images)
+  selected_images = random.sample(image_files, TOTAL_IMAGES)
 
   # Calculate number of images per category
-  train_count = int(total_images * train_ratio)
-  test_count = int(total_images * test_ratio)
-  val_count = total_images - train_count - test_count
+  train_count = int(TOTAL_IMAGES * train_ratio)
+  test_count = int(TOTAL_IMAGES * test_ratio)
+  val_count = TOTAL_IMAGES - train_count - test_count
 
   # Process each image and label
   for i, image_file in enumerate(selected_images):
     image_path = os.path.join(image_folder, image_file)
-    label_path = os.path.join(label_folder, os.path.splitext(image_file)[0] + ".txt")
+    label_path = os.path.join(image_folder, os.path.splitext(image_file)[0] + ".txt")
 
     if i < train_count:
       output_image_folder = os.path.join(output_folder, "images/train")
@@ -65,7 +78,7 @@ def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_fold
      print("no background files included")
   else:
     # Get number of background images to add 
-    num_background_images = int(total_images * bg_ratio)
+    num_background_images = int(TOTAL_IMAGES * bg_ratio)
     if num_background_images>=len(background_files):
       print("adjusting for lower number of backgrounds")
       num_background_images=len(background_files)
@@ -93,16 +106,13 @@ def prepare_yolo_data(image_folder, label_folder,backgrounds_folder, output_fold
         background_image = random.choice(selected_backgrounds)
         shutil.copy(os.path.join(backgrounds_folder, background_image), os.path.join(output_folder, "images/val", background_image))
   
-# Get user input
-total_images = int(input("Enter the total number of images to prepare: "))
+
 
 # Prepare data
+
 prepare_yolo_data(
-  image_folder="all_labeled_images",
-  label_folder="labels",
-  backgrounds_folder="backgrounds",
-  output_folder="datasets/moths"+str(total_images),
-  total_images=total_images
+  image_folder=DATA_PATH+"/labeled_images",
+  backgrounds_folder=DATA_PATH+"/backgrounds",
 )
 
-print(f"Finished preparing {total_images} image-label pairs for YOLO.")
+print(f"Finished preparing {TOTAL_IMAGES} image-label pairs for YOLO.")
