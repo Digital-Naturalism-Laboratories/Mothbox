@@ -3,8 +3,8 @@ from ultralytics import YOLO
 import numpy as np
 import os
 
-input_path=r"C:\Users\andre\Documents\GitHub\Mothbox\AI\detect_me" #raw string
-YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\runs\obb\train23\weights\best.pt"
+input_path=r"D:\Mothbox Photos to Backup\Fortuna_senderoStri_AmpleBonobo_26-sep-2024" #raw string
+YOLO_MODEL = r"D:\Mothbox Photos to Backup\Database_1.2_CleanedUp\runs\obb\train3_fromMoths1230Mixed_SemiCorrupt\weights\best.pt"
 
 def crop_rect_old(img, rect):
     # get the parameter of the small rectangle
@@ -53,7 +53,7 @@ def process_subdirectories(input_path, out_path):
 
     for subdir in os.listdir(input_path):
         subdirectory_path = os.path.join(input_path, subdir)
-        if os.path.isdir(subdirectory_path) and subdirectory_path != out_path:
+        if os.path.isdir(subdirectory_path) and subdirectory_path != out_path and not output_folder in subdirectory_path:
 
             print(f"Processing subdirectory: {subdirectory_path}")
             process_files_in_directory(subdirectory_path)
@@ -108,7 +108,7 @@ def process_files_in_directory(subdirectory_path):
                     print("rect: {}".format(rect))
 
                     box = cv2.boxPoints(rect)
-                    box = np.int0(box)
+                    box = np.intp(box)
                     # print("bounding box: {}".format(box))
                     #cv2.drawContours(result.orig_img, [box], 0, (0, 0, 255), 2)
 
@@ -119,7 +119,7 @@ def process_files_in_directory(subdirectory_path):
 
                     #mask = cv2.fillPoly(np.zeros_like(result.orig_img), [points], (255, 255, 255))
                     #cropped_img = cv2.bitwise_and(result.orig_img, mask)
-                    cv2.waitKey(0)
+                    #cv2.waitKey(0)
 
 
 
