@@ -13,9 +13,9 @@ import argparse
 
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting"
-BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
-#BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\mothbox_dataset_3000_2024-10-10\images\train\x-anylabeling-matting"
+#BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
+BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
 #BACKGROUND_COLOR =(230, 242, 28) #nice pastel yellow
 #BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
@@ -25,7 +25,7 @@ BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
 OUTPUT_WIDTH=10000
 ASPECT_RATIO=0.6
 IMAGE_SCALE_PERCENT=25
-SORT_ALGO = 0
+SORT_ALGO = 1
 
 # This is a handy function that crops images edges if they are all black or alpha to get to the core of the image
 def crop(image):
@@ -53,7 +53,7 @@ print('getting images sizes...')
 
 sizes=[]
 for image_path in files:
-
+    #print(image_path)
     f = open(image_path, "rb")  # have to do this silly stuff where we open it because imread cannot read paths with accents!
     b = f.read()
     f.close()
@@ -61,13 +61,18 @@ for image_path in files:
     b = np.frombuffer(b, dtype=np.uint8)
     image = cv2.imdecode(b, cv2.IMREAD_UNCHANGED)
 
-    image=crop(image)
+    image=crop(image) 
 
     #optionally scale the images
     if(IMAGE_SCALE_PERCENT!=100):
+        #print("shape ",image.shape)
         width = int(image.shape[1] * IMAGE_SCALE_PERCENT / 100)
         height = int(image.shape[0] * IMAGE_SCALE_PERCENT / 100)
+
+        if(width<1 or height<1): #there can be an error where an entire image gets cropped away, need to add a catch that throws away too tiny images
+            continue
         dim = (width, height)
+        #print(dim)
         image = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
 
 

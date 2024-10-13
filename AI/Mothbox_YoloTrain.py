@@ -20,4 +20,4 @@ if __name__ == '__main__':
     # Train the model
 
     yamlPath= r"C:\Users\andre\Documents\GitHub\Mothbox\AI\mothbox_training.yaml"
-    results = model.train(data=yamlPath, epochs=100, imgsz=1920, batch=3, device='cuda' ) #lowering batch size cuz GPU ran out of memory, default 16
+    results = model.train(data=yamlPath, epochs=100, imgsz=1408, batch=2, device='cuda' ) #lowering batch size cuz GPU ran out of memory, default 16

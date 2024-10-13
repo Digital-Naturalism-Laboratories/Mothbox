@@ -7,7 +7,7 @@ import shutil
 import datetime
 
 # Global variable for the starting folder path
-STARTING_FOLDER = r"D:\Panama"
+STARTING_FOLDER = r"E:\Panama"
 NUM_TO_PROCESS=10
 
 def find_matching_pairs(folder_path):
@@ -30,7 +30,9 @@ def search_folders(folder_path):
     
     matching_pairs = []
     for root, dirs, files in os.walk(folder_path):
-        matching_pairs.extend(find_matching_pairs(root))
+        if any(file.endswith('.json') and file not in ['metadata.json', 'samples.json'] for file in files):
+          print("Folders with Annotation to Look in: ",root)
+          matching_pairs.extend(find_matching_pairs(root))
     return matching_pairs
 
 def prepare_yolo_data(matching_pairs, num_to_process, output_folder,  train_ratio=0.5, test_ratio=0.3, val_ratio=0.2):
@@ -85,8 +87,33 @@ def prepare_yolo_data(matching_pairs, num_to_process, output_folder,  train_rati
 
     print(f"{i+1}/{num_to_process} Copied {image_filename} and {label_filename} to {output_image_folder}")
 
-  
 
+def find_folders_with_json(root_folder):
+  """
+  Finds folders that contain at least one *.json file, excluding "metadata.json" and "samples.json".
+
+  Args:
+    root_folder: The root folder to search.
+
+  Returns:
+    A list of folder paths that contain at least one *.json file.
+  """
+
+  folders_with_json = []
+  for root, dirs, files in os.walk(root_folder):
+    if any(file.endswith('.json') and file not in ['metadata.json', 'samples.json'] for file in files):
+      folders_with_json.append(root)
+  return folders_with_json
+
+
+
+'''folders_with_json = find_folders_with_json(STARTING_FOLDER)
+
+# Now you have a list of folders with JSON files:
+for folder in folders_with_json:
+  # Do something with each folder, e.g., scan for specific JSON files
+  print("Folders that Have JSON/Anylabelling in them ",folder)
+'''
 
 
 # Find all matching pairs

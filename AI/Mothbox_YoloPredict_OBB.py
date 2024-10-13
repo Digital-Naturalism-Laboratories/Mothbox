@@ -3,8 +3,10 @@ from ultralytics import YOLO
 import numpy as np
 import os
 
-input_path=r"D:\Mothbox Photos to Backup\Fortuna_senderoStri_AmpleBonobo_26-sep-2024" #raw string
-YOLO_MODEL = r"D:\Mothbox Photos to Backup\Database_1.2_CleanedUp\runs\obb\train3_fromMoths1230Mixed_SemiCorrupt\weights\best.pt"
+input_path=r"E:\Panama\Totumas_Summit_StudyCod_2024-09-21\2024-09-23" #raw string
+YOLO_MODEL = r"C:\Users\andre\Desktop\mothbox_dataset_3000_2024-10-10\train14_3000Images_batch2_1408px\weights\best.pt"
+IMGSZ=1408 # Should be same imgsz as used in training for best results!
+
 
 def crop_rect_old(img, rect):
     # get the parameter of the small rectangle
@@ -95,7 +97,7 @@ def process_files_in_directory(subdirectory_path):
             i=i+1
             # Run inference
             print("Predict a new image")
-            results = model.predict(source=data, imgsz=1024)
+            results = model.predict(source=data, imgsz=IMGSZ)
             
             # Extract OBB coordinates and crop
             for result in results:
