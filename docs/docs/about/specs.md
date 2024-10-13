@@ -40,6 +40,7 @@ The exact specifications of the mothbox may change depending on factors like whi
 * Camera: Arducam 64mp Owlsight OV64A40
 * Image resolution: 9152×6944 (Pi5)  9000x6000 (Pi4)
 * Lens Adapter size: 55mm
+* Pixels per mm: 15 (based on standard-sized target distance)
 
 ## Weatherproofing
 * Fully harsh weather resistant. Has been left outside for >1 month in the rainforest.
