@@ -50,27 +50,6 @@ def convert_row_to_coco(row, csv_headers):
   return coco_data
 
 
-def find_date_folders(directory):
-    """
-    Recursively searches through a directory and its subdirectories for folders
-    with names in the YYYY-MM-DD format.
-
-    Args:
-      directory: The directory to search.
-
-    Returns:
-      A list of paths to the found folders.
-    """
-
-    date_regex = r"^\d{4}-\d{2}-\d{2}$"
-    folders = []
-
-    for root, dirs, files in os.walk(directory):
-        for dir_name in dirs:
-            if re.match(date_regex, dir_name):
-                folders.append(os.path.join(root, dir_name))
-
-    return folders
 
 
 
@@ -161,7 +140,7 @@ def find_matching_subfolders(metadata_row, preprocessed_subfolders):
             matches.append(subfolder["path"])
     return matches
 
-def scan_for_images_inallfoldersandsubfolders(folder_path):
+def scan_for_images(folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""
   jpeg_files = []
   for root, dirs, files in os.walk(folder_path):
@@ -169,15 +148,6 @@ def scan_for_images_inallfoldersandsubfolders(folder_path):
       if file.endswith(".jpg"):
         jpeg_files.append(os.path.join(root, file))
   return jpeg_files
-
-def scan_for_images(folder_path):
-  """Scans the specified folder for JPEG files and returns a list of file paths."""
-  jpeg_files = []
-  for file in os.listdir(folder_path):
-    if file.endswith(".jpg"):
-      jpeg_files.append(os.path.join(folder_path, file))
-  return jpeg_files
-
 
 # Get user input for paths
 csv_path = get_csv_path()
@@ -202,22 +172,18 @@ if metadata is not None:
         print(matches)
 
         if(len(matches)>0):
-            date_folders = find_date_folders(matches[0]) #we only want to find images in the Date Folders
-            
-            for folder in date_folders:
-               
-              jpeg_files=scan_for_images(folder) #scan the first folder
-              #print(len(jpeg_files))
-              # ... iterate through JPEG files
-              for jpeg_file in jpeg_files:
-                  # Create COCO metadata
-                  coco_data = convert_row_to_coco(row, csv_headers)
+            jpeg_files=scan_for_images(matches[0]) #scan the first folder
+            #print(len(jpeg_files))
+            # ... iterate through JPEG files
+            for jpeg_file in jpeg_files:
+                # Create COCO metadata
+                coco_data = convert_row_to_coco(row, csv_headers)
 
-                  # Write metadata to a JSON file
-                  #print(jpeg_file)
-                  metadata_filename = os.path.splitext(jpeg_file)[0] + "_metadata.json"
-                  with open(metadata_filename, "w") as f:
-                      json.dump(coco_data, f, indent=4)
+                # Write metadata to a JSON file
+                #print(jpeg_file)
+                metadata_filename = os.path.splitext(jpeg_file)[0] + "_metadata.json"
+                with open(metadata_filename, "w") as f:
+                    json.dump(coco_data, f, indent=4)
         else:
            rowname=str(row["area"]) +str(row["point"]) + str(row["mothbox"]) +str(row["deployment.date"])
            noMatches.append(rowname)
