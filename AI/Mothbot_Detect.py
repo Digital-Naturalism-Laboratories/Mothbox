@@ -8,7 +8,7 @@ import PIL.Image
 
 
 INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01"  # raw string
-YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\train14_3000Images_batch2_1408px\weights\best.pt"
+YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\Dataset19Mixed1230_semiC.pt"
 IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
 
@@ -36,15 +36,17 @@ def process_jpg_files(date_folders):
                 # Extract OBB coordinates and crop
                 shapes=[]
                 for result in results:
-                    #print(result)
+                    #print(result.obb.conf)
                     for idx, obb in enumerate(result.obb.xyxyxyxy):
 
-                        print(result.obb.xyxyxyxy)
+                        #print(result.obb)
                         points = obb.cpu().numpy().reshape((-1, 1, 2)).astype(int)
                         cnt = points
                         rect = cv2.minAreaRect(cnt)
                         #print(obb)
-                        print("rect: {}".format(rect))
+                        confidence=result.obb.conf[idx].item()
+
+                        print("rect: {}".format(rect)+"   conf: "+str(confidence))
 
                         box = cv2.boxPoints(rect)
                         box = np.intp(box)
@@ -57,9 +59,12 @@ def process_jpg_files(date_folders):
                         points = points.tolist() 
                         points = [item for sublist in points for item in sublist]  #flatten
 
+
                         shape = {
                           "points": points,
-                          "direction": angle
+                          "direction": angle,
+                          "score": float(confidence)
+
                         }
 
                         shapes.append(shape)
@@ -97,12 +102,12 @@ def process_jpg_files(date_folders):
 
                 # Add each shape to the list
                 for shape in shapes:
-                  print(shape)
+                  #print(shape)
                   shape_data = {
                     "kie_linking": [],
                     "direction": shape["direction"],
                     "label": "creature",  # Replace with your desired label
-                    "score": None,
+                    "score": shape["score"],
                     "group_id": None,
                     "description": "",
                     "difficult": "false",
