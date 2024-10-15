@@ -3,7 +3,7 @@ from ultralytics import YOLO
 import numpy as np
 import os
 
-input_path=r"E:\Panama\Totumas_Summit_StudyCod_2024-09-21\2024-09-23" #raw string
+INPUT_PATH=r"E:\Panama\Totumas_Summit_StudyCod_2024-09-21\2024-09-23" #raw string
 YOLO_MODEL = r"C:\Users\andre\Desktop\mothbox_dataset_3000_2024-10-10\train14_3000Images_batch2_1408px\weights\best.pt"
 IMGSZ=1408 # Should be same imgsz as used in training for best results!
 
@@ -130,12 +130,12 @@ if __name__ == '__main__':
     # Load the model
     model = YOLO(YOLO_MODEL)
 
-    print(input_path)
+    print(INPUT_PATH)
     #input_path = input_path.encode('utf-8').decode('mbcs')
-    input_path= os.path.normpath(input_path)
-    print(input_path)
+    INPUT_PATH= os.path.normpath(INPUT_PATH)
+    print(INPUT_PATH)
     output_folder="detected_and_cropped_images"
-    output_path = input_path+"/"+output_folder
+    output_path = INPUT_PATH+"/"+output_folder
 
 
     '''
@@ -195,5 +195,5 @@ if __name__ == '__main__':
                     #cropped_img = cv2.bitwise_and(result.orig_img, mask)
                     cv2.waitKey(0)
     '''
-    process_files_in_directory(input_path)
-    process_subdirectories(input_path,output_path)
+    process_files_in_directory(INPUT_PATH)
+    process_subdirectories(INPUT_PATH,output_path)
