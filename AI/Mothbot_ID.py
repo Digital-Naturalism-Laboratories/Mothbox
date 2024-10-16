@@ -26,6 +26,7 @@ Arguments:
 """
 
 from bioclip import CustomLabelsClassifier
+import cv2.version
 import polars as pl
 import os
 import sys
@@ -39,11 +40,14 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
+import cv2
+
 #import uuid
+INPUT_PATH = r"F:\Panama\PEA_PeaPorch_AdeptTurca_2024-09-01"  # raw string
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
-INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01"  # raw string
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"
+
 TAXONOMIC_RANK ="order"
 
 def parse_args():
@@ -233,6 +237,199 @@ def find_matching_pairs(folder_path):
 
   return pairs
 
+
+
+
+def calculate_rotation_angle(points):
+  """Calculates the rotation angle of the rectangle."""
+  # Implement a suitable algorithm to calculate the angle based on the points
+  # For example, using the slope of the first two points
+  p1, p2 = points[:2]
+  angle = np.arctan2(p2[1] - p1[1], p2[0] - p1[0]) * 180 / np.pi
+  return angle
+
+def rotate_image_to_vertical(image, angle):
+  """Rotates an image to vertical orientation based on the given angle."""
+  image = image.rotate(-angle, expand=True)
+  return image
+
+
+
+def crop_rect(img, rect, interpolation=cv2.INTER_LINEAR): # cv2.INTER_LANCZOS4  cv2.INTER_LINEAR cv2.INTER_CUBIC
+    # get the parameter of the small rectangle
+    center, size, angle = rect[0], rect[1], rect[2]
+    center, size = tuple(map(int, center)), tuple(map(int, size))
+
+    # get row and col num in img
+    height, width = img.shape[0], img.shape[1]
+
+    # calculate the rotation matrix
+    M = cv2.getRotationMatrix2D(center, angle, 1)
+    # rotate the original image
+    img_rot = cv2.warpAffine(img, M, (width, height), flags=interpolation)
+
+    # now rotated rectangle becomes vertical, and we crop it
+    img_crop = cv2.getRectSubPix(img_rot, size, center)
+
+    return img_crop, img_rot
+
+
+
+def update_main_list(main_list, new_items):
+  """Updates the main list with new items, avoiding duplicates.
+
+  Args:
+    main_list: The main list to update.
+    new_items: A list of new items to add.
+
+  Returns:
+    The updated main list.
+  """
+
+  # Create a set of existing items for efficient lookup
+  existing_items = set(main_list)
+
+  # Add new items to the main list if they don't exist
+  for item in new_items:
+    if item not in existing_items:
+      main_list.append(item)
+
+  return main_list
+
+def rotate_cropped(img, points):
+    print("shape of cnt: {}".format(points.shape))
+    rect = cv2.minAreaRect(points)
+    print("rect: {}".format(rect))
+
+    # the order of the box points: bottom left, top left, top right,
+    # bottom right
+    box = cv2.boxPoints(rect)
+    box = np.int0(box)
+
+    print("bounding box: {}".format(box))
+    cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
+
+    # get width and height of the detected rectangle
+    width = int(rect[1][0])
+    height = int(rect[1][1])
+
+    src_pts = box.astype("float32")
+    # coordinate of the points in box points after the rectangle has been
+    # straightened
+    dst_pts = np.array([[0, height-1],
+                        [0, 0],
+                        [width-1, 0],
+                        [width-1, height-1]], dtype="float32")
+
+    # the perspective transformation matrix
+    M = cv2.getPerspectiveTransform(src_pts, dst_pts)
+
+    # directly warp the rotated rectangle to get the straightened rectangle
+    warped = cv2.warpPerspective(img, M, (width, height))
+    return warped
+
+def get_rotated_rect_coordinates(json_file):
+  """Reads rotated rectangle coordinates from a JSON file and returns them."""
+  with open(json_file, 'r') as f:
+    data = json.load(f)
+    coordinates_list = []
+    for shape in data['shapes']:
+      if shape['shape_type'] == 'rotation':
+        points = shape['points']
+        x, y, w, h, angle = extract_rectangle_coordinates(points)
+        coordinates_list.append((x, y, w, h, angle))
+    return coordinates_list
+  
+
+def get_rotated_rect_raw_coordinates(json_file):
+  """Reads rotated rectangle coordinates from a JSON file and returns them."""
+  with open(json_file, 'r') as f:
+    data = json.load(f)
+    coordinates_list = []
+    for shape in data['shapes']:
+      if shape['shape_type'] == 'rotation':
+        points = shape['points']
+        #x, y, w, h, angle = extract_rectangle_coordinates(points)
+        coordinates_list.append(points)
+    return coordinates_list
+def extract_rectangle_coordinates(points):
+  """Extracts rectangle coordinates from a list of points."""
+  # Assuming points are in clockwise order (adjust if needed)
+  min_x = min(point[0] for point in points)
+  min_y = min(point[1] for point in points)
+  max_x = max(point[0] for point in points)
+  max_y = max(point[1] for point in points)  
+
+  width = max_x - min_x
+  height = max_y - min_y
+  angle = calculate_rotation_angle(points)
+  return min_x, min_y, width, height, angle
+
+def calculate_rotation_angle(points):
+  """Calculates the rotation angle of the rectangle."""
+  # Implement a suitable algorithm to calculate the angle based on the points
+  # For example, using the slope of the first two points
+  p1, p2 = points[:2]
+  angle = np.arctan2(p2[1] - p1[1], p2[0] - p1[0]) * 180 / np.pi
+  return angle
+
+
+def rotate_image_around_center(image, angle):
+  """Rotates an image around its center by the specified angle."""
+  cv_image = np.array(image)
+
+  height, width, _ = cv_image.shape
+  center = (width // 2, height // 2)
+  M_translate = np.float32([[1, 0, -center[0]], [0, 1, -center[1]]])
+  translated_image = cv2.warpAffine(cv_image, M_translate, (width, height))
+
+  rotated_image = cv2.rotate(translated_image, angle=angle)
+
+  M_translate_back = np.float32([[1, 0, center[0]], [0, 1, center[1]]])
+  final_image = cv2.warpAffine(rotated_image, M_translate_back, (width, height))
+  return final_image
+
+
+def crop_image(image, x, y, w, h):
+  """Crops an image based on the specified coordinates."""
+  cropped_image = image.crop((x, y, x + w, y + h))
+  return cropped_image
+
+def warp_rotation(img, points):
+    #cnt = np.array(points)
+    cnt=np.array([[int(x), int(y)] for x, y in points])
+    print("shape of cnt: {}".format(cnt.shape))
+    rect = cv2.minAreaRect(cnt)
+    print("rect: {}".format(rect))
+
+    # the order of the box points: bottom left, top left, top right,
+    # bottom right
+    box = cv2.boxPoints(rect)
+    box = np.int0(box)
+
+    print("bounding box: {}".format(box))
+    #cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
+
+    # get width and height of the detected rectangle
+    width = int(rect[1][0])
+    height = int(rect[1][1])
+
+    src_pts = box.astype("float32")
+    # coordinate of the points in box points after the rectangle has been
+    # straightened
+    dst_pts = np.array([[0, height-1],
+                        [0, 0],
+                        [width-1, 0],
+                        [width-1, height-1]], dtype="float32")
+
+    # the perspective transformation matrix
+    M = cv2.getPerspectiveTransform(src_pts, dst_pts)
+
+    # directly warp the rotated rectangle to get the straightened rectangle
+    warped = cv2.warpPerspective(img, M, (width, height))
+    return warped
+
+
 if __name__ == "__main__":
   
   """
@@ -254,20 +451,59 @@ if __name__ == "__main__":
   print("Found ",str(len(date_folders))+" dated folders potentially full of mothbox data")
 
   # Look in each dated folder for .json detection files and the matching .jpgs
-  matching_pairs_jpg_detections=[]
+  matching_pairs_img_json_detections=[]
 
   for folder in date_folders:
     list_of_pairs=find_matching_pairs(folder)
-    matching_pairs_jpg_detections.append(list_of_pairs)
+    matching_pairs_img_json_detections=update_main_list(matching_pairs_img_json_detections, list_of_pairs)
 
-  print("Found ",str(len(matching_pairs_jpg_detections[0]))+" pairs of images and detection data to try to ID")
-  #print(matching_pairs_jpg_detections)
-
-  print(matching_pairs_jpg_detections[0][0])
+  print("Found ",str(len(matching_pairs_img_json_detections))+" pairs of images and detection data to try to ID")
+  #Example Pair
+  print(matching_pairs_img_json_detections[0])
 
   # Next process each pair and generate temporary files for the ROI of each detection in each image
+  # Iterate through image-JSON pairs
+  for image_path, json_path in matching_pairs_img_json_detections:
+    # Load JSON file and extract rotated rectangle coordinates for each detection
+    
+    #coordinates_of_detections_list = get_rotated_rect_coordinates(json_path)
+    coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
+    print(len(coordinates_of_detections_list)," detections in "+json_path)
+    if coordinates_of_detections_list:
+      for coordinates in coordinates_of_detections_list:
+        print(coordinates)
 
+        image = Image.open(image_path)
+        cv_image = np.array(image)
+        cv_image = cv_image[:, :, ::-1]  # Reverse the channels (BGR to RGB)
 
+        cv_image_cropped = warp_rotation(cv_image,coordinates)
+        """
+        x, y, w, h, angle = coordinates
+        print(coordinates)
+        # Load image and process it
+        image = Image.open(image_path)
+        rotated_image = rotate_image_around_center(image, angle)
+        cropped_image = crop_image(rotated_image, x, y, w, h)
+        """
+
+        """
+        #old style
+        cnt = tuple(int(item) for item in coordinates)
+        rect = cv2.minAreaRect(cnt)
+        rect = cv2.minAreaRect(cnt)
+
+        print("rect: {}".format(rect))
+
+        # img_crop will the cropped rectangle, img_rot is the rotated image
+        img_crop, img_rot = crop_rect(image, rect)
+        """
+        # Convert PIL image to OpenCV format
+
+        # Display the cropped image using OpenCV
+        cv2.imshow("Cropped Image", cv_image_cropped)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
   # Then feed this list of ROIs to pybioclip
 
 
@@ -276,7 +512,7 @@ if __name__ == "__main__":
 
 
 
-  im = Image.open(matching_pairs_jpg_detections[0][0][0])
+  im = Image.open(matching_pairs_img_json_detections[0][0])
 
   with io.BytesIO() as output:
       im.save(output, format='JPEG')
