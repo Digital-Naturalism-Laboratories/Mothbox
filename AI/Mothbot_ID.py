@@ -25,7 +25,7 @@ Arguments:
 
 """
 
-from bioclip import CustomLabelsClassifier
+from bioclip import CustomLabelsClassifier, Rank
 import cv2.version
 import polars as pl
 import os
@@ -429,6 +429,118 @@ def warp_rotation(img, points):
     warped = cv2.warpPerspective(img, M, (width, height))
     return warped
 
+def get_path_from_img_temp(im):
+    #im = Image.open(matching_pairs_img_json_detections[0][0])
+
+    with io.BytesIO() as output:
+        im.save(output, format='JPEG')
+        output.seek(0)
+        with tempfile.NamedTemporaryFile(suffix='.jpg') as temp:
+            temp.write(output.read())
+            temp.seek(0)
+            thepath = Path(temp.name)
+
+    print(thepath)
+
+
+def get_bioclip_prediction(img_path, classifier):
+   
+  # Run inference
+  results = classifier.predict(img_path)
+  classifier.predict_classifications_from_list() #def predict_classifications_from_list(img: Union[PIL.Image.Image, str], cls_ary: List[str], device: Union[str, torch.device] = 'cpu') -> dict[str, float]:
+  sorted_results = sorted(results, key=lambda x: x["score"], reverse=True)
+  # Get the highest scoring result
+  winner = sorted_results[0]
+  pred = winner['classification']
+
+  # Print the winner
+  print(f"  This is the winner: {pred} with a score of {winner['score']}")
+  return pred
+
+
+def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,taxon_rank,device, flag_holes):
+  #load up the Pybioclip stuff
+  taxon_keys_list = load_taxon_keys(taxa_path = taxa_path, taxa_cols = taxa_cols, taxon_rank = taxon_rank.lower(), flag_holes = flag_holes)
+  print(f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}")
+
+  print("Loading CustomLabelsClassifier...")
+  classifier = CustomLabelsClassifier(taxon_keys_list, device = device)
+
+  # Next process each pair and generate temporary files for the ROI of each detection in each image
+  # Iterate through image-JSON pairs
+  for image_path, json_path in matching_pairs_img_json_detections:
+    # Load JSON file and extract rotated rectangle coordinates for each detection
+    
+    #coordinates_of_detections_list = get_rotated_rect_coordinates(json_path)
+    coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
+    print(len(coordinates_of_detections_list)," detections in "+json_path)
+    if coordinates_of_detections_list:
+      for coordinates in coordinates_of_detections_list:
+        print(coordinates)
+
+        image = Image.open(image_path)
+        cv_image = np.array(image)
+        cv_image = cv_image[:, :, ::-1]  # Reverse the channels (BGR to RGB)
+
+        cv_image_cropped = warp_rotation(cv_image,coordinates)
+
+        #pil_image = Image.fromarray(cv_image_cropped)
+        pil_image = Image.fromarray(cv_image_cropped[:, :, ::-1] )
+
+        #crop_path=get_path_from_img_temp(pil_image)
+        
+        """#From John at Bioclip
+        # create a PIL image array
+        pil_image_ar=[pil_image]
+        img_features = classifier.create_image_features(pil_image_ar)
+        idx = 0
+        for probs in classifier.create_probabilities(img_features, classifier.txt_features):
+            name = f"image{idx}"
+            for pred in classifier.format_species_probs(None, probs, k=5):
+                print(pred['species'], pred['common_name'], pred['score'])
+            idx += 1"""
+        
+
+        # Define a temporary directory with write permissions (adjust as needed)
+        temp_dir = os.path.join(os.environ['TEMP'], 'my_temp_dir')
+        os.makedirs(temp_dir, exist_ok=True)  # Create the directory if it doesn't exist
+        temp_dir=INPUT_PATH
+        with tempfile.NamedTemporaryFile(suffix='.jpg', dir=temp_dir, delete=False) as temp:
+            pil_image.save(temp, format='JPEG')
+            #temp.write(output.read())
+            temp.seek(0)
+            thepath = Path(temp.name)          
+            crop_path=thepath
+            
+            print(crop_path)
+
+            # Run inference
+            results = classifier.predict(r""+str(crop_path))
+            #classifier.predict_classifications_from_list() #def predict_classifications_from_list(img: Union[PIL.Image.Image, str], cls_ary: List[str], device: Union[str, torch.device] = 'cpu') -> dict[str, float]:
+            sorted_results = sorted(results, key=lambda x: x["score"], reverse=True)
+            print(sorted_results)
+            # Get the highest scoring result
+            winner = sorted_results[0]
+            pred = winner['classification']
+
+            # Print the winner
+            print(f"  This is the winner: {pred} with a score of {winner['score']}")
+
+
+
+        #prediction = get_bioclip_prediction(crop_path, classifier) 
+        
+        #print(prediction)
+        # Display the cropped image using OpenCV
+        cv2.imshow("Cropped Image", cv_image_cropped)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        # Manually delete the temporary file
+        os.remove(crop_path)
+  # Then feed this list of ROIs to pybioclip
+
+
+
 
 if __name__ == "__main__":
   
@@ -461,50 +573,16 @@ if __name__ == "__main__":
   #Example Pair
   print(matching_pairs_img_json_detections[0])
 
-  # Next process each pair and generate temporary files for the ROI of each detection in each image
-  # Iterate through image-JSON pairs
-  for image_path, json_path in matching_pairs_img_json_detections:
-    # Load JSON file and extract rotated rectangle coordinates for each detection
-    
-    #coordinates_of_detections_list = get_rotated_rect_coordinates(json_path)
-    coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
-    print(len(coordinates_of_detections_list)," detections in "+json_path)
-    if coordinates_of_detections_list:
-      for coordinates in coordinates_of_detections_list:
-        print(coordinates)
+  # Now that we have our data to be processed in a big list, it's time to load up the Pybioclip stuff
+  process_matched_img_json_pairs(matching_pairs_img_json_detections, taxon_rank = args.rank,
+             flag_holes = args.flag_holes,
+             taxa_path = args.taxa_csv,
+             taxa_cols = args.taxa_cols,
+             device = "cuda")
 
-        image = Image.open(image_path)
-        cv_image = np.array(image)
-        cv_image = cv_image[:, :, ::-1]  # Reverse the channels (BGR to RGB)
 
-        cv_image_cropped = warp_rotation(cv_image,coordinates)
-        """
-        x, y, w, h, angle = coordinates
-        print(coordinates)
-        # Load image and process it
-        image = Image.open(image_path)
-        rotated_image = rotate_image_around_center(image, angle)
-        cropped_image = crop_image(rotated_image, x, y, w, h)
-        """
 
-        """
-        #old style
-        cnt = tuple(int(item) for item in coordinates)
-        rect = cv2.minAreaRect(cnt)
-        rect = cv2.minAreaRect(cnt)
-
-        print("rect: {}".format(rect))
-
-        # img_crop will the cropped rectangle, img_rot is the rotated image
-        img_crop, img_rot = crop_rect(image, rect)
-        """
-        # Convert PIL image to OpenCV format
-
-        # Display the cropped image using OpenCV
-        cv2.imshow("Cropped Image", cv_image_cropped)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-  # Then feed this list of ROIs to pybioclip
+  
 
 
 
@@ -512,18 +590,8 @@ if __name__ == "__main__":
 
 
 
-  im = Image.open(matching_pairs_img_json_detections[0][0])
 
-  with io.BytesIO() as output:
-      im.save(output, format='JPEG')
-      output.seek(0)
-      with tempfile.NamedTemporaryFile(suffix='.jpg') as temp:
-          temp.write(output.read())
-          temp.seek(0)
-          thepath = Path(temp.name)
-
-  print(thepath)
-
+"""
   get_labels(data_path=args.data_path,
              taxon_rank = args.rank,
              flag_holes = args.flag_holes,
@@ -531,7 +599,7 @@ if __name__ == "__main__":
              taxa_cols = args.taxa_cols,
              device = "cuda")
 
-
+"""
 
 
 '''
