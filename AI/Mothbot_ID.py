@@ -31,18 +31,27 @@ import os
 import sys
 import json
 import argparse
+import re
+import tempfile
+
+import io
+from pathlib import Path
+import numpy as np
+from PIL import Image
+
 #import uuid
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01"  # raw string
-
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"
+TAXONOMIC_RANK ="order"
 
 def parse_args():
   parser = argparse.ArgumentParser()
-  parser.add_argument("--data-path", required = False, help = "path to images for classification (ex: datasets/test_images/data)")
-  parser.add_argument("--rank", default = "order", help = "rank to which to classify; must be column in --taxa-csv (default: order)")
+  parser.add_argument("--data-path", required = False, default=INPUT_PATH, help = "path to images for classification (ex: datasets/test_images/data)")
+  parser.add_argument("--rank", default = TAXONOMIC_RANK, help = "rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})")
   parser.add_argument("--flag-holes", default = True, action = argparse.BooleanOptionalAction, help = "whether to flag holes and smudges (default: --flag-holes)")
-  parser.add_argument("--taxa-csv", default = "taxa.csv", help = "CSV with taxonomic labels to use for CustomClassifier (default: taxa.csv)")
+  parser.add_argument("--taxa-csv", default = SPECIES_LIST, help = "CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})")
   parser.add_argument("--taxa-cols", default = TAXA_COLS, help = f"taxonomic columns in taxa CSV to load (default: {TAXA_COLS})")
   parser.add_argument("--device", required = False, choices = ["cpu", "cuda"], help = "device on which to run pybioblip ('cpu' or 'cuda', default: 'cpu')")
   
@@ -107,6 +116,7 @@ def process_files_in_directory(data_path, classifier, taxon_rank = "order"):
             
             # Run inference
             results = classifier.predict(data)
+            classifier.predict_classifications_from_list() #def predict_classifications_from_list(img: Union[PIL.Image.Image, str], cls_ary: List[str], device: Union[str, torch.device] = 'cpu') -> dict[str, float]:
             sorted_results = sorted(results, key=lambda x: x["score"], reverse=True)
             # Get the highest scoring result
             winner = sorted_results[0]
@@ -180,6 +190,49 @@ def get_labels(data_path, taxon_rank = "order", flag_holes = True, taxa_path = "
   create_json(predictions, json_path)
 
 
+def find_date_folders(directory):
+    """
+    Recursively searches through a directory and its subdirectories for folders
+    with names in the YYYY-MM-DD format.
+
+    Args:
+      directory: The directory to search.
+
+    Returns:
+      A list of paths to the found folders.
+    """
+
+    date_regex = r"^\d{4}-\d{2}-\d{2}$"
+    folders = []
+
+    for root, dirs, files in os.walk(directory):
+        for dir_name in dirs:
+            if re.match(date_regex, dir_name):
+                folders.append(os.path.join(root, dir_name))
+
+    return folders
+
+def find_matching_pairs(folder_path):
+  """Finds matching pairs of .jpg and .json files in a given folder.
+
+  Args:
+    folder_path: The path to the folder to search.
+
+  Returns:
+    A list of tuples, where each tuple contains the paths to a matching .jpg and .json file.
+  """
+
+  jpg_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.jpg')]
+  json_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.json')]
+
+  pairs = []
+  for jpg_file in jpg_files:
+    json_file = jpg_file.replace('.jpg', '.json')
+    if json_file in json_files:
+      pairs.append((jpg_file, json_file))
+
+  return pairs
+
 if __name__ == "__main__":
   
   """
@@ -188,21 +241,62 @@ if __name__ == "__main__":
   Then, (to simplify its searching) it looks through all the folders for folders that are just a single "night"
   and follow the date format YYYY-MM-DD for their structure
 
-  in each of these folders, it looks to see if there are any
+  in each of these folders, it looks to see if there are any .json
   
   """
-  
-  
-  
-  
+
   
   args = parse_args()
-  get_labels(data_path = r"D:\Mothbox Photos to Backup\Totumas_Lamp_Liftalce_2024-09-03\2024-09-03\detected_and_cropped_images",
+
+  #Find all the dated folders that our data lives in
+  print("Looking in this folder for MothboxData: "+ args.data_path)
+  date_folders = find_date_folders(args.data_path)
+  print("Found ",str(len(date_folders))+" dated folders potentially full of mothbox data")
+
+  # Look in each dated folder for .json detection files and the matching .jpgs
+  matching_pairs_jpg_detections=[]
+
+  for folder in date_folders:
+    list_of_pairs=find_matching_pairs(folder)
+    matching_pairs_jpg_detections.append(list_of_pairs)
+
+  print("Found ",str(len(matching_pairs_jpg_detections[0]))+" pairs of images and detection data to try to ID")
+  #print(matching_pairs_jpg_detections)
+
+  print(matching_pairs_jpg_detections[0][0])
+
+  # Next process each pair and generate temporary files for the ROI of each detection in each image
+
+
+  # Then feed this list of ROIs to pybioclip
+
+
+
+
+
+
+
+  im = Image.open(matching_pairs_jpg_detections[0][0][0])
+
+  with io.BytesIO() as output:
+      im.save(output, format='JPEG')
+      output.seek(0)
+      with tempfile.NamedTemporaryFile(suffix='.jpg') as temp:
+          temp.write(output.read())
+          temp.seek(0)
+          thepath = Path(temp.name)
+
+  print(thepath)
+
+  get_labels(data_path=args.data_path,
              taxon_rank = args.rank,
              flag_holes = args.flag_holes,
              taxa_path = args.taxa_csv,
              taxa_cols = args.taxa_cols,
-             device = "cpu")
+             device = "cuda")
+
+
+
 
 '''
 classifier = CustomLabelsClassifier(["insect", "hole"])
