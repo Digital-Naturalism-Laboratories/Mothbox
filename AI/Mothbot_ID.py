@@ -488,7 +488,14 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
         pil_image = Image.fromarray(cv_image_cropped[:, :, ::-1] )
 
         #crop_path=get_path_from_img_temp(pil_image)
-        
+        # create a PIL image array
+        images = [pil_image]
+
+        img_features = classifier.create_image_features(images)
+        for probs in classifier.create_probabilities(img_features, classifier.txt_features):
+            topk = probs.topk(k=5)
+            for i, prob in zip(topk.indices, topk.values):
+                print(classifier.classes[i], prob.item())
         """#From John at Bioclip
         # create a PIL image array
         pil_image_ar=[pil_image]
@@ -501,6 +508,7 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
             idx += 1"""
         
 
+        """ #Temp directory style
         # Define a temporary directory with write permissions (adjust as needed)
         temp_dir = os.path.join(os.environ['TEMP'], 'my_temp_dir')
         os.makedirs(temp_dir, exist_ok=True)  # Create the directory if it doesn't exist
@@ -526,7 +534,7 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
             # Print the winner
             print(f"  This is the winner: {pred} with a score of {winner['score']}")
 
-
+          """
 
         #prediction = get_bioclip_prediction(crop_path, classifier) 
         
@@ -535,8 +543,9 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
         cv2.imshow("Cropped Image", cv_image_cropped)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+        
         # Manually delete the temporary file
-        os.remove(crop_path)
+        #os.remove(crop_path)
   # Then feed this list of ROIs to pybioclip
 
 
