@@ -457,6 +457,47 @@ def get_bioclip_prediction(img_path, classifier):
   print(f"  This is the winner: {pred} with a score of {winner['score']}")
   return pred
 
+def get_bioclip_prediction_PILimg(img, classifier):
+  # create a PIL image array
+  images = [img]
+  winner= ""
+  winnerprob= ""
+
+  img_features = classifier.create_image_features(images)
+  for probs in classifier.create_probabilities(img_features, classifier.txt_features):
+      topk = probs.topk(k=5)
+      index=0
+      for i, prob in zip(topk.indices, topk.values):
+          if(index==0):
+            index=index+1
+            winner=str(classifier.classes[i])
+            winnerprob=str(prob.item())
+          #print(classifier.classes[i], prob.item())
+
+  # Print the winner
+  print(f"  This is the winner: {winner} with a score of {winnerprob}")
+  return winner, winnerprob
+
+def update_json_labels_and_scores(json_path, index, pred, conf):
+    """Updates the "label" and "score" entries for a specific shape in a JSON file.
+
+    Args:
+        json_path: The path to the JSON file.
+        index: The index of the shape to update (0-based).
+        pred: The new label value.
+        conf: The new score value.
+    """
+
+    with open(json_path, "r") as f:
+        data = json.load(f)
+
+    if 0 <= index < len(data["shapes"]):
+        shape = data["shapes"][index]
+        shape["label"] = pred
+        shape["score"] = conf
+
+    with open(json_path, "w") as f:
+        json.dump(data, f, indent=4)
 
 def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,taxon_rank,device, flag_holes):
   #load up the Pybioclip stuff
@@ -475,9 +516,8 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
     coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
     print(len(coordinates_of_detections_list)," detections in "+json_path)
     if coordinates_of_detections_list:
-      for coordinates in coordinates_of_detections_list:
+      for idx, coordinates in enumerate(coordinates_of_detections_list):
         print(coordinates)
-
         image = Image.open(image_path)
         cv_image = np.array(image)
         cv_image = cv_image[:, :, ::-1]  # Reverse the channels (BGR to RGB)
@@ -485,65 +525,23 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
         cv_image_cropped = warp_rotation(cv_image,coordinates)
 
         #pil_image = Image.fromarray(cv_image_cropped)
-        pil_image = Image.fromarray(cv_image_cropped[:, :, ::-1] )
+        pil_image = Image.fromarray(cv_image_cropped[:, :, ::-1] ) #numpy images are inverted
 
-        #crop_path=get_path_from_img_temp(pil_image)
-        # create a PIL image array
-        images = [pil_image]
+        pred, conf = get_bioclip_prediction_PILimg(pil_image,classifier)
 
-        img_features = classifier.create_image_features(images)
-        for probs in classifier.create_probabilities(img_features, classifier.txt_features):
-            topk = probs.topk(k=5)
-            for i, prob in zip(topk.indices, topk.values):
-                print(classifier.classes[i], prob.item())
-        """#From John at Bioclip
-        # create a PIL image array
-        pil_image_ar=[pil_image]
-        img_features = classifier.create_image_features(pil_image_ar)
-        idx = 0
-        for probs in classifier.create_probabilities(img_features, classifier.txt_features):
-            name = f"image{idx}"
-            for pred in classifier.format_species_probs(None, probs, k=5):
-                print(pred['species'], pred['common_name'], pred['score'])
-            idx += 1"""
-        
+        #next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
+        update_json_labels_and_scores(json_path, idx, pred, conf)
 
-        """ #Temp directory style
-        # Define a temporary directory with write permissions (adjust as needed)
-        temp_dir = os.path.join(os.environ['TEMP'], 'my_temp_dir')
-        os.makedirs(temp_dir, exist_ok=True)  # Create the directory if it doesn't exist
-        temp_dir=INPUT_PATH
-        with tempfile.NamedTemporaryFile(suffix='.jpg', dir=temp_dir, delete=False) as temp:
-            pil_image.save(temp, format='JPEG')
-            #temp.write(output.read())
-            temp.seek(0)
-            thepath = Path(temp.name)          
-            crop_path=thepath
-            
-            print(crop_path)
 
-            # Run inference
-            results = classifier.predict(r""+str(crop_path))
-            #classifier.predict_classifications_from_list() #def predict_classifications_from_list(img: Union[PIL.Image.Image, str], cls_ary: List[str], device: Union[str, torch.device] = 'cpu') -> dict[str, float]:
-            sorted_results = sorted(results, key=lambda x: x["score"], reverse=True)
-            print(sorted_results)
-            # Get the highest scoring result
-            winner = sorted_results[0]
-            pred = winner['classification']
-
-            # Print the winner
-            print(f"  This is the winner: {pred} with a score of {winner['score']}")
-
-          """
-
-        #prediction = get_bioclip_prediction(crop_path, classifier) 
-        
-        #print(prediction)
+        """ 
         # Display the cropped image using OpenCV
         cv2.imshow("Cropped Image", cv_image_cropped)
         cv2.waitKey(0)
         cv2.destroyAllWindows()
+        """
         
+
+
         # Manually delete the temporary file
         #os.remove(crop_path)
   # Then feed this list of ROIs to pybioclip
