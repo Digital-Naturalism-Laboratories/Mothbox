@@ -1,0 +1,3194 @@
+{
+    "samples": [
+        {
+            "_id": 1,
+            "filepath": "adeptTurca_2024_09_01__22_05_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 2,
+            "filepath": "adeptTurca_2024_09_01__22_06_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 3,
+            "filepath": "adeptTurca_2024_09_01__22_07_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 4,
+            "filepath": "adeptTurca_2024_09_01__22_08_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 5,
+            "filepath": "adeptTurca_2024_09_01__22_09_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 6,
+            "filepath": "adeptTurca_2024_09_01__22_10_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 7,
+            "filepath": "adeptTurca_2024_09_01__22_11_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 8,
+            "filepath": "adeptTurca_2024_09_01__22_12_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 9,
+            "filepath": "adeptTurca_2024_09_01__22_13_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 10,
+            "filepath": "adeptTurca_2024_09_01__22_14_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 11,
+            "filepath": "adeptTurca_2024_09_01__22_15_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 12,
+            "filepath": "adeptTurca_2024_09_01__22_16_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 13,
+            "filepath": "adeptTurca_2024_09_01__22_17_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 14,
+            "filepath": "adeptTurca_2024_09_01__22_18_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 15,
+            "filepath": "adeptTurca_2024_09_01__22_19_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 16,
+            "filepath": "adeptTurca_2024_09_01__22_20_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 17,
+            "filepath": "adeptTurca_2024_09_01__22_21_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 18,
+            "filepath": "adeptTurca_2024_09_01__22_22_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 19,
+            "filepath": "adeptTurca_2024_09_01__22_23_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 20,
+            "filepath": "adeptTurca_2024_09_01__22_24_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 21,
+            "filepath": "adeptTurca_2024_09_01__22_25_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 22,
+            "filepath": "adeptTurca_2024_09_01__22_26_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 23,
+            "filepath": "adeptTurca_2024_09_01__22_27_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 24,
+            "filepath": "adeptTurca_2024_09_01__22_28_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 25,
+            "filepath": "adeptTurca_2024_09_01__22_29_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 26,
+            "filepath": "adeptTurca_2024_09_01__22_30_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 27,
+            "filepath": "adeptTurca_2024_09_01__22_31_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 28,
+            "filepath": "adeptTurca_2024_09_01__22_32_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 29,
+            "filepath": "adeptTurca_2024_09_01__22_33_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 30,
+            "filepath": "adeptTurca_2024_09_01__22_34_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 31,
+            "filepath": "adeptTurca_2024_09_01__22_35_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 32,
+            "filepath": "adeptTurca_2024_09_01__22_36_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 33,
+            "filepath": "adeptTurca_2024_09_01__22_37_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 34,
+            "filepath": "adeptTurca_2024_09_01__22_38_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 35,
+            "filepath": "adeptTurca_2024_09_01__22_39_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 36,
+            "filepath": "adeptTurca_2024_09_01__22_40_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 37,
+            "filepath": "adeptTurca_2024_09_01__22_41_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 38,
+            "filepath": "adeptTurca_2024_09_01__22_42_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 39,
+            "filepath": "adeptTurca_2024_09_01__22_43_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 40,
+            "filepath": "adeptTurca_2024_09_01__22_44_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 41,
+            "filepath": "adeptTurca_2024_09_01__22_45_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 42,
+            "filepath": "adeptTurca_2024_09_01__22_46_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 43,
+            "filepath": "adeptTurca_2024_09_01__22_47_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 44,
+            "filepath": "adeptTurca_2024_09_01__22_48_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 45,
+            "filepath": "adeptTurca_2024_09_01__22_49_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 46,
+            "filepath": "adeptTurca_2024_09_01__22_50_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 47,
+            "filepath": "adeptTurca_2024_09_01__22_51_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 48,
+            "filepath": "adeptTurca_2024_09_01__22_52_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 49,
+            "filepath": "adeptTurca_2024_09_01__22_53_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 50,
+            "filepath": "adeptTurca_2024_09_01__22_54_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 51,
+            "filepath": "adeptTurca_2024_09_01__22_55_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 52,
+            "filepath": "adeptTurca_2024_09_01__22_56_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 53,
+            "filepath": "adeptTurca_2024_09_01__22_57_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 54,
+            "filepath": "adeptTurca_2024_09_01__22_58_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 55,
+            "filepath": "adeptTurca_2024_09_01__22_59_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 56,
+            "filepath": "adeptTurca_2024_09_01__23_00_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 57,
+            "filepath": "adeptTurca_2024_09_01__23_01_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 58,
+            "filepath": "adeptTurca_2024_09_01__23_02_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 59,
+            "filepath": "adeptTurca_2024_09_01__23_03_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 60,
+            "filepath": "adeptTurca_2024_09_01__23_04_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 61,
+            "filepath": "adeptTurca_2024_09_01__23_05_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 62,
+            "filepath": "adeptTurca_2024_09_01__23_06_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 63,
+            "filepath": "adeptTurca_2024_09_01__23_07_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 64,
+            "filepath": "adeptTurca_2024_09_01__23_08_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 65,
+            "filepath": "adeptTurca_2024_09_01__23_09_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 66,
+            "filepath": "adeptTurca_2024_09_01__23_10_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 67,
+            "filepath": "adeptTurca_2024_09_01__23_11_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 68,
+            "filepath": "adeptTurca_2024_09_01__23_12_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 69,
+            "filepath": "adeptTurca_2024_09_01__23_13_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 70,
+            "filepath": "adeptTurca_2024_09_01__23_14_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 71,
+            "filepath": "adeptTurca_2024_09_01__23_15_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 72,
+            "filepath": "adeptTurca_2024_09_01__23_16_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 73,
+            "filepath": "adeptTurca_2024_09_01__23_17_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 74,
+            "filepath": "adeptTurca_2024_09_01__23_18_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 75,
+            "filepath": "adeptTurca_2024_09_01__23_19_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 76,
+            "filepath": "adeptTurca_2024_09_01__23_20_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 77,
+            "filepath": "adeptTurca_2024_09_01__23_21_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 78,
+            "filepath": "adeptTurca_2024_09_01__23_22_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 79,
+            "filepath": "adeptTurca_2024_09_01__23_23_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 80,
+            "filepath": "adeptTurca_2024_09_01__23_24_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 81,
+            "filepath": "adeptTurca_2024_09_01__23_25_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 82,
+            "filepath": "adeptTurca_2024_09_01__23_26_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 83,
+            "filepath": "adeptTurca_2024_09_01__23_27_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 84,
+            "filepath": "adeptTurca_2024_09_01__23_28_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 85,
+            "filepath": "adeptTurca_2024_09_01__23_29_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 86,
+            "filepath": "adeptTurca_2024_09_01__23_30_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 87,
+            "filepath": "adeptTurca_2024_09_01__23_31_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 88,
+            "filepath": "adeptTurca_2024_09_01__23_32_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 89,
+            "filepath": "adeptTurca_2024_09_01__23_33_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 90,
+            "filepath": "adeptTurca_2024_09_01__23_34_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 91,
+            "filepath": "adeptTurca_2024_09_01__23_35_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 92,
+            "filepath": "adeptTurca_2024_09_01__23_36_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 93,
+            "filepath": "adeptTurca_2024_09_01__23_37_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 94,
+            "filepath": "adeptTurca_2024_09_01__23_38_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 95,
+            "filepath": "adeptTurca_2024_09_01__23_39_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 96,
+            "filepath": "adeptTurca_2024_09_01__23_40_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 97,
+            "filepath": "adeptTurca_2024_09_01__23_41_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 98,
+            "filepath": "adeptTurca_2024_09_01__23_42_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 99,
+            "filepath": "adeptTurca_2024_09_01__23_43_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 100,
+            "filepath": "adeptTurca_2024_09_01__23_44_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 101,
+            "filepath": "adeptTurca_2024_09_01__23_45_17_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 102,
+            "filepath": "adeptTurca_2024_09_01__23_46_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 103,
+            "filepath": "adeptTurca_2024_09_01__23_47_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 104,
+            "filepath": "adeptTurca_2024_09_01__23_48_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 105,
+            "filepath": "adeptTurca_2024_09_01__23_49_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 106,
+            "filepath": "adeptTurca_2024_09_01__23_50_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 107,
+            "filepath": "adeptTurca_2024_09_01__23_51_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 108,
+            "filepath": "adeptTurca_2024_09_01__23_52_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 109,
+            "filepath": "adeptTurca_2024_09_01__23_53_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 110,
+            "filepath": "adeptTurca_2024_09_01__23_54_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 111,
+            "filepath": "adeptTurca_2024_09_01__23_55_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 112,
+            "filepath": "adeptTurca_2024_09_01__23_56_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 113,
+            "filepath": "adeptTurca_2024_09_01__23_57_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 114,
+            "filepath": "adeptTurca_2024_09_01__23_58_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 115,
+            "filepath": "adeptTurca_2024_09_01__23_59_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 116,
+            "filepath": "adeptTurca_2024_09_02__00_00_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 117,
+            "filepath": "adeptTurca_2024_09_02__00_01_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 118,
+            "filepath": "adeptTurca_2024_09_02__00_02_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 119,
+            "filepath": "adeptTurca_2024_09_02__00_03_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 120,
+            "filepath": "adeptTurca_2024_09_02__00_04_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 121,
+            "filepath": "adeptTurca_2024_09_02__00_05_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 122,
+            "filepath": "adeptTurca_2024_09_02__00_06_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 123,
+            "filepath": "adeptTurca_2024_09_02__00_07_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 124,
+            "filepath": "adeptTurca_2024_09_02__00_08_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 125,
+            "filepath": "adeptTurca_2024_09_02__00_09_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 126,
+            "filepath": "adeptTurca_2024_09_02__00_10_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 127,
+            "filepath": "adeptTurca_2024_09_02__00_11_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 128,
+            "filepath": "adeptTurca_2024_09_02__00_12_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 129,
+            "filepath": "adeptTurca_2024_09_02__00_13_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 130,
+            "filepath": "adeptTurca_2024_09_02__00_14_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 131,
+            "filepath": "adeptTurca_2024_09_02__00_15_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 132,
+            "filepath": "adeptTurca_2024_09_02__00_16_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 133,
+            "filepath": "adeptTurca_2024_09_02__00_17_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 134,
+            "filepath": "adeptTurca_2024_09_02__00_18_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 135,
+            "filepath": "adeptTurca_2024_09_02__00_19_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 136,
+            "filepath": "adeptTurca_2024_09_02__00_20_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 137,
+            "filepath": "adeptTurca_2024_09_02__00_21_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 138,
+            "filepath": "adeptTurca_2024_09_02__00_22_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 139,
+            "filepath": "adeptTurca_2024_09_02__00_23_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 140,
+            "filepath": "adeptTurca_2024_09_02__00_24_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 141,
+            "filepath": "adeptTurca_2024_09_02__00_25_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 142,
+            "filepath": "adeptTurca_2024_09_02__00_26_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 143,
+            "filepath": "adeptTurca_2024_09_02__00_27_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 144,
+            "filepath": "adeptTurca_2024_09_02__00_28_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 145,
+            "filepath": "adeptTurca_2024_09_02__00_29_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 146,
+            "filepath": "adeptTurca_2024_09_02__00_30_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 147,
+            "filepath": "adeptTurca_2024_09_02__00_31_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 148,
+            "filepath": "adeptTurca_2024_09_02__00_32_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 149,
+            "filepath": "adeptTurca_2024_09_02__00_33_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 150,
+            "filepath": "adeptTurca_2024_09_02__00_34_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 151,
+            "filepath": "adeptTurca_2024_09_02__00_35_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 152,
+            "filepath": "adeptTurca_2024_09_02__00_36_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 153,
+            "filepath": "adeptTurca_2024_09_02__00_37_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 154,
+            "filepath": "adeptTurca_2024_09_02__00_38_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 155,
+            "filepath": "adeptTurca_2024_09_02__00_39_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 156,
+            "filepath": "adeptTurca_2024_09_02__00_40_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 157,
+            "filepath": "adeptTurca_2024_09_02__00_41_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 158,
+            "filepath": "adeptTurca_2024_09_02__00_42_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 159,
+            "filepath": "adeptTurca_2024_09_02__00_43_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 160,
+            "filepath": "adeptTurca_2024_09_02__00_44_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 161,
+            "filepath": "adeptTurca_2024_09_02__00_45_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 162,
+            "filepath": "adeptTurca_2024_09_02__00_46_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 163,
+            "filepath": "adeptTurca_2024_09_02__00_47_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 164,
+            "filepath": "adeptTurca_2024_09_02__00_48_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 165,
+            "filepath": "adeptTurca_2024_09_02__00_49_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 166,
+            "filepath": "adeptTurca_2024_09_02__00_50_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 167,
+            "filepath": "adeptTurca_2024_09_02__00_51_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 168,
+            "filepath": "adeptTurca_2024_09_02__00_52_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 169,
+            "filepath": "adeptTurca_2024_09_02__00_53_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 170,
+            "filepath": "adeptTurca_2024_09_02__00_54_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 171,
+            "filepath": "adeptTurca_2024_09_02__00_55_17_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 172,
+            "filepath": "adeptTurca_2024_09_02__00_56_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 173,
+            "filepath": "adeptTurca_2024_09_02__00_57_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 174,
+            "filepath": "adeptTurca_2024_09_02__00_58_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 175,
+            "filepath": "adeptTurca_2024_09_02__00_59_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 176,
+            "filepath": "adeptTurca_2024_09_02__01_00_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 177,
+            "filepath": "adeptTurca_2024_09_02__01_01_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 178,
+            "filepath": "adeptTurca_2024_09_02__01_02_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 179,
+            "filepath": "adeptTurca_2024_09_02__01_03_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 180,
+            "filepath": "adeptTurca_2024_09_02__01_04_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 181,
+            "filepath": "adeptTurca_2024_09_02__01_05_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 182,
+            "filepath": "adeptTurca_2024_09_02__01_06_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 183,
+            "filepath": "adeptTurca_2024_09_02__01_07_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 184,
+            "filepath": "adeptTurca_2024_09_02__01_08_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 185,
+            "filepath": "adeptTurca_2024_09_02__01_09_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 186,
+            "filepath": "adeptTurca_2024_09_02__01_10_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 187,
+            "filepath": "adeptTurca_2024_09_02__01_11_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 188,
+            "filepath": "adeptTurca_2024_09_02__01_12_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 189,
+            "filepath": "adeptTurca_2024_09_02__01_13_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 190,
+            "filepath": "adeptTurca_2024_09_02__01_14_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 191,
+            "filepath": "adeptTurca_2024_09_02__01_15_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 192,
+            "filepath": "adeptTurca_2024_09_02__01_16_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 193,
+            "filepath": "adeptTurca_2024_09_02__01_17_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 194,
+            "filepath": "adeptTurca_2024_09_02__01_18_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 195,
+            "filepath": "adeptTurca_2024_09_02__01_19_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 196,
+            "filepath": "adeptTurca_2024_09_02__01_20_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 197,
+            "filepath": "adeptTurca_2024_09_02__01_21_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 198,
+            "filepath": "adeptTurca_2024_09_02__01_22_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 199,
+            "filepath": "adeptTurca_2024_09_02__01_23_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 200,
+            "filepath": "adeptTurca_2024_09_02__01_24_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 201,
+            "filepath": "adeptTurca_2024_09_02__01_25_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 202,
+            "filepath": "adeptTurca_2024_09_02__01_26_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 203,
+            "filepath": "adeptTurca_2024_09_02__01_27_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 204,
+            "filepath": "adeptTurca_2024_09_02__01_28_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 205,
+            "filepath": "adeptTurca_2024_09_02__01_29_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 206,
+            "filepath": "adeptTurca_2024_09_02__01_30_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 207,
+            "filepath": "adeptTurca_2024_09_02__01_31_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 208,
+            "filepath": "adeptTurca_2024_09_02__01_32_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 209,
+            "filepath": "adeptTurca_2024_09_02__01_33_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 210,
+            "filepath": "adeptTurca_2024_09_02__01_34_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 211,
+            "filepath": "adeptTurca_2024_09_02__01_35_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 212,
+            "filepath": "adeptTurca_2024_09_02__01_36_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 213,
+            "filepath": "adeptTurca_2024_09_02__01_37_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 214,
+            "filepath": "adeptTurca_2024_09_02__01_38_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 215,
+            "filepath": "adeptTurca_2024_09_02__01_39_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 216,
+            "filepath": "adeptTurca_2024_09_02__01_40_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 217,
+            "filepath": "adeptTurca_2024_09_02__01_41_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 218,
+            "filepath": "adeptTurca_2024_09_02__01_42_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 219,
+            "filepath": "adeptTurca_2024_09_02__01_43_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 220,
+            "filepath": "adeptTurca_2024_09_02__01_44_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 221,
+            "filepath": "adeptTurca_2024_09_02__01_45_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 222,
+            "filepath": "adeptTurca_2024_09_02__01_46_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 223,
+            "filepath": "adeptTurca_2024_09_02__01_47_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 224,
+            "filepath": "adeptTurca_2024_09_02__01_48_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 225,
+            "filepath": "adeptTurca_2024_09_02__01_49_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 226,
+            "filepath": "adeptTurca_2024_09_02__01_50_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 227,
+            "filepath": "adeptTurca_2024_09_02__01_51_17_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 228,
+            "filepath": "adeptTurca_2024_09_02__01_52_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 229,
+            "filepath": "adeptTurca_2024_09_02__01_53_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 230,
+            "filepath": "adeptTurca_2024_09_02__01_54_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 231,
+            "filepath": "adeptTurca_2024_09_02__01_55_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 232,
+            "filepath": "adeptTurca_2024_09_02__01_56_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 233,
+            "filepath": "adeptTurca_2024_09_02__01_57_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 234,
+            "filepath": "adeptTurca_2024_09_02__01_58_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 235,
+            "filepath": "adeptTurca_2024_09_02__01_59_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 236,
+            "filepath": "adeptTurca_2024_09_02__02_00_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 237,
+            "filepath": "adeptTurca_2024_09_02__02_01_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 238,
+            "filepath": "adeptTurca_2024_09_02__02_02_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 239,
+            "filepath": "adeptTurca_2024_09_02__02_03_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 240,
+            "filepath": "adeptTurca_2024_09_02__02_04_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 241,
+            "filepath": "adeptTurca_2024_09_02__02_05_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 242,
+            "filepath": "adeptTurca_2024_09_02__02_06_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 243,
+            "filepath": "adeptTurca_2024_09_02__02_07_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 244,
+            "filepath": "adeptTurca_2024_09_02__02_08_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 245,
+            "filepath": "adeptTurca_2024_09_02__02_09_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 246,
+            "filepath": "adeptTurca_2024_09_02__02_10_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 247,
+            "filepath": "adeptTurca_2024_09_02__02_11_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 248,
+            "filepath": "adeptTurca_2024_09_02__02_12_19_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 249,
+            "filepath": "adeptTurca_2024_09_02__02_13_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 250,
+            "filepath": "adeptTurca_2024_09_02__02_14_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 251,
+            "filepath": "adeptTurca_2024_09_02__02_15_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 252,
+            "filepath": "adeptTurca_2024_09_02__02_16_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 253,
+            "filepath": "adeptTurca_2024_09_02__02_17_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 254,
+            "filepath": "adeptTurca_2024_09_02__02_18_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 255,
+            "filepath": "adeptTurca_2024_09_02__02_19_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 256,
+            "filepath": "adeptTurca_2024_09_02__02_20_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 257,
+            "filepath": "adeptTurca_2024_09_02__02_21_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 258,
+            "filepath": "adeptTurca_2024_09_02__02_22_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 259,
+            "filepath": "adeptTurca_2024_09_02__02_23_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 260,
+            "filepath": "adeptTurca_2024_09_02__02_24_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 261,
+            "filepath": "adeptTurca_2024_09_02__02_25_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 262,
+            "filepath": "adeptTurca_2024_09_02__02_26_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 263,
+            "filepath": "adeptTurca_2024_09_02__02_27_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 264,
+            "filepath": "adeptTurca_2024_09_02__02_28_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 265,
+            "filepath": "adeptTurca_2024_09_02__02_29_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 266,
+            "filepath": "adeptTurca_2024_09_02__02_30_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 267,
+            "filepath": "adeptTurca_2024_09_02__02_31_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 268,
+            "filepath": "adeptTurca_2024_09_02__02_32_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 269,
+            "filepath": "adeptTurca_2024_09_02__02_33_17_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 270,
+            "filepath": "adeptTurca_2024_09_02__02_34_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 271,
+            "filepath": "adeptTurca_2024_09_02__02_35_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 272,
+            "filepath": "adeptTurca_2024_09_02__02_36_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 273,
+            "filepath": "adeptTurca_2024_09_02__02_37_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 274,
+            "filepath": "adeptTurca_2024_09_02__02_38_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 275,
+            "filepath": "adeptTurca_2024_09_02__02_39_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 276,
+            "filepath": "adeptTurca_2024_09_02__02_40_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 277,
+            "filepath": "adeptTurca_2024_09_02__02_41_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 278,
+            "filepath": "adeptTurca_2024_09_02__02_42_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 279,
+            "filepath": "adeptTurca_2024_09_02__02_43_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 280,
+            "filepath": "adeptTurca_2024_09_02__02_44_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 281,
+            "filepath": "adeptTurca_2024_09_02__02_45_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 282,
+            "filepath": "adeptTurca_2024_09_02__02_46_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 283,
+            "filepath": "adeptTurca_2024_09_02__02_47_18_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 284,
+            "filepath": "adeptTurca_2024_09_02__02_48_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 285,
+            "filepath": "adeptTurca_2024_09_02__02_49_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 286,
+            "filepath": "adeptTurca_2024_09_02__02_50_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 287,
+            "filepath": "adeptTurca_2024_09_02__02_51_04_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 288,
+            "filepath": "adeptTurca_2024_09_02__02_52_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 289,
+            "filepath": "adeptTurca_2024_09_02__03_03_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        },
+        {
+            "_id": 290,
+            "filepath": "adeptTurca_2024_09_02__03_34_05_HDR0.jpg",
+            "tags": [],
+            "_media_type": "image",
+            "_dataset_id": 1,
+            "ground_truth": {
+                "_cls": "Detections",
+                "detections": []
+            }
+        }
+    ]
+}
