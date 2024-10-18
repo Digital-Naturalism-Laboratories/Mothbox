@@ -1,0 +1,48 @@
+{
+    "info": {
+        "description": "Dummy COCO dataset",
+        "url": "http://your-dataset-url.com"
+    },
+    "licenses": [
+        {
+            "id": 1,
+            "name": "Attribution-NonCommercial-ShareAlike License",
+            "url": "http://creativecommons.org/licenses/by-nc-sa/2.0/"
+        }
+    ],
+    "categories": [
+        {
+            "id": 1,
+            "name": "cat",
+            "supercategory": "animal"
+        }
+    ],
+    "images": [
+        {
+            "id": 1,
+            "license": 1,
+            "file_name": "dummy_image.jpg",
+            "height": 480,
+            "width": 640
+        }
+    ],
+    "annotations": [
+        {
+            "id": 1,
+            "image_id": 1,
+            "category_id": 1,
+            "bbox": [
+                260,
+                177,
+                231,
+                199
+            ],
+            "segmentation": [],
+            "keypoints": [],
+            "num_keypoints": 0,
+            "score": 0.95,
+            "area": 45969,
+            "iscrowd": 0
+        }
+    ]
+}
