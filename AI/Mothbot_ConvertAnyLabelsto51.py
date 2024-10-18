@@ -113,6 +113,11 @@ def create_fiftyone_json(image_path, labels, image_height, image_width):
 
     if shape_type == 'rotation':
       top, left, width, height = handle_rotation_annotation(points)
+      
+      #print( top, left, width, height)
+      #print("The script will pause now. Press Enter to continue.")
+      #input()
+      
       # Normalize bounding box coordinates
       top /= image_height
       left /= image_width
@@ -126,8 +131,8 @@ def create_fiftyone_json(image_path, labels, image_height, image_width):
           "tags": [label_name],
           "label": "boringlabel",
           "bounding_box": [
-              top,
               left,
+              top,
               width,
               height
           ]
