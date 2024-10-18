@@ -38,6 +38,36 @@ YYYY-MM-DD
 
 ## Samples
 Each data "sample consists of a set of grouped files.
+```
+AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
+AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
+AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS.json (Labels: Detection Data like Yolo detection and Bioclip-ID)
+```
+### Raw Photo
+The "raw" photos we capture look like this. They are insects on a white background. 
+![image](https://github.com/user-attachments/assets/b7c24479-4508-4823-b978-6c5e3e1918b9)
+
+### Metadata
+Next we [create a metadata file](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/createmetadata/) for each raw photo. This contains information about the sampling like:
+```
+- GPS: [lat,lon]
+- Person Who Collected it
+- Land Use Type
+- Type of Mothbox Deployed
+- Any additional Data
+```
+
+### Detection Data
+Finally the data about individual insects is stored in another .json file that has the same name as the original raw photo. This detection data is created by several scripts.
+[First a script (Mothbox_Detect.py)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/) uses a trained Yolo model to detect where there might be interesting creatures present in the image. Its data looks like this when visualized in a program like X-Anylabelling
+![image](https://github.com/user-attachments/assets/3b5bf6d8-4b3a-4dc0-ab31-53846459cb1c)
+
+Then we feed all those detections in another pass to a [different script called, Mothbox_ID.py, which uses BioCLIP](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/) to automatically ID the different creatures detected. 
+It gives the detections labels based on the taxa it predicts them to be:
+![image](https://github.com/user-attachments/assets/30f74418-08eb-437d-8447-1b2f3387b610)
+
+### Database Editing
+Finally there are some remaining scripts that help you open this data in database visualization and editing systems like Voxel51. 
+![image](https://github.com/user-attachments/assets/b7b0ba22-1786-4239-8de3-3a71ca0ff865)
 
 
-The "raw" photos we capture look like this. They are insects on a white background. We run one script that generates the _metadata.json for each photo based off a google doc (where the field technicians load their GPS and other data). Then we run a different script that detects where all the insects are (and it works great!) using Yolov11-OBB and it creates a .json file with the same name as the "raw image" that contains all the detections. Then we run a third script that looks at all those detections and updates those detections with a guess at what taxonomic identification those insects are.
