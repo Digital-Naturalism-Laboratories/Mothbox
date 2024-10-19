@@ -1,6 +1,7 @@
 import os
 import json
 
+INPUT_PATH = 'F:/Panama/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 
 
 
@@ -149,8 +150,6 @@ def create_fiftyone_json(image_path, labels, image_height, image_width):
 
 
 
-# Replace 'your_input_directory' with the actual path to your input directory
-INPUT_PATH = 'F:/Panama/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 pairs = find_image_json_pairs(INPUT_PATH)
 
 # Create an initial FiftyOne JSON structure
