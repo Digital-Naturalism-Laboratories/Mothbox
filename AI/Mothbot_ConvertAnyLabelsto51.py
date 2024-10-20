@@ -161,6 +161,8 @@ data = {
 # Iterate through pairs and load data
 for image_path, json_path in pairs:
   image_path, labels, image_height, image_width = load_anylabeling_data(json_path)
+  #TODO: Also look for a _metadata.json file. Load its data, and send to the next function too
+  
   sample = create_fiftyone_json(image_path, labels, image_height, image_width)
   data["samples"].append(sample)
 

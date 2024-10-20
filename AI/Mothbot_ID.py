@@ -43,7 +43,7 @@ from PIL import Image
 import cv2
 
 #import uuid
-INPUT_PATH = r"F:\Panama\PEA_PeaPorch_AdeptTurca_2024-09-01"  # raw string
+INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01"  # raw string
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
@@ -157,10 +157,12 @@ def create_json(predictions, json_path):
     sample = {
       "_id": i,
       "filepath": filepath,
-      "tags": [predictions[filepath]],
+      #Todo: Handle multiple taxonomic ranks and other tags like "identified_by"
+      "tags": [TAXONOMIC_RANK+"_"+predictions[filepath]],
       "_media_type": "image",
       "_dataset_id": "2"
     }
+    #TODO potentiallyadd METADATA to this file!!
     samples.append(sample)
 
   data = {"samples": samples}
@@ -187,6 +189,8 @@ def get_labels(data_path, taxon_rank = "order", flag_holes = True, taxa_path = "
   taxon_keys_list = load_taxon_keys(taxa_path = taxa_path, taxa_cols = taxa_cols, taxon_rank = taxon_rank.lower(), flag_holes = flag_holes)
   print(f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}")
 
+
+  # TODO use different type of classifier
   print("Loading CustomLabelsClassifier...")
   classifier = CustomLabelsClassifier(taxon_keys_list, device = device)
   predictions = process_files_in_directory(data_path, classifier)
@@ -200,14 +204,18 @@ def find_date_folders(directory):
     with names in the YYYY-MM-DD format.
 
     Args:
-      directory: The directory to search.
+        directory: The directory to search.
 
     Returns:
-      A list of paths to the found folders.
+        A list of paths to the found folders, including the root directory if it matches the date format.
     """
 
     date_regex = r"^\d{4}-\d{2}-\d{2}$"
     folders = []
+
+    # Check if the root directory itself matches the date format
+    if re.match(date_regex, os.path.basename(directory)):
+        folders.append(directory)
 
     for root, dirs, files in os.walk(directory):
         for dir_name in dirs:
