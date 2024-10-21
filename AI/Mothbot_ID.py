@@ -305,16 +305,16 @@ def update_main_list(main_list, new_items):
   return main_list
 
 def rotate_cropped(img, points):
-    print("shape of cnt: {}".format(points.shape))
+    #print("shape of cnt: {}".format(points.shape))
     rect = cv2.minAreaRect(points)
-    print("rect: {}".format(rect))
+    #print("rect: {}".format(rect))
 
     # the order of the box points: bottom left, top left, top right,
     # bottom right
     box = cv2.boxPoints(rect)
     box = np.int0(box)
 
-    print("bounding box: {}".format(box))
+    #print("bounding box: {}".format(box))
     cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
 
     # get width and height of the detected rectangle

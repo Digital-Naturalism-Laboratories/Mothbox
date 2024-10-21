@@ -23,13 +23,9 @@ from dateutil.parser import parse  # Import for flexible date parsing
 import json
 
 
-
-
-
-
 # Define a global variable for the default path
-METADATA_PATH=r"F:\mothbox_metadata_2024-10-14.csv"
-IMAGE_DATA_PATH=r"F:\Panama"
+METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data\Mothbox data - metadata_2024-10-20.csv"
+IMAGE_DATA_PATH=r"C:\Users\andre\Desktop\Mothbox data"
 
 def convert_row_to_coco(row, csv_headers):
   """Converts a CSV row to COCO metadata, dynamically adding annotations based on specified fields."""
@@ -72,6 +68,31 @@ def find_date_folders(directory):
 
     return folders
 
+def find_date_folders_inclusive(directory):
+    """
+    Recursively searches through a directory and its subdirectories for folders
+    with names in the YYYY-MM-DD format.
+
+    Args:
+        directory: The directory to search.
+
+    Returns:
+        A list of paths to the found folders, including the root directory if it matches the date format.
+    """
+
+    date_regex = r"^\d{4}-\d{2}-\d{2}$"
+    folders = []
+
+    # Check if the root directory itself matches the date format
+    if re.match(date_regex, os.path.basename(directory)):
+        folders.append(directory)
+
+    for root, dirs, files in os.walk(directory):
+        for dir_name in dirs:
+            if re.match(date_regex, dir_name):
+                folders.append(os.path.join(root, dir_name))
+
+    return folders
 
 
 
@@ -107,24 +128,97 @@ def read_metadata(csv_path):
     print(f"Error: File not found at {csv_path}")
     return None
   
-def convert_dates(df):
+def normalize_date(date):
+    parts = date.split('/')
+    if len(parts) == 3:  # MM/DD/YYYY format
+        month = parts[0].zfill(2)
+        day = parts[1].zfill(2)
+        year = parts[2]
+        return f"{month}/{day}/{year}"
+    elif len(parts) == 1:  # YYYY-MM-DD format
+        parts = date.split('-')
+        if len(parts) == 3:
+            return f"{parts[0]}-{parts[1].zfill(2)}-{parts[2].zfill(2)}"
+    return date  # Return as-is if not in recognized format
+
+def convert_dates_in_dataframe(df):
+    def convert_date(date):
+        normalized_date = normalize_date(date)
+        
+        try:
+            parsed_date = datetime.strptime(normalized_date, "%m/%d/%Y")
+        except ValueError:
+            try:
+                parsed_date = datetime.strptime(normalized_date, "%Y-%m-%d")
+            except ValueError:
+                print(f"Unrecognized date format: {date}")
+                return None
+        
+        return parsed_date.strftime("%Y-%m-%d")
+    
+    # Apply the conversion to the "deployment.date" column
+    df['deployment.date'] = df['deployment.date'].apply(convert_date)
+    return df
+
+def normalize_date_gpt(date):
+    parts = date.split('/')
+    if len(parts) == 3:  # MM/DD/YYYY format
+        month = parts[0].zfill(2)
+        day = parts[1].zfill(2)
+        year = parts[2]
+        return f"{month}/{day}/{year}"
+    elif len(parts) == 1:  # YYYY-MM-DD format
+        parts = date.split('-')
+        if len(parts) == 3:
+            return f"{parts[0]}-{parts[1].zfill(2)}-{parts[2].zfill(2)}"
+    return date  # Return as-is if not in recognized format
+
+def convert_dates_GPT(date_list):
+    converted_dates = []
+    
+    for date in date_list:
+        normalized_date = normalize_date(date)
+        
+        try:
+            parsed_date = datetime.datetime.strptime(normalized_date, "%m/%d/%Y")
+        except ValueError:
+            try:
+                parsed_date = datetime.datetime.strptime(normalized_date, "%Y-%m-%d")
+            except ValueError:
+                print(f"Unrecognized date format: {date}")
+                continue
+        
+        converted_dates.append(parsed_date.strftime("%Y-%m-%d"))
+    
+    return converted_dates
+
+
+def convert_dates_OLD(df):
   """Converts dates in the 'deployment.date' column to YYYY-MM-DD format, handling various formats."""
   try:
-    # Attempt conversion using pandas' built-in to_datetime with various format attempts
-    for format in ['%d/%m/%Y', '%m/%d/%Y', '%Y-%m-%d']:  # Add more formats if needed
-      try:
-        df["deployment.date"] = pd.to_datetime(df["deployment.date"], format=format)
-        break  # Stop iterating formats if successful
-      except (pd.errors.ParserError, ValueError):
-        pass  # Ignore parsing errors for this format, try the next one
-
-    # Fallback using dateutil.parser for potentially ambiguous formats
-    df["deployment.date"] = df["deployment.date"].apply(lambda x: parse(x).strftime("%Y-%m-%d") if pd.isna(x) else x)
+    # Attempt direct conversion to datetime
+    df["deployment.date"] = pd.to_datetime(df["deployment.date"])
 
     # Ensure all values are now strings in YYYY-MM-DD format
-    df["deployment.date"] = df["deployment.date"].astype(str)
+    df["deployment.date"] = df["deployment.date"].dt.strftime("%Y-%m-%d")
+
+  except (pd.errors.ParserError, ValueError):
+    # If direct conversion fails, try previous methods
+    for format in ['%d/%m/%Y', '%m/%d/%Y', '%Y-%m-%d', '%Y/%m/%d']:
+      try:
+        df["deployment.date"] = df["deployment.date"].apply(lambda x: datetime.datetime.strptime(x, format))
+      except (ValueError, TypeError):
+        pass  # Ignore parsing errors for this format, try the next one
+
+    # Fallback using datetime.datetime.strptime with infer_datetime_format=True
+    df["deployment.date"] = df["deployment.date"].apply(lambda x: datetime.datetime.strptime(x, "%Y-%m-%d") if pd.notnull(x) else pd.NaT)
+
+    # Ensure all values are now strings in YYYY-MM-DD format
+    df["deployment.date"] = df["deployment.date"].apply(lambda x: x.strftime("%Y-%m-%d") if pd.notnull(x) else pd.NaT)
+
   except Exception as e:
     print(f"Error converting dates: {e}")  # Handle exceptions more specifically if needed
+
   return df
 
 def preprocess_subfolders(image_data_path):
@@ -194,7 +288,7 @@ preprocessed_subfolders = preprocess_subfolders(image_data_path)
 
 
 if metadata is not None:
-    metadata = convert_dates(metadata)  # Convert Dates to YYYY-MM-DD format  #Convert on a copy to avoid modifying original data
+    metadata = convert_dates_in_dataframe(metadata)  # Convert Dates to YYYY-MM-DD format  #Convert on a copy to avoid modifying original data
     noMatches=[]
     for index, row in metadata.iterrows():
         matches = find_matching_subfolders(row, preprocessed_subfolders)
