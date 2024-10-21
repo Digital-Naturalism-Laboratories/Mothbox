@@ -27,23 +27,26 @@ import json
 METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data\Mothbox data - metadata_2024-10-20.csv"
 IMAGE_DATA_PATH=r"C:\Users\andre\Desktop\Mothbox data"
 
-def convert_row_to_coco(row, csv_headers):
-  """Converts a CSV row to COCO metadata, dynamically adding annotations based on specified fields."""
-  coco_data = {
-    #"image_id": 1,  # Replace with a unique image ID
-    #"width": 800,  # Replace with actual image width
-    #"height": 600,  # Replace with actual image height
-    "metadata": []
+def convert_row_to_json(row, csv_headers):
+  """Converts a CSV row to json metadata, dynamically adding annotations based on specified fields."""
+  json_data = {
+      #"image_id": 1,  # Replace with a unique image ID
+      #"width": 800,  # Replace with actual image width
+      #"height": 600,  # Replace with actual image height
+      "metadata": []
   }
 
   for field_name, field_value in row.items():
+    # Check if the value is NaN or None
+    if pd.isnull(field_value):
+      field_value = ""  # Replace NaN or None with an empty string
+      #continue  # Skip NaN or None values
 
-    coco_data["metadata"].append({
+    json_data["metadata"].append({
         field_name: field_value,  # Replace with a unique annotation ID
     })
 
-
-  return coco_data
+  return json_data
 
 
 def find_date_folders(directory):
@@ -305,13 +308,13 @@ if metadata is not None:
               # ... iterate through JPEG files
               for jpeg_file in jpeg_files:
                   # Create COCO metadata
-                  coco_data = convert_row_to_coco(row, csv_headers)
+                  json_data = convert_row_to_json(row, csv_headers)
 
                   # Write metadata to a JSON file
                   #print(jpeg_file)
                   metadata_filename = os.path.splitext(jpeg_file)[0] + "_metadata.json"
                   with open(metadata_filename, "w") as f:
-                      json.dump(coco_data, f, indent=4)
+                      json.dump(json_data, f, indent=4)
         else:
            rowname=str(row["area"]) +str(row["point"]) + str(row["mothbox"]) +str(row["deployment.date"])
            noMatches.append(rowname)
