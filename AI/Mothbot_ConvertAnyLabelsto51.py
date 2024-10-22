@@ -1,7 +1,7 @@
 import os
 import json
 
-INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01'
+INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 
 
 
@@ -113,35 +113,35 @@ def create_fiftyone_json(image_path, labels, image_height, image_width, metadata
   sample = {
       "_id": len(data["samples"]) + 1,
       "filepath": image_path,
-      
+
       "uploaded":metadata["uploaded"],
+
       "mothbox":metadata["mothbox"],
-      "sd.card":metadata["sd.card"],
-      "software":metadata["software"],
+      "sdcard":metadata["sd.card"], #Dots might be bad in key name
+      "software":str(metadata["software"]),
       "sheet":metadata["sheet"],
       "country":metadata["country"],
       "area":metadata["area"],
-      "point":metadata["point"],
+      "punto":metadata["point"], #point is maybe a special key name in 51
+
 
       "location": {
-        #'id': ''
         'point':[metadata["longitude"],metadata["latitude"]],
         'line':None,
         'tags':[metadata["area"],metadata["point"],"height_"+str(metadata["height (placement above ground)"])]
-
       },
+
+
 
       "habitat":metadata["habitat"],
       "program":metadata["program"],
       "notes":metadata["notes"],
       "crew":metadata["crew"],
-      "deployment.name":metadata["deployment.name"],
-      "deployment.date":metadata["deployment.date"],
-      "collect.date":metadata["collect.date"],
-      "data.storage.location":metadata["data.storage.location"],
+      "deployment_name":metadata["deployment.name"], #warning dots like . break json keys
+      "deployment_date":metadata["deployment.date"],
+      "collect_date":metadata["collect.date"],
+      "data_storage_location":metadata["data.storage.location"],
       "basis_of_record": "machine_observation",
-
-
 
 
 
