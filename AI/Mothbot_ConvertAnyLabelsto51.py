@@ -1,7 +1,7 @@
 import os
 import json
 
-INPUT_PATH = 'F:/Panama/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
+INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01'
 
 
 
@@ -40,13 +40,30 @@ def load_anylabeling_data(json_path):
   with open(json_path, 'r') as f:
     data = json.load(f)
 
-  # Extract relevant data
   image_path = data['imagePath']
-  labels = data['shapes']
+
   image_height = data['imageHeight']
   image_width = data['imageWidth']
+  
+  # Extract relevant data from the detection labels
+  labels = data['shapes']
+  
+  metadata = {}
+  for item in data.get('metadata', []):   #todo, fix METAdata inserting function so only one meta data deeep (no unecessary metadata)
+    if 'metadata' in item:
+      for subitem in item['metadata']:
+        key, value = list(subitem.items())[0]
+        metadata[key] = value
+    else:
+      key, value = list(item.items())[0]
+      metadata[key] = value
 
-  return image_path, labels, image_height, image_width
+  
+  
+  
+  
+  
+  return image_path, labels, image_height, image_width, metadata
 
 
 def handle_rotation_annotation(points):
@@ -80,7 +97,7 @@ def handle_rotation_annotation(points):
 
 
 
-def create_fiftyone_json(image_path, labels, image_height, image_width):
+def create_fiftyone_json(image_path, labels, image_height, image_width, metadata):
   """Creates a FiftyOne JSON sample manually.
 
   Args:
@@ -96,6 +113,38 @@ def create_fiftyone_json(image_path, labels, image_height, image_width):
   sample = {
       "_id": len(data["samples"]) + 1,
       "filepath": image_path,
+      
+      "uploaded":metadata["uploaded"],
+      "mothbox":metadata["mothbox"],
+      "sd.card":metadata["sd.card"],
+      "software":metadata["software"],
+      "sheet":metadata["sheet"],
+      "country":metadata["country"],
+      "area":metadata["area"],
+      "point":metadata["point"],
+
+      "location": {
+        #'id': ''
+        'point':[metadata["longitude"],metadata["latitude"]],
+        'line':None,
+        'tags':[metadata["area"],metadata["point"],"height_"+str(metadata["height (placement above ground)"])]
+
+      },
+
+      "habitat":metadata["habitat"],
+      "program":metadata["program"],
+      "notes":metadata["notes"],
+      "crew":metadata["crew"],
+      "deployment.name":metadata["deployment.name"],
+      "deployment.date":metadata["deployment.date"],
+      "collect.date":metadata["collect.date"],
+      "data.storage.location":metadata["data.storage.location"],
+      "basis_of_record": "machine_observation",
+
+
+
+
+
       "tags": [],
       "_media_type": "image",
       #"_dataset_id": 1,  # Replace with your desired dataset ID
@@ -104,6 +153,8 @@ def create_fiftyone_json(image_path, labels, image_height, image_width):
           "detections": []
       }
   }
+
+
 
   for label in labels:
     direction = label['direction']
@@ -160,13 +211,13 @@ data = {
 
 # Iterate through pairs and load data
 for image_path, json_path in pairs:
-  image_path, labels, image_height, image_width = load_anylabeling_data(json_path)
-  #TODO: Also look for a _metadata.json file. Load its data, and send to the next function too
-  
-  sample = create_fiftyone_json(image_path, labels, image_height, image_width)
+  image_path, labels, image_height, image_width, metadata = load_anylabeling_data(json_path)
+  #TODO: #New thoughts: assume metadata was loaded in the json file, add it if it is there. # OLD THOUGHTS:Also look for a _metadata.json file. Load its data, and send to the next function too
+
+  sample = create_fiftyone_json(image_path, labels, image_height, image_width, metadata)
   data["samples"].append(sample)
 
 # Save the final FiftyOne JSON
 with open(INPUT_PATH+"/"+"samples.json", "w") as f:
     json.dump(data, f, indent=4)
-    print("finish")
+    print("finished creating: "+INPUT_PATH+"/"+"samples.json")
