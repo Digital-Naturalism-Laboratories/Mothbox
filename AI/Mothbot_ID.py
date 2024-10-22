@@ -136,68 +136,6 @@ def process_files_in_directory(data_path, classifier, taxon_rank = "order"):
     return predictions
 
 
-def create_json(predictions, json_path):
-  """
-  Creates a JSON file with the specified structure, containing image filepaths and tags.
-
-  Args:
-    predictions: Dictionary with image filepaths as keys and prediction at given rank as values.
-    json_path: String. Path to image directory (they must be in a 'data' folder at the lowest level for V51);
-        JSON for V51 must be saved in directory containing the data directory.
-
-  Returns:
-    None
-  """
-  samples = []
-  #dataset_id = str(uuid.uuid4()) #test and see if it accepts a UUID later! 
-  i=0
-  for filepath in predictions.keys():
-    # revist structure of JSON for V51
-    i=i+1
-    sample = {
-      "_id": i,
-      "filepath": filepath,
-      #Todo: Handle multiple taxonomic ranks and other tags like "identified_by"
-      "tags": [TAXONOMIC_RANK+"_"+predictions[filepath]],
-      "_media_type": "image",
-      "_dataset_id": "2"
-    }
-    #TODO potentiallyadd METADATA to this file!!
-    samples.append(sample)
-
-  data = {"samples": samples}
-  with open(json_path, "w") as f:
-    json.dump(data, f, indent=2)
-
-
-def get_labels(data_path, taxon_rank = "order", flag_holes = True, taxa_path = "taxa.csv", taxa_cols = TAXA_COLS, device = "cpu"):
-  '''
-  Generates the list of taxa to predict, loads the CustomLabelsClassifier with that list, then gets the predictions and generates a JSON for V51 interface.
-  
-  Args:
-    data_path: String. The path to the directory containing files.
-    taxon_rank: String. Taxonomic rank to which to classify images (must be present as column in the taxa csv at file_path). Default: "order".
-    flag_holes: Boolean. Whether to flag holes and smudges (adds "hole" and "circle" to taxon_keys). Default: True.
-    taxa_path: String. Path to the taxa CSV file.
-    taxa_cols: List of strings. Taxonomic columns in taxa CSV to load (default: ["kingdom", "phylum", "class", "order", "family", "genus", "species"]).
-    device: String. Device on which to run pybioclip ('cpu' or 'cuda'). Default: 'cpu'.
-  '''
-  if "/data" in data_path:
-    json_path = f"{data_path.split(sep = '/data')[0]}/samples.json"
-  else:
-    json_path = os.path.join(data_path, "..", "samples.json")
-  taxon_keys_list = load_taxon_keys(taxa_path = taxa_path, taxa_cols = taxa_cols, taxon_rank = taxon_rank.lower(), flag_holes = flag_holes)
-  print(f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}")
-
-
-  # TODO use different type of classifier
-  print("Loading CustomLabelsClassifier...")
-  classifier = CustomLabelsClassifier(taxon_keys_list, device = device)
-  predictions = process_files_in_directory(data_path, classifier)
-  
-  create_json(predictions, json_path)
-
-
 def find_date_folders(directory):
     """
     Recursively searches through a directory and its subdirectories for folders
@@ -245,7 +183,33 @@ def find_matching_pairs(folder_path):
 
   return pairs
 
+def find_matching_triplets(folder_path):
+    """Finds matching triplets of .jpg, .json, and potentially _metadata.json files in a given folder.
 
+    Args:
+        folder_path: The path to the folder to search.
+
+    Returns:
+        A list of tuples, where each tuple contains the paths to a matching .jpg, .json, and optionally _metadata.json file.
+    """
+
+    jpg_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.jpg')]
+    json_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.json')]
+    metadata_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.json')]
+
+    triplets = []
+    for jpg_file in jpg_files:
+        json_file = jpg_file.replace('.jpg', '.json')
+        metadata_file = jpg_file.replace('.jpg', '_metadata.json')
+
+        if json_file in json_files:
+            triplet = (jpg_file, json_file) #TDODO it isn't detecting the metadatas
+            if metadata_file in metadata_files: 
+              triplet += (metadata_file,)
+              #print("found metadata")
+            triplets.append(triplet)
+
+    return triplets
 
 
 def calculate_rotation_angle(points):
@@ -406,16 +370,16 @@ def crop_image(image, x, y, w, h):
 def warp_rotation(img, points):
     #cnt = np.array(points)
     cnt=np.array([[int(x), int(y)] for x, y in points])
-    print("shape of cnt: {}".format(cnt.shape))
+    #print("shape of cnt: {}".format(cnt.shape))
     rect = cv2.minAreaRect(cnt)
-    print("rect: {}".format(rect))
+    #print("rect: {}".format(rect))
 
     # the order of the box points: bottom left, top left, top right,
     # bottom right
     box = cv2.boxPoints(rect)
     box = np.int0(box)
 
-    print("bounding box: {}".format(box))
+    #print("bounding box: {}".format(box))
     #cv2.drawContours(img, [box], 0, (0, 0, 255), 2)
 
     # get width and height of the detected rectangle
@@ -507,6 +471,36 @@ def update_json_labels_and_scores(json_path, index, pred, conf):
     with open(json_path, "w") as f:
         json.dump(data, f, indent=4)
 
+
+def add_metadata_to_json(json_path, metadata_path):
+  """Adds metadata from a separate JSON file to an existing JSON file.
+
+  Args:
+    json_path: The path to the JSON file to modify.
+    metadata_path: The path to the JSON file containing the metadata to add.
+  """
+
+  with open(json_path, 'r') as f:
+    data = json.load(f)
+
+  with open(metadata_path, 'r') as f:
+    metadata = json.load(f)
+
+  # Check if the 'metadata' key exists in the data
+  if 'metadata' not in data:
+    data['metadata'] = []  # Create an empty 'metadata' list if it doesn't exist
+
+  # Add metadata to the existing 'metadata' list, avoiding duplicates
+  for key, value in metadata.items():
+    if not any(item.get(key) for item in data['metadata']):
+      data['metadata'].append({key: value})
+
+  with open(json_path, 'w') as f:
+    json.dump(data, f, indent=4)
+
+  print(f"Metadata added to {json_path}")
+
+
 def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,taxon_rank,device, flag_holes):
   #load up the Pybioclip stuff
   taxon_keys_list = load_taxon_keys(taxa_path = taxa_path, taxa_cols = taxa_cols, taxon_rank = taxon_rank.lower(), flag_holes = flag_holes)
@@ -517,15 +511,14 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
 
   # Next process each pair and generate temporary files for the ROI of each detection in each image
   # Iterate through image-JSON pairs
-  for image_path, json_path in matching_pairs_img_json_detections:
+  for triplet in matching_trips_img_json__metadata:
     # Load JSON file and extract rotated rectangle coordinates for each detection
-    
-    #coordinates_of_detections_list = get_rotated_rect_coordinates(json_path)
+    image_path, json_path = triplet[:2]  # Always extract the first two elements
     coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
     print(len(coordinates_of_detections_list)," detections in "+json_path)
     if coordinates_of_detections_list:
       for idx, coordinates in enumerate(coordinates_of_detections_list):
-        print(coordinates)
+        #print(coordinates)
         image = Image.open(image_path)
         cv_image = np.array(image)
         cv_image = cv_image[:, :, ::-1]  # Reverse the channels (BGR to RGB)
@@ -540,21 +533,11 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
         #next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
         update_json_labels_and_scores(json_path, idx, pred, conf)
 
-
-        """ 
-        # Display the cropped image using OpenCV
-        cv2.imshow("Cropped Image", cv_image_cropped)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
-        """
-        
-
-
-        # Manually delete the temporary file
-        #os.remove(crop_path)
-  # Then feed this list of ROIs to pybioclip
-
-
+    if len(triplet) > 2:
+        metadata_path = triplet[2]  # Extract metadata path if available
+        # Process the triplet with metadata
+        add_metadata_to_json(json_path,metadata_path)
+    
 
 
 if __name__ == "__main__":
@@ -578,18 +561,18 @@ if __name__ == "__main__":
   print("Found ",str(len(date_folders))+" dated folders potentially full of mothbox data")
 
   # Look in each dated folder for .json detection files and the matching .jpgs
-  matching_pairs_img_json_detections=[]
+  matching_trips_img_json__metadata=[]
 
   for folder in date_folders:
-    list_of_pairs=find_matching_pairs(folder)
-    matching_pairs_img_json_detections=update_main_list(matching_pairs_img_json_detections, list_of_pairs)
+    list_of_triplets=find_matching_triplets(folder)
+    matching_trips_img_json__metadata=update_main_list(matching_trips_img_json__metadata, list_of_triplets)
 
-  print("Found ",str(len(matching_pairs_img_json_detections))+" pairs of images and detection data to try to ID")
+  print("Found ",str(len(matching_trips_img_json__metadata))+" pairs of images and detection data to try to ID")
   #Example Pair
-  print(matching_pairs_img_json_detections[0])
+  print(matching_trips_img_json__metadata[0])
 
   # Now that we have our data to be processed in a big list, it's time to load up the Pybioclip stuff
-  process_matched_img_json_pairs(matching_pairs_img_json_detections, taxon_rank = args.rank,
+  process_matched_img_json_pairs(matching_trips_img_json__metadata, taxon_rank = args.rank,
              flag_holes = args.flag_holes,
              taxa_path = args.taxa_csv,
              taxa_cols = args.taxa_cols,
@@ -606,15 +589,6 @@ if __name__ == "__main__":
 
 
 
-"""
-  get_labels(data_path=args.data_path,
-             taxon_rank = args.rank,
-             flag_holes = args.flag_holes,
-             taxa_path = args.taxa_csv,
-             taxa_cols = args.taxa_cols,
-             device = "cuda")
-
-"""
 
 
 '''
