@@ -465,7 +465,7 @@ def update_json_labels_and_scores(json_path, index, pred, conf):
 
     if 0 <= index < len(data["shapes"]):
         shape = data["shapes"][index]
-        shape["label"] = pred
+        shape["label"] = TAXONOMIC_RANK+"_"+pred
         shape["score"] = conf
 
     with open(json_path, "w") as f:
@@ -511,11 +511,15 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
 
   # Next process each pair and generate temporary files for the ROI of each detection in each image
   # Iterate through image-JSON pairs
+  index=0
+  numoftriplets = len(matching_trips_img_json__metadata)
   for triplet in matching_trips_img_json__metadata:
     # Load JSON file and extract rotated rectangle coordinates for each detection
     image_path, json_path = triplet[:2]  # Always extract the first two elements
+    
     coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
-    print(len(coordinates_of_detections_list)," detections in "+json_path)
+    index=index+1
+    print(str(index)+"/"+str(numoftriplets)+"  | "+str(len(coordinates_of_detections_list))," detections in "+json_path)
     if coordinates_of_detections_list:
       for idx, coordinates in enumerate(coordinates_of_detections_list):
         #print(coordinates)
