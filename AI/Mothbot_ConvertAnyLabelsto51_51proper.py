@@ -359,8 +359,11 @@ for image_path, json_path in pairs:
   #data["samples"].append(sample)
 
 # Create dataset
-dataset = fo.Dataset("my-detection-dataset")
+#dataset = fo.Dataset("my-detection-dataset")
+dataset = fo.Dataset()
+
 dataset.add_samples(samples)
+
 
 session = fo.launch_app(dataset)
 session.wait()

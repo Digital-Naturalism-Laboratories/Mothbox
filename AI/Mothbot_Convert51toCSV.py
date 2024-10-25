@@ -4,7 +4,7 @@ import os
 import datetime
 import csv
 
-INPUT_PATH = 'F:/Panama/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
+INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01\test'
 
 def json_to_csv(input_path):
     # Get the last folder name from the input path
@@ -35,7 +35,7 @@ def json_to_csv(input_path):
         for sample in data["samples"]:
             for gtruth in sample["ground_truth"]: #will need to do this for all ground truth and all predictions
 
-                for detection in gtruth["detections"]:
+                for detection in gtruth[0]:
                     #tags are the only thing directly editable in 51
                     identified_by=""
                     taxon_id=""
@@ -47,7 +47,7 @@ def json_to_csv(input_path):
                     species=""
                     commonName=""
                     scientificName=""
-                    for tag in detection["tags"]:
+                    for tag in detection[0]:
                         # Check for prefixes
                         if tag.startswith("identifiedBy"):
                             identified_by = tag[len("identifiedBy"):].strip()
@@ -71,38 +71,38 @@ def json_to_csv(input_path):
                             scientific_name = tag[len("scientificName"):].strip()
 
                     row = {
-                        "label_type":"ground_truth", 
-                        "filepath":sample[""],
-                        "id": sample["id"],
-                        "image_id": sample["image_id"],
+                        #"label_type":"ground_truth", 
+                        "filepath":sample["filepath"],
+                        #"id": sample["_id"],
+                        #"image_id": sample["image_id"],
                         
-                        "basisOfRecord": sample["basisOfRecord"],
-                        "datasetID":sample["datasetID"],
-                        "parentEventID":sample[""],
-                        "eventID":sample[""],
-                        "occurrenceID":sample[""],
-                        "verbatimEventDate":sample[""],
-                        "eventDate":sample[""],
-                        "eventTime":sample[""],
+                        #"basisOfRecord": sample["basisOfRecord"],
+                        "datasetID":sample["_dataset_id"],
+                        #"parentEventID":sample[""],
+                        #"eventID":sample[""],
+                        #"occurrenceID":sample[""],
+                        #"verbatimEventDate":sample[""],
+                        #"eventDate":sample[""],
+                        #"eventTime":sample[""],
 
-                        "mothbox":sample[""],
-                        "software":sample[""],
-                        "sheet":sample[""],
-                        "country":sample[""],
-                        "area":sample[""], 
-                        "point":sample[""],
-                        "latitude":sample[""],
-                        "longitude":sample[""],
-                        "height":sample[""],
-                        "deployment_name":sample[""],
-                        "deployment_data":sample[""],
-                        "sample_time":sample[""],
-                        "collect_date":sample[""], 
-                        "data_storage_location":sample[""],
-                        "crew":sample[""], 
-                        "notes":sample[""], 
-                        "schedule":sample[""],
-                        "habitat":sample[""], 
+                        "mothbox":sample["mothbox"],
+                        "software":sample["software"],
+                        "sheet":sample["sheet"],
+                        "country":sample["country"],
+                        "area":sample["area"], 
+                        "point":sample["punto"],
+                        #"latitude":sample[""],
+                        #"longitude":sample[""],
+                        #"height":sample["height"],
+                        #"deployment_name":sample[""],
+                        #"deployment_data":sample[""],
+                        #"sample_time":sample[""],
+                        #"collect_date":sample[""], 
+                        #"data_storage_location":sample[""],
+                        #"crew":sample[""], 
+                        #"notes":sample[""], 
+                        #"schedule":sample[""],
+                        #"habitat":sample[""], 
         
                         #detection specific
                         "identifiedBy":identified_by,
@@ -115,9 +115,9 @@ def json_to_csv(input_path):
                         "species":species,
                         "commonName":commonName,
                         "scientificName":scientificName,
-                        "detection_type": detection["_cls"],
-                        "points":detection["bounding_box"],
-                        "detectionID":detection["_id"]
+                        #"detection_type": detection["_cls"],
+                        #"points":tag["bounding_box"],
+                        #"detectionID":tag["_id"]
 
                         
                     }
