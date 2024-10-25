@@ -25,7 +25,6 @@ Arguments:
 
 """
 
-from bioclip import CustomLabelsClassifier, Rank
 import cv2.version
 import polars as pl
 import os
@@ -41,14 +40,26 @@ import numpy as np
 from PIL import Image
 
 import cv2
+import torch
+import json
+import PIL.Image
+import polars as pl
+import numpy as np
+from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
+from bioclip.predict import create_classification_dict
 
 #import uuid
 INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01"  # raw string
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"
-
+taxa_path = SPECIES_LIST
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
-TAXONOMIC_RANK ="order"
+TAXONOMIC_RANK ="order" # Change this to "species" to target just the species in your CSV
+
+# Paths to save filtered list of embeddings/labels
+image_embeddings_path = INPUT_PATH+"/image_embeddings.npy"
+embedding_labels_path = INPUT_PATH+"/embedding_labels.json"
+
 
 def parse_args():
   parser = argparse.ArgumentParser()
@@ -75,14 +86,13 @@ def load_taxon_keys(taxa_path, taxa_cols, taxon_rank = "order", flag_holes = Tru
   Returns:
     taxon_keys: List. A list of taxon keys to feed to the CustomClassifier for bioCLIP classification.
   '''
-  df = pl.read_csv(taxa_path, low_memory = False).select(taxa_cols).filter(pl.col(taxon_rank).is_not_null())
-  taxon_keys = pl.Series(df.select(pl.col(taxon_rank)).unique()).to_list()
+  print("Reading", taxa_path, "extracting", taxon_rank, "values.")
+  df = pl.read_csv(taxa_path)
+  target_values = set(pl.Series(df.select(taxon_rank).drop_nulls()).str.to_lowercase().unique().to_list())
+  print("Found", len(target_values), taxon_rank, "values: ")
+  print(target_values)
   
-  if flag_holes:
-    taxon_keys.append("circle")
-    taxon_keys.append("hole")
-  
-  return taxon_keys
+  return target_values
 
 
 def process_files_in_directory(data_path, classifier, taxon_rank = "order"):
@@ -439,13 +449,9 @@ def get_bioclip_prediction_PILimg(img, classifier):
   for probs in classifier.create_probabilities(img_features, classifier.txt_features):
       topk = probs.topk(k=5)
       index=0
-      for i, prob in zip(topk.indices, topk.values):
-          if(index==0):
-            index=index+1
-            winner=str(classifier.classes[i])
-            winnerprob=str(prob.item())
-          #print(classifier.classes[i], prob.item())
-
+      for pred in classifier.format_grouped_probs("", probs, rank=Rank.ORDER, min_prob=1e-9, k=5):
+          print(pred)
+          
   # Print the winner
   print(f"  This is the winner: {winner} with a score of {winnerprob}")
   return winner, winnerprob
@@ -505,10 +511,49 @@ def add_metadata_to_json(json_path, metadata_path):
 def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,taxon_rank,device, flag_holes):
   #load up the Pybioclip stuff
   taxon_keys_list = load_taxon_keys(taxa_path = taxa_path, taxa_cols = taxa_cols, taxon_rank = taxon_rank.lower(), flag_holes = flag_holes)
+  target_values=taxon_keys_list
   print(f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}")
 
-  print("Loading CustomLabelsClassifier...")
-  classifier = CustomLabelsClassifier(taxon_keys_list, device = device)
+  print("Loading TOL classifier")
+  classifier = TreeOfLifeClassifier()
+  print("TOL: number of labels:", len(classifier.txt_names))
+  print("TOL: image embeddings shape:", classifier.txt_features.shape)
+
+
+  print("Finding embeddings matching the targets.")
+  found_items = []
+  for i, txt_name in enumerate(classifier.txt_names):
+      name_dict = create_classification_dict(txt_name, Rank.SPECIES)
+      if name_dict[taxon_rank].lower() in target_values:
+          found_items.append((i, txt_name))
+
+  print("Found", len(found_items), "embeddings matching the", taxon_rank, "values")
+
+
+
+  print("Building the image embedding tensor")
+  txt_feature_ary = []
+  new_txt_names = []
+  for i, txt_name in found_items:
+      txt_feature_ary.append(classifier.txt_features[:,i])
+      new_txt_names.append(txt_name)
+
+  print("Creating embeddings for custom labels")
+  custom_labels = ["hole", "circle"]
+  clc = CustomLabelsClassifier(custom_labels)
+  for i,label in enumerate(custom_labels):
+      txt_feature_ary.append(clc.txt_features[:,i])
+      new_txt_names.append([[
+            label,  
+            label,
+            label,
+            label,
+            label,
+            '',
+            label],
+          label])
+
+  new_txt_feature = torch.stack(txt_feature_ary, dim=1)
 
   # Next process each pair and generate temporary files for the ROI of each detection in each image
   # Iterate through image-JSON pairs

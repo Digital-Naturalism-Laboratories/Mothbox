@@ -273,6 +273,7 @@ def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
       score = label['score']
       points = label['points']
       shape_type = label['shape_type']
+      ID_type = label['description']
 
       if shape_type == 'rotation':
         top, left, width, height = handle_rotation_annotation(points)
@@ -286,9 +287,10 @@ def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
         # Create a FiftyOne detection
         detection = fo.Detection(
           tags=[label_name],
-          label="boringlabel",
+          label="creature",
           bounding_box=[left, top, width, height],
-          attributes={}
+          attributes={},
+          label_type=ID_type
         )
         sample.ground_truth.detections.append(detection)
 

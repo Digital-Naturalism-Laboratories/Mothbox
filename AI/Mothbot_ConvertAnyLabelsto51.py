@@ -112,7 +112,8 @@ def create_fiftyone_json(image_path, labels, image_height, image_width, metadata
 
   sample = {
       "_id": len(data["samples"]) + 1,
-      "filepath": image_path,
+      #"filepath":"adeptTurca_2024_09_01__22_05_05_HDR0.jpg",  #image_path, #temp change this
+      "filepath":image_path, #temp change this
 
       "uploaded":metadata["uploaded"],
 
