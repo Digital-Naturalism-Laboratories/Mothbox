@@ -559,7 +559,8 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
             label],
           label])
 
-  new_txt_feature = torch.stack(txt_feature_ary, dim=1)
+  classifier.txt_names = new_txt_names
+  classifier.txt_features = torch.stack(txt_feature_ary, dim=1)
 
   # Next process each pair and generate temporary files for the ROI of each detection in each image
   # Iterate through image-JSON pairs
