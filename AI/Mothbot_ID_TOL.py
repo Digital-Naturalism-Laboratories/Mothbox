@@ -54,8 +54,8 @@ SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryP
 taxa_path = SPECIES_LIST
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
-TAXONOMIC_RANK ="order" # Change this to "species" to target just the species in your CSV
-
+TAXONOMIC_RANK ="species" # Change this to "species" to target just the species in your CSV
+DOMAIN = "Eukarya" # basically our "creature" tag? figure we will never see a prokaryote on the mothbox
 # Paths to save filtered list of embeddings/labels
 image_embeddings_path = INPUT_PATH+"/image_embeddings.npy"
 embedding_labels_path = INPUT_PATH+"/embedding_labels.json"
@@ -449,8 +449,14 @@ def get_bioclip_prediction_PILimg(img, classifier):
   for probs in classifier.create_probabilities(img_features, classifier.txt_features):
       topk = probs.topk(k=5)
       index=0
-      for pred in classifier.format_grouped_probs("", probs, rank=Rank.ORDER, min_prob=1e-9, k=5):
+      for pred in classifier.format_grouped_probs("", probs, rank=Rank.ORDER, min_prob=1e-9, k=5):  #this shows the depth of the order it searches to
           print(pred)
+          if(index==0):
+            kingdom = pred['kingdom']
+            winner = pred['order']
+            winnerprob = pred['score']
+            winningdict=pred
+          index=index+1
           
   # Print the winner
   print(f"  This is the winner: {winner} with a score of {winnerprob}")
