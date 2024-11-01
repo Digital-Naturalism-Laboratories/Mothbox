@@ -55,6 +55,7 @@ taxa_path = SPECIES_LIST
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
 TAXONOMIC_RANK ="species" # Change this to "species" to target just the species in your CSV
+TAXONOMIC_RANK_FILTER=Rank.ORDER
 DOMAIN = "Eukarya" # basically our "creature" tag? figure we will never see a prokaryote on the mothbox
 
 # Paths to save filtered list of embeddings/labels
@@ -450,7 +451,7 @@ def get_bioclip_prediction_PILimg(img, classifier):
   for probs in classifier.create_probabilities(img_features, classifier.txt_features):
       topk = probs.topk(k=5)
       index=0
-      for pred in classifier.format_grouped_probs("", probs, rank=Rank.ORDER, min_prob=1e-9, k=5):  #this shows the depth of the order it searches to
+      for pred in classifier.format_grouped_probs("", probs, rank=TAXONOMIC_RANK_FILTER, min_prob=1e-9, k=5):  #TODO make it so tags get saved for all ranks, and specify deepest rank? #this shows the depth of the order it searches to
           print(pred)
           if(index==0):
             kingdom = pred['kingdom']
@@ -461,9 +462,9 @@ def get_bioclip_prediction_PILimg(img, classifier):
           
   # Print the winner
   print(f"  This is the winner: {winner} with a score of {winnerprob}")
-  return winner, winnerprob
+  return winner, winnerprob, winningdict
 
-def update_json_labels_and_scores(json_path, index, pred, conf):
+def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
     """Updates the "label" and "score" entries for a specific shape in a JSON file.
 
     Args:
@@ -472,15 +473,20 @@ def update_json_labels_and_scores(json_path, index, pred, conf):
         pred: The new label value.
         conf: The new score value.
     """
-
+    #TODO add winningdict here correctly
     with open(json_path, "r") as f:
         data = json.load(f)
 
     if 0 <= index < len(data["shapes"]):
         shape = data["shapes"][index]
-        shape["label"] = TAXONOMIC_RANK+"_"+pred
+        shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "")+"_"+pred
         shape["score"] = conf
         shape["description"] = "ID_BioCLIP" #Put what Robot did the ID, put "" for ground_truth
+
+        # Add taxonomic ranks only if they exist in the winningdict
+        for rank in ["kingdom", "phylum", "class", "order", "family", "genus", "species"]:
+            if rank in winningdict:
+                shape[rank] = winningdict[rank]
 
     with open(json_path, "w") as f:
         json.dump(data, f, indent=4)
@@ -588,10 +594,10 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
         #pil_image = Image.fromarray(cv_image_cropped)
         pil_image = Image.fromarray(cv_image_cropped[:, :, ::-1] ) #numpy images are inverted
 
-        pred, conf = get_bioclip_prediction_PILimg(pil_image,classifier)
+        pred, conf, winningdict = get_bioclip_prediction_PILimg(pil_image,classifier)
 
         #next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
-        update_json_labels_and_scores(json_path, idx, pred, conf)
+        update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
 
     if len(triplet) > 2:
         metadata_path = triplet[2]  # Extract metadata path if available
