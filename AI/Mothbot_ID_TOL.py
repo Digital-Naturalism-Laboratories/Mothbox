@@ -56,6 +56,7 @@ TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"
 
 TAXONOMIC_RANK ="species" # Change this to "species" to target just the species in your CSV
 DOMAIN = "Eukarya" # basically our "creature" tag? figure we will never see a prokaryote on the mothbox
+
 # Paths to save filtered list of embeddings/labels
 image_embeddings_path = INPUT_PATH+"/image_embeddings.npy"
 embedding_labels_path = INPUT_PATH+"/embedding_labels.json"

@@ -7,7 +7,7 @@ import json
 import PIL.Image
 
 
-INPUT_PATH = r"F:\Panama\Gamboa_Coates_FlatHapuku_2024_08_26"  # raw string
+INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01"  # raw string
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\train14_3000Images_batch2_1408px\weights\best.pt"
 IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
