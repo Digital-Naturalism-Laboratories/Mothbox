@@ -303,7 +303,7 @@ def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
 
 
 
-def generate_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(256, -1)):
+def generate_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(1024, -1)):
     """
     Generates thumbnails for images in a FiftyOne dataset, skipping existing ones.
 
@@ -394,73 +394,74 @@ def add_sample_to_dataset(dataset, image_path, labels, metadata):
   dataset.save()
 
 
-### START
-pairs = find_image_json_pairs(INPUT_PATH)
+if __name__ == "__main__":
+  ### START
+  pairs = find_image_json_pairs(INPUT_PATH)
 
 
-dataset = fo.Dataset()
-samples=[]
-# Iterate through pairs and load data
-for image_path, json_path in pairs:
-  image_path, labels, image_height, image_width, metadata = load_anylabeling_data(json_path)
-  #TODO: #New thoughts: assume metadata was loaded in the json file, add it if it is there. # OLD THOUGHTS:Also look for a _metadata.json file. Load its data, and send to the next function too
-  sample = create_sample(image_path, labels, image_height, image_width, metadata, dataset )
-  samples.append(sample)
-  #sample = create_fiftyone_json(image_path, labels, image_height, image_width, metadata)
-  #data["samples"].append(sample)
+  dataset = fo.Dataset()
+  samples=[]
+  # Iterate through pairs and load data
+  for image_path, json_path in pairs:
+    image_path, labels, image_height, image_width, metadata = load_anylabeling_data(json_path)
+    #TODO: #New thoughts: assume metadata was loaded in the json file, add it if it is there. # OLD THOUGHTS:Also look for a _metadata.json file. Load its data, and send to the next function too
+    sample = create_sample(image_path, labels, image_height, image_width, metadata, dataset )
+    samples.append(sample)
+    #sample = create_fiftyone_json(image_path, labels, image_height, image_width, metadata)
+    #data["samples"].append(sample)
 
-# Create dataset
-#dataset = fo.Dataset("my-detection-dataset")
-dataset = fo.Dataset()
+  # Create dataset
+  #dataset = fo.Dataset("my-detection-dataset")
+  dataset = fo.Dataset()
 
-dataset.add_samples(samples)
-
-
-# Generate some thumbnail images
-generate_thumbnails(dataset)
+  dataset.add_samples(samples)
 
 
-# Customize the sidebar configuration
-# Get the default sidebar groups for the dataset
-sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(dataset)
-
-# Collapse the `tags`, `metadata`, and `primitives` sections by default
-sidebar_groups[0].expanded = False  # tags
-sidebar_groups[1].expanded = False  # metadata
-sidebar_groups[3].expanded = False  # primitives
-
-# Expand only the `ground_truth` field within `labels`
-for group in sidebar_groups:
-    if group.name == "labels":
-        # Expand the labels group
-        group.expanded = True
+  # Generate some thumbnail images
+  generate_thumbnails(dataset)
 
 
-# Apply the sidebar groups configuration to the app config
-dataset.app_config.sidebar_groups = sidebar_groups
+  # Customize the sidebar configuration
+  # Get the default sidebar groups for the dataset
+  sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(dataset)
+
+  # Collapse the `tags`, `metadata`, and `primitives` sections by default
+  sidebar_groups[0].expanded = False  # tags
+  sidebar_groups[1].expanded = False  # metadata
+  sidebar_groups[3].expanded = False  # primitives
+
+  # Expand only the `ground_truth` field within `labels`
+  for group in sidebar_groups:
+      if group.name == "labels":
+          # Expand the labels group
+          group.expanded = True
 
 
-dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
-dataset.app_config.grid_media_field = "thumbnail_path"
+  # Apply the sidebar groups configuration to the app config
+  dataset.app_config.sidebar_groups = sidebar_groups
 
-# Save the updated app config
-dataset.compute_metadata()
 
-dataset.save()
+  dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
+  dataset.app_config.grid_media_field = "thumbnail_path"
 
-#view=dataset.select_fields(["filepath", "ground_truth"])
-#view = dataset.to_patches("ground_truth") # This form defaults to full res view, need other_fields to view thumbs in patch view
-view = dataset.to_patches("ground_truth", other_fields=["thumbnail_path"])
+  # Save the updated app config
+  dataset.compute_metadata()
 
-print(dataset)
-#dataset.to_patches(my_field).export("/path/", dataset_type=fo.types.ImageClassificationDirectoryTree, label_field=my_field)
-session = fo.launch_app(view)
-#session = fo.launch_app()
-session.wait()
+  dataset.save()
 
-"""
-# Save the final FiftyOne JSON
-with open(INPUT_PATH+"/"+"samples.json", "w") as f:
-    json.dump(data, f, indent=4)
-    print("finished creating: "+INPUT_PATH+"/"+"samples.json")
-"""
+  #view=dataset.select_fields(["filepath", "ground_truth"])
+  #view = dataset.to_patches("ground_truth") # This form defaults to full res view, need other_fields to view thumbs in patch view
+  view = dataset.to_patches("ground_truth", other_fields=["thumbnail_path"])
+
+  print(dataset)
+  #dataset.to_patches(my_field).export("/path/", dataset_type=fo.types.ImageClassificationDirectoryTree, label_field=my_field)
+  session = fo.launch_app(view)
+  #session = fo.launch_app()
+  session.wait(-1)
+
+  """
+  # Save the final FiftyOne JSON
+  with open(INPUT_PATH+"/"+"samples.json", "w") as f:
+      json.dump(data, f, indent=4)
+      print("finished creating: "+INPUT_PATH+"/"+"samples.json")
+  """
