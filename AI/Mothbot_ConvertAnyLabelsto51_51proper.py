@@ -1,6 +1,7 @@
 import os
 import json
 import fiftyone as fo
+import fiftyone.utils.image as foui
 INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 
 
@@ -242,7 +243,7 @@ def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
     image_path = os.path.join(data_dir, image_filename)
 
     # Load image dimensions (adjust as needed based on your image format)
-    image_height, image_width = get_image_dimensions(image_path)
+    #image_height, image_width = get_image_dimensions(image_path)
 
     # Load labels from JSON file
     with open(os.path.join(labels_dir, os.path.splitext(image_filename)[0] + ".json"), "r") as f:
@@ -299,6 +300,54 @@ def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
         pass
 
   return dataset
+
+
+
+def generate_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(256, -1)):
+    """
+    Generates thumbnails for images in a FiftyOne dataset, skipping existing ones.
+
+    Args:
+        dataset: The FiftyOne dataset.
+        output_dir: The directory to save the thumbnails.
+        target_size: The target size for the thumbnails (width, height).
+
+    Returns:
+        None
+    """
+    samples_to_process = []
+
+    for sample in dataset:
+        filename = os.path.basename(sample.filepath)
+        thumbnail_path = f"{output_dir}/{filename}"
+        sample["thumbnail_path"]=thumbnail_path
+        sample.save()
+        if not os.path.exists(thumbnail_path):
+            samples_to_process.append(sample)
+        else:
+          sample["thumbnail_path"]=thumbnail_path
+
+    if samples_to_process:
+            # Create a new dataset with the samples to process
+      dataset_to_process = fo.Dataset()
+      dataset_to_process.add_samples(samples_to_process)
+      print("making extra thumbnails")
+      print(samples_to_process)
+      foui.transform_images(
+          dataset_to_process,
+          size=target_size,
+          output_field="thumbnail_path",
+          output_dir=output_dir,
+      )
+    dataset.save()
+    return dataset
+
+
+
+
+
+
+
 
 def add_sample_to_dataset(dataset, image_path, labels, metadata):
   """Adds a sample to a FiftyOne dataset.
@@ -367,7 +416,46 @@ dataset = fo.Dataset()
 dataset.add_samples(samples)
 
 
-session = fo.launch_app(dataset)
+# Generate some thumbnail images
+generate_thumbnails(dataset)
+
+
+# Customize the sidebar configuration
+# Get the default sidebar groups for the dataset
+sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(dataset)
+
+# Collapse the `tags`, `metadata`, and `primitives` sections by default
+sidebar_groups[0].expanded = False  # tags
+sidebar_groups[1].expanded = False  # metadata
+sidebar_groups[3].expanded = False  # primitives
+
+# Expand only the `ground_truth` field within `labels`
+for group in sidebar_groups:
+    if group.name == "labels":
+        # Expand the labels group
+        group.expanded = True
+
+
+# Apply the sidebar groups configuration to the app config
+dataset.app_config.sidebar_groups = sidebar_groups
+
+
+dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
+dataset.app_config.grid_media_field = "thumbnail_path"
+
+# Save the updated app config
+dataset.compute_metadata()
+
+dataset.save()
+
+#view=dataset.select_fields(["filepath", "ground_truth"])
+#view = dataset.to_patches("ground_truth") # This form defaults to full res view, need other_fields to view thumbs in patch view
+view = dataset.to_patches("ground_truth", other_fields=["thumbnail_path"])
+
+print(dataset)
+#dataset.to_patches(my_field).export("/path/", dataset_type=fo.types.ImageClassificationDirectoryTree, label_field=my_field)
+session = fo.launch_app(view)
+#session = fo.launch_app()
 session.wait()
 
 """
