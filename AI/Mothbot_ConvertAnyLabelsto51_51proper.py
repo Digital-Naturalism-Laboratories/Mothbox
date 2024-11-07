@@ -4,6 +4,23 @@ import fiftyone as fo
 import fiftyone.utils.image as foui
 INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 
+from hashlib import md5
+from pathlib import Path
+import numpy as np
+from fiftyone.utils.patches import extract_patch
+from PIL import Image
+import fiftyone.core.labels as fol
+
+
+def export_image(img: Image.Image, out_dir = Path.cwd() / 'tmp',basefilename="none_wrong", detectionnum=-1) -> str:
+    #stem = md5(img.tobytes()).hexdigest()
+
+    #patchfilename=basefilename.split('.')[0] + "_" + str(detectionnum) + "." + basefilename.split('.')[1]
+    #thumbnail_path =   Path(out_dir) / f'{patchfilename}' 
+    #thumbnail_path.parent.mkdir(parents=True, exist_ok=True)
+    if not os.path.exists(thumbnail_path):
+      img.save(thumbnail_path)
+    return str(thumbnail_path)
 
 
 
@@ -99,7 +116,7 @@ def handle_rotation_annotation(points):
 
 
 def create_sample(image_path, labels, image_height, image_width, metadata,ds):
-  """Creates a FiftyOne JSON sample manually.
+  """Creates a FiftyOne sample using the 51 python interface
 
   Args:
     image_path: The path to the image file.
@@ -126,52 +143,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
 
   )
    
-  """ 
-    sample = {
-      "_id": len(data["samples"]) + 1,
-      "filepath": image_path,
+  detections_list=[]
 
-      "uploaded":metadata["uploaded"],
-
-      "mothbox":metadata["mothbox"],
-      "sdcard":metadata["sd.card"], #Dots might be bad in key name
-      "software":str(metadata["software"]),
-      "sheet":metadata["sheet"],
-      "country":metadata["country"],
-      "area":metadata["area"],
-      "punto":metadata["point"], #point is maybe a special key name in 51
-
-
-      "location": {
-        'point':[metadata["longitude"],metadata["latitude"]],
-        'line':None,
-        'tags':[metadata["area"],metadata["point"],"height_"+str(metadata["height (placement above ground)"])]
-      },
-
-
-
-      "habitat":metadata["habitat"],
-      "program":metadata["program"],
-      "notes":metadata["notes"],
-      "crew":metadata["crew"],
-      "deployment_name":metadata["deployment.name"], #warning dots like . break json keys
-      "deployment_date":metadata["deployment.date"],
-      "collect_date":metadata["collect.date"],
-      "data_storage_location":metadata["data.storage.location"],
-      "basis_of_record": "machine_observation",
-
-
-
-      "tags": [],
-      "_media_type": "image",
-      #"_dataset_id": 1,  # Replace with your desired dataset ID
-      "ground_truth": {
-          "_cls": "Detections",
-          "detections": []
-      }
-  }
-  """
-  detections=[]
 
 
   for label in labels:
@@ -181,6 +154,19 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
     points = label['points']
     shape_type = label['shape_type']
 
+    desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+    # Filter the dictionary to include only desired keys
+    filtered_dict = {key: value for key, value in label.items() if key in desired_keys}
+
+    # Format the filtered dictionary
+    taxonomic_list = []
+    for key, value in filtered_dict.items():
+        formatted_entry = f"{key.upper()}_{value}"
+        taxonomic_list.append(formatted_entry)
+
+
+    #print(taxonomic_list)
+    #input()
     if shape_type == 'rotation':
       top, left, width, height = handle_rotation_annotation(points)
       
@@ -194,35 +180,25 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
       width /= image_width
       height /= image_height
       # Create a FiftyOne detection
-      jsondetection = {
-          #"_id": len(sample["ground_truth"]["detections"]) + 1,
-          "_cls": "Detection",
-          "attributes": {},
-          "tags": [label_name],
-          "label": "boringlabel",
-          "bounding_box": [
-              left,
-              top,
-              width,
-              height
-          ]
-      }
-
-      detection=fo.Detection(
-        tags=[label_name],
+      
+      detection=fol.Detection(
+        tags=taxonomic_list,
         label="creature",
         bounding_box=[left, top, width, height],
         attributes={}
+
       )
 
       #sample["ground_truth"]["detections"].append(detection)
-      detections.append(detection)
+      detections_list.append(detection)
     elif shape_type == 'polygon':
       # Handle polygon annotations (adjust as needed)
       None
+  #print("num detections")
+  #print(len(detections_list))
+  sample["ground_truth"] = fol.Detections(detections=detections_list)
 
-    sample["ground_truth"] = fo.Detections(detections=detections)
-    return sample
+  return sample
 
 
 def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
@@ -303,7 +279,7 @@ def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
 
 
 
-def generate_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(1024, -1)):
+def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(1024, -1)):
     """
     Generates thumbnails for images in a FiftyOne dataset, skipping existing ones.
 
@@ -315,83 +291,64 @@ def generate_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_siz
     Returns:
         None
     """
+    patch_folder_path=Path(INPUT_PATH+"/patches")
+    patch_folder_path.mkdir(parents=True, exist_ok=True)
+
+    
     samples_to_process = []
+    patch_samples = []
 
-    for sample in dataset:
+    for sample in dataset.iter_samples(progress=True):
         filename = os.path.basename(sample.filepath)
-        thumbnail_path = f"{output_dir}/{filename}"
-        sample["thumbnail_path"]=thumbnail_path
-        sample.save()
-        if not os.path.exists(thumbnail_path):
-            samples_to_process.append(sample)
-        else:
-          sample["thumbnail_path"]=thumbnail_path
+        #thumbnail_path = f"{output_dir}/{filename}"
+        #sample["thumbnail_path"]=thumbnail_path
+        patch_path = INPUT_PATH+"/patches"
 
-    if samples_to_process:
-            # Create a new dataset with the samples to process
-      dataset_to_process = fo.Dataset()
-      dataset_to_process.add_samples(samples_to_process)
-      print("making extra thumbnails")
-      print(samples_to_process)
-      foui.transform_images(
-          dataset_to_process,
-          size=target_size,
-          output_field="thumbnail_path",
-          output_dir=output_dir,
-      )
+
+
+        #print(sample)
+        detections= sample.ground_truth.detections
+        #print(detections)
+        #print(len(detections))
+        #print(dataset.get_field_schema())
+        #input("Press Enter to continue...")
+        detnum=0
+
+        for detection in detections:
+            patchfilename=filename.split('.')[0] + "_" + str(detnum) + "." +filename.split('.')[1]
+            patchfullpath = Path(patch_folder_path) / f'{patchfilename}' 
+            #export_image(patch, patch_path,filename, detnum)
+
+
+            if not os.path.exists(patchfullpath): #skip thumbs already generated
+              img = np.array(Image.open(sample.filepath)) #this is a bit slow, it loads an image for every detection instead of every sample, BUT it skips this if the samples were already created
+              patch = Image.fromarray(extract_patch( img, detection=detection))
+              img.save(patchfullpath)
+
+            patch_sample = fo.Sample(
+                filepath= sample.filepath, 
+                filepath_patch = str(patchfullpath),
+                tags= detection.tags
+
+            )
+            patch_samples.append(patch_sample)
+            detnum=detnum+1
+
+        #sample.save()
+
+        
+    
+    patch_ds = fo.Dataset()
+    patch_ds.add_samples(patch_samples)
+
+    patch_ds.app_config['media_fields'] = ['filepath_patch', 'filepath']
+    patch_ds.app_config['grid_media_field'] = 'filepath_patch'
+    patch_ds.app_config['modal_media_field'] = 'filepath_patch'
+    patch_ds.save()
+
     dataset.save()
-    return dataset
+    return patch_ds
 
-
-
-
-
-
-
-
-def add_sample_to_dataset(dataset, image_path, labels, metadata):
-  """Adds a sample to a FiftyOne dataset.
-
-  Args:
-    dataset (fiftyone.Dataset): The FiftyOne dataset.
-    image_path (str): Path to the image file.
-    labels (list): List of labels.
-    metadata (dict): Metadata for the sample.
-  """
-
-  sample = dataset.create_sample(
-    filepath=image_path,
-    ground_truth=fo.Detections(detections=[])
-  )
-
-  # Add metadata fields
-  for field, value in metadata.items():
-    sample[field] = value
-
-  for label in labels:
-    direction = label['direction']
-    label_name = label['label']
-    score = label['score']
-    points = label['points']
-    shape_type = label['shape_type']
-
-    # ... (handle shape types and create detections as needed)
-
-    # Example for rotation:
-    if shape_type == 'rotation':
-      top, left, width, height = handle_rotation_annotation(points)
-
-      # Normalize bounding box coordinates (adjust as needed)
-
-      detection = fo.Detection(
-        tags=[label_name],
-        label="boringlabel",
-        bounding_box=[left, top, width, height],
-        attributes={}
-      )
-      sample.ground_truth.detections.append(detection)
-
-  dataset.save()
 
 
 if __name__ == "__main__":
@@ -418,45 +375,54 @@ if __name__ == "__main__":
 
 
   # Generate some thumbnail images
-  generate_thumbnails(dataset)
+  #print(dataset.samples)
+  #input("Press Enter to continue...")
+  thepatch_dataset = generate_patch_thumbnails(dataset)
 
 
   # Customize the sidebar configuration
   # Get the default sidebar groups for the dataset
-  sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(dataset)
+  sidebar_groups = fo.DatasetAppConfig.default_sidebar_groups(thepatch_dataset)
 
   # Collapse the `tags`, `metadata`, and `primitives` sections by default
-  sidebar_groups[0].expanded = False  # tags
+  sidebar_groups[0].expanded = True  # tags
   sidebar_groups[1].expanded = False  # metadata
   sidebar_groups[3].expanded = False  # primitives
 
   # Expand only the `ground_truth` field within `labels`
   for group in sidebar_groups:
-      if group.name == "labels":
+      if group.name == "sample tags":
           # Expand the labels group
           group.expanded = True
 
 
   # Apply the sidebar groups configuration to the app config
-  dataset.app_config.sidebar_groups = sidebar_groups
+  thepatch_dataset.app_config.sidebar_groups = sidebar_groups
 
 
-  dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
-  dataset.app_config.grid_media_field = "thumbnail_path"
+  #dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
+  #dataset.app_config.grid_media_field = "thumbnail_path"
 
   # Save the updated app config
-  dataset.compute_metadata()
+  #dataset.compute_metadata()
 
-  dataset.save()
+  thepatch_dataset.save()
 
   #view=dataset.select_fields(["filepath", "ground_truth"])
   #view = dataset.to_patches("ground_truth") # This form defaults to full res view, need other_fields to view thumbs in patch view
-  view = dataset.to_patches("ground_truth", other_fields=["thumbnail_path"])
+  
+  
+  #view = dataset.to_patches("ground_truth", other_fields=["thumbnail_path"])
 
-  print(dataset)
+  #print(dataset)
   #dataset.to_patches(my_field).export("/path/", dataset_type=fo.types.ImageClassificationDirectoryTree, label_field=my_field)
-  session = fo.launch_app(view)
+#  session = fo.launch_app(view)
   #session = fo.launch_app()
+
+  print(thepatch_dataset)
+
+  session = fo.launch_app(thepatch_dataset)
+
   session.wait(-1)
 
   """
