@@ -128,6 +128,9 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
     A FiftyOne JSON sample.
   """
 
+
+  #print(metadata)
+
   sample = fo.Sample(
       filepath= image_path,
 
@@ -140,9 +143,19 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
       country=metadata["country"],
       area=metadata["area"],
       punto=metadata["point"], #point is maybe a special key name in 51
-
+      sd=metadata["sd.card"],
   )
-   
+  latitude=metadata["latitude"]
+  longitude=metadata["longitude"]
+  geolocation = fo.GeoLocation(latitude=latitude, longitude=longitude)
+  sample["location"]=geolocation
+  sample["longitude"]=longitude
+  sample["latitude"]=latitude
+
+
+
+
+
   detections_list=[]
 
 
@@ -153,7 +166,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
     score = label['score']
     points = label['points']
     shape_type = label['shape_type']
-
+    ID_type = label['description']
+    
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
     # Filter the dictionary to include only desired keys
     filtered_dict = {key: value for key, value in label.items() if key in desired_keys}
@@ -185,7 +199,11 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
         tags=taxonomic_list,
         label="creature",
         bounding_box=[left, top, width, height],
-        attributes={}
+        #attributes={},
+        label_type=ID_type,
+        confidence=score,
+        shape=shape_type,
+        direction=direction
 
       )
 
@@ -199,84 +217,6 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
   sample["ground_truth"] = fol.Detections(detections=detections_list)
 
   return sample
-
-
-def create_fiftyone_dataset(data_dir, labels_dir, metadata_field):
-  """Creates a FiftyOne dataset from multiple JSON files.
-
-  Args:
-    data_dir (str): Path to the directory containing image files.
-    labels_dir (str): Path to the directory containing JSON label files.
-    metadata_field (str): Name of the field in the JSON files containing metadata.
-
-  Returns:
-    fiftyone.Dataset: The created FiftyOne dataset.
-  """
-
-  dataset = fo.Dataset()
-
-  for image_filename in sorted(os.listdir(data_dir)):
-    image_path = os.path.join(data_dir, image_filename)
-
-    # Load image dimensions (adjust as needed based on your image format)
-    #image_height, image_width = get_image_dimensions(image_path)
-
-    # Load labels from JSON file
-    with open(os.path.join(labels_dir, os.path.splitext(image_filename)[0] + ".json"), "r") as f:
-      labels = json.load(f)
-
-    # Load metadata from JSON file
-    metadata = labels[metadata_field]
-
-    # Create a FiftyOne sample
-    sample = dataset.create_sample(
-      filepath=image_path,
-      ground_truth=fo.Detections(detections=[])
-    )
-
-    # Add metadata fields
-    for field, value in metadata.items():
-      if field in ["longitude", "latitude"]:
-        # Handle location data (adjust as needed)
-        if not sample.exists("location"):
-          sample["location"] = fo.Geolocation(point=[0, 0], line=None, tags=[])
-        sample["location"][field] = value
-      else:
-        sample[field] = value
-
-    for label in labels:
-      direction = label['direction']
-      label_name = label['label']
-      score = label['score']
-      points = label['points']
-      shape_type = label['shape_type']
-      ID_type = label['description']
-
-      if shape_type == 'rotation':
-        top, left, width, height = handle_rotation_annotation(points)
-
-        # Normalize bounding box coordinates
-        top /= image_height
-        left /= image_width
-        width /= image_width
-        height /= image_height
-
-        # Create a FiftyOne detection
-        detection = fo.Detection(
-          tags=[label_name],
-          label="creature",
-          bounding_box=[left, top, width, height],
-          attributes={},
-          label_type=ID_type
-        )
-        sample.ground_truth.detections.append(detection)
-
-      elif shape_type == 'polygon':
-        # Handle polygon annotations (adjust as needed)
-        pass
-
-  return dataset
-
 
 
 def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(1024, -1)):
@@ -325,10 +265,41 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
               patch = Image.fromarray(extract_patch( img, detection=detection))
               img.save(patchfullpath)
 
+            # Extract coordinates
+            xmin, ymin, xmax, ymax = detection.bounding_box
+
+            # Calculate width and height
+            p_width = xmax - xmin
+            p_height = ymax - ymin
+            
             patch_sample = fo.Sample(
                 filepath= sample.filepath, 
                 filepath_patch = str(patchfullpath),
-                tags= detection.tags
+                tags= detection.tags,
+                label="creature",
+                location=sample.location,
+                longitude=sample.longitude,
+                latitude=sample.latitude,
+                bounding_box=detection.bounding_box,
+                patch_width=p_width,
+                patch_height=p_height,
+                #attributes={},
+                label_type=detection.label_type,
+                confidence=detection.confidence,
+                shape=detection.shape,
+                direction=detection.direction,
+                #direction = sample.direction,
+                #label_name = label['label']
+                
+                uploaded=sample.uploaded,
+
+                mothbox=sample.mothbox,
+                sdcard=sample.sdcard, #Dots might be bad in key name
+                software=sample.software,
+                sheet=sample.sheet,
+                country=sample.country,
+                area=sample.area,
+                punto=sample.punto, #point is maybe a special key name in 51
 
             )
             patch_samples.append(patch_sample)
@@ -387,7 +358,16 @@ if __name__ == "__main__":
   # Collapse the `tags`, `metadata`, and `primitives` sections by default
   sidebar_groups[0].expanded = True  # tags
   sidebar_groups[1].expanded = False  # metadata
+  sidebar_groups[1].expanded = False  # labels
+
   sidebar_groups[3].expanded = False  # primitives
+
+  # Add a new group
+  #features_sg = fo.SidebarGroupDocument(name="Taxa Labels")
+  #features_sg.paths = ["sample tags"]
+  #sidebar_groups.append(features_sg)
+  
+
 
   # Expand only the `ground_truth` field within `labels`
   for group in sidebar_groups:
@@ -405,7 +385,7 @@ if __name__ == "__main__":
 
   # Save the updated app config
   #dataset.compute_metadata()
-
+  thepatch_dataset.compute_metadata()
   thepatch_dataset.save()
 
   #view=dataset.select_fields(["filepath", "ground_truth"])
@@ -420,8 +400,12 @@ if __name__ == "__main__":
   #session = fo.launch_app()
 
   print(thepatch_dataset)
+  # Sort the dataset by patch_width in ascending order
+  sorted_dataset = thepatch_dataset.sort_by("patch_width")
 
-  session = fo.launch_app(thepatch_dataset)
+  # Launch the FiftyOne App with the sorted view
+  session = fo.launch_app(sorted_dataset)
+  #session = fo.launch_app(thepatch_dataset)
 
   session.wait(-1)
 
