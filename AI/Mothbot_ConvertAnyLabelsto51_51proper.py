@@ -350,46 +350,25 @@ if __name__ == "__main__":
   # Collapse the `tags`, `metadata`, and `primitives` sections by default
   sidebar_groups[0].expanded = True  # tags
   sidebar_groups[1].expanded = False  # metadata
-  sidebar_groups[1].expanded = False  # labels
+  sidebar_groups[2].expanded = False  # labels
 
   sidebar_groups[3].expanded = False  # primitives
 
-  # Add a new group
-  #features_sg = fo.SidebarGroupDocument(name="Taxa Labels")
-  #features_sg.paths = ["sample tags"]
-  #sidebar_groups.append(features_sg)
-  
-
-
-  # Expand only the `ground_truth` field within `labels`
-  for group in sidebar_groups:
-      if group.name == "sample tags":
-          # Expand the labels group
-          group.expanded = True
 
 
   # Apply the sidebar groups configuration to the app config
   thepatch_dataset.app_config.sidebar_groups = sidebar_groups
 
-
-  #dataset.app_config.media_fields = ["filepath", "thumbnail_path"]
-  #dataset.app_config.grid_media_field = "thumbnail_path"
-
   # Save the updated app config
-  #dataset.compute_metadata()
   thepatch_dataset.compute_metadata()
   thepatch_dataset.save()
 
-  #view=dataset.select_fields(["filepath", "ground_truth"])
-  #view = dataset.to_patches("ground_truth") # This form defaults to full res view, need other_fields to view thumbs in patch view
-  
-  
-  #view = dataset.to_patches("ground_truth", other_fields=["thumbnail_path"])
-
-  #print(dataset)
-  #dataset.to_patches(my_field).export("/path/", dataset_type=fo.types.ImageClassificationDirectoryTree, label_field=my_field)
-#  session = fo.launch_app(view)
-  #session = fo.launch_app()
+  # Export the dataset without saving the image data (It gets saved as "sample.json" and "metadata.json" in the inputpath folder)
+  thepatch_dataset.export(
+      export_dir=INPUT_PATH,
+      dataset_type=fo.types.FiftyOneDataset,
+      export_media=False  # This ensures only labels and metadata are saved
+  )
 
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order
@@ -397,7 +376,7 @@ if __name__ == "__main__":
 
   # Launch the FiftyOne App with the sorted view
   session = fo.launch_app(sorted_dataset)
-  #session = fo.launch_app(thepatch_dataset)
+
 
   session.wait(-1)
 
