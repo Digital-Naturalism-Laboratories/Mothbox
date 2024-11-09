@@ -12,17 +12,6 @@ from PIL import Image
 import fiftyone.core.labels as fol
 
 
-def export_image(img: Image.Image, out_dir = Path.cwd() / 'tmp',basefilename="none_wrong", detectionnum=-1) -> str:
-    #stem = md5(img.tobytes()).hexdigest()
-
-    #patchfilename=basefilename.split('.')[0] + "_" + str(detectionnum) + "." + basefilename.split('.')[1]
-    #thumbnail_path =   Path(out_dir) / f'{patchfilename}' 
-    #thumbnail_path.parent.mkdir(parents=True, exist_ok=True)
-    if not os.path.exists(thumbnail_path):
-      img.save(thumbnail_path)
-    return str(thumbnail_path)
-
-
 
 def find_image_json_pairs(input_dir):
   """Finds pairs of image and JSON files with the same name in a given directory.
@@ -169,15 +158,18 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
     ID_type = label['description']
     
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+
+
     # Filter the dictionary to include only desired keys
     filtered_dict = {key: value for key, value in label.items() if key in desired_keys}
 
-    # Format the filtered dictionary
-    taxonomic_list = []
-    for key, value in filtered_dict.items():
-        formatted_entry = f"{key.upper()}_{value}"
-        taxonomic_list.append(formatted_entry)
-
+    # Check for unwanted values
+    unwanted_values = {"circle", "hole", "error"}
+    if any(value in unwanted_values for value in filtered_dict.values()):
+        taxonomic_list = ["Error"]
+    else:
+        # Format the filtered dictionary
+        taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
     #print(taxonomic_list)
     #input()
@@ -200,7 +192,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
         label="creature",
         bounding_box=[left, top, width, height],
         #attributes={},
-        label_type=ID_type,
+        ID_type=ID_type,
         confidence=score,
         shape=shape_type,
         direction=direction
@@ -273,10 +265,10 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
             p_height = ymax - ymin
             
             patch_sample = fo.Sample(
-                filepath= sample.filepath, 
-                filepath_patch = str(patchfullpath),
+                filepath_fullimage= sample.filepath, 
+                filepath = str(patchfullpath),
                 tags= detection.tags,
-                label="creature",
+                label="detection",
                 location=sample.location,
                 longitude=sample.longitude,
                 latitude=sample.latitude,
@@ -284,7 +276,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
                 patch_width=p_width,
                 patch_height=p_height,
                 #attributes={},
-                label_type=detection.label_type,
+                ID_type=detection.ID_type,
                 confidence=detection.confidence,
                 shape=detection.shape,
                 direction=detection.direction,
@@ -312,9 +304,9 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
     patch_ds = fo.Dataset()
     patch_ds.add_samples(patch_samples)
 
-    patch_ds.app_config['media_fields'] = ['filepath_patch', 'filepath']
-    patch_ds.app_config['grid_media_field'] = 'filepath_patch'
-    patch_ds.app_config['modal_media_field'] = 'filepath_patch'
+    patch_ds.app_config['media_fields'] = ['filepath', 'filepath_fullimage']
+    patch_ds.app_config['grid_media_field'] = 'filepath'
+    patch_ds.app_config['modal_media_field'] = 'filepath'
     patch_ds.save()
 
     dataset.save()
