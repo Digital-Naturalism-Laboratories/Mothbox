@@ -2,7 +2,6 @@ import os
 import json
 import fiftyone as fo
 import fiftyone.utils.image as foui
-INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 
 from hashlib import md5
 from pathlib import Path
@@ -14,7 +13,8 @@ import fiftyone.core.labels as fol
 # Import the function from json_to_csv_converter.py
 from Mothbot_Convert51toCSV import json_to_csv
 
-
+INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
+UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 def find_image_json_pairs(input_dir):
   """Finds pairs of image and JSON files with the same name in a given directory.
@@ -127,15 +127,13 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
       filepath= image_path,
 
       uploaded=metadata["uploaded"],
-
+      sd=metadata["sd.card"],
       mothbox=metadata["mothbox"],
-      sdcard=metadata["sd.card"], #Dots might be bad in key name
       software=str(metadata["software"]),
       sheet=metadata["sheet"],
       country=metadata["country"],
       area=metadata["area"],
       punto=metadata["point"], #point is maybe a special key name in 51
-      sd=metadata["sd.card"],
   )
   latitude=metadata["latitude"]
   longitude=metadata["longitude"]
@@ -143,6 +141,16 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
   sample["location"]=geolocation
   sample["longitude"]=longitude
   sample["latitude"]=latitude
+  sample["ground_height"]=metadata["height (placement above ground)"]
+  
+  sample["deployment_name"]=metadata["deployment.name"]
+  sample["deployment_date"]=metadata["deployment.date"]
+  sample["collect_date"]=metadata["collect.date"]
+  sample["data_storage_location"]=metadata["data.storage.location"]
+  sample["crew"]=metadata["crew"]
+  sample["notes"]=metadata["notes"]
+  sample["program"]=metadata["program"]
+  sample["habitat"]=metadata["habitat"]
 
 
 
@@ -158,7 +166,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
     score = label['score']
     points = label['points']
     shape_type = label['shape_type']
-    ID_type = label['description']
+    ID_by = "IDby_"+label['description']
     
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
@@ -174,6 +182,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
         # Format the filtered dictionary
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
+    taxonomic_list.append(ID_by)
     #print(taxonomic_list)
     #input()
     if shape_type == 'rotation':
@@ -195,7 +204,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
         label="creature",
         bounding_box=[left, top, width, height],
         #attributes={},
-        ID_type=ID_type,
+        #ID_by=ID_by,
         confidence=score,
         shape=shape_type,
         direction=direction
@@ -279,7 +288,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
                 patch_width=p_width,
                 patch_height=p_height,
                 #attributes={},
-                ID_type=detection.ID_type,
+                #ID_by=detection.ID_by,
                 confidence=detection.confidence,
                 shape=detection.shape,
                 direction=detection.direction,
@@ -289,12 +298,21 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
                 uploaded=sample.uploaded,
 
                 mothbox=sample.mothbox,
-                sdcard=sample.sdcard, #Dots might be bad in key name
+                sd=sample.sd, #Dots might be bad in key name
                 software=sample.software,
                 sheet=sample.sheet,
                 country=sample.country,
                 area=sample.area,
                 punto=sample.punto, #point is maybe a special key name in 51
+                ground_height=sample.ground_height,
+                deployment_name = sample.deployment_name,
+                deployment_date = sample.deployment_date,
+                collect_date = sample.collect_date,
+                data_storage_location = sample.data_storage_location,
+                crew=sample.crew,
+                notes=sample.notes,
+                program=sample.program,
+                habitat=sample.habitat,
 
             )
             patch_samples.append(patch_sample)
@@ -374,7 +392,7 @@ if __name__ == "__main__":
   )
 
   # Let's automatically generate the CSV now too, just to be nice
-  json_to_csv(INPUT_PATH)
+  json_to_csv(INPUT_PATH, UTC_OFFSET)
 
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order
