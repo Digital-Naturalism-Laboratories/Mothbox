@@ -11,6 +11,9 @@ from fiftyone.utils.patches import extract_patch
 from PIL import Image
 import fiftyone.core.labels as fol
 
+# Import the function from json_to_csv_converter.py
+from Mothbot_Convert51toCSV import json_to_csv
+
 
 
 def find_image_json_pairs(input_dir):
@@ -370,12 +373,16 @@ if __name__ == "__main__":
       export_media=False  # This ensures only labels and metadata are saved
   )
 
+  # Let's automatically generate the CSV now too, just to be nice
+  json_to_csv(INPUT_PATH)
+
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order
   sorted_dataset = thepatch_dataset.sort_by("patch_width")
 
   # Launch the FiftyOne App with the sorted view
   session = fo.launch_app(sorted_dataset)
+  print("The app is running, open your browser to use, or press CTRL+C to kill app" )
 
 
   session.wait(-1)

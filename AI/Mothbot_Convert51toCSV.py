@@ -4,7 +4,9 @@ import os
 import datetime
 import csv
 
-INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01\test'
+
+
+INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01'
 
 def json_to_csv(input_path):
     # Get the last folder name from the input path
