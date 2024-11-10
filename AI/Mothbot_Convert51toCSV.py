@@ -28,9 +28,8 @@ def format_datetime_with_utc_offset(date_str, time_str, utc_offset):
     # Step 1: Parse the adjusted date and time
     original_datetime = datetime.strptime(f"{date_str} {time_str}", "%Y_%m_%d %H_%M_%S")
     
-    # Step 2: Apply the UTC offset (assuming utc_offset is in hours)
-    #adjusted_datetime = original_datetime + timedelta(hours=utc_offset)
-    adjusted_datetime = original_datetime # I don't think we need to adjust we just include the offset
+    # Step 2: Apply the UTC offset to set to UTC time (assuming utc_offset is in hours)
+    adjusted_datetime = original_datetime - timedelta(hours=utc_offset)
     
     # Step 3: Determine the sign and format the UTC offset
     offset_sign = "+" if utc_offset >= 0 else "-"
@@ -48,12 +47,15 @@ def format_datetime_with_utc_offset(date_str, time_str, utc_offset):
 def json_to_csv(input_path, utc_offset):
     # Get the last folder name from the input path
     folder_name = os.path.basename(input_path)
+    
+    # Get the parent folder name
+    parent_folder = os.path.basename(os.path.dirname(INPUT_PATH))
 
     # Get the current date in YYYY-MM-DD format
     current_date = datetime.today().strftime('%Y-%m-%d')
 
     # Create the output CSV file name
-    output_file = f"{folder_name}_exportdate_{current_date}.csv"
+    output_file = f"{parent_folder}_{folder_name}_exportdate_{current_date}.csv"
 
     # Append "samples.json" to the input path to get the correct file path
     json_file_path = os.path.join(input_path, "samples.json")
@@ -67,14 +69,16 @@ def json_to_csv(input_path, utc_offset):
         return
 
     with open(INPUT_PATH+"/"+output_file, "w", newline="") as csvfile:
-        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","height","deployment_name","deployment_data","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
+        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
 
         for sample in data["samples"]:
 
             #tags are the only thing directly editable in 51
+            detectionBy=""
             identified_by=""
+
             taxon_id=""
             phylum=""
             tclass=""
@@ -85,6 +89,8 @@ def json_to_csv(input_path, utc_offset):
             commonName=""
             scientificName=""
             kingdom=""
+
+            ground_height=""
 
 
 
@@ -133,8 +139,8 @@ def json_to_csv(input_path, utc_offset):
                 taxon_id = tag[len("taxonID"):].strip()
             elif tag.startswith("phylum"):
                 phylum = tag[len("phylum"):].strip()
-        #fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","height","deployment_name","deployment_data","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
-
+             #fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","height","deployment_name","deployment_date","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
+            #print("sample")
             row = {
                 #"label_type":"ground_truth", 
                 "filepath":sample["filepath"],
@@ -158,19 +164,22 @@ def json_to_csv(input_path, utc_offset):
                 "point":sample["punto"],
                 "latitude":sample["latitude"],
                 "longitude":sample["longitude"],
-                #"height":sample["height"],
-                #"deployment_name":sample[""],
-                #"deployment_data":sample[""],
-                #"sample_time":sample[""],
-                #"collect_date":sample[""], 
-                #"data_storage_location":sample[""],
-                #"crew":sample[""], 
-                #"notes":sample[""], 
-                #"schedule":sample[""],
-                #"habitat":sample[""], 
+                "ground_height":sample["ground_height"],
+                "deployment_name":sample["deployment_name"],
+                "deployment_date":sample["deployment_date"],
+                "sample_time":formattedUTC_dateTime,
+                "collect_date":sample["collect_date"], 
+                "data_storage_location":sample["data_storage_location"],
+                "crew":sample["crew"], 
+                "notes":sample["notes"], 
+                "schedule":sample["program"],
+                "habitat":sample["habitat"], 
 
                 #detection specific
+                "detectionBy": sample["detection_By"],
+
                 "identifiedBy":identified_by,
+
                 "taxonID":taxon_id,
                 "kingdom":kingdom,
                 "phylum":phylum,
@@ -191,5 +200,7 @@ def json_to_csv(input_path, utc_offset):
 
     print(f"CSV file created: {output_file}")
 
-# Call the function with the input path
-json_to_csv(INPUT_PATH, UTC_OFFSET)
+# This code will only run if this script is executed directly
+if __name__ == "__main__":
+    # Call the function with the input path
+    json_to_csv(INPUT_PATH, UTC_OFFSET)

@@ -16,6 +16,20 @@ from Mothbot_Convert51toCSV import json_to_csv
 INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
+
+
+class bcolors:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
+
+
 def find_image_json_pairs(input_dir):
   """Finds pairs of image and JSON files with the same name in a given directory.
 
@@ -54,7 +68,7 @@ def load_anylabeling_data(json_path):
 
   image_height = data['imageHeight']
   image_width = data['imageWidth']
-  
+  detectionBy= data['creator']
   # Extract relevant data from the detection labels
   labels = data['shapes']
   
@@ -73,7 +87,7 @@ def load_anylabeling_data(json_path):
   
   
   
-  return image_path, labels, image_height, image_width, metadata
+  return image_path, labels, image_height, image_width, metadata, detectionBy
 
 
 def handle_rotation_annotation(points):
@@ -107,7 +121,7 @@ def handle_rotation_annotation(points):
 
 
 
-def create_sample(image_path, labels, image_height, image_width, metadata,ds):
+def create_sample(image_path, labels, image_height, image_width, metadata,ds, creator):
   """Creates a FiftyOne sample using the 51 python interface
 
   Args:
@@ -134,6 +148,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
       country=metadata["country"],
       area=metadata["area"],
       punto=metadata["point"], #point is maybe a special key name in 51
+
   )
   latitude=metadata["latitude"]
   longitude=metadata["longitude"]
@@ -151,6 +166,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
   sample["notes"]=metadata["notes"]
   sample["program"]=metadata["program"]
   sample["habitat"]=metadata["habitat"]
+  sample["detection_By"]=creator
 
 
 
@@ -167,6 +183,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds):
     points = label['points']
     shape_type = label['shape_type']
     ID_by = "IDby_"+label['description']
+
     
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
@@ -313,6 +330,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
                 notes=sample.notes,
                 program=sample.program,
                 habitat=sample.habitat,
+                detection_By=sample.detection_By
 
             )
             patch_samples.append(patch_sample)
@@ -344,9 +362,9 @@ if __name__ == "__main__":
   samples=[]
   # Iterate through pairs and load data
   for image_path, json_path in pairs:
-    image_path, labels, image_height, image_width, metadata = load_anylabeling_data(json_path)
+    image_path, labels, image_height, image_width, metadata, creator = load_anylabeling_data(json_path)
     #TODO: #New thoughts: assume metadata was loaded in the json file, add it if it is there. # OLD THOUGHTS:Also look for a _metadata.json file. Load its data, and send to the next function too
-    sample = create_sample(image_path, labels, image_height, image_width, metadata, dataset )
+    sample = create_sample(image_path, labels, image_height, image_width, metadata, dataset, creator )
     samples.append(sample)
     #sample = create_fiftyone_json(image_path, labels, image_height, image_width, metadata)
     #data["samples"].append(sample)
@@ -400,7 +418,8 @@ if __name__ == "__main__":
 
   # Launch the FiftyOne App with the sorted view
   session = fo.launch_app(sorted_dataset)
-  print("The app is running, open your browser to use, or press CTRL+C to kill app" )
+  print(f"{bcolors.OKGREEN}The app is running, open your browser to use{bcolors.ENDC}")
+  print(f"{bcolors.WARNING} or press CTRL+C to kill app{bcolors.ENDC}")
 
 
   session.wait(-1)
