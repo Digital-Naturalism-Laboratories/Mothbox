@@ -6,10 +6,17 @@ import csv
 import re
 from datetime import datetime, timedelta
 from unidecode import unidecode
+from pygbif import species
+import unicodedata
+import pandas as pd
 
 INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01'
 UTC_OFFSET=-5 #panama
 INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01\testANDYID'
+# Specify the path to your taxonomy CSV file
+TAXA_LIST_PATH = r'C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv'
+
+TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
 def create_occurrence_id(filename, latitude, longitude):
     # Step 1: Process filename
@@ -78,7 +85,90 @@ def format_datetime_with_utc_offset(date_str, time_str, utc_offset):
     
     return final_output
 
-def json_to_csv(input_path, utc_offset):
+
+
+def get_deepest_classification(kingdom="", phylum="",class_="", order="", family="", genus="",species=""):
+    
+    for rank in reversed(TAXA):
+        # Handle the special case where 'class' is stored as 'class_'
+        var_name = rank if rank != "class" else "class_"
+        value = locals().get(var_name, "")
+        if value:
+            return rank, value
+    return None, None
+
+
+# Function to search GBIF for taxonomic details
+#This works great but can be VERY slow
+def get_gbif_info_online(rank, name):
+    try:
+        # Search GBIF by name
+        search_results = species.name_lookup(q=name, rank=rank, limit=1)
+        if search_results['results']:
+            result = search_results['results'][0]
+            taxon_id = result.get('key', None)
+            scientific_name = result.get('scientificName', None)
+            common_name = result.get('vernacularName', None)
+            
+            # Normalize names to ASCII to remove any special characters
+            if scientific_name:
+                scientific_name = unicodedata.normalize('NFKD', scientific_name).encode('ascii', 'ignore').decode('utf-8')
+            if common_name:
+                common_name = unicodedata.normalize('NFKD', common_name).encode('ascii', 'ignore').decode('utf-8')
+            
+            return taxon_id, scientific_name, common_name
+        else:
+            print(f"No GBIF results found for {rank}: {name}")
+            return None, None, None
+    except Exception as e:
+        print(f"Error fetching GBIF data: {e}")
+        return None, None, None
+
+# Function to load the taxa lookup CSV into a pandas DataFrame
+def load_taxa_lookup(taxa_list_path):
+    # Load the CSV into a pandas DataFrame
+    taxa_lookup_df = pd.read_csv(taxa_list_path)
+    return taxa_lookup_df
+
+# Function to find the deepest taxon information based on the deepest rank and value
+def find_deepest_taxon_info(taxa_list, taxa_values, taxa_lookup):
+    # Step 1: Determine the deepest rank and its corresponding value
+    deepest_rank = None
+    deepest_value = None
+
+    # Find the deepest rank with a non-empty value
+    for rank, value in zip(taxa_list, taxa_values):
+        if value != "" and value is not None:
+            deepest_rank = rank
+            deepest_value = value
+
+    # Check if we found a deepest rank and value
+    if deepest_rank and deepest_value:
+        #print(f"Deepest Rank: {deepest_rank}, Deepest Value: {deepest_value}")
+
+        # Step 2: Filter rows in taxa_lookup where 'taxonRank' matches the deepest rank (case insensitive)
+        filtered_rows = taxa_lookup[taxa_lookup['taxonRank'].str.lower() == deepest_rank.lower()]
+        
+        # Step 3: Find the row where the 'deepest_value' matches (case insensitive)
+        matched_row = filtered_rows[filtered_rows[deepest_rank].str.lower() == deepest_value.lower()]
+
+        # Step 4: If a match is found, return taxonKey and scientificName
+        if not matched_row.empty:
+            taxon_id = matched_row['taxonKey'].values[0]
+            scientific_name = matched_row['scientificName'].values[0]
+            return taxon_id, scientific_name
+        else:
+            print("No match found for the given deepest rank and value.")
+            return None, None
+    else:
+        print(str(taxa_values)+"No valid deepest rank and value found. Probably ID'ed as an Error category, don't worry")
+        return None, None
+    
+def json_to_csv(input_path, utc_offset,taxa_list_path):
+
+    #preload this stuff for faster lookup
+    taxa_lookup = load_taxa_lookup(taxa_list_path)
+
     # Get the last folder name from the input path
     folder_name = os.path.basename(input_path)
     
@@ -103,7 +193,7 @@ def json_to_csv(input_path, utc_offset):
         return
 
     with open(INPUT_PATH+"/"+output_file, "w", newline="") as csvfile:
-        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
+        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
 
@@ -113,7 +203,7 @@ def json_to_csv(input_path, utc_offset):
             detectionBy=""
             identified_by=""
 
-            taxon_id=""
+            kingdom=""
             phylum=""
             tclass=""
             order=""
@@ -122,8 +212,7 @@ def json_to_csv(input_path, utc_offset):
             species=""
             commonName=""
             scientificName=""
-            kingdom=""
-
+            taxon_id=""
             ground_height=""
 
 
@@ -165,9 +254,12 @@ def json_to_csv(input_path, utc_offset):
                 elif tag.startswith("commonName"):
                     common_name = tag[len("commonName"):].strip('_')
                 elif tag.startswith("scientificName"):
-                    scientific_name = tag[len("scientificName"):].strip('_')
+                    scientificName = tag[len("scientificName"):].strip('_')
                 elif tag.startswith("IDby"):
                     identified_by = tag[len("IDby"):].strip('_')
+                elif tag.startswith("ERROR"):
+                    commonName="ERROR"
+
 
             if tag.startswith("taxonID"):
                 taxon_id = tag[len("taxonID"):].strip('_')
@@ -175,6 +267,15 @@ def json_to_csv(input_path, utc_offset):
                 phylum = tag[len("phylum"):].strip('_')
              #fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","height","deployment_name","deployment_date","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
             #print("sample")
+
+
+            #deepest_rank, deepest_value = get_deepest_classification(kingdom, phylum,tclass, order, family, genus,species)
+
+            # Find the deepest available rank and its taxonomic details
+            taxa_values = [kingdom, phylum, tclass, order, family, genus, species]
+            taxon_id, scientificName= find_deepest_taxon_info(TAXA, taxa_values, taxa_lookup)
+
+
 
             occurenceID = create_occurrence_id(os.path.basename(sample["filepath"]),str(sample["latitude"]),str(sample["longitude"]))
             row = {
@@ -218,7 +319,6 @@ def json_to_csv(input_path, utc_offset):
 
                 "ID_confidence": sample["confidence"],
 
-                "taxonID":taxon_id,
                 "kingdom":kingdom,
                 "phylum":phylum,
                 "class":tclass,
@@ -228,6 +328,8 @@ def json_to_csv(input_path, utc_offset):
                 "species":species,
                 "commonName":commonName,
                 "scientificName":scientificName,
+                "taxonID":taxon_id,
+
                 #"detection_type": detection["_cls"],
                 #"points":tag["bounding_box"],
                 #"detectionID":tag["_id"]
@@ -241,4 +343,4 @@ def json_to_csv(input_path, utc_offset):
 # This code will only run if this script is executed directly
 if __name__ == "__main__":
     # Call the function with the input path
-    json_to_csv(INPUT_PATH, UTC_OFFSET)
+    json_to_csv(INPUT_PATH, UTC_OFFSET, TAXA_LIST_PATH)
