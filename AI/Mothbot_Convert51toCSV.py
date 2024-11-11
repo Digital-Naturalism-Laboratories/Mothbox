@@ -5,11 +5,45 @@ import datetime
 import csv
 import re
 from datetime import datetime, timedelta
+from unidecode import unidecode
 
 INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01'
 UTC_OFFSET=-5 #panama
+INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01\testANDYID'
 
-
+def create_occurrence_id(filename, latitude, longitude):
+    # Step 1: Process filename
+    # Remove spaces, convert to lowercase, replace irregular characters, convert "_" to "-"
+    filename = unidecode(filename).lower().strip()
+    
+    # Remove .jpg extension and extract relevant part of the filename
+    filename = filename.replace(".jpg", "")
+    
+    # Extract part before the 9th underscore
+    parts = filename.split('_')
+    if len(parts) >= 9:
+        filename_part = '_'.join(parts[:8])
+    else:
+        filename_part = '_'.join(parts)
+    filename_part = filename_part.replace("_", "-")
+    
+    # Step 2: Extract the number right before .jpg
+    final_number = parts[-1] if parts[-1].isdigit() else "0"
+    
+    # Step 3: Process latitude
+    # Remove non-digit characters (like "." and "-"), then take the first 5 characters
+    cleaned_lat = re.sub(r'[^0-9]', '', latitude)  # Remove ".", "-"
+    lat = cleaned_lat[:5]  # Take only the first 5 digits
+    
+    # Step 4: Process longitude
+    # Remove non-digit characters (like "." and "-"), then take the first 5 characters
+    cleaned_lon = re.sub(r'[^0-9]', '', longitude)  # Remove ".", "-"
+    lon = cleaned_lon[:5]  # Take only the first 5 digits
+    
+    # Step 5: Combine into occurrenceID
+    occurrence_id = f"{filename_part}-{lat}-{lon}-{final_number}"
+    
+    return occurrence_id
 
 def adjust_timestamp_with_utc_offset(date_str, time_str, utc_offset):
     # Step 1: Parse the date and timestamp
@@ -69,7 +103,7 @@ def json_to_csv(input_path, utc_offset):
         return
 
     with open(INPUT_PATH+"/"+output_file, "w", newline="") as csvfile:
-        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
+        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
 
@@ -115,32 +149,34 @@ def json_to_csv(input_path, utc_offset):
             for tag in sample["tags"]:
                 # Check for prefixes
                 if tag.startswith("KINGDOM"):
-                    kingdom = tag[len("KINGDOM"):].strip()
+                    kingdom = tag[len("KINGDOM"):].strip('_')
                 elif tag.startswith("PHYLUM"):
-                    phylum = tag[len("PHYLUM"):].strip()
+                    phylum = tag[len("PHYLUM"):].strip('_')
                 elif tag.startswith("tclass"):
-                    tclass = tag[len("tclass"):].strip()
+                    tclass = tag[len("tclass"):].strip('_')
                 elif tag.startswith("order"):
-                    order = tag[len("order"):].strip()
+                    order = tag[len("order"):].strip('_')
                 elif tag.startswith("family"):
-                    family = tag[len("family"):].strip()
+                    family = tag[len("family"):].strip('_')
                 elif tag.startswith("genus"):
-                    genus = tag[len("genus"):].strip()
+                    genus = tag[len("genus"):].strip('_')
                 elif tag.startswith("species"):
-                    species = tag[len("species"):].strip()
+                    species = tag[len("species"):].strip('_')
                 elif tag.startswith("commonName"):
-                    common_name = tag[len("commonName"):].strip()
+                    common_name = tag[len("commonName"):].strip('_')
                 elif tag.startswith("scientificName"):
-                    scientific_name = tag[len("scientificName"):].strip()
+                    scientific_name = tag[len("scientificName"):].strip('_')
                 elif tag.startswith("IDby"):
-                    identified_by = tag[len("IDby"):].strip()
+                    identified_by = tag[len("IDby"):].strip('_')
 
             if tag.startswith("taxonID"):
-                taxon_id = tag[len("taxonID"):].strip()
+                taxon_id = tag[len("taxonID"):].strip('_')
             elif tag.startswith("phylum"):
-                phylum = tag[len("phylum"):].strip()
+                phylum = tag[len("phylum"):].strip('_')
              #fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","identifiedBy","taxonID","kingdom","phylum","class","order","family","genus","species","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","height","deployment_name","deployment_date","sample_time","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
             #print("sample")
+
+            occurenceID = create_occurrence_id(os.path.basename(sample["filepath"]),str(sample["latitude"]),str(sample["longitude"]))
             row = {
                 #"label_type":"ground_truth", 
                 "filepath":sample["filepath"],
@@ -149,9 +185,9 @@ def json_to_csv(input_path, utc_offset):
                 
                 "basisOfRecord": "machine_observation",
                 "datasetID":sample["_dataset_id"],
-                "parentEventID":"",
-                "eventID":"",
-                "occurrenceID":"",
+                "parentEventID":sample["deployment_name"],
+                "eventID":os.path.basename(sample["filepath"]),
+                "occurrenceID":occurenceID,
                 "verbatimEventDate":date+"__"+timestamp,
                 "eventDate":formattedUTC_dateTime,
                 "eventTime":formattedUTC_dateTime.split("T")[1],
@@ -167,11 +203,11 @@ def json_to_csv(input_path, utc_offset):
                 "ground_height":sample["ground_height"],
                 "deployment_name":sample["deployment_name"],
                 "deployment_date":sample["deployment_date"],
-                "sample_time":formattedUTC_dateTime,
+                #"sample_time":formattedUTC_dateTime,
                 "collect_date":sample["collect_date"], 
                 "data_storage_location":sample["data_storage_location"],
                 "crew":sample["crew"], 
-                "notes":sample["notes"], 
+                "notes": "", #sample["notes"], #hubert doesn't want notes for each critter sighting
                 "schedule":sample["program"],
                 "habitat":sample["habitat"], 
 
@@ -179,6 +215,8 @@ def json_to_csv(input_path, utc_offset):
                 "detectionBy": sample["detection_By"],
 
                 "identifiedBy":identified_by,
+
+                "ID_confidence": sample["confidence"],
 
                 "taxonID":taxon_id,
                 "kingdom":kingdom,
