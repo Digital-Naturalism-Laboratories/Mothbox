@@ -152,16 +152,16 @@ def json_to_csv(input_path, utc_offset):
                     kingdom = tag[len("KINGDOM"):].strip('_')
                 elif tag.startswith("PHYLUM"):
                     phylum = tag[len("PHYLUM"):].strip('_')
-                elif tag.startswith("tclass"):
-                    tclass = tag[len("tclass"):].strip('_')
-                elif tag.startswith("order"):
-                    order = tag[len("order"):].strip('_')
-                elif tag.startswith("family"):
-                    family = tag[len("family"):].strip('_')
-                elif tag.startswith("genus"):
-                    genus = tag[len("genus"):].strip('_')
-                elif tag.startswith("species"):
-                    species = tag[len("species"):].strip('_')
+                elif tag.startswith("CLASS"):
+                    tclass = tag[len("CLASS"):].strip('_')
+                elif tag.startswith("ORDER"):
+                    order = tag[len("ORDER"):].strip('_')
+                elif tag.startswith("FAMILY"):
+                    family = tag[len("FAMILY"):].strip('_')
+                elif tag.startswith("GENUS"):
+                    genus = tag[len("GENUS"):].strip('_')
+                elif tag.startswith("SPECIES"):
+                    species = tag[len("SPECIES"):].strip('_')
                 elif tag.startswith("commonName"):
                     common_name = tag[len("commonName"):].strip('_')
                 elif tag.startswith("scientificName"):
