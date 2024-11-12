@@ -7,7 +7,7 @@ import json
 import PIL.Image
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01"  # raw string
+INPUT_PATH = r"D:\Panama\Gamboa_FrijolesCampsite_AmpleBonobo_2024-08-06\2024-08-09"  # raw string
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\train14_3000Images_batch2_1408px\weights\best.pt"
 IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
@@ -148,18 +148,24 @@ def process_jpg_files(img_files, date_folder):
 def find_date_folders(directory):
     """
     Recursively searches through a directory and its subdirectories for folders
-    with names in the YYYY-MM-DD format.
+    with names in the YYYY-MM-DD format. If the input directory itself is a "date folder",
+    it will also be included in the results.
 
     Args:
-      directory: The directory to search.
+        directory: The directory to search.
 
     Returns:
-      A list of paths to the found folders.
+        A list of paths to the found folders.
     """
 
     date_regex = r"^\d{4}-\d{2}-\d{2}$"
     folders = []
 
+    # Check if the input directory itself is a "date folder"
+    if re.match(date_regex, os.path.basename(directory)):
+        folders.append(directory)
+
+    # Recursively search subdirectories for "date folders"
     for root, dirs, files in os.walk(directory):
         for dir_name in dirs:
             if re.match(date_regex, dir_name):
