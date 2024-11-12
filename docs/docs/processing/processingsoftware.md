@@ -102,7 +102,7 @@ Then click on the button that says "code"
 
 You can click "Open with Github Desktop," or Download ZIP if you didn't install the Github desktop app.
 
-If you look into this set of scripts you downloaded, you can go into the Mothbox>AI folder to see all the postprocessing scripts
-![image](https://github.com/user-attachments/assets/e3dcd90a-5f29-4de2-97ce-9f73e803288d)
+If you look into this set of scripts you downloaded, you can go into the Mothbox>AI folder to see all the postprocessing scripts.
+![image](https://github.com/user-attachments/assets/1968dbe9-37c2-46ae-8afe-7f58c7e57774)
 
-Next follow the other instructions here for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information!
+Next follow the other instructions on this site for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information!
