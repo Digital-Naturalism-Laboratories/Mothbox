@@ -30,6 +30,13 @@ On a Windows computer you have to open a terminal, but make sure it is in "Admin
 #### Commands
 Now you can type in these commands and hit enter after each one!
 
+These first commands are important, because some programs haven't updated their software to run with newer versions of python. So some of the first things you will do is actually downgrade your python to 3.11. _You don't have to actually worry much about what these commands do, just copy and paste them and hit enter!_
+
+
+```
+winget install python.python.3.11
+```
+
 ```
 pip install pybioclip
 ```
@@ -46,7 +53,9 @@ pip install pillow
 ```
 pip install numpy
 ```
-
+```
+pip install fiftyone
+```
 ```
 pip install ultralytics
 ```
@@ -55,6 +64,9 @@ pip install ultralytics
 pip install opencv-python
 ```
 (Opencv is another big one)
+```
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 
 
 
