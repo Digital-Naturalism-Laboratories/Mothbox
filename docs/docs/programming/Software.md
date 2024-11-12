@@ -17,8 +17,8 @@ This is a list of useful software to download for working with the Mothbox.
 
 * [SD Card Formatter](https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/)
 
+# Pi Debugging Software
 
-# Running Post-Processing Scripts
-* [Python](https://www.python.org/downloads/)
-* [Visual Studio Code](https://code.visualstudio.com/download) (This is an interface for running and using code)
-* [Github Desktop](https://desktop.github.com/download/)
+You may have noticed that even though the Raspberry Pi is a computer, it doesn't have a mouse or screen. But that's ok! There's special ways you can see what's going on with your raspberry pi by using special software called a "VNC" software.
+Download this, and we will be able to look at what's going on inside your computer in a virtual way!
+* [Tiger VNC ](https://sourceforge.net/projects/tigervnc/)
