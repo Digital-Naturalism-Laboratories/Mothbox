@@ -2,7 +2,7 @@
 layout: default
 title: Processing Software
 parent: Processing Data
-has_children: true
+has_children: false
 nav_order: 0
 ---
 
@@ -30,6 +30,13 @@ On a Windows computer you have to open a terminal, but make sure it is in "Admin
 #### Commands
 Now you can type in these commands and hit enter after each one!
 
+These first commands are important, because some programs haven't updated their software to run with newer versions of python. So some of the first things you will do is actually downgrade your python to 3.11. _You don't have to actually worry much about what these commands do, just copy and paste them and hit enter!_
+
+
+```
+winget install python.python.3.11
+```
+
 ```
 pip install pybioclip
 ```
@@ -46,7 +53,9 @@ pip install pillow
 ```
 pip install numpy
 ```
-
+```
+pip install fiftyone
+```
 ```
 pip install ultralytics
 ```
@@ -55,6 +64,9 @@ pip install ultralytics
 pip install opencv-python
 ```
 (Opencv is another big one)
+```
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+```
 
 
 
@@ -102,7 +114,7 @@ Then click on the button that says "code"
 
 You can click "Open with Github Desktop," or Download ZIP if you didn't install the Github desktop app.
 
-If you look into this set of scripts you downloaded, you can go into the Mothbox>AI folder to see all the postprocessing scripts
-![image](https://github.com/user-attachments/assets/e3dcd90a-5f29-4de2-97ce-9f73e803288d)
+If you look into this set of scripts you downloaded, you can go into the Mothbox>AI folder to see all the postprocessing scripts.
+![image](https://github.com/user-attachments/assets/1968dbe9-37c2-46ae-8afe-7f58c7e57774)
 
-Next follow the other instructions here for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information!
+Next follow the other instructions on this site for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information!

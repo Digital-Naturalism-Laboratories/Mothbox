@@ -2,7 +2,7 @@
 layout: default
 title: Organizing Data
 parent: Processing Data
-has_children: true
+has_children: false
 nav_order: 1
 ---
 Our data comes in from the field to a server and is organized like this. 
