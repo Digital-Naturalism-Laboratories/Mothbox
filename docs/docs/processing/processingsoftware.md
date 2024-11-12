@@ -6,7 +6,7 @@ has_children: true
 nav_order: 0
 ---
 
-# Software to Help Run Post-Processing Scripts
+# Download Software to Help Run Post-Processing Scripts
 * [Python](https://www.python.org/downloads/)
 * [Visual Studio Code](https://code.visualstudio.com/download) (This is an interface for running and using code)
 * [Github Desktop](https://desktop.github.com/download/)
@@ -14,7 +14,7 @@ nav_order: 0
 
 After you install the above software on your computer (in particular, Python), you can then install some more software in a kind of special magic nerd way.
 
-# Using the Terminal
+# Download More Software Using the Terminal
 
 Python installs a special thing called "pip" onto your machine, and you can use pip to install extra open source software and libraries onto your computer super easy!
 
@@ -92,4 +92,17 @@ sudo pip install opencv-python
 ```
 (Opencv is another big one)
 
+# Download Mothbot Scripts 
+Finally you can download our collection of python scripts that help you process your data!
+It's easy to get the latest versions of the scripts that we update through Github.
+First, go to the [Mothbox's Github Site](https://github.com/Digital-Naturalism-Laboratories/Mothbox)
 
+Then click on the button that says "code"
+![image](https://github.com/user-attachments/assets/1464e6a6-fa66-432b-9e72-3dcb50396f95)
+
+You can click "Open with Github Desktop," or Download ZIP if you didn't install the Github desktop app.
+
+If you look into this set of scripts you downloaded, you can go into the Mothbox>AI folder to see all the postprocessing scripts
+![image](https://github.com/user-attachments/assets/e3dcd90a-5f29-4de2-97ce-9f73e803288d)
+
+Next follow the other instructions here for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information!
