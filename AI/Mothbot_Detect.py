@@ -11,6 +11,7 @@ INPUT_PATH = r"D:\Panama\Gamboa_FrijolesCampsite_AmpleBonobo_2024-08-06\2024-08-
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\train14_3000Images_batch2_1408px\weights\best.pt"
 IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
+SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. If you want to OVERWRITE files that were previously generated, change this to False
 
 def scan_for_images(date_folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""
@@ -47,6 +48,42 @@ def process_jpg_files(img_files, date_folder):
         # Print progress
         print(f"({progress:.2f}%) Processing:  {filename} ")
 
+
+        # **Check 0: Ensure the image file has more than 0 bytes**
+        if not os.path.isfile(image_path) or os.path.getsize(image_path) == 0:
+            print(f"Skipping {filename}: Image file is missing or empty.")
+            continue
+
+
+        # **Check 1: Check if JSON file exists and if it's an automated Mothbot file**
+        is_ground_truth_detection = False
+        if os.path.isfile(json_path):
+            is_ground_truth_detection=True
+            print(json_path)
+            print("Earlier file exists, check to see if we should skip it, or if not, make sure it's not Groundtruth data")
+
+            try:
+                with open(json_path, 'r') as json_file:
+                    json_data = json.load(json_file)
+                    #print(json_data)
+
+                    if(SKIP_PREVIOUS_GENERATED):
+                        print("skipping previously generated detection files that were able to be opened")
+                        continue
+
+                    # Check if "version" was created by mothbot 
+                    if json_data.get("version") == "Mothbot":
+                        print("anything but Mothbot means ground truth")
+                        is_ground_truth_detection = False
+
+            except json.JSONDecodeError:
+                print(f"will overwrite {filename}: Corrupted JSON file.")
+                is_ground_truth_detection=False
+
+        # If the JSON file exists and it's an human-made file, skip processing
+        if is_ground_truth_detection:
+            print(f"Skipping {filename}: Ground Truth File detected.")
+            continue
 
         # Process with Yolo to detect any creatures
         print("Predict a new image: ", image_path)
@@ -105,9 +142,10 @@ def process_jpg_files(img_files, date_folder):
 
         # Create JSON file
         data = {
-            "version": "2.4.3",
+            "version": "Mothbot",
             "flags": {},
-            "creator": "Mothbot",
+            #"flags": {"Mothbot": True, "automated": True},
+            #"creator": "Mothbot",
             "imagePath": image_path,
             "imageHeight": height,
             "imageWidth": width,
@@ -263,4 +301,6 @@ if __name__ == "__main__":
         print(date_folders)
         images = scan_for_images(date_folder_path)
         process_jpg_files(images, date_folder_path)
+
+    print("Finished Running Detections!")
 
