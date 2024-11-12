@@ -3,7 +3,7 @@ layout: default
 title: Processing Software
 parent: Processing Data
 has_children: true
-nav_order: 1
+nav_order: 0
 ---
 
 # Software to Help Run Post-Processing Scripts
