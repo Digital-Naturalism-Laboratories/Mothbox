@@ -15,7 +15,7 @@ You can set these inputs in the top couple lines of the code as defaults (arrows
 and when you run the program it will also prompt you if you want to enter different paths, or use these defaults.
 ![image](https://github.com/user-attachments/assets/830f8511-8895-47e7-a20f-a95142f42ec7)
 
-Also if you look at the variable underlined in green above, leaving this option as "True" means that if you already created detections for your images previously, it will skip them and finish quicker. If you want the script to redo any detections, just set this to false.
+Also if you look at the variable SKIP_PREVIOUS_GENERATED (underlined in green above), leaving this option as "True" means that if you already created detections for your images previously, it will skip them and finish quicker. If you want the script to redo any detections, just set this to false.
 
 _Note: the script is also set up to detect any HUMAN generated detections and not overwrite those ever._
 
