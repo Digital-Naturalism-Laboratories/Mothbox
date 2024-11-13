@@ -29,7 +29,7 @@ It chooses a winning classification down to the taxonomic filter you specified (
 
 Now if you open your nightly folder in X-Anylabeling, you will see the labels no longer just say "creature" but rather list the taxonomic rank the script has predicted:
 
-![image](https://github.com/user-attachments/assets/d53b12ac-0bce-4530-8459-aeb3f256ea1e)
+![image](https://github.com/user-attachments/assets/541bcdde-49a6-46e2-b097-c3844abeabe6)
 
 
 ![image](https://github.com/user-attachments/assets/10985386-86fe-4bb5-be98-dcba8cd0e2cf)
