@@ -54,3 +54,44 @@ The most important part of this interface though is that you can edit the tags o
 * provide deeper labels
 
 ## Editing Tags
+When the interface first opens, you will probably see a view something like:
+It is already automatically sorted by image size, with the smallest detections shown first. This is because most errors tend to happen on the really small insects.
+
+![image](https://github.com/user-attachments/assets/ba8f6dec-9cd1-4828-9f82-84332f2ca1e8)
+
+In the left side of the interface is your way to filter detections. Click on "Sample Tags"
+![image](https://github.com/user-attachments/assets/211b14fd-3ac7-4e5a-94e6-68aaae04ad2d)
+You can see in this night, we detected about 5000 Arthropod creatures!
+
+You can type in the filter area to select on particular taxa. For instance Lepidoptera:
+![image](https://github.com/user-attachments/assets/f65b69a2-0d3e-4eb8-bf89-f00cfc0db30b)
+(note that for now, this filter may be case sensitive, ie "Lepi..." works, but not "lepi..."
+
+Now the interface will show you only things that have been categorized as Lepidoptera:
+![image](https://github.com/user-attachments/assets/4167c3fe-b030-4988-a154-02cfc0d17f48)
+
+
+You can click the checkbox to toggle showing all the ID tags on a sample too:
+![image](https://github.com/user-attachments/assets/c51a4ff6-f687-4e06-89cc-d6aed06e8c05)
+
+### Changing Tags
+You can select a set of samples. For instance, these grasshoppers were categorized incorrectly:
+![image](https://github.com/user-attachments/assets/08b76b87-e666-4ee1-9d1a-a745b810f5b8)
+
+You can click the checkbox in each sample, OR you can hold SHIFT+click to select a range.
+
+Now we need to change the tags because these are not Lepidoptera.
+While those are selected, click the "Tag" button.
+![image](https://github.com/user-attachments/assets/58a17139-1990-4417-9d82-1b39b90eb6a3)
+
+Now, scroll through the tags, and UNCHECK the erroneus tags. (that is, it is still KINGDOM_Animalia, but not ORDER_Lepidoptera)
+
+Next, we find the correct classification for these. I don't know what family these crickets are, but i am pretty sure they are Order_Orthoptera
+![image](https://github.com/user-attachments/assets/ef3fd555-f756-4561-96af-a04308f03e0a)
+Then hit "Apply"
+
+Now if we change our view to "Orthoptera," we can see our re-classified crickets there!
+![image](https://github.com/user-attachments/assets/5e506fd6-ac87-4e98-8e7b-b25a70e9cf30)
+
+Keep doing this for ALL incorrect labels!
+
