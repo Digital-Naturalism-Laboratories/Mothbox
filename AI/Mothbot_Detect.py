@@ -6,12 +6,19 @@ import re
 import json
 import PIL.Image
 
+#~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = r"D:\Panama\Gamboa_FrijolesCampsite_AmpleBonobo_2024-08-06\2024-08-09"  # raw string
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\train14_3000Images_batch2_1408px\weights\best.pt"
-IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
 SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. If you want to OVERWRITE files that were previously generated, change this to False
+
+
+IMGSZ = 1408  # Should be same imgsz as used in training for best results!
+
+
+#~~~~Other Stuff~~~~~~~
+
 
 def scan_for_images(date_folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""

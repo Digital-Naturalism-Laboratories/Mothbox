@@ -48,15 +48,18 @@ import numpy as np
 from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
 
-#import uuid
-INPUT_PATH = r"C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01"  # raw string
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"
-taxa_path = SPECIES_LIST
+#~~~~Variables to Change~~~~~~~
+INPUT_PATH = r"D:\Panama\Gamboa_FrijolesCampsite_AmpleBonobo_2024-08-06\2024-08-09"  # raw string
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+TAXONOMIC_RANK_FILTER=Rank.FAMILY
+
+#~~~~Other Global Variables~~~~~~~
+
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
-TAXONOMIC_RANK ="species" # Change this to "species" to target just the species in your CSV
-TAXONOMIC_RANK_FILTER=Rank.ORDER
-DOMAIN = "Eukarya" # basically our "creature" tag? figure we will never see a prokaryote on the mothbox
+TOL_TAXONOMIC_RANK ="species" # Change this to "species" to target just the species in your CSV # Note i think this is actually just always needs to be set for SPECIES for this exampple
+DOMAIN = "Eukarya" # basically our "creature" tag? figure we will never see a prokaryote on the mothbox # Also i think GBIF has a "Biota" category that is a fancier version of "creature" or "life"
+taxa_path = SPECIES_LIST
 
 # Paths to save filtered list of embeddings/labels
 image_embeddings_path = INPUT_PATH+"/image_embeddings.npy"
@@ -66,7 +69,7 @@ embedding_labels_path = INPUT_PATH+"/embedding_labels.json"
 def parse_args():
   parser = argparse.ArgumentParser()
   parser.add_argument("--data-path", required = False, default=INPUT_PATH, help = "path to images for classification (ex: datasets/test_images/data)")
-  parser.add_argument("--rank", default = TAXONOMIC_RANK, help = "rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})")
+  parser.add_argument("--rank", default = TOL_TAXONOMIC_RANK, help = "rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})")
   parser.add_argument("--flag-holes", default = True, action = argparse.BooleanOptionalAction, help = "whether to flag holes and smudges (default: --flag-holes)")
   parser.add_argument("--taxa-csv", default = SPECIES_LIST, help = "CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})")
   parser.add_argument("--taxa-cols", default = TAXA_COLS, help = f"taxonomic columns in taxa CSV to load (default: {TAXA_COLS})")
@@ -455,7 +458,8 @@ def get_bioclip_prediction_PILimg(img, classifier):
           print(pred)
           if(index==0):
             kingdom = pred['kingdom']
-            winner = pred['order']
+            print(str(TAXONOMIC_RANK_FILTER.get_label()))
+            winner = pred[str(TAXONOMIC_RANK_FILTER.get_label())] #get the correct ID based on the deepest order we are searching
             winnerprob = pred['score']
             winningdict=pred
           index=index+1
@@ -646,20 +650,3 @@ if __name__ == "__main__":
 
 
 
-  
-
-
-
-
-
-
-
-
-
-
-'''
-classifier = CustomLabelsClassifier(["insect", "hole"])
-predictions = classifier.predict("example_moth.jpg")
-for prediction in predictions:
-   print(prediction["classification"], prediction["score"])
-'''
