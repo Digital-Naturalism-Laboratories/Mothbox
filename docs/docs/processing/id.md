@@ -26,6 +26,7 @@ When you run the script, you will see it start processing your detections in eac
 ![image](https://github.com/user-attachments/assets/810d5577-46ef-43a4-8f36-10c91548f65d)
 
 It chooses a winning classification down to the taxonomic filter you specified (for example Order).
+It saves this detection information into the .json files that you created when manually making detections or running the automated Detect script. (So you won't see any new files created)
 
 Now if you open your nightly folder in X-Anylabeling, you will see the labels no longer just say "creature" but rather list the taxonomic rank the script has predicted:
 
