@@ -11,11 +11,12 @@ from PIL import Image
 import fiftyone.core.labels as fol
 
 # Import the function from json_to_csv_converter.py
-from Mothbot_Convert51toCSV import json_to_csv
+from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r'C:/Users/andre/Desktop/Mothbox data/PEA_PeaPorch_AdeptTurca_2024-09-01/2024-09-01'
+INPUT_PATH = r'D:\Panama\Gamboa_FrijolesCampsite_AmpleBonobo_2024-08-06\2024-08-09'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
+TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 
 class bcolors:
@@ -68,10 +69,46 @@ def load_anylabeling_data(json_path):
 
   image_height = data['imageHeight']
   image_width = data['imageWidth']
-  detectionBy= data['creator']
+
+  if(data['version']=="Mothbot"):
+     detectionBy= "Motbot"
+  else:
+     detectionBy="Human"
+  
   # Extract relevant data from the detection labels
   labels = data['shapes']
   
+
+  # Step 1: Create the metadata path
+  base_name, ext = os.path.splitext(json_path)
+  metadata_path = f"{base_name}_metadata{ext}"
+
+  # Step 2: Initialize an empty dictionary to store metadata
+  metadata = {}
+
+  # Step 3: Check if the metadata file exists
+  if not os.path.exists(metadata_path):
+      print(f"Metadata file not found: {metadata_path}")
+      return metadata
+
+  try:
+      # Step 4: Open and parse the metadata JSON file
+      with open(metadata_path, 'r') as file:
+          data = json.load(file)
+      
+      # Step 5: Check if 'metadata' field exists and is a list
+      if 'metadata' in data and isinstance(data['metadata'], list):
+          # Step 6: Loop through the list and update the dictionary
+          for item in data['metadata']:
+              if isinstance(item, dict):
+                  metadata.update(item)
+  except Exception as e:
+      print(f"Error reading metadata file: {e}")
+  
+  #return metadata
+
+  """
+  #Old way of loading metadata from ID files
   metadata = {}
   for item in data.get('metadata', []):   #todo, fix METAdata inserting function so only one meta data deeep (no unecessary metadata)
     if 'metadata' in item:
@@ -81,11 +118,7 @@ def load_anylabeling_data(json_path):
     else:
       key, value = list(item.items())[0]
       metadata[key] = value
-
-  
-  
-  
-  
+  """
   
   return image_path, labels, image_height, image_width, metadata, detectionBy
 
@@ -260,11 +293,12 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
     patch_samples = []
 
     for sample in dataset.iter_samples(progress=True):
-        filename = os.path.basename(sample.filepath)
+        filename = os.path.basename(sample.filepath) #this is just the basename that it stores!
+        sample_fullpath=INPUT_PATH+"/"+filename
         #thumbnail_path = f"{output_dir}/{filename}"
         #sample["thumbnail_path"]=thumbnail_path
         patch_path = INPUT_PATH+"/patches"
-
+        print(sample.filename)
 
 
         #print(sample)
@@ -282,9 +316,21 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
 
 
             if not os.path.exists(patchfullpath): #skip thumbs already generated
-              img = np.array(Image.open(sample.filepath)) #this is a bit slow, it loads an image for every detection instead of every sample, BUT it skips this if the samples were already created
-              patch = Image.fromarray(extract_patch( img, detection=detection))
-              img.save(patchfullpath)
+                  # Load the image using PIL and convert it to a NumPy array
+              img = Image.open(sample_fullpath)
+              
+              # Convert the image to a NumPy array for patch extraction
+              img_array = np.array(img)
+              
+              # Extract the patch using your custom function
+              patch_array = extract_patch(img_array, detection=detection)
+              
+              # Convert the extracted patch back to a PIL Image
+              patch_image = Image.fromarray(patch_array)
+              
+              # Save the thumbnail
+              patch_image.save(patchfullpath)
+
 
             # Extract coordinates
             xmin, ymin, xmax, ymax = detection.bounding_box
@@ -410,7 +456,7 @@ if __name__ == "__main__":
   )
 
   # Let's automatically generate the CSV now too, just to be nice
-  json_to_csv(INPUT_PATH, UTC_OFFSET)
+  json_to_csv(INPUT_PATH, UTC_OFFSET, TAXA_LIST_PATH)
 
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order
@@ -424,9 +470,3 @@ if __name__ == "__main__":
 
   session.wait(-1)
 
-  """
-  # Save the final FiftyOne JSON
-  with open(INPUT_PATH+"/"+"samples.json", "w") as f:
-      json.dump(data, f, indent=4)
-      print("finished creating: "+INPUT_PATH+"/"+"samples.json")
-  """

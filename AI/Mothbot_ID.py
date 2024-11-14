@@ -648,5 +648,6 @@ if __name__ == "__main__":
              taxa_cols = args.taxa_cols,
              device = "cuda")
 
+  print("Finished Automatic Identification")
 
 

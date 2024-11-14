@@ -24,8 +24,8 @@ import json
 
 
 # Define a global variable for the default path
-METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data\Mothbox data - metadata_2024-10-20.csv"
-IMAGE_DATA_PATH=r"C:\Users\andre\Desktop\Mothbox data"
+METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data\justfrijolesAmple.csv"
+IMAGE_DATA_PATH=r"D:\Panama"
 
 def convert_row_to_json(row, csv_headers):
   """Converts a CSV row to json metadata, dynamically adding annotations based on specified fields."""
