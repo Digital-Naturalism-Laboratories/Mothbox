@@ -13,9 +13,9 @@ Our data comes in from the field to a server and is organized like this.
         ├── YYYY-MM-01 (first nightly folder of a deployment)
         ├── YYYY-MM-02 (second...)
         └── YYYY-MM-03/
-            ├── AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
-            ├── AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS.json (Yolo detection with auto-ID)
-            └── AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
+            ├── DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
+            ├── DEVICE_YYYY-MM-DD-HH-MM-SS.json (Yolo detection with auto-ID)
+            └── DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
 ```
 ## Deployment
 Each "deployment" is a device left out in the wild somewhere.
