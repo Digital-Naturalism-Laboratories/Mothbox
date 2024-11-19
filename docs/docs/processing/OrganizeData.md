@@ -39,9 +39,9 @@ YYYY-MM-DD
 ## Samples
 Each data "sample consists of a set of grouped files.
 ```
-AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
-AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
-AREA_SITE_DEVICE_YYYY-MM-DD-HH-MM-SS.json (Labels: Detection Data like Yolo detection and Bioclip-ID)
+DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
+DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
+DEVICE_YYYY-MM-DD-HH-MM-SS.json (Labels: Detection Data like Yolo detection and Bioclip-ID)
 ```
 ### Raw Photo
 The "raw" photos we capture look like this. They are insects on a white background. 
