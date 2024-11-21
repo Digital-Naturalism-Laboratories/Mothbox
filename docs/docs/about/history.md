@@ -70,12 +70,12 @@ The v3 featured more refined lazer cut components that could be quickly assemble
 # V4
 *2024 Q1 -2025 Q1*
 
-**$70,000 USD**
+**$80,000 USD** + Fulbright Student
 
 
-We began deploying v3 Mothboxes in western panama in conjunction with Hubert's biodiversity reserach with Pro-eco azuero and Ponterra. We also applied to and won the top tier of the Wildlab's 2024 grants. This gave us 60K to develop, test and document the mothbox to take the project to the next level in global use as a ubiquitous tool. Daisy Dent also contributed another 7k from her lab's funds to help further develop the Mothbox's hardware and software.
+We began deploying v3 Mothboxes in western panama in conjunction with Hubert's biodiversity reserach with Pro-eco azuero and Ponterra. We also applied to and won the top tier of the Wildlab's 2024 grants. This gave us 60K to develop, test and document the mothbox to take the project to the next level in global use as a ubiquitous tool. Daisy Dent also contributed another 10k from her lab's funds to help further develop the Mothbox's hardware and software. Ponterra, a reforestation company also contributed 4k for further mothbox development.
 
-Bri Johns, Dinalab's visiting Fulbright researcher is also joining the project to help facilitate the V4 development of the mothbox by also leading community workshops in Panama to train folks on its use and development. Yash Sondhi is also hiring Andy from Dinalab to run a workshop with scientists at Georgia Tech to build an armada of mothboxes to deploy in other locations.
+Bri Johns, Dinalab's visiting Fulbright researcher is also joining the project to help facilitate the V4 development of the Mothbox by also leading community workshops in Panama to train folks on its use and development. Yash Sondhi of the Sponberg Lab at Georgia Tech also paid for workshops with scientists at Georgia Tech to build an armada of mothboxes to deploy in other locations.
 
 The v4 has many features that improved upon previous versiions such as
 * works with Pi 5 without a pijuice (or backwards compatible with a Pijuice and Pi4 combination)
