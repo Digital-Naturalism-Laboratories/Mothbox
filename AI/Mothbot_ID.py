@@ -38,6 +38,9 @@ import io
 from pathlib import Path
 import numpy as np
 from PIL import Image
+from PIL import ImageFile
+ImageFile.LOAD_TRUNCATED_IMAGES = True #makes ok for use images hat are messed up
+
 
 import cv2
 import torch
@@ -49,9 +52,9 @@ from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
 
 #~~~~Variables to Change~~~~~~~
-INPUT_PATH = r"D:\Panama\Gamboa_FrijolesCampsite_AmpleBonobo_2024-08-06\2024-08-09"  # raw string
+INPUT_PATH = r"C:\Users\andre\Desktop\FondoGorila\2024-11-17"  # raw string
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
-TAXONOMIC_RANK_FILTER=Rank.FAMILY
+TAXONOMIC_RANK_FILTER=Rank.ORDER
 
 #~~~~Other Global Variables~~~~~~~
 
