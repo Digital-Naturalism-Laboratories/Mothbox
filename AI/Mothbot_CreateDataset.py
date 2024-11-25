@@ -20,6 +20,7 @@ UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
+SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
 
 class bcolors:
     HEADER = '\033[95m'
@@ -112,20 +113,8 @@ def load_anylabeling_data(json_path):
       #return metadata #return empty metadata
 
   
-  return     image_path, labels, image_height, image_width, metadata, creator
 
-  """
-  #Old way of loading metadata from ID files
-  metadata = {}
-  for item in data.get('metadata', []):   #todo, fix METAdata inserting function so only one meta data deeep (no unecessary metadata)
-    if 'metadata' in item:
-      for subitem in item['metadata']:
-        key, value = list(subitem.items())[0]
-        metadata[key] = value
-    else:
-      key, value = list(item.items())[0]
-      metadata[key] = value
-  """
+
   
   return image_path, labels, image_height, image_width, metadata, detectionBy
 
@@ -179,42 +168,37 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
 
   sample = fo.Sample(
       filepath= image_path,
-
-      uploaded=metadata["uploaded"],
-      sd=metadata["sd.card"],
-      mothbox=metadata["mothbox"],
-      software=str(metadata["software"]),
-      sheet=metadata["sheet"],
-      country=metadata["country"],
-      area=metadata["area"],
-      punto=metadata["point"], #point is maybe a special key name in 51
-
   )
-  latitude=metadata["latitude"]
-  longitude=metadata["longitude"]
+  
+  sample["uploaded"]=metadata.get("uploaded","")
+  sample["sd"]=metadata.get("sd.card","")
+  sample["mothbox"]=metadata.get("mothbox","")
+  sample["software"]=str(metadata.get("software",""))
+  sample["sheet"]=metadata.get("sheet","")
+  sample["country"]=metadata.get("country","")
+  sample["area"]=metadata.get("area","")
+  sample["punto"]=metadata.get("point","") #point is maybe a special key name in 51
+  
+  
+  latitude=metadata.get("latitude","")
+  longitude=metadata.get("longitude","")
   geolocation = fo.GeoLocation(latitude=latitude, longitude=longitude)
   sample["location"]=geolocation
   sample["longitude"]=longitude
   sample["latitude"]=latitude
-  sample["ground_height"]=metadata["height (placement above ground)"]
+  sample["ground_height"]=metadata.get("height (placement above ground)","")
   
-  sample["deployment_name"]=metadata["deployment.name"]
-  sample["deployment_date"]=metadata["deployment.date"]
-  sample["collect_date"]=metadata["collect.date"]
-  sample["data_storage_location"]=metadata["data.storage.location"]
-  sample["crew"]=metadata["crew"]
-  sample["notes"]=metadata["notes"]
-  sample["program"]=metadata["program"]
-  sample["habitat"]=metadata["habitat"]
+  sample["deployment_name"]=metadata.get("deployment.name","")
+  sample["deployment_date"]=metadata.get("deployment.date","")
+  sample["collect_date"]=metadata.get("collect.date","")
+  sample["data_storage_location"]=metadata.get("data.storage.location","")
+  sample["crew"]=metadata.get("crew","")
+  sample["notes"]=metadata.get("notes","")
+  sample["program"]=metadata.get("program","")
+  sample["habitat"]=metadata.get("habitat","")
   sample["detection_By"]=creator
 
-
-
-
-
   detections_list=[]
-
-
 
   for label in labels:
     direction = label['direction']
@@ -224,7 +208,6 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
     shape_type = label['shape_type']
     ID_by = "IDby_"+label['description']
 
-    
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
 
@@ -322,7 +305,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
             #export_image(patch, patch_path,filename, detnum)
 
 
-            if not os.path.exists(patchfullpath): #skip thumbs already generated
+            if not os.path.exists(patchfullpath) and SKIP_EXISTING_THUMBNAIL_PATCHES==False: #skip thumbs already generated unless we specifically target to overwrite them each time
                   # Load the image using PIL and convert it to a NumPy array
               img = Image.open(sample_fullpath)
               
@@ -416,7 +399,6 @@ if __name__ == "__main__":
   # Iterate through pairs and load data
   for image_path, json_path in pairs:
     image_path, labels, image_height, image_width, metadata, creator = load_anylabeling_data(json_path)
-    #TODO: #New thoughts: assume metadata was loaded in the json file, add it if it is there. # OLD THOUGHTS:Also look for a _metadata.json file. Load its data, and send to the next function too
     sample = create_sample(image_path, labels, image_height, image_width, metadata, dataset, creator )
     samples.append(sample)
     #sample = create_fiftyone_json(image_path, labels, image_height, image_width, metadata)
