@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import cv2
 from ultralytics import YOLO
 import numpy as np
@@ -5,14 +7,18 @@ import os
 import re
 import json
 import PIL.Image
+from pathlib import Path
+
+from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPatches_JSON
+
 
 #~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = r"C:\Users\andre\Desktop\FondoGorila\2024-11-17"  # raw string
-YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\train14_3000Images_batch2_1408px\weights\best.pt"
+YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
 
 SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. If you want to OVERWRITE files that were previously generated, change this to False
-
+GEN_THUMBNAILS=True
 
 IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
@@ -40,13 +46,21 @@ def process_jpg_files(img_files, date_folder):
     """
     # Load the model
     model = YOLO(YOLO_MODEL)
+    # Get the model's file name (including extension)
+    model_name = os.path.basename(YOLO_MODEL)
     # Get total number of JPEG files
     total_img_files = len(img_files)
+
+
+    patch_folder_path=Path(date_folder+"/patches")
+    patch_folder_path.mkdir(parents=True, exist_ok=True)
+
 
     for idx,filename in enumerate(img_files):
 
         image_path = os.path.join(date_folder, filename)
         json_path = os.path.join(date_folder, filename[:-4] + ".json")
+
 
         # Calculate progress
         processed_files = idx + 1
@@ -60,7 +74,6 @@ def process_jpg_files(img_files, date_folder):
         if not os.path.isfile(image_path) or os.path.getsize(image_path) == 0:
             print(f"Skipping {filename}: Image file is missing or empty.")
             continue
-
 
         # **Check 1: Check if JSON file exists and if it's an automated Mothbot file**
         is_ground_truth_detection = False
@@ -76,10 +89,14 @@ def process_jpg_files(img_files, date_folder):
 
                     if(SKIP_PREVIOUS_GENERATED):
                         print("skipping previously generated detection files that were able to be opened")
+                        
+                        #create the thumbnails from the detections still though
+                        if(GEN_THUMBNAILS):
+                            generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
                         continue
 
                     # Check if "version" was created by mothbot 
-                    if json_data.get("version") == "Mothbot":
+                    if json_data.get("version").startswith("Mothbot"):
                         print("anything but Mothbot means ground truth")
                         is_ground_truth_detection = False
 
@@ -134,6 +151,8 @@ def process_jpg_files(img_files, date_folder):
                 # print("bounding box: {}".format(box))
                 # cv2.drawContours(result.orig_img, [box], 0, (0, 0, 255), 2)
 
+                generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
+
                 '''
                 # img_crop will the cropped rectangle, img_rot is the rotated image
                 img_crop, img_rot = crop_rect(result.orig_img, rect)
@@ -147,9 +166,10 @@ def process_jpg_files(img_files, date_folder):
         image = PIL.Image.open(image_path)
         width, height = image.size
 
+        
         # Create JSON file
         data = {
-            "version": "Mothbot",
+            "version": "Mothbot_"+model_name,
             "flags": {},
             #"flags": {"Mothbot": True, "automated": True},
             #"creator": "Mothbot",

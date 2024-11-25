@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import os
 import json
 import fiftyone as fo
@@ -69,11 +71,13 @@ def load_anylabeling_data(json_path):
 
   image_height = data['imageHeight']
   image_width = data['imageWidth']
-
+  creator=""
   if(data['version']=="Mothbot"):
      detectionBy= "Motbot"
+     creator=detectionBy
   else:
      detectionBy="Human"
+     creator=detectionBy
   
   # Extract relevant data from the detection labels
   labels = data['shapes']
@@ -89,8 +93,9 @@ def load_anylabeling_data(json_path):
   # Step 3: Check if the metadata file exists
   if not os.path.exists(metadata_path):
       print(f"Metadata file not found: {metadata_path}")
-      return metadata
+      return     image_path, labels, image_height, image_width, metadata, creator
 
+  #if it does exist, do this...
   try:
       # Step 4: Open and parse the metadata JSON file
       with open(metadata_path, 'r') as file:
@@ -104,8 +109,10 @@ def load_anylabeling_data(json_path):
                   metadata.update(item)
   except Exception as e:
       print(f"Error reading metadata file: {e}")
+      #return metadata #return empty metadata
+
   
-  #return metadata
+  return     image_path, labels, image_height, image_width, metadata, creator
 
   """
   #Old way of loading metadata from ID files
