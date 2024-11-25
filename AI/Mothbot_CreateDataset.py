@@ -73,11 +73,11 @@ def load_anylabeling_data(json_path):
   image_height = data['imageHeight']
   image_width = data['imageWidth']
   creator=""
-  if(data['version']=="Mothbot"):
-     detectionBy= "Motbot"
+  if(data['version'].startswith("Mothbot")):
+     detectionBy= data['version']
      creator=detectionBy
   else:
-     detectionBy="Human"
+     detectionBy="HumanDetection"
      creator=detectionBy
   
   # Extract relevant data from the detection labels
@@ -293,6 +293,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
 
         #print(sample)
         detections= sample.ground_truth.detections
+        detector=sample.detection_By
         #print(detections)
         #print(len(detections))
         #print(dataset.get_field_schema())
@@ -300,7 +301,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
         detnum=0
 
         for detection in detections:
-            patchfilename=filename.split('.')[0] + "_" + str(detnum) + "." +filename.split('.')[1]
+            patchfilename=filename.split('.')[0] + "_" + str(detnum) +"_"+detector+ "." +filename.split('.')[1]
             patchfullpath = Path(patch_folder_path) / f'{patchfilename}' 
             #export_image(patch, patch_path,filename, detnum)
 

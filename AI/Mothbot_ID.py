@@ -41,7 +41,6 @@ from PIL import Image
 from PIL import ImageFile
 ImageFile.LOAD_TRUNCATED_IMAGES = True #makes ok for use images hat are messed up
 
-
 import cv2
 import torch
 import json

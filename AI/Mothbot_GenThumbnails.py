@@ -81,7 +81,7 @@ def generateThumbnailPatches(img,thefilepath,rectangle,detnum, modelname):
     patch_folder_path=Path(directory_path+"/patches")
     patch_folder_path.mkdir(parents=True, exist_ok=True)
 
-    patchfilename=filename.split('.')[0] + "_" + str(detnum) + "_" + model_name+"." +filename.split('.')[1]
+    patchfilename=filename.split('.')[0] + "_" + str(detnum) + "_" + modelname+"." +filename.split('.')[1]
     patchfullpath = Path(patch_folder_path) / f'{patchfilename}' 
 
     # img_crop will the cropped rectangle
