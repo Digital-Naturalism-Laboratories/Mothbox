@@ -55,6 +55,9 @@ INPUT_PATH = r"C:\Users\andre\Desktop\FondoGorila\2024-11-17"  # raw string
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER=Rank.ORDER
 
+# TODO implment a way to skip files that have already been IDed
+SKIP_EXISTING_IDs=True
+
 #~~~~Other Global Variables~~~~~~~
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]

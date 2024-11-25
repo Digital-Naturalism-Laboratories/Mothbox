@@ -1,2 +1,5 @@
 
 *.pyc
+*.pyc
+AI/__pycache__/Mothbot_ConvertDatasettoCSV.cpython-311.pyc
+/AI/__pycache__
