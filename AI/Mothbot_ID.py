@@ -336,15 +336,22 @@ def get_rotated_rect_coordinates(json_file):
 
 def get_rotated_rect_raw_coordinates(json_file):
   """Reads rotated rectangle coordinates from a JSON file and returns them."""
+  pre_ided=False #variable to detect if this has already been IDed
+
   with open(json_file, 'r') as f:
     data = json.load(f)
     coordinates_list = []
+    pre_ided_list=[]
     for shape in data['shapes']:
       if shape['shape_type'] == 'rotation':
         points = shape['points']
         #x, y, w, h, angle = extract_rectangle_coordinates(points)
         coordinates_list.append(points)
-    return coordinates_list
+        if shape['description']!='': #detect if there's been an identification (if so it would say something like IDbyBIOCLIP)
+          pre_ided=True
+        pre_ided_list.append(pre_ided)
+
+    return coordinates_list, pre_ided_list
 def extract_rectangle_coordinates(points):
   """Extracts rectangle coordinates from a list of points."""
   # Assuming points are in clockwise order (adjust if needed)
@@ -586,18 +593,21 @@ def process_matched_img_json_pairs(matched_img_json_pairs, taxa_path,taxa_cols,t
   index=0
   numoftriplets = len(matching_trips_img_json__metadata)
   for triplet in matching_trips_img_json__metadata:
+
     # Load JSON file and extract rotated rectangle coordinates for each detection
     image_path, json_path = triplet[:2]  # Always extract the first two elements
     
-    coordinates_of_detections_list = get_rotated_rect_raw_coordinates(json_path)
+    coordinates_of_detections_list, was_pre_ided_list = get_rotated_rect_raw_coordinates(json_path)
     index=index+1
     print(str(index)+"/"+str(numoftriplets)+"  | "+str(len(coordinates_of_detections_list))," detections in "+json_path)
     if coordinates_of_detections_list:
       for idx, coordinates in enumerate(coordinates_of_detections_list):
         #print(coordinates)
+        if(was_pre_ided_list[idx]):#skip processing if IDed
+           continue
+        
         image = Image.open(image_path)
         cv_image = np.array(image)
-        cv_image = cv_image[:, :, ::-1]  # Reverse the channels (BGR to RGB)
 
         cv_image_cropped = warp_rotation(cv_image,coordinates)
 
