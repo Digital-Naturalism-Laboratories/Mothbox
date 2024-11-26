@@ -14,7 +14,7 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14"  # raw string
+INPUT_PATH = r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15"  # raw string
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
 
 SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. If you want to OVERWRITE files that were previously generated, change this to False
@@ -48,6 +48,7 @@ def process_jpg_files(img_files, date_folder):
     model = YOLO(YOLO_MODEL)
     # Get the model's file name (including extension)
     model_name = os.path.basename(YOLO_MODEL)
+    model_name="Mothbot_"+model_name #adding Mothbot prefix in case other things come along to do different processing
     # Get total number of JPEG files
     total_img_files = len(img_files)
 
@@ -151,7 +152,8 @@ def process_jpg_files(img_files, date_folder):
                 # print("bounding box: {}".format(box))
                 # cv2.drawContours(result.orig_img, [box], 0, (0, 0, 255), 2)
 
-                generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
+                if(GEN_THUMBNAILS):
+                    generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
 
                 '''
                 # img_crop will the cropped rectangle, img_rot is the rotated image
@@ -169,7 +171,7 @@ def process_jpg_files(img_files, date_folder):
         
         # Create JSON file
         data = {
-            "version": "Mothbot_"+model_name,
+            "version": model_name,
             "flags": {},
             #"flags": {"Mothbot": True, "automated": True},
             #"creator": "Mothbot",

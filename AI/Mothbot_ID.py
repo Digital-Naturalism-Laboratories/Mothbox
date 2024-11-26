@@ -51,11 +51,12 @@ from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
 
 #~~~~Variables to Change~~~~~~~
-INPUT_PATH = r"F:\Panama\JosePobre_HillTopFacingOcean_FondoGorila_2024-11-19\2024-11-19"  # raw string
+INPUT_PATH = r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15"  # raw string
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER=Rank.ORDER
 
 # TODO implment a way to skip files that have already been IDed
+# you can do this by looking at "description": "ID_BioCLIP"
 SKIP_EXISTING_IDs=True
 
 #~~~~Other Global Variables~~~~~~~

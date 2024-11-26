@@ -2,7 +2,7 @@
 
 import json
 import os
-INPUT_PATH = r'C:\Users\andre\Desktop\FondoGorila\2024-11-17'
+INPUT_PATH = r'F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15'
 from pathlib import Path
 import cv2
 import numpy as np
@@ -38,7 +38,8 @@ def generateThumbnailPatches_JSON(image_path, json_data, patch_folder,skip_exist
     if not model_name.startswith("Mothbot"):
         model_name="HumanDetection"
     else:
-        model_name=model_name.replace('Mothbot_','')
+        None
+        #model_name=model_name.replace('Mothbot_','')
 
     # Dictionary to store loaded images
     loaded_images = {}

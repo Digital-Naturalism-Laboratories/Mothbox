@@ -15,7 +15,7 @@ import fiftyone.core.labels as fol
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r'F:\Panama\JosePobre_HillTopFacingOcean_FondoGorila_2024-11-19\2024-11-19'
+INPUT_PATH = r'F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
@@ -294,7 +294,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
         #print(sample)
         detections= sample.ground_truth.detections
         detector=sample.detection_By
-        detector=detector.replace('.pt','')
+        #detector=detector.replace('.pt','')
         #print(detections)
         #print(len(detections))
         #print(dataset.get_field_schema())
