@@ -37,6 +37,8 @@ def generateThumbnailPatches_JSON(image_path, json_data, patch_folder,skip_exist
     model_name=json_data.get("version")
     if not model_name.startswith("Mothbot"):
         model_name="HumanDetection"
+    else:
+        model_name=model_name.replace('Mothbot_','')
 
     # Dictionary to store loaded images
     loaded_images = {}

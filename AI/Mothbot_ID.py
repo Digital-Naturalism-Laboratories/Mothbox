@@ -51,7 +51,7 @@ from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
 
 #~~~~Variables to Change~~~~~~~
-INPUT_PATH = r"C:\Users\andre\Desktop\FondoGorila\2024-11-17"  # raw string
+INPUT_PATH = r"F:\Panama\JosePobre_HillTopFacingOcean_FondoGorila_2024-11-19\2024-11-19"  # raw string
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER=Rank.ORDER
 

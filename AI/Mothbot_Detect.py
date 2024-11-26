@@ -14,7 +14,7 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"C:\Users\andre\Desktop\FondoGorila\2024-11-17"  # raw string
+INPUT_PATH = r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14"  # raw string
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
 
 SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. If you want to OVERWRITE files that were previously generated, change this to False
