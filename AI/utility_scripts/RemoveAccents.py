@@ -23,6 +23,15 @@ def rename_files_and_folders(base_path):
     Args:
         base_path (str): The path to start the recursive renaming.
     """
+    total_subfolders = 0
+    processed_subfolders = 0
+
+    # Count total subfolders
+    for _, dirs, _ in os.walk(base_path):
+        total_subfolders += len(dirs)
+
+    print(f"Total subfolders found: {total_subfolders}")
+
     for root, dirs, files in os.walk(base_path, topdown=False):
         # Rename files
         for filename in files:
@@ -40,6 +49,9 @@ def rename_files_and_folders(base_path):
             if old_dir_path != new_dir_path:
                 os.rename(old_dir_path, new_dir_path)
 
+            processed_subfolders += 1
+            print(f"Processed {processed_subfolders}/{total_subfolders} subfolders.", end='\r')
+
 def main():
     """
     Main function to start the renaming process.
@@ -50,7 +62,7 @@ def main():
 
     print(f"Starting the renaming process in: {INPUT_PATH}")
     rename_files_and_folders(INPUT_PATH)
-    print("Renaming process completed.")
+    print("\nRenaming process completed.")
 
 if __name__ == "__main__":
     main()
