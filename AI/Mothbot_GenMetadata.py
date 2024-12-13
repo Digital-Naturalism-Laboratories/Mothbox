@@ -15,6 +15,7 @@ Example:
   python process_metadata.py --input_file my_metadata.csv
 """
 
+
 import os
 import pandas as pd
 import re
@@ -24,8 +25,9 @@ import json
 
 
 # Define a global variable for the default path
-METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data\justfrijolesAmple.csv"
+METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data_metadata_2024-12-03.csv"
 IMAGE_DATA_PATH=r"D:\Panama"
+
 
 def convert_row_to_json(row, csv_headers):
   """Converts a CSV row to json metadata, dynamically adding annotations based on specified fields."""
@@ -250,9 +252,10 @@ def find_matching_subfolders(metadata_row, preprocessed_subfolders):
     for subfolder in preprocessed_subfolders:
          
         if (
-            metadata_row["area"].lower() == subfolder["area"].lower() and
-            metadata_row["point"].lower() == subfolder["point"].lower() and
-            str(metadata_row["mothbox"].lower()).replace(" ", "") == str(subfolder["mothbox"].lower()) and
+            metadata_row["area"].lower().replace(" ", "") == subfolder["area"].lower().replace(" ", "") and
+            metadata_row["point"].lower().replace(" ", "") == subfolder["point"].lower().replace(" ", "") and
+            str(metadata_row["mothbox"].lower()).replace(" ", "") == str(subfolder["mothbox"].lower()).replace(" ", "")
+             and
             metadata_row["deployment.date"] == subfolder["date"]
         ):
             matches.append(subfolder["path"])
