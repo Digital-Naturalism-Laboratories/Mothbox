@@ -25,8 +25,8 @@ import json
 
 
 # Define a global variable for the default path
-METADATA_PATH=r"C:\Users\andre\Desktop\Mothbox data_metadata_2024-12-03.csv"
-IMAGE_DATA_PATH=r"D:\Panama"
+METADATA_PATH=r"C:\Users\andre\Downloads\Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1.csv"
+IMAGE_DATA_PATH=r"F:\Panama\Gamboa_RadioHill_WaveUrta_2024-12-12"
 
 
 def convert_row_to_json(row, csv_headers):
@@ -135,23 +135,47 @@ def read_metadata(csv_path):
   
 def normalize_date(date):
     parts = date.split('/')
-    if len(parts) == 3:  # MM/DD/YYYY format
-        month = parts[0].zfill(2)
-        day = parts[1].zfill(2)
+    if len(parts) == 3:  # DD/MM/YYYY format
+        day = parts[0].zfill(2)
+        month = parts[1].zfill(2)
         year = parts[2]
-        return f"{month}/{day}/{year}"
+        return f"{day}/{month}/{year}"
     elif len(parts) == 1:  # YYYY-MM-DD format
         parts = date.split('-')
         if len(parts) == 3:
             return f"{parts[0]}-{parts[1].zfill(2)}-{parts[2].zfill(2)}"
     return date  # Return as-is if not in recognized format
 
+def convert_dates_YYYY_MM_DD(metadata):
+  """
+  This function takes a pandas DataFrame "metadata" and corrects the format of the 'deployment.date' column from DD/MM/YYYY to YYYY-MM-DD.
+
+  Args:
+      metadata: A pandas DataFrame.
+
+  Returns:
+      A new pandas DataFrame with the 'deployment.date' column converted to YYYY-MM-DD format.
+  """
+  # Check if 'deployment.date' column exists
+  if 'deployment.date' not in metadata.columns:
+    raise ValueError("Column 'deployment.date' not found in the DataFrame")
+
+  # Define original and desired formats
+  original_format = "%d/%m/%Y"
+  desired_format = "%Y-%m-%d"
+
+  # Apply parsing and formatting using to_datetime and dt.strftime
+  metadata['deployment.date'] = pd.to_datetime(metadata['deployment.date'], format=original_format).dt.strftime(desired_format)
+  print(metadata['deployment.date'])
+  return metadata
+
+
 def convert_dates_in_dataframe(df):
     def convert_date(date):
         normalized_date = normalize_date(date)
         
         try:
-            parsed_date = datetime.strptime(normalized_date, "%m/%d/%Y")
+            parsed_date = datetime.strptime(normalized_date, "%d/%m/%Y")
         except ValueError:
             try:
                 parsed_date = datetime.strptime(normalized_date, "%Y-%m-%d")
@@ -226,6 +250,39 @@ def convert_dates_OLD(df):
 
   return df
 
+def preprocess_subfolders_inclusive(image_data_path):
+  """Preprocesses subfolders, ensuring they follow the naming convention and extracts dates,
+  including the base folder name."""
+  subfolders = []
+  base_folder_name = os.path.basename(image_data_path)
+
+  for root, dirs, files in os.walk(image_data_path):
+    for dir in dirs:
+      # Check if the folder name matches the expected pattern
+      match = re.match(r"(\w+)_(\w+)_(\w+)_(\w+)-(\w+)-(\w+)", dir)
+      if match:
+        area, point, mothbox, yyyy, mm, dd = match.groups()
+        subfolders.append({
+          "area": area,
+          "point": point,
+          "mothbox": mothbox,
+          "path": os.path.join(root, dir),
+          "date": f"{yyyy}-{mm}-{dd}"
+        })
+  #also check basename
+    match = re.match(r"(\w+)_(\w+)_(\w+)_(\w+)-(\w+)-(\w+)", base_folder_name)
+    if match:
+      area, point, mothbox, yyyy, mm, dd = match.groups()
+      subfolders.append({
+        "area": area,
+        "point": point,
+        "mothbox": mothbox,
+        "path": os.path.join(root, dir),
+        "date": f"{yyyy}-{mm}-{dd}"
+      })
+  return subfolders
+
+
 def preprocess_subfolders(image_data_path):
     """Preprocesses subfolders, ensuring they follow the naming convention and extracts dates."""
     subfolders = []
@@ -261,6 +318,34 @@ def find_matching_subfolders(metadata_row, preprocessed_subfolders):
             matches.append(subfolder["path"])
     return matches
 
+
+def find_matching_subfolders_inclusive(metadata_row, preprocessed_subfolders, current_folder):
+  """Finds matching subfolders using preprocessed data and checks deployment date,
+  including the current folder."""
+  matches = []
+
+  # Check if current folder matches criteria
+  if (
+      metadata_row["area"].lower().replace(" ", "") == current_folder["area"].lower().replace(" ", "") and
+      metadata_row["point"].lower().replace(" ", "") == current_folder["point"].lower().replace(" ", "") and
+      str(metadata_row["mothbox"].lower()).replace(" ", "") == str(current_folder["mothbox"].lower()).replace(" ", "") and
+      metadata_row["deployment.date"] == current_folder["date"]
+  ):
+    matches.append(current_folder["path"])
+
+  # Check subfolders for matches
+  for subfolder in preprocessed_subfolders:
+    if (
+        metadata_row["area"].lower().replace(" ", "") == subfolder["area"].lower().replace(" ", "") and
+        metadata_row["point"].lower().replace(" ", "") == subfolder["point"].lower().replace(" ", "") and
+        str(metadata_row["mothbox"].lower()).replace(" ", "") == str(subfolder["mothbox"].lower()).replace(" ", "") and
+        metadata_row["deployment.date"] == subfolder["date"]
+    ):
+      matches.append(subfolder["path"])
+
+  return matches
+
+
 def scan_for_images_inallfoldersandsubfolders(folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""
   jpeg_files = []
@@ -290,11 +375,13 @@ metadata = read_metadata(csv_path)
 csv_headers = metadata.columns.tolist()
 print(csv_headers)
 # Preprocess subfolders
-preprocessed_subfolders = preprocess_subfolders(image_data_path)
+preprocessed_subfolders = preprocess_subfolders_inclusive(image_data_path)
 
 
 if metadata is not None:
-    metadata = convert_dates_in_dataframe(metadata)  # Convert Dates to YYYY-MM-DD format  #Convert on a copy to avoid modifying original data
+    #metadata = convert_dates_in_dataframe(metadata)  # Convert Dates to YYYY-MM-DD format  #Convert on a copy to avoid modifying original data
+    
+    metadata=convert_dates_YYYY_MM_DD(metadata)
     noMatches=[]
     for index, row in metadata.iterrows():
         matches = find_matching_subfolders(row, preprocessed_subfolders)

@@ -9,7 +9,21 @@ import time
 FTP_HOST = "u407120.your-storagebox.de"
 FTP_USER = "u407120"
 FTP_PASS = "zvanyULwMmgZicLN"
-FTP_START_DIR = "/moths/Panama/Gamboa_RadioHill_AccionSauro_2024-08-06"  # Path on the server to start the process
+FTP_START_DIRS = [
+    "/moths/Panama/Gamboa_RDCbottom_comerLicaon_2024-11-14",
+    "/moths/Panama/LaAlzaCambutal_BoqueGaleriaGrass_GradoVerdin_2024-09-03",
+    "/moths/Panama/LaAlzaCambutal_BosqueGaleriaGrass_GradoVerdin_2024-09-03",
+    "/moths/Panama/LaAlzaCambutal_MISSINGPUNTO_GradoVerdin_2024_09_07",
+    "/moths/Panama/LaAlzaCambutal_RobleCercaPozo_WingedHapuku_2024-09-03",
+    "/moths/Panama/PEA_Backyard_WingedHapuku_2024-09-01",
+    "/moths/Panama/PEA_CanopyVenao_CuervoCinife_2024_09_09",
+    "/moths/Panama/PEA_CanopyVenao_CuervoCinife_2024-09-01",
+    "/moths/Panama/PEA_CanopyVenao_FlatHapuku_2024_09_09",
+    "/moths/Panama/PEA_CanopyVenao_FlatHapuku_2024-09-02",
+    "/moths/Panama/Totumas_Ancianos_GrisMejua_2024-09-04",
+    "/moths/Panama/Totumas_LodgeStart_GrisMejúa_2024-09-04",
+    "/moths/Panama/Totumas_Roble_AccionSauro_2024-09-04",
+]  # Path on the server to start the process
 
 def remove_accents(input_str):
     """
@@ -103,27 +117,31 @@ def main():
     """
     Main function to start the renaming process on an FTP server.
     """
-    ftp = FTP(FTP_HOST)
-    ftp.login(FTP_USER, FTP_PASS)
-    ftp.set_pasv(True)  # Enable passive mode
+    for start_dir in FTP_START_DIRS:
+        print(start_dir)
+        FTP_START_DIR=start_dir
+        
+        ftp = FTP(FTP_HOST)
+        ftp.login(FTP_USER, FTP_PASS)
+        ftp.set_pasv(True)  # Enable passive mode
 
-    print(f"Connected to FTP server: {FTP_HOST}")
-    print("Calculating total folders...")
+        print(f"Connected to FTP server: {FTP_HOST}")
+        print("Calculating total folders...")
 
-    total_folders = count_folders(ftp, FTP_START_DIR)
-    print(f"Total folders found: {total_folders}")
+        total_folders = count_folders(ftp, FTP_START_DIR)
+        print(f"Total folders found: {total_folders}")
 
-    processed_folders = [0]  # Use a mutable list to track progress
+        processed_folders = [0]  # Use a mutable list to track progress
 
-    try:
-        traverse_and_rename(ftp, FTP_START_DIR, total_folders, processed_folders)
-    except Exception as e:
-        print(f"An error occurred: {e}")
-        reconnect_and_resume(ftp, FTP_START_DIR, total_folders, processed_folders)
-    finally:
-        ftp.quit()
+        try:
+            traverse_and_rename(ftp, FTP_START_DIR, total_folders, processed_folders)
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            reconnect_and_resume(ftp, FTP_START_DIR, total_folders, processed_folders)
+        finally:
+            ftp.quit()
 
-    print("\nRenaming process completed.")
+        print("\nRenaming process completed.")
 
 if __name__ == "__main__":
     main()

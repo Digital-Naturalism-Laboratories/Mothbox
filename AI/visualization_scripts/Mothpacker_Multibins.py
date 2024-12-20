@@ -11,7 +11,7 @@ import argparse
 
 
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\mothbox_dataset_3000_2024-10-10\images\train\x-anylabeling-matting"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
 #BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
 BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
@@ -20,11 +20,15 @@ BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR =(29, 241, 242) #nice pastel blue
 #BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
 #BACKGROUND_COLOR =(242, 29, 139) #hot pink
-ASPECT_RATIO=0.707  #A4 paper ratio 1.414 in portrait or  0.707 in landscape   # Letter paper is 215.9 x 279.4mm 1.29:1 ratio or 0.775 landscape
-# Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
 #BACKGROUND_COLOR= (0,0,0) #black
-BACKGROUND_ALPHA=255
-PIX_PER_MM=15
+BACKGROUND_ALPHA=0
+
+#ASPECT_RATIO=0.707  #A4 paper ratio 1.414 in portrait or  0.707 in landscape   # Letter paper is 215.9 x 279.4mm 1.29:1 ratio or 0.775 landscape
+# Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
+
+ASPECT_RATIO=1.7
+
+PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
 
 # An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 15px/mm = 3150 for realistic insect sizes if printed full portrait mode
 # Or 297x15 = 4455 for landscape mode
@@ -33,8 +37,8 @@ PIX_PER_MM=15
 OUTPUT_WIDTH=4191
 
 
-IMAGE_SCALE_PERCENT=100
-SORT_ALGO = 1
+IMAGE_SCALE_PERCENT=23
+SORT_ALGO = 0
 MIN_IMAGE_DIM=4 #minimum width of an image to work with
 MAX_NUM_PAGES =100  # Replace with your desired max number of bins
 
