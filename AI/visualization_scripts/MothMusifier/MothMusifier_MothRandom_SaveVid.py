@@ -11,16 +11,21 @@ import cv2
 # Configuration
 AUDIO_INPUT_PATH = r"C:\Users\andre\Documents\GitHub\06 - I Think It Is Beautiful That You Are 256 Colors Too.wav"
 TRANS_IMAGES_DIR = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"  # Directory with transparent insect images
-MAX_IMAGES = 500  # Max number of images to load
+MAX_IMAGES = 700  # Max number of images to load
 hop_length = 512
-IMAGE_SCALE = 0.6  # Scale images to 20% of their original size
+IMAGE_SCALE = 0.65  # Scale images to 20% of their original size
 BACKGROUND_IMAGE_SCALE = 0.1  # Scale background images to 10% of their original size
 BEAT_INTERVAL = 16  # Change insect image every 16th beat
-BACKGROUND_IMAGES_COUNT = 450  # Max number of background images
+BACKGROUND_IMAGES_COUNT = 550  # Max number of background images
+fps=30
+WIDTH, HEIGHT = 1920, 1080
 
 # Load the audio file
 y, sr = librosa.load(AUDIO_INPUT_PATH)
 #y, sr = librosa.load(librosa.example('nutcracker'))
+audio_duration = librosa.get_duration(y=y, sr=sr)
+total_frames = int(audio_duration * fps)
+
 
 # Separate percussive and harmonic signals
 y_harmonic, y_percussive = librosa.effects.hpss(y)
@@ -49,7 +54,6 @@ def load_images_from_directory(directory, max_images, scale):
 
 # Initialize Pygame
 pygame.init()
-WIDTH, HEIGHT = 1920, 800
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  # Initialize display
 pygame.display.set_caption("Dynamic Chromagram Visualization with Insects")
 clock = pygame.time.Clock()
@@ -79,7 +83,7 @@ background_positions = generate_random_positions(BACKGROUND_IMAGES_COUNT)
 fourcc = cv2.VideoWriter_fourcc(*'XVID')  # Choose codec (XVID)
 video_filename = 'output_video.avi'  # Output video file
 fps = 30  # Frames per second
-video_writer = cv2.VideoWriter(video_filename, fourcc, fps, (WIDTH, HEIGHT))
+#video_writer = cv2.VideoWriter(video_filename, fourcc, fps, (WIDTH, HEIGHT))
 
 
 # Play audio in a separate thread
@@ -93,6 +97,8 @@ audio_thread.start()
 # Visualization loop
 start_time = time.time()
 running = True
+frame_count=0
+
 background_color = (255, 255, 255)  # Initial background color
 current_insect_images = random.sample(insect_images, num_insects)
 current_background_images = random.sample(background_images, BACKGROUND_IMAGES_COUNT)
@@ -106,7 +112,7 @@ def get_complementary_color(color):
 def calculate_rms(signal, frame_length):
     return np.sqrt(np.mean(signal**2))
 
-while running:
+while running and frame_count<total_frames:
     # Clear screen with the current background color
     screen.fill(background_color)
 
@@ -169,11 +175,13 @@ while running:
         rect = scaled_image.get_rect(center=insect_positions[i])
         screen.blit(scaled_image, rect)
 
+    """
     # Capture the frame and write it to the video file
     frame = pygame.surfarray.array3d(pygame.display.get_surface())
     frame = np.transpose(frame, (1, 0, 2))  # Convert to OpenCV format (BGR)
     video_writer.write(frame)
-
+    frame_count +=1
+    """
     # Update display
     pygame.display.flip()
     clock.tick(60)  # Limit to 60 FPS
@@ -184,7 +192,7 @@ while running:
             running = False
 
 # Release the video writer
-video_writer.release()
+#video_writer.release()
 
 # Quit Pygame
 pygame.quit()
