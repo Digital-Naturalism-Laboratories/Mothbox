@@ -96,7 +96,7 @@ def find_ground_truth_data(input_path):
 
                         # Normalize all string values in the JSON structure
                         #normalized_data = normalize_json(data)
-                        normalized_data=data
+                        normalized_data=data #we normalize everything in a different script now
                         # Save the normalized data back to the file
                         with open(json_path, "w", encoding="utf-8") as outfile:
                             json.dump(normalized_data, outfile, indent=4, ensure_ascii=False)
