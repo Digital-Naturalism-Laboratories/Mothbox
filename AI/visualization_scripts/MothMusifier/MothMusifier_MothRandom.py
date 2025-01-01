@@ -8,7 +8,7 @@ import time
 import threading
 
 # Configuration
-AUDIO_INPUT_PATH = r"C:\Users\andre\Documents\GitHub\06 - I Think It Is Beautiful That You Are 256 Colors Too.wav"
+AUDIO_INPUT_PATH = r"C:\Users\andre\Downloads\construction-revisionist-official-audio-1080-publer.io.mp4"
 TRANS_IMAGES_DIR = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"  # Directory with transparent insect images
 MAX_IMAGES = 500  # Max number of images to load
 hop_length = 512

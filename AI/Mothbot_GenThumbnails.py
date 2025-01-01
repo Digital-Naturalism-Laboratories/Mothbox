@@ -2,7 +2,7 @@
 
 import json
 import os
-INPUT_PATH = r'F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15'
+INPUT_PATH = r'F:\Panama\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01'
 from pathlib import Path
 import cv2
 import numpy as np
