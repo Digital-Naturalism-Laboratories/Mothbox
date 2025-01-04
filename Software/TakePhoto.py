@@ -6,7 +6,7 @@ Takephoto - Andy Quitmeyer - Public Domain
 This script goes through the proper setup for using 64MP cameras on a pi4 or pi5
 
 Its order of operations is like this
-
+-Determine if pi4 or pi5 to set max resolution
 -Read in camera settings
 -Configure camera settings like HDR mode
 -Calibrate camera's exposure and focus (if mandated)
@@ -18,7 +18,6 @@ Its order of operations is like this
 
 
 TODO:
--Add function to detect whether pi4 or pi5 and adjust the resolution to full max for pi5
 -Add safety function to detect if disk space left is less than 7GB and refuse to take more photos, and give a debug flash pattern (such as SOS with ring lights)
 """
 
@@ -38,7 +37,7 @@ computerName = "mothboxNOTSET"
 import cv2
 
 import csv
-
+import sys
 
 import io
 from PIL import Image
@@ -95,7 +94,7 @@ else:
 #HDR Controls
 num_photos = 3
 exposuretime_width = 18000
-global middleexposure # 500 #minimum exposure time for Hawkeye camera 64mp arducam
+middleexposure=500 # 500 #minimum exposure time for Hawkeye camera 64mp arducam
 
 print("----------------- STARTING TAKEPHOTO-------------------")
 now = datetime.now()
@@ -132,6 +131,19 @@ print("Setup The Relay Module is [success]")
 
 global onlyflash
 onlyflash=False
+
+
+
+def restart_script():
+    """
+    Terminates the current script and restarts it.
+    """
+    print("Restarting script...")
+    time.sleep(1)  # Optional: Add a small delay for clarity
+    python_executable = sys.executable
+    script_path = sys.argv[0]
+    os.execv(python_executable, [python_executable, script_path])
+
 
 
 def get_control_values(filepath):
@@ -180,7 +192,7 @@ def load_camera_settings():
     Raises:
         ValueError: If an invalid value is encountered in the CSV file.
     """
-    
+    global middleexposure, calib_lens_position, calib_exposure
     
     #first look for any updated CSV files on external media, we will prioritize those
     external_media_paths = ("/media", "/mnt")  # Common external media mount points
@@ -346,6 +358,7 @@ def print_af_state(request):
     md = request.get_metadata()
     print(("Idle", "Scanning", "Success", "Fail")[md['AfState']], md.get('LensPosition'))
 def run_calibration():
+    global calib_lens_position, calib_exposure
     #preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (4624, 3472)})
     preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (1920*2, 1080*2)})
     still_config = picam2.create_still_configuration(main={"size": (width, height), "format": "RGB888"}, buffer_count=1)
@@ -394,7 +407,6 @@ def run_calibration():
     print(focusstate)
     camera_settings["LensPosition"]=calib_lens_position
     
-    #because we have a white background it can be useful to bump up the exposure a bit to see the insects better
     exposure_shift=0 #TODO problem: for some reason if this is set, it makes just the autocalibrated photo brighter, not the rest
     camera_settings["ExposureTime"]=calib_exposure+exposure_shift
     picam2.stop()
@@ -406,11 +418,15 @@ def run_calibration():
     #save the calibrated settings back to the CSV
     new_settings = {"LensPosition": calib_lens_position, "ExposureTime": calib_exposure+exposure_shift} 
     update_camera_settings(chosen_settings_path, new_settings)
-
+    
+    #restart the whole script now because for some reason if we just run the phot taking it is always slightly brighter
+    time.sleep(1)
+    restart_script()
+    
+    
 #before calibration, set these values to the default we read in
-global calib_lens_position
-global calib_exposure
 
+calib_lens_position=6
 
 calib_lens_position = camera_settings["LensPosition"]
 calib_exposure = camera_settings["ExposureTime"]
@@ -546,6 +562,7 @@ def create_dated_folder(base_path):
   return folder_path+"/"
 
 def takePhoto_Manual():
+    global middleexposure, calib_lens_position, calib_exposure
     # LensPosition: Manual focus, Set the lens position.
     now = datetime.now()
     timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
