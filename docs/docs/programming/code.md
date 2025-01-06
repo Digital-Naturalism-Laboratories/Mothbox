@@ -5,8 +5,8 @@ parent: Programming Mothbox
 has_children: true
 nav_order: 6
 ---
-Instructions for a Mothbox v4.o Image on a Raspberry Pi 5 (and hopefully works on a 4 too!)
-Most of the time you can just clone an image to an SD card of a mothbox, but if you want to code your own from scratch starting from a fresh install of a raspberry pi, follow these instructions
+Here you will find instructions for a Mothbox v4.o Image on a Raspberry Pi 5 (and we hope it works on a 4 too!).
+Most of the time, you can just clone an image to an SD card of a Mothbox, but if you want to code your own from scratch starting from a fresh install of a Raspberry Pi, follow these instructions.
 # RPI 5 Bookworm from scratch (June 20, 2024)
 
 mothbox.local
@@ -55,32 +55,32 @@ sudo nano /boot/firmware/config.txt
 sudo nano /boot/config.txt
 
 
-find this line and add the cam-512 part
+Find this line and add the cam-512 part.
 ```
 dtoverlay=vc4-kms-v3d, cma-512
 
 
-#Find the line: [all], add the following items under it:
+#Find the line: [all], and add the following items under it:
 
 #Disable Bluetooth
 dtoverlay=disable-bt
 
-#This sets us the rechargable RTC battery to charge itself
+#This sets us the rechargable RTC battery to charge itself.
 dtparam=rtc_bbat_vchg=3000000
-#3000000 indicates the maximum voltage, charging to 3V will disable charging, and the voltage lower than 3V will start to trickle charging
+#3000000 indicates the maximum voltage, charging to 3V will disable charging, and the voltage lower than 3V will start to trickle charging.
 
 
 
 dtoverlay=ov64a40,cam0,link-frequency=360000000
-#camera_auto_detect=0 #I haven't needed this line
+#camera_auto_detect=0 #I haven't needed this line.
 
-(If you have a second camera you can also add it by adding a second line like this:
+If you have a second camera, you can also add it by adding a second line like this:
 dtoverlay=ov64a40,cam1,link-frequency=456000000
 
 ```
-hit CTRL+X and save the file
+Hit CTRL+X and save the file.
 
-now we edit a different file to make the pi5 handle its power more efficiently and let us wake it up
+Now we edit a different file to make the Pi5 handle its power more efficiently and let us wake it up.
 ```
 #To support low-power mode for wake-up alerts, go to configuration:
 
@@ -90,21 +90,21 @@ sudo -E rpi-eeprom-config --edit
 POWER_OFF_ON_HALT=1
 WAKE_ON_GPIO=0
 ```
-hit CTRL+X and save the file
+Hit CTRL+X and save the file.
 
 ```
 sudo reboot now
 ```
-The pi should reboot, and now we should be able to go on the desktop with VNC
+The Pi should reboot, and now we should be able to go on the desktop with VNC.
 ## Desktop Time
 open RealVNC
 
 mothbox.local
 pi and luna
-check save passowrd
+Check save password
 
 
-try a command like
+Try a command like:
 ```
 libcamera-hello --info-text "lens %lp" -t 0
 ```
@@ -112,19 +112,19 @@ and it should open fine and display the image. If there is just a black screen, 
 
 
 
-Make a folder on the Desktop called "Mothbox"
+Make a folder on the Desktop called "Mothbox."
 
-Paste everything from Software in the github code repo in there
+Paste everything from Software in the github code repo in there.
 
 
 
-run TakePhoto.py inside the Mothbox folder. It should take some photos and save them in the photos folder
+Run TakePhoto.py inside the Mothbox folder. It should take some photos and save them in the photos folder.
 
-## Install Power monitoring
+## Install Power Monitoring
 
 sudo pip3 install adafruit-circuitpython-ina260 --break-system-packages
 
-add this to crontab 
+Add this to crontab. 
 ```
 */1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
 ```
@@ -133,12 +133,12 @@ sudo raspi-config
 
 enable SPI enable i2c
 
-##### note! this breaks GPIO in pi5 so to fix
+##### Note! This breaks GPIO in pi5 so to fix
 cd /usr/local/lib/python3.11/dist-packages/RPi
 
 and just started deleting stuff until the GPIO pins started working again.
 
-this meant deleting
+This meant deleting
 
 sudo rm _GPIO.cpython-311-aarch64-linux-gnu.so
 
@@ -151,19 +151,19 @@ pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi/GPIO $ cd ..
 pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $ sudo rm __init__.py
 pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $
 
-Obviously im not the smartest hacker out there, but hey it works fine now it seems!
+Obviously I'm not the smartest hacker out there, but hey it works fine now it seems!
 
 ## set up the crontab
 
-make sure to do SUDO crontab -e not just crontab -e because our scripts need to run as root because they change system things like wakeup times
+Make sure to do SUDO crontab -e not just crontab -e, because our scripts need to run as root, because they change system things like wakeup times.
 
-in the @reboot command for the scheduler, make sure to add "-u" after python to make the logs function properly
+In the @reboot command for the scheduler, make sure to add "-u" after python to make the logs function properly.
 
 
 ```
 sudo crontab -e
 ```
-add these lines for a default scheduling
+Add these lines for a default scheduling:
 ```
 */1 * * * * cd /home/pi/Desktop/Mothbox && python3 Backup_Files.py >> /home/pi/Desktop/Mothbox/logs/Backup_log.txt 2>&1
 */1 * * * * cd /home/pi/Desktop/Mothbox && python3 Attract_On.py >> /home/pi/Desktop/Mothbox/logs/Attract_On_log.txt 2>&1
@@ -172,30 +172,30 @@ add these lines for a default scheduling
 
 */1 * * * * cd /home/pi/Desktop/Mothbox/ && python3 Measure_Power.py >> /home/pi/Desktop/Mothbox/logs/Measure_Power_log.txt 2>&1
 ```
-change that last line to SchedulerPi4.py if using a pi4 instead.
-hit CTRL+X and save, and reboot.
+Change that last line to SchedulerPi4.py if using a Pi4 instead.
+Hit CTRL+X, save, and reboot.
 
-upon reboot everthing should be working in mothbox mode!
+Upon reboot, everthing should be working in Mothbox mode!
 
-if somethign isn't working, check the logs and see if there's a problem.
-for instance my photos weren't taking, and in the TakePhoto.log, i got an error that said "Permission denied" so i righ clicked takephoto.py, and set its permissions to allow execution, and it worked great!
+If something isn't working, check the logs and see if there's a problem.
+For instance my photos weren't taking, and in the TakePhoto.log, I got an error that said "Permission denied." I right clicked takephoto.py and set its permissions to allow execution, and it worked great!
 
 
 ## Wifi Control hotspot and limiting
 from https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network
 
-download
+Download:
 ```
 curl "https://www.raspberryconnect.com/images/scripts/AccessPopup.tar.gz" -o AccessPopup.tar.gz
 
-unarchive with
+Unarchive with:
 
 tar -xvf ./AccessPopup.tar.gz
-change to the AccessPopup folder
+Change to the AccessPopup folder.
 
 cd AccessPopup
 
-Run the Installer script
+Run the Installer script.
 
 sudo ./installconfig.sh
 ```
@@ -207,19 +207,19 @@ This will automatically start monitoring the wifi connection every 2 minutes. It
 mothboxwifi
 lunaluna
 
-to make sure it runs you might have to add this to cron
+To make sure it runs, you might have to add this to cron.
 ```
 */1 * * * * sudo /usr/bin/accesspopup >/dev/null 2>&1
 ```
 
-## Kill wifi after a while (Limit wifi)
+## Turn off wifi after a while (Limit wifi)
 
-you need to edit the access popup script:
+You need to edit the access popup script:
 
 sudo nano /usr/bin/accesspopup
-On line 22 it says
+On line 22, it says:
 re_enable_wifi='y'
-change this to 'n'
+Change this to 'n'
 so your wifi stays off. I would also do this to the accesspopup file in the downloaded AccessPopup folder so it installs as n as well.
 
 
@@ -238,14 +238,14 @@ sudo systemctl enable lowpower.timer
 copy low_in_one.sh powerup.sh & stop_lowpower.sh to a convenient place.
 stop_lowpower.sh 
     is used to stop the timer during the 10 minute countdown. or issue the command sudo systemctl stop lowpower.timer
-    restarting the timer after 10 minutes is not possible as it is from boot up time.
+    Restarting the timer after 10 minutes is not possible as it is from boot up time.
 powerup.sh
-    is used to switch wifi and bluetooth back on if needed
+    is used to switch wifi and bluetooth back on if needed.
 low_in_one.sh
-    this will switch off wifi and bluetooth in 1 minutes time. End the cammand with a & otherwise it will block you enter further commands. use ctrl C to stop it.
+    This will switch off wifi and bluetooth in 1 minutes time. End the command with a &; otherwise, it will block you from entering further commands. Use ctrl C to stop it.
 use: low_in_one.sh & 
 
-finally add this to crontab
+Finally, add this to crontab:
 
 ```
 @reboot cd /home/pi/Desktop/Mothbox/scripts/MothPower && ./powerup_wifi.sh
@@ -269,7 +269,7 @@ sudo apt-get remove --purge firefox
 
 
 # RPI legacy Bullseye 32bit os
-(Follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
+This follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
 flash with
 
 mothbox.local
@@ -293,7 +293,7 @@ sudo nano /boot/config.txt
 uncomment 
 hdmi_force_hotplug=1
 
-change this line to
+Change this line to
 dtoverlay=vc4-kms-v3d, cma-512
 
 
@@ -308,15 +308,15 @@ open RealVNC
 
 mothbox.local
 
-save passowrd
+save password
 
 
-open a cmd line
+Open a cmd line.
 
 
-enter the command
+Enter the command:
 cat /proc/meminfo
-and your CmaTotal: should say something like 524288 kB (if not, double check your /boot/config.txt was saved correctly and restart)
+and your CmaTotal should say something like 524288 kB (if not, double check your /boot/config.txt was saved correctly and restart).
 
 CAMERA STUFF
 
@@ -330,37 +330,37 @@ sudo chmod +x install_pivariety_pkgs.sh
 ./install_pivariety_pkgs.sh -p libcamera_apps
 
 
-Step 5 Installing Picamera2 dependencies
+Step 5: Installing Picamera2 dependencies
 
 sudo apt install -y python3-kms++
 sudo apt install -y python3-pyqt5 python3-prctl libatlas-base-dev ffmpeg python3-pip
 sudo pip3 install numpy --upgrade
 sudo pip3 install picamera2 --upgrade
 
-Shut down the RPI and physically unplug it, and then start it back up again
+Shut down the RPI and physically unplug it, and then start it back up again.
 
 
-try a command like
+Try a command like
 
 libcamera-hello --info-text "lens %lp" -t 0
 
 
-and you should see an image that gets focused
+and you should see an image that gets focused.
 (more libcamera commands https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Libcamera-User-Guide/)
 https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/camera/libcamera_options_common.adoc
 
-save a full res autofocused image
+Save a full res autofocused image.
 
 libcamera-still -t 5000 -n -o test64mp.jpg --width 9152 --height 6944
 
-try to save a full res manual focused image
+Try to save a full res manual focused image.
 libcamera-still --lens-position 7.4 -n -o test64mp_7.4.jpg --width 9152 --height 6944
 
-Try to save a photo with locked down parameters
+Try to save a photo with locked down parameters.
 libcamera-still --lens-position 7.4 -n  --width 9152 --height 6944 --awb cloudy --metering average --ev .5 -o test64mp_7.4_cloud_met_av_ev05.jpg
 
 
-save a photo with an extra RAW photo
+Save a photo with an extra RAW photo.
 
 libcamera-still --lens-position 7.4 -n  --width 9152 --height 6944 --awb cloudy --metering average --ev .5 -o test64mp_7.4_cloud_met_av_ev05.jpg --raw
 
@@ -371,7 +371,7 @@ PI Juice Software
 
 sudo apt-get install pijuice-gui
 
-(As of nov 2023 you have to run these lines to make work because of 64 bit things https://github.com/PiSupply/PiJuice/issues/1000#issuecomment-1676382133)
+(As of Nov 2023, you have to run these lines to make it work because of 64 bit things. https://github.com/PiSupply/PiJuice/issues/1000#issuecomment-1676382133)
 $ sudo rm /usr/bin/pijuice_gui
 $ sudo ln -s  /usr/bin/pijuice_gui32 /usr/bin/pijuice_gui
 sudo rm /usr/bin/pijuice_cli
@@ -381,12 +381,12 @@ sudo ln -s  /usr/bin/pijuice_gui32 /usr/bin/pijuice_cli
 sudo rm /usr/bin/pijuiceboot
 sudo ln -s  /usr/bin/pijuice_gui32 /usr/bin/pijuiceboot
 
-You need to go to pijuice GUI
-go to config
-set EEPROM to 0x52
-add dtoverlay=i2c-rtc,ds1307 to /boot/config.txt.
+You need to go to pijuice GUI.
+Go to config.
+Set EEPROM to 0x52.
+Add dtoverlay=i2c-rtc,ds1307 to /boot/config.txt.
 
-(examples To add something to the startup service
+(examples: To add something to the startup service
 
 sudo nano /etc/rc.local
 
