@@ -44,93 +44,11 @@ from PIL import Image
 import piexif
 import subprocess
 
-
-
-#First figure out if this is a Pi4 or a Pi5
-
-def determinePiModel():
-
-  # Check Raspberry Pi model using CPU info
-  cpuinfo = open("/proc/cpuinfo", "r")
-  model = None  # Initialize model variable outside the loop
-  themodel=None
-
-  for line in cpuinfo:
-    #print(line)
-    if line.startswith("Model"):
-      model = line.split(":")[1].strip()
-      break
-  cpuinfo.close()
-
-  # Execute function based on model
-  print(model)
-  if model:  # Check if model was found
-    if "Pi 4" in model:  # Model identifier for Raspberry Pi 4
-      themodel=4
-    elif "Pi 5" in model:  # Model identifier for Raspberry Pi 5
-      themodel=5
-    else:
-      print("Unknown Raspberry Pi model detected. Going to treat as model 5")
-      themodel=5
-  else:
-    print("Error: Could not read Raspberry Pi model information.")
-    themodel=5
-  return themodel
-
-rpiModel=None
-rpiModel=determinePiModel()
-
-#the Pi4 can't really handle the FULL resolution, but pi5 can!
-if(rpiModel==5):
-    width=9248
-    height=6944
-else:
-    width=9000
-    height=6000
-
-
-
-
-#HDR Controls
-num_photos = 3
-exposuretime_width = 18000
-middleexposure=500 # 500 #minimum exposure time for Hawkeye camera 64mp arducam
-
-print("----------------- STARTING TAKEPHOTO-------------------")
-now = datetime.now()
-formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
-
-print(f"Current time: {formatted_time}")
-
-
-import os, platform
-if platform.system() == "Windows":
-	print(platform.uname().node)
-else:
-	#computerName = os.uname()[1]
-	print(os.uname()[1])   # doesnt work on windows
-
-
-
 #GPIO
 import RPi.GPIO as GPIO
 import time
 
-Relay_Ch1 = 26
-Relay_Ch2 = 20
-Relay_Ch3 = 21
-
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-
-GPIO.setup(Relay_Ch1,GPIO.OUT)
-GPIO.setup(Relay_Ch2,GPIO.OUT)
-#GPIO.setup(Relay_Ch3,GPIO.OUT)
-
-print("Setup The Relay Module is [success]")
-
-global onlyflash
-onlyflash=False
+import os, platform
 
 
 
@@ -309,35 +227,6 @@ def get_serial_number():
   except (IOError, IndexError):
     return None
 
-
-control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
-control_values = get_control_values(control_values_fpath)
-onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
-LastCalibration = float(control_values.get("LastCalibration", 0))
-computerName = control_values.get("name", "wrong")
-
-
-
-if(onlyflash):
-    print("operating in always on flash mode")
-
-
-'''
-#This is for getting min and max details for certain settings, (See the picam pdf manual)
-print(picam2.camera_controls["AnalogueGain"])
-min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
-'''
-#This will be the path to the CSV holding the settings whether it is the one on the disk or the external CSV
-global chosen_settings_path
-default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
-chosen_settings_path=default_path
-
-#camera_settings = load_camera_settings("camera_settings.csv")#CRONTAB CAN'T TAKE RELATIVE LINKS! 
-camera_settings = load_camera_settings()
-
-'''
-Test Autoexposure Things
-'''
 def stop_cron():
     """Runs the command 'service cron stop' to stop the cron service."""
     try:
@@ -423,87 +312,6 @@ def run_calibration():
     time.sleep(1)
     restart_script()
     
-    
-#before calibration, set these values to the default we read in
-
-calib_lens_position=6
-
-calib_lens_position = camera_settings["LensPosition"]
-calib_exposure = camera_settings["ExposureTime"]
-
-
-AutoCalibration = camera_settings.pop("AutoCalibration",1) #defaults to what is set above if not in the files being read
-AutoCalibrationPeriod = int(camera_settings.pop("AutoCalibrationPeriod",1000))
-
-
-#Start up cameras
-picam2 = Picamera2()
-
-#picam2.set_controls({"LensPosition":7.6,"AfSpeed":0,"AfRange":0, "ExposureValue":2.0, "AeEnable":1})
-#picam2.start(show_preview=True)
-#time.sleep(2)
-#picam2.stop()
-
-
-current_time = int(time.time())
-timesincelastcalibration= current_time - LastCalibration
-print("Last calibration was   ",timesincelastcalibration,"  seconds ago \n Autocalibration period is   ", AutoCalibrationPeriod)
-recalibrated= False
-if AutoCalibration and (timesincelastcalibration > AutoCalibrationPeriod):
-    print("Do Autocalibrate")
-    recalibrated=True
-    print(current_time)
-    #picam2.configure(preview_config)
-    #picam2.configure(capture_config_fastAuto)
-    run_calibration()
-else:
-    print("Don't Autocalibration")
-
-#reload camera settings after possible calibration
-camera_settings = load_camera_settings()
-AutoCalibration = camera_settings.pop("AutoCalibration",1) #defaults to what is set above if not in the files being read
-AutoCalibrationPeriod = int(camera_settings.pop("AutoCalibrationPeriod",1000))
-
-calib_lens_position = camera_settings["LensPosition"]
-calib_exposure = camera_settings["ExposureTime"]
-
-
-
-#remove settings that aren't actually in picamera2
-oldsettingsnames = camera_settings.pop("Name",computerName) #defaults to what is set above if not in the files being read
-ImageFileType = int(camera_settings.pop("ImageFileType",0))
-VerticalFlip = int(camera_settings.pop("VerticalFlip",0))
-
-
-
-#HDR settings
-num_photos = int(camera_settings.pop("HDR",num_photos)) #defaults to what is set above if not in the files being read
-exposuretime_width = int(camera_settings.pop("HDR_width",exposuretime_width))
-if(num_photos<1 or num_photos==2):
-    num_photos=1
-
-capture_main = {"size": (width, height), "format": "RGB888", }
-capture_config = picam2.create_still_configuration(main=capture_main,raw=None, lores=None)
-capture_config_flipped =  picam2.create_still_configuration(main=capture_main, transform=Transform(vflip=True, hflip=True), raw=None, lores=None)
-picam2.configure(capture_config)
-
-
-if camera_settings:
-    picam2.set_controls(camera_settings)
-
-picam2.start()
-time.sleep(1)
-
-print("cam started");
-
-picam2.stop()
-
-if(VerticalFlip):
-    picam2.configure(capture_config_flipped)
-else:
-    picam2.configure(capture_config)
-
-#start = time.time()
 
 def list_exposuretimes(middle_exposuretime, num_photos, exposure_width):
   """
@@ -693,16 +501,195 @@ def takePhoto_Manual():
           i=i+1
 
 
+def determinePiModel():
+
+  # Check Raspberry Pi model using CPU info
+  cpuinfo = open("/proc/cpuinfo", "r")
+  model = None  # Initialize model variable outside the loop
+  themodel=None
+
+  for line in cpuinfo:
+    #print(line)
+    if line.startswith("Model"):
+      model = line.split(":")[1].strip()
+      break
+  cpuinfo.close()
+
+  # Execute function based on model
+  print(model)
+  if model:  # Check if model was found
+    if "Pi 4" in model:  # Model identifier for Raspberry Pi 4
+      themodel=4
+    elif "Pi 5" in model:  # Model identifier for Raspberry Pi 5
+      themodel=5
+    else:
+      print("Unknown Raspberry Pi model detected. Going to treat as model 5")
+      themodel=5
+  else:
+    print("Error: Could not read Raspberry Pi model information.")
+    themodel=5
+  return themodel
+
+#------------------------------------------- CODE--------------------- #
+
+print("----------------- STARTING TAKEPHOTO-------------------")
+now = datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time}")
+
+#First figure out if this is a Pi4 or a Pi5
+rpiModel=None
+rpiModel=determinePiModel()
+
+#the Pi4 can't really handle the FULL resolution, but pi5 can!
+if(rpiModel==5):
+    width=9248
+    height=6944
+else:
+    width=9000
+    height=6000
+
+#I don't really know why we need this below code, but it's here. it may have been an earlier attempt to find the pi model
+if platform.system() == "Windows":
+	print(platform.uname().node)
+else:
+	#computerName = os.uname()[1]
+	print(os.uname()[1])   # doesnt work on windows
 
 
-#flashOn()
+#HDR Controls
+num_photos = 3
+exposuretime_width = 18000
+middleexposure=500 # 500 #minimum exposure time for Hawkeye camera 64mp arducam
+
+
+Relay_Ch1 = 26
+Relay_Ch2 = 20
+Relay_Ch3 = 21
+
+GPIO.setwarnings(False)
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(Relay_Ch1,GPIO.OUT)
+GPIO.setup(Relay_Ch2,GPIO.OUT)
+#GPIO.setup(Relay_Ch3,GPIO.OUT)
+
+print("Setup The Relay Module is [success]")
+
+global onlyflash
+onlyflash=False
+
+
+
+control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
+control_values = get_control_values(control_values_fpath)
+onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
+LastCalibration = float(control_values.get("LastCalibration", 0))
+computerName = control_values.get("name", "wrong")
+
+if(onlyflash):
+    print("operating in always on flash mode")
+
+
+#------- Setting up camera settings -------------
+
+'''
+#This is for getting min and max details for certain settings, (See the picam pdf manual)
+print(picam2.camera_controls["AnalogueGain"])
+min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
+'''
+#This will be the path to the CSV holding the settings whether it is the one on the disk or the external CSV
+global chosen_settings_path
+default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
+chosen_settings_path=default_path
+
+#camera_settings = load_camera_settings("camera_settings.csv")#CRONTAB CAN'T TAKE RELATIVE LINKS! 
+camera_settings = load_camera_settings()
+
+    
+#before calibration, set these values to the default we read in
+
+calib_lens_position=6
+
+calib_lens_position = camera_settings["LensPosition"]
+calib_exposure = camera_settings["ExposureTime"]
+
+
+AutoCalibration = camera_settings.pop("AutoCalibration",1) #defaults to what is set above if not in the files being read
+AutoCalibrationPeriod = int(camera_settings.pop("AutoCalibrationPeriod",1000))
+
+
+#Start up cameras
+picam2 = Picamera2()
+
+#picam2.set_controls({"LensPosition":7.6,"AfSpeed":0,"AfRange":0, "ExposureValue":2.0, "AeEnable":1})
+#picam2.start(show_preview=True)
+#time.sleep(2)
+#picam2.stop()
+
+#----Autocalibration ---------
+
+current_time = int(time.time())
+timesincelastcalibration= current_time - LastCalibration
+print("Last calibration was   ",timesincelastcalibration,"  seconds ago \n Autocalibration period is   ", AutoCalibrationPeriod)
+recalibrated= False
+if AutoCalibration and (timesincelastcalibration > AutoCalibrationPeriod):
+    print("Do Autocalibrate")
+    recalibrated=True
+    print(current_time)
+    #picam2.configure(preview_config)
+    #picam2.configure(capture_config_fastAuto)
+    run_calibration()
+else:
+    print("Don't Autocalibration")
+
+# ------ Prepare to take actual photo -----------
+#reload camera settings after possible calibration
+camera_settings = load_camera_settings()
+AutoCalibration = camera_settings.pop("AutoCalibration",1) #defaults to what is set above if not in the files being read
+AutoCalibrationPeriod = int(camera_settings.pop("AutoCalibrationPeriod",1000))
+
+calib_lens_position = camera_settings["LensPosition"]
+calib_exposure = camera_settings["ExposureTime"]
+
+
+#remove settings that aren't actually in picamera2
+oldsettingsnames = camera_settings.pop("Name",computerName) #defaults to what is set above if not in the files being read
+ImageFileType = int(camera_settings.pop("ImageFileType",0))
+VerticalFlip = int(camera_settings.pop("VerticalFlip",0))
+
+#HDR settings
+num_photos = int(camera_settings.pop("HDR",num_photos)) #defaults to what is set above if not in the files being read
+exposuretime_width = int(camera_settings.pop("HDR_width",exposuretime_width))
+if(num_photos<1 or num_photos==2):
+    num_photos=1
+
+capture_main = {"size": (width, height), "format": "RGB888", }
+capture_config = picam2.create_still_configuration(main=capture_main,raw=None, lores=None)
+capture_config_flipped =  picam2.create_still_configuration(main=capture_main, transform=Transform(vflip=True, hflip=True), raw=None, lores=None)
+picam2.configure(capture_config)
+
+
+if camera_settings:
+    picam2.set_controls(camera_settings)
+
+picam2.start()
+time.sleep(1)
+
+print("cam started");
+
+picam2.stop()
+
+if(VerticalFlip):
+    picam2.configure(capture_config_flipped)
+else:
+    picam2.configure(capture_config)
+
 time.sleep(.5)
 takePhoto_Manual()
 
 
 picam2.stop()
-
-#if recalibrated:
-#    start_cron()
     
 quit()
