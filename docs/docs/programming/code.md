@@ -31,7 +31,7 @@ yes
 ```
 (Wait for any updates)
 
-Let's install some things
+Let's install some things.
 ### Fix the GPIO pins for Pi5
 
 ```
@@ -101,7 +101,7 @@ open RealVNC
 
 mothbox.local
 pi and luna
-Check save password
+Check save password.
 
 
 Try a command like:
@@ -112,7 +112,7 @@ and it should open fine and display the image. If there is just a black screen, 
 
 
 
-Make a folder on the Desktop called "Mothbox."
+Make a folder on the Desktop called "Mothbox".
 
 Paste everything from Software in the github code repo in there.
 
@@ -133,12 +133,12 @@ sudo raspi-config
 
 enable SPI enable i2c
 
-##### Note! This breaks GPIO in pi5 so to fix
-cd /usr/local/lib/python3.11/dist-packages/RPi
+##### Note! This breaks GPIO in pi5, so to fix it, I ran this command:
+``` cd /usr/local/lib/python3.11/dist-packages/RPi ```
 
-and just started deleting stuff until the GPIO pins started working again.
+Then I just started deleting stuff until the GPIO pins started working again.
 
-This meant deleting
+This meant deleting:
 
 sudo rm _GPIO.cpython-311-aarch64-linux-gnu.so
 
@@ -151,7 +151,7 @@ pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi/GPIO $ cd ..
 pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $ sudo rm __init__.py
 pi@mothbox:/usr/local/lib/python3.11/dist-packages/RPi $
 
-Obviously I'm not the smartest hacker out there, but hey it works fine now it seems!
+Obviously, I'm not the smartest hacker out there, but hey it works fine now it seems!
 
 ## set up the crontab
 
@@ -178,7 +178,7 @@ Hit CTRL+X, save, and reboot.
 Upon reboot, everthing should be working in Mothbox mode!
 
 If something isn't working, check the logs and see if there's a problem.
-For instance my photos weren't taking, and in the TakePhoto.log, I got an error that said "Permission denied." I right clicked takephoto.py and set its permissions to allow execution, and it worked great!
+For instance, my photos weren't taking, and in the TakePhoto.log, I got an error that said "Permission denied." I right clicked takephoto.py and set its permissions to allow execution, and it worked great!
 
 
 ## Wifi Control hotspot and limiting
@@ -200,7 +200,7 @@ Run the Installer script.
 sudo ./installconfig.sh
 ```
 The menu options below will be presented. Use option 1 to install the AccessPopup scripts.
-This will automatically start monitoring the wifi connection every 2 minutes. It will also check the wifi at startup and then at every 2 minute intervals.
+This will automatically start monitoring the wifi connection every 2 minutes. It will also check the wifi at startup and then at 2 minute intervals.
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/19c3634d-27ad-4be7-b759-41f9e4c235f7)
 
@@ -219,8 +219,7 @@ You need to edit the access popup script:
 sudo nano /usr/bin/accesspopup
 On line 22, it says:
 re_enable_wifi='y'
-Change this to 'n'
-so your wifi stays off. I would also do this to the accesspopup file in the downloaded AccessPopup folder so it installs as n as well.
+Change this to 'n' so your wifi stays off. I would also do this to the accesspopup file in the downloaded AccessPopup folder so it installs as n as well.
 
 
 
@@ -235,14 +234,14 @@ sudo chmod +x /usr/bin/lowpower.sh
 
 sudo systemctl enable lowpower.timer
 
-copy low_in_one.sh powerup.sh & stop_lowpower.sh to a convenient place.
+Copy low_in_one.sh powerup.sh & stop_lowpower.sh to a convenient place.
 stop_lowpower.sh 
-    is used to stop the timer during the 10 minute countdown. or issue the command sudo systemctl stop lowpower.timer
+    is used to stop the timer during the 10 minute countdown, or issue the command sudo systemctl stop lowpower.timer
     Restarting the timer after 10 minutes is not possible as it is from boot up time.
 powerup.sh
     is used to switch wifi and bluetooth back on if needed.
 low_in_one.sh
-    This will switch off wifi and bluetooth in 1 minutes time. End the command with a &; otherwise, it will block you from entering further commands. Use ctrl C to stop it.
+    This will switch off wifi and bluetooth in 1 minutes time. End the command with a &; otherwise, it will block you from entering further commands. Use ctrl+C to stop it.
 use: low_in_one.sh & 
 
 Finally, add this to crontab:
@@ -269,8 +268,9 @@ sudo apt-get remove --purge firefox
 
 
 # RPI legacy Bullseye 32bit os
-This follows a lot of my guide https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras
-flash with
+This follows a lot of my guide at https://forum.arducam.com/t/full-walkthrough-setup-rpi4-take-64mp-photos-and-control-focus/4653  and the official https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Quick-Start-Guide/#imx519hawkeye-64mp-cameras .
+
+Flash with:
 
 mothbox.local
 User: pi
@@ -308,7 +308,7 @@ open RealVNC
 
 mothbox.local
 
-save password
+Save password.
 
 
 Open a cmd line.
@@ -340,13 +340,13 @@ sudo pip3 install picamera2 --upgrade
 Shut down the RPI and physically unplug it, and then start it back up again.
 
 
-Try a command like
+Try a command like:
 
 libcamera-hello --info-text "lens %lp" -t 0
 
 
-and you should see an image that gets focused.
-(more libcamera commands https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Libcamera-User-Guide/)
+You should see an image that gets focused.
+(more libcamera commands: https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/Libcamera-User-Guide/)
 https://github.com/raspberrypi/documentation/blob/develop/documentation/asciidoc/computers/camera/libcamera_options_common.adoc
 
 Save a full res autofocused image.
@@ -468,15 +468,15 @@ open RealVNC
 
 mothbox01.local
 
-save password
+Save password.
 
 
-open a cmd line
+Open a cmd line.
 
-enter the command 
+Enter the command: 
 cat /proc/meminfo
 
- and your CmaTotal: should say something like 524288 kB (if not, double check your /boot/config.txt was saved correctly and restart)
+Your CmaTotal: should say something like 524288 kB (if not, double check your /boot/config.txt was saved correctly and restart)
 
 CAMERA STUFF
 
@@ -494,7 +494,7 @@ sudo apt update
  sudo apt install -y python3-picamera2
 
 
- this makes it easier to edit csv files
+ This makes it easier to edit csv files.
  `sudo apt install libreoffice-calc`
 
 
@@ -541,7 +541,7 @@ https://docs.arducam.com/Raspberry-Pi-Camera/Native-camera/64MP-OV64A40/
 
 #Find the line: [all], add the following item under it:
 `dtoverlay=ov64a40,cam0,link-frequency=456000000`
-(If you have a second camera you can also add it by adding a second line like this:
+If you have a second camera, you can also add it by adding a second line like this:
 
 ```
 dtoverlay=ov64a40,cam1,link-frequency=456000000
@@ -586,7 +586,7 @@ This will automatically start monitoring the wifi connection every 2 minutes. It
 mothboxwifi
 lunaluna
 
-to make sure it runs you might have to add this to cron
+To make sure it runs, you might have to add this to cron
 ```
 */2 * * * * sudo /usr/bin/accesspopup >/dev/null 2>&1
 ```
@@ -595,18 +595,17 @@ Sometimes it is useful to be able to use the AccessPoint even though the Pi is i
 This can be done by opening a terminal window and entering the command:
 sudo accesspopup -a
 
-to go back to normal use, just run the script without the -a argument.
+To go back to normal use, just run the script without the -a argument.
 sudo accesspopup
 
-alternately use option 4 "Live Switch..." on this installer script.
+Alternately use option 4 "Live Switch..." on this installer script.
 
 ## to connect to the wifi hotspot
 
-just vnc to
+Just vnc to
 mothbox
 
-or if that is being weird for some reason, go to the default ip address
-the default IP address is 192.168.50.5
+Or if that is being weird for some reason, go to the default ip address, 192.168.50.5
 `ssh pi@192.168.50.5`
 or vnc to
 
@@ -617,15 +616,15 @@ or vnc to
 
 
 cd AccessPopup
-Run the Installer script
+Run the Installer script:
 sudo ./installconfig.sh
 
-choose OPTION 5 and you can add a new wifi
+Choose OPTION 5 and you can add a new wifi.
 
-## To start up the hotspot manually
+## To start up the hotspot manually:
 `sudo accesspopup -a`
 
-to stop the hotspot
+To stop the hotspot:
 `sudo accesspopup`
 
 # Kill wifi after a while
@@ -646,12 +645,12 @@ sudo systemctl enable lowpower.timer
 
 Then copy low_in_one.sh powerup.sh & stop_lowpower.sh to a convenient place.
 stop_lowpower.sh 
-    is used to stop the timer during the 10 minute countdown. or issue the command sudo systemctl stop lowpower.timer
-    restarting the timer after 10 minutes is not possible as it is from boot up time.
+    is used to stop the timer during the 10 minute countdown. Or issue the command sudo systemctl stop lowpower.timer
+    Restarting the timer after 10 minutes is not possible as it is from boot up time.
 powerup.sh
     is used to switch wifi and bluetooth back on if needed
 low_in_one.sh
-    this will switch off wifi and bluetooth in 1 minutes time. End the cammand with a & otherwise it will block you enter further commands. use ctrl C to stop it.
+    This will switch off wifi and bluetooth in 1 minutes time. End the command with a & . Otherwise it will block you enter further commands. Use ctrl C to stop it.
 use: low_in_one.sh & 
 
 
