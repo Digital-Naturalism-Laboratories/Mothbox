@@ -7,7 +7,7 @@ nav_order: 1
 ---
 # Portable Field Guide
 
-The steps below show you what to do to make sure your Mothbox will run in the field. This is also available as a small print-out that fits inside the mothbox. We print and laminate them and include them with each mothbox to make sure everyone knows how to use it. This field guide is available in English and Spanish (and hopefully even more languages soon!).
+The steps below show you what to do to make sure your Mothbox will run in the field. This is also available as a small print-out that fits inside the Mothbox. We print and laminate them and include them with each Mothbox to make sure everyone knows how to use it. This field guide is available in English and Spanish (and hopefully even more languages soon!).
 
 * [English Field Guide (Printable)](https://drive.google.com/file/d/17X8jF_gCvuoQqLtXXBPwr1AT7IgqvlIY/view?usp=sharing)
 * [Guia de Campo en Español (para imprimir)](https://drive.google.com/file/d/1-6dB0lFeB0YspATzdIpFmKTpyK269oSG/view?usp=sharing)
@@ -16,13 +16,13 @@ The steps below show you what to do to make sure your Mothbox will run in the fi
 <img src="https://github.com/user-attachments/assets/ac9f67f8-b092-4884-8507-428832ddd1c8" width="45%">
 
 # Preparation
-Before you go to the field here's a checklist of things you go through to make sure it is ready for deployment!
+Before you go to the field, here's a checklist to make sure it is ready for deployment!
 
-- [ ] The battery should always be ON. The switch to the battery should ALWAYS BE IN THE ON POSITION. Open the mothbox make sure the battery switch is ON (if it's not already on). 
+- [ ] The battery should always be ON. The switch to the battery should ALWAYS BE IN THE ON POSITION. Open the Mothbox make sure the battery switch is ON (if it's not already on). 
 
 ![image](https://github.com/user-attachments/assets/1fa99c2d-2f04-4c1a-99c8-b2f886d633de)
 
-- [ ] Charge your mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
+- [ ] Charge your Mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
 
 ![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
 
@@ -31,16 +31,16 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 ![image](https://github.com/user-attachments/assets/89c8d0fb-9d72-4c14-9f52-55b8ca5f633e)
 
 
-- [ ] USB Storage. Make sure there is external storage plugged in to the Pi's USB to record your photos.
+- [ ] USB Storage. Make sure there is external storage with free space plugged in to the Pi's USB to record your photos.
 
 ![image](https://github.com/user-attachments/assets/442de393-0870-4e53-ab26-6a7ca1f7446e)
       
-- [ ]  Arm Mothbox. The mothbox has two jumper wires that keep it from turning itself on until it is deployed. Arm your mothbox by disconnecting the wires from each other, putting them in the "armed" position.
+- [ ]  Arm Mothbox. The Mothbox has two jumper wires that keep it from turning itself on until it is deployed. Arm your Mothbox by disconnecting the wires from each other, putting them in the "armed" position.
 
 ![PXL_20240909_044023484 MP](https://github.com/user-attachments/assets/22f20af3-9713-4184-bbbf-eb7d25555b91)
 
 
-- [ ] Check Lights. The RED STANDYBY LEDs should always be on. The mothbox is set to run according to a schedule automatically, so it probably won't be running when you are setting it up. However, you can visually check that things are ok, because there should be a RED led light on the Pi (the Pi's off light), and the battery's GREEN lights should always be on. Older models with a Pijuice may also have a BLUE light on as well in standby mode.
+- [ ] Check Lights. The RED STANDYBY LEDs should always be on. The Mothbox is set to run automatically according to a schedule, so it probably won't be running when you are setting it up. However, you can visually check that things are ok, because there should be a RED LED light on the Pi (the Pi's off light), and the battery's GREEN lights should always be on. Older models with a Pijuice may also have a BLUE light on as well in standby mode.
 
 ![image](https://github.com/user-attachments/assets/49285678-3d55-47af-8a4d-be6af8c566aa)
 
@@ -69,11 +69,11 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 
 # Deploy
 
-- [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms.
+- [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms. Ideally, the screws go from the middle of the box out toward the outside edge of the box so that they don't block anything.
 
 ![PXL_20240902_193651155 MP](https://github.com/user-attachments/assets/2052454f-9bc5-4f7f-b6ca-ba1a5494c5fb)
 
-- [ ] Hang Mothbox. Using the handle, strap mothbox to a tree or tripod. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target and obstruct photos. In general, the Mothbox should be at least 0.5 meters above the ground.
+- [ ] Hang Mothbox. Using the handle, strap Mothbox to a tree or tripod. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target and obstruct photos. In general, the Mothbox should be at least 0.5 meters above the ground.
 
 ![PXL_20240902_191549638 MP](https://github.com/user-attachments/assets/aed25711-c6c8-450f-bb45-c1efcd3cef86)
 
@@ -96,10 +96,10 @@ Adding a little wrap of the strap around the handle (The Margaret Technique) add
 ![image](https://github.com/user-attachments/assets/3e5fb55d-29c4-403d-9358-bbac697e2ceb)
 
 {: .warning }
-> warning: Don't look directly at UV light. UV is very bright but invisible to your eye. Can cause eye pain or headaches with long exposure. Use eye protection if working with Mothbox for extended periods while it's on.
+> warning: Don't look directly at UV light. UV light is very bright but invisible to your eye. Eye pain or headaches can occur with long exposure. Use eye protection if working with Mothbox for extended periods while it's on.
 
 {: .note }
-> Default schedule: mothbox will take photos from 19:00-20:00, 22:00-23:00, 1:00-2:00, and 4:00-5:00. If you want it to take photos at different times, change the settings.
+> Default schedule: Mothbox will take photos from 19:00-20:00, 22:00-23:00, 1:00-2:00, and 4:00-5:00. If you want it to take photos at different times, change the settings.
 
 # Collect
 - [ ] Collect the Mothbox. Make note of any damage, such as water inside case, dirt on target, or physical injury.

@@ -19,6 +19,6 @@ This is a list of useful software to download for working with the Mothbox.
 
 # Pi Debugging Software
 
-You may have noticed that even though the Raspberry Pi is a computer, it doesn't have a mouse or screen. But that's ok! There's special ways you can see what's going on with your raspberry pi by using special software called a "VNC" software.
+You may have noticed that even though the Raspberry Pi is a computer, it doesn't have a mouse or screen. But that's ok! There's special ways you can see what's going on with your Raspberry Pi by using special software called a "VNC" software.
 Download this, and we will be able to look at what's going on inside your computer in a virtual way!
 * [Tiger VNC ](https://sourceforge.net/projects/tigervnc/)

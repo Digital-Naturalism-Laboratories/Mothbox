@@ -9,7 +9,7 @@ nav_order: 8
 # Flash the Raspberry Pi Image onto an SD Card
 Download the [latest Mothbox Image](https://drive.google.com/drive/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF?usp=sharing) to your computer. You may need an [unzipping software like 7zip](https://7-zip.org/download.html) to unzip the image after you download it.
 
-Download Software to flash the the Image. You can use the traditional, [Raspberry Pi Imager](https://www.raspberrypi.com/software/), or I often use [Win32DiskImager](https://win32diskimager.org/).
+Download Software to flash the the Image. You can use the traditional [Raspberry Pi Imager](https://www.raspberrypi.com/software/), or I often use [Win32DiskImager](https://win32diskimager.org/).
 
 Get an SD card (at least 16GB). Connect it to your computer.
 

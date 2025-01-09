@@ -7,7 +7,7 @@ import os
 import unicodedata
 
 # Global variable for the input path
-INPUT_PATH = r"D:\Panama"  # Replace <Your_Input_Path> with the path to your folder
+INPUT_PATH = r"C:\Users\andre\Desktop\jan2 data"  # Replace <Your_Input_Path> with the path to your folder
 
 def remove_accents(input_str):
     """

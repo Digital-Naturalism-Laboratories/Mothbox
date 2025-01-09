@@ -23,12 +23,12 @@ So I wrote this up so that you can make your own robust, offline, local detector
 # Setting up your computer
 
 ## Programming Software
-Download the open source code editing software [Visual Studio Code](https://code.visualstudio.com/download)
+Download the open source code editing software [Visual Studio Code](https://code.visualstudio.com/download).
 
-Download [Python](https://www.python.org/downloads/release/python-3124/)
+Download [Python](https://www.python.org/downloads/release/python-3124/).
 
 ## Labelling Software
-First download the open-source software called ["X-anylabeling"](https://github.com/CVHub520/X-AnyLabeling)  We have a [backup of their software here](https://drive.google.com/drive/u/0/folders/1S-hydQn86FPouFTvcRPVPRE3tScCVNHC)
+First download the open-source software called ["X-anylabeling"](https://github.com/CVHub520/X-AnyLabeling)  We have a [backup of their software here](https://drive.google.com/drive/u/0/folders/1S-hydQn86FPouFTvcRPVPRE3tScCVNHC).
 
 # Labelling Images
 
@@ -42,12 +42,12 @@ You will see a interface with your first photo pulled up. The bottom right corne
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/bcf9eb25-00ab-4334-b04c-e1bf20e221ce)
 
 ## Draw rectangles and rotations
-If you are doing *normal detection* and don't care about the rotation or orientation of the item you want to detect, the easiest thing is to draw regular rectangles around the object. After you draw the rectangle, a dialog box will pop up asking you how to classify this object you just rectangled. Type a new class in, or choose an existing one. We call all of our target images "creature."
+If you are doing *normal detection* and don't care about the rotation or orientation of the item you want to detect, the easiest thing is to draw regular rectangles around the object. After you draw the rectangle, a dialog box will pop up asking you how to classify this object you just rectangled. Type a new class in or choose an existing one. We call all of our target images "creature."
 
 If you are doing *slightly more advanced detection* and want to specify the *angle or orientation of your boxes,* instead of drawing a regular rectangle, choose "rotation." You'll draw a rectangle like before and give it a class. After drawing the rectangle, you can press "z" or "v" to rotate your rectangle until it matches the object's orientation.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/c64d029b-6133-4791-ab15-37f54144899d)
 
-Label all your images. (This may take a while)
+Label all your images. This may take a while.
 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5eb6b6a1-49ad-41c7-8a6d-3238bd92aedb)
 
@@ -64,7 +64,7 @@ After you have labeled all your data in X-AnyLabeling, you can look in your "all
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/44ffb616-c166-4986-8d2a-bc327149696f)
 
 
-and choose the "classes.txt" file we created earlier 
+Choose the "classes.txt" file we created earlier. 
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/330f56d0-46fd-4d6f-a6d4-07cf9506b774)
 
 Now you will notice there is a new folder next to your "all images" folder called "labels." Inside there is a text document for each photo you labeled.
@@ -74,7 +74,7 @@ Now you will notice there is a new folder next to your "all images" folder calle
 
 
 # Organizing Files
-Your working folder should be eventually organized like this. The github AI folder for the mothbox is organized like this for you as well.
+Your working folder should be eventually organized like this. The github AI folder for the Mothbox is organized like this for you as well.
 ![image](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5f517898-f393-47ac-893b-a50bfa8783de)
 
 ```
@@ -95,7 +95,7 @@ Now you will have a new folder in your datasets directory with all your data org
 Yay! You finished organizing stuff! You are ready to start training your AI (which frankly, is just more organizing stuff).
 
 ## Install Yolo
-Make sure python is installed. Then you can install Yolo by opening the CMD prompt (hit windows key and type "cmd." Hit enter).
+Make sure Python is installed. Then you can install Yolo by opening the CMD prompt (hit windows key and type "cmd." Hit enter).
 
 Type this and hit enter:
 `pip install ultralytics`

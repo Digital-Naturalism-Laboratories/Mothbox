@@ -12,16 +12,16 @@ nav_order: 0
 * [Github Desktop](https://desktop.github.com/download/)
 
 
-After you install the above software on your computer (in particular, Python), you can then install some more software in a kind of special magic nerd way.
+After you install the above software on your computer (in particular, Python), you can then install some more software in a special, magical nerdy way.
 
 # Download More Software Using the Terminal
 
-Python installs a special thing called "pip" onto your machine, and you can use pip to install extra open source software and libraries onto your computer super easy!
+Python installs a special thing called "pip" onto your machine, and you can use pip to install extra open source software and libraries onto your computer super easily!
 
 ## Enter Terminal/"Nerd Mode" on Your Computer
 
 ### Windows
-On a Windows computer you have to open a terminal, but make sure it is in "Adminstrator Mode"
+On a Windows computer you have to open a terminal, but make sure it is in "Adminstrator Mode."
 * Click the "Windows" button
 * type "cmd"
 * Right click the "Command Prompt"
@@ -30,7 +30,7 @@ On a Windows computer you have to open a terminal, but make sure it is in "Admin
 #### Commands
 Now you can type in these commands and hit enter after each one!
 
-These first commands are important, because some programs haven't updated their software to run with newer versions of python. So some of the first things you will do is actually downgrade your python to 3.11. _You don't have to actually worry much about what these commands do, just copy and paste them and hit enter!_
+These first commands are important, because some programs haven't updated their software to run with newer versions of Python. So some of the first things you will do is actually downgrade your python to 3.11. _You don't have to actually worry much about what these commands do, just copy and paste them and hit enter!_
 
 
 ```
@@ -73,7 +73,7 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 
 
 ### Linux or Mac
-On Mac and Linux you just open a "Terminal," and then you can run adminstrator level commands by just using the word "sudo" in front of each command you give
+On Mac and Linux you just open a "Terminal," and then you can run adminstrator level commands by just using the word "sudo" in front of each command you give.
 
 #### Commands
 Now you can type in these commands and hit enter after each one!
@@ -98,18 +98,18 @@ sudo pip install numpy
 ```
 sudo pip install ultralytics
 ```
-(Ultralytics is a big one that might take a while to install)
+(Ultralytics is a big one that might take a while to install.)
 ```
 sudo pip install opencv-python
 ```
-(Opencv is another big one)
+(Opencv is another big one.)
 
 # Download Mothbot Scripts 
-Finally you can download our collection of python scripts that help you process your data!
+Finally you can download our collection of Python scripts that help you process your data!
 It's easy to get the latest versions of the scripts that we update through Github.
 First, go to the [Mothbox's Github Site](https://github.com/Digital-Naturalism-Laboratories/Mothbox)
 
-Then click on the button that says "code"
+Then click on the button that says "code."
 ![image](https://github.com/user-attachments/assets/1464e6a6-fa66-432b-9e72-3dcb50396f95)
 
 You can click "Open with Github Desktop," or Download ZIP if you didn't install the Github desktop app.
