@@ -45,10 +45,14 @@ import RPi.GPIO as GPIO
 import time
 
 import os, platform
+from pathlib import Path
 
 internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
-
-
+extra_photo_storage_minimum=internal_storage_minimum-1
+# Define paths
+desktop_path = Path(
+    "/home/pi/Desktop/Mothbox"
+)  # Assuming user is "pi" on your Raspberry Pi
 
 def restart_script():
     """
@@ -243,7 +247,7 @@ def start_cron():
         
 def print_af_state(request):
     md = request.get_metadata()
-    print(("Idle", "Scanning", "Success", "Fail")[md['AfState']], md.get('LensPosition'))
+    #print(("Idle", "Scanning", "Success", "Fail")[md['AfState']], md.get('LensPosition'))
 def run_calibration():
     global calib_lens_position, calib_exposure
     #preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (4624, 3472)})
@@ -528,13 +532,44 @@ def determinePiModel():
     themodel=5
   return themodel
 
-#------------------------------------------- CODE--------------------- #
+def get_storage_info(path):
+    """
+    Gets the total and available storage space of a path.
+    Args:
+        path: The path to the storage device.
+
+    Returns:
+        A tuple containing the total and available storage in bytes.
+    """
+    try:
+        stat = os.statvfs(path)
+        return stat.f_blocks * stat.f_bsize, stat.f_bavail * stat.f_bsize
+    except OSError:
+        return 0, 0  # Handle non-existent or inaccessible storages
+
+#---------------MAIN CODE--------------------- #
 
 print("----------------- STARTING TAKEPHOTO-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
 print(f"Current time: {formatted_time}")
+
+
+#First check and see if we have enough storage left to keep taking photos, or else do nothing
+# Get total and available space on desktop and external storage
+desktop_total, desktop_available = get_storage_info(desktop_path)
+print("Desktop Total    Storage: \t" + str(desktop_total))
+print("Desktop Available Storage: \t" + str(desktop_available))
+
+x=extra_photo_storage_minimum
+
+if desktop_available < x * 1024**3:  # x GB in bytes
+    print("not enough space to take more photos")
+    quit()
+
+
+
 
 #First figure out if this is a Pi4 or a Pi5
 rpiModel=None
