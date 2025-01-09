@@ -14,14 +14,17 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15"  # raw string
-YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
+INPUT_PATH = r"D:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03"  # raw string
 
-SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. If you want to OVERWRITE files that were previously generated, change this to False
-GEN_THUMBNAILS=True
+YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
 
 IMGSZ = 1408  # Should be same imgsz as used in training for best results!
 
+GEN_THUMBNAILS=True
+
+#SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. 
+GEN_BOT_DET_EVENIF_HUMAN_EXISTS=True #if we encounter a human detection, but still want a parallel bot detection, make this true
+OVERWRITE_PREV_BOT_DETECTIONS=False #if true, if there are previous machine detections, it will overwrite those machine detections with our current ones. This script should NEVER overwrite a human detection
 
 #~~~~Other Stuff~~~~~~~
 
@@ -60,7 +63,8 @@ def process_jpg_files(img_files, date_folder):
     for idx,filename in enumerate(img_files):
 
         image_path = os.path.join(date_folder, filename)
-        json_path = os.path.join(date_folder, filename[:-4] + ".json")
+        human_json_path = os.path.join(date_folder, filename[:-4] + ".json")
+        bot_json_path = os.path.join(date_folder, filename[:-4] + "_botdetection.json")
 
 
         # Calculate progress
@@ -76,39 +80,45 @@ def process_jpg_files(img_files, date_folder):
             print(f"Skipping {filename}: Image file is missing or empty.")
             continue
 
-        # **Check 1: Check if JSON file exists and if it's an automated Mothbot file**
-        is_ground_truth_detection = False
-        if os.path.isfile(json_path):
-            is_ground_truth_detection=True
-            print(json_path)
-            print("Earlier file exists, check to see if we should skip it, or if not, make sure it's not Groundtruth data")
+        # **Check 1: Check if JSON file exists and if it's an HUman file**
+        if os.path.isfile(human_json_path):
+            print(human_json_path)
+            print("Earlier Human detection file exists, check to see if we should skip it")
 
             try:
-                with open(json_path, 'r') as json_file:
+                with open(human_json_path, 'r') as json_file:
+                    json_data = json.load(json_file)
+                    #print(json_data)
+                    if(GEN_THUMBNAILS):
+                        generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
+                    if(GEN_BOT_DET_EVENIF_HUMAN_EXISTS==False):
+                        #create the thumbnails from the detections still though
+                        print("skipping-will not create bot detections in parallel with human detections")
+                        continue #don't go and create a machine detection json as well
+            except json.JSONDecodeError:
+                print(f"error with HUMAN made {filename}: Corrupted JSON file.")
+
+        # **Check 2: Check if bot made JSON file exists and if we should skip it**
+        if os.path.isfile(bot_json_path):
+            print(bot_json_path)
+            print("Earlier BOT detection file exists, check to see if we should skip it, ")
+            try:
+                with open(bot_json_path, 'r') as json_file:
                     json_data = json.load(json_file)
                     #print(json_data)
 
-                    if(SKIP_PREVIOUS_GENERATED):
-                        print("skipping previously generated detection files that were able to be opened")
-                        
+                    if(OVERWRITE_PREV_BOT_DETECTIONS==False):
                         #create the thumbnails from the detections still though
                         if(GEN_THUMBNAILS):
                             generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
-                        continue
 
-                    # Check if "version" was created by mothbot 
-                    if json_data.get("version").startswith("Mothbot"):
-                        print("anything but Mothbot means ground truth")
-                        is_ground_truth_detection = False
-
+                        print("skipping previously generated detection files that were able to be opened")
+                        continue #don't go ahead and process for detections, don't overwrite any exsiting bot .json files
             except json.JSONDecodeError:
-                print(f"will overwrite {filename}: Corrupted JSON file.")
-                is_ground_truth_detection=False
+                print(f"error with {filename}: Corrupted JSON file.")
 
-        # If the JSON file exists and it's an human-made file, skip processing
-        if is_ground_truth_detection:
-            print(f"Skipping {filename}: Ground Truth File detected.")
-            continue
+        #~~~~~~~~Continue Processing to detect creatures~~~~~~~~~~~~~
+        #We have been given the go ahead to overwrite any existing detection .json files, and if human data exists, we should still create a bot file in parallel.
 
         # Process with Yolo to detect any creatures
         print("Predict a new image: ", image_path)
@@ -155,15 +165,6 @@ def process_jpg_files(img_files, date_folder):
                 if(GEN_THUMBNAILS):
                     generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
 
-                '''
-                # img_crop will the cropped rectangle, img_rot is the rotated image
-                img_crop, img_rot = crop_rect(result.orig_img, rect)
-                # cv2.imwrite("cropped_img.jpg", img_crop)
-                cv2.imwrite(
-                    os.path.join(sub_output_path, f"{filename}_crop_{idx}.jpg"),
-                    img_crop,
-                )
-                '''
                 
         image = PIL.Image.open(image_path)
         width, height = image.size
@@ -205,7 +206,7 @@ def process_jpg_files(img_files, date_folder):
             data["shapes"].append(shape_data)
 
 
-        with open(json_path, "w") as f:
+        with open(bot_json_path, "w") as f: #save as the bot detection.json path
             json.dump(data, f, indent=4)
 
 
@@ -316,13 +317,13 @@ def crop_rect(
 
 
 if __name__ == "__main__":
-    input_path = get_input_path()
-    model_path = get_yolo_model_path()
+    print("Starting Mothbot Detection Script")
+    #input_path = get_input_path()
+    #model_path = get_yolo_model_path()
+    #YOLO_MODEL = model_path
 
-    YOLO_MODEL = model_path
-    
-    #input_path=INPUT_PATH #Cheat UI for now
-
+    input_path=INPUT_PATH #Cheat UI for now
+    model_path=YOLO_MODEL
     date_folders = find_date_folders(input_path)
 
     
