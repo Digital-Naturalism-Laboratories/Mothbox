@@ -33,6 +33,7 @@ desktop_path = Path(
     "/home/pi/Desktop/Mothbox"
 )  # Assuming user is "pi" on your Raspberry Pi
 photos_folder = desktop_path / "photos"
+logs_folder = desktop_path / "logs"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
@@ -318,39 +319,41 @@ def backup_and_delete(source_folder, destination_folder):
       source_folder: path to the original location
       destination_folder: path to backup location
   """
-    # Ensure source and destination folders exist
-    if not os.path.exists(source_folder):
-        print(f"Source folder '{source_folder}' does not exist.")
-        return
-    if not os.path.exists(destination_folder):
-        os.makedirs(destination_folder)
-        print(f"Created destination folder '{destination_folder}'.")
-    try:
-        # Copy the contents of the source folder to the destination folder
-        for item in os.listdir(source_folder):
-            src_path = os.path.join(source_folder, item)
-            dest_path = os.path.join(destination_folder, item)
-            if os.path.isdir(src_path):
-                shutil.copytree(src_path, dest_path)
-            else:
-                shutil.copy2(src_path, dest_path)
-        print(f"All contents of '{source_folder}' successfully copied to '{destination_folder}'.")
-        # Verify the copy
-        src_items = set(os.listdir(source_folder))
-        dest_items = set(os.listdir(destination_folder))
-        if not src_items.issubset(dest_items):
-            print("Error: Not all items were copied successfully.")
-            return
-        # Delete the contents of the source folder
-        for item in os.listdir(source_folder):
-            src_path = os.path.join(source_folder, item)
-            if os.path.isdir(src_path):
-                shutil.rmtree(src_path)
-            else:
-                os.remove(src_path)
-        print(f"All contents of '{source_folder}' have been deleted.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+  # Ensure source and destination folders exist
+  if not os.path.exists(source_folder):
+      print(f"Source folder '{source_folder}' does not exist.")
+      return
+  if not os.path.exists(destination_folder):
+      os.makedirs(destination_folder)
+      print(f"Created destination folder '{destination_folder}'.")
+  try:
+      # Copy the contents of the source folder to the destination folder
+      for item in os.listdir(source_folder):
+          src_path = os.path.join(source_folder, item)
+          dest_path = os.path.join(destination_folder, item)
+          if os.path.isdir(src_path):
+              shutil.copytree(src_path, dest_path)
+          else:
+              shutil.copy2(src_path, dest_path)
+      print(f"All contents of '{source_folder}' successfully copied to '{destination_folder}'.")
+      # Verify the copy
+      src_items = set(os.listdir(source_folder))
+      dest_items = set(os.listdir(destination_folder))
+      if not src_items.issubset(dest_items):
+          print("Error: Not all items were copied successfully.")
+          return
+      # Delete the contents of the source folder
+      for item in os.listdir(source_folder):
+          src_path = os.path.join(source_folder, item)
+          if os.path.isdir(src_path):
+              shutil.rmtree(src_path)
+          else:
+              os.remove(src_path)
+      print(f"All contents of '{source_folder}' have been deleted.")
+  except Exception as e:
+      print(f"An error occurred: {e}")
+
+
 
 if __name__ == "__main__":
     # Check if "photos" folder exists
@@ -411,6 +414,12 @@ if __name__ == "__main__":
             
             copy_photos_to_backup(photos_folder, external_backup_folder)
             print(f"Photos successfully copied to external backup folder: {external_backup_folder}")            
+
+
+            external_logs_folder = disk_name / "logs"
+            copy_photos_to_backup(logs_folder,external_logs_folder)
+            print(f"Logs successfully copied to external backup folder: {external_backup_folder}")            
+
             differences = verify_copy(photos_folder, external_backup_folder)
             if differences:
               print("Differences found:")

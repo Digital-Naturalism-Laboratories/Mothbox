@@ -21,10 +21,6 @@ TODO:
 -Add safety function to detect if disk space left is less than 7GB and refuse to take more photos, and give a debug flash pattern (such as SOS with ring lights)
 """
 
-
-
-
-
 import time
 from picamera2 import Picamera2, Preview
 from libcamera import controls
@@ -49,6 +45,8 @@ import RPi.GPIO as GPIO
 import time
 
 import os, platform
+
+internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
 
 
 
