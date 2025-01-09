@@ -14,7 +14,7 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"D:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03"  # raw string
+INPUT_PATH = r"D:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-04"  # raw string
 
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
 

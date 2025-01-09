@@ -39,7 +39,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from PIL import ImageFile
-ImageFile.LOAD_TRUNCATED_IMAGES = True #makes ok for use images hat are messed up
+ImageFile.LOAD_TRUNCATED_IMAGES = True #makes ok for use images that are messed up slightly
 
 import cv2
 import torch
@@ -55,8 +55,7 @@ INPUT_PATH = r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15"  # 
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER=Rank.ORDER
 
-# TODO implment a way to skip files that have already been IDed
-# you can do this by looking at "description": "ID_BioCLIP"
+# you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
 SKIP_EXISTING_IDs=True
 
 #~~~~Other Global Variables~~~~~~~
@@ -183,7 +182,7 @@ def find_date_folders(directory):
 
     return folders
 
-def find_matching_pairs(folder_path):
+def OLD_find_matching_pairs(folder_path):
   """Finds matching pairs of .jpg and .json files in a given folder.
 
   Args:
@@ -204,7 +203,46 @@ def find_matching_pairs(folder_path):
 
   return pairs
 
-def find_matching_triplets(folder_path):
+
+def find_detection_matches(folder_path):
+    """Finds matching triplets of .jpg, botdetection.json, and potentially a humandetection .json files in a given folder.
+
+    Args:
+        folder_path: The path to the folder to search.
+
+    Returns:
+        A list of tuples, where each tuple contains the paths to a matching .jpg, botdetection.json, and optionally humandetection.json file.
+    """
+
+    #ALL jpg files in the folder
+    jpg_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.jpg')]
+    #List of ALL json files in the folder
+    json_files = [os.path.join(folder_path, f) for f in os.listdir(folder_path) if f.endswith('.json')]
+    
+    triplets = []
+    for jpg_file in jpg_files:
+        #target human file
+        humanD_json_file = jpg_file.replace('.jpg', '.json')
+        botD_json_file = jpg_file.replace('.jpg', '_botdetection.json')
+
+        if humanD_json_file in json_files:
+            triplet = (jpg_file, humanD_json_file)
+            if botD_json_file in json_files: 
+              triplet += (botD_json_file,)
+              #print("found metadata")
+            triplets.append(triplet)
+        else:
+           if botD_json_file in json_files:
+              triplet = (jpg_file, botD_json_file)
+
+
+    return triplets
+
+
+
+
+
+def DELETEfind_matching_triplets(folder_path):
     """Finds matching triplets of .jpg, .json, and potentially _metadata.json files in a given folder.
 
     Args:
