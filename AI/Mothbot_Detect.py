@@ -14,7 +14,7 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"D:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-04"  # raw string
+INPUT_PATH = r"E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03"  # raw string
 
 YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
 
@@ -90,7 +90,10 @@ def process_jpg_files(img_files, date_folder):
                     json_data = json.load(json_file)
                     #print(json_data)
                     if(GEN_THUMBNAILS):
-                        generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
+                        json_data=generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
+                        # Save the updated JSON data back to the file
+                        with open(human_json_path, 'w') as json_file_write:
+                            json.dump(json_data, json_file_write, indent=4)
                     if(GEN_BOT_DET_EVENIF_HUMAN_EXISTS==False):
                         #create the thumbnails from the detections still though
                         print("skipping-will not create bot detections in parallel with human detections")
@@ -110,7 +113,10 @@ def process_jpg_files(img_files, date_folder):
                     if(OVERWRITE_PREV_BOT_DETECTIONS==False):
                         #create the thumbnails from the detections still though
                         if(GEN_THUMBNAILS):
-                            generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
+                            json_data=generateThumbnailPatches_JSON(image_path, json_data, patch_folder_path,)
+                            # Save the updated JSON data back to the file
+                            with open(bot_json_path, 'w') as json_file_write:
+                                json.dump(json_data, json_file_write, indent=4)
 
                         print("skipping previously generated detection files that were able to be opened")
                         continue #don't go ahead and process for detections, don't overwrite any exsiting bot .json files
@@ -158,12 +164,13 @@ def process_jpg_files(img_files, date_folder):
 
                 }
 
-                shapes.append(shape)
                 # print("bounding box: {}".format(box))
                 # cv2.drawContours(result.orig_img, [box], 0, (0, 0, 255), 2)
 
                 if(GEN_THUMBNAILS):
-                    generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
+                    thepatchpath=generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
+                shape["patch_path"]=thepatchpath
+                shapes.append(shape)
 
                 
         image = PIL.Image.open(image_path)

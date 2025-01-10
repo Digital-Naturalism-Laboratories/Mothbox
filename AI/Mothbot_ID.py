@@ -55,7 +55,7 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15"  # raw string
+    r"E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03"  # raw string
 )
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER = Rank.ORDER
@@ -139,7 +139,7 @@ def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_holes=True):
         .to_list()
     )
     print("Found", len(target_values), taxon_rank, "values: ")
-    print(target_values)
+    #print(target_values)
 
     return target_values
 
@@ -278,23 +278,21 @@ def find_detection_matches(folder_path):
         if f.endswith(".json")
     ]
 
-    detection_matches_list = []
+    hu_detection_matches_list = []
+    bot_detection_matches_list = []
+
     for jpg_file in jpg_files:
         # target human file
         humanD_json_file = jpg_file.replace(".jpg", ".json")
         botD_json_file = jpg_file.replace(".jpg", "_botdetection.json")
 
         if humanD_json_file in json_files:
-            matches_dict = {"img": jpg_file, "human": humanD_json_file, "bot": None}
-            if botD_json_file in json_files:
-                matches_dict["bot"] = botD_json_file
-            detection_matches_list.append(matches_dict)
-        else:
-            if botD_json_file in json_files:
-                matches_dict = {"img": jpg_file, "human": None, "bot": botD_json_file}
-                detection_matches_list.append(matches_dict)
+            hu_detection_matches_list.append((jpg_file,humanD_json_file))
+        if botD_json_file in json_files:
+            bot_detection_matches_list.append((jpg_file,botD_json_file))
 
-    return detection_matches_list
+
+    return hu_detection_matches_list, bot_detection_matches_list
 
 
 def DELETEfind_matching_triplets(folder_path):
@@ -669,8 +667,8 @@ def add_metadata_to_json(json_path, metadata_path):
     print(f"Metadata added to {json_path}")
 
 
-def process_matched_img_json_pairs(
-    matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_holes
+def ID_matched_img_json_pairs(
+    hu_matched_img_json_pairs,bot_matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_holes
 ):
     # load up the Pybioclip stuff
     taxon_keys_list = load_taxon_keys(
@@ -681,7 +679,7 @@ def process_matched_img_json_pairs(
     )
     target_values = taxon_keys_list
     print(
-        f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}"
+        #f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}"
     )
 
     print("Loading TOL classifier")
@@ -717,54 +715,101 @@ def process_matched_img_json_pairs(
     print("TOL: Updated number of labels:", len(classifier.txt_names))
     print("TOL: Updated image embeddings shape:", classifier.txt_features.shape)
 
-    # Next process each pair and generate temporary files for the ROI of each detection in each image
-    # Iterate through image-JSON pairs
-    index = 0
-    numoftriplets = len(matching_dict_img_human_bot)
-    for triplet in matching_dict_img_human_bot:
+    #Process Human Detections
+    print("processing Human Detections.........")
+    if(ID_HUMANDETECTIONS):
+        # Next process each pair and generate temporary files for the ROI of each detection in each image
+        # Iterate through image-JSON pairs
+        index = 0
+        numofpairs = len(hu_matched_img_json_pairs)
+        for pair in hu_matched_img_json_pairs:
 
-        # Load JSON file and extract rotated rectangle coordinates for each detection
-        image_path, json_path = triplet[:2]  # Always extract the first two elements
+            # Load JSON file and extract rotated rectangle coordinates for each detection
+            image_path, json_path = pair[:2]  # Always extract the first two elements
 
-        coordinates_of_detections_list, was_pre_ided_list = (
-            get_rotated_rect_raw_coordinates(json_path)
-        )
-        index = index + 1
-        print(
-            str(index)
-            + "/"
-            + str(numoftriplets)
-            + "  | "
-            + str(len(coordinates_of_detections_list)),
-            " detections in " + json_path,
-        )
-        if coordinates_of_detections_list:
-            for idx, coordinates in enumerate(coordinates_of_detections_list):
-                # print(coordinates)
-                if was_pre_ided_list[idx]:  # skip processing if IDed
-                    continue
+            coordinates_of_detections_list, was_pre_ided_list = (
+                get_rotated_rect_raw_coordinates(json_path)
+            )
+            index = index + 1
+            print(
+                str(index)
+                + "/"
+                + str(numofpairs)
+                + "  | "
+                + str(len(coordinates_of_detections_list)),
+                "HUMAN detections in " + json_path,
+            )
+            if coordinates_of_detections_list:
+                for idx, coordinates in enumerate(coordinates_of_detections_list):
+                    # print(coordinates)
+                    if was_pre_ided_list[idx] and OVERWRITE_EXISTING_IDs==False:  # skip processing if IDed
+                        continue
 
-                image = Image.open(image_path)
-                cv_image = np.array(image)
+                    image = Image.open(image_path)
+                    cv_image = np.array(image)
 
-                cv_image_cropped = warp_rotation(cv_image, coordinates)
+                    cv_image_cropped = warp_rotation(cv_image, coordinates)
 
-                # pil_image = Image.fromarray(cv_image_cropped)
-                pil_image = Image.fromarray(
-                    cv_image_cropped[:, :, ::-1]
-                )  # numpy images are inverted
+                    # pil_image = Image.fromarray(cv_image_cropped)
+                    pil_image = Image.fromarray(
+                        cv_image_cropped[:, :, ::-1]
+                    )  # numpy images are inverted
 
-                pred, conf, winningdict = get_bioclip_prediction_PILimg(
-                    pil_image, classifier
-                )
+                    pred, conf, winningdict = get_bioclip_prediction_PILimg(
+                        pil_image, classifier
+                    )
 
-                # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
-                update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
+                    # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
+                    update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
 
-        if len(triplet) > 2:
-            metadata_path = triplet[2]  # Extract metadata path if available
-            # Process the triplet with metadata
-            add_metadata_to_json(json_path, metadata_path)
+    #Process BOT Detections
+    print("processing BOT Detections.........")
+
+    if(ID_BOTDETECTIONS):
+        # Next process each pair and generate temporary files for the ROI of each detection in each image
+        # Iterate through image-JSON pairs
+        index = 0
+        numofpairs = len(bot_matched_img_json_pairs)
+        for pair in bot_matched_img_json_pairs:
+
+            # Load JSON file and extract rotated rectangle coordinates for each detection
+            image_path, json_path = pair[:2]  # Always extract the first two elements
+
+            coordinates_of_detections_list, was_pre_ided_list = (
+                get_rotated_rect_raw_coordinates(json_path)
+            )
+            index = index + 1
+            print(
+                str(index)
+                + "/"
+                + str(numofpairs)
+                + "  | "
+                + str(len(coordinates_of_detections_list)),
+                "BOT detections in " + json_path,
+            )
+            if coordinates_of_detections_list:
+                for idx, coordinates in enumerate(coordinates_of_detections_list):
+                    # print(coordinates)
+                    if was_pre_ided_list[idx] and OVERWRITE_EXISTING_IDs==False:  # skip processing if IDed
+                        continue
+
+                    image = Image.open(image_path)
+                    cv_image = np.array(image)
+
+                    cv_image_cropped = warp_rotation(cv_image, coordinates)
+
+                    # pil_image = Image.fromarray(cv_image_cropped)
+                    pil_image = Image.fromarray(
+                        cv_image_cropped[:, :, ::-1]
+                    )  # numpy images are inverted
+
+                    pred, conf, winningdict = get_bioclip_prediction_PILimg(
+                        pil_image, classifier
+                    )
+
+                    # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
+                    update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
+
 
 
 if __name__ == "__main__":
@@ -790,25 +835,40 @@ if __name__ == "__main__":
     )
 
     # Look in each dated folder for .json detection files and the matching .jpgs
-    matching_dict_img_human_bot = []
+    hu_matched_img_json_pairs = []
+    bot_matched_img_json_pairs = []
 
     for folder in date_folders:
-        dict_of_matches = find_detection_matches(folder)
-        matching_dict_img_human_bot = update_main_list(
-            matching_dict_img_human_bot, dict_of_matches
+        hu_list_of_matches, bot_list_of_matches = find_detection_matches(folder)
+        hu_matched_img_json_pairs = update_main_list(
+            hu_matched_img_json_pairs, hu_list_of_matches
+        )
+        bot_matched_img_json_pairs = update_main_list(
+            bot_matched_img_json_pairs, bot_list_of_matches
         )
 
     print(
         "Found ",
-        str(len(matching_dict_img_human_bot))
-        + " pairs of images and detection data to try to ID",
+        str(len(hu_matched_img_json_pairs))
+        + " pairs of images and HUMAN detection data to try to ID",
     )
     # Example Pair
-    print(matching_dict_img_human_bot[0])
+    if(len(hu_matched_img_json_pairs)>0):
+        print(hu_matched_img_json_pairs[0])
+  
+    print(
+        "Found ",
+        str(len(bot_matched_img_json_pairs))
+        + " pairs of images and BOT detection data to try to ID",
+    )
+    # Example Pair
+    if(len(bot_matched_img_json_pairs)>0):
+        print(bot_matched_img_json_pairs[0])
 
     # Now that we have our data to be processed in a big list, it's time to load up the Pybioclip stuff
-    process_matched_img_json_pairs(
-        matching_dict_img_human_bot,
+    ID_matched_img_json_pairs(
+        hu_matched_img_json_pairs,
+        bot_matched_img_json_pairs,
         taxon_rank=args.rank,
         flag_holes=args.flag_holes,
         taxa_path=args.taxa_csv,

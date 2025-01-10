@@ -32,50 +32,56 @@ def crop_rect(
 
 
 
-def generateThumbnailPatches_JSON(image_path, json_data, patch_folder,skip_existing=True):
+def generateThumbnailPatches_JSON(image_path, json_data, patch_folder, skip_existing=True):
     # Load the image using OpenCV
-    model_name=json_data.get("version")
+    model_name = json_data.get("version")
     if not model_name.startswith("Mothbot"):
-        model_name="HumanDetection"
-    else:
-        None
-        #model_name=model_name.replace('Mothbot_','')
+        model_name = "HumanDetection"
 
     # Dictionary to store loaded images
     loaded_images = {}
 
     # Iterate through each shape in the JSON data
+    updated_shapes = []
     for shape_index, shape in enumerate(json_data["shapes"]):
-        filename=os.path.basename(image_path)
-        patchfilename=filename.split('.')[0] + "_"+str(shape_index) + "_" + model_name+"." +filename.split('.')[1]
-        patchfullpath = Path(patch_folder) / patchfilename 
-        if os.path.exists(patchfullpath) and skip_existing: #if the thumbnail already exists, and it's true we want to skip it, then skip it
-            print("thumbnail exists, skipping")
-            continue
-                
-        # Check if the image is already loaded
-        if image_path not in loaded_images:
-            loaded_images[image_path] = cv2.imread(image_path)
-
-        image = loaded_images[image_path]
+        filename = os.path.basename(image_path)
+        patchfilename = f"{filename.split('.')[0]}_{shape_index}_{model_name}.{filename.split('.')[1]}"
+        patchfullpath = Path(patch_folder) / patchfilename
         
-        # Extract the points from the shape
-        points = shape["points"]
+        # Update the shape with the patch path
+        shape["patch_path"] = f"patches/{patchfilename}"
 
-        # Convert the points to a NumPy array
-        points = np.array(points, dtype=np.float32)
+        if os.path.exists(patchfullpath) and skip_existing:  # Skip if the thumbnail already exists
+            print("Thumbnail exists, skipping")
+        else:
+            # Check if the image is already loaded
+            if image_path not in loaded_images:
+                loaded_images[image_path] = cv2.imread(image_path)
 
-        # Calculate the minimum area rectangle
-        rect = cv2.minAreaRect(points)
+            image = loaded_images[image_path]
 
-        # Send the cropped image and the shape index to the crop_rect function
-        img_crop=crop_rect(image, rect)
+            # Extract the points from the shape
+            points = shape["points"]
 
-        cv2.imwrite(
-            patchfullpath,
-            img_crop,
-        )
+            # Convert the points to a NumPy array
+            points = np.array(points, dtype=np.float32)
+
+            # Calculate the minimum area rectangle
+            rect = cv2.minAreaRect(points)
+
+            # Send the cropped image and the shape index to the crop_rect function
+            img_crop = crop_rect(image, rect)
+
+            cv2.imwrite(
+                patchfullpath,
+                img_crop,
+            )
+
+        updated_shapes.append(shape)
+
+    json_data["shapes"] = updated_shapes
     loaded_images.clear()
+    return json_data
 
 def generateThumbnailPatches(img,thefilepath,rectangle,detnum, modelname):
 
@@ -95,6 +101,8 @@ def generateThumbnailPatches(img,thefilepath,rectangle,detnum, modelname):
         patchfullpath,
         img_crop,
     )
+    patchpath= f"patches/{patchfilename}"
+    return  patchpath
 
 
 def scan_for_images(date_folder_path):
