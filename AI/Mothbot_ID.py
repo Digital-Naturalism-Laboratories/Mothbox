@@ -63,7 +63,7 @@ TAXONOMIC_RANK_FILTER = Rank.ORDER
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
-OVERWRITE_EXISTING_IDs = True
+OVERWRITE_EXISTING_IDs = False #True
 
 # ~~~~Other Global Variables~~~~~~~
 
@@ -448,8 +448,11 @@ def get_rotated_rect_raw_coordinates(json_file):
         data = json.load(f)
         coordinates_list = []
         pre_ided_list = []
+        patch_list = []
         for shape in data["shapes"]:
             if shape["shape_type"] == "rotation":
+                patch=shape["patch_path"]
+                patch_list.append(patch)
                 points = shape["points"]
                 # x, y, w, h, angle = extract_rectangle_coordinates(points)
                 coordinates_list.append(points)
@@ -459,7 +462,7 @@ def get_rotated_rect_raw_coordinates(json_file):
                     pre_ided = True
                 pre_ided_list.append(pre_ided)
 
-        return coordinates_list, pre_ided_list
+        return coordinates_list, pre_ided_list, patch_list
 
 
 def extract_rectangle_coordinates(points):
@@ -559,7 +562,7 @@ def get_path_from_img_temp(im):
 def get_bioclip_prediction(img_path, classifier):
 
     # Run inference
-    results = classifier.predict(img_path)
+    results = classifier.predict(img_path, rank=TAXONOMIC_RANK_FILTER)
     classifier.predict_classifications_from_list()  # def predict_classifications_from_list(img: Union[PIL.Image.Image, str], cls_ary: List[str], device: Union[str, torch.device] = 'cpu') -> dict[str, float]:
     sorted_results = sorted(results, key=lambda x: x["score"], reverse=True)
     # Get the highest scoring result
@@ -569,6 +572,36 @@ def get_bioclip_prediction(img_path, classifier):
     # Print the winner
     print(f"  This is the winner: {pred} with a score of {winner['score']}")
     return pred
+
+
+def get_bioclip_prediction_imgpath(img, classifier):
+    # create a PIL image array
+    images = [img]
+    winner = ""
+    winnerprob = ""
+
+    img_features = classifier.create_image_features(images)
+    for probs in classifier.create_probabilities(img_features, classifier.txt_features):
+        topk = probs.topk(k=5)
+        index = 0
+        for pred in classifier.format_grouped_probs(
+            "", probs, rank=TAXONOMIC_RANK_FILTER, min_prob=1e-9, k=5
+        ):  # TODO make it so tags get saved for all ranks, and specify deepest rank? #this shows the depth of the order it searches to
+            print(pred)
+            if index == 0:
+                kingdom = pred["kingdom"]
+                print(str(TAXONOMIC_RANK_FILTER.get_label()))
+                winner = pred[
+                    str(TAXONOMIC_RANK_FILTER.get_label())
+                ]  # get the correct ID based on the deepest order we are searching
+                winnerprob = pred["score"]
+                winningdict = pred
+            index = index + 1
+
+    # Print the winner
+    print(f"  This is the winner: {winner} with a score of {winnerprob}")
+    return winner, winnerprob, winningdict
+
 
 
 def get_bioclip_prediction_PILimg(img, classifier):
@@ -727,7 +760,7 @@ def ID_matched_img_json_pairs(
             # Load JSON file and extract rotated rectangle coordinates for each detection
             image_path, json_path = pair[:2]  # Always extract the first two elements
 
-            coordinates_of_detections_list, was_pre_ided_list = (
+            coordinates_of_detections_list, was_pre_ided_list,thepatch_list = (
                 get_rotated_rect_raw_coordinates(json_path)
             )
             index = index + 1
@@ -745,7 +778,8 @@ def ID_matched_img_json_pairs(
                     if was_pre_ided_list[idx] and OVERWRITE_EXISTING_IDs==False:  # skip processing if IDed
                         continue
 
-                    image = Image.open(image_path)
+                    #Use thumbnails now, so don't need to crop every image fresh
+                    """image = Image.open(image_path)
                     cv_image = np.array(image)
 
                     cv_image_cropped = warp_rotation(cv_image, coordinates)
@@ -758,6 +792,10 @@ def ID_matched_img_json_pairs(
                     pred, conf, winningdict = get_bioclip_prediction_PILimg(
                         pil_image, classifier
                     )
+                    """
+                    patchfullpath=os.path.dirname(image_path)+"/"+ thepatch_list[idx]
+                    patchPIL=Image.open(patchfullpath)
+                    pred, conf, winningdict = get_bioclip_prediction_imgpath(patchPIL,classifier)
 
                     # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
                     update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
@@ -775,7 +813,7 @@ def ID_matched_img_json_pairs(
             # Load JSON file and extract rotated rectangle coordinates for each detection
             image_path, json_path = pair[:2]  # Always extract the first two elements
 
-            coordinates_of_detections_list, was_pre_ided_list = (
+            coordinates_of_detections_list, was_pre_ided_list,thepatch_list  = (
                 get_rotated_rect_raw_coordinates(json_path)
             )
             index = index + 1
@@ -792,8 +830,8 @@ def ID_matched_img_json_pairs(
                     # print(coordinates)
                     if was_pre_ided_list[idx] and OVERWRITE_EXISTING_IDs==False:  # skip processing if IDed
                         continue
-
-                    image = Image.open(image_path)
+                    #Use thumbnails now, so don't need to crop every image fresh
+                    """image = Image.open(image_path)
                     cv_image = np.array(image)
 
                     cv_image_cropped = warp_rotation(cv_image, coordinates)
@@ -806,6 +844,12 @@ def ID_matched_img_json_pairs(
                     pred, conf, winningdict = get_bioclip_prediction_PILimg(
                         pil_image, classifier
                     )
+                    """
+                    patchfullpath=os.path.dirname(image_path)+"/"+ thepatch_list[idx]
+                    patchPIL=Image.open(patchfullpath)
+                    pred, conf, winningdict = get_bioclip_prediction_imgpath(patchPIL,classifier)
+
+
 
                     # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
                     update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
