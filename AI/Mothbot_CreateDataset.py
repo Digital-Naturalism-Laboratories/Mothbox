@@ -16,6 +16,7 @@ import fiftyone.core.labels as fol
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 INPUT_PATH = r'E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03'
+METADATA_PATH=r'E:\Panama'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
@@ -55,7 +56,50 @@ def find_image_json_pairs(input_dir):
 
   return pairs
 
-def load_anylabeling_data(json_path):
+
+def find_detection_matches(folder_path):
+    """Finds matching triplets of .jpg, botdetection.json, and potentially a humandetection .json files in a given folder.
+
+    Args:
+        folder_path: The path to the folder to search.
+
+    Returns:
+        two lists of tuples, where each tuple contains the paths to a matching .jpg, botdetection.json, 
+        or matching jpg and  humandetection.json file.
+    """
+
+    # ALL jpg files in the folder
+    jpg_files = [
+        os.path.join(folder_path, f)
+        for f in os.listdir(folder_path)
+        if f.endswith(".jpg")
+    ]
+    # List of ALL json files in the folder
+    json_files = [
+        os.path.join(folder_path, f)
+        for f in os.listdir(folder_path)
+        if f.endswith(".json")
+    ]
+
+    hu_detection_matches_list = []
+    bot_detection_matches_list = []
+
+    for jpg_file in jpg_files:
+        # target human file
+        humanD_json_file = jpg_file.replace(".jpg", ".json")
+        botD_json_file = jpg_file.replace(".jpg", "_botdetection.json")
+
+        if humanD_json_file in json_files:
+            hu_detection_matches_list.append((jpg_file,humanD_json_file))
+        if botD_json_file in json_files:
+            bot_detection_matches_list.append((jpg_file,botD_json_file))
+
+
+    return hu_detection_matches_list, bot_detection_matches_list
+
+
+def load_anylabeling_data(json_path): #TODO load METADATA STRAIGHT FROM CSV - METADATA_PATH - Maybe metadata gets loaded into its own 51 thing via the WHOLe dataset?
+  
   """Loads data from an AnyLabeling JSON file.
 
   Args:
@@ -68,55 +112,24 @@ def load_anylabeling_data(json_path):
   with open(json_path, 'r') as f:
     data = json.load(f)
 
-  image_path = data['imagePath']
-
   image_height = data['imageHeight']
   image_width = data['imageWidth']
   creator=""
   if(data['version'].startswith("Mothbot")):
      detectionBy= data['version']
-     creator=detectionBy
   else:
      detectionBy="HumanDetection"
-     creator=detectionBy
   
   # Extract relevant data from the detection labels
   labels = data['shapes']
   
-
-  # Step 1: Create the metadata path
-  base_name, ext = os.path.splitext(json_path)
-  metadata_path = f"{base_name}_metadata{ext}"
-
   # Step 2: Initialize an empty dictionary to store metadata
+  #Skip metadata for now
   metadata = {}
 
-  # Step 3: Check if the metadata file exists
-  if not os.path.exists(metadata_path):
-      print(f"Metadata file not found: {metadata_path}")
-      return     image_path, labels, image_height, image_width, metadata, creator
-
-  #if it does exist, do this...
-  try:
-      # Step 4: Open and parse the metadata JSON file
-      with open(metadata_path, 'r') as file:
-          data = json.load(file)
-      
-      # Step 5: Check if 'metadata' field exists and is a list
-      if 'metadata' in data and isinstance(data['metadata'], list):
-          # Step 6: Loop through the list and update the dictionary
-          for item in data['metadata']:
-              if isinstance(item, dict):
-                  metadata.update(item)
-  except Exception as e:
-      print(f"Error reading metadata file: {e}")
-      #return metadata #return empty metadata
 
   
-
-
-  
-  return image_path, labels, image_height, image_width, metadata, detectionBy
+  return labels, image_height, image_width, metadata, detectionBy
 
 
 def handle_rotation_annotation(points):
@@ -150,7 +163,7 @@ def handle_rotation_annotation(points):
 
 
 
-def create_sample(image_path, labels, image_height, image_width, metadata,ds, creator):
+def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator):
   """Creates a FiftyOne sample using the 51 python interface
 
   Args:
@@ -162,9 +175,6 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
   Returns:
     A FiftyOne JSON sample.
   """
-
-
-  #print(metadata)
 
   sample = fo.Sample(
       filepath= image_path,
@@ -187,7 +197,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
   sample["longitude"]=longitude
   sample["latitude"]=latitude
   sample["ground_height"]=metadata.get("height (placement above ground)","")
-  
+  sample["attractor"]=metadata.get("attractor","")
+
   sample["deployment_name"]=metadata.get("deployment.name","")
   sample["deployment_date"]=metadata.get("deployment.date","")
   sample["collect_date"]=metadata.get("collect.date","")
@@ -196,7 +207,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
   sample["notes"]=metadata.get("notes","")
   sample["program"]=metadata.get("program","")
   sample["habitat"]=metadata.get("habitat","")
-  sample["detection_By"]=creator
+  sample["detection_By"]=detection_creator
 
   detections_list=[]
 
@@ -207,6 +218,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
     points = label['points']
     shape_type = label['shape_type']
     ID_by = "IDby_"+label['description']
+    the_patch_path= label['patch_path']
 
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
@@ -223,9 +235,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
     taxonomic_list.append(ID_by)
-    #print(taxonomic_list)
-    #input()
-    if shape_type == 'rotation':
+
+    if shape_type == 'rotation': #Todo - these should be handled as a polygon in 51, because they only have regular rects they call "Detections" but we have rotated rects (that should be stored as polylines via polyline.fromrotatedboundingbox https://docs.voxel51.com/user_guide/using_datasets.html#rotated-bounding-boxes)
       top, left, width, height = handle_rotation_annotation(points)
       
       #print( top, left, width, height)
@@ -247,23 +258,127 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
         #ID_by=ID_by,
         confidence=score,
         shape=shape_type,
-        direction=direction
+        rot_direction=direction,
+        patch_path=the_patch_path
 
       )
 
-      #sample["ground_truth"]["detections"].append(detection)
       detections_list.append(detection)
     elif shape_type == 'polygon':
       # Handle polygon annotations (adjust as needed)
       None
   #print("num detections")
   #print(len(detections_list))
-  sample["ground_truth"] = fol.Detections(detections=detections_list)
+  sample["creature_detections"] = fol.Detections(detections=detections_list) #TODO - give this an appropriate name
 
   return sample
 
+def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_size=(1024, -1)):
+    """
+    Generates thumbnails for images in a FiftyOne dataset, skipping existing ones.
 
-def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/patches", target_size=(1024, -1)):
+    Args:
+        dataset: The FiftyOne dataset.
+        output_dir: The directory to save the thumbnails.
+        target_size: The target size for the thumbnails (width, height).
+
+    Returns:
+        None
+    """
+    patch_folder_path=Path(INPUT_PATH+"/patches")
+    patch_folder_path.mkdir(parents=True, exist_ok=True)
+
+    
+    samples_to_process = []
+    patch_samples = []
+
+    for sample in dataset.iter_samples(progress=True):
+        filename = os.path.basename(sample.filepath) #this is just the basename that it stores!
+        sample_fullpath=INPUT_PATH+"/"+filename
+
+        print(sample.filename)
+
+
+        #print(sample)
+        detections= sample.creature_detections.detections
+        detector=sample.detection_By
+        detnum=0
+
+        for detection in detections:
+            patchfullpath=INPUT_PATH+"/"+detection.patch_path
+            inferred_patchfilename=filename.split('.')[0] + "_" + str(detnum) +"_"+detector+ "." +filename.split('.')[1]
+            inferred_patchfullpath = Path(patch_folder_path) / f'{inferred_patchfilename}' 
+            #export_image(patch, patch_path,filename, detnum)
+
+            # Extract coordinates
+            xmin, ymin, xmax, ymax = detection.bounding_box
+
+            # Calculate width and height
+            p_width = xmax - xmin
+            p_height = ymax - ymin
+            
+            patch_sample = fo.Sample(
+                #filepath_fullimage= sample.filepath, 
+                filepath_fullimage=sample_fullpath,
+                filepath = str(patchfullpath),
+                tags= detection.tags,
+                label="detection",
+                location=sample.location,
+                longitude=sample.longitude,
+                latitude=sample.latitude,
+                bounding_box=detection.bounding_box,
+                patch_width=p_width,
+                patch_height=p_height,
+                #attributes={},
+                #ID_by=detection.ID_by,
+                confidence=detection.confidence,
+                shape=detection.shape,
+                direction=detection.rot_direction,
+                #direction = sample.direction,
+                #label_name = label['label']
+                
+                uploaded=sample.uploaded,
+
+                mothbox=sample.mothbox,
+                sd=sample.sd, #Dots might be bad in key name
+                software=sample.software,
+                sheet=sample.sheet,
+                country=sample.country,
+                area=sample.area,
+                punto=sample.punto, #point is maybe a special key name in 51
+                ground_height=sample.ground_height,
+                attractor=sample.attractor,
+                deployment_name = sample.deployment_name,
+                deployment_date = sample.deployment_date,
+                collect_date = sample.collect_date,
+                data_storage_location = sample.data_storage_location,
+                crew=sample.crew,
+                notes=sample.notes,
+                program=sample.program,
+                habitat=sample.habitat,
+                detection_By=sample.detection_By
+
+            )
+            patch_samples.append(patch_sample)
+            detnum=detnum+1
+
+        #sample.save()
+
+        
+    
+    patch_ds = fo.Dataset()
+    patch_ds.add_samples(patch_samples)
+
+    patch_ds.app_config['media_fields'] = ['filepath', 'filepath_fullimage']
+    patch_ds.app_config['grid_media_field'] = 'filepath'
+    patch_ds.app_config['modal_media_field'] = 'filepath'
+    patch_ds.save()
+
+    dataset.save()
+    return patch_ds
+
+
+def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", target_size=(1024, -1)):
     """
     Generates thumbnails for images in a FiftyOne dataset, skipping existing ones.
 
@@ -292,7 +407,7 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/patches", target_
 
 
         #print(sample)
-        detections= sample.ground_truth.detections
+        detections= sample.creature_detections.detections
         detector=sample.detection_By
         #detector=detector.replace('.pt','')
         #print(detections)
@@ -394,30 +509,31 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/patches", target_
 
 if __name__ == "__main__":
   ### START
-  pairs = find_image_json_pairs(INPUT_PATH)
+  #pairs = find_image_json_pairs(INPUT_PATH)
+  hu_pairs, bot_pairs = find_detection_matches(INPUT_PATH)
 
-
-  dataset = fo.Dataset()
   samples=[]
-  # Iterate through pairs and load data
-  for image_path, json_path in pairs:
-    image_path, labels, image_height, image_width, metadata, creator = load_anylabeling_data(json_path)
-    sample = create_sample(image_path, labels, image_height, image_width, metadata, dataset, creator )
+  # Iterate through human pairs and load data
+  for image_path, json_path in hu_pairs:
+    full_image_path = image_path
+    labels, image_height, image_width, metadata, detection_creator = load_anylabeling_data(json_path)
+    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator )
     samples.append(sample)
-    #sample = create_fiftyone_json(image_path, labels, image_height, image_width, metadata)
-    #data["samples"].append(sample)
+
+  for image_path, json_path in bot_pairs:
+    full_image_path = image_path
+    labels, image_height, image_width, metadata, detection_creator = load_anylabeling_data(json_path)
+    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator )
+    samples.append(sample)
 
   # Create dataset
-  #dataset = fo.Dataset("my-detection-dataset")
   dataset = fo.Dataset()
 
   dataset.add_samples(samples)
 
 
   # Generate some thumbnail images
-  #print(dataset.samples)
-  #input("Press Enter to continue...")
-  thepatch_dataset = generate_patch_thumbnails(dataset)
+  thepatch_dataset = generate_patch_dataset(dataset)
 
 
   # Customize the sidebar configuration

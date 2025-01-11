@@ -225,36 +225,6 @@ def find_date_folders(directory):
     return folders
 
 
-def OLD_find_matching_pairs(folder_path):
-    """Finds matching pairs of .jpg and .json files in a given folder.
-
-    Args:
-      folder_path: The path to the folder to search.
-
-    Returns:
-      A list of tuples, where each tuple contains the paths to a matching .jpg and .json file.
-    """
-
-    jpg_files = [
-        os.path.join(folder_path, f)
-        for f in os.listdir(folder_path)
-        if f.endswith(".jpg")
-    ]
-    json_files = [
-        os.path.join(folder_path, f)
-        for f in os.listdir(folder_path)
-        if f.endswith(".json")
-    ]
-
-    pairs = []
-    for jpg_file in jpg_files:
-        json_file = jpg_file.replace(".jpg", ".json")
-        if json_file in json_files:
-            pairs.append((jpg_file, json_file))
-
-    return pairs
-
-
 def find_detection_matches(folder_path):
     """Finds matching triplets of .jpg, botdetection.json, and potentially a humandetection .json files in a given folder.
 
@@ -262,7 +232,8 @@ def find_detection_matches(folder_path):
         folder_path: The path to the folder to search.
 
     Returns:
-        A list of tuples, where each tuple contains the paths to a matching .jpg, botdetection.json, and optionally humandetection.json file.
+        two lists of tuples, where each tuple contains the paths to a matching .jpg, botdetection.json, 
+        or matching jpg and  humandetection.json file.
     """
 
     # ALL jpg files in the folder
@@ -294,46 +265,6 @@ def find_detection_matches(folder_path):
 
     return hu_detection_matches_list, bot_detection_matches_list
 
-
-def DELETEfind_matching_triplets(folder_path):
-    """Finds matching triplets of .jpg, .json, and potentially _metadata.json files in a given folder.
-
-    Args:
-        folder_path: The path to the folder to search.
-
-    Returns:
-        A list of tuples, where each tuple contains the paths to a matching .jpg, .json, and optionally _metadata.json file.
-    """
-
-    jpg_files = [
-        os.path.join(folder_path, f)
-        for f in os.listdir(folder_path)
-        if f.endswith(".jpg")
-    ]
-    json_files = [
-        os.path.join(folder_path, f)
-        for f in os.listdir(folder_path)
-        if f.endswith(".json")
-    ]
-    metadata_files = [
-        os.path.join(folder_path, f)
-        for f in os.listdir(folder_path)
-        if f.endswith(".json")
-    ]
-
-    triplets = []
-    for jpg_file in jpg_files:
-        json_file = jpg_file.replace(".jpg", ".json")
-        metadata_file = jpg_file.replace(".jpg", "_metadata.json")
-
-        if json_file in json_files:
-            triplet = (jpg_file, json_file)  # TDODO it isn't detecting the metadatas
-            if metadata_file in metadata_files:
-                triplet += (metadata_file,)
-                # print("found metadata")
-            triplets.append(triplet)
-
-    return triplets
 
 
 def calculate_rotation_angle(points):
@@ -651,7 +582,7 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
         shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "") + "_" + pred
         shape["score"] = conf
         shape["description"] = (
-            "ID_BioCLIP"  # Put what Robot did the ID, put "" for ground_truth
+            "ID_BioCLIP"  # Put what Robot did the ID, put "" for human / ground_truth
         )
 
         # Add taxonomic ranks only if they exist in the winningdict

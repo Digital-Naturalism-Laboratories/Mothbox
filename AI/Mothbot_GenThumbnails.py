@@ -31,7 +31,7 @@ def crop_rect(
 
 
 
-
+#TODO - save patch_img width and height along with file path
 def generateThumbnailPatches_JSON(image_path, json_data, patch_folder, skip_existing=True):
     # Load the image using OpenCV
     model_name = json_data.get("version")
