@@ -11,7 +11,7 @@ from pygbif import species
 import unicodedata
 import pandas as pd
 
-INPUT_PATH = r'C:\Users\andre\Desktop\Mothbox data\PEA_PeaPorch_AdeptTurca_2024-09-01\2024-09-01\QuitmeyerID'
+INPUT_PATH = r'E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03\ID_AQ'
 UTC_OFFSET=-5 #panama
 # Specify the path to your taxonomy CSV file
 TAXA_LIST_PATH = r'C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv'
@@ -193,7 +193,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
         return
 
     with open(input_path+"/"+output_file, "w", newline="") as csvfile:
-        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation"]  # Adjust fieldnames as needed
+        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation", "attractor"]  # Adjust fieldnames as needed
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
 
@@ -214,6 +214,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
             scientificName=""
             taxon_id=""
             ground_height=""
+            attractor=""
 
 
 
@@ -302,6 +303,8 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "latitude":sample["latitude"],
                 "longitude":sample["longitude"],
                 "ground_height":sample["ground_height"],
+                "attractor":sample["attractor"],
+
                 "deployment_name":sample["deployment_name"],
                 "deployment_date":sample["deployment_date"],
                 #"sample_time":formattedUTC_dateTime,
