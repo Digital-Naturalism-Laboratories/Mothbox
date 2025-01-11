@@ -11,12 +11,14 @@ import numpy as np
 from fiftyone.utils.patches import extract_patch
 from PIL import Image
 import fiftyone.core.labels as fol
+import csv
+from datetime import datetime
 
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 INPUT_PATH = r'E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03'
-METADATA_PATH=r'E:\Panama'
+METADATA_PATH=r'C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbox_Main_Metadata_Field_Sheet_Example.csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
@@ -96,6 +98,61 @@ def find_detection_matches(folder_path):
 
 
     return hu_detection_matches_list, bot_detection_matches_list
+
+
+def find_csv_match(input_path, metadata_path):
+    """
+    Finds a matching row in the CSV metadata file based on parsed components from the input path.
+
+    Args:
+        input_path (str): Path to the folder containing the data.
+        metadata_path (str): Path to the CSV metadata file.
+
+    Returns:
+        dict: A dictionary containing the matching row, or an empty dict if no match is found.
+    """
+    # Parse the parent folder's name
+    parent_folder = os.path.basename(os.path.dirname(input_path))
+    
+    # Split the parent folder into parts
+    parts = parent_folder.split("_")
+    if len(parts) != 4:
+        raise ValueError("The input path does not contain the expected 4 parts in the parent folder's name.")
+
+    # Assign the parts to their respective semantic names and normalize them
+    area, point, mothbox, deployment_date = [part.strip().lower() for part in parts]
+    print("looking for metadata for:")
+    print(area+"_"+point+"_"+mothbox+"_"+deployment_date)
+
+    # Read the CSV file and search for a matching row
+    with open(metadata_path, mode='r', newline='', encoding='utf-8') as csvfile:
+        reader = csv.DictReader(csvfile)
+        
+        for row in reader:
+            # Normalize CSV values
+            row_area = row.get("area", "").strip().lower()
+            row_point = row.get("point", "").strip().lower()
+            row_mothbox = row.get("mothbox", "").strip().lower()
+            row_deployment_date = row.get("deployment.date", "").strip()
+
+            # Convert deployment date format from DD/MM/YYYY to YYYY-MM-DD
+            try:
+                formatted_date = datetime.strptime(row_deployment_date, "%d/%m/%Y").strftime("%Y-%m-%d")
+            except ValueError:
+                continue
+
+            # Check if all components match
+            if (row_area == area and
+                row_point == point and
+                row_mothbox == mothbox and
+                formatted_date == deployment_date):
+                print("found metadata!")
+                return row
+
+    # Return an empty dictionary if no match is found
+    print("No metadata found")
+    return {}
+
 
 
 def load_anylabeling_data(json_path): #TODO load METADATA STRAIGHT FROM CSV - METADATA_PATH - Maybe metadata gets loaded into its own 51 thing via the WHOLe dataset?
@@ -207,6 +264,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["notes"]=metadata.get("notes","")
   sample["program"]=metadata.get("program","")
   sample["habitat"]=metadata.get("habitat","")
+  sample["attractor"]=metadata.get("attractor","")
+
   sample["detection_By"]=detection_creator
 
   detections_list=[]
@@ -347,7 +406,6 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 area=sample.area,
                 punto=sample.punto, #point is maybe a special key name in 51
                 ground_height=sample.ground_height,
-                attractor=sample.attractor,
                 deployment_name = sample.deployment_name,
                 deployment_date = sample.deployment_date,
                 collect_date = sample.collect_date,
@@ -356,6 +414,7 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 notes=sample.notes,
                 program=sample.program,
                 habitat=sample.habitat,
+                attractor=sample.attractor,
                 detection_By=sample.detection_By
 
             )
@@ -484,6 +543,7 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 notes=sample.notes,
                 program=sample.program,
                 habitat=sample.habitat,
+                attractor=sample.attractor,
                 detection_By=sample.detection_By
 
             )
@@ -514,15 +574,17 @@ if __name__ == "__main__":
 
   samples=[]
   # Iterate through human pairs and load data
+  metadata= find_csv_match(INPUT_PATH, METADATA_PATH)
+
   for image_path, json_path in hu_pairs:
     full_image_path = image_path
-    labels, image_height, image_width, metadata, detection_creator = load_anylabeling_data(json_path)
+    labels, image_height, image_width, notmetadata, detection_creator = load_anylabeling_data(json_path)
     sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator )
     samples.append(sample)
 
   for image_path, json_path in bot_pairs:
     full_image_path = image_path
-    labels, image_height, image_width, metadata, detection_creator = load_anylabeling_data(json_path)
+    labels, image_height, image_width, notmetadata, detection_creator = load_anylabeling_data(json_path)
     sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator )
     samples.append(sample)
 
