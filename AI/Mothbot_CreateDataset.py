@@ -15,7 +15,7 @@ import fiftyone.core.labels as fol
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r'F:\Panama\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-15'
+INPUT_PATH = r'E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
@@ -263,7 +263,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata,ds, cr
   return sample
 
 
-def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", target_size=(1024, -1)):
+def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/patches", target_size=(1024, -1)):
     """
     Generates thumbnails for images in a FiftyOne dataset, skipping existing ones.
 
@@ -332,7 +332,8 @@ def generate_patch_thumbnails(dataset, output_dir=INPUT_PATH+"/thumbnails", targ
             p_height = ymax - ymin
             
             patch_sample = fo.Sample(
-                filepath_fullimage= sample.filepath, 
+                #filepath_fullimage= sample.filepath, 
+                filepath_fullimage=sample_fullpath,
                 filepath = str(patchfullpath),
                 tags= detection.tags,
                 label="detection",
