@@ -285,7 +285,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 #"id": sample["_id"],
                 #"image_id": sample["image_id"],
                 
-                "basisOfRecord": "machine_observation",
+                "basisOfRecord": "MachineObservation",
                 "datasetID":sample["_dataset_id"],
                 "parentEventID":sample["deployment_name"],
                 "eventID":os.path.basename(sample["filepath"]),
