@@ -210,7 +210,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
         return
 
     with open(input_path+"/"+output_file, "w", newline="") as csvfile:
-        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTCOFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation", "attractor"]  # Adjust fieldnames as needed
+        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTCOFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation", "attractor", "attractor_location"]  # Adjust fieldnames as needed
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
 
@@ -232,6 +232,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
             taxon_id=""
             ground_height=""
             attractor=""
+            attractor_location=""
 
 
 

@@ -271,9 +271,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["longitude"]=longitude
   sample["latitude"]=latitude
   therawgroundheight=metadata.get("height (placement above ground)","")
-
   sample["ground_height"]= extract_number(therawgroundheight)
-  sample["attractor"]=metadata.get("attractor","")
 
   sample["deployment_name"]=metadata.get("deployment.name","")
   sample["deployment_date"]=metadata.get("deployment.date","")
@@ -284,6 +282,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["program"]=metadata.get("program","")
   sample["habitat"]=metadata.get("habitat","")
   sample["attractor"]=metadata.get("attractor","")
+  sample["attractor_location"]=metadata.get("attractor_location","")
 
   sample["detection_By"]=detection_creator
 
@@ -434,6 +433,8 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 program=sample.program,
                 habitat=sample.habitat,
                 attractor=sample.attractor,
+                attractor_location=sample.attractor_location,
+
                 detection_By=sample.detection_By
 
             )
@@ -563,6 +564,8 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 program=sample.program,
                 habitat=sample.habitat,
                 attractor=sample.attractor,
+                attractor_location=sample.attractor_location,
+
                 detection_By=sample.detection_By
 
             )
@@ -649,7 +652,7 @@ if __name__ == "__main__":
 
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order
-  sorted_dataset = thepatch_dataset.sort_by("patch_width")
+  sorted_dataset = thepatch_dataset.sort_by("patch_width",True)
 
   # Launch the FiftyOne App with the sorted view
   session = fo.launch_app(sorted_dataset)
