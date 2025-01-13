@@ -10,6 +10,8 @@ import datetime
 STARTING_FOLDER = r"E:\Panama"
 NUM_TO_PROCESS=10
 
+#THIS ONLY WORKS WITH PRE_CREATED YOLO DATA
+#TODO   create version of this function that takes the json files and creates the YOLO data for you!
 def find_matching_pairs(folder_path):
     """Finds pairs of .txt and .jpg/.png files with the same name in a given folder."""
     
