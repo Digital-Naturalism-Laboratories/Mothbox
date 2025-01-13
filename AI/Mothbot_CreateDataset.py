@@ -13,6 +13,7 @@ from PIL import Image
 import fiftyone.core.labels as fol
 import csv
 from datetime import datetime
+import re
 
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
@@ -218,7 +219,23 @@ def handle_rotation_annotation(points):
 
   return top, left, width, height
 
+def extract_number(raw_height):
+  """
+  Extracts the numerical value from a string representing height.
 
+  Args:
+    raw_height: The string containing the height information.
+
+  Returns:
+    The numerical value of the height as a float, or None if no numerical value 
+    could be extracted.
+  """
+  # Use regular expression to find the first floating-point or integer number
+  match = re.search(r"[-+]?\d+\.?\d*|\d+", raw_height) 
+  if match:
+    return float(match.group(0))
+  else:
+    return None
 
 def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator):
   """Creates a FiftyOne sample using the 51 python interface
@@ -253,7 +270,9 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["location"]=geolocation
   sample["longitude"]=longitude
   sample["latitude"]=latitude
-  sample["ground_height"]=metadata.get("height (placement above ground)","")
+  therawgroundheight=metadata.get("height (placement above ground)","")
+
+  sample["ground_height"]= extract_number(therawgroundheight)
   sample["attractor"]=metadata.get("attractor","")
 
   sample["deployment_name"]=metadata.get("deployment.name","")

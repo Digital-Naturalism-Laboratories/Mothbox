@@ -18,7 +18,7 @@ TAXA_LIST_PATH = r'C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_Countr
 
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
-def create_occurrence_id(filename, latitude, longitude):
+def OLDcreate_occurrence_id(filename, latitude, longitude):
     # Step 1: Process filename
     # Remove spaces, convert to lowercase, replace irregular characters, convert "_" to "-"
     filename = unidecode(filename).lower().strip()
@@ -163,7 +163,24 @@ def find_deepest_taxon_info(taxa_list, taxa_values, taxa_lookup):
     else:
         print(str(taxa_values)+"No valid deepest rank and value found. Probably ID'ed as an Error category, don't worry")
         return None, None
-    
+def create_uniquedatasetID(deployment_name, oid_dict):
+  """
+  Creates a deployment name by concatenating the given deployment_name 
+  with the 'oid' value extracted from the provided dictionary.
+
+  Args:
+    deployment_name: The base name for the deployment.
+    oid_dict: A dictionary containing the 'oid' key.
+
+  Returns:
+    The concatenated deployment name.
+  """
+  try:
+    oid = oid_dict['$oid']
+    return f"{deployment_name}_oid_{oid}"
+  except KeyError:
+    return f"{deployment_name}"  # Return original name if 'oid' key is missing
+ 
 def json_to_csv(input_path, utc_offset,taxa_list_path):
 
     #preload this stuff for faster lookup
@@ -193,7 +210,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
         return
 
     with open(input_path+"/"+output_file, "w", newline="") as csvfile:
-        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTC_OFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation", "attractor"]  # Adjust fieldnames as needed
+        fieldnames = ["basisOfRecord","datasetID","parentEventID","eventID","occurrenceID","verbatimEventDate","eventDate","eventTime","UTCOFFSET","detectionBy","detection_confidence","identifiedBy","ID_confidence","kingdom","phylum","class","order","family","genus","species","taxonID","commonName","scientificName","filepath", "mothbox","software","sheet","country", "area", "point","latitude","longitude","ground_height","deployment_name","deployment_date","collect_date", "data_storage_location","crew", "notes", "schedule","habitat", "image_id", "label", "bbox", "segmentation", "attractor"]  # Adjust fieldnames as needed
         csv_writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
         csv_writer.writeheader()
 
@@ -276,24 +293,20 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
             taxa_values = [kingdom, phylum, tclass, order, family, genus, species]
             taxon_id, scientificName= find_deepest_taxon_info(TAXA, taxa_values, taxa_lookup)
 
+            uniquedatasetID=create_uniquedatasetID(sample["deployment_name"],sample["_dataset_id"])
 
-
-            occurenceID = create_occurrence_id(os.path.basename(sample["filepath"]),str(sample["latitude"]),str(sample["longitude"]))
             row = {
-                #"label_type":"ground_truth", 
                 "filepath":sample["filepath"],
-                #"id": sample["_id"],
-                #"image_id": sample["image_id"],
                 
                 "basisOfRecord": "MachineObservation",
-                "datasetID":sample["_dataset_id"],
+                "datasetID":uniquedatasetID,
                 "parentEventID":sample["deployment_name"],
-                "eventID":os.path.basename(sample["filepath"]),
-                "occurrenceID":occurenceID,
+                "eventID":os.path.basename(sample['filepath_fullimage']),
+                "occurrenceID":os.path.basename(sample["filepath"]),
                 "verbatimEventDate":date+"__"+timestamp,
                 "eventDate":formattedUTC_dateTime,
                 "eventTime":formattedUTC_dateTime.split("T")[1],
-                "UTC_OFFSET":utc_offset,
+                "UTCOFFSET":utc_offset,
                 "mothbox":sample["mothbox"],
                 "software":sample["software"],
                 "sheet":sample["sheet"],
@@ -304,6 +317,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "longitude":sample["longitude"],
                 "ground_height":sample["ground_height"],
                 "attractor":sample["attractor"],
+                "attractor_location":sample["attractor_location"],
 
                 "deployment_name":sample["deployment_name"],
                 "deployment_date":sample["deployment_date"],
@@ -311,7 +325,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "collect_date":sample["collect_date"], 
                 "data_storage_location":sample["data_storage_location"],
                 "crew":sample["crew"], 
-                "notes": "", #sample["notes"], #hubert doesn't want notes for each critter sighting
+                "notes": "", #sample["notes"], #Disabled for now, hubert doesn't want notes for each critter sighting
                 "schedule":sample["program"],
                 "habitat":sample["habitat"], 
 
@@ -332,12 +346,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "commonName":commonName,
                 "scientificName":scientificName,
                 "taxonID":taxon_id,
-
-                #"detection_type": detection["_cls"],
-                #"points":tag["bounding_box"],
-                #"detectionID":tag["_id"]
-
-                
+               
             }
             csv_writer.writerow(row)
 
