@@ -78,6 +78,7 @@ def calculate_weather_data(input_path):
             # Create Meteostat Point
             location = Point(lat, lon)
             location.radius=70000 #maximum distance
+            #TODO - make calculation to also show distance to nearest station it reads data from
             # Fetch hourly weather data for the given time
             weather_data = Hourly(location, start=utc_datetime, end=utc_datetime_plus1 )
             weather_data = weather_data.fetch()
