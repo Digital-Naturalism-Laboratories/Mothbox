@@ -9,6 +9,7 @@ import json
 
 # Global variable for the starting folder path
 STARTING_FOLDER = r"E:\Panama"
+OUTPUT_FOLDER= r"C:\Users\andre\Desktop"
 NUM_TO_PROCESS=10
 CLASSES_PATH = r"E:\Panama\classes.txt"
 
@@ -223,8 +224,8 @@ starting_folder_dir = os.path.dirname(STARTING_FOLDER)
 parent_folder_dir = os.path.dirname(starting_folder_dir)
 
 # Create the output folder path
-output_folder = os.path.join(parent_folder_dir, f"mothbox_dataset_{NUM_TO_PROCESS}_{current_date}")
-
+#output_folder = os.path.join(parent_folder_dir, f"mothbox_dataset_{NUM_TO_PROCESS}_{current_date}") # old way for making it a directory above
+output_folder=os.path.join(OUTPUT_FOLDER, f"mothbox_dataset_{NUM_TO_PROCESS}_{current_date}")
 # Create output folders (ensure parents exist)
 os.makedirs(os.path.join(output_folder, "images/train"), exist_ok=True)
 os.makedirs(os.path.join(output_folder, "images/test"), exist_ok=True)
