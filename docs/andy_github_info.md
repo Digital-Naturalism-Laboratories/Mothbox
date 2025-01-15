@@ -2,7 +2,7 @@ List of github usage documentation
 
 # Here's how to archive an old copy of the whole github and documentation
 
-1 - fork it (note when you fork it, try to fork it to the same organization owning it! i messed this up with 4.0)
+1 - fork it (note when you fork it, try to fork it to the same organization owning it! i messed this up with 4.0, use digital.naturalism.labs not quitmeyer)
 
 2- go to settings, pages, deploy page via github actions,
 
