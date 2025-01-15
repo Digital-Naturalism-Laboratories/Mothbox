@@ -6,7 +6,7 @@ description: "The Mothbox is a low cost DIY insect monitor"
 permalink: /
 ---
 
-# Mothbox 4.0
+# Mothbox 4.5
 The Mothbox is a low-cost, high-performance [insect monitor](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/). It features a power efficient and lightweight design that helps field biologists deploy it in the depths of the jungle. Its low cost means you can build one to study the biodiversity at your home!
 
 All the physical designs, electronics schematics, Pi Scripts, and insect-IDing Artificial Intelligence are **provided free and open source**, so you can build, share, and improve on these designs yourself!
