@@ -14,11 +14,11 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03"  # raw string
+INPUT_PATH = r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTopminus1level_CalmoBarbo_2024-11-14\2024-11-14"  # raw string
 
-YOLO_MODEL = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\best_3000Images_batch2_1408px.pt"
+YOLO_MODEL = r"C:\Users\andre\Desktop\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\best.pt"
 
-IMGSZ = 1408  # Should be same imgsz as used in training for best results!
+IMGSZ = 1600  # Should be same imgsz as used in training for best results!
 
 
 #SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. 
@@ -74,6 +74,8 @@ def process_jpg_files(img_files, date_folder):
         progress = (processed_files / total_img_files) * 100
 
         # Print progress
+        print()
+        print()
         print(f"({progress:.2f}%) Processing:  {filename} ")
 
 
