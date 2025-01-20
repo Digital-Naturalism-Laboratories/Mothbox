@@ -55,9 +55,9 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03"  # raw string
+    r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTopminus1level_CalmoBarbo_2024-11-14\2024-11-14"  # raw string
 )
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta_TaxaArachnida.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER = Rank.ORDER
 
 ID_HUMANDETECTIONS = True
@@ -92,10 +92,10 @@ def parse_args():
         help="rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})",
     )
     parser.add_argument(
-        "--flag-holes",
+        "--flag-det-errors",
         default=True,
         action=argparse.BooleanOptionalAction,
-        help="whether to flag holes and smudges (default: --flag-holes)",
+        help="whether to flag detection errors like holes and smudges (default: --flag-det-errors)",
     )
     parser.add_argument(
         "--taxa-csv",
@@ -117,7 +117,7 @@ def parse_args():
     return parser.parse_args()
 
 
-def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_holes=True):
+def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
     """
     Loads taxon keys from a tab-delimited CSV file into a list.
 
@@ -125,7 +125,7 @@ def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_holes=True):
       taxa_path: String. Path to the taxa CSV file.
       taxa_cols: List of strings. Taxonomic columns in taxa CSV to load (default: ["kingdom", "phylum", "class", "order", "family", "genus", "species"]).
       taxon_rank: String. Taxonomic rank to which to classify images (must be present as column in the taxa csv at file_path). Default: "order".
-      flag_holes: Boolean. Whether to flag holes and smudges (adds "hole" and "circle" to taxon_keys). Default: True.
+      flag_det_errors: Boolean. Whether to flag holes and smudges blanks (adds "hole" and "circle" and "background" and "blank" to taxon_keys). Default: True.
 
     Returns:
       taxon_keys: List. A list of taxon keys to feed to the CustomClassifier for bioCLIP classification.
@@ -191,7 +191,7 @@ def process_files_in_directory(data_path, classifier, taxon_rank="order"):
                 + f"  This is the winner: {pred} with a score of {winner['score']}"
             )
             key = f"data/{file}"
-            if pred in ["hole", "circle"]:
+            if pred in ["hole", "circle", "background", "wall", "floor", "blank"]:
                 predictions[key] = f"abiotic_{pred}"
             else:
                 predictions[key] = taxon_rank + "_" + pred
@@ -632,14 +632,14 @@ def add_metadata_to_json(json_path, metadata_path):
 
 
 def ID_matched_img_json_pairs(
-    hu_matched_img_json_pairs,bot_matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_holes
+    hu_matched_img_json_pairs,bot_matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_the_det_errors
 ):
     # load up the Pybioclip stuff
     taxon_keys_list = load_taxon_keys(
         taxa_path=taxa_path,
         taxa_cols=taxa_cols,
         taxon_rank=taxon_rank.lower(),
-        flag_holes=flag_holes,
+        flag_det_errors=flag_the_det_errors,
     )
     target_values = taxon_keys_list
     print(
@@ -668,7 +668,7 @@ def ID_matched_img_json_pairs(
         new_txt_names.append(txt_name)
 
     print("Creating embeddings for custom labels")
-    custom_labels = ["hole", "circle"]
+    custom_labels = ["hole", "circle", "background", "wall", "floor", "blank"]
     clc = CustomLabelsClassifier(custom_labels)
     for i, label in enumerate(custom_labels):
         txt_feature_ary.append(clc.txt_features[:, i])
@@ -845,7 +845,7 @@ if __name__ == "__main__":
         hu_matched_img_json_pairs,
         bot_matched_img_json_pairs,
         taxon_rank=args.rank,
-        flag_holes=args.flag_holes,
+        flag_the_det_errors=args.flag_det_errors,
         taxa_path=args.taxa_csv,
         taxa_cols=args.taxa_cols,
         device="cuda",

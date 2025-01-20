@@ -8,8 +8,8 @@ import time
 import threading
 
 # Configuration
-AUDIO_INPUT_PATH = r"/Users/brianna/Desktop/spotifydown.com - Caribbean Blue.mp3"
-TRANS_IMAGES_DIR = r"/Users/brianna/Desktop/onlybig"  # Directory with transparent insect images
+AUDIO_INPUT_PATH = r"C:\Users\andre\Downloads\Ptarmigan - The Forest Darling\Ptarmigan - The Forest Darling - 02 Where.mp3"
+TRANS_IMAGES_DIR = r"C:\Users\andre\Desktop\onlybig"  # Directory with transparent insect images
 MAX_IMAGES = 500  # Max number of images to load
 hop_length = 512
 IMAGE_SCALE = 0.6  # Scale images to 20% of their original size
@@ -18,7 +18,9 @@ BEAT_INTERVAL = 16  # Change insect image every 16th beat
 BACKGROUND_IMAGES_COUNT = 450  # Max number of background images
 
 # Load the audio file
-y, sr = librosa.load(AUDIO_INPUT_PATH, sr=None)
+#y, sr = librosa.load(AUDIO_INPUT_PATH, sr=None)
+y, sr = librosa.load(AUDIO_INPUT_PATH, )
+
 #y, sr = librosa.load(librosa.example('nutcracker'))
 
 # Separate percussive and harmonic signals
@@ -147,7 +149,7 @@ while running:
         
         # Draw the tinted image at the random position
         rect = tinted_image.get_rect(center=pos)
-        screen.blit(tinted_image, rect)
+        screen.blit(tinted_image, rect)#, special_flags = pygame.BLEND_RGB_SUB)
 
     # Draw insect images at their random positions
     for i in range(num_insects):

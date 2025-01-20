@@ -8,13 +8,28 @@ import time
 import threading
 
 # Configuration
-AUDIO_INPUT_PATH = r"C:\Users\andre\Downloads\construction-revisionist-official-audio-1080-publer.io.mp3"
-TRANS_IMAGES_DIR = r"C:\Users\andre\Desktop\x-anylabeling-matting\coatesBig"  # Directory with transparent insect images
+AUDIO_INPUT_PATH = r"C:\Users\andre\Downloads\Ptarmigan - The Forest Darling\Ptarmigan - The Forest Darling - 02 Where.mp3"
+TRANS_IMAGES_DIR = r"C:\Users\andre\Desktop\onlybig"  # Directory with transparent insect images
 MAX_IMAGES = 800  # Max number of images to load
 hop_length = 512
 BEAT_INTERVAL = 16  # Change insect images every 16th beat
-IMAGE_SCALE = 1.5  # Scale images to 60% of their original size
+IMAGE_SCALE = 1  # Scale images to 60% of their original size
 WIDTH, HEIGHT = 1920/2, 1080/2
+
+
+def blurSurf(surface, amt):
+    """
+    Blur the given surface by the given 'amount'.  Only values 1 and greater
+    are valid.  Value 1 = no blur.
+    """
+    if amt < 1.0:
+        raise ValueError("Arg 'amt' must be greater than 1.0, passed in value is %s"%amt)
+    scale = 1.0/float(amt)
+    surf_size = surface.get_size()
+    scale_size = (int(surf_size[0]*scale), int(surf_size[1]*scale))
+    surf = pygame.transform.smoothscale(surface, scale_size)
+    surf = pygame.transform.smoothscale(surf, surf_size)
+    return surf
 
 
 # Load the audio file
@@ -114,7 +129,7 @@ while running:
         red_intensity = int(min(255, vocal_intensity * 255 / np.max(rms_vocals)))
     else:
         red_intensity = 0
-    screen.fill((red_intensity, 0, 0,100))
+    screen.fill((red_intensity, int(230-red_intensity*.5), 10,100))
 
     # Get current time in seconds relative to the start of the song
     frame_idx = int((elapsed_time * sr) // hop_length)
@@ -153,7 +168,11 @@ while running:
         image = current_images[i]
         intensity = current_chroma[i]
         alpha_image = image.copy()
-        alpha_image.fill((255, 255, 255, int(240 * intensity)), special_flags=pygame.BLEND_RGBA_MULT)
+        alpha_image_blend=alpha_image.copy()
+
+        alpha_image.fill((255, 255, 255, int(240 * intensity*.8)), special_flags=pygame.BLEND_RGBA_MULT)
+        alpha_image_blend=alpha_image.copy()
+        alpha_image_blend.fill((255, 255, 255, int(240 * intensity)), special_flags=pygame.BLEND_RGBA_MULT)
 
         # Add jitter to position
         pos = current_positions[i]
@@ -161,10 +180,14 @@ while running:
             pos[0] + random.randint(-jitter_amount, jitter_amount),
             pos[1] + random.randint(-jitter_amount, jitter_amount),
         )
-        rect = alpha_image.get_rect(center=jittered_pos)
 
+        rect = alpha_image.get_rect(center=jittered_pos)
+        alpha_image
+        
         # Blit the image onto the screen
-        screen.blit(alpha_image, rect.topleft)
+        screen.blit(alpha_image_blend, rect.topleft,special_flags = pygame.BLEND_RGB_ADD)
+
+        screen.blit(alpha_image, rect.topleft)#,special_flags = pygame.BLEND_RGB_SUB)
 
 
     # Update the display

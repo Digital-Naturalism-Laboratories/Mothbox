@@ -18,7 +18,7 @@ import re
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r'E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03'
+INPUT_PATH = r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTopminus1level_CalmoBarbo_2024-11-14\2024-11-14"
 METADATA_PATH=r'C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbox_Main_Metadata_Field_Sheet_Example.csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
@@ -304,7 +304,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
     filtered_dict = {key: value for key, value in label.items() if key in desired_keys}
 
     # Check for unwanted values
-    unwanted_values = {"circle", "hole", "error"}
+    unwanted_values = {"hole", "circle", "background", "wall", "floor", "blank"}
     if any(value in unwanted_values for value in filtered_dict.values()):
         taxonomic_list = ["Error"]
     else:
