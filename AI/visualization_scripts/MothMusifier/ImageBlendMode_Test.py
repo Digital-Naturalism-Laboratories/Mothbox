@@ -10,7 +10,12 @@ def load_images_from_folder(folder):
             images.append(img)
     return images
 
-def display_images(screen, images, num_images=12, blend_mode=pygame.BLEND_RGBA_ADD):
+def transparentSurface(size):
+    surface = pygame.Surface(size).convert_alpha()
+    surface.fill(0,0,0,0)
+    return surface
+
+def display_images(screen, images, num_images=3, blend_mode=pygame.BLEND_RGBA_ADD):
     
     screen.fill((200, 200, 10))  # Light background
     for _ in range(num_images):
@@ -22,17 +27,17 @@ def display_images(screen, images, num_images=12, blend_mode=pygame.BLEND_RGBA_A
         y = random.randint(0, max_y)
         
         # Apply random opacity
-        opacity = random.randint(100, 255)
+        opacity = random.randint(255, 255)
         img_with_opacity = img.copy()
         img_with_blend = img.copy()
         #img_with_opacity=blurSurf(img_with_opacity,1)
-        img_with_opacity.fill((255, 255, 255, opacity*.8), None, special_flags=pygame.BLEND_RGBA_MULT)
+        img_with_opacity.fill((255, 255, 255, opacity), None, special_flags=pygame.BLEND_RGBA_MULT) #This is how to change the opacity of a png image
         img_with_blend=img_with_opacity.copy()
         img_with_blend.fill((255, 255, 255, opacity), None, special_flags=pygame.BLEND_RGBA_MULT)
 
-        screen.blit(img_with_blend,(x,y), special_flags=pygame.BLEND_RGBA_ADD)
-
-        screen.blit(img_with_opacity, (x, y))#, special_flags=blend_mode)
+        #screen.blit(img_with_blend,(x,y), special_flags=pygame.BLEND_RGBA_ADD)
+        #screen.blit(img_with_opacity, (x, y))#, special_flags=blend_mode)
+        screen.blit(img_with_opacity, (x, y), special_flags=pygame.BLEND_RGB_SUB)
 def blurSurf(surface, amt):
     """
     Blur the given surface by the given 'amount'.  Only values 1 and greater
@@ -50,8 +55,9 @@ def blurSurf(surface, amt):
 def main():
     TRANS_IMAGES_DIR = r"C:\\Users\\andre\\Desktop\\onlybig\\test"
     pygame.init()
-    screen_size = (800, 600)
+    screen_size = (1400, 900)
     screen = pygame.display.set_mode(screen_size)
+    #screen.convert_alpha()
     pygame.display.set_caption("Random Image Placement")
     
     images = load_images_from_folder(TRANS_IMAGES_DIR)

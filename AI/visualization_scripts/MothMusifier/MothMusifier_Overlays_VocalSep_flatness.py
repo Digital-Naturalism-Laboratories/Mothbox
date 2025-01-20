@@ -170,9 +170,9 @@ while running:
         alpha_image = image.copy()
         alpha_image_blend=alpha_image.copy()
 
-        alpha_image.fill((255, 255, 255, int(240 * intensity*.8)), special_flags=pygame.BLEND_RGBA_MULT)
+        alpha_image.fill((255, 255, 255, int(240 * intensity)), special_flags=pygame.BLEND_RGBA_MULT)
         alpha_image_blend=alpha_image.copy()
-        alpha_image_blend.fill((255, 255, 255, int(240 * intensity)), special_flags=pygame.BLEND_RGBA_MULT)
+        alpha_image_blend.fill((255, 255, 255, int(100 * intensity)), special_flags=pygame.BLEND_RGBA_MULT)
 
         # Add jitter to position
         pos = current_positions[i]
@@ -187,7 +187,7 @@ while running:
         # Blit the image onto the screen
         screen.blit(alpha_image_blend, rect.topleft,special_flags = pygame.BLEND_RGB_ADD)
 
-        screen.blit(alpha_image, rect.topleft)#,special_flags = pygame.BLEND_RGB_SUB)
+        screen.blit(alpha_image, rect.topleft)#,special_flags = pygame.BLEND_RGBA_ADD)
 
 
     # Update the display
