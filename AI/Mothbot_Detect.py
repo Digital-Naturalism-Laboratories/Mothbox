@@ -8,6 +8,7 @@ import re
 import json
 import PIL.Image
 from pathlib import Path
+import argparse
 
 from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPatches_JSON
 
@@ -27,6 +28,23 @@ OVERWRITE_PREV_BOT_DETECTIONS=True #if true, if there are previous machine detec
 
 #You should always leave Gen_Thumbnails as true. It will intelligently detect if a thumbnail exists and skip it if need be.
 GEN_THUMBNAILS=True
+
+
+#command line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("--input_path", default=INPUT_PATH, required=False)
+parser.add_argument("--yolo_model",default=YOLO_MODEL, required=False)
+parser.add_argument("--imgsz", default=IMGSZ,type=int, required=False)
+args = parser.parse_args()
+
+print(f"Processing {args.input_path} with model {args.yolo_model} and image size {args.imgsz}")
+
+#if run without new args, this will just be the same as above, but if not, we can insert new args
+INPUT_PATH=args.input_path
+YOLO_MODEL=args.yolo_model
+IMGSZ=args.imgsz
+
+
 
 #~~~~Other Stuff~~~~~~~
 
