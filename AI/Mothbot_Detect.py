@@ -9,7 +9,7 @@ import json
 import PIL.Image
 from pathlib import Path
 import argparse
-
+from PIL import Image  # For image format verification
 from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPatches_JSON
 
 
@@ -58,6 +58,14 @@ def scan_for_images(date_folder_path):
             jpeg_files.append(os.path.join(date_folder, filename))
   return jpeg_files
 
+def is_valid_image(image_path): #in case there is an occasional corrupt image
+  
+  """Checks if an image file is valid using Pillow (PIL Fork)."""
+  try:
+    Image.open(image_path).verify()
+    return True
+  except (IOError, SyntaxError):
+    return False
 
 def process_jpg_files(img_files, date_folder):
     """
@@ -86,6 +94,10 @@ def process_jpg_files(img_files, date_folder):
         human_json_path = os.path.join(date_folder, filename[:-4] + ".json")
         bot_json_path = os.path.join(date_folder, filename[:-4] + "_botdetection.json")
 
+        #verify if the image file is ok
+        if not is_valid_image(image_path):
+            print(f"Skipping corrupt image: {image_path}")
+            continue
 
         # Calculate progress
         processed_files = idx + 1
