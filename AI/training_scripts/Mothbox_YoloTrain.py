@@ -15,7 +15,7 @@ if __name__ == '__main__':
 
     # Define dataset configuration directly in Python
     dataset_config = {
-        'path': r'C:\Users\andre\Desktop\mothbox_dataset_3000_2025-01-13',  # Dataset root directory
+        'path': r'C:\Users\andre\Desktop\mothbox_dataset_3900_2025-01-16',  # Dataset root directory
         'train': 'images/train',  # Train images (relative to 'path')
         'val': 'images/val',      # Validation images (relative to 'path')
         'test': 'images/test',    # Test images (relative to 'path')
@@ -32,16 +32,18 @@ if __name__ == '__main__':
 
     try:
         # Load a model
-        model = YOLO('yolo11m-obb.yaml').to('cuda')  # Build a new model from YAML
+        model = YOLO('yolo11l-obb.yaml').to('cuda')  # Build a new model from YAML
         print(model.device)
         print("Now starting training...")
 
+            #imgsz= 2240, #1984 #1408,
+            #cache=False
         # Train the model
         results = model.train(
             data=yaml_path,  # Pass the temporary YAML file path
             epochs=100,
-            imgsz=1408,
-            batch=2,
+            imgsz= 1600, #1984 #1408,
+            batch=1,
             device='cuda'
         )
     finally:

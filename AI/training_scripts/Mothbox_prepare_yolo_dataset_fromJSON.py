@@ -8,10 +8,10 @@ import datetime
 import json
 
 # Global variable for the starting folder path
-STARTING_FOLDER = r"E:\Panama"
+STARTING_FOLDER = r"F:\Panama"
 OUTPUT_FOLDER= r"C:\Users\andre\Desktop"
 NUM_TO_PROCESS=10
-CLASSES_PATH = r"E:\Panama\classes.txt"
+CLASSES_PATH = r"F:\Panama\classes.txt"
 
 #This is going to cheat a bit, and make all labels "creature", so we don't actually use "classes.txt" right now
 def json_to_yolo_obb(json_path, classes_path,yolo_path_to_save):
