@@ -55,9 +55,9 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTopminus1level_CalmoBarbo_2024-11-14\2024-11-14"  # raw string
+    r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-14"  # raw string
 )
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta_TaxaArachnida.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER = Rank.ORDER
 
 ID_HUMANDETECTIONS = True
@@ -191,7 +191,7 @@ def process_files_in_directory(data_path, classifier, taxon_rank="order"):
                 + f"  This is the winner: {pred} with a score of {winner['score']}"
             )
             key = f"data/{file}"
-            if pred in ["hole", "circle", "background", "wall", "floor", "blank"]:
+            if pred in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
                 predictions[key] = f"abiotic_{pred}"
             else:
                 predictions[key] = taxon_rank + "_" + pred
@@ -668,7 +668,7 @@ def ID_matched_img_json_pairs(
         new_txt_names.append(txt_name)
 
     print("Creating embeddings for custom labels")
-    custom_labels = ["hole", "circle", "background", "wall", "floor", "blank"]
+    custom_labels = ["hole", "circle", "background", "wall", "floor", "blank", "sky"]
     clc = CustomLabelsClassifier(custom_labels)
     for i, label in enumerate(custom_labels):
         txt_feature_ary.append(clc.txt_features[:, i])
