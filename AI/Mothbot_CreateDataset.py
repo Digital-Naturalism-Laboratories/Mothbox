@@ -18,7 +18,7 @@ import re
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-14"
+INPUT_PATH = r"D:\Panama\Hoya_1508m_waveUrta_2025-01-27\2025-01-28"
 METADATA_PATH=r'C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbox_Main_Metadata_Field_Sheet_Example.csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 

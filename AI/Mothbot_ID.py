@@ -55,7 +55,7 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCbottom_comerLicaon_2024-11-14\2024-11-14"  # raw string
+    r"D:\Panama\Hoya_1508m_waveUrta_2025-01-27\2025-01-28"  # raw string
 )
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER = Rank.ORDER
@@ -518,10 +518,10 @@ def get_bioclip_prediction_imgpath(img, classifier):
         for pred in classifier.format_grouped_probs(
             "", probs, rank=TAXONOMIC_RANK_FILTER, min_prob=1e-9, k=5
         ):  # TODO make it so tags get saved for all ranks, and specify deepest rank? #this shows the depth of the order it searches to
-            print(pred)
+            #print(pred)
             if index == 0:
                 kingdom = pred["kingdom"]
-                print(str(TAXONOMIC_RANK_FILTER.get_label()))
+                #print(str(TAXONOMIC_RANK_FILTER.get_label()))
                 winner = pred[
                     str(TAXONOMIC_RANK_FILTER.get_label())
                 ]  # get the correct ID based on the deepest order we are searching
@@ -548,10 +548,10 @@ def get_bioclip_prediction_PILimg(img, classifier):
         for pred in classifier.format_grouped_probs(
             "", probs, rank=TAXONOMIC_RANK_FILTER, min_prob=1e-9, k=5
         ):  # TODO make it so tags get saved for all ranks, and specify deepest rank? #this shows the depth of the order it searches to
-            print(pred)
+            #print(pred)
             if index == 0:
                 kingdom = pred["kingdom"]
-                print(str(TAXONOMIC_RANK_FILTER.get_label()))
+                #print(str(TAXONOMIC_RANK_FILTER.get_label()))
                 winner = pred[
                     str(TAXONOMIC_RANK_FILTER.get_label())
                 ]  # get the correct ID based on the deepest order we are searching
