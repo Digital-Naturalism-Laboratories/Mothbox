@@ -1,19 +1,50 @@
 import subprocess
 import os
+import time
+
 
 script_path = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot_Detect.py"  # Update this with your actual script path
 input_paths = [
-    r"F:\Panama\Fortuna_atrasdelaestacion_prizecrab_2024-09-26\2024-09-26",
-    r"F:\Panama\Fortuna_casaverde_Amplebonobo_2024-11-25\2024-11-26",
-    r"F:\Panama\Fortuna_Chorro_PrizeCrab_2024-09-16\2024-09-16",
-    r"F:\Panama\Fortuna_Chorro_PrizeCrab_2024-09-16\2024-09-17",
-    r"F:\Panama\Fortuna_Chorro_PrizeCrab_2024-09-16\2024-09-18",
-    r"F:\Panama\Fortuna_Chorro_PrizeCrab_2024-09-16\2024-09-19"
+    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-26",
+    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-27",
+    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-28",
+    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-26",
+    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-27",
+    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-28",
+    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-26",
+    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-27",
+    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-28"
+
 ]
 
 YOLO_MODEL=r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 IMGSZ=1600# Should be same imgsz as used in training for best results!
 i=0
+
+
+def time_it(func):
+    """A decorator to time the execution of a function.
+
+    Args:
+        func: The function to be timed.
+
+    Returns:
+        A wrapper function that executes the given function and prints the execution time.
+    """
+    def wrapper(*args, **kwargs):
+        start_time = time.time()  # Record the start time
+        result = func(*args, **kwargs) # Execute the function
+        end_time = time.time()  # Record the end time
+        execution_time = end_time - start_time # Calculate the elapsed time
+        print(f"Function '{func.__name__}' took {execution_time:.4f} seconds to execute.")
+        return result # Return the original function's result
+
+    return wrapper
+
+
+
+start_time_overall = time.time()
+
 for input_path in input_paths:
     print("starting to process: "+input_path)
     subprocess.run([
@@ -26,3 +57,12 @@ for input_path in input_paths:
     i=i+1
     print("processed "+str(i)+" folders.")
     print("just finished processing "+input_path)
+
+end_time_overall = time.time()
+total_execution_time = end_time_overall - start_time_overall
+
+hours = int(total_execution_time // 3600)
+minutes = int((total_execution_time % 3600) // 60)
+seconds = total_execution_time % 60
+
+print(f"Overall script execution took {hours:02d}:{minutes:02d}:{seconds:.4f} (HH:MM:SS.SSSS)")
