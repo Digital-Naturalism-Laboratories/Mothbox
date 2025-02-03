@@ -67,8 +67,7 @@ SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryP
     GENUS = 5
     SPECIES = 6"""
 
-TAXONOMIC_RANK_FILTER_num = 3 #change this number to change the taxonomic rank we filter with
-TAXONOMIC_RANK_FILTER = Rank.ORDER
+TAXONOMIC_RANK_FILTER_num = 3 #!!! change this number to change the taxonomic rank we filter with. IE filter to order with "3" or filter to genus with "5"
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
@@ -77,7 +76,7 @@ OVERWRITE_EXISTING_IDs = False #True
 # ~~~~Other Global Variables~~~~~~~
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
-
+TAXONOMIC_RANK_FILTER = Rank.ORDER
 TOL_TAXONOMIC_RANK = "species"  # Change this to "species" to target just the species in your CSV # Note i think this is actually just always needs to be set for SPECIES for this exampple
 DOMAIN = "Eukarya"  # basically our "creature" tag? figure we will never see a prokaryote on the mothbox # Also i think GBIF has a "Biota" category that is a fancier version of "creature" or "life"
 taxa_path = SPECIES_LIST
