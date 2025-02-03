@@ -4,16 +4,14 @@ import time
 #from bioclip import  Rank
 
 script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot_ID.py"  # Update this with your actual script path
+
+#you can insert a list of deployments, the ID script will automatically find the date folders!
 input_paths = [
-    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-26",
-    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-27",
-    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-28",
+    r"E:\Panama\Hoya_1110m_cuervoCinife_2025-01-26",
+    r"E:\Panama\Hoya_1004m_accionSauro_2025-01-26",
+    r"E:\Panama\Hoya_916m_layerMomoto_2025-01-26",
+    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26",
     r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-26",
-    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-27",
-    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-28",
-    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-26",
-    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-27",
-    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-28"
 
 ]
 
