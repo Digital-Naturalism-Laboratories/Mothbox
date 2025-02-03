@@ -55,11 +55,20 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"D:\Panama\Hoya_1508m_waveUrta_2025-01-27\2025-01-28"  # raw string
+    r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTop_waveUrta_2024-11-14\2024-11-14"  # raw string
 )
 SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
-TAXONOMIC_RANK_FILTER = Rank.ORDER
 
+""" KINGDOM = 0
+    PHYLUM = 1
+    CLASS = 2
+    ORDER = 3
+    FAMILY = 4
+    GENUS = 5
+    SPECIES = 6"""
+
+TAXONOMIC_RANK_FILTER_num = 3 #change this number to change the taxonomic rank we filter with
+TAXONOMIC_RANK_FILTER = Rank.ORDER
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
@@ -87,9 +96,15 @@ def parse_args():
         help="path to images for classification (ex: datasets/test_images/data)",
     )
     parser.add_argument(
-        "--rank",
+        "--TOLrank",
         default=TOL_TAXONOMIC_RANK,
-        help="rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})",
+        #help="rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})", #this always needs to just be left at species i think
+    )
+
+    parser.add_argument(
+        "--rank",
+        default=TAXONOMIC_RANK_FILTER_num,
+        help="rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})", 
     )
     parser.add_argument(
         "--flag-det-errors",
@@ -800,7 +815,8 @@ if __name__ == "__main__":
     """
 
     args = parse_args()
-
+    taxon_filter_num=int(args.rank)
+    TAXONOMIC_RANK_FILTER = Rank(taxon_filter_num)
     # Find all the dated folders that our data lives in
     print("Looking in this folder for MothboxData: " + args.data_path)
     date_folders = find_date_folders(args.data_path)
@@ -844,7 +860,7 @@ if __name__ == "__main__":
     ID_matched_img_json_pairs(
         hu_matched_img_json_pairs,
         bot_matched_img_json_pairs,
-        taxon_rank=args.rank,
+        taxon_rank=args.TOLrank,
         flag_the_det_errors=args.flag_det_errors,
         taxa_path=args.taxa_csv,
         taxa_cols=args.taxa_cols,
