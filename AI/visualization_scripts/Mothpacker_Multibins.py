@@ -10,11 +10,11 @@ import numpy as np
 import argparse
 from pathlib import Path
 
-IMAGE_FOLDER = r"F:\Panama\Hoya_119m_bothDeer_2025-01-26\2025-01-27\patches\rembg"
+IMAGE_FOLDER = r"F:\Panama\Hoya_168m_doubleParina_2025-01-26\2025-01-27\patches\rembg"
 # Get the directory names safely
 IMGFOLDER_PATH=Path(IMAGE_FOLDER)
-dir_2_up = IMGFOLDER_PATH.parents[1].name if len(IMGFOLDER_PATH.parents) > 1 else ""
-dir_1_up = IMGFOLDER_PATH.parents[0].name if len(IMGFOLDER_PATH.parents) > 0 else ""
+dir_2_up = IMGFOLDER_PATH.parents[2].name if len(IMGFOLDER_PATH.parents) > 1 else ""
+dir_1_up = IMGFOLDER_PATH.parents[1].name if len(IMGFOLDER_PATH.parents) > 0 else ""
 current_dir = IMGFOLDER_PATH.name
 
 # Construct the deployment name
