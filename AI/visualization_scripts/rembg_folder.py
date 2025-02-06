@@ -21,14 +21,25 @@ def remove_backgrounds_from_folder(input_folder, output_folder):
     
     # Supported image extensions
     valid_extensions = (".jpg", ".jpeg", ".png")
+    # Step 1: Get all filenames with valid extensions to calculate total files
+    valid_files = [filename for filename in os.listdir(input_folder) if filename.lower().endswith(valid_extensions)]
+    total_files = len(valid_files)
 
-    for filename in os.listdir(input_folder):
-        if filename.lower().endswith(valid_extensions):
+    if total_files == 0:
+        print("No files found with valid extensions.")
+    else:
+        count_processed = 0
+        # Step 2: Process each file and display the percentage
+        for filename in valid_files:
+            count_processed += 1
+            percentage = (count_processed / total_files) * 100
+            rounded_percentage = round(percentage, 2)
+            print(f"({rounded_percentage:.2f}%)... Processing {filename}")
+
+            # Existing code to create paths and process the file
             input_path = os.path.join(input_folder, filename)
             output_path = os.path.join(output_folder, os.path.splitext(filename)[0] + "_no_bg.png")
-            
-            print(f"Processing {filename}...")
-            
+    
             try:
                 # Open the image with PIL
                 with open(input_path, "rb") as img_file:
@@ -38,8 +49,7 @@ def remove_backgrounds_from_folder(input_folder, output_folder):
                 # Save output image
                 with open(output_path, "wb") as out_file:
                     out_file.write(output_image)
-                
-                print(f"Saved: {output_path}")
+                #print(f"Saved: {output_path}")
             except Exception as e:
                 print(f"Error processing {filename}: {e}")
 

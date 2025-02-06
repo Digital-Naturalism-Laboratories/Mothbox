@@ -10,7 +10,7 @@ import numpy as np
 import argparse
 from pathlib import Path
 
-IMAGE_FOLDER = r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches\rembg"
+IMAGE_FOLDER = r"F:\Panama\Hoya_119m_bothDeer_2025-01-26\2025-01-27\patches\rembg"
 # Get the directory names safely
 IMGFOLDER_PATH=Path(IMAGE_FOLDER)
 dir_2_up = IMGFOLDER_PATH.parents[1].name if len(IMGFOLDER_PATH.parents) > 1 else ""
