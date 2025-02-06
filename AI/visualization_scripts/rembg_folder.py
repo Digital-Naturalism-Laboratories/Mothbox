@@ -2,6 +2,18 @@ import os
 import cv2
 from rembg import remove
 from PIL import Image
+import argparse
+
+INPUT_PATH=r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches"
+
+
+#command line arguments
+parser = argparse.ArgumentParser()
+parser.add_argument("--input_path", default=INPUT_PATH, required=False)
+args = parser.parse_args()
+
+INPUT_PATH=args.input_path
+
 
 def remove_backgrounds_from_folder(input_folder, output_folder):
     # Ensure output folder exists
@@ -32,7 +44,8 @@ def remove_backgrounds_from_folder(input_folder, output_folder):
                 print(f"Error processing {filename}: {e}")
 
 if __name__ == "__main__":
-    input_folder = input("Enter path to input folder: ").strip()
+    #input_folder = input("Enter path to input folder: ").strip()
+    input_folder=INPUT_PATH
     output_folder = input_folder+"/rembg"#input("Enter path to output folder: ").strip()
     
     remove_backgrounds_from_folder(input_folder, output_folder)

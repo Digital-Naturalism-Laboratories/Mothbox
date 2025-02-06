@@ -10,7 +10,7 @@ import numpy as np
 import argparse
 from pathlib import Path
 
-IMAGE_FOLDER = r"F:\Panama\Hoya_119m_bothDeer_2025-01-26\2025-01-27\patches"
+IMAGE_FOLDER = r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches\rembg"
 # Get the directory names safely
 IMGFOLDER_PATH=Path(IMAGE_FOLDER)
 dir_2_up = IMGFOLDER_PATH.parents[1].name if len(IMGFOLDER_PATH.parents) > 1 else ""
@@ -102,9 +102,13 @@ for image_path in files:
 
 
     image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
-
-    image=crop(image)
-    if(image.shape[0]<MIN_IMAGE_DIM or image.shape[1]<MIN_IMAGE_DIM): #there can be an error where an entire image gets cropped away, need to add a catch that throws away too tiny images
+    try:
+        image=crop(image)
+        if(image.shape[0]<MIN_IMAGE_DIM or image.shape[1]<MIN_IMAGE_DIM): #there can be an error where an entire image gets cropped away, need to add a catch that throws away too tiny images
+            continue
+    except Exception as e:
+        print("skipping borken file")
+        print(e)
         continue
     #optionally scale the images
     if(IMAGE_SCALE_PERCENT!=100):
