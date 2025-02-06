@@ -8,10 +8,21 @@ import rectpack #https://github.com/secnot/rectpack
 import pickle
 import numpy as np
 import argparse
+from pathlib import Path
+
+IMAGE_FOLDER = r"F:\Panama\Hoya_119m_bothDeer_2025-01-26\2025-01-27\patches"
+# Get the directory names safely
+IMGFOLDER_PATH=Path(IMAGE_FOLDER)
+dir_2_up = IMGFOLDER_PATH.parents[1].name if len(IMGFOLDER_PATH.parents) > 1 else ""
+dir_1_up = IMGFOLDER_PATH.parents[0].name if len(IMGFOLDER_PATH.parents) > 0 else ""
+current_dir = IMGFOLDER_PATH.name
+
+# Construct the deployment name
+deployment_name = f"{dir_2_up}_{dir_1_up}"
+print(deployment_name)
 
 
-
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\onlybig"
+#IMAGE_FOLDER = r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches"
 #BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
 BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
@@ -26,19 +37,25 @@ BACKGROUND_ALPHA=0
 #ASPECT_RATIO=0.707  #A4 paper ratio 1.414 in portrait or  0.707 in landscape   # Letter paper is 215.9 x 279.4mm 1.29:1 ratio or 0.775 landscape
 # Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
 
-ASPECT_RATIO=1.7
+ASPECT_RATIO=2
 
 PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
-
 # An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 15px/mm = 3150 for realistic insect sizes if printed full portrait mode
 # Or 297x15 = 4455 for landscape mode
 #  a letter sized sheet is 279.4x15 or 4191pixels wide (landscape)
 
-OUTPUT_WIDTH=4191
+PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.157 x wider 
+# An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 17.36px/mm = 3645 for realistic insect sizes if printed full portrait mode
+# Or 297x15 = 5155.92 for landscape mode
+#  a letter sized sheet is 279.4x15 or 4850 pixels wide (landscape)
 
 
-IMAGE_SCALE_PERCENT=23
-SORT_ALGO = 0
+
+OUTPUT_WIDTH=2000
+
+
+IMAGE_SCALE_PERCENT=20
+SORT_ALGO = 1
 MIN_IMAGE_DIM=4 #minimum width of an image to work with
 MAX_NUM_PAGES =100  # Replace with your desired max number of bins
 
@@ -60,7 +77,7 @@ def makeImage(binnum,output_im,background_image):
 
 
 
-    cv2.imwrite(sub_output_path+"/output_"+str(IMAGE_SCALE_PERCENT)+ "percent_"+str(SORT_ALGO)+"sort_"+str(binnum)+".png", output_im)
+    cv2.imwrite(sub_output_path+"/col_"+deployment_name+"_percent"+str(IMAGE_SCALE_PERCENT)+"_sort"+str(SORT_ALGO)+"_bin"+str(binnum)+".png", output_im)
 
 
 
@@ -83,12 +100,8 @@ print('getting images sizes...')
 sizes=[]
 for image_path in files:
 
-    f = open(image_path, "rb")  # have to do this silly stuff where we open it because imread cannot read paths with accents!
-    buff = f.read()
-    f.close()
 
-    buff = np.frombuffer(buff, dtype=np.uint8)
-    image = cv2.imdecode(buff, cv2.IMREAD_UNCHANGED)
+    image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
 
     image=crop(image)
     if(image.shape[0]<MIN_IMAGE_DIM or image.shape[1]<MIN_IMAGE_DIM): #there can be an error where an entire image gets cropped away, need to add a catch that throws away too tiny images
@@ -104,8 +117,8 @@ for image_path in files:
         image = cv2.resize(image, dim, interpolation = cv2.INTER_AREA)
 
 
-    filename_and_shape=[image_path,image.shape]
-    sizes.append(filename_and_shape)
+    filename_and_shape_and_image=[image_path,image.shape,image]
+    sizes.append(filename_and_shape_and_image)
 #sizes = [(im_file, cv2.imread(im_file).shape) for im_file in files]
 
 
@@ -136,10 +149,8 @@ packer = newPacker(rotation=False, sort_algo=sortalgorithm)
 
 print("adding rects")
 for i, r in enumerate(sizes):
-    #print(i)
-    #print(r[1])
-
     packer.add_rect(r[1][1] + args.border * 2, r[1][0] + args.border * 2, rid=i)
+
 out_w = args.width
 aspect_ratio_wh = args.aspect
 out_h = int(out_w * aspect_ratio_wh)
@@ -188,50 +199,76 @@ for rect in packer.rect_list():
         bin=b
     used += [rid]
     orig_file_name = sizes[rid][0]
+    im = sizes[rid][2]
 
-
-    #cant just use imread with files with accents
     #im = cv2.imread(orig_file_name, cv2.IMREAD_COLOR)
-    f = open(orig_file_name, "rb")  # have to do this silly stuff where we open it because imread cannot read paths with accents!
-    buff = f.read()
-    f.close()
+    # f = open(orig_file_name, "rb")  # have to do this silly stuff where we open it because imread cannot read paths with accents!
+    # buff = f.read()
+    # f.close()
 
-    buff = np.frombuffer(buff, dtype=np.uint8)
-    im = cv2.imdecode(buff, cv2.IMREAD_UNCHANGED)
-    im=crop(im)
+    # buff = np.frombuffer(buff, dtype=np.uint8)
+    # im = cv2.imdecode(buff, cv2.IMREAD_UNCHANGED)
+    #im=crop(im)
 
     #optionally scale the images
-    if(IMAGE_SCALE_PERCENT!=100):
-        width = int(im.shape[1] * IMAGE_SCALE_PERCENT / 100)
-        height = int(im.shape[0] * IMAGE_SCALE_PERCENT / 100)
-        dim = (width, height)
-        im = cv2.resize(im, dim, interpolation = cv2.INTER_AREA)
+    # if(IMAGE_SCALE_PERCENT!=100):
+    #     width = int(im.shape[1] * IMAGE_SCALE_PERCENT / 100)
+    #     height = int(im.shape[0] * IMAGE_SCALE_PERCENT / 100)
+    #     dim = (width, height)
+    #     im = cv2.resize(im, dim, interpolation = cv2.INTER_AREA)
 
 
-    overlay_color=im[:, :, :4]
-    overlay_alpha = im[:, :, 3]
-    # Create masks and inverse masks using the alpha channel
-    mask = overlay_alpha / 255.0
-    inv_mask = 1.0 - mask
-
-    #output_im[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = im
+    border=args.border
+    # Compute ROI coordinates
+    y1 = out_h - y - h + border
+    y2 = out_h - y - border
+    x1 = x + border
+    x2 = x + w - border
 
     # Get the region of interest (ROI) from the background
-    roi = background_image[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border]
+    roi = background_image[y1:y2, x1:x2]
+
+    if im is None:
+        print("Failed to load image.")
+    elif len(im.shape) == 3 and im.shape[2] == 3:
+        #print("This is a 3-channel color image.")
+        # Directly overlay the image onto the background
+        # Convert im to 4-channel by adding an alpha channel of 255 (fully opaque)
+        overlay_color = np.dstack((im, np.full((h, w), 255, dtype=np.uint8)))
+        # Directly replace ROI with fully opaque overlay
+        roi[:, :, :4] = overlay_color
+        background_image[y1:y2, x1:x2] = roi
 
 
-    # Blend the overlay with the ROI
-    for c in range(0, 4):
-        roi[:, :, c] = (overlay_color[:, :, c] * mask + roi[:, :, c] * inv_mask)
+    elif len(im.shape) == 3 and im.shape[2] == 4:
+        #print("This is a 4-channel image with alpha.")
+        overlay_color=im[:, :, :4]
+        overlay_alpha = im[:, :, 3]
+        # Create masks and inverse masks using the alpha channel
+        mask = overlay_alpha / 255.0
+        inv_mask = 1.0 - mask
 
-    background_image[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = roi
+        #output_im[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = im
+
+        # Get the region of interest (ROI) from the background
+        roi = background_image[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border]
 
 
-    
-    
-    if args.debug:
-        cv2.rectangle(output_im, (x,out_h - y - h), (x+w,out_h - y), (255,0,0), 3)
-        cv2.putText(output_im, "%d"%rid, (x, out_h - y), cv2.FONT_HERSHEY_PLAIN, 3.0, (0,0,255), 2)
+        # Blend the overlay with the ROI
+        for c in range(0, 4):
+            roi[:, :, c] = (overlay_color[:, :, c] * mask + roi[:, :, c] * inv_mask)
+
+        background_image[out_h - y - h + args.border : out_h - y - args.border, x + args.border:x+w - args.border] = roi
+
+        if args.debug:
+            cv2.rectangle(output_im, (x,out_h - y - h), (x+w,out_h - y), (255,0,0), 3)
+            cv2.putText(output_im, "%d"%rid, (x, out_h - y), cv2.FONT_HERSHEY_PLAIN, 3.0, (0,0,255), 2)
+
+    else:
+        print("This is a grayscale or unexpected image format.")
+
+
+
 
 #gotta do one last one to catch the final ones
 makeImage(bin,output_im,background_image)
