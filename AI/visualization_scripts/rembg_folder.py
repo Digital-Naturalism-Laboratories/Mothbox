@@ -1,6 +1,6 @@
 import os
 import cv2
-from rembg import remove
+from rembg import new_session, remove
 from PIL import Image
 import argparse
 
@@ -25,6 +25,9 @@ def remove_backgrounds_from_folder(input_folder, output_folder):
     valid_files = [filename for filename in os.listdir(input_folder) if filename.lower().endswith(valid_extensions)]
     total_files = len(valid_files)
 
+    model_name = "unet"
+    rembg_session = new_session(model_name)
+
     if total_files == 0:
         print("No files found with valid extensions.")
     else:
@@ -44,7 +47,7 @@ def remove_backgrounds_from_folder(input_folder, output_folder):
                 # Open the image with PIL
                 with open(input_path, "rb") as img_file:
                     input_image = img_file.read()
-                    output_image = remove(input_image)  # Remove background
+                    output_image = remove(input_image, session=rembg_session)  # Remove background
                 
                 # Save output image
                 with open(output_path, "wb") as out_file:

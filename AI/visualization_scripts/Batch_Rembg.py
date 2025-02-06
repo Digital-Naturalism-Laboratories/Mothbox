@@ -5,7 +5,6 @@ import time
 
 script_path = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\visualization_scripts\rembg_folder.py"  # Update this with your actual script path
 input_paths = [
-    r"F:\Panama\Hoya_119m_bothDeer_2025-01-26\2025-01-27\patches",
     r"F:\Panama\Hoya_163m_unrulyArao_2025-01-26\2025-01-27\patches",
     r"F:\Panama\Hoya_168m_doubleParina_2025-01-26\2025-01-27\patches",
     r"F:\Panama\Hoya_277m_adeptTurca_2025-01-26\2025-01-27\patches",
@@ -36,7 +35,7 @@ def time_it(func):
 
 
 start_time_overall = time.time()
-
+i=0
 for input_path in input_paths:
     print("starting to process: "+input_path)
     subprocess.run([
