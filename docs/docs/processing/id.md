@@ -2,7 +2,7 @@
 layout: default
 title: Identify Detections
 parent: Processing Data
-has_children: true
+has_children: false
 nav_order: 4
 ---
 The Mothbot_ID script tries to look at all your detected creatures and make a prediction as to what type of creature they are.
