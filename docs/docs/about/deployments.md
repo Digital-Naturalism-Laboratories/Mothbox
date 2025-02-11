@@ -72,7 +72,7 @@ We went to the ELEN tropical butterfly conference and set up some mothboxes over
 
 (We also set one up in Quito, but it is chilly and urban and it got exactly one moth the entire night.)
 
-#Peru
+# Peru
 
 # Madre De Dios, Peru
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a550d7a4-37c1-4d0f-b542-a9406cb97942)
