@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Expedition: Hoya
+title: Expeditions
 parent: Deployments
 has_children: false
 nav_order: 1
