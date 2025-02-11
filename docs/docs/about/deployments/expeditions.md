@@ -3,7 +3,7 @@ layout: default
 title: Expeditions
 parent: Deployments
 has_children: false
-nav_order: 1
+nav_order: 4
 ---
 
 # Expedition: Cerro Hoya
