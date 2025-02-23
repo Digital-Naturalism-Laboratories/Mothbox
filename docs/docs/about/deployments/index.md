@@ -1,15 +1,19 @@
 ---
 layout: default
 title: Deployments
-parent: About the Mothbox
-has_children: false
 nav_order: 3
+parent: About the Mothbox
+has_children: true
+permalink: /docs/about/deployments
 ---
 
 This is a list of just some places the Mothbox has been so far!
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/5e2ef5ef-b831-48c8-be1d-4448b589193f)
 
 # Panama
+
+## Cerro Hoya
+You can see more about our big Cerro Hoya expedition in western panama [on its own page here](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/deployments/expeditions/).
 ## Gamboa, Panama
 Near Dinalab has been one of the main testing groundds for its development. It has a harsh tropical environment of heat, humidity, salty air, and microbes that the US Military used to use for materials testing and means that things that can survive being left outside here stand a great chance in other parts of the world! This includes "urban" Gamboa which, because it is in the Canal zone, gets fumigated regularly and seems to have not as much insect Biodiversity these days :( . This also includes areas deeper in the forest like pipeline road or plantation trail which have an abundance of rainforest insects.
 
@@ -72,7 +76,7 @@ We went to the ELEN tropical butterfly conference and set up some mothboxes over
 
 (We also set one up in Quito, but it is chilly and urban and it got exactly one moth the entire night.)
 
-#Peru
+# Peru
 
 # Madre De Dios, Peru
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a550d7a4-37c1-4d0f-b542-a9406cb97942)

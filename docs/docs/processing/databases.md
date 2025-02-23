@@ -2,7 +2,7 @@
 layout: default
 title: Generate and Edit Datasets
 parent: Processing Data
-has_children: true
+has_children: false
 nav_order: 5
 ---
 # Generate Dataset

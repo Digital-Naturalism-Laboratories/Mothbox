@@ -9,7 +9,7 @@ nav_order: 1
 The exact specifications of the mothbox may change depending on factors like which microcontroller or power source you choose.
 
 ## Physical Size
-* Weight: 2750 grams
+* Weight: 2500 grams
 * Size: 11"L x 7"W x 4"H (box)
 * Target Sizes
   * Standard: 29cm x 20.5cm
