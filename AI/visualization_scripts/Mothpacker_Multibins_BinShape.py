@@ -10,8 +10,8 @@ import numpy as np
 import argparse
 from pathlib import Path
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\onlybig"
-BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Desktop\Heart.png"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\hoyaone"
+BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croppedlogo.png"
 
 def load_mask(image_path):
     # Load the grayscale image
@@ -83,7 +83,7 @@ PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.1
 OUTPUT_WIDTH=2000
 
 
-IMAGE_SCALE_PERCENT=8
+IMAGE_SCALE_PERCENT=6
 SORT_ALGO = 0
 MIN_IMAGE_DIM=4 #minimum width of an image to work with
 MAX_NUM_PAGES =100  # Replace with your desired max number of bins

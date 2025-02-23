@@ -142,7 +142,7 @@ def load_camera_settings():
     try:
         with open(file_path) as csv_file:
             reader = csv.DictReader(csv_file)
-            camera_settings = {}
+            the_camera_settings = {}
             for row in reader:
                 setting, value, details = row["SETTING"], row["VALUE"], row["DETAILS"]
 
@@ -174,9 +174,9 @@ def load_camera_settings():
                 else:
                     print(f"Warning: Unknown setting: {setting}. Ignoring.")
 
-                camera_settings[setting] = value
+                the_camera_settings[setting] = value
 
-            return camera_settings
+            return the_camera_settings
 
     except FileNotFoundError as e:
         print(f"Error: CSV file not found: {file_path}")
@@ -249,7 +249,7 @@ def print_af_state(request):
     md = request.get_metadata()
     #print(("Idle", "Scanning", "Success", "Fail")[md['AfState']], md.get('LensPosition'))
 def run_calibration():
-    global calib_lens_position, calib_exposure
+    global calib_lens_position, calib_exposure, camera_settings
     #preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (4624, 3472)})
     preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (1920*2, 1080*2)})
     still_config = picam2.create_still_configuration(main={"size": (width, height), "format": "RGB888"}, buffer_count=1)
@@ -276,7 +276,11 @@ def run_calibration():
     
     time.sleep(2)
     picam2.set_controls({"LensPosition":8.0})
+    picam2.set_controls({"AeExposureMode":1})
+
     gain=camera_settings["AnalogueGain"]
+    print("autoexposure with gain: ")
+    print(gain)
     picam2.set_controls({"AnalogueGain":gain})
     time.sleep(3)
     
