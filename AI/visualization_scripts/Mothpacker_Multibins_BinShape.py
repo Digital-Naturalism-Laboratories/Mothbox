@@ -9,9 +9,51 @@ import pickle
 import numpy as np
 import argparse
 from pathlib import Path
+from random import shuffle
 
-IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\hoyaone"
-BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croppedlogo.png"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\hoyadoubled"
+BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croppedlogonotext_2000px.png" #croptext_3100px.png"
+INVERTBINSHAPE=False
+
+MAX_RECTS=11000
+
+#IMAGE_FOLDER = r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches"
+#BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
+#BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
+#BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
+#BACKGROUND_COLOR =(230, 242, 28) #nice pastel yellow
+#BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
+BACKGROUND_COLOR =(29, 241, 242) #nice pastel blue
+#BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
+#BACKGROUND_COLOR =(242, 29, 139) #hot pink
+#BACKGROUND_COLOR= (0,0,0) #black
+BACKGROUND_ALPHA=0
+
+#ASPECT_RATIO=0.707  #A4 paper ratio 1.414 in portrait or  0.707 in landscape   # Letter paper is 215.9 x 279.4mm 1.29:1 ratio or 0.775 landscape
+# Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
+
+ASPECT_RATIO=2
+
+PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
+# An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 15px/mm = 3150 for realistic insect sizes if printed full portrait mode
+# Or 297x15 = 4455 for landscape mode
+#  a letter sized sheet is 279.4x15 or 4191pixels wide (landscape)
+
+PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.157 x wider 
+# An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 17.36px/mm = 3645 for realistic insect sizes if printed full portrait mode
+# Or 297x15 = 5155.92 for landscape mode
+#  a letter sized sheet is 279.4x15 or 4850 pixels wide (landscape)
+
+
+
+OUTPUT_WIDTH=2000
+
+
+IMAGE_SCALE_PERCENT=5
+SORT_ALGO = 0
+MIN_IMAGE_DIM=4 #minimum width of an image to work with
+MAX_NUM_PAGES =100  # Replace with your desired max number of bins
+
 
 def load_mask(image_path):
     # Load the grayscale image
@@ -38,7 +80,8 @@ BINWIDTH =binmask.shape[1]
 BINHEIGHT= binmask.shape[0]
 
 #optional invert
-binmask = cv2.bitwise_not(binmask)
+if(INVERTBINSHAPE): 
+    binmask = cv2.bitwise_not(binmask)
 
 # Get the directory names safely
 IMGFOLDER_PATH=Path(IMAGE_FOLDER)
@@ -51,42 +94,6 @@ deployment_name = f"{dir_2_up}_{dir_1_up}"
 print(deployment_name)
 
 
-#IMAGE_FOLDER = r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches"
-#BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
-#BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
-#BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
-#BACKGROUND_COLOR =(230, 242, 28) #nice pastel yellow
-#BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
-#BACKGROUND_COLOR =(29, 241, 242) #nice pastel blue
-#BACKGROUND_COLOR =(179, 242, 29) #nice yellow green
-BACKGROUND_COLOR =(242, 29, 139) #hot pink
-#BACKGROUND_COLOR= (0,0,0) #black
-BACKGROUND_ALPHA=255
-
-#ASPECT_RATIO=0.707  #A4 paper ratio 1.414 in portrait or  0.707 in landscape   # Letter paper is 215.9 x 279.4mm 1.29:1 ratio or 0.775 landscape
-# Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
-
-ASPECT_RATIO=2
-
-PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
-# An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 15px/mm = 3150 for realistic insect sizes if printed full portrait mode
-# Or 297x15 = 4455 for landscape mode
-#  a letter sized sheet is 279.4x15 or 4191pixels wide (landscape)
-
-PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.157 x wider 
-# An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 17.36px/mm = 3645 for realistic insect sizes if printed full portrait mode
-# Or 297x15 = 5155.92 for landscape mode
-#  a letter sized sheet is 279.4x15 or 4850 pixels wide (landscape)
-
-
-
-OUTPUT_WIDTH=2000
-
-
-IMAGE_SCALE_PERCENT=6
-SORT_ALGO = 0
-MIN_IMAGE_DIM=4 #minimum width of an image to work with
-MAX_NUM_PAGES =100  # Replace with your desired max number of bins
 
 # This is a handy function that crops images edges if they are all black or alpha to get to the core of the image
 def crop(image):
@@ -127,9 +134,14 @@ print('found %d files in %s' % (len(files), args.input_dir))
 print('getting images sizes...')
 
 sizes=[]
-for image_path in files:
 
+#shuffle all the images up
+shuffle(files)
 
+for index, image_path in enumerate(files):
+
+    if index==MAX_RECTS:
+        break
     image = cv2.imread(image_path, cv2.IMREAD_UNCHANGED)
     try:
         image=crop(image)
@@ -243,7 +255,8 @@ for rect in packer.rect_list():
     x1 = x + border
     x2 = x + w - border
 
-
+    """
+    #Check whole area moth would get placed
     #check mask area for white pixels
     crop = binmask[y1:y2, x1:x2]
     sumwhite=np.sum(crop>0)
@@ -258,19 +271,20 @@ for rect in packer.rect_list():
     
     # Check specific X y point 
     print(binmask.shape)
+
     # Ensure coordinates are within the image dimensions
-    if y < 0 or y >= binmask.shape[0] or x < 0 or x >= binmask.shape[1]:
+    if out_h-y < 0 or out_h-y >= binmask.shape[0] or x < 0 or x >= binmask.shape[1]:
         print("The coordinates "+str(y) +" are outside the image boundaries.")
     else:
-        pixel_value = binmask[y][x]
+        pixel_value = binmask[out_h-y][x]
         is_white = (pixel_value == 255)
-        print(f"The pixel at ({x}, {y}) has a value of {pixel_value}.")
-        if is_white:
-            print("It is white.")
+        print(f"The pixel at ({x}, {out_h-y}) has a value of {pixel_value}.")
+        if is_white or 0==y:
+            print("It is white. (or edge pixel)")
             continue
         else:
             print("It is not white.")
-    """
+    """"""
     
     # Get the region of interest (ROI) from the background
     roi = background_image[y1:y2, x1:x2]
