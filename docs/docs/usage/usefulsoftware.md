@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Basic Use
-parent: Useful Software
+title: Useful Software
+parent: Using Mothbox
 has_children: true
 nav_order: 2
 ---
