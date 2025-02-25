@@ -12,7 +12,7 @@ from pathlib import Path
 from random import shuffle
 
 IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\hoyadoubled"
-BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croppedlogonotext_4000px.png" #croptext_3100px.png"
+BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croptext_6200px.png" #croptext_3100px.png"
 INVERTBINSHAPE=False
 
 MAX_RECTS=19000
@@ -49,7 +49,7 @@ PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.1
 OUTPUT_WIDTH=2000
 
 
-IMAGE_SCALE_PERCENT=13
+IMAGE_SCALE_PERCENT=7
 SORT_ALGO = 0
 MIN_IMAGE_DIM=4 #minimum width of an image to work with
 MAX_NUM_PAGES =100  # Replace with your desired max number of bins

@@ -96,6 +96,8 @@ def flashOn():
     
 def flashOff():
     GPIO.output(Relay_Ch2,GPIO.HIGH)
+    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
+
     print("Flash Off\n")
 
   
@@ -645,7 +647,8 @@ GPIO.setup(Relay_Ch2,GPIO.OUT)
 GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
-GPIO.output(Relay_Ch2,GPIO.LOW)
+GPIO.output(Relay_Ch2,GPIO.HIGH)
+GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
 
 global onlyflash
 onlyflash=False
@@ -661,7 +664,6 @@ computerName = control_values.get("name", "wrong")
 if(onlyflash):
     print("operating in always on flash mode")
 
-GPIO.output(Relay_Ch2,GPIO.LOW)
 
 
 #------- Setting up camera settings -------------
@@ -761,4 +763,5 @@ takePhoto_Manual()
 picam2.stop()
     
 quit()
+
 
