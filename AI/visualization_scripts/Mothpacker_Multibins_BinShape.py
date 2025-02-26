@@ -12,7 +12,7 @@ from pathlib import Path
 from random import shuffle
 
 IMAGE_FOLDER = r"C:\Users\andre\Desktop\x-anylabeling-matting\hoyadoubled"
-BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croptext_6200px.png" #croptext_3100px.png"
+BINSHAPE_BLACKANDWHITE = r"C:\Users\andre\Documents\GitHub\Mothbox\Software\graphics\croppedlogonotext_4000px.png" #croptext_3100px.png"
 INVERTBINSHAPE=False
 
 MAX_RECTS=19000

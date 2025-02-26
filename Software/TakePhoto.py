@@ -260,35 +260,21 @@ def run_calibration():
     
     #picam2.set_controls({"AfMode":0,"AfSpeed":0,"AfRange":0, "LensPosition":7.0})
 
-    #Our mothboxes and cameras have a min exposure tie of 469ms
-    #This tends to max out with an autoexposure with a gain of about 2.0
-    # we will set our calibration gain to just be a constant 1.6 to get our shutter speed down, and then in the settings
-    # we can switch the gain to bump it how we want it to make it a little better exposed.
-    #gain=camera_settings["AnalogueGain"]
-    gain = 1.6
-    #gainbump=0.0 #bump needs to be less than the gain setting -1
-    #stop_cron()
-
+    
     #time.sleep(1)
     picam2.pre_callback = print_af_state
     
-    #picam2.start_preview(Preview.QTGL)
-    #picam2.start_preview(Preview.QT)
-    #picam2.start_preview(Preview.NULL)
-    #picam2.start()
-
     
     time.sleep(2)
     picam2.set_controls({"LensPosition":7.0})
     #picam2.set_controls({"AfSpeed":controls.AfSpeedEnum.Fast})
 
-    #picam2.set_controls({"AeExposureMode":1})
+    
+    exposurevalue=.6
+    picam2.set_controls({"ExposureValue":exposurevalue})# Floating point number between -8.0 and 8.0
+    picam2.set_controls({"ExposureTime":500}) #we want a fast photo so we don't get blurry insects. We lock the exposure time and adjust gain. The max speed seems to be 469, but we will leave some overhead
 
-    print("autoexposure with gain: ")
-    print(gain)
-    #print("and gain shift of: ")
-    #print(gainbump)
-    picam2.set_controls({"AnalogueGain":gain})
+
     time.sleep(1)
 
     print("!!! Autofocusing !!!")
@@ -297,13 +283,17 @@ def run_calibration():
     picam2.start(show_preview=False)
     #picam2.start()
     
-    for i in range(3):
-        if i == 5:
+    for i in range(5):
+        if i == 15:
             pass
             #picam2.set_controls({'AnalogueGain': 4.0})
+            #picam2.set_controls({"ExposureValue":-4.0})# Floating point number between -8.0 and 8.0
+
         elif i == 50:
             pass
             #picam2.set_controls({'AnalogueGain': 1.2})
+            #picam2.set_controls({"ExposureValue":8.0})# Floating point number between -8.0 and 8.0
+
         md = picam2.capture_metadata()
         print(i, "Calibrating for BRIGHTNESS--  exposure: ", md['ExposureTime'],"  gain: ", md['AnalogueGain'], "  Lensposition:", md['LensPosition'])
     
@@ -336,6 +326,8 @@ def run_calibration():
     camera_settings["LensPosition"]=calib_lens_position
     
     camera_settings["ExposureTime"]=calib_exposure
+    camera_settings["AnalogueGain"]=autogain
+
     picam2.stop()
     picam2.stop_preview()
     
@@ -343,7 +335,7 @@ def run_calibration():
     set_last_calibration(control_values_fpath)
     
     #save the calibrated settings back to the CSV
-    new_settings = {"LensPosition": calib_lens_position, "ExposureTime": calib_exposure} 
+    new_settings = {"LensPosition": calib_lens_position, "ExposureTime": calib_exposure, "AnalogueGain": autogain} 
     update_camera_settings(chosen_settings_path, new_settings)
     
     #restart the whole script now because for some reason if we just run the phot taking it is always slightly brighter
