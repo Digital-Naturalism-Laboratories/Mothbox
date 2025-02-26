@@ -9,10 +9,13 @@ nav_order: 1
 
 The steps below show you what to do to make sure your Mothbox will run in the field. This is also available as a small print-out that fits inside the Mothbox. We print and laminate them and include them with each Mothbox to make sure everyone knows how to use it. This field guide is available in English and Spanish (and hopefully even more languages soon!).
 
-* [English Field Guide (Printable)](https://drive.google.com/file/d/17X8jF_gCvuoQqLtXXBPwr1AT7IgqvlIY/view?usp=sharing)
-* [Guia de Campo en Español (para imprimir)](https://drive.google.com/file/d/1-6dB0lFeB0YspATzdIpFmKTpyK269oSG/view?usp=sharing)
+* [English Field Guide (Printable)](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/docs/Quick%20Reference%20Guide)
+* [Guia de Campo en Español (para imprimir)](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/docs/Quick%20Reference%20Guide)
 
-<img src="https://github.com/user-attachments/assets/14e0380d-84c9-439c-99f7-1ebffa013107" width="45%">
+
+![Mothbox_Quick_ReferenceGuide_v3BigText_ESP](https://github.com/user-attachments/assets/3eec2241-9469-4906-8a9d-282dfedd3fd1)
+
+
 <img src="https://github.com/user-attachments/assets/ac9f67f8-b092-4884-8507-428832ddd1c8" width="45%">
 
 # Preparation
@@ -25,10 +28,12 @@ Before you go to the field, here's a checklist to make sure it is ready for depl
 - [ ] Charge your Mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
 
 ![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
+![Mothbox_Quick_ReferenceGuide_v3BigText_English](https://github.com/user-attachments/assets/b9693401-9ce9-467b-92d7-a0a45c6b56d0)
 
 If the plug's indicator is red, the Mothbox is charging. When charger light turns green, the Mothbox is fully charged!
 
 ![image](https://github.com/user-attachments/assets/89c8d0fb-9d72-4c14-9f52-55b8ca5f633e)
+![Mothbox_Quick_ReferenceGuide_v3BigText_ESP](https://github.com/user-attachments/assets/f5c4c3f6-5f19-406b-9c81-42b4e518ca08)
 
 
 - [ ] USB Storage. Make sure there is external storage with free space plugged in to the Pi's USB to record your photos.
