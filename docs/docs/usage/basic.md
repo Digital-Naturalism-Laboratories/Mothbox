@@ -8,8 +8,9 @@ nav_order: 1
 # Metadata Sheet
 Your data isn't useful unless you know where it came from! Always log your metadata with a field sheet.
 
-You can [fill out a form online](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=header) or print a [sheet to take to the field](https://drive.google.com/file/d/1rVujqoBMaxdqsiW63DhljWCpULg9bjxY/view?usp=sharing)
-You can even use a [pre-filled form for use in Panama]()
+You can [fill out a form online](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=header) or print a [sheet to take to the field](https://drive.google.com/file/d/1rVujqoBMaxdqsiW63DhljWCpULg9bjxY/view?usp=sharing).
+
+You can even use a [pre-filled form for use in Panama](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=pp_url&entry.1104269680=4.15&entry.843642143=White+felt+/+Fieltro+blanco&entry.123854981=programA+(19;21;23;2;4)&entry.953889331=Panama&entry.1661969381=1.5&entry.1081287715=Mothbeam+v2&entry.1268323211=internal+-+top+of+box&entry.766401184=Internal+USB)
 
 # Portable Field Guide
 
