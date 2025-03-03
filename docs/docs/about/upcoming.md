@@ -28,7 +28,21 @@ Key features of the new design we are working on include:
 * Selectable attractor LEDs
   * Right now if you use an integrated Mothbeam, you can decide if you want UV lights, visible lights, or both to attract different insects (but you have to physically wire them)
   * We aim to be able to toggle these lights via switches and software at a higher granlarity (UV, Blue, Green, White) to run experiments
-* 
+* Integrated Photography LEDs
+  * currently we use the ubiquitous 144 LED microscope LED rings for getting smooth even illumination of the mothbox target. These can leave the edges a tad bit darker and the center a bit hotter
+  * The pending PCB will have photographic "flash" LEDs spread evenly across the surface to ensure smooth, even illumination.
+* Dual-battery capability
+  * v4 mothboxes all include an internal battery, and additional batteries or power sources can easily be added to the port on the bottom
+  * however, with the space savings of integrating most components on the single PCB, we should have enough space for TWO batteries inside the same mothbox form factor! This will double the time the mothbox can be left in the field.
+* Increased Energy Efficiency (Transistors / mosfets instead of relays)
+  * Mothboxes currently use relays to turn the different attractor and photography lights on and off. Relays are great because they are super flexible in terms of their control for any kind of electronic connector. However, they consume a fair amount of energy when their internal electromagnet is engaged (and solid state relays do not work reliably on DC current).
+  * Since the lights will be integrated in the future Mothbox PCB, they can be controlled in a much more energy efficient manner.
+  * In cases where someone might still want to use Relays to control things like AC powered external lights, you can still add relays by simply attaching the [same relay hat currently in use by the mothbox](https://www.waveshare.com/wiki/RPi_Relay_Board#Working_with_Raspberry_Pi)
+
+* Power efficiency in "Off" state
+  * v4 mothboxes use the integrated RTC in the Pi5 and other software and firmware measures to reduce power consumption as much as possible (about 0.01 watts when idle during the day)
+  * We can possibly integrate an inexpensive microcontroller into the PCB to let the Pi turn fully "off" and consume even less energy when off. This is not one of our most pressing priorities as the amount of power consumed in the idle state is already quite low, and will only give big advantages to mothboxes that need to sit idle for weeks (or months) in the field which is currently quite rare.
+
 
 
 
