@@ -54,6 +54,17 @@ Key features of the new design we are working on include:
   * Since the lights will be integrated in the future Mothbox PCB, they can be controlled in a much more energy efficient manner.
   * In cases where someone might still want to use Relays to control things like AC powered external lights, you can still add relays by simply attaching the [same relay hat currently in use by the mothbox](https://www.waveshare.com/wiki/RPi_Relay_Board#Working_with_Raspberry_Pi)
 
+* Status Indication and Feedback
+    * A challenge many researchers have is knowing what's going on inside the mothbox
+    * v5 will have status indicator LEDs to let you know everything about what's currently happening with your mothbox such as
+        * Armed/Disarmed state
+        * "Is scheduled to run today/within the next 2 hours" indicator
+        * Copying files
+        * taking photos
+        * idle
+        * sleep / dormant
+        * error
+
 * GPS integration
   * GPS coordinates are usually taken via a phone or standalone device when deployed in the field. This works fine, but integrating a GPS directly into the mothbox has some advantages
     * (The big advantage) Automatic time syncronization
