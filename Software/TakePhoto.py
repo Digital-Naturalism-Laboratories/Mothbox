@@ -159,6 +159,11 @@ def load_camera_settings():
                         value = float(value)
                     except ValueError:
                         raise ValueError(f"Invalid value for AnalogueGain: {value}")
+                elif setting == "ExposureValue":
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        raise ValueError(f"Invalid value for AnalogueGain: {value}")
                 elif setting == "AeEnable" or setting == "AwbEnable":
                     value = value.lower() == "true"  # Convert to bool (adjust logic if needed)
                 elif setting == "AwbMode" or setting == "AfTrigger" or setting == "AfRange"  or setting == "AfSpeed" or setting == "AfMode":
@@ -270,7 +275,7 @@ def run_calibration():
     #picam2.set_controls({"AfSpeed":controls.AfSpeedEnum.Fast})
 
     
-    exposurevalue=.6
+    exposurevalue=camera_settings["ExposureValue"]
     picam2.set_controls({"ExposureValue":exposurevalue})# Floating point number between -8.0 and 8.0
     picam2.set_controls({"ExposureTime":500}) #we want a fast photo so we don't get blurry insects. We lock the exposure time and adjust gain. The max speed seems to be 469, but we will leave some overhead
 
