@@ -90,12 +90,14 @@ def set_last_calibration(filepath):
 
 
 def flashOn():
-    #GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on
+    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
     GPIO.output(Relay_Ch2,GPIO.LOW)
     print("Flash On\n")
     
 def flashOff():
     GPIO.output(Relay_Ch2,GPIO.HIGH)
+    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
+
     print("Flash Off\n")
 
   
@@ -142,7 +144,7 @@ def load_camera_settings():
     try:
         with open(file_path) as csv_file:
             reader = csv.DictReader(csv_file)
-            camera_settings = {}
+            the_camera_settings = {}
             for row in reader:
                 setting, value, details = row["SETTING"], row["VALUE"], row["DETAILS"]
 
@@ -153,6 +155,11 @@ def load_camera_settings():
                     except ValueError:
                         raise ValueError(f"Invalid value for LensPosition: {value}")
                 elif setting == "AnalogueGain":
+                    try:
+                        value = float(value)
+                    except ValueError:
+                        raise ValueError(f"Invalid value for AnalogueGain: {value}")
+                elif setting == "ExposureValue":
                     try:
                         value = float(value)
                     except ValueError:
@@ -174,9 +181,9 @@ def load_camera_settings():
                 else:
                     print(f"Warning: Unknown setting: {setting}. Ignoring.")
 
-                camera_settings[setting] = value
+                the_camera_settings[setting] = value
 
-            return camera_settings
+            return the_camera_settings
 
     except FileNotFoundError as e:
         print(f"Error: CSV file not found: {file_path}")
@@ -249,57 +256,83 @@ def print_af_state(request):
     md = request.get_metadata()
     #print(("Idle", "Scanning", "Success", "Fail")[md['AfState']], md.get('LensPosition'))
 def run_calibration():
-    global calib_lens_position, calib_exposure
+    global calib_lens_position, calib_exposure, camera_settings, width, height, picam2
     #preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (4624, 3472)})
-    preview_config = picam2.create_preview_configuration(main={'format': 'RGB888', 'size': (1920*2, 1080*2)})
-    still_config = picam2.create_still_configuration(main={"size": (width, height), "format": "RGB888"}, buffer_count=1)
+    preview_config = picam2.create_preview_configuration(main={'size': (1920*2, 1080*2)})
+    #still_config = picam2.create_still_configuration(main={"size": (width, height), "format": "RGB888"}, buffer_count=1)
     picam2.configure(preview_config)
 
     
     #picam2.set_controls({"AfMode":0,"AfSpeed":0,"AfRange":0, "LensPosition":7.0})
 
-
-    #stop_cron()
-
-    time.sleep(1)
-    flashOn()
-    afstart = time.time()
-    print("Autofocusing ")
+    
+    #time.sleep(1)
     picam2.pre_callback = print_af_state
     
-    #picam2.start_preview(Preview.QTGL)
-    #picam2.start_preview(Preview.QT)
-    #picam2.start_preview(Preview.NULL)
-    #picam2.start()
-
-    picam2.start(show_preview=False)
     
     time.sleep(2)
-    picam2.set_controls({"LensPosition":8.0})
-    gain=camera_settings["AnalogueGain"]
-    picam2.set_controls({"AnalogueGain":gain})
-    time.sleep(3)
+    picam2.set_controls({"LensPosition":7.0})
+    #picam2.set_controls({"AfSpeed":controls.AfSpeedEnum.Fast})
+
     
+    exposurevalue=camera_settings["ExposureValue"]
+    picam2.set_controls({"ExposureValue":exposurevalue})# Floating point number between -8.0 and 8.0
+    picam2.set_controls({"ExposureTime":500}) #we want a fast photo so we don't get blurry insects. We lock the exposure time and adjust gain. The max speed seems to be 469, but we will leave some overhead
+
+
+    time.sleep(1)
+
+    print("!!! Autofocusing !!!")
+    afstart = time.time()
+    flashOn()
+    picam2.start(show_preview=False)
+    #picam2.start()
+    
+    for i in range(5):
+        if i == 15:
+            pass
+            #picam2.set_controls({'AnalogueGain': 4.0})
+            #picam2.set_controls({"ExposureValue":-4.0})# Floating point number between -8.0 and 8.0
+
+        elif i == 50:
+            pass
+            #picam2.set_controls({'AnalogueGain': 1.2})
+            #picam2.set_controls({"ExposureValue":8.0})# Floating point number between -8.0 and 8.0
+
+        md = picam2.capture_metadata()
+        print(i, "Calibrating for BRIGHTNESS--  exposure: ", md['ExposureTime'],"  gain: ", md['AnalogueGain'], "  Lensposition:", md['LensPosition'])
+    
+    md = picam2.capture_metadata()
+    calib_exposure = md['ExposureTime']
+    autogain= md['AnalogueGain']
+
+    print("Exposure: "+str(calib_exposure))
+    print("Autogain: "+str(autogain))
+    
+    time.sleep(.1) #give a tiny bit of time to let the flash start up
+
     #picam2.set_controls({"AfMode": 2})
     #time.sleep(7)
-
+    print("Running autofocus...")
     #picam2.start(show_preview=True, ) #preview has to be on for some reason to work
     success = picam2.autofocus_cycle()
 
     #picam2.pre_callback = None
-    print("Autofocus completed! "+str(time.time()-afstart))
-    calib_lens_position = picam2.capture_metadata()['LensPosition']
-    calib_exposure = picam2.capture_metadata()['ExposureTime']
-    focusstate = picam2.capture_metadata()['AfState']
     flashOff()
+    print("Autofocus completed! "+str(time.time()-afstart))
+    md = picam2.capture_metadata()
+    calib_lens_position = md['LensPosition']
+    focusstate = md['AfState']
 
     print("LensPosition: "+str(calib_lens_position))
-    print("Exposure: "+str(calib_exposure))
     print(focusstate)
+
+
     camera_settings["LensPosition"]=calib_lens_position
     
-    exposure_shift=0 #TODO problem: for some reason if this is set, it makes just the autocalibrated photo brighter, not the rest
-    camera_settings["ExposureTime"]=calib_exposure+exposure_shift
+    camera_settings["ExposureTime"]=calib_exposure
+    camera_settings["AnalogueGain"]=autogain
+
     picam2.stop()
     picam2.stop_preview()
     
@@ -307,7 +340,7 @@ def run_calibration():
     set_last_calibration(control_values_fpath)
     
     #save the calibrated settings back to the CSV
-    new_settings = {"LensPosition": calib_lens_position, "ExposureTime": calib_exposure+exposure_shift} 
+    new_settings = {"LensPosition": calib_lens_position, "ExposureTime": calib_exposure, "AnalogueGain": autogain} 
     update_camera_settings(chosen_settings_path, new_settings)
     
     #restart the whole script now because for some reason if we just run the phot taking it is always slightly brighter
@@ -575,13 +608,15 @@ if desktop_available < x * 1024**3:  # x GB in bytes
 rpiModel=None
 rpiModel=determinePiModel()
 
+#default resolution
+width=9000
+height=6000
+
 #the Pi4 can't really handle the FULL resolution, but pi5 can!
 if(rpiModel==5):
     width=9248
     height=6944
-else:
-    width=9000
-    height=6000
+
 
 #I don't really know why we need this below code, but it's here. it may have been an earlier attempt to find the pi model
 if platform.system() == "Windows":
@@ -604,11 +639,13 @@ Relay_Ch3 = 21
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(Relay_Ch1,GPIO.OUT)
+#GPIO.setup(Relay_Ch1,GPIO.OUT)
 GPIO.setup(Relay_Ch2,GPIO.OUT)
-#GPIO.setup(Relay_Ch3,GPIO.OUT)
+GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
+GPIO.output(Relay_Ch2,GPIO.HIGH)
+GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
 
 global onlyflash
 onlyflash=False
@@ -623,6 +660,7 @@ computerName = control_values.get("name", "wrong")
 
 if(onlyflash):
     print("operating in always on flash mode")
+
 
 
 #------- Setting up camera settings -------------
@@ -656,10 +694,6 @@ AutoCalibrationPeriod = int(camera_settings.pop("AutoCalibrationPeriod",1000))
 #Start up cameras
 picam2 = Picamera2()
 
-#picam2.set_controls({"LensPosition":7.6,"AfSpeed":0,"AfRange":0, "ExposureValue":2.0, "AeEnable":1})
-#picam2.start(show_preview=True)
-#time.sleep(2)
-#picam2.stop()
 
 #----Autocalibration ---------
 
@@ -726,3 +760,5 @@ takePhoto_Manual()
 picam2.stop()
     
 quit()
+
+

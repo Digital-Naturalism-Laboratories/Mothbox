@@ -5,14 +5,24 @@ parent: Using Mothbox
 has_children: true
 nav_order: 1
 ---
+# Metadata Sheet
+Your data isn't useful unless you know where it came from! Always log your metadata with a field sheet.
+
+You can [fill out a form online](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=header) or print a [sheet to take to the field](https://drive.google.com/file/d/1rVujqoBMaxdqsiW63DhljWCpULg9bjxY/view?usp=sharing).
+
+You can even use a [pre-filled form for use in Panama](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=pp_url&entry.1104269680=4.15&entry.843642143=White+felt+/+Fieltro+blanco&entry.123854981=programA+(19;21;23;2;4)&entry.953889331=Panama&entry.1661969381=1.5&entry.1081287715=Mothbeam+v2&entry.1268323211=internal+-+top+of+box&entry.766401184=Internal+USB)
+
 # Portable Field Guide
 
 The steps below show you what to do to make sure your Mothbox will run in the field. This is also available as a small print-out that fits inside the Mothbox. We print and laminate them and include them with each Mothbox to make sure everyone knows how to use it. This field guide is available in English and Spanish (and hopefully even more languages soon!).
 
-* [English Field Guide (Printable)](https://drive.google.com/file/d/17X8jF_gCvuoQqLtXXBPwr1AT7IgqvlIY/view?usp=sharing)
-* [Guia de Campo en Español (para imprimir)](https://drive.google.com/file/d/1-6dB0lFeB0YspATzdIpFmKTpyK269oSG/view?usp=sharing)
+* [English Field Guide (Printable)](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/docs/Quick%20Reference%20Guide)
+* [Guia de Campo en Español (para imprimir)](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/docs/Quick%20Reference%20Guide)
 
-<img src="https://github.com/user-attachments/assets/14e0380d-84c9-439c-99f7-1ebffa013107" width="45%">
+
+![Mothbox_Quick_ReferenceGuide_v3BigText_ESP](https://github.com/user-attachments/assets/3eec2241-9469-4906-8a9d-282dfedd3fd1)
+
+
 <img src="https://github.com/user-attachments/assets/ac9f67f8-b092-4884-8507-428832ddd1c8" width="45%">
 
 # Preparation
@@ -25,10 +35,12 @@ Before you go to the field, here's a checklist to make sure it is ready for depl
 - [ ] Charge your Mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
 
 ![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
+![Mothbox_Quick_ReferenceGuide_v3BigText_English](https://github.com/user-attachments/assets/b9693401-9ce9-467b-92d7-a0a45c6b56d0)
 
 If the plug's indicator is red, the Mothbox is charging. When charger light turns green, the Mothbox is fully charged!
 
 ![image](https://github.com/user-attachments/assets/89c8d0fb-9d72-4c14-9f52-55b8ca5f633e)
+![Mothbox_Quick_ReferenceGuide_v3BigText_ESP](https://github.com/user-attachments/assets/f5c4c3f6-5f19-406b-9c81-42b4e518ca08)
 
 
 - [ ] USB Storage. Make sure there is external storage with free space plugged in to the Pi's USB to record your photos.
