@@ -6,15 +6,15 @@ import datetime
 import csv
 import re
 from datetime import datetime, timedelta
-from unidecode import unidecode
-from pygbif import species
+#from unidecode import unidecode
+#from pygbif import species
 import unicodedata
 import pandas as pd
 
-INPUT_PATH = r'E:\Panama\Boquete_Houseside_CuatroTopo _2025-01-03\2025-01-03\ID_AQ'
+INPUT_PATH = r'c:\moths'
 UTC_OFFSET=-5 #panama
 # Specify the path to your taxonomy CSV file
-TAXA_LIST_PATH = r'C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv'
+TAXA_LIST_PATH = r'c:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv'
 
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 

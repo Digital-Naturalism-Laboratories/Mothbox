@@ -55,9 +55,9 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"D:\Panama\Hoya_1508m_waveUrta_2025-01-27\2025-01-28"  # raw string
+    r"d:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27"  # raw string
 )
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"c:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 TAXONOMIC_RANK_FILTER = Rank.ORDER
 
 ID_HUMANDETECTIONS = True

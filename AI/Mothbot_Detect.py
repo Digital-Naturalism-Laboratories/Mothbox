@@ -15,9 +15,9 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTopminus1level_CalmoBarbo_2024-11-14\2024-11-14"  # raw string
+INPUT_PATH = r"D:\Panama\Totumas_Summit_StudyCod_2024-09-21\2024-09-23"  # raw string
 
-YOLO_MODEL = r"C:\Users\andre\Desktop\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\best.pt"
+YOLO_MODEL = r"C:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 
 IMGSZ = 1600  # Should be same imgsz as used in training for best results!
 
