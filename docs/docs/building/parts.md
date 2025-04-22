@@ -30,7 +30,8 @@ OR
 
 ### Camera
 
-* [Arducam 64MP Autofocus Camera (Updated "Native Libcamera" version)](https://www.amazon.com/Arducam-Raspberry-Resolution-Support-Libcamera/dp/B0CQJPKFVF?ref_=ast_sto_dp) ($60)
+* [Arducam 64MP Autofocus Camera (Updated "Owlsight" "Native Libcamera" version)](https://www.amazon.com/Arducam-Raspberry-Resolution-Support-Libcamera/dp/B0CQJPKFVF?ref_=ast_sto_dp) ($60)
+  * Make sure to get the above version called "Owlsight" (It's much easier to work with than the older "Hawkeye" version of Arducam's camera)  
 
 ### Power
 * Battery : [Talentcell 12V Lithium ion Battery PB120B1](https://www.amazon.com/gp/aw/d/B07H8F5HYJ?psc=1&ref=ppx_pop_mob_b_asin_title) ($80) - This is the easier battery to work with, all 12V in and out.
