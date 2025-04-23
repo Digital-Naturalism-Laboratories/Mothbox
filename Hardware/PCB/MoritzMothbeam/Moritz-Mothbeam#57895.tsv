@@ -1,0 +1,13 @@
+Description	ID	Manufacturer	Manufacturer Part Number	Supplier	Supplier Part Number	Reference Designators	Line Quantity	Order Quantity	Unit Price	Order Price	Legacy ID	Mounting Type
+DNP	DNP					H4,H5,H6,H7,H8,H9,TP8,TP6,TP4,TP2,TP7,TP1,TP3,TP5,R2,H2,H3,FID1,FID2,FID3						
+Rectifier Diode Schottky 1A Automotive 2-Pin SOD-123F T/R / DIODE SCHOTTKY 60V 1A SOD123F	NEXPERIA/PMEG6010CEH,115	Nexperia	PMEG6010CEH,115	Newark	75R0892	D5	1	22	0.1050	2.3100		Surface mount
+Fuse Chip Fast Acting 1A 32V SMD Solder Pad 1206 Glass T/R VDE/cULus	SCHURTER/3413.0216.22	Schurter	3413.0216.22	Digi-Key	486-1144-6-ND	F1	1	9	0.9380	8.4420		Surface mount
+Ultraminiature Slim Contact; Poke-In Connector; SMT; Wire-to-Board; 20-24 AWG	TC/2834171-3	TE Connectivity	2834171-3			J6,J4,J5,J2,J8,J3,J1,J7	8	50	0.0504	2.5200		Surface mount
+Uv Emitter, 365Nm, Uva, 1W, Top View Smd Rohs Compliant: Yes |Wurth Elektronik 15335337AA350	W/15335337AA350	Würth Elektronik	15335337AA350	Digi-Key	732-15335337AA350DKR-ND	D1	1	5	21.3080	106.5400		Surface mount
+Single Color LED, Ultra Violet, Water Clear, 2.6mm	W/15335339AA350	Würth Elektronik	15335339AA350			D3,D2	2	10	8.4700	84.7000		Surface mount
+Single Color LED, Ultra Violet, Water Clear, 2.6mm	W/15335340AA350	Würth Elektronik	15335340AA350	Mouser	710-15335340AA350	D4	1	5	17.2200	86.1000		Surface mount
+WPME-LDHM LED Step Down High Current Module	W/172946001	Würth Elektronik	172946001	Digi-Key	732-6218-6-ND	U1	1	5	9.9680	49.8400		Surface mount
+WE-CBF Ferrite Bead 0805 1500Ohm 1000mA | Wurth Elektronik 742792097	W/742792097	Würth Elektronik	742792097	Digi-Key	732-4649-1-ND	FB1	1	15	0.2940	4.4100		Surface mount
+0.1μF ±10% 100V Ceramic Capacitor X7R 0805 (2012 Metric)	W/885012207128	Würth Elektronik	885012207128	Digi-Key	732-12244-6-ND	C5	1	15	0.1232	1.8480		Surface mount
+4.7μF ±10% 50V Ceramic Capacitor X7R 1210 (3225 Metric)	W/885012209048	Würth Elektronik	885012209048	Mouser	710-885012209048	C1,C2,C3,C4	4	24	1.8200	43.6800		Surface mount
+GENERAL PURPOSE CHIP RESISTOR Metal Glaze/thick Film, 0.25W, 0ohm, Surface Mount, 1206	YAGEO/RC1206JR-070RL	Yageo	RC1206JR-070RL	Newark	26M6809	R1	1	100	0.0182	1.8200		Surface mount
