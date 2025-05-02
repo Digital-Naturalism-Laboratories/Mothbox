@@ -21,6 +21,9 @@ Watch a [video presentation of our talk at the Smithsonian all about the Mothbox
 ## Why Study Insects for Conservation?
 Insect populations can be used as an ultra high resolution sensor for changes in environments.
 
+![bafkreic4l337soddqseixdb4zy74mdmzqtg4g7v75toiondz2vouumwnlm-1](https://github.com/user-attachments/assets/b4076e52-8d74-4655-9cac-567c61c2ff6b)
+
+
 ### Insects (Especially Moths and Beetles) are Hyperdiverse
 Of all life on earth (including bacteria), there are about 2 million species scientists have described, and [half of all those species are insects!](https://ourworldindata.org/how-many-species-are-there#:~:text=In%20the%20chart%2C%20we%20see,reptiles%2C%20and%20over%206%2C000%20mammals.) What's more, if you look at **just moths,** there are about 144,000 species, meaning **about 1 in every 14 known species in the world is a moth!** For reference, there are only about 11,000 bird species, and only 6,500 species of mammals (and half are bats and rodents). 
 
