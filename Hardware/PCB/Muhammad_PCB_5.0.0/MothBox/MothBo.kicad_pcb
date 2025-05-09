@@ -52852,8 +52852,8 @@
 			(justify left bottom)
 		)
 	)
-	(gr_text "MOTHBOX V4.5"
-		(at 161.1 160.915671 0)
+	(gr_text "MOTHBOX V5.0.0"
+		(at 159 160.915671 0)
 		(layer "F.SilkS" knockout)
 		(uuid "99433267-f59a-4a8a-9a73-81988ac73b21")
 		(effects
