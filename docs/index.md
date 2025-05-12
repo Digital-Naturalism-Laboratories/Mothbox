@@ -11,8 +11,8 @@ The Mothbox is a low-cost, high-performance [insect monitor](https://digital-nat
 
 All the physical designs, electronics schematics, Pi Scripts, and insect-IDing Artificial Intelligence are **provided free and open source**, so you can build, share, and improve on these designs yourself!
 
-{:.note}
->Are you interested in this project? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email me at A N D Y [ a t ] dinalab.net**
+{:.tip}
+>Are you interested in this? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email me at A N D Y [ a t ] dinalab.net** with subject "Mothbox Mail"
 
 See the [full specifications of what it can do here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/)
 Watch a [video presentation of our talk at the Smithsonian all about the Mothbox and its design.](https://www.youtube.com/watch?v=lZhh7ecnAgk)
