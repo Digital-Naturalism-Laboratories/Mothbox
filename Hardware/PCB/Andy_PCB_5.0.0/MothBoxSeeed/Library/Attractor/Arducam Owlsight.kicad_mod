@@ -53,7 +53,7 @@
 			)
 		)
 	)
-	(attr smd)
+	(attr smd exclude_from_pos_files exclude_from_bom)
 	(fp_rect
 		(start -20.5 -14)
 		(end 22.5 17.5)
