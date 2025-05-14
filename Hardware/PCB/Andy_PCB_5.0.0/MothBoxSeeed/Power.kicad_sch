@@ -8268,7 +8268,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Glass Tube Fuse 7A Plugin,D5xL20mm Disposable fuses ROHS"
+		(property "Description" "Fuse"
 			(at 105.41 41.91 0)
 			(effects
 				(font
