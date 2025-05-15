@@ -19,7 +19,7 @@ Watch a [video presentation of our talk at the Smithsonian all about the Mothbox
 
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
-
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/assets/images/certification-mark-PA000003-wide.svg">
 
 ## Why Study Insects for Conservation?
 Insect populations can be used as an ultra high resolution sensor for changes in environments.
