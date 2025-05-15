@@ -10,6 +10,7 @@ See the [full specifications of what it can do here.](https://digital-naturalism
 
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/assets/images/certification-mark-PA000003-wide.svg">
 
 ## What it Does
 
