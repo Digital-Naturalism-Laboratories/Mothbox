@@ -16,4 +16,5 @@
   (lib (name "CD74HC4067M96E4")(type "KiCad")(uri "${KIPRJMOD}/Library/CD74HC4067M96E4")(options "")(descr ""))
   (lib (name "TLV75733PDBVR")(type "KiCad")(uri "${KIPRJMOD}/Library/TLV75733PDBVR")(options "")(descr ""))
   (lib (name "Buck_Boost_footprint")(type "KiCad")(uri "${KIPRJMOD}/Library/Buck-Boost/Buck_Boost_footprint.pretty")(options "")(descr ""))
+  (lib (name "AQLibrary")(type "KiCad")(uri "${KIPRJMOD}/AQLibrary.pretty")(options "")(descr ""))
 )
