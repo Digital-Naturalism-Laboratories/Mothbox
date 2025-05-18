@@ -40,7 +40,7 @@
 			)
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
 					(page "3")
 				)
@@ -82,7 +82,7 @@
 			)
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
 					(page "6")
 				)
@@ -124,9 +124,51 @@
 			)
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
 					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 41.91 97.79)
+		(size 50.8 39.37)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "84c07412-33ce-4c0b-96a0-a76ad52e50ee")
+		(property "Sheetname" "camera"
+			(at 41.91 97.0784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "camera.kicad_sch"
+			(at 41.91 137.7446 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "7")
 				)
 			)
 		)
@@ -166,7 +208,7 @@
 			)
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
 					(page "4")
 				)
@@ -208,7 +250,7 @@
 			)
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
 					(page "5")
 				)

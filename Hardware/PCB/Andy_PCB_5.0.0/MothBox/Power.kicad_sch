@@ -850,142 +850,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Fuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "F"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Fuse"
-				(at -1.905 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Fuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "fuse"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "*Fuse*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Fuse_0_1"
-				(rectangle
-					(start -0.762 -2.54)
-					(end 0.762 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Fuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:L_Small"
 			(pin_numbers
 				(hide yes)
@@ -1132,6 +996,155 @@
 				(pin passive line
 					(at 0 -2.54 90)
 					(length 0.508)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:Polyfuse"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "F"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Polyfuse"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.27 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "*polyfuse* *PTC*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Polyfuse_0_1"
+				(polyline
+					(pts
+						(xy -1.524 2.54) (xy -1.524 1.524) (xy 1.524 -1.524) (xy 1.524 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start -0.762 2.54)
+					(end 0.762 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Polyfuse_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
 					(name "~"
 						(effects
 							(font
@@ -3504,81 +3517,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "attractor:camera2"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 8.636 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "camera2_0_1"
-				(circle
-					(center 0 0)
-					(radius 5.3882)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "camera2_1_1"
-				(rectangle
-					(start -10.16 7.62)
-					(end 10.16 -7.62)
-					(stroke
-						(width 0)
-						(type solid)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+12V"
 			(power)
 			(pin_numbers
@@ -5250,7 +5188,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "062c11b7-7be9-49a0-bfcf-a87c6ae5c51d")
-		(property "Reference" "#FLG02"
+		(property "Reference" "#FLG01"
 			(at 64.77 127.635 0)
 			(effects
 				(font
@@ -5300,7 +5238,7 @@
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#FLG02")
+					(reference "#FLG01")
 					(unit 1)
 				)
 			)
@@ -5315,7 +5253,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "06e4ed2e-a9a8-4c89-af9a-6fadb2c5ab45")
-		(property "Reference" "U2"
+		(property "Reference" "U1"
 			(at 80.01 158.75 0)
 			(effects
 				(font
@@ -5391,7 +5329,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "U2")
+					(reference "U1")
 					(unit 1)
 				)
 			)
@@ -5406,7 +5344,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "090f6357-0217-4f1a-b548-fe9b61dbe679")
-		(property "Reference" "#PWR0103"
+		(property "Reference" "#PWR07"
 			(at 95.25 167.64 0)
 			(effects
 				(font
@@ -5456,71 +5394,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR0103")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "attractor:camera2")
-		(at 110.49 68.58 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1000fbaa-bc97-4879-aaf1-f9b1f718219b")
-		(property "Reference" "U7"
-			(at 121.92 67.9449 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "~"
-			(at 121.92 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 110.49 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 110.49 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 110.49 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(instances
-			(project ""
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "U7")
+					(reference "#PWR07")
 					(unit 1)
 				)
 			)
@@ -5535,7 +5409,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "15d8e68e-7bbb-4714-9382-123aced9c0b1")
-		(property "Reference" "TPname"
+		(property "Reference" "TPname1"
 			(at 92.964 39.624 0)
 			(effects
 				(font
@@ -5587,7 +5461,7 @@
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "TPname")
+					(reference "TPname1")
 					(unit 1)
 				)
 			)
@@ -5603,7 +5477,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "19943b73-eefa-4bf0-8d42-0fc4385e8af7")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR08"
 			(at 96.52 184.15 0)
 			(effects
 				(font
@@ -5653,7 +5527,7 @@
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR055")
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)
@@ -5668,7 +5542,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1b0d74d5-00c5-404e-a3fe-bf641a7f2f04")
-		(property "Reference" "E4"
+		(property "Reference" "E3"
 			(at 162.052 119.888 90)
 			(effects
 				(font
@@ -5860,7 +5734,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "E4")
+					(reference "E3")
 					(unit 1)
 				)
 			)
@@ -5876,7 +5750,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "229b99b8-03f1-473f-a2b5-42bd9ab33d12")
-		(property "Reference" "U1"
+		(property "Reference" "U3"
 			(at 130.81 104.14 0)
 			(effects
 				(font
@@ -6070,7 +5944,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "U1")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -6152,7 +6026,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3b11c812-ac1c-416d-b920-8c4fcd246ea0")
-		(property "Reference" "Q3"
+		(property "Reference" "Q2"
 			(at 171.45 50.7999 0)
 			(effects
 				(font
@@ -6253,7 +6127,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "Q3")
+					(reference "Q2")
 					(unit 1)
 				)
 			)
@@ -6345,7 +6219,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "4b2d4127-c44f-4cec-b08a-665f2c597edf")
-		(property "Reference" "#PWR089"
+		(property "Reference" "#PWR018"
 			(at 207.01 60.96 0)
 			(effects
 				(font
@@ -6395,7 +6269,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR089")
+					(reference "#PWR018")
 					(unit 1)
 				)
 			)
@@ -6411,7 +6285,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "53057759-0c80-4e40-a0ab-3fbe76276ce3")
-		(property "Reference" "#PWR013"
+		(property "Reference" "#PWR017"
 			(at 200.66 137.16 0)
 			(effects
 				(font
@@ -6461,7 +6335,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR013")
+					(reference "#PWR017")
 					(unit 1)
 				)
 			)
@@ -6477,7 +6351,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5bbabce1-8722-4e5e-8770-1700dac6f60c")
-		(property "Reference" "E2"
+		(property "Reference" "E1"
 			(at 67.31 49.5299 90)
 			(effects
 				(font
@@ -6548,7 +6422,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "E2")
+					(reference "E1")
 					(unit 1)
 				)
 			)
@@ -6734,7 +6608,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6a114206-db65-48eb-847f-a0e6178f4280")
-		(property "Reference" "Q2"
+		(property "Reference" "Q3"
 			(at 181.61 47.498 0)
 			(effects
 				(font
@@ -6844,7 +6718,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "Q2")
+					(reference "Q3")
 					(unit 1)
 				)
 			)
@@ -6860,7 +6734,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6eaf11f8-531b-4b9c-9e6f-70c86193beb9")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR05"
 			(at 78.74 72.39 0)
 			(effects
 				(font
@@ -6910,7 +6784,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR06")
+					(reference "#PWR05")
 					(unit 1)
 				)
 			)
@@ -7230,7 +7104,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7f7b8b14-2cde-4e0d-b415-995b998ceb65")
-		(property "Reference" "#PWR015"
+		(property "Reference" "#PWR06"
 			(at 83.82 138.43 0)
 			(effects
 				(font
@@ -7280,7 +7154,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR015")
+					(reference "#PWR06")
 					(unit 1)
 				)
 			)
@@ -7296,7 +7170,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "82819b94-894e-4f9e-aef6-6b176e63bb80")
-		(property "Reference" "E1"
+		(property "Reference" "E2"
 			(at 93.98 48.2599 90)
 			(effects
 				(font
@@ -7359,7 +7233,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "E1")
+					(reference "E2")
 					(unit 1)
 				)
 			)
@@ -7375,7 +7249,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "897478f5-8718-485b-aed7-1411b4a2a496")
-		(property "Reference" "#PWR012"
+		(property "Reference" "#PWR014"
 			(at 187.96 137.16 0)
 			(effects
 				(font
@@ -7425,7 +7299,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR012")
+					(reference "#PWR014")
 					(unit 1)
 				)
 			)
@@ -7527,7 +7401,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8f77af32-bb08-461e-901b-80cbbf39b8ca")
-		(property "Reference" "R3"
+		(property "Reference" "R1"
 			(at 74.676 57.658 0)
 			(effects
 				(font
@@ -7596,7 +7470,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "R3")
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -7612,7 +7486,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "95140cdd-1e3a-4ba5-a663-9cab4527f66a")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR015"
 			(at 198.12 78.74 0)
 			(effects
 				(font
@@ -7662,7 +7536,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR03")
+					(reference "#PWR015")
 					(unit 1)
 				)
 			)
@@ -7678,7 +7552,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "98683564-582e-437c-9cdd-e7b862dec2c7")
-		(property "Reference" "#PWR014"
+		(property "Reference" "#PWR04"
 			(at 77.47 138.43 0)
 			(effects
 				(font
@@ -7728,7 +7602,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR014")
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)
@@ -7975,7 +7849,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ad75f34c-71cf-474a-91e8-fa10f85d033b")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR03"
 			(at 64.77 72.39 0)
 			(effects
 				(font
@@ -8025,7 +7899,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR05")
+					(reference "#PWR03")
 					(unit 1)
 				)
 			)
@@ -8040,7 +7914,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b134eadb-af94-4688-9f54-68bd838b0452")
-		(property "Reference" "R1"
+		(property "Reference" "R3"
 			(at 164.846 36.068 0)
 			(effects
 				(font
@@ -8110,7 +7984,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "R1")
+					(reference "R3")
 					(unit 1)
 				)
 			)
@@ -8217,7 +8091,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bb760afc-318a-4982-9476-905053fc7f03")
-		(property "Reference" "#PWR011"
+		(property "Reference" "#PWR012"
 			(at 173.99 137.16 0)
 			(effects
 				(font
@@ -8267,7 +8141,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR011")
+					(reference "#PWR012")
 					(unit 1)
 				)
 			)
@@ -8283,7 +8157,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c2edd41e-83f3-4135-b7bd-cba477ac1bc2")
-		(property "Reference" "#PWR08"
+		(property "Reference" "#PWR016"
 			(at 200.66 114.3 0)
 			(effects
 				(font
@@ -8333,7 +8207,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR08")
+					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -8415,7 +8289,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c8bc58c7-f7e8-43cb-ad4e-e11153a4b282")
-		(property "Reference" "#FLG01"
+		(property "Reference" "#FLG02"
 			(at 73.66 100.965 0)
 			(effects
 				(font
@@ -8465,7 +8339,7 @@
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#FLG01")
+					(reference "#FLG02")
 					(unit 1)
 				)
 			)
@@ -8481,7 +8355,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cb324ed1-5fb3-481e-8c53-a360cbd55d78")
-		(property "Reference" "#PWR07"
+		(property "Reference" "#PWR02"
 			(at 62.23 184.15 0)
 			(effects
 				(font
@@ -8531,14 +8405,14 @@
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR07")
+					(reference "#PWR02")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Device:Fuse")
+		(lib_id "Device:Polyfuse")
 		(at 105.41 41.91 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8555,7 +8429,7 @@
 				)
 			)
 		)
-		(property "Value" "7A Fuse"
+		(property "Value" "Polyfuse"
 			(at 105.41 38.1 90)
 			(effects
 				(font
@@ -8563,12 +8437,13 @@
 				)
 			)
 		)
-		(property "Footprint" "Fuse:Fuseholder_Clip-5x20mm_Eaton_1A5601-01_Inline_P20.80x6.76mm_D1.70mm_Horizontal"
-			(at 105.41 43.688 90)
+		(property "Footprint" "Fuse:Fuse_Bourns_MF-RG1000"
+			(at 110.49 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -8581,7 +8456,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Fuse"
+		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
 			(at 105.41 41.91 0)
 			(effects
 				(font
@@ -8590,7 +8465,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part no " "C5381734"
+		(property "LCSC Part no " ""
 			(at 105.41 41.91 0)
 			(effects
 				(font
@@ -8631,7 +8506,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e4aee7a2-53ea-4866-8ab6-8f012fd4f8b3")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR013"
 			(at 187.96 35.56 0)
 			(effects
 				(font
@@ -8681,7 +8556,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR01")
+					(reference "#PWR013")
 					(unit 1)
 				)
 			)
@@ -8697,7 +8572,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e9dfd938-766b-4cd1-9469-a31e599754f4")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR011"
 			(at 168.91 68.58 0)
 			(effects
 				(font
@@ -8747,7 +8622,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR02")
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
@@ -8763,7 +8638,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ebf9139d-8d25-4612-9ee0-cbf1ed5fc420")
-		(property "Reference" "E3"
+		(property "Reference" "E4"
 			(at 200.66 64.7699 90)
 			(effects
 				(font
@@ -8826,7 +8701,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "E3")
+					(reference "E4")
 					(unit 1)
 				)
 			)
@@ -9006,7 +8881,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f8681857-101e-4f2e-9d80-f886209e05ee")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR01"
 			(at 58.42 72.39 0)
 			(effects
 				(font
@@ -9056,7 +8931,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR04")
+					(reference "#PWR01")
 					(unit 1)
 				)
 			)

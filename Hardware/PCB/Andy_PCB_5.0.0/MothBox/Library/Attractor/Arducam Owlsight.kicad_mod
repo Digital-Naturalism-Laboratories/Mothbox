@@ -18,7 +18,7 @@
 	(property "Value" "Arducam Owlsight"
 		(at 0 1 0)
 		(unlocked yes)
-		(layer "F.Fab")
+		(layer "F.SilkS")
 		(uuid "ab631450-9f67-47c1-a2f5-66eb01e5cc56")
 		(effects
 			(font
@@ -55,15 +55,165 @@
 	)
 	(attr smd exclude_from_pos_files exclude_from_bom)
 	(fp_rect
-		(start -20.5 -14)
-		(end 22.5 17.5)
+		(start -20 -17.25)
+		(end 20 17.75)
 		(stroke
-			(width 0.1)
-			(type default)
+			(width 0.05)
+			(type solid)
 		)
 		(fill no)
 		(layer "F.SilkS")
-		(uuid "a5b9d1f4-d70e-44a8-b6ed-999f99583342")
+		(uuid "bcaa1d56-7fda-4836-98df-8f9b6b43e92f")
+	)
+	(fp_rect
+		(start -20 -17.25)
+		(end 20 17.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "B.SilkS")
+		(uuid "d33c7dc1-ff18-4fb2-bdf7-144748b05bcc")
+	)
+	(fp_line
+		(start -12.133851 5.710578)
+		(end 11.766149 5.710578)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "456a1458-f651-49e3-ba97-e66f7a49a668")
+	)
+	(fp_line
+		(start -12.133851 12.210578)
+		(end -12.133851 5.710578)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "6f4da65f-3eab-4717-9d32-8206d7c3fd42")
+	)
+	(fp_line
+		(start 11.766149 5.710578)
+		(end 11.766149 12.210578)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "8980a7de-b378-44a0-bf15-65bc3fb217e0")
+	)
+	(fp_line
+		(start 11.766149 12.210578)
+		(end -12.133851 12.210578)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "73fec0bf-05dc-4897-9d6e-b79820bb2bd0")
+	)
+	(fp_circle
+		(center -17.053143 -15.037549)
+		(end -15.353143 -15.037549)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "8b4accaf-a0b7-43f8-a142-c418ee56c39b")
+	)
+	(fp_circle
+		(center -16.16514 14.85799)
+		(end -14.46514 14.85799)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "75008127-60ee-4b11-b576-68194d21cbc3")
+	)
+	(fp_circle
+		(center -10.183851 -13.789422)
+		(end -8.383851 -13.789422)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "76882647-4b51-4002-b70f-77a3a64079f5")
+	)
+	(fp_circle
+		(center -10.183851 -1.739422)
+		(end -8.383851 -1.739422)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "5391430b-4dc4-4319-9442-09aea0935a1e")
+	)
+	(fp_circle
+		(center 10.116149 -13.793192)
+		(end 11.916149 -13.793192)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "91d5a821-fc82-4fc1-afda-ccf810143e36")
+	)
+	(fp_circle
+		(center 10.116149 -1.739422)
+		(end 12.116149 -1.739422)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "4b7174eb-e87c-473e-8b25-e5ac3b7b27c0")
+	)
+	(fp_circle
+		(center 16.816149 -14.789422)
+		(end 18.516149 -14.789422)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "9bfb6432-2800-4a6a-b270-7993b0bfa76f")
+	)
+	(fp_circle
+		(center 17.053144 15.03755)
+		(end 18.753144 15.03755)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "c3aafa59-1e76-41d9-8d75-20d848cdeb52")
+	)
+	(fp_rect
+		(start -22 -18.75)
+		(end 22 18.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "fd9c61d8-949b-4eef-bd4a-1eb45e8e19e6")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 2.5 0)
@@ -77,16 +227,26 @@
 			)
 		)
 	)
+	(group ""
+		(uuid "d42dd664-c998-4b59-be41-68fc3850e17b")
+		(members "456a1458-f651-49e3-ba97-e66f7a49a668" "4b7174eb-e87c-473e-8b25-e5ac3b7b27c0"
+			"5391430b-4dc4-4319-9442-09aea0935a1e" "6f4da65f-3eab-4717-9d32-8206d7c3fd42"
+			"73fec0bf-05dc-4897-9d6e-b79820bb2bd0" "75008127-60ee-4b11-b576-68194d21cbc3"
+			"76882647-4b51-4002-b70f-77a3a64079f5" "8980a7de-b378-44a0-bf15-65bc3fb217e0"
+			"8b4accaf-a0b7-43f8-a142-c418ee56c39b" "91d5a821-fc82-4fc1-afda-ccf810143e36"
+			"9bfb6432-2800-4a6a-b270-7993b0bfa76f" "c3aafa59-1e76-41d9-8d75-20d848cdeb52"
+		)
+	)
 	(embedded_fonts no)
 	(model "${KIPRJMOD}/Library/Attractor/Quitmeyer-Arducam+64mp+no+Housing.stp"
 		(offset
-			(xyz 40 30 60.5)
+			(xyz 42 -22.5 -64)
 		)
 		(scale
 			(xyz 1 1 1)
 		)
 		(rotate
-			(xyz -90 -0 -0)
+			(xyz 90 -0 -0)
 		)
 	)
 )

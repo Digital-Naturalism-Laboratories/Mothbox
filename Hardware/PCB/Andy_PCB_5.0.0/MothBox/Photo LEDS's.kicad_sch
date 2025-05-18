@@ -2782,7 +2782,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "04e05195-bcb7-4ec7-921e-5a0177da0e99")
-		(property "Reference" "#PWR063"
+		(property "Reference" "#PWR080"
 			(at 222.25 52.07 0)
 			(effects
 				(font
@@ -2832,7 +2832,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "#PWR063")
+					(reference "#PWR080")
 					(unit 1)
 				)
 			)
@@ -2848,7 +2848,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "0984c115-e22f-4983-a781-c7e928e12141")
-		(property "Reference" "Q7"
+		(property "Reference" "Q6"
 			(at 205.74 64.7699 0)
 			(effects
 				(font
@@ -2949,7 +2949,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "Q7")
+					(reference "Q6")
 					(unit 1)
 				)
 			)
@@ -2965,7 +2965,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "1600f48f-e559-483e-a2e6-9cb2b41a34da")
-		(property "Reference" "Q6"
+		(property "Reference" "Q4"
 			(at 87.63 62.2299 0)
 			(effects
 				(font
@@ -3066,7 +3066,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "Q6")
+					(reference "Q4")
 					(unit 1)
 				)
 			)
@@ -3082,7 +3082,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "18cb7b70-d47a-46ce-a01f-88e52a8884eb")
-		(property "Reference" "D8"
+		(property "Reference" "D17"
 			(at 113.03 109.5374 90)
 			(effects
 				(font
@@ -3170,7 +3170,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D8")
+					(reference "D17")
 					(unit 1)
 				)
 			)
@@ -3272,7 +3272,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "240f26cb-08b1-41b8-8457-efe9e94c4d70")
-		(property "Reference" "D2"
+		(property "Reference" "D11"
 			(at 57.15 109.5374 90)
 			(effects
 				(font
@@ -3361,7 +3361,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D2")
+					(reference "D11")
 					(unit 1)
 				)
 			)
@@ -3376,7 +3376,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "265f5f85-488b-4500-a0f2-957664ede87f")
-		(property "Reference" "R65"
+		(property "Reference" "R63"
 			(at 165.354 95.25 0)
 			(effects
 				(font
@@ -3447,7 +3447,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R65")
+					(reference "R63")
 					(unit 1)
 				)
 			)
@@ -3464,7 +3464,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2d47dbd7-2121-49da-9036-8ad488c0eae7")
-		(property "Reference" "Q4"
+		(property "Reference" "Q5"
 			(at 107.95 57.1501 0)
 			(effects
 				(font
@@ -3574,7 +3574,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "Q4")
+					(reference "Q5")
 					(unit 1)
 				)
 			)
@@ -3589,7 +3589,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2f8e693a-4559-4951-a179-f8083d90d9d2")
-		(property "Reference" "R51"
+		(property "Reference" "R57"
 			(at 81.026 47.498 0)
 			(effects
 				(font
@@ -3658,7 +3658,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R51")
+					(reference "R57")
 					(unit 1)
 				)
 			)
@@ -3673,7 +3673,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3ea3ba4c-a2da-4dd7-862b-8e4a4d4f0509")
-		(property "Reference" "R67"
+		(property "Reference" "R65"
 			(at 181.864 95.25 0)
 			(effects
 				(font
@@ -3744,7 +3744,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R67")
+					(reference "R65")
 					(unit 1)
 				)
 			)
@@ -3760,7 +3760,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "43a33487-2076-43d2-a5b2-d13d21f028f7")
-		(property "Reference" "D14"
+		(property "Reference" "D23"
 			(at 193.04 110.8074 90)
 			(effects
 				(font
@@ -3848,7 +3848,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D14")
+					(reference "D23")
 					(unit 1)
 				)
 			)
@@ -3863,7 +3863,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "478f5f67-b769-4de9-a276-1054d4106ebb")
-		(property "Reference" "R59"
+		(property "Reference" "R56"
 			(at 81.534 93.98 0)
 			(effects
 				(font
@@ -3934,7 +3934,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R59")
+					(reference "R56")
 					(unit 1)
 				)
 			)
@@ -3949,7 +3949,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "47ec4a68-9e24-4292-be59-1ef49d5a3945")
-		(property "Reference" "R64"
+		(property "Reference" "R62"
 			(at 131.064 93.98 0)
 			(effects
 				(font
@@ -4020,7 +4020,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R64")
+					(reference "R62")
 					(unit 1)
 				)
 			)
@@ -4036,7 +4036,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "48b1b032-a5da-4736-a186-deb97d91e7c7")
-		(property "Reference" "D12"
+		(property "Reference" "D21"
 			(at 176.53 110.8074 90)
 			(effects
 				(font
@@ -4124,7 +4124,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D12")
+					(reference "D21")
 					(unit 1)
 				)
 			)
@@ -4226,7 +4226,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "55d05597-9953-410e-b842-e889f7ead8e6")
-		(property "Reference" "#PWR064"
+		(property "Reference" "#PWR076"
 			(at 85.09 80.01 0)
 			(effects
 				(font
@@ -4276,7 +4276,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "#PWR064")
+					(reference "#PWR076")
 					(unit 1)
 				)
 			)
@@ -4292,7 +4292,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5888e189-7781-4300-a856-8ec9bd342afd")
-		(property "Reference" "D5"
+		(property "Reference" "D14"
 			(at 83.82 109.5374 90)
 			(effects
 				(font
@@ -4380,7 +4380,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D5")
+					(reference "D14")
 					(unit 1)
 				)
 			)
@@ -4396,7 +4396,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "58f102bb-8039-480a-82af-1715ff248432")
-		(property "Reference" "#PWR066"
+		(property "Reference" "#PWR078"
 			(at 114.3 133.35 0)
 			(effects
 				(font
@@ -4446,7 +4446,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "#PWR066")
+					(reference "#PWR078")
 					(unit 1)
 				)
 			)
@@ -4461,7 +4461,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "69d474f7-5435-4a00-b24d-cc18c721c83e")
-		(property "Reference" "R62"
+		(property "Reference" "R60"
 			(at 110.744 93.98 0)
 			(effects
 				(font
@@ -4532,7 +4532,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R62")
+					(reference "R60")
 					(unit 1)
 				)
 			)
@@ -4548,7 +4548,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6ea04e01-5f71-4cf1-9f83-33bf5617e0b2")
-		(property "Reference" "#PWR062"
+		(property "Reference" "#PWR077"
 			(at 104.14 49.53 0)
 			(effects
 				(font
@@ -4598,7 +4598,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "#PWR062")
+					(reference "#PWR077")
 					(unit 1)
 				)
 			)
@@ -4613,7 +4613,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "77a95a99-9de5-4a83-b70e-ee078edd01a1")
-		(property "Reference" "R57"
+		(property "Reference" "R53"
 			(at 62.484 93.98 0)
 			(effects
 				(font
@@ -4684,7 +4684,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R57")
+					(reference "R53")
 					(unit 1)
 				)
 			)
@@ -4699,7 +4699,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7956ab6d-d774-4459-938b-75c5721da6df")
-		(property "Reference" "R60"
+		(property "Reference" "R58"
 			(at 90.424 93.98 0)
 			(effects
 				(font
@@ -4770,7 +4770,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R60")
+					(reference "R58")
 					(unit 1)
 				)
 			)
@@ -4786,7 +4786,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "7e44b407-0075-4263-ae53-9421f1176b94")
-		(property "Reference" "#PWR065"
+		(property "Reference" "#PWR079"
 			(at 203.2 82.55 0)
 			(effects
 				(font
@@ -4836,7 +4836,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "#PWR065")
+					(reference "#PWR079")
 					(unit 1)
 				)
 			)
@@ -4938,7 +4938,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8298b064-b692-424d-aa01-e73a5116ef29")
-		(property "Reference" "D16"
+		(property "Reference" "D25"
 			(at 212.09 110.8074 90)
 			(effects
 				(font
@@ -5026,7 +5026,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D16")
+					(reference "D25")
 					(unit 1)
 				)
 			)
@@ -5041,7 +5041,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "86f4355e-98dc-4364-885c-5d5040fcb29e")
-		(property "Reference" "R69"
+		(property "Reference" "R68"
 			(at 200.914 95.25 0)
 			(effects
 				(font
@@ -5112,7 +5112,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R69")
+					(reference "R68")
 					(unit 1)
 				)
 			)
@@ -5127,7 +5127,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8b758764-e1ca-43fb-9a28-bdd65b424daf")
-		(property "Reference" "R53"
+		(property "Reference" "R54"
 			(at 68.072 60.198 90)
 			(effects
 				(font
@@ -5196,7 +5196,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R53")
+					(reference "R54")
 					(unit 1)
 				)
 			)
@@ -5211,7 +5211,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8bba7abd-35c6-4ac8-a34f-04706e435cf0")
-		(property "Reference" "R58"
+		(property "Reference" "R55"
 			(at 71.374 93.98 0)
 			(effects
 				(font
@@ -5282,7 +5282,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R58")
+					(reference "R55")
 					(unit 1)
 				)
 			)
@@ -5298,7 +5298,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "8c181019-9da4-4190-a4dd-6bd41fb5f2b2")
-		(property "Reference" "D11"
+		(property "Reference" "D20"
 			(at 167.64 110.8074 90)
 			(effects
 				(font
@@ -5387,7 +5387,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D11")
+					(reference "D20")
 					(unit 1)
 				)
 			)
@@ -5403,7 +5403,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "959e5cc9-55a4-404b-b5cc-77e6b72abca8")
-		(property "Reference" "D18"
+		(property "Reference" "D27"
 			(at 232.41 110.8074 90)
 			(effects
 				(font
@@ -5492,7 +5492,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D18")
+					(reference "D27")
 					(unit 1)
 				)
 			)
@@ -5508,7 +5508,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "9dc62e0a-38e2-4c5a-8a76-9c2163bdc4d7")
-		(property "Reference" "D6"
+		(property "Reference" "D15"
 			(at 92.71 109.5374 90)
 			(effects
 				(font
@@ -5596,7 +5596,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D6")
+					(reference "D15")
 					(unit 1)
 				)
 			)
@@ -5612,7 +5612,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a3fa7697-a060-484c-a863-bb4af815a2be")
-		(property "Reference" "D1"
+		(property "Reference" "D10"
 			(at 48.26 109.5374 90)
 			(effects
 				(font
@@ -5700,7 +5700,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D1")
+					(reference "D10")
 					(unit 1)
 				)
 			)
@@ -5716,7 +5716,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "a958d9d2-6168-459e-a1dc-383b4bf6beb3")
-		(property "Reference" "D7"
+		(property "Reference" "D16"
 			(at 102.87 109.5374 90)
 			(effects
 				(font
@@ -5804,7 +5804,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D7")
+					(reference "D16")
 					(unit 1)
 				)
 			)
@@ -5820,7 +5820,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "ac815e59-b027-431e-a07c-b023eb88c532")
-		(property "Reference" "D3"
+		(property "Reference" "D12"
 			(at 64.77 109.5374 90)
 			(effects
 				(font
@@ -5908,7 +5908,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D3")
+					(reference "D12")
 					(unit 1)
 				)
 			)
@@ -5923,7 +5923,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "adbbf577-decb-42ef-be84-92696e318f30")
-		(property "Reference" "R66"
+		(property "Reference" "R64"
 			(at 174.244 95.25 0)
 			(effects
 				(font
@@ -5994,7 +5994,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R66")
+					(reference "R64")
 					(unit 1)
 				)
 			)
@@ -6096,7 +6096,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "b450971a-db4a-47b2-92d9-b437ebe4fcf8")
-		(property "Reference" "D10"
+		(property "Reference" "D19"
 			(at 133.35 109.5374 90)
 			(effects
 				(font
@@ -6184,7 +6184,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D10")
+					(reference "D19")
 					(unit 1)
 				)
 			)
@@ -6199,7 +6199,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b4f2afe7-61e4-4507-baa1-652de6802173")
-		(property "Reference" "R52"
+		(property "Reference" "R69"
 			(at 199.136 50.038 0)
 			(effects
 				(font
@@ -6269,7 +6269,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R52")
+					(reference "R69")
 					(unit 1)
 				)
 			)
@@ -6285,7 +6285,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bbb02bfe-84b1-4be3-9843-bc814a9406c4")
-		(property "Reference" "D19"
+		(property "Reference" "D28"
 			(at 242.57 110.8074 90)
 			(effects
 				(font
@@ -6374,7 +6374,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D19")
+					(reference "D28")
 					(unit 1)
 				)
 			)
@@ -6390,7 +6390,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "bbb163ce-9c38-45a9-b677-e9b09419fd2d")
-		(property "Reference" "D15"
+		(property "Reference" "D24"
 			(at 203.2 110.8074 90)
 			(effects
 				(font
@@ -6478,7 +6478,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D15")
+					(reference "D24")
 					(unit 1)
 				)
 			)
@@ -6493,7 +6493,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c28c1a92-41ce-42ff-8485-dfdf19187864")
-		(property "Reference" "R63"
+		(property "Reference" "R61"
 			(at 120.904 93.98 0)
 			(effects
 				(font
@@ -6564,7 +6564,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R63")
+					(reference "R61")
 					(unit 1)
 				)
 			)
@@ -6579,7 +6579,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c458b20e-517c-4c54-a238-51022dfc9c52")
-		(property "Reference" "R54"
+		(property "Reference" "R66"
 			(at 187.198 62.23 90)
 			(effects
 				(font
@@ -6648,7 +6648,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R54")
+					(reference "R66")
 					(unit 1)
 				)
 			)
@@ -6664,7 +6664,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "c6a95a1b-9a8e-49ef-a547-dc109b600244")
-		(property "Reference" "#PWR067"
+		(property "Reference" "#PWR081"
 			(at 233.68 134.62 0)
 			(effects
 				(font
@@ -6714,7 +6714,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "#PWR067")
+					(reference "#PWR081")
 					(unit 1)
 				)
 			)
@@ -6816,7 +6816,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "cdbb8cb6-3424-4f3b-95a7-9b62996a2d95")
-		(property "Reference" "D9"
+		(property "Reference" "D18"
 			(at 123.19 109.5374 90)
 			(effects
 				(font
@@ -6904,7 +6904,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D9")
+					(reference "D18")
 					(unit 1)
 				)
 			)
@@ -6920,7 +6920,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "d33f16e9-c84b-4c8d-8568-d946379df38f")
-		(property "Reference" "D4"
+		(property "Reference" "D13"
 			(at 73.66 109.5374 90)
 			(effects
 				(font
@@ -7009,7 +7009,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D4")
+					(reference "D13")
 					(unit 1)
 				)
 			)
@@ -7024,7 +7024,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d7c2743c-c95d-429e-8605-58973c341e2a")
-		(property "Reference" "R68"
+		(property "Reference" "R67"
 			(at 190.754 95.25 0)
 			(effects
 				(font
@@ -7095,7 +7095,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R68")
+					(reference "R67")
 					(unit 1)
 				)
 			)
@@ -7110,7 +7110,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d999d9b1-10c5-4b7c-92e2-2bd1c3e1c7af")
-		(property "Reference" "R61"
+		(property "Reference" "R59"
 			(at 100.584 93.98 0)
 			(effects
 				(font
@@ -7181,7 +7181,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R61")
+					(reference "R59")
 					(unit 1)
 				)
 			)
@@ -7196,7 +7196,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dbbcfad5-9810-4d44-a4fe-000f4e2c5986")
-		(property "Reference" "R56"
+		(property "Reference" "R52"
 			(at 54.864 93.98 0)
 			(effects
 				(font
@@ -7267,7 +7267,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R56")
+					(reference "R52")
 					(unit 1)
 				)
 			)
@@ -7283,7 +7283,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dccbbca0-36a8-482e-a9cd-04926e02c9d0")
-		(property "Reference" "D17"
+		(property "Reference" "D26"
 			(at 222.25 110.8074 90)
 			(effects
 				(font
@@ -7371,7 +7371,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D17")
+					(reference "D26")
 					(unit 1)
 				)
 			)
@@ -7388,7 +7388,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "e74aaecf-9a3b-4a54-ae70-f5cbd4f4ed1a")
-		(property "Reference" "Q5"
+		(property "Reference" "Q7"
 			(at 226.06 59.6901 0)
 			(effects
 				(font
@@ -7498,7 +7498,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "Q5")
+					(reference "Q7")
 					(unit 1)
 				)
 			)
@@ -7514,7 +7514,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f3d90683-bc55-401b-bfed-bd24d209f562")
-		(property "Reference" "D20"
+		(property "Reference" "D29"
 			(at 252.73 110.8074 90)
 			(effects
 				(font
@@ -7603,7 +7603,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D20")
+					(reference "D29")
 					(unit 1)
 				)
 			)
@@ -7618,7 +7618,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fc296764-4ce7-40dc-b655-9970109d023d")
-		(property "Reference" "R55"
+		(property "Reference" "R51"
 			(at 45.974 93.98 0)
 			(effects
 				(font
@@ -7689,7 +7689,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "R55")
+					(reference "R51")
 					(unit 1)
 				)
 			)
@@ -7705,7 +7705,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "fc3a2ef3-3bfb-4a6c-8767-2eb6e85332db")
-		(property "Reference" "D13"
+		(property "Reference" "D22"
 			(at 184.15 110.8074 90)
 			(effects
 				(font
@@ -7793,7 +7793,7 @@
 		(instances
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
-					(reference "D13")
+					(reference "D22")
 					(unit 1)
 				)
 			)
