@@ -46,7 +46,7 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Wildlives Rhode Island group
 * Matt Flagg
 * Pro-eco azuero
-*Totumas Crew
+* Totumas Crew
  * Jessie Tejara-Fabian
  * Jeff Dietrich
  * Mulget Amaru
@@ -56,7 +56,10 @@ The Mothbox has been made possibly with help from many individuals and groups li
   * Elizabeth Campolongo, Ernie Parke, Andy Quitmeyer, Matt Thompson
 * Autodesk Foundation (Software Donation)
 * University of Washington (Project Storage Space)
-* 
+* [TroubleMaker Shenzhen](https://troublemaker.site/)
+  * Henk, Terry, and Ming
+* Paul Parkview
+  * KiCAD help  
 
 
 
