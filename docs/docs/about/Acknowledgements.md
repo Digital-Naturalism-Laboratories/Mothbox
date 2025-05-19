@@ -21,9 +21,10 @@ Hubert Szczgiel is a tropical ecologist specializing in scalable biodiversity mo
 
 * Kitty Quitmeyer
 
-Kitty Quitmeyer is the Co-founder of [Dinalab](https://www.dinalab.net/), and lead technician of the protoyping facilities. She is a skilled craftsperson passionate about endangered animals, books, activism, and the environment. She works weekly at the [APPC animal rescue in Panama](https://www.appcpanama.org/who-we-are.html), and raises funds with her crafts to support them.
+Kitty Quitmeyer is the Co-founder of [Dinalab](https://www.dinalab.net/), and lead technician of the protoyping facilities. With the Mothbox she has been the head of manufacturing operations and software training. She is a skilled craftsperson passionate about endangered animals, books, activism, and the environment. She works weekly at the [APPC animal rescue in Panama](https://www.appcpanama.org/who-we-are.html), and raises funds with her crafts to support them.
 
-
+* Bri Johns
+Bri Johns is an open science hardware researcher. After her role steering the Gathering for Open Science Hardware group as the community manager, she joined the Mothbox team as a research fellow working on the construction, deployment, and community access for the tool.
 
 # Acknowledgements
 
@@ -31,8 +32,6 @@ The Mothbox has been made possibly with help from many individuals and groups li
 
 * Daisy Dent
 * Yash Sondhi
-* Bri Johns
-* Crowther Lab
 * Owen Mcmillan
 * Sol Parra Santos
 * Experiment.com
