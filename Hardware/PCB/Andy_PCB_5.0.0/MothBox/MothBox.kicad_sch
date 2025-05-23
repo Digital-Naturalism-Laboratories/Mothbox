@@ -21,7 +21,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "23e8100d-dc92-4d1f-bb27-d65b0331e323")
-		(property "Sheetname" "RPI5+MCU"
+		(property "Sheetname" "RPI5"
 			(at 176.53 45.0084 0)
 			(effects
 				(font
@@ -147,7 +147,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "84c07412-33ce-4c0b-96a0-a76ad52e50ee")
-		(property "Sheetname" "camera"
+		(property "Sheetname" "camera battery and mechanical"
 			(at 41.91 97.0784 0)
 			(effects
 				(font
@@ -189,7 +189,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "d22974ea-9095-4b9a-829f-a5d553626ed9")
-		(property "Sheetname" "GPS+Switches"
+		(property "Sheetname" "Switches"
 			(at 132.08 45.0084 0)
 			(effects
 				(font

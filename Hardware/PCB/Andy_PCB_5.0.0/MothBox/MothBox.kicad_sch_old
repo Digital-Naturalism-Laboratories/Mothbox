@@ -21,7 +21,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "23e8100d-dc92-4d1f-bb27-d65b0331e323")
-		(property "Sheetname" "RPI5+MCU"
+		(property "Sheetname" "RPI5"
 			(at 176.53 45.0084 0)
 			(effects
 				(font

@@ -25,7 +25,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
 			(at 0 0 0)
 			(effects
 				(font

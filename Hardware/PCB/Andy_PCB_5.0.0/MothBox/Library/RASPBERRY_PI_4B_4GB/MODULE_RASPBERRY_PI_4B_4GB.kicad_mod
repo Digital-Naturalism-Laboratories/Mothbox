@@ -348,4 +348,15 @@
 		(uuid "7e93ae6e-da88-41e5-bc5d-45d9e8c87b4b")
 	)
 	(embedded_fonts no)
+	(model "${KIPRJMOD}/Library/RASPBERRY_PI_4B_4GB/RASPBERRY_PI_4B_4GB.step"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -0 -0)
+		)
+	)
 )

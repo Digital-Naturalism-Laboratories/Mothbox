@@ -811,11 +811,11 @@
     ],
     [
       "23e8100d-dc92-4d1f-bb27-d65b0331e323",
-      "RPI5+MCU"
+      "RPI5"
     ],
     [
       "d22974ea-9095-4b9a-829f-a5d553626ed9",
-      "GPS+Switches"
+      "Switches"
     ],
     [
       "f4f29d93-7441-4557-92ff-295630596a60",
@@ -827,7 +827,7 @@
     ],
     [
       "84c07412-33ce-4c0b-96a0-a76ad52e50ee",
-      "camera"
+      "camera battery and mechanical"
     ]
   ],
   "text_variables": {}

@@ -523,241 +523,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector:Barrel_Jack_MountingPin"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "J8"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "DC Power Jack"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Connector_BarrelJack:BarrelJack_GCT_DCJ200-10-A_Horizontal"
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 1.27 -1.016 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "DC Barrel Jack with a mounting pin"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part no " ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Digikey Part no " "486-3381-ND"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "DC power barrel jack connector"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "BarrelJack*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Barrel_Jack_MountingPin_0_1"
-				(rectangle
-					(start -5.08 3.81)
-					(end 5.08 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.81 -2.54) (xy -2.54 -2.54) (xy -1.27 -1.27) (xy 0 -2.54) (xy 2.54 -2.54) (xy 5.08 -2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 1.905)
-					(mid -3.9343 2.54)
-					(end -3.302 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -3.302 1.905)
-					(mid -3.9343 2.54)
-					(end -3.302 3.175)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start 3.683 3.175)
-					(end -3.302 1.905)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 2.54) (xy 3.81 2.54)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Barrel_Jack_MountingPin_1_1"
-				(polyline
-					(pts
-						(xy -1.016 -4.572) (xy 1.016 -4.572)
-					)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(text "Mounting"
-					(at 0 -4.191 0)
-					(effects
-						(font
-							(size 0.381 0.381)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -7.62 90)
-					(length 3.048)
-					(name "MountPin"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 7.62 -2.54 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R_US"
 			(pin_numbers
 				(hide yes)
@@ -1253,6 +1018,113 @@
 						)
 					)
 					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "easyeda2kicad:WJ500V-5.08-2P-14-00A"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "P"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "WJ500V-5.08-2P-14-00A"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C8465"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "WJ500V-5.08-2P-14-00A_0_1"
+				(rectangle
+					(start -3.81 5.08)
+					(end 3.81 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at -1.27 -5.08 90)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 1.27 -5.08 90)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1952,7 +1824,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 148.59) (xy 227.33 148.59)
+			(xy 232.41 148.59) (xy 224.79 148.59)
 		)
 		(stroke
 			(width 0)
@@ -2132,7 +2004,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 127) (xy 252.73 138.43)
+			(xy 255.27 127) (xy 255.27 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2172,7 +2044,7 @@
 	)
 	(wire
 		(pts
-			(xy 227.33 154.94) (xy 227.33 148.59)
+			(xy 232.41 151.13) (xy 232.41 148.59)
 		)
 		(stroke
 			(width 0)
@@ -2329,6 +2201,16 @@
 			(type default)
 		)
 		(uuid "7c936ea6-d4b8-48cc-b793-30afdd887d94")
+	)
+	(wire
+		(pts
+			(xy 224.79 146.05) (xy 224.79 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80123338-f82d-4383-84ff-7f90d2c8c710")
 	)
 	(wire
 		(pts
@@ -2682,7 +2564,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 146.05) (xy 252.73 151.13)
+			(xy 255.27 146.05) (xy 255.27 151.13)
 		)
 		(stroke
 			(width 0)
@@ -2749,16 +2631,6 @@
 			(type default)
 		)
 		(uuid "c1908f97-c49c-49bd-bdc8-6720d3c38c7b")
-	)
-	(wire
-		(pts
-			(xy 217.17 154.94) (xy 217.17 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c24886a9-0afb-4f02-96c8-2bb1c40fed1f")
 	)
 	(wire
 		(pts
@@ -3091,7 +2963,7 @@
 		(uuid "87d16f45-6b58-40cf-a2e0-adcafaa2e918")
 	)
 	(label "+12V_PCB4"
-		(at 252.73 138.43 90)
+		(at 255.27 138.43 90)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3680,6 +3552,83 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "#PWR098")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:WJ500V-5.08-2P-14-00A")
+		(at 219.71 144.78 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "13dca14d-59fa-456b-b398-983da089aa74")
+		(property "Reference" "P4"
+			(at 217.17 135.89 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "External Attractor"
+			(at 217.17 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
+			(at 232.41 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
+			(at 234.95 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 219.71 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C8465"
+			(at 237.49 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "c4789eac-8ac5-4d23-b0a8-632822efaad4")
+		)
+		(pin "1"
+			(uuid "31212c3a-bb26-4052-afe0-df7bcd97feec")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
+					(reference "P4")
 					(unit 1)
 				)
 			)
@@ -4719,71 +4668,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "U13")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 217.17 154.94 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "58256026-c495-4d19-84f4-a6b16e29666e")
-		(property "Reference" "#PWR099"
-			(at 217.17 161.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 217.17 158.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 217.17 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 217.17 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 217.17 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "59e5204a-3b02-4bf3-99cf-329bae3aa5a7")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
-					(reference "#PWR099")
 					(unit 1)
 				)
 			)
@@ -6219,7 +6103,7 @@
 	)
 	(symbol
 		(lib_id "Diode:ESD5Zxx")
-		(at 252.73 142.24 270)
+		(at 255.27 142.24 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6228,7 +6112,7 @@
 		(fields_autoplaced yes)
 		(uuid "b3e7f805-57bc-4b27-b957-a7213c2386bc")
 		(property "Reference" "D33"
-			(at 255.27 140.9699 90)
+			(at 257.81 140.9699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6237,7 +6121,7 @@
 			)
 		)
 		(property "Value" "ESD12VD3B-TP"
-			(at 255.27 143.5099 90)
+			(at 257.81 143.5099 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6246,7 +6130,7 @@
 			)
 		)
 		(property "Footprint" "Diode_SMD:D_SOD-323"
-			(at 248.285 142.24 0)
+			(at 250.825 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6255,7 +6139,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410121813_MCC-Micro-Commercial-Components-ESD12VD3B-TP_C435886.pdf"
-			(at 252.73 142.24 0)
+			(at 255.27 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6264,7 +6148,7 @@
 			)
 		)
 		(property "Description" "15.5V 350W 13.5V 12V SOD-323 ESD and Surge Protection (TVS/ESD) ROHS"
-			(at 252.73 142.24 0)
+			(at 255.27 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6273,7 +6157,7 @@
 			)
 		)
 		(property "LCSC Part no " "C435886"
-			(at 252.73 142.24 0)
+			(at 255.27 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6282,7 +6166,7 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 252.73 142.24 0)
+			(at 255.27 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6570,7 +6454,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 252.73 151.13 0)
+		(at 255.27 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6579,7 +6463,7 @@
 		(fields_autoplaced yes)
 		(uuid "dbf2de21-5fe3-4cc8-9939-dc07a1cba4fb")
 		(property "Reference" "#PWR0102"
-			(at 252.73 157.48 0)
+			(at 255.27 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6588,7 +6472,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 252.73 156.21 0)
+			(at 255.27 156.21 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6596,7 +6480,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 252.73 151.13 0)
+			(at 255.27 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6605,7 +6489,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 151.13 0)
+			(at 255.27 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6614,7 +6498,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 252.73 151.13 0)
+			(at 255.27 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6701,7 +6585,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 227.33 154.94 0)
+		(at 232.41 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6709,7 +6593,7 @@
 		(dnp no)
 		(uuid "f186f2d0-b044-4702-bcef-3498d7de1438")
 		(property "Reference" "#PWR0100"
-			(at 227.33 161.29 0)
+			(at 232.41 157.48 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6718,7 +6602,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 227.33 159.004 0)
+			(at 232.41 155.194 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6726,7 +6610,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 227.33 154.94 0)
+			(at 232.41 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6735,7 +6619,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 227.33 154.94 0)
+			(at 232.41 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6744,7 +6628,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 227.33 154.94 0)
+			(at 232.41 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6759,102 +6643,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "#PWR0100")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Barrel_Jack_MountingPin")
-		(at 217.17 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f1bed61b-8bae-47a7-a763-26281ea7fc3e")
-		(property "Reference" "J5"
-			(at 217.17 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "DC Power Jack"
-			(at 218.186 140.208 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_BarrelJack:BarrelJack_GCT_DCJ200-10-A_Horizontal"
-			(at 218.44 147.066 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 218.44 147.066 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "DC Barrel Jack with a mounting pin"
-			(at 217.17 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C319099"
-			(at 217.17 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "486-3381-ND"
-			(at 217.17 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 217.17 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "68eabce6-1399-4a6e-8a55-8122c3987a55")
-		)
-		(pin "2"
-			(uuid "186a5899-9483-45fa-a0e4-069fb687fbc4")
-		)
-		(pin "1"
-			(uuid "db7817b7-716f-4ba0-94dd-d995c5bca7af")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
-					(reference "J5")
 					(unit 1)
 				)
 			)
