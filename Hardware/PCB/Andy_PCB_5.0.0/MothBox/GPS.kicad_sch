@@ -6608,28 +6608,6 @@
 	)
 	(global_label "EN_MUX1"
 		(shape input)
-		(at 71.12 129.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "29e7ef8f-e2d4-45b2-91ec-49b7e457f00a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 59.4868 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "EN_MUX1"
-		(shape input)
 		(at 60.96 119.38 180)
 		(fields_autoplaced yes)
 		(effects
@@ -6690,28 +6668,6 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "EN_MUX2"
-		(shape input)
-		(at 187.96 129.54 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "cbdbdf3d-88db-4ade-b8d1-0d9737452279")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 176.3268 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
 				(hide yes)
 			)
 		)
@@ -8119,7 +8075,7 @@
 				)
 			)
 		)
-		(property "Footprint" "CD74HC4067M96E4:SOIC127P1030X265-24N"
+		(property "Footprint" "easyeda2kicad:SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"
 			(at 100.33 137.16 0)
 			(effects
 				(font
@@ -9371,7 +9327,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "hours2"
+		(property "Value" "Hours2"
 			(at 284.48 83.8199 0)
 			(effects
 				(font
@@ -10745,7 +10701,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "hours1"
+		(property "Value" "Hours1"
 			(at 248.92 83.8199 0)
 			(effects
 				(font
@@ -11280,7 +11236,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "days"
+		(property "Value" "Days"
 			(at 142.24 80.0099 0)
 			(effects
 				(font
@@ -11976,7 +11932,7 @@
 				)
 			)
 		)
-		(property "Footprint" "CD74HC4067M96E4:SOIC127P1030X265-24N"
+		(property "Footprint" "easyeda2kicad:SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"
 			(at 210.82 137.16 0)
 			(effects
 				(font
@@ -12491,6 +12447,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 71.12 129.54 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f5c88e26-81fa-43f3-9df0-6758fa23fe85")
+		(property "Reference" "#PWR05"
+			(at 64.77 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 67.31 129.5399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 71.12 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 71.12 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 71.12 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9081a08f-9a34-4ddc-bb53-91cf607db6dd")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "#PWR05")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 156.21 45.72 0)
 		(unit 1)
@@ -12579,6 +12602,73 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "R27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 187.96 129.54 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "ffff314c-9676-4143-8655-05efcddc2047")
+		(property "Reference" "#PWR08"
+			(at 181.61 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 184.15 129.5399 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 187.96 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 187.96 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "431202ab-6b80-4e0d-94d6-2dae778117e3")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "#PWR08")
 					(unit 1)
 				)
 			)

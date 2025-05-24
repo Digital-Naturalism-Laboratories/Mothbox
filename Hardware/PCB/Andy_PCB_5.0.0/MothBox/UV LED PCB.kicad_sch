@@ -1028,28 +1028,28 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:WJ500V-5.08-2P-14-00A"
+		(symbol "easyeda2kicad:DB301V-3.5-2P-GN"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "P"
-				(at 0 0 0)
+			(property "Reference" "U"
+				(at 0 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "WJ500V-5.08-2P-14-00A"
-				(at 0 -10.16 0)
+			(property "Value" "DB301V-3.5-2P-GN"
+				(at 0 -6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
-				(at 0 -12.7 0)
+			(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+				(at 0 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1057,8 +1057,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
-				(at 0 -15.24 0)
+			(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+				(at 0 -11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1075,8 +1075,8 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC Part" "C8465"
-				(at 0 -17.78 0)
+			(property "LCSC Part" "C695629"
+				(at 0 -13.97 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1084,10 +1084,10 @@
 					(hide yes)
 				)
 			)
-			(symbol "WJ500V-5.08-2P-14-00A_0_1"
+			(symbol "DB301V-3.5-2P-GN_0_1"
 				(rectangle
-					(start -3.81 5.08)
-					(end 3.81 0)
+					(start -2.54 3.81)
+					(end 2.54 -3.81)
 					(stroke
 						(width 0)
 						(type default)
@@ -1096,9 +1096,20 @@
 						(type background)
 					)
 				)
+				(circle
+					(center -1.27 2.54)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(pin unspecified line
-					(at -1.27 -5.08 90)
-					(length 5.08)
+					(at -5.08 1.27 0)
+					(length 2.54)
 					(name "1"
 						(effects
 							(font
@@ -1115,8 +1126,8 @@
 					)
 				)
 				(pin unspecified line
-					(at 1.27 -5.08 90)
-					(length 5.08)
+					(at -5.08 -1.27 0)
+					(length 2.54)
 					(name "2"
 						(effects
 							(font
@@ -3558,8 +3569,8 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:WJ500V-5.08-2P-14-00A")
-		(at 219.71 144.78 90)
+		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(at 219.71 144.78 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3568,7 +3579,7 @@
 		(fields_autoplaced yes)
 		(uuid "13dca14d-59fa-456b-b398-983da089aa74")
 		(property "Reference" "P4"
-			(at 217.17 135.89 90)
+			(at 219.71 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3576,15 +3587,15 @@
 			)
 		)
 		(property "Value" "External Attractor"
-			(at 217.17 138.43 90)
+			(at 219.71 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
-			(at 232.41 144.78 0)
+		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+			(at 219.71 135.89 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3592,8 +3603,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
-			(at 234.95 144.78 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+			(at 219.71 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3610,8 +3621,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C8465"
-			(at 237.49 144.78 0)
+		(property "LCSC Part" "C695629"
+			(at 219.71 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)

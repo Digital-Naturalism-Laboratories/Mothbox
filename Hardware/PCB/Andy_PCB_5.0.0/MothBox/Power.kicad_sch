@@ -5,6 +5,250 @@
 	(uuid "1c121218-0fa6-452f-bea7-d9d214802d3f")
 	(paper "A4")
 	(lib_symbols
+		(symbol "BC817:BC817_NPN_BJT"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at -2.54 7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BC817_NPN_BJT"
+				(at -2.54 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 63.5 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_BJTs"
+				(at 63.5 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Bipolar transistor symbol for simulation only, substrate tied to the emitter"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "NPN"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Type" "GUMMELPOON"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=C 2=B 3=E"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "simulation"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BC817_NPN_BJT_0_1"
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 0.635 0)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 1.905) (xy 0.635 -1.905) (xy 0.635 -1.905)
+					)
+					(stroke
+						(width 0.508)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 0.635) (xy 2.54 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.635 -0.635) (xy 2.54 -2.54) (xy 2.54 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.27 0)
+					(radius 2.8194)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.778) (xy 1.778 -1.27) (xy 2.286 -2.286) (xy 1.27 -1.778) (xy 1.27 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -1.27) (xy 2.794 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -1.27) (xy 2.794 -1.27)
+					)
+					(stroke
+						(width 0.1524)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "BC817_NPN_BJT_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "B"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_collector line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin open_emitter line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "E"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Device:C_Polarized_Small_US"
 			(pin_numbers
 				(hide yes)
@@ -473,155 +717,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:Polyfuse"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "F"
-				(at -2.54 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Polyfuse"
-				(at 2.54 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 1.27 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "resettable fuse PTC PPTC polyfuse polyswitch"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "*polyfuse* *PTC*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "Polyfuse_0_1"
-				(polyline
-					(pts
-						(xy -1.524 2.54) (xy -1.524 1.524) (xy 1.524 -1.524) (xy 1.524 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -0.762 2.54)
-					(end 0.762 -2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Polyfuse_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:R_Small"
 			(pin_numbers
 				(hide yes)
@@ -729,6 +824,179 @@
 				(pin passive line
 					(at 0 -2.54 90)
 					(length 0.762)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "Device:R_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_US"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.016 -0.254 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, US symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_US_0_1"
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
 					(name "~"
 						(effects
 							(font
@@ -1238,6 +1506,559 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Simulation_SPICE:PMOS"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "PMOS"
+				(at 5.08 -1.27 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "P-MOSFET transistor, drain/source/gate"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Device" "PMOS"
+				(at 0 -17.145 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Type" "VDMOS"
+				(at 0 -19.05 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Sim.Pins" "1=D 2=G 3=S"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "transistor PMOS P-MOS P-MOSFET simulation"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PMOS_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "PMOS_1_1"
+				(pin input line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "easyeda2kicad:0805L010_60WR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "0805L010/60WR"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:F0805"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C22435897"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "0805L010_60WR_0_1"
+				(rectangle
+					(start -2.54 1.02)
+					(end 2.54 -1.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy 2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "easyeda2kicad:DB301V-3.5-2P-GN"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DB301V-3.5-2P-GN"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C695629"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DB301V-3.5-2P-GN_0_1"
+				(rectangle
+					(start -2.54 3.81)
+					(end 2.54 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -1.27 2.54)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "easyeda2kicad:S10MC"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1341,113 +2162,6 @@
 					(at 5.08 0 180)
 					(length 3.81)
 					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "easyeda2kicad:WJ500V-5.08-2P-14-00A"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "P"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "WJ500V-5.08-2P-14-00A"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
-				(at 0 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C8465"
-				(at 0 -17.78 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "WJ500V-5.08-2P-14-00A_0_1"
-				(rectangle
-					(start -3.81 5.08)
-					(end 3.81 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin unspecified line
-					(at -1.27 -5.08 90)
-					(length 5.08)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 1.27 -5.08 90)
-					(length 5.08)
-					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2134,6 +2848,18 @@
 		)
 		(uuid "91ea94ba-0a3f-4356-83a9-07613e5180f1")
 	)
+	(text "Switch the Regulator on and Off\n"
+		(exclude_from_sim no)
+		(at 99.06 16.002 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "9509b035-1935-495b-9e66-702a8abee250")
+	)
 	(text "Basic Raw Input"
 		(exclude_from_sim no)
 		(at 39.116 51.562 0)
@@ -2147,12 +2873,6 @@
 		(uuid "eb0e06c6-4501-4929-82d4-7373ed839519")
 	)
 	(junction
-		(at 73.66 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0378a319-c6da-427d-b6a4-a8808987086a")
-	)
-	(junction
 		(at 160.02 130.81)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2163,6 +2883,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "144788f1-1dc0-40ce-9bb4-99e33bce7de1")
+	)
+	(junction
+		(at 100.33 20.32)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1ecbdd1c-c324-4694-bda4-5e5afc36823a")
 	)
 	(junction
 		(at 187.96 130.81)
@@ -2219,6 +2945,12 @@
 		(uuid "c16c379e-9b85-4edf-a881-7f5779b48512")
 	)
 	(junction
+		(at 87.63 30.48)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "d643a2fd-9fa7-4805-be6d-dfa4b537cf75")
+	)
+	(junction
 		(at 77.47 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2247,16 +2979,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fd503d71-0275-497e-a59e-8176847b470a")
-	)
-	(wire
-		(pts
-			(xy 73.66 83.82) (xy 80.01 83.82)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0260c0e6-c50e-490a-bd56-a9a97db6ffb5")
 	)
 	(wire
 		(pts
@@ -2297,6 +3019,16 @@
 			(type default)
 		)
 		(uuid "04a8f647-2c56-4892-87cf-154cd2bac581")
+	)
+	(wire
+		(pts
+			(xy 106.68 20.32) (xy 106.68 25.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "095bd677-e699-403b-8ad9-db95117a912a")
 	)
 	(wire
 		(pts
@@ -2370,6 +3102,16 @@
 	)
 	(wire
 		(pts
+			(xy 74.93 38.1) (xy 80.01 38.1)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2140f4b7-1ea4-4048-9832-ba6d6033e317")
+	)
+	(wire
+		(pts
 			(xy 187.96 140.97) (xy 187.96 149.86)
 		)
 		(stroke
@@ -2380,6 +3122,16 @@
 	)
 	(wire
 		(pts
+			(xy 106.68 41.91) (xy 106.68 35.56)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "26bf004d-f0d7-47c0-a3a0-3358187a220f")
+	)
+	(wire
+		(pts
 			(xy 102.87 118.11) (xy 102.87 130.81)
 		)
 		(stroke
@@ -2387,6 +3139,16 @@
 			(type default)
 		)
 		(uuid "2f48609b-b045-4b04-b0b2-1ad366326138")
+	)
+	(wire
+		(pts
+			(xy 87.63 30.48) (xy 87.63 33.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "309ae74d-f596-41b9-84db-f677b4fdbc48")
 	)
 	(wire
 		(pts
@@ -2420,6 +3182,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 20.32) (xy 106.68 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "37defa62-6ccb-4c96-9568-e9df54c47212")
+	)
+	(wire
+		(pts
 			(xy 116.84 123.19) (xy 119.38 123.19)
 		)
 		(stroke
@@ -2437,6 +3209,16 @@
 			(type default)
 		)
 		(uuid "3eeaa37a-be34-4655-becf-25e4715e4b8f")
+	)
+	(wire
+		(pts
+			(xy 87.63 20.32) (xy 100.33 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "461f6315-9747-4766-ace0-ab58953207f9")
 	)
 	(wire
 		(pts
@@ -2477,6 +3259,16 @@
 			(type default)
 		)
 		(uuid "4d30d140-41f5-4f72-9f0e-ba3e08ba9ef3")
+	)
+	(wire
+		(pts
+			(xy 87.63 27.94) (xy 87.63 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e6cd3b3-b5b8-46f4-bec9-e54021a40b6d")
 	)
 	(wire
 		(pts
@@ -2690,16 +3482,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 55.88) (xy 102.87 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "90a297eb-0985-4972-9ec9-96e116c289fe")
-	)
-	(wire
-		(pts
 			(xy 86.36 58.42) (xy 100.33 58.42)
 		)
 		(stroke
@@ -2727,6 +3509,16 @@
 			(type default)
 		)
 		(uuid "9c13ceb0-40da-4760-b572-024ec9fc7abe")
+	)
+	(wire
+		(pts
+			(xy 87.63 43.18) (xy 87.63 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c742608-248c-4e9a-a11e-82bf1dcfeb95")
 	)
 	(wire
 		(pts
@@ -2800,13 +3592,23 @@
 	)
 	(wire
 		(pts
-			(xy 73.66 73.66) (xy 73.66 83.82)
+			(xy 106.68 41.91) (xy 102.87 41.91)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "c1e15748-f563-4944-a456-26bf5d987c28")
+		(uuid "c07f135b-8e90-468c-b10f-af4327c2932f")
+	)
+	(wire
+		(pts
+			(xy 100.33 20.32) (xy 100.33 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6db0cbf-dc0f-44a5-9062-eca3a5eb7d1f")
 	)
 	(wire
 		(pts
@@ -2850,6 +3652,16 @@
 	)
 	(wire
 		(pts
+			(xy 87.63 30.48) (xy 99.06 30.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d03b7aae-a986-4f41-8b3e-a443ac7941c2")
+	)
+	(wire
+		(pts
 			(xy 153.67 158.75) (xy 153.67 130.81)
 		)
 		(stroke
@@ -2860,26 +3672,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.33 58.42) (xy 100.33 55.88)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d1297ee7-5abf-4a51-bbce-df41e26f21a2")
-	)
-	(wire
-		(pts
-			(xy 71.12 73.66) (xy 73.66 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d17c2d39-d595-4753-a19a-cf8349a68f5e")
-	)
-	(wire
-		(pts
 			(xy 146.05 120.65) (xy 119.38 120.65)
 		)
 		(stroke
@@ -2887,16 +3679,6 @@
 			(type default)
 		)
 		(uuid "d32516b7-031b-437e-8d46-29fa9d04a60d")
-	)
-	(wire
-		(pts
-			(xy 73.66 73.66) (xy 77.47 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d3ee19da-007f-41fa-9f4b-42b1f4a8b407")
 	)
 	(wire
 		(pts
@@ -2937,6 +3719,16 @@
 			(type default)
 		)
 		(uuid "e03a4547-5a46-42d6-8d88-c8f9bec21279")
+	)
+	(wire
+		(pts
+			(xy 102.87 41.91) (xy 102.87 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5696a3f-0598-49bc-b8bb-585c37433d59")
 	)
 	(wire
 		(pts
@@ -3027,6 +3819,16 @@
 			(type default)
 		)
 		(uuid "f8b799c2-b96e-4950-90c1-2ec71b799826")
+	)
+	(wire
+		(pts
+			(xy 73.66 73.66) (xy 77.47 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fca674f2-f920-41bc-9f02-9f76b5a8e4d0")
 	)
 	(wire
 		(pts
@@ -3211,8 +4013,125 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:WJ500V-5.08-2P-14-00A")
-		(at 151.13 72.39 90)
+		(lib_id "BC817:BC817_NPN_BJT")
+		(at 85.09 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "09160188-aea7-4ddd-8761-75249a2343e1")
+		(property "Reference" "Q1"
+			(at 90.17 36.8299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "BC817"
+			(at 90.17 39.3699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+			(at 148.59 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_BJTs"
+			(at 148.59 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Bipolar transistor symbol for simulation only, substrate tied to the emitter"
+			(at 85.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NPN"
+			(at 85.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "GUMMELPOON"
+			(at 85.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=C 2=B 3=E"
+			(at 85.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part no " "C39828"
+			(at 85.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC PN" ""
+			(at 85.09 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "3"
+			(uuid "3b772ee9-f900-4f96-9ec5-0aeb36f6aa1e")
+		)
+		(pin "2"
+			(uuid "c5b73641-b545-46be-84ea-c9b51ba3f8e0")
+		)
+		(pin "1"
+			(uuid "bd66f29a-4f4e-489e-a3d4-045dcb51750f")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(at 151.13 72.39 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3221,7 +4140,7 @@
 		(fields_autoplaced yes)
 		(uuid "0f75d3c4-3b5b-4f0e-955c-7a262fee5b5b")
 		(property "Reference" "P2"
-			(at 148.59 63.5 90)
+			(at 151.13 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3229,15 +4148,15 @@
 			)
 		)
 		(property "Value" "12V Regulated Input"
-			(at 148.59 66.04 90)
+			(at 151.13 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
-			(at 163.83 72.39 0)
+		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+			(at 151.13 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3245,8 +4164,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
-			(at 166.37 72.39 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+			(at 151.13 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3263,8 +4182,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C8465"
-			(at 168.91 72.39 0)
+		(property "LCSC Part" "C695629"
+			(at 151.13 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3288,8 +4207,8 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:WJ500V-5.08-2P-14-00A")
-		(at 74.93 59.69 90)
+		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(at 74.93 59.69 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3298,7 +4217,7 @@
 		(fields_autoplaced yes)
 		(uuid "186745fe-0918-425c-a520-add26a2a6ee8")
 		(property "Reference" "P3"
-			(at 72.39 50.8 90)
+			(at 74.93 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3306,15 +4225,15 @@
 			)
 		)
 		(property "Value" "Input to regulator"
-			(at 72.39 53.34 90)
+			(at 74.93 53.34 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
-			(at 87.63 59.69 0)
+		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+			(at 74.93 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3322,8 +4241,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
-			(at 90.17 59.69 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+			(at 74.93 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3340,8 +4259,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C8465"
-			(at 92.71 59.69 0)
+		(property "LCSC Part" "C695629"
+			(at 74.93 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4394,8 +5313,8 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:WJ500V-5.08-2P-14-00A")
-		(at 45.72 74.93 90)
+		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(at 45.72 74.93 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4404,7 +5323,7 @@
 		(fields_autoplaced yes)
 		(uuid "97b8b7bc-0d4d-4fcd-930d-87dbabf23790")
 		(property "Reference" "P1"
-			(at 43.18 66.04 90)
+			(at 45.72 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4412,15 +5331,15 @@
 			)
 		)
 		(property "Value" "Raw Input"
-			(at 43.18 68.58 90)
+			(at 45.72 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.00_WJ500V-5.08-2P"
-			(at 58.42 74.93 0)
+		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+			(at 45.72 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4428,8 +5347,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Terminal-Blocks_WJ500V-5-08-2P_C8465.html"
-			(at 60.96 74.93 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+			(at 45.72 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4446,8 +5365,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C8465"
-			(at 63.5 74.93 0)
+		(property "LCSC Part" "C695629"
+			(at 45.72 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4762,6 +5681,90 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_US")
+		(at 87.63 24.13 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ad74e3a3-12c0-4596-86d1-74e275102bd2")
+		(property "Reference" "R1"
+			(at 83.566 22.098 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 83.82 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+			(at 86.614 23.876 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 87.63 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "125mW Thick Film Resistors 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS"
+			(at 87.63 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part no " "C84376"
+			(at 87.63 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC PN" ""
+			(at 87.63 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "fb72746f-4420-4970-91a5-61efb4de11fa")
+		)
+		(pin "1"
+			(uuid "6bdcab72-3e8c-4699-89ff-652b07391d07")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "R1")
 					(unit 1)
 				)
 			)
@@ -5249,6 +6252,133 @@
 		)
 	)
 	(symbol
+		(lib_id "Simulation_SPICE:PMOS")
+		(at 104.14 30.48 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e2ad6636-a146-4200-be1f-fd9c6d155a71")
+		(property "Reference" "Q2"
+			(at 110.49 31.7501 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TJ10S04M3L,LXHQ"
+			(at 110.49 29.2101 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Package_TO_SOT_SMD:TO-252-2"
+			(at 109.22 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+			(at 104.14 17.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "P-Channel 40 V 10A (Ta) 27W (Tc) Surface Mount DPAK+"
+			(at 104.14 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "PMOS"
+			(at 104.14 13.335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 104.14 11.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 104.14 15.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part no " "C41355200"
+			(at 104.14 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey Part No" "TJ10S04M3L,LXHQ"
+			(at 104.14 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC PN" ""
+			(at 104.14 30.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "91e15524-fc59-4e94-8a03-b24843112198")
+		)
+		(pin "3"
+			(uuid "43f94b71-ae78-42a6-92ce-b6de0b3f9364")
+		)
+		(pin "2"
+			(uuid "915f2eaa-0b96-46ff-95a8-b83532ed84dc")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "Q2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Polarized_Small_US")
 		(at 187.96 138.43 0)
 		(unit 1)
@@ -5413,8 +6543,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Polyfuse")
-		(at 67.31 73.66 90)
+		(lib_id "easyeda2kicad:0805L010_60WR")
+		(at 68.58 73.66 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5423,7 +6553,7 @@
 		(fields_autoplaced yes)
 		(uuid "f71416ab-319c-4b0c-94bc-5276b708da20")
 		(property "Reference" "F2"
-			(at 67.31 67.31 90)
+			(at 68.58 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5431,25 +6561,24 @@
 			)
 		)
 		(property "Value" "Polyfuse"
-			(at 67.31 69.85 90)
+			(at 68.58 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Fuse:Fuse_Bourns_MF-RG1000"
-			(at 72.39 72.39 0)
+		(property "Footprint" "easyeda2kicad:F0805"
+			(at 68.58 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
 				(hide yes)
 			)
 		)
 		(property "Datasheet" "~"
-			(at 67.31 73.66 0)
+			(at 68.58 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5458,7 +6587,7 @@
 			)
 		)
 		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
-			(at 67.31 73.66 0)
+			(at 68.58 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5467,7 +6596,7 @@
 			)
 		)
 		(property "LCSC Part no " ""
-			(at 67.31 73.66 0)
+			(at 68.58 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5476,11 +6605,20 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 67.31 73.66 0)
+			(at 68.58 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC Part" "C22435897"
+			(at 68.58 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5493,6 +6631,72 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "F2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 87.63 48.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f965ee61-c352-4983-8fcd-c8c21fec075c")
+		(property "Reference" "#PWR011"
+			(at 87.63 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 87.63 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 87.63 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 87.63 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 87.63 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "4f4c1768-a22d-4c87-9eaf-7ff3f003433f")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "#PWR011")
 					(unit 1)
 				)
 			)
