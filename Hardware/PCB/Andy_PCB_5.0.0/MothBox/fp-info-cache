@@ -1,4 +1,4 @@
-25859718361817722
+25875453427434933
 ADG706BRUZ
 SOP65P640X120-28N
 
@@ -103621,6 +103621,20 @@ Untitled
 10
 10
 easyeda2kicad
+BAT-TH_BS-02-A1AJ010
+
+
+0
+2
+2
+easyeda2kicad
+C0603
+
+
+0
+2
+2
+easyeda2kicad
 CONN-TH_2P-P5.00_WJ500V-5.08-2P
 
 
@@ -103629,6 +103643,13 @@ CONN-TH_2P-P5.00_WJ500V-5.08-2P
 2
 easyeda2kicad
 CONN-TH_DB301V-3.5-2P-GN
+
+
+0
+2
+2
+easyeda2kicad
+F0805
 
 
 0
@@ -103663,7 +103684,28 @@ LED-SMD_L3.5-W2.8-RD_1.25T-2PWT
 2
 2
 easyeda2kicad
+R0402
+
+
+0
+2
+2
+easyeda2kicad
+R0603
+
+
+0
+2
+2
+easyeda2kicad
 R0805
+
+
+0
+2
+2
+easyeda2kicad
+R2512
 
 
 0
@@ -103683,6 +103725,27 @@ SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL
 0
 24
 24
+easyeda2kicad
+SOT-23-8_L2.9-W1.6-P0.65-LS2.8-BR
+
+
+0
+8
+8
+easyeda2kicad
+SOT-23-8_L3.0-W1.7-P0.65-LS2.8-BR
+
+
+0
+8
+8
+easyeda2kicad
+SW-SMD_SMXS-08K-TP
+
+
+0
+16
+16
 easyeda2kicad
 SW-TH_16P-L21.7-W9.7-P2.54-BL
 
