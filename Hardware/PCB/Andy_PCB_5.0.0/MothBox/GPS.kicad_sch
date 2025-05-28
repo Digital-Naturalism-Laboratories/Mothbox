@@ -1023,11 +1023,11 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:SMQS-08R-TP"
+		(symbol "easyeda2kicad:SMXS-08K-TP"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
+			(property "Reference" "SW"
 				(at 0 15.24 0)
 				(effects
 					(font
@@ -1035,7 +1035,7 @@
 					)
 				)
 			)
-			(property "Value" "SMQS-08R-TP"
+			(property "Value" "SMXS-08K-TP"
 				(at 0 -15.24 0)
 				(effects
 					(font
@@ -1043,7 +1043,7 @@
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:SW-TH_16P-L21.7-W9.7-P2.54-BL"
+			(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
 				(at 0 -17.78 0)
 				(effects
 					(font
@@ -1070,7 +1070,7 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC Part" "C5299509"
+			(property "LCSC Part" "C5439767"
 				(at 0 -20.32 0)
 				(effects
 					(font
@@ -1079,7 +1079,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "SMQS-08R-TP_0_1"
+			(symbol "SMXS-08K-TP_0_1"
 				(rectangle
 					(start -12.7 5.08)
 					(end 10.16 -5.08)
@@ -9309,7 +9309,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:SMQS-08R-TP")
+		(lib_id "easyeda2kicad:SMXS-08K-TP")
 		(at 273.05 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9336,7 +9336,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-TH_16P-L21.7-W9.7-P2.54-BL"
+		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
 			(at 273.05 100.33 0)
 			(effects
 				(font
@@ -9363,7 +9363,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5299509"
+		(property "LCSC Part" "C5439767"
 			(at 273.05 102.87 0)
 			(effects
 				(font
@@ -9949,7 +9949,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:SMQS-08R-TP")
+		(lib_id "easyeda2kicad:SMXS-08K-TP")
 		(at 181.61 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9976,7 +9976,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-TH_16P-L21.7-W9.7-P2.54-BL"
+		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
 			(at 181.61 96.52 0)
 			(effects
 				(font
@@ -10003,7 +10003,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5299509"
+		(property "LCSC Part" "C5439767"
 			(at 181.61 99.06 0)
 			(effects
 				(font
@@ -10683,7 +10683,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:SMQS-08R-TP")
+		(lib_id "easyeda2kicad:SMXS-08K-TP")
 		(at 237.49 82.55 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10710,7 +10710,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-TH_16P-L21.7-W9.7-P2.54-BL"
+		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
 			(at 237.49 100.33 0)
 			(effects
 				(font
@@ -10737,7 +10737,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5299509"
+		(property "LCSC Part" "C5439767"
 			(at 237.49 102.87 0)
 			(effects
 				(font
@@ -11218,7 +11218,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:SMQS-08R-TP")
+		(lib_id "easyeda2kicad:SMXS-08K-TP")
 		(at 130.81 78.74 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11245,7 +11245,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-TH_16P-L21.7-W9.7-P2.54-BL"
+		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
 			(at 130.81 96.52 0)
 			(effects
 				(font
@@ -11272,7 +11272,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5299509"
+		(property "LCSC Part" "C5439767"
 			(at 130.81 99.06 0)
 			(effects
 				(font
