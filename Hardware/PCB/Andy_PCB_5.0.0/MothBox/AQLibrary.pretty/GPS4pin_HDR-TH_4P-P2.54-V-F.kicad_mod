@@ -4,7 +4,7 @@
 	(generator_version "9.0")
 	(layer "F.Cu")
 	(property "Reference" "REF**"
-		(at 0 9 0)
+		(at 8 0 0)
 		(layer "F.SilkS")
 		(uuid "4354eef3-fbfd-489e-a87f-66c44ccb5415")
 		(effects
@@ -15,7 +15,7 @@
 		)
 	)
 	(property "Value" "GPS (4 Pin)"
-		(at 0 6 0)
+		(at 0 -2 0)
 		(layer "F.Fab")
 		(uuid "05e4a105-5305-47a8-b4d2-c8292bab120f")
 		(effects
@@ -175,7 +175,7 @@
 		)
 	)
 	(fp_text user "GY-NEO6MV2 NEO-6M "
-		(at -7 16 0)
+		(at -8 7 0)
 		(unlocked yes)
 		(layer "F.SilkS")
 		(uuid "beb4beed-192a-4b5c-a05b-fe7d1a04d928")
