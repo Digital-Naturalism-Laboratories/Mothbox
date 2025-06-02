@@ -3036,126 +3036,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:S10MC"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "S10MC"
-				(at 0 -5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:SMC_L7.1-W6.2-LS8.1-RD"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Diodes-General-Purpose_S10MC_C169472.html"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C169472"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "S10MC_0_1"
-				(polyline
-					(pts
-						(xy -1.27 -1.52) (xy -1.27 1.52)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.52) (xy -1.27 0) (xy 1.27 -1.52) (xy 1.27 1.52)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "C"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 5.08 0 180)
-					(length 3.81)
-					(name "A"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "easyeda2kicad:XL4015E1"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -3825,6 +3705,26 @@
 		)
 		(uuid "2050a2b2-2130-4fc0-a950-7ae9247c40d5")
 	)
+	(text "CHange LCSC to 4.7kohm\n"
+		(exclude_from_sim no)
+		(at 317.246 35.306 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2e4af9f7-2ffd-4ae6-81b2-b38500c2b06c")
+	)
+	(text "just choose an option, don't worry about these\n"
+		(exclude_from_sim no)
+		(at 180.848 37.592 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "38bcb955-886d-42eb-b706-6fca5ccb83a8")
+	)
 	(text "12V regulated input\n"
 		(exclude_from_sim no)
 		(at 150.876 48.768 0)
@@ -3849,9 +3749,9 @@
 		)
 		(uuid "9509b035-1935-495b-9e66-702a8abee250")
 	)
-	(text "Basic Raw Input"
+	(text "Basic Raw Input (9-36)"
 		(exclude_from_sim no)
-		(at 39.116 51.562 0)
+		(at 41.656 60.96 0)
 		(effects
 			(font
 				(size 1.778 1.778)
@@ -3964,6 +3864,12 @@
 		(uuid "ad286499-e2d8-4bf5-bf26-54ba19a8236c")
 	)
 	(junction
+		(at 52.07 73.66)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "bc36d0a9-f077-482a-9c3d-dd93c8a28ce3")
+	)
+	(junction
 		(at 140.97 87.63)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4060,6 +3966,16 @@
 			(type default)
 		)
 		(uuid "032f1c26-855e-4870-989a-4cb4efba5fdf")
+	)
+	(wire
+		(pts
+			(xy 50.8 73.66) (xy 52.07 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "033e4922-c5a3-41b6-9429-ee82cdcb1d78")
 	)
 	(wire
 		(pts
@@ -4293,6 +4209,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 66.04) (xy 52.07 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "27203c40-e40d-4ac6-8127-1df8a316634e")
+	)
+	(wire
+		(pts
 			(xy 254 55.88) (xy 257.81 55.88)
 		)
 		(stroke
@@ -4513,7 +4439,7 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 71.12) (xy 144.78 71.12)
+			(xy 140.97 71.12) (xy 154.94 71.12)
 		)
 		(stroke
 			(width 0)
@@ -5343,16 +5269,6 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 73.66) (xy 53.34 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cfc137c7-822d-47d4-8150-838d310a6070")
-	)
-	(wire
-		(pts
 			(xy 87.63 30.48) (xy 99.06 30.48)
 		)
 		(stroke
@@ -5613,6 +5529,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 73.66) (xy 53.34 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f865dc69-c81a-4ecf-8061-269e1e2962d6")
+	)
+	(wire
+		(pts
 			(xy 146.05 128.27) (xy 146.05 120.65)
 		)
 		(stroke
@@ -5711,16 +5637,6 @@
 		)
 		(uuid "782d5d35-c443-493a-b475-57af521e5054")
 	)
-	(label "PWR_IN"
-		(at 77.47 71.12 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "9a285a95-e7a2-4115-a055-181cb430d946")
-	)
 	(label "FB"
 		(at 144.78 133.35 0)
 		(effects
@@ -5740,6 +5656,16 @@
 			(justify left bottom)
 		)
 		(uuid "ecc98559-33a6-47a2-87b3-4bc3799b3c46")
+	)
+	(label "PWR_IN"
+		(at 52.07 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "fe0ce45e-7453-4aec-93bb-08ecec96542c")
 	)
 	(global_label "SCL"
 		(shape input)
@@ -8265,7 +8191,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "4k7"
 			(at 299.085 41.91 0)
 			(effects
 				(font
@@ -8554,83 +8480,6 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:S10MC")
-		(at 149.86 71.12 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "b30f5eab-d37d-498a-82a0-8703d559c374")
-		(property "Reference" "D1"
-			(at 149.86 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "S10MC"
-			(at 149.86 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:SMC_L7.1-W6.2-LS8.1-RD"
-			(at 149.86 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Diodes-General-Purpose_S10MC_C169472.html"
-			(at 149.86 60.96 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 149.86 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C169472"
-			(at 149.86 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bab5d86b-2762-4a46-9aa1-aad777235b1f")
-		)
-		(pin "2"
-			(uuid "01d5941d-dfe2-4cda-8bef-da3244495304")
-		)
-		(instances
-			(project ""
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "D1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "New_Library:Buck-Boost")
 		(at 113.03 60.96 0)
 		(unit 1)
@@ -8638,10 +8487,9 @@
 		(in_bom no)
 		(on_board no)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "baa5509a-cada-4359-a67a-f1c8c61bbf02")
 		(property "Reference" "U15"
-			(at 113.03 49.53 0)
+			(at 113.284 47.498 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9477,7 +9325,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "4k7"
 			(at 306.705 41.91 0)
 			(effects
 				(font

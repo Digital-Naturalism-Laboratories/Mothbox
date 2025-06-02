@@ -114,7 +114,7 @@
 	)
 	(fp_rect
 		(start -42.5 -3)
-		(end 43 2.5)
+		(end 43 1)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -256,7 +256,7 @@
 	)
 	(pad "S1" thru_hole circle
 		(at -38.5 -8.5)
-		(size 6.2 6.2)
+		(size 4 4)
 		(drill 2.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
@@ -265,7 +265,7 @@
 	)
 	(pad "S2" thru_hole circle
 		(at 19 -8.5)
-		(size 6.2 6.2)
+		(size 4 4)
 		(drill 2.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
@@ -274,7 +274,7 @@
 	)
 	(pad "S3" thru_hole circle
 		(at -38.5 6.5)
-		(size 6.2 6.2)
+		(size 4 4)
 		(drill 2.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
@@ -283,7 +283,7 @@
 	)
 	(pad "S3" thru_hole circle
 		(at 19 6.5)
-		(size 6.2 6.2)
+		(size 4 4)
 		(drill 2.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
