@@ -1,7 +1,7 @@
 import fiftyone as fo
 import fiftyone.utils.data as fou
 
-INPUT_PATH = r"D:\Panama\Hoya_1508m_waveUrta_2025-01-27\2025-01-28\AQID"
+INPUT_PATH = r"E:\Panama\Gamboa_MayJayYard_FondoGorila_2025-05-19\2025-05-20\Bri"
 
 dataset_dir = INPUT_PATH
 

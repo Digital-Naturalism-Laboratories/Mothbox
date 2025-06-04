@@ -18,11 +18,11 @@ import re
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"d:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27"
-METADATA_PATH=r'C:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox\AI\Mothbox_Main_Metadata_Field_Sheet_Example.csv'
+INPUT_PATH = r"E:\Panama\Gamboa_MayJayYard_WingedHapuku_2025-05-19\2025-05-20"
+METADATA_PATH=r'C:\Users\andre\Downloads\Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1(1).csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
-TAXA_LIST_PATH = r"c:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
 

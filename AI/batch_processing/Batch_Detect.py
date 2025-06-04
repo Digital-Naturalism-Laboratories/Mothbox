@@ -5,15 +5,12 @@ import time
 
 script_path = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot_Detect.py"  # Update this with your actual script path
 input_paths = [
-    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-26",
-    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-27",
-    r"E:\Panama\Hoya_606m_grisMejua_2025-01-26\2025-01-28",
-    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-26",
-    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-27",
-    r"E:\Panama\Hoya_714m_remoteAhulla_2025-01-28",
-    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-26",
-    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-27",
-    r"E:\Panama\Hoya_812m_liftAlce_2025-01-26\2025-01-28"
+    r"E:\Panama\Gamboa_MayJayYard_AccionSauro_2025-05-19",
+    r"E:\Panama\Gamboa_MayJayYard_AdeptTurca_2025-05-21",
+    r"E:\Panama\Gamboa_MayJayYard_FondoGorila_2025-05-19",
+    r"E:\Panama\Gamboa_MayJayYard_GrisMejua_2025-05-21",
+    r"E:\Panama\Gamboa_MayJayYard_WaveUrta_2025-05-21",
+    r"E:\Panama\Gamboa_MayJayYard_WingedHapuku_2025-05-19"
 
 ]
 
