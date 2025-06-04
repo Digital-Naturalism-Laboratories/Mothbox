@@ -7,7 +7,7 @@
 		(at 0 -0.5 0)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "d9485dda-0d21-4619-96a6-559a1ea9ec61")
+		(uuid "4921a018-2f45-4d90-b96c-7c993ccee035")
 		(effects
 			(font
 				(size 1 1)
@@ -19,7 +19,7 @@
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
-		(uuid "3beb6294-dae2-4115-b80b-395b2454c164")
+		(uuid "37fb2761-7354-4e50-98eb-3eb4c5c9f800")
 		(effects
 			(font
 				(size 1 1)
@@ -32,7 +32,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "06567037-775a-4a19-b3ee-c0581ec0d934")
+		(uuid "10b34178-ac29-420f-b8e7-087a2691d704")
 		(effects
 			(font
 				(size 1 1)
@@ -45,7 +45,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "e65c046e-ca27-4cbd-97dc-56ead33dfa23")
+		(uuid "e2da6021-dcb4-4e02-889f-03efb7411953")
 		(effects
 			(font
 				(size 1 1)
@@ -269,28 +269,6 @@
 		(uuid "07b965aa-c7a7-40b1-8797-9c354f590c76")
 	)
 	(fp_circle
-		(center 5.2 -2.2)
-		(end 6.5 -1.4)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "Dwgs.User")
-		(uuid "70c0c205-f571-41d3-a565-932148093e51")
-	)
-	(fp_circle
-		(center 5.3 -20.8)
-		(end 6.6 -20)
-		(stroke
-			(width 0.1)
-			(type default)
-		)
-		(fill no)
-		(layer "Dwgs.User")
-		(uuid "4a95fa1a-5d52-4536-bcdd-8749d509324d")
-	)
-	(fp_circle
 		(center 41.2 -2.5)
 		(end 41 -3)
 		(stroke
@@ -418,29 +396,19 @@
 	)
 	(pad "7" thru_hole circle
 		(at 5.18881 -2.218795)
-		(size 2.8575 2.8575)
-		(drill 2.9)
+		(size 2.5 2.5)
+		(drill 2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "023f42c0-a7ea-4914-a338-9122a9d7e7ec")
 	)
 	(pad "7" thru_hole circle
 		(at 5.3 -20.8)
-		(size 2.8575 2.8575)
-		(drill 2.9)
+		(size 2.5 2.5)
+		(drill 2)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
 		(uuid "8a6aba58-3fd3-4243-847f-90d0f63fd27d")
-	)
-	(group ""
-		(uuid "486a3230-a171-4771-af5c-91d2b49c378c")
-		(members "07b965aa-c7a7-40b1-8797-9c354f590c76" "1470f322-2733-4d99-9bbd-1a0b7a87244a"
-			"4479a0de-37d1-41ab-bb7a-916d0de9436a" "4a95fa1a-5d52-4536-bcdd-8749d509324d"
-			"60250bf0-49a1-4bd2-9063-145a3aa20aff" "70c0c205-f571-41d3-a565-932148093e51"
-			"92ca84bb-db5e-4dde-88d1-bd2902f2bf59" "9ae3bdd8-9241-44ba-ab90-ec4537b006cd"
-			"b6f3554f-b582-46e2-b146-bb71ae1bdc49" "c9e7ad55-57e4-4189-8825-cd7e05b96a3c"
-			"dfd33b15-4714-4119-a117-fcf73d71cc43" "f658fb0c-593e-434e-b318-db461d694fe6"
-		)
 	)
 	(embedded_fonts no)
 	(model "C:/Users/andre/Documents/GitHub/Mothbox/Hardware/PCB/Andy_PCB_5.0.0/MothbeamAttractor/MothbeamAttractor.step"

@@ -15,7 +15,7 @@
 		)
 	)
 	(property "Value" "MODULE_RASPBERRY_PI_4B_4GB_Sideways"
-		(at -26.24 31.135 0)
+		(at -6 12 0)
 		(layer "F.Fab")
 		(uuid "105cc53d-afb2-44a7-a5e8-751436cebe09")
 		(effects
@@ -52,7 +52,7 @@
 	(attr through_hole)
 	(fp_line
 		(start -43 -13)
-		(end -43 12.5)
+		(end -43 8)
 		(stroke
 			(width 0.127)
 			(type solid)
@@ -61,8 +61,8 @@
 		(uuid "68f8ee53-9f8a-475e-a8e0-21a7ec8a05b4")
 	)
 	(fp_line
-		(start -43 12.5)
-		(end 42.5 12.5)
+		(start -43 8)
+		(end 43 8)
 		(stroke
 			(width 0.127)
 			(type solid)
@@ -81,7 +81,7 @@
 		(uuid "112b0d32-5728-4622-909c-872b19e8f0cd")
 	)
 	(fp_line
-		(start 43 12.5)
+		(start 43 8)
 		(end 43 -13)
 		(stroke
 			(width 0.127)
@@ -92,7 +92,7 @@
 	)
 	(fp_rect
 		(start 23.5 -13)
-		(end 43 12.5)
+		(end 43 7.5)
 		(stroke
 			(width 0.1)
 			(type default)
@@ -197,8 +197,8 @@
 		(uuid "2894492e-e2e3-415a-bf09-3539e3f05883")
 	)
 	(fp_line
-		(start -43 -14.5)
-		(end 45 -15.5)
+		(start -43 -13)
+		(end 43 -13)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -207,8 +207,8 @@
 		(uuid "d0f58d7a-c164-4f2c-bf0f-874d4ca5a74e")
 	)
 	(fp_line
-		(start -43 12.5)
-		(end -43 -14.5)
+		(start -43 8)
+		(end -43 -13)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -217,8 +217,8 @@
 		(uuid "2342853d-cbf3-4ba9-a224-f6fa8e0b3eda")
 	)
 	(fp_line
-		(start 45 -15.5)
-		(end 45 12.505)
+		(start 43 -13)
+		(end 43 8)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -227,8 +227,8 @@
 		(uuid "87240e08-f3e6-4a49-aa13-bfe4d652b5e3")
 	)
 	(fp_line
-		(start 45 12.5)
-		(end -43 12.5)
+		(start 43 8.0025)
+		(end -43 7.9975)
 		(stroke
 			(width 0.05)
 			(type solid)
@@ -237,8 +237,8 @@
 		(uuid "4b238c79-5c2a-48b4-b3e4-95133fbb724c")
 	)
 	(fp_line
-		(start -36.5 12.5)
-		(end 42.5 12.5)
+		(start -39.5 8)
+		(end 39.5 8)
 		(stroke
 			(width 0.127)
 			(type solid)
@@ -248,7 +248,7 @@
 	)
 	(fp_line
 		(start 20 -13)
-		(end 20 12.5)
+		(end 20 9)
 		(stroke
 			(width 0.127)
 			(type solid)
@@ -258,23 +258,13 @@
 	)
 	(fp_line
 		(start 23.5 -13)
-		(end 23.5 12.5)
+		(end 23.5 8)
 		(stroke
 			(width 0.127)
 			(type solid)
 		)
 		(layer "F.Fab")
 		(uuid "be12089f-dac6-46b4-859a-d61388dac5ec")
-	)
-	(fp_line
-		(start 23.5 12.5)
-		(end 45 12.5)
-		(stroke
-			(width 0.127)
-			(type solid)
-		)
-		(layer "F.Fab")
-		(uuid "9753198d-a0fb-4d34-bd7b-06ac02c67a98")
 	)
 	(fp_line
 		(start 36.5 -13)
@@ -297,7 +287,7 @@
 		(uuid "9326b2a9-ac59-4f22-b2f7-a1441ee9a9df")
 	)
 	(fp_line
-		(start 43 12.5)
+		(start 43 8)
 		(end 43 -13)
 		(stroke
 			(width 0.127)
@@ -305,16 +295,6 @@
 		)
 		(layer "F.Fab")
 		(uuid "cedab8fc-25e2-4835-bd2a-54a8e9bafacc")
-	)
-	(fp_line
-		(start 45 12.5)
-		(end 45 -15.5)
-		(stroke
-			(width 0.127)
-			(type solid)
-		)
-		(layer "F.Fab")
-		(uuid "fe6e3a45-858f-4536-b6f0-cbfa3857d2cc")
 	)
 	(fp_circle
 		(center -42.5 -11)

@@ -845,28 +845,182 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "attractor:Attractor_Module"
+		(symbol "attractor_AQ:PZ254R-11-04P"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "A"
-				(at 0.508 1.016 0)
+			(property "Reference" "H"
+				(at 0 8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" ""
-				(at 0 0 0)
+			(property "Value" "PZ254R-11-04P"
+				(at 0 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
 				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C492412"
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PZ254R-11-04P_0_1"
+				(rectangle
+					(start -2.54 6.35)
+					(end 2.54 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -1.27 5.08)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "easyeda2kicad:DB142R-5.08-2P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "CN"
+				(at 0 6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DB142R-5.08-2P"
+				(at 0 -6.35 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+				(at 0 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -892,172 +1046,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "Attractor_Module_0_1"
-				(rectangle
-					(start -3.81 0)
-					(end 5.08 -10.16)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start 0 0)
-					(end 0 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Attractor_Module_1_1"
-				(pin input line
-					(at -6.35 -3.81 0)
-					(length 2.54)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -6.35 -6.35 0)
-					(length 2.54)
-					(name "EN"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 7.62 -1.27 180)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 7.62 -3.81 180)
-					(length 2.54)
-					(name "VCC"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 7.62 -6.35 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 7.62 -8.89 180)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "easyeda2kicad:DB301V-3.5-2P-GN"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "DB301V-3.5-2P-GN"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+			(property "LCSC Part" "C2898709"
 				(at 0 -11.43 0)
 				(effects
 					(font
@@ -1066,25 +1055,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C695629"
-				(at 0 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "DB301V-3.5-2P-GN_0_1"
+			(symbol "DB142R-5.08-2P_0_1"
 				(rectangle
 					(start -2.54 3.81)
 					(end 2.54 -3.81)
@@ -1536,7 +1507,7 @@
 		(uuid "2457d9e9-adf9-45a7-ba52-1dddbe01978f")
 	)
 	(junction
-		(at 50.0835 109.5921)
+		(at 46.99 109.22)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "24df8930-6d2b-44c4-9ade-f9faf51ed460")
@@ -1668,7 +1639,7 @@
 		(uuid "d53d0b68-3536-4313-b406-491f45201736")
 	)
 	(junction
-		(at 50.0835 117.2121)
+		(at 46.99 116.84)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e17b6ccf-3fb6-4644-af61-a3e57b451bb0")
@@ -1725,7 +1696,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.0835 117.2121) (xy 50.0835 114.6721)
+			(xy 46.99 116.84) (xy 46.99 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1815,7 +1786,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.0835 107.0521) (xy 50.0835 109.5921)
+			(xy 46.99 106.68) (xy 46.99 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1825,7 +1796,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.0835 118.4821) (xy 50.0835 117.2121)
+			(xy 46.99 118.11) (xy 46.99 116.84)
 		)
 		(stroke
 			(width 0)
@@ -1965,7 +1936,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.0035 109.5921) (xy 50.0835 109.5921)
+			(xy 33.02 109.22) (xy 46.99 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1975,7 +1946,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.0035 117.2121) (xy 50.0835 117.2121)
+			(xy 33.02 116.84) (xy 46.99 116.84)
 		)
 		(stroke
 			(width 0)
@@ -2075,7 +2046,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.0835 112.1321) (xy 50.0835 109.5921)
+			(xy 46.99 111.76) (xy 46.99 109.22)
 		)
 		(stroke
 			(width 0)
@@ -2085,7 +2056,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 53.34) (xy 50.8 53.34)
+			(xy 33.02 53.34) (xy 50.8 53.34)
 		)
 		(stroke
 			(width 0)
@@ -2155,7 +2126,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 44.45) (xy 176.53 44.45)
+			(xy 161.29 44.45) (xy 176.53 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2175,7 +2146,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 45.72) (xy 50.8 45.72)
+			(xy 33.02 45.72) (xy 50.8 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2285,7 +2256,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 50.8) (xy 45.72 50.8)
+			(xy 52.07 53.34) (xy 33.02 50.8)
 		)
 		(stroke
 			(width 0)
@@ -2405,7 +2376,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.0835 114.6721) (xy 45.0035 114.6721)
+			(xy 46.99 114.3) (xy 33.02 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2455,7 +2426,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 52.07) (xy 176.53 52.07)
+			(xy 161.29 52.07) (xy 176.53 52.07)
 		)
 		(stroke
 			(width 0)
@@ -2475,7 +2446,7 @@
 	)
 	(wire
 		(pts
-			(xy 50.8 53.34) (xy 50.8 50.8)
+			(xy 52.07 53.34) (xy 50.8 53.34)
 		)
 		(stroke
 			(width 0)
@@ -2735,7 +2706,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 49.53) (xy 171.45 49.53)
+			(xy 176.53 49.53) (xy 161.29 49.53)
 		)
 		(stroke
 			(width 0)
@@ -2785,7 +2756,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.0035 112.1321) (xy 50.0835 112.1321)
+			(xy 33.02 111.76) (xy 46.99 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2805,7 +2776,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 48.26) (xy 50.8 48.26)
+			(xy 33.02 48.26) (xy 50.8 48.26)
 		)
 		(stroke
 			(width 0)
@@ -2885,7 +2856,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 46.99) (xy 176.53 46.99)
+			(xy 161.29 46.99) (xy 176.53 46.99)
 		)
 		(stroke
 			(width 0)
@@ -2994,7 +2965,7 @@
 		(uuid "a81eda0f-b97a-48a0-b28d-12c80d2ff62b")
 	)
 	(label "+12V_PCB2"
-		(at 50.0835 107.0521 0)
+		(at 46.99 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3569,7 +3540,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(lib_id "easyeda2kicad:DB142R-5.08-2P")
 		(at 219.71 144.78 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3594,7 +3565,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 			(at 219.71 135.89 0)
 			(effects
 				(font
@@ -3604,7 +3575,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
-			(at 219.71 133.35 0)
+			(at 219.71 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3621,8 +3592,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C695629"
-			(at 219.71 130.81 0)
+		(property "LCSC Part" "C2898709"
+			(at 219.71 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4476,8 +4447,8 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor:Attractor_Module")
-		(at 38.1 44.45 0)
+		(lib_id "attractor_AQ:PZ254R-11-04P")
+		(at 38.1 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4485,7 +4456,7 @@
 		(dnp no)
 		(uuid "51ea333c-1ccd-4d63-82ce-71af2ddaaa5f")
 		(property "Reference" "A2"
-			(at 38.608 43.18 0)
+			(at 38.608 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4493,15 +4464,15 @@
 			)
 		)
 		(property "Value" "Attractor"
-			(at 38.608 55.88 0)
+			(at 38.608 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Attractor:attractor"
-			(at 38.1 44.45 0)
+		(property "Footprint" "Attractor:HDR-TH_4P-P2.54-H-M-W10.4"
+			(at 38.1 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4509,8 +4480,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 38.1 44.45 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
+			(at 38.1 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4519,7 +4490,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 38.1 44.45 0)
+			(at 38.1 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4528,7 +4499,7 @@
 			)
 		)
 		(property "LCSC Part no " "C49661"
-			(at 38.1 44.45 0)
+			(at 38.1 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4537,11 +4508,20 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 38.1 44.45 0)
+			(at 38.1 49.53 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC Part" "C492412"
+			(at 38.1 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -4550,14 +4530,8 @@
 		(pin "3"
 			(uuid "d833345e-799a-423a-aeda-ffcfc2e023af")
 		)
-		(pin "6"
-			(uuid "4e920bce-1ae3-4bba-bbeb-d2f96bc63a06")
-		)
 		(pin "2"
 			(uuid "b6a437e0-a667-4045-9626-71231674c424")
-		)
-		(pin "5"
-			(uuid "15ea166e-32b7-4ecf-bbe1-1a499855d683")
 		)
 		(pin "4"
 			(uuid "914f1a5d-d338-4bfa-a8f5-4896aa332015")
@@ -4752,7 +4726,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 50.0835 118.4821 0)
+		(at 46.99 118.11 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4761,7 +4735,7 @@
 		(fields_autoplaced yes)
 		(uuid "5eac2bf1-e57d-49ad-aea7-7ae990f7adae")
 		(property "Reference" "#PWR082"
-			(at 50.0835 124.8321 0)
+			(at 46.99 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4770,7 +4744,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 50.0835 123.5621 0)
+			(at 46.99 123.19 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4778,7 +4752,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 50.0835 118.4821 0)
+			(at 46.99 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4787,7 +4761,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 50.0835 118.4821 0)
+			(at 46.99 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4796,7 +4770,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 50.0835 118.4821 0)
+			(at 46.99 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5690,8 +5664,8 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor:Attractor_Module")
-		(at 37.3835 108.3221 0)
+		(lib_id "attractor_AQ:PZ254R-11-04P")
+		(at 38.1 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5699,7 +5673,7 @@
 		(dnp no)
 		(uuid "985c44de-4433-46e0-bc0d-5a7b6601604f")
 		(property "Reference" "A1"
-			(at 37.8915 107.0521 0)
+			(at 38.608 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5707,15 +5681,15 @@
 			)
 		)
 		(property "Value" "Attractor"
-			(at 38.1 119.888 0)
+			(at 38.8165 124.5959 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Attractor:attractor"
-			(at 37.3835 108.3221 0)
+		(property "Footprint" "Attractor:HDR-TH_4P-P2.54-H-M-W10.4"
+			(at 38.1 124.46 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5723,8 +5697,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 37.3835 108.3221 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
+			(at 38.1 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5733,7 +5707,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 37.3835 108.3221 0)
+			(at 38.1 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5742,7 +5716,7 @@
 			)
 		)
 		(property "LCSC Part no " "C49661"
-			(at 37.3835 108.3221 0)
+			(at 38.1 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5751,11 +5725,20 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 37.3835 108.3221 0)
+			(at 38.1 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC Part" "C492412"
+			(at 38.1 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -5764,14 +5747,8 @@
 		(pin "3"
 			(uuid "20e93338-81b8-436b-a876-e735a41ee59f")
 		)
-		(pin "6"
-			(uuid "e39c0540-abc3-41d2-8645-e401e487027f")
-		)
 		(pin "2"
 			(uuid "a1cd2549-6310-4d17-9892-a6febc37fcee")
-		)
-		(pin "5"
-			(uuid "eb03eeb6-5683-4b63-8730-43abc51ba3fa")
 		)
 		(pin "4"
 			(uuid "c5193d1b-3289-4c9d-881d-7252b7c56792")
@@ -6017,8 +5994,8 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor:Attractor_Module")
-		(at 163.83 43.18 0)
+		(lib_id "attractor_AQ:PZ254R-11-04P")
+		(at 166.37 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6026,7 +6003,7 @@
 		(dnp no)
 		(uuid "af100ec3-63c6-4f9d-a51d-5416dc712ba5")
 		(property "Reference" "A3"
-			(at 164.338 41.91 0)
+			(at 166.878 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6034,15 +6011,15 @@
 			)
 		)
 		(property "Value" "Attractor"
-			(at 164.592 54.356 0)
+			(at 167.132 59.436 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Attractor:attractor"
-			(at 163.83 43.18 0)
+		(property "Footprint" "Attractor:HDR-TH_4P-P2.54-H-M-W10.4"
+			(at 166.37 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6050,8 +6027,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
-			(at 163.83 43.18 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
+			(at 166.37 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6060,7 +6037,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 163.83 43.18 0)
+			(at 166.37 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6069,7 +6046,7 @@
 			)
 		)
 		(property "LCSC Part no " "C49661"
-			(at 163.83 43.18 0)
+			(at 166.37 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6078,11 +6055,20 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 163.83 43.18 0)
+			(at 166.37 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+			)
+		)
+		(property "LCSC Part" "C492412"
+			(at 166.37 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "1"
@@ -6091,14 +6077,8 @@
 		(pin "3"
 			(uuid "df7606f9-4f52-4a3f-9f0f-fd72c4b24ee3")
 		)
-		(pin "6"
-			(uuid "4b7d7075-ae90-49ec-8a57-acd463dbdc91")
-		)
 		(pin "2"
 			(uuid "0ab04a46-e3eb-416b-9018-5310c7eea42a")
-		)
-		(pin "5"
-			(uuid "9e80c452-262c-4945-8e8c-9adab9148484")
 		)
 		(pin "4"
 			(uuid "dc812692-2ee6-49cc-a54e-543392623d29")

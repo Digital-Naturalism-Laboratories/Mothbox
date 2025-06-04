@@ -1531,363 +1531,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "SK54C:SK54C"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "D"
-				(at -5.08 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" "SK54C"
-				(at -5.08 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "SK54C:DIO_SK54C"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "MF" "Taiwan Semiconductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MAXIMUM_PACKAGE_HEIGHT" "2.65mm"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Package" "DO-214AB-2 Taiwan Semiconductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Price" "None"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Check_prices" "https://www.snapeda.com/parts/SK54C/taiwan/view-part/?ref=eda"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "STANDARD" "Manufacturer Recommendations"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "PARTREV" "S2311"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "SnapEDA_Link" "https://www.snapeda.com/parts/SK54C/taiwan/view-part/?ref=snap"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MP" "SK54C"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Description_1" "5A, 40V, Schottky Rectifier"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "Availability" "In Stock"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(property "MANUFACTURER" "Taiwan Semiconductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify bottom)
-					(hide yes)
-				)
-			)
-			(symbol "SK54C_0_0"
-				(polyline
-					(pts
-						(xy -2.54 0) (xy -1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.27) (xy -1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy 1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.635 -1.016) (xy 0.635 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.27) (xy 1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy -1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -1.27) (xy 0.635 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 1.27) (xy 1.27 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.905 1.27) (xy 1.905 1.016)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "A"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 5.08 0 180)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-					(number "C"
-						(effects
-							(font
-								(size 1.016 1.016)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Simulation_SPICE:PMOS"
 			(pin_numbers
 				(hide yes)
@@ -2467,11 +2110,11 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:DB301V-3.5-2P-GN"
+		(symbol "easyeda2kicad:DB142R-5.08-2P"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "U"
+			(property "Reference" "CN"
 				(at 0 6.35 0)
 				(effects
 					(font
@@ -2479,7 +2122,7 @@
 					)
 				)
 			)
-			(property "Value" "DB301V-3.5-2P-GN"
+			(property "Value" "DB142R-5.08-2P"
 				(at 0 -6.35 0)
 				(effects
 					(font
@@ -2487,7 +2130,7 @@
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 				(at 0 -8.89 0)
 				(effects
 					(font
@@ -2496,8 +2139,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
-				(at 0 -11.43 0)
+			(property "Datasheet" ""
+				(at 0 0 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2514,8 +2157,8 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC Part" "C695629"
-				(at 0 -13.97 0)
+			(property "LCSC Part" "C2898709"
+				(at 0 -11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -2523,7 +2166,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "DB301V-3.5-2P-GN_0_1"
+			(symbol "DB142R-5.08-2P_0_1"
 				(rectangle
 					(start -2.54 3.81)
 					(end 2.54 -3.81)
@@ -3019,6 +2662,150 @@
 					(at 5.08 0 180)
 					(length 2.54)
 					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "easyeda2kicad:SK54C_C5449119"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SK54C_C5449119"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:SMC_L6.9-W5.9-LS8.0-RD"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C5449119"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SK54C_C5449119_0_1"
+				(polyline
+					(pts
+						(xy -1.27 1.78) (xy -1.27 -1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.78) (xy -1.27 0) (xy 1.27 -1.78) (xy 1.27 1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "C"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3705,6 +3492,17 @@
 		)
 		(uuid "2050a2b2-2130-4fc0-a950-7ae9247c40d5")
 	)
+	(text "It's unclear whether to connect pin 6 to ground\n"
+		(exclude_from_sim no)
+		(at 120.142 162.052 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(color 255 20 18 1)
+			)
+		)
+		(uuid "295b3c6c-9d6d-48ad-9528-10cdb4fc8223")
+	)
 	(text "CHange LCSC to 4.7kohm\n"
 		(exclude_from_sim no)
 		(at 317.246 35.306 0)
@@ -3904,12 +3702,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dd6dc76d-f7bb-41e8-8465-c81983da423c")
-	)
-	(junction
-		(at 77.47 148.59)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "eb5b1901-79b9-4ddd-b76d-c75d09a3cd51")
 	)
 	(junction
 		(at 233.68 50.8)
@@ -4389,16 +4181,6 @@
 	)
 	(wire
 		(pts
-			(xy 64.77 148.59) (xy 77.47 148.59)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "462eb539-bab8-4333-95ee-4e31388d2385")
-	)
-	(wire
-		(pts
 			(xy 278.13 13.97) (xy 278.13 44.45)
 		)
 		(stroke
@@ -4659,7 +4441,7 @@
 	)
 	(wire
 		(pts
-			(xy 77.47 138.43) (xy 77.47 148.59)
+			(xy 77.47 138.43) (xy 77.47 151.13)
 		)
 		(stroke
 			(width 0)
@@ -5316,16 +5098,6 @@
 			(type default)
 		)
 		(uuid "d32516b7-031b-437e-8d46-29fa9d04a60d")
-	)
-	(wire
-		(pts
-			(xy 77.47 148.59) (xy 77.47 151.13)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d4d2ef4c-9b9f-4ebb-ad3f-750431f11176")
 	)
 	(wire
 		(pts
@@ -5995,7 +5767,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(lib_id "easyeda2kicad:DB142R-5.08-2P")
 		(at 135.89 72.39 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6020,7 +5792,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 			(at 135.89 63.5 0)
 			(effects
 				(font
@@ -6030,7 +5802,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
-			(at 135.89 60.96 0)
+			(at 135.89 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6047,8 +5819,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C695629"
-			(at 135.89 58.42 0)
+		(property "LCSC Part" "C2898709"
+			(at 135.89 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6150,7 +5922,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(lib_id "easyeda2kicad:DB142R-5.08-2P")
 		(at 74.93 59.69 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6175,7 +5947,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 			(at 74.93 50.8 0)
 			(effects
 				(font
@@ -6185,7 +5957,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
-			(at 74.93 48.26 0)
+			(at 74.93 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6202,8 +5974,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C695629"
-			(at 74.93 45.72 0)
+		(property "LCSC Part" "C2898709"
+			(at 74.93 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6227,8 +5999,8 @@
 		)
 	)
 	(symbol
-		(lib_id "SK54C:SK54C")
-		(at 160.02 138.43 90)
+		(lib_id "easyeda2kicad:SK54C_C5449119")
+		(at 160.02 138.43 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6236,7 +6008,7 @@
 		(dnp no)
 		(uuid "1b0d74d5-00c5-404e-a3fe-bf641a7f2f04")
 		(property "Reference" "E3"
-			(at 162.052 138.938 90)
+			(at 157.988 137.922 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6245,7 +6017,7 @@
 			)
 		)
 		(property "Value" "SK54C"
-			(at 160.528 141.224 90)
+			(at 159.512 135.636 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6253,13 +6025,12 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "SK54C:DIO_SK54C"
-			(at 160.02 138.43 0)
+		(property "Footprint" "easyeda2kicad:SMC_L6.9-W5.9-LS8.0-RD"
+			(at 152.4 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify bottom)
 				(hide yes)
 			)
 		)
@@ -6418,10 +6189,19 @@
 				)
 			)
 		)
-		(pin "A"
+		(property "LCSC Part" "C5449119"
+			(at 149.86 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
 			(uuid "622f586c-08d4-498f-80d3-d63cfa6952ce")
 		)
-		(pin "C"
+		(pin "1"
 			(uuid "ab473d11-ee73-4d93-94ac-729a7858979a")
 		)
 		(instances
@@ -7812,7 +7592,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:DB301V-3.5-2P-GN")
+		(lib_id "easyeda2kicad:DB142R-5.08-2P")
 		(at 45.72 74.93 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7837,7 +7617,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:CONN-TH_DB301V-3.5-2P-GN"
+		(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 			(at 45.72 66.04 0)
 			(effects
 				(font
@@ -7847,7 +7627,7 @@
 			)
 		)
 		(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
-			(at 45.72 63.5 0)
+			(at 45.72 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7864,8 +7644,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C695629"
-			(at 45.72 60.96 0)
+		(property "LCSC Part" "C2898709"
+			(at 45.72 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)

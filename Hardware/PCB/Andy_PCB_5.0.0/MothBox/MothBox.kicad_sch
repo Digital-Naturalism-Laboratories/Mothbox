@@ -189,7 +189,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "d22974ea-9095-4b9a-829f-a5d553626ed9")
-		(property "Sheetname" "Switches"
+		(property "Sheetname" "GPS and Switches"
 			(at 132.08 45.0084 0)
 			(effects
 				(font
