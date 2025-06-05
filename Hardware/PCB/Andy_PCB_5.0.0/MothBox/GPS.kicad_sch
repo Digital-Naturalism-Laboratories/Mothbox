@@ -4492,7 +4492,7 @@
 		)
 		(uuid "18766455-38e3-417e-9537-e9b9efbb0067")
 	)
-	(label "INT{slash}EXT_Attractor"
+	(label "Attractor_2"
 		(at 43.18 163.83 0)
 		(effects
 			(font
@@ -4522,7 +4522,7 @@
 		)
 		(uuid "2a3dadcb-7ec1-472f-a6a8-0b8fadc11a6b")
 	)
-	(label "Attractor_2"
+	(label "INT{slash}EXT_Attractor"
 		(at 63.5 160.02 0)
 		(effects
 			(font
@@ -4542,7 +4542,7 @@
 		)
 		(uuid "30479ecd-6335-4114-966f-6802e8177e1e")
 	)
-	(label "C1"
+	(label "C2"
 		(at 63.5 172.72 0)
 		(effects
 			(font
@@ -4572,7 +4572,7 @@
 		)
 		(uuid "3a6919f2-4a60-435c-837f-5e60ce228546")
 	)
-	(label "Hour_9"
+	(label "Hour_11"
 		(at 179.07 154.94 0)
 		(effects
 			(font
@@ -4582,7 +4582,7 @@
 		)
 		(uuid "3a7f5466-ce90-4776-9f97-9d7ed3cda978")
 	)
-	(label "Thur"
+	(label "Mon"
 		(at 63.5 149.86 0)
 		(effects
 			(font
@@ -4622,7 +4622,7 @@
 		)
 		(uuid "4d35dd0b-eba7-43f1-a2d4-989a8a7d7e16")
 	)
-	(label "Wed"
+	(label "Sun"
 		(at 63.5 134.62 0)
 		(effects
 			(font
@@ -4662,7 +4662,7 @@
 		)
 		(uuid "54f23bf2-757a-4636-b87b-b8b75d0d72ae")
 	)
-	(label "Armed{slash}Disarmed"
+	(label "Test_Debug"
 		(at 63.5 154.94 0)
 		(effects
 			(font
@@ -4782,7 +4782,7 @@
 		)
 		(uuid "8df4cffc-ed55-4aa0-8619-f43bded7ce85")
 	)
-	(label "C2"
+	(label "C1"
 		(at 63.5 170.18 0)
 		(effects
 			(font
@@ -4872,7 +4872,7 @@
 		)
 		(uuid "b0d044c1-f05f-4dc1-876a-cbdeece31091")
 	)
-	(label "Hour_11"
+	(label "Hour_13"
 		(at 179.07 165.1 0)
 		(effects
 			(font
@@ -4882,7 +4882,7 @@
 		)
 		(uuid "b29d455a-23aa-4aa7-9f47-d1b0b5156829")
 	)
-	(label "Mon"
+	(label "Fri"
 		(at 63.5 139.7 0)
 		(effects
 			(font
@@ -4912,7 +4912,7 @@
 		)
 		(uuid "bcae4bcd-de1e-418b-ac5b-604d94ac1991")
 	)
-	(label "Fri"
+	(label "Tue"
 		(at 63.5 147.32 0)
 		(effects
 			(font
@@ -4932,7 +4932,7 @@
 		)
 		(uuid "c399865c-f291-4b18-9f93-4ad718cbb565")
 	)
-	(label "Sun"
+	(label "Thur"
 		(at 63.5 142.24 0)
 		(effects
 			(font
@@ -4942,7 +4942,7 @@
 		)
 		(uuid "cda1d5fa-1d88-4c41-bc04-cf11b34320c6")
 	)
-	(label "Sat"
+	(label "Wed"
 		(at 63.5 144.78 0)
 		(effects
 			(font
@@ -4952,7 +4952,7 @@
 		)
 		(uuid "d134191a-1d2a-43d0-810b-0404c83e33d8")
 	)
-	(label "Test_Debug"
+	(label "Armed{slash}Disarmed"
 		(at 45.72 151.13 0)
 		(effects
 			(font
@@ -4962,7 +4962,7 @@
 		)
 		(uuid "d93c93e1-cc3a-404f-b91f-8fba55d97015")
 	)
-	(label "Attractor_3"
+	(label "HI{slash}LOW_PWR"
 		(at 63.5 157.48 0)
 		(effects
 			(font
@@ -4972,7 +4972,7 @@
 		)
 		(uuid "df3e95c9-83ab-4aa9-88ee-82ad2cee015b")
 	)
-	(label "Hour_13"
+	(label "Hour_9"
 		(at 179.07 160.02 0)
 		(effects
 			(font
@@ -4992,7 +4992,7 @@
 		)
 		(uuid "e1ec64b2-19c3-4cb4-bd16-a2d66743c1dc")
 	)
-	(label "HI{slash}LOW_PWR"
+	(label "Attractor_3"
 		(at 63.5 167.64 0)
 		(effects
 			(font
@@ -5092,7 +5092,7 @@
 		)
 		(uuid "f295cd8c-c710-4854-8fbb-e24d5f8c3a09")
 	)
-	(label "Tue"
+	(label "Sat"
 		(at 63.5 137.16 0)
 		(effects
 			(font
