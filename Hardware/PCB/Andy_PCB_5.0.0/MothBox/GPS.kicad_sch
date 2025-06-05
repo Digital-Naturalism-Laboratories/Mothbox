@@ -713,130 +713,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "R"
-				(at 2.032 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "R"
-				(at 0 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "R_0_1"
-				(rectangle
-					(start -1.016 -2.54)
-					(end 1.016 2.54)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "easyeda2kicad:2.54-1*4P母"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1945,19 +1821,6 @@
 		)
 	)
 	(rectangle
-		(start 209.55 24.13)
-		(end 284.48 105.41)
-		(stroke
-			(width 0.2032)
-			(type solid)
-			(color 170 68 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 2411ba2d-b852-44c5-b62d-22b1de3b5c4a)
-	)
-	(rectangle
 		(start 36.322 109.22)
 		(end 285.75 182.88)
 		(stroke
@@ -1969,19 +1832,6 @@
 			(type none)
 		)
 		(uuid 3f463306-ce82-4c31-b1ae-d591ad10d3ad)
-	)
-	(rectangle
-		(start 85.09 22.225)
-		(end 285.75 106.68)
-		(stroke
-			(width 0.508)
-			(type solid)
-			(color 110 0 0 1)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 4c50ed87-442b-4289-aab2-000725984f7e)
 	)
 	(text "GPS connects"
 		(exclude_from_sim no)
@@ -2055,22 +1905,10 @@
 		(uuid "141c0915-3653-40fb-80c4-f85d9d05d4fe")
 	)
 	(junction
-		(at 173.99 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "18b75c87-f613-4ec0-b75d-ac406f6f672a")
-	)
-	(junction
 		(at 179.07 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1b23966a-47ce-4313-9afd-58aa266bec2d")
-	)
-	(junction
-		(at 267.97 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1ce138d2-b736-4422-b606-5efb411e508f")
 	)
 	(junction
 		(at 123.19 50.8)
@@ -2091,18 +1929,6 @@
 		(uuid "2b07fc61-8fca-4706-b982-657b90e940c6")
 	)
 	(junction
-		(at 240.03 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "2df10c2e-bbcb-4b0f-a63e-ba5a36867c4d")
-	)
-	(junction
-		(at 275.59 67.31)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "322a4d5d-3877-4346-9897-2f627c4c4fa3")
-	)
-	(junction
 		(at 135.89 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2113,12 +1939,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3637fcd3-d8ab-476f-8bbd-57a7a85e5230")
-	)
-	(junction
-		(at 135.89 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "36e7909b-e24d-4701-800a-dc772dccf27a")
 	)
 	(junction
 		(at 125.73 129.54)
@@ -2133,28 +1953,10 @@
 		(uuid "3977d075-3d16-4849-b35c-f509fa560755")
 	)
 	(junction
-		(at 156.21 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3a4eb308-b875-4b66-9bd3-867d1d6a617f")
-	)
-	(junction
 		(at 245.11 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3bb655b3-1f65-4ee5-bab0-92185474e999")
-	)
-	(junction
-		(at 280.67 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3dda9cf1-c524-4752-be8f-9bb6ff93900d")
-	)
-	(junction
-		(at 189.23 50.8)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "43b13386-c44b-4ed5-a821-bb260fe9f1cd")
 	)
 	(junction
 		(at 184.15 95.25)
@@ -2181,28 +1983,10 @@
 		(uuid "4a2af95f-9e64-4efe-bd88-0f03b1ed349a")
 	)
 	(junction
-		(at 135.89 63.5)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4a8d6b05-207f-44dc-bb58-5a36f01b129d")
-	)
-	(junction
-		(at 181.61 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "4d28aa85-5a05-42da-bd75-b5bc5f364725")
-	)
-	(junction
 		(at 138.43 66.04)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "4f5229a1-8e94-4d86-a56a-06de93b0add5")
-	)
-	(junction
-		(at 130.81 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5c53f065-f6a2-4c17-b5ce-288a62873966")
 	)
 	(junction
 		(at 154.94 64.77)
@@ -2211,28 +1995,10 @@
 		(uuid "5f61f909-83be-47f2-a683-f1dea09d5e28")
 	)
 	(junction
-		(at 273.05 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "606ec344-bc8d-41a8-9cde-45a9ff063c02")
-	)
-	(junction
-		(at 158.75 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "63b17540-f9d1-4d6c-9c97-ba796988e9a5")
-	)
-	(junction
 		(at 278.13 69.85)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "661f5641-3d46-4291-bcda-8faa9d26fd49")
-	)
-	(junction
-		(at 184.15 58.42)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "696f7fca-ba89-4f76-8194-895f5d3f2853")
 	)
 	(junction
 		(at 173.99 95.25)
@@ -2259,18 +2025,6 @@
 		(uuid "6ff0a00b-2580-4077-bc33-b541cb1b896a")
 	)
 	(junction
-		(at 229.87 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "743a3aef-d61e-4771-85b6-79d17baa29a1")
-	)
-	(junction
-		(at 265.43 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "76eaa969-7310-4932-814b-cde215407587")
-	)
-	(junction
 		(at 128.27 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2283,40 +2037,10 @@
 		(uuid "80826c85-d2ed-4c80-8395-84b4faae7c47")
 	)
 	(junction
-		(at 125.73 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "81548e3e-3622-440f-b08b-2ec011105861")
-	)
-	(junction
-		(at 186.69 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "82bd3275-3428-4482-bb9d-51117c4d14c6")
-	)
-	(junction
 		(at 232.41 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "846c489a-8de5-43a1-b506-d988c041d8f4")
-	)
-	(junction
-		(at 234.95 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8bf009fa-bd26-403e-a38f-43ab8b77ddf6")
-	)
-	(junction
-		(at 242.57 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8f73fdb7-a608-442b-87f3-523176bb3722")
-	)
-	(junction
-		(at 229.87 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "920e4a5b-d72a-491f-925d-1e3405933eec")
 	)
 	(junction
 		(at 130.81 95.25)
@@ -2347,18 +2071,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "95933fbb-b415-4792-a6db-68e8ef26629a")
-	)
-	(junction
-		(at 128.27 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9741c883-4de1-4e3d-a93b-031e19f580de")
-	)
-	(junction
-		(at 240.03 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "9b720948-d5f7-4b6f-8c4a-33c75b5f6c89")
 	)
 	(junction
 		(at 240.03 99.06)
@@ -2409,58 +2121,16 @@
 		(uuid "ac653922-51dc-4278-943b-3d33c1441a6a")
 	)
 	(junction
-		(at 265.43 57.15)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ace0080f-fb55-4871-8e8a-02984020c50c")
-	)
-	(junction
-		(at 125.73 53.34)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bafcea0b-d5f2-46e5-a748-7d36a6866edd")
-	)
-	(junction
 		(at 232.41 59.69)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c797595d-09f0-4fba-ab9d-0e06c6453248")
 	)
 	(junction
-		(at 270.51 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ca287a27-72f5-403f-b2e9-4878eb39d543")
-	)
-	(junction
-		(at 275.59 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d2389d68-58c9-43ef-802a-f96877e833e5")
-	)
-	(junction
-		(at 262.89 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d44f1ce0-004c-4d64-81a5-4d4d65d689bc")
-	)
-	(junction
 		(at 234.95 99.06)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d9c47915-812e-4cb8-846d-e7d9805ca6c9")
-	)
-	(junction
-		(at 278.13 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "da895acd-7e80-46fb-98ef-db74e0c52e69")
-	)
-	(junction
-		(at 232.41 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "dd1d7021-2ef9-40d7-978f-03a9a9651fea")
 	)
 	(junction
 		(at 227.33 99.06)
@@ -2475,36 +2145,6 @@
 		(uuid "de20b0e8-c7aa-46df-bf07-07ae205d4a85")
 	)
 	(junction
-		(at 133.35 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "df591e02-544b-4266-bde9-f24c1b4fd8a5")
-	)
-	(junction
-		(at 270.51 62.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e4c670ea-52d0-41eb-8d5b-a3b42a78cb97")
-	)
-	(junction
-		(at 234.95 62.23)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ec89598a-bc9c-46ee-99a0-876fe2087a7e")
-	)
-	(junction
-		(at 184.15 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "eea22f14-f76e-4bb6-adb2-538d6b152b3c")
-	)
-	(junction
-		(at 237.49 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f45f3d52-767a-4152-8586-1ac8cc22382b")
-	)
-	(junction
 		(at 176.53 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2515,24 +2155,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fbb6dcce-434a-43fd-a7c3-c5374473f34f")
-	)
-	(junction
-		(at 123.19 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fbbc5624-850a-4c9d-955d-3f41bf7a1b0d")
-	)
-	(junction
-		(at 130.81 31.75)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fef43d69-91c1-4753-a43d-99e56cb6c2e7")
-	)
-	(junction
-		(at 227.33 35.56)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "ff1817ea-9fd3-444c-a3e5-3f832f90b4b3")
 	)
 	(junction
 		(at 173.99 57.15)
@@ -2612,36 +2234,6 @@
 	)
 	(wire
 		(pts
-			(xy 275.59 39.37) (xy 275.59 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "09992cd7-e050-4cca-a96c-8ddd6484c38c")
-	)
-	(wire
-		(pts
-			(xy 270.51 35.56) (xy 267.97 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0b8b7d2c-5196-420b-8cc6-ae770c816593")
-	)
-	(wire
-		(pts
-			(xy 186.69 31.75) (xy 184.15 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0bc7583b-b46f-4696-9c0a-f272a0eae6ec")
-	)
-	(wire
-		(pts
 			(xy 149.86 62.23) (xy 165.1 62.23)
 		)
 		(stroke
@@ -2659,26 +2251,6 @@
 			(type default)
 		)
 		(uuid "0bde3e93-e720-4808-b230-2d2d6aab8a0f")
-	)
-	(wire
-		(pts
-			(xy 138.43 41.91) (xy 138.43 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0c2fc048-3eda-4a6e-b724-86eeac06be6a")
-	)
-	(wire
-		(pts
-			(xy 130.81 31.75) (xy 128.27 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0d3e788c-935a-4472-9045-488ae75bb393")
 	)
 	(wire
 		(pts
@@ -2702,16 +2274,6 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 31.75) (xy 158.75 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0f7dfb92-2ee2-44bc-bd3a-45e10938c139")
-	)
-	(wire
-		(pts
 			(xy 165.1 57.15) (xy 173.99 57.15)
 		)
 		(stroke
@@ -2719,26 +2281,6 @@
 			(type default)
 		)
 		(uuid "10b2a765-f819-4ab7-8aa0-c14b0c413ca6")
-	)
-	(wire
-		(pts
-			(xy 189.23 31.75) (xy 186.69 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "119f647d-6dac-431c-84c4-74c792505dcf")
-	)
-	(wire
-		(pts
-			(xy 229.87 46.99) (xy 229.87 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "11e0da77-4a32-4ef5-bb3d-895c7799035a")
 	)
 	(wire
 		(pts
@@ -2772,16 +2314,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 31.75) (xy 156.21 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "13bef98b-ec93-434e-8dc9-3cc5d8c8827d")
-	)
-	(wire
-		(pts
 			(xy 153.67 57.15) (xy 153.67 63.5)
 		)
 		(stroke
@@ -2789,16 +2321,6 @@
 			(type default)
 		)
 		(uuid "15308f36-fe19-459e-99f9-a2fabd4b45d9")
-	)
-	(wire
-		(pts
-			(xy 227.33 34.29) (xy 227.33 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "155939b5-b7c9-4b3a-82c8-5a9074ff3eda")
 	)
 	(wire
 		(pts
@@ -2849,16 +2371,6 @@
 			(type default)
 		)
 		(uuid "1aa8af13-7581-4dd9-8b33-4dca72cf59d0")
-	)
-	(wire
-		(pts
-			(xy 275.59 46.99) (xy 275.59 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1b600900-65df-4853-8e2c-f3e44881614c")
 	)
 	(wire
 		(pts
@@ -2919,16 +2431,6 @@
 			(type default)
 		)
 		(uuid "213cd96c-5dbd-41f0-9a4c-74aa68b79d89")
-	)
-	(wire
-		(pts
-			(xy 242.57 35.56) (xy 246.38 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "225aad55-b42a-4785-a2a8-fece37d02a24")
 	)
 	(wire
 		(pts
@@ -3042,16 +2544,6 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 31.75) (xy 125.73 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2bb7d73d-efb3-4722-b2c4-75cfabb907b1")
-	)
-	(wire
-		(pts
 			(xy 226.06 71.12) (xy 245.11 71.12)
 		)
 		(stroke
@@ -3072,16 +2564,6 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 35.56) (xy 237.49 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2e039cf3-0f8c-4555-a448-cb666d2b6251")
-	)
-	(wire
-		(pts
 			(xy 184.15 58.42) (xy 184.15 68.58)
 		)
 		(stroke
@@ -3092,16 +2574,6 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 31.75) (xy 181.61 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2fa50c24-6525-4dcb-b0f0-c6cd85bcf482")
-	)
-	(wire
-		(pts
 			(xy 168.91 49.53) (xy 168.91 60.96)
 		)
 		(stroke
@@ -3109,16 +2581,6 @@
 			(type default)
 		)
 		(uuid "302b4d34-62b2-460d-bafb-c51a049420c5")
-	)
-	(wire
-		(pts
-			(xy 184.15 31.75) (xy 181.61 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "310f58c8-f043-47cc-8620-9a6abc74b8f1")
 	)
 	(wire
 		(pts
@@ -3139,36 +2601,6 @@
 			(type default)
 		)
 		(uuid "335f191c-6a30-486e-b200-bcef9c7d0e4b")
-	)
-	(wire
-		(pts
-			(xy 273.05 35.56) (xy 275.59 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34321ffe-fbcb-459f-aa0d-596dc9d326a8")
-	)
-	(wire
-		(pts
-			(xy 278.13 35.56) (xy 278.13 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "347d15b2-1f26-46c1-814e-30f9c3dbb318")
-	)
-	(wire
-		(pts
-			(xy 273.05 35.56) (xy 273.05 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34cd926f-9db7-415a-8a09-92e78533d936")
 	)
 	(wire
 		(pts
@@ -3239,26 +2671,6 @@
 			(type default)
 		)
 		(uuid "3b3e9522-744b-4295-a1d2-a7f3e24a6807")
-	)
-	(wire
-		(pts
-			(xy 133.35 31.75) (xy 133.35 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3bfb7ace-78ac-433e-afea-c51bb9363af9")
-	)
-	(wire
-		(pts
-			(xy 262.89 35.56) (xy 262.89 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3c8c04a6-ec41-4a5d-b0e1-8716b46f685b")
 	)
 	(wire
 		(pts
@@ -3352,26 +2764,6 @@
 	)
 	(wire
 		(pts
-			(xy 280.67 35.56) (xy 280.67 38.1)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "445690b8-afb9-43ca-ba7e-cdcf883291ea")
-	)
-	(wire
-		(pts
-			(xy 240.03 35.56) (xy 242.57 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "458a986b-529e-43a2-860b-e06bfa867e50")
-	)
-	(wire
-		(pts
 			(xy 246.38 57.15) (xy 245.11 57.15)
 		)
 		(stroke
@@ -3459,16 +2851,6 @@
 			(type default)
 		)
 		(uuid "4ef33822-86d2-49be-833b-b175446e8643")
-	)
-	(wire
-		(pts
-			(xy 273.05 35.56) (xy 270.51 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "4f053855-94e8-45cf-ab78-7350e1c72fef")
 	)
 	(wire
 		(pts
@@ -3572,16 +2954,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 35.56) (xy 229.87 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5c59ffc9-467e-400f-adf5-df59550688be")
-	)
-	(wire
-		(pts
 			(xy 179.07 95.25) (xy 181.61 95.25)
 		)
 		(stroke
@@ -3589,16 +2961,6 @@
 			(type default)
 		)
 		(uuid "5cc4fd7a-5f25-4d5f-ba1e-313417d4a569")
-	)
-	(wire
-		(pts
-			(xy 232.41 35.56) (xy 232.41 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5ce05b56-abe3-4e77-9520-e149c181aeb7")
 	)
 	(wire
 		(pts
@@ -3702,16 +3064,6 @@
 	)
 	(wire
 		(pts
-			(xy 186.69 31.75) (xy 186.69 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "641ebfc2-bc77-443f-ba2d-09fe89877303")
-	)
-	(wire
-		(pts
 			(xy 186.69 95.25) (xy 184.15 95.25)
 		)
 		(stroke
@@ -3719,16 +3071,6 @@
 			(type default)
 		)
 		(uuid "64647d90-94a5-487d-a836-9232e0d42717")
-	)
-	(wire
-		(pts
-			(xy 125.73 43.18) (xy 125.73 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "666318b4-3a85-4248-8bff-756365ab8722")
 	)
 	(wire
 		(pts
@@ -3772,16 +3114,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 43.18) (xy 158.75 60.96)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6826aa36-4edd-495d-acd1-56d39daa73c9")
-	)
-	(wire
-		(pts
 			(xy 189.23 88.9) (xy 189.23 95.25)
 		)
 		(stroke
@@ -3809,46 +3141,6 @@
 			(type default)
 		)
 		(uuid "6a2a5f04-ff32-429f-96c2-bae495dcebe0")
-	)
-	(wire
-		(pts
-			(xy 267.97 35.56) (xy 267.97 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6b8d45a6-f712-4166-ae16-41ed23826b41")
-	)
-	(wire
-		(pts
-			(xy 125.73 31.75) (xy 123.19 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6c9da29b-5758-44f5-8361-ab51a4264475")
-	)
-	(wire
-		(pts
-			(xy 270.51 46.99) (xy 270.51 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d018543-e95a-427c-a7a6-dfc954adab1a")
-	)
-	(wire
-		(pts
-			(xy 158.75 31.75) (xy 158.75 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6d3e97bf-adc8-4a1a-a5a5-9f226fe92983")
 	)
 	(wire
 		(pts
@@ -3882,16 +3174,6 @@
 	)
 	(wire
 		(pts
-			(xy 229.87 35.56) (xy 227.33 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6fa781d8-ea01-4d32-b0c0-c1f8b31be851")
-	)
-	(wire
-		(pts
 			(xy 153.67 57.15) (xy 156.21 57.15)
 		)
 		(stroke
@@ -3899,16 +3181,6 @@
 			(type default)
 		)
 		(uuid "7091eb8e-1489-4a6e-830c-c3c720ba889a")
-	)
-	(wire
-		(pts
-			(xy 161.29 31.75) (xy 161.29 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "70f8c162-48aa-4b97-add1-9ac56666daf9")
 	)
 	(wire
 		(pts
@@ -3939,16 +3211,6 @@
 			(type default)
 		)
 		(uuid "71bf1ac3-bede-4ca5-8f8d-e650992394a3")
-	)
-	(wire
-		(pts
-			(xy 232.41 35.56) (xy 229.87 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "71f0c3bf-8b02-41fc-a3f2-8faf71136b3c")
 	)
 	(wire
 		(pts
@@ -4042,16 +3304,6 @@
 	)
 	(wire
 		(pts
-			(xy 280.67 45.72) (xy 280.67 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "79ac219c-b47b-40f2-8fab-1a0695d19cde")
-	)
-	(wire
-		(pts
 			(xy 184.15 88.9) (xy 184.15 95.25)
 		)
 		(stroke
@@ -4122,26 +3374,6 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 46.99) (xy 265.43 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7f8451c8-d595-4ada-8e2a-3779ca3a66cf")
-	)
-	(wire
-		(pts
-			(xy 227.33 35.56) (xy 227.33 45.72)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7fbf738f-2e7c-4554-a6f6-67e0c489af00")
-	)
-	(wire
-		(pts
 			(xy 232.41 53.34) (xy 232.41 59.69)
 		)
 		(stroke
@@ -4172,16 +3404,6 @@
 	)
 	(wire
 		(pts
-			(xy 246.38 35.56) (xy 246.38 40.64)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "83278aa3-cf7f-4284-9c00-0f13466dfdef")
-	)
-	(wire
-		(pts
 			(xy 118.11 129.54) (xy 125.73 129.54)
 		)
 		(stroke
@@ -4199,16 +3421,6 @@
 			(type default)
 		)
 		(uuid "865b876a-c635-4ebe-86d3-b1b0fb0589b9")
-	)
-	(wire
-		(pts
-			(xy 173.99 31.75) (xy 173.99 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "86607783-cce5-46eb-a417-431da3f95acc")
 	)
 	(wire
 		(pts
@@ -4322,16 +3534,6 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 31.75) (xy 168.91 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8d5a8540-b1ff-44de-941b-3eabb5aabd61")
-	)
-	(wire
-		(pts
 			(xy 179.07 171.45) (xy 179.07 172.72)
 		)
 		(stroke
@@ -4359,16 +3561,6 @@
 			(type default)
 		)
 		(uuid "8ef0a91b-5a99-489f-9286-315454e94cd9")
-	)
-	(wire
-		(pts
-			(xy 128.27 31.75) (xy 128.27 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f3b546c-2e32-46e7-bd19-aac6b8ab942d")
 	)
 	(wire
 		(pts
@@ -4412,36 +3604,6 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 31.75) (xy 123.19 41.91)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92a3534c-d3e5-43bb-adbc-72791e7f3f44")
-	)
-	(wire
-		(pts
-			(xy 130.81 43.18) (xy 130.81 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "92ea80f7-ee73-4e9b-83d6-e6248c45af9e")
-	)
-	(wire
-		(pts
-			(xy 246.38 48.26) (xy 246.38 57.15)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "93624517-ca17-418e-b4d0-254e1fec0ab4")
-	)
-	(wire
-		(pts
 			(xy 247.65 64.77) (xy 273.05 64.77)
 		)
 		(stroke
@@ -4452,16 +3614,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 39.37) (xy 240.03 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "964aed7c-9cd6-4f6d-92de-93a7e47806ee")
-	)
-	(wire
-		(pts
 			(xy 168.91 60.96) (xy 168.91 68.58)
 		)
 		(stroke
@@ -4469,16 +3621,6 @@
 			(type default)
 		)
 		(uuid "976d40b7-74bf-4e35-a9f7-03547b504d07")
-	)
-	(wire
-		(pts
-			(xy 189.23 31.75) (xy 189.23 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "97b450f9-ad9f-4e89-a1ef-86d993f45b0d")
 	)
 	(wire
 		(pts
@@ -4582,16 +3724,6 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 34.29) (xy 262.89 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9e6ed38d-fbb2-408f-89e8-e3ae230562dd")
-	)
-	(wire
-		(pts
 			(xy 82.55 163.83) (xy 82.55 165.1)
 		)
 		(stroke
@@ -4612,16 +3744,6 @@
 	)
 	(wire
 		(pts
-			(xy 242.57 45.72) (xy 242.57 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a123083f-7fc2-42e4-8f94-4c123ee1cc53")
-	)
-	(wire
-		(pts
 			(xy 213.36 64.77) (xy 237.49 64.77)
 		)
 		(stroke
@@ -4629,16 +3751,6 @@
 			(type default)
 		)
 		(uuid "a1feb477-b24a-461a-9554-a462b2d0b2ff")
-	)
-	(wire
-		(pts
-			(xy 234.95 35.56) (xy 232.41 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2b6dc90-e872-4362-94a0-538d4070ff1d")
 	)
 	(wire
 		(pts
@@ -4722,36 +3834,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 31.75) (xy 130.81 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a700f2a2-3ab2-4cc2-aab9-1578e3b0da21")
-	)
-	(wire
-		(pts
-			(xy 184.15 43.18) (xy 184.15 58.42)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a781ba5e-c989-4c04-8d86-fdc6fb548d8d")
-	)
-	(wire
-		(pts
-			(xy 123.19 30.48) (xy 123.19 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a8434714-b33c-442f-86e0-3faad29ca272")
-	)
-	(wire
-		(pts
 			(xy 179.07 170.18) (xy 193.04 170.18)
 		)
 		(stroke
@@ -4812,26 +3894,6 @@
 	)
 	(wire
 		(pts
-			(xy 234.95 46.99) (xy 234.95 62.23)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae6ae9c5-908c-4225-b593-a2e3522daafb")
-	)
-	(wire
-		(pts
-			(xy 184.15 31.75) (xy 184.15 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "aeda3fed-b860-43a2-91b8-0d71d60ce85e")
-	)
-	(wire
-		(pts
 			(xy 179.07 147.32) (xy 193.04 147.32)
 		)
 		(stroke
@@ -4842,16 +3904,6 @@
 	)
 	(wire
 		(pts
-			(xy 278.13 35.56) (xy 280.67 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b09d6a8d-207e-495f-a078-8f7e35614f26")
-	)
-	(wire
-		(pts
 			(xy 179.07 162.56) (xy 193.04 162.56)
 		)
 		(stroke
@@ -4859,16 +3911,6 @@
 			(type default)
 		)
 		(uuid "b427decd-ea69-4212-9240-a4aab807f941")
-	)
-	(wire
-		(pts
-			(xy 189.23 43.18) (xy 189.23 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b4cdee35-913b-4db1-a408-708fe9bc1577")
 	)
 	(wire
 		(pts
@@ -4899,26 +3941,6 @@
 			(type default)
 		)
 		(uuid "b9207c14-9886-4707-aacf-c9350ebe5b60")
-	)
-	(wire
-		(pts
-			(xy 135.89 43.18) (xy 135.89 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9231d53-520f-42b8-bfa8-ccfb51c46986")
-	)
-	(wire
-		(pts
-			(xy 133.35 31.75) (xy 135.89 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "b9597d03-661a-41c0-a868-a5801323f334")
 	)
 	(wire
 		(pts
@@ -4982,26 +4004,6 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 31.75) (xy 138.43 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf32dd75-5571-4993-bf48-9b9ce2550303")
-	)
-	(wire
-		(pts
-			(xy 270.51 35.56) (xy 270.51 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "bf9f9267-23cc-4400-8e2c-37bcd28c0384")
-	)
-	(wire
-		(pts
 			(xy 130.81 95.25) (xy 128.27 95.25)
 		)
 		(stroke
@@ -5032,16 +4034,6 @@
 	)
 	(wire
 		(pts
-			(xy 130.81 31.75) (xy 130.81 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c1501e17-d944-4715-8dfd-bdab2f1bdb50")
-	)
-	(wire
-		(pts
 			(xy 275.59 99.06) (xy 278.13 99.06)
 		)
 		(stroke
@@ -5049,16 +4041,6 @@
 			(type default)
 		)
 		(uuid "c2e05d70-8d60-454a-9637-a2113b30f587")
-	)
-	(wire
-		(pts
-			(xy 267.97 35.56) (xy 265.43 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c493ca2b-b6b3-4e0e-af02-1b6f2c6f14f9")
 	)
 	(wire
 		(pts
@@ -5072,16 +4054,6 @@
 	)
 	(wire
 		(pts
-			(xy 158.75 31.75) (xy 156.21 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c7dc6162-f268-49bc-963c-e552737a6096")
-	)
-	(wire
-		(pts
 			(xy 125.73 95.25) (xy 123.19 95.25)
 		)
 		(stroke
@@ -5092,16 +4064,6 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 35.56) (xy 262.89 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ca1af158-1582-432f-9565-5a1c31d17a57")
-	)
-	(wire
-		(pts
 			(xy 125.73 129.54) (xy 125.73 130.81)
 		)
 		(stroke
@@ -5109,16 +4071,6 @@
 			(type default)
 		)
 		(uuid "ca35eda8-4951-4546-a91e-58bc7be4891b")
-	)
-	(wire
-		(pts
-			(xy 173.99 31.75) (xy 168.91 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ccc7f58e-0cf2-4def-940d-f48de48bf8fb")
 	)
 	(wire
 		(pts
@@ -5202,16 +4154,6 @@
 	)
 	(wire
 		(pts
-			(xy 135.89 35.56) (xy 135.89 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d40e0d93-e7c4-48d5-a11b-6eaf49c00a61")
-	)
-	(wire
-		(pts
 			(xy 63.5 162.56) (xy 82.55 162.56)
 		)
 		(stroke
@@ -5232,16 +4174,6 @@
 	)
 	(wire
 		(pts
-			(xy 237.49 35.56) (xy 240.03 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d606f829-982a-4fa7-a30a-953c90c9728e")
-	)
-	(wire
-		(pts
 			(xy 123.19 88.9) (xy 123.19 95.25)
 		)
 		(stroke
@@ -5259,16 +4191,6 @@
 			(type default)
 		)
 		(uuid "d72b8f07-e4a5-4ee6-b832-4df2d4e6ef03")
-	)
-	(wire
-		(pts
-			(xy 234.95 35.56) (xy 234.95 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d9b3de29-a09c-4aee-90de-35c6f7d6513d")
 	)
 	(wire
 		(pts
@@ -5332,16 +4254,6 @@
 	)
 	(wire
 		(pts
-			(xy 128.27 31.75) (xy 125.73 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "df4b9e7a-1e7f-4bab-9beb-14ad318b5711")
-	)
-	(wire
-		(pts
 			(xy 247.65 54.61) (xy 262.89 54.61)
 		)
 		(stroke
@@ -5402,16 +4314,6 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 30.48) (xy 156.21 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eba37556-5069-48dd-9e50-2e59ef521b03")
-	)
-	(wire
-		(pts
 			(xy 45.72 151.13) (xy 82.55 151.13)
 		)
 		(stroke
@@ -5449,16 +4351,6 @@
 			(type default)
 		)
 		(uuid "edd4870e-10bf-4788-a031-39a343aa6585")
-	)
-	(wire
-		(pts
-			(xy 237.49 35.56) (xy 234.95 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eec1a44d-793d-4595-a89f-cea12bba4b81")
 	)
 	(wire
 		(pts
@@ -5542,36 +4434,6 @@
 	)
 	(wire
 		(pts
-			(xy 181.61 30.48) (xy 181.61 31.75)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "f854e0d6-06e8-4a4c-8de5-47fe01447028")
-	)
-	(wire
-		(pts
-			(xy 265.43 35.56) (xy 265.43 39.37)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fb07a206-14cd-43d0-aabe-06431bc3195f")
-	)
-	(wire
-		(pts
-			(xy 240.03 46.99) (xy 240.03 67.31)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fc437859-bf9b-4709-8a5a-882c9ebb2a1c")
-	)
-	(wire
-		(pts
 			(xy 195.58 58.42) (xy 184.15 58.42)
 		)
 		(stroke
@@ -5599,16 +4461,6 @@
 			(type default)
 		)
 		(uuid "fe22c288-cc99-4f77-a67a-05ae0b70b816")
-	)
-	(wire
-		(pts
-			(xy 275.59 35.56) (xy 278.13 35.56)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ffc04946-8154-47b4-b52c-f3edd4f7ae31")
 	)
 	(wire
 		(pts
@@ -6702,382 +5554,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 138.43 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "02c3aaf7-a2c4-431e-a4c0-39d8cd500237")
-		(property "Reference" "R24"
-			(at 136.398 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 138.43 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 136.652 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 138.43 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "baf55482-097d-4b56-8cfa-e4f2a76ac09c")
-		)
-		(pin "1"
-			(uuid "dc8b1c17-a241-47bf-b376-5babac1ec292")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R24")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 232.41 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "063dee33-42d8-4bd5-a6a4-498ac4f037b8")
-		(property "Reference" "R36"
-			(at 230.378 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 232.41 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 230.632 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 232.41 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 232.41 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 232.41 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 232.41 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 232.41 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ae33eb14-e674-4965-85f8-57cabf9b4704")
-		)
-		(pin "1"
-			(uuid "0b8feb56-cf03-4218-a1e3-b67abba24c89")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R36")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 273.05 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "077e9f5c-7af8-419c-84bf-239136182a90")
-		(property "Reference" "R49"
-			(at 271.018 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 273.05 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 271.272 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 273.05 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 273.05 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 273.05 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 273.05 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 273.05 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "6fa6b8bf-c336-490a-81c1-2261ac154560")
-		)
-		(pin "1"
-			(uuid "175ffecf-9065-4f4f-a1fb-4aa90e3011d5")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R49")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 158.75 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0af15f89-3923-48f6-b9ea-2cb089c56bf4")
-		(property "Reference" "R28"
-			(at 156.718 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 158.75 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 156.972 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 158.75 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 158.75 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 158.75 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 158.75 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 158.75 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "87433b57-577e-40d9-a861-3c6fec3b045c")
-		)
-		(pin "1"
-			(uuid "ab11b2cb-2a52-4868-8c3f-b432964ca5d9")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R28")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "easyeda2kicad:2.54-1*4P母")
 		(at 38.1 45.72 0)
 		(unit 1)
@@ -7157,288 +5633,6 @@
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "H9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 186.69 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "10958c6e-e45f-4c09-b219-8bd1ead70d74")
-		(property "Reference" "R32"
-			(at 184.658 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 186.69 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 184.912 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 186.69 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 186.69 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 186.69 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 186.69 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 186.69 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "a4dc3074-b877-4257-8202-ae9d30488d48")
-		)
-		(pin "1"
-			(uuid "cac58716-1037-4e54-8993-4c7e288fdd6d")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R32")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 275.59 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "162c179c-d857-4a05-bcdc-242c86ac8864")
-		(property "Reference" "R50"
-			(at 273.558 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 275.59 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 273.812 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 275.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 275.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 275.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 275.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 275.59 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "99e698c2-7e0a-4112-94e0-1a59283369f3")
-		)
-		(pin "1"
-			(uuid "48816241-551f-4237-ac90-d42a8d47f04e")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R50")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 270.51 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "16e4aaf9-9d48-4ea3-8ad8-fa914bfb9d91")
-		(property "Reference" "R48"
-			(at 268.478 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 270.51 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 268.732 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 270.51 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 270.51 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 270.51 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 270.51 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 270.51 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "b4cf1156-3e50-4ce4-9401-d1617e42269b")
-		)
-		(pin "1"
-			(uuid "3e9a82f5-f62f-4ca1-94e2-3bd69edbde73")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R48")
 					(unit 1)
 				)
 			)
@@ -7642,232 +5836,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 156.21 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2806495a-f814-464e-97e1-3acad6664b83")
-		(property "Reference" "#PWR065"
-			(at 156.21 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 156.21 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 156.21 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 156.21 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 156.21 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1f0439b3-e3ea-49c8-b37b-9eeb9aadcdfb")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "#PWR065")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 130.81 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "28a269bc-8e4b-4b1c-96cf-88a1603ba667")
-		(property "Reference" "R19"
-			(at 128.778 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 130.81 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 129.032 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 130.81 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 130.81 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 130.81 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 130.81 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 130.81 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "0c72908d-9b86-4dc8-8377-05ae69a89127")
-		)
-		(pin "1"
-			(uuid "719f2d9b-22ac-44dd-aaca-4c490eb261e1")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R19")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 262.89 34.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "2a59610d-6659-4a42-bc0c-287aaf80ea7d")
-		(property "Reference" "#PWR074"
-			(at 262.89 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 262.89 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 262.89 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 262.89 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 262.89 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f1150d4c-b55c-4853-a3c7-0a7363bcb76f")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "#PWR074")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "CD74HC4067M96E4:CD74HC4067M96E4")
 		(at 100.33 153.67 0)
 		(unit 1)
@@ -8042,354 +6010,6 @@
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "U8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 128.27 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2da73853-1de0-4805-a2d7-9d3976f965b9")
-		(property "Reference" "R18"
-			(at 126.238 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 128.27 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 126.492 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 128.27 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 128.27 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 128.27 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 128.27 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 128.27 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "16236aea-99fd-4abe-8bb0-4a30a82a5656")
-		)
-		(pin "1"
-			(uuid "5fd6b9dc-e73a-47e2-9b96-4fd438f72881")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R18")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 227.33 34.29 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "30b168b8-6d2f-4a09-9ca2-278c6223b47f")
-		(property "Reference" "#PWR070"
-			(at 227.33 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 227.33 29.21 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 227.33 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 227.33 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 227.33 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "09df45a9-c082-4404-90f2-05213a80d42c")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "#PWR070")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 189.23 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "30fafab2-33ad-4226-b24e-31c206fc9448")
-		(property "Reference" "R33"
-			(at 187.198 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 189.23 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 187.452 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 189.23 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 189.23 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 189.23 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 189.23 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 189.23 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "ddc8a2c6-f859-4ab2-a43c-78209b070de6")
-		)
-		(pin "1"
-			(uuid "e0e2fd8f-ce17-436d-9a57-d91a586f30d1")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R33")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 184.15 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3533ea1a-7fdb-4e12-93ed-633826adb714")
-		(property "Reference" "R31"
-			(at 182.118 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 184.15 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 182.372 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 184.15 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "037d8300-f1c8-4bcc-a2d1-de0f691d6e87")
-		)
-		(pin "1"
-			(uuid "5be78bbb-8ae4-4966-922c-c39dee91dedb")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R31")
 					(unit 1)
 				)
 			)
@@ -8626,166 +6246,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+3.3V")
-		(at 123.19 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "4c0aef90-a9e6-4bef-bda6-da51cf5b22e4")
-		(property "Reference" "#PWR062"
-			(at 123.19 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 123.19 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 123.19 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 123.19 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 123.19 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "e3dbf8c7-80e9-45be-b65b-69917ac5bc54")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "#PWR062")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 227.33 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "53da2a13-ee92-406b-900f-3621698a64bc")
-		(property "Reference" "R34"
-			(at 225.298 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 227.33 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 225.552 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 227.33 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 227.33 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 227.33 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 227.33 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 227.33 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "c4621a41-fa2b-4850-9f35-265500fbb942")
-		)
-		(pin "1"
-			(uuid "429f7f8b-93ad-4480-a632-308f2c4de3ea")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R34")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 123.19 173.99 0)
 		(unit 1)
@@ -8846,194 +6306,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "#PWR059")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 133.35 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "56b6826f-14bc-4b22-a84b-50804f7ddb86")
-		(property "Reference" "R20"
-			(at 131.318 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 133.35 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 131.572 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 133.35 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 133.35 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 133.35 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 133.35 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 133.35 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "bc57f101-0c03-4175-8bdc-13f83939820b")
-		)
-		(pin "1"
-			(uuid "15cd5410-2e38-4aab-9eaa-223f163eb8fe")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R20")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 267.97 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "57dc30ab-2a07-4864-96be-d07e33e596ec")
-		(property "Reference" "R47"
-			(at 265.938 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 267.97 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 266.192 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 267.97 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "772c7066-3660-4710-81e1-a1cfcd295f0c")
-		)
-		(pin "1"
-			(uuid "37542898-604a-4fdf-b6ff-86df521ace5f")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R47")
 					(unit 1)
 				)
 			)
@@ -9249,100 +6521,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 280.67 41.91 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "5d36a889-7b3a-4ec6-9c5f-a3b77a4d12fb")
-		(property "Reference" "R59"
-			(at 278.638 43.434 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 280.67 43.434 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 278.892 41.91 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 280.67 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 280.67 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 280.67 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 280.67 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 280.67 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "4be6bd3f-e71d-493a-ae57-ca56728ca434")
-		)
-		(pin "1"
-			(uuid "255bdda9-39e7-440c-b282-58e906595023")
-		)
-		(instances
-			(project "MothBox"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R59")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 231.14 175.26 0)
 		(unit 1)
@@ -9403,288 +6581,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "#PWR069")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 262.89 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "60bfb138-4497-49d3-971b-b70190f22e59")
-		(property "Reference" "R45"
-			(at 260.858 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 262.89 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 261.112 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 262.89 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 262.89 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 262.89 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 262.89 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 262.89 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "9468f9b1-be9d-4120-8c8f-535eca460abe")
-		)
-		(pin "1"
-			(uuid "4843a2af-2cff-45ee-98c3-70d7d75def25")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R45")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 161.29 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "60ce3527-e058-4bd9-91aa-5a9fc908f68b")
-		(property "Reference" "R29"
-			(at 159.258 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 161.29 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 159.512 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 161.29 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 161.29 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 161.29 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 161.29 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 161.29 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "16b44632-4857-43f1-8b7a-71f992f57d7c")
-		)
-		(pin "1"
-			(uuid "f4a411df-7b68-49af-9af5-b59a948f3e64")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R29")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 123.19 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "6568af37-676c-4ba4-b925-1e48bcf9fc46")
-		(property "Reference" "R16"
-			(at 121.158 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 123.19 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 121.412 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 123.19 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 123.19 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 123.19 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 123.19 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 123.19 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "df27246a-2fb9-4ed7-ad52-812848761a39")
-		)
-		(pin "1"
-			(uuid "98597afa-0bf0-4ba2-ad77-909270510732")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R16")
 					(unit 1)
 				)
 			)
@@ -9878,476 +6774,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 234.95 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "70797928-e34c-4dc1-934e-ef4a1a435cb6")
-		(property "Reference" "R37"
-			(at 232.918 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 234.95 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 233.172 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 234.95 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 234.95 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 234.95 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 234.95 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 234.95 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "069d3cee-254c-4211-b14e-481529be483f")
-		)
-		(pin "1"
-			(uuid "73f7bf93-7d2f-47e1-ad4c-fc66e936eac3")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R37")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 168.91 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "77372d5b-9294-429a-b316-88e7bd305dde")
-		(property "Reference" "R60"
-			(at 166.878 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 168.91 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 167.132 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 168.91 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 168.91 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 168.91 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 168.91 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 168.91 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "f18d905b-f4a5-4ae7-a3ec-076cdbb0ed95")
-		)
-		(pin "1"
-			(uuid "527c8853-54d2-4128-a340-14ec14b2d5bc")
-		)
-		(instances
-			(project "MothBox"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R60")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 135.89 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "847a4613-2f3d-4e9e-87c3-166e8da6a178")
-		(property "Reference" "R22"
-			(at 133.858 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 135.89 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 134.112 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 135.89 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 135.89 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 135.89 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 135.89 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 135.89 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "545324de-f4eb-4fe4-9b96-2754c5ee405b")
-		)
-		(pin "1"
-			(uuid "9fda46e9-c4c5-4aa7-be6a-1f51c5e19241")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R22")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 246.38 44.45 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "874fbe4f-ae33-437c-859f-d4e847c9ea6a")
-		(property "Reference" "R56"
-			(at 244.348 45.974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 246.38 45.974 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 244.602 44.45 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 246.38 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 246.38 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 246.38 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 246.38 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 246.38 44.45 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "18044a9b-0d05-43a7-9ec0-a94d7b03a0fa")
-		)
-		(pin "1"
-			(uuid "641c9bd1-29a0-4a6d-b291-7f6a2c8e875f")
-		)
-		(instances
-			(project "MothBox"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R56")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 278.13 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8b2ededd-4a90-4ae6-83be-19fe1429d68a")
-		(property "Reference" "R58"
-			(at 276.098 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 278.13 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 276.352 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 278.13 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 278.13 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 278.13 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 278.13 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 278.13 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "e07efd94-8605-47a5-bc50-3c521073e8a2")
-		)
-		(pin "1"
-			(uuid "f181bd2c-2a00-40b9-bc4f-7566076e8f42")
-		)
-		(instances
-			(project "MothBox"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R58")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "easyeda2kicad:SMXS-08K-TP")
 		(at 237.49 82.55 0)
 		(unit 1)
@@ -10463,194 +6889,6 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "U2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 237.49 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "907d4bec-9ee7-4b93-b370-52fdcfefa0d9")
-		(property "Reference" "R38"
-			(at 235.458 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 237.49 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 235.712 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 237.49 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 237.49 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 237.49 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 237.49 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 237.49 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "12c00afa-2932-4563-b1d0-6137c9568c49")
-		)
-		(pin "1"
-			(uuid "b33a0380-8105-43c9-999a-9c0bfb05be13")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R38")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 240.03 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "908cbf32-6d95-4a08-9f92-cab737c7611e")
-		(property "Reference" "R40"
-			(at 237.998 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 240.03 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 238.252 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 240.03 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 240.03 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 240.03 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 240.03 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 240.03 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "d229b376-0d24-4e78-a713-cc49be8c62b9")
-		)
-		(pin "1"
-			(uuid "777e461c-9fa5-4b71-83e2-7fc5921baf65")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R40")
 					(unit 1)
 				)
 			)
@@ -10783,100 +7021,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "#PWR072")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 173.99 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "9dd943a7-5e21-448b-9de0-f60d4a0a64c4")
-		(property "Reference" "R30"
-			(at 171.958 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 173.99 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 172.212 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 173.99 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "95c1a365-0fb5-4b55-9db4-7d93e784fde6")
-		)
-		(pin "1"
-			(uuid "b9d4221f-34d2-485d-9fed-b5a2b030eadd")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R30")
 					(unit 1)
 				)
 			)
@@ -11232,100 +7376,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R")
-		(at 229.87 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bc77779e-7574-4840-8472-6cf97053b9fc")
-		(property "Reference" "R35"
-			(at 227.838 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 229.87 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 228.092 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 229.87 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 229.87 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 229.87 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 229.87 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 229.87 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "db6cb7bc-4f4b-424b-a09d-f15caf7b1d3a")
-		)
-		(pin "1"
-			(uuid "2e0505b4-d70d-4181-9c90-455efbe8b03e")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R35")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 123.19 97.79 0)
 		(unit 1)
@@ -11385,100 +7435,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "#PWR063")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 265.43 43.18 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c86b10f8-4bc8-4a0c-9c05-2c12dd196e9d")
-		(property "Reference" "R46"
-			(at 263.398 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 265.43 44.704 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 263.652 43.18 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 265.43 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 265.43 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 265.43 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 265.43 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 265.43 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "6538ae03-b824-4c6c-9133-2bec47009d31")
-		)
-		(pin "1"
-			(uuid "43688880-511e-4eb6-93ae-26034715bf4c")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R46")
 					(unit 1)
 				)
 			)
@@ -11699,354 +7655,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "U9")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 242.57 49.53 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d512f042-f2a1-44c9-b4ca-c004389513a8")
-		(property "Reference" "R41"
-			(at 240.538 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 242.57 51.054 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 240.792 49.53 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 242.57 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 242.57 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 242.57 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 242.57 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 242.57 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "b6e5a74f-d316-42de-8c93-3226c4d0a2f0")
-		)
-		(pin "1"
-			(uuid "19068389-3238-4f68-8dbb-743e240f1f7b")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R41")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 181.61 30.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "ecdae923-96da-44e9-aaf2-04e9ea11fdb0")
-		(property "Reference" "#PWR067"
-			(at 181.61 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 181.61 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 181.61 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 181.61 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 181.61 30.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5d736f7a-1a49-4790-81c6-92c803067441")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "#PWR067")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 125.73 39.37 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "edb70fbd-4e28-4f9f-93fa-3776c2f37107")
-		(property "Reference" "R17"
-			(at 123.698 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 125.73 40.894 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 123.952 39.37 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 125.73 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 125.73 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 125.73 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 125.73 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 125.73 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "e7494037-6f40-4c3b-a2a3-7ff7729b2d9f")
-		)
-		(pin "1"
-			(uuid "a5508a47-4c9b-4648-b974-668d852d249e")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R17")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R")
-		(at 156.21 45.72 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fd703d46-eba7-4186-a0a1-6a5a93dbe146")
-		(property "Reference" "R27"
-			(at 154.178 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "10k"
-			(at 156.21 47.244 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 154.432 45.72 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 156.21 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor"
-			(at 156.21 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "RR12P10.0KDTR-ND"
-			(at 156.21 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C84376"
-			(at 156.21 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 156.21 45.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "b30add1e-cda2-49d5-9683-4d5eeb811459")
-		)
-		(pin "1"
-			(uuid "7cb162ab-9f24-4195-a4a0-af492f4af41c")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
-					(reference "R27")
 					(unit 1)
 				)
 			)
