@@ -6257,7 +6257,7 @@
 			)
 		)
 		(property "Value" "0.1µF"
-			(at 214.63 39.37 0)
+			(at 218.186 40.894 0)
 			(effects
 				(font
 					(size 1.27 1.27)
