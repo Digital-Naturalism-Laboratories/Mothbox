@@ -4140,28 +4140,6 @@
 			)
 		)
 	)
-	(global_label "R_LED_CTRL"
-		(shape input)
-		(at 140.97 105.41 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "7544cf1e-8cbf-4784-b1bc-f326bfc06030")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 126.7968 105.41 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "L_LED_CTRL"
 		(shape input)
 		(at 140.97 107.95 180)

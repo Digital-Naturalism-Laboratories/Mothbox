@@ -3732,7 +3732,7 @@
 		)
 		(uuid "d08a8bc6-8739-48d7-94c1-3545bdca253b")
 	)
-	(global_label "R_LED_CTRL"
+	(global_label "L_LED_CTRL"
 		(shape input)
 		(at 179.07 66.04 180)
 		(fields_autoplaced yes)
@@ -3744,7 +3744,7 @@
 		)
 		(uuid "5ee1d5ad-4348-4eb7-8755-8470d97fe8f9")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 164.8968 66.04 0)
+			(at 165.1387 66.04 0)
 			(effects
 				(font
 					(size 1.27 1.27)
