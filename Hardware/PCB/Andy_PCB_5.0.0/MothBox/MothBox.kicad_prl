@@ -1,6 +1,6 @@
 {
   "board": {
-    "active_layer": 2,
+    "active_layer": 0,
     "active_layer_preset": "",
     "auto_track_width": false,
     "hidden_netclasses": [],
@@ -30,14 +30,12 @@
     },
     "visible_items": [
       "vias",
-      "footprint_text",
       "footprint_anchors",
       "ratsnest",
       "footprints_front",
       "footprints_back",
       "tracks",
       "drc_errors",
-      "bitmaps",
       "pads",
       "zones",
       "drc_warnings",
@@ -46,7 +44,7 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "ffffffff_ffffffff_ffffffff_ffffffff",
+    "visible_layers": "ffffffff_ffffffff_ffffffff_ffffff5f",
     "zone_display_mode": 0
   },
   "git": {
