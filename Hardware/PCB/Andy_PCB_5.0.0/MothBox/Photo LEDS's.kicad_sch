@@ -529,322 +529,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Simulation_SPICE:PMOS"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "PMOS"
-				(at 5.08 -1.27 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 2.54 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "P-MOSFET transistor, drain/source/gate"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Device" "PMOS"
-				(at 0 -17.145 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Type" "VDMOS"
-				(at 0 -19.05 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Sim.Pins" "1=D 2=G 3=S"
-				(at 0 -15.24 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "transistor PMOS P-MOS P-MOSFET simulation"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PMOS_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 1.778) (xy 3.302 1.778) (xy 3.302 -1.778) (xy 0.762 -1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.286 0) (xy 1.27 0.381) (xy 1.27 -0.381) (xy 2.286 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 -0.508) (xy 2.921 -0.381) (xy 3.683 -0.381) (xy 3.81 -0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 -0.381) (xy 2.921 0.254) (xy 3.683 0.254) (xy 3.302 -0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "PMOS_1_1"
-				(pin input line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "easyeda2kicad:FRC0805F30R0TS"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -935,6 +619,276 @@
 					(at 5.08 0 180)
 					(length 2.54)
 					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "easyeda2kicad:SUD50P06-15-GE3"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 0 15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "SUD50P06-15-GE3"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:TO-252-3_L6.5-W5.8-P4.58-BL"
+				(at 0 -17.78 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/MOSFET_VISHAY_SUD50P06-15-GE3_SUD50P06-15-GE3_C141584.html"
+				(at 0 -20.32 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C141584"
+				(at 0 -22.86 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "SUD50P06-15-GE3_0_1"
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy -2.29 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 3.56) (xy 1.27 1.52)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 2.54) (xy 5.08 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 0.76) (xy 1.27 -1.02)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -1.78) (xy 1.27 -3.3)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 -2.54) (xy 5.08 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 2.54) (xy 4.06 1.52)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.81 0) (xy 3.81 2.54) (xy 3.56 1.52)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.08 5.08) (xy 5.08 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.84 0.76) (xy 4.32 0.76)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 5.84 -0.51) (xy 4.32 -0.51) (xy 5.08 0.76) (xy 5.84 -0.51)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at -7.62 0 0)
+					(length 5.08)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 10.16 270)
+					(length 5.08)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 -10.16 90)
+					(length 5.08)
+					(name "D"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1438,6 +1392,12 @@
 		(uuid "0c6b082d-c5a9-4d26-a966-9ff09bcfc466")
 	)
 	(junction
+		(at 217.17 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "0f5308ad-9795-4163-9d87-dd921003d01f")
+	)
+	(junction
 		(at 241.3 140.97)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1450,16 +1410,16 @@
 		(uuid "2d85cab9-fa14-4728-9d30-a0708d1a5ffc")
 	)
 	(junction
+		(at 58.42 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e5a4254-5f29-4e41-acc8-13d0c36340be")
+	)
+	(junction
 		(at 101.6 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3cc7a80c-e583-4f1d-994c-ea95b227da4a")
-	)
-	(junction
-		(at 222.25 48.26)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "42a9117b-8d8f-4fd3-8fa0-80830d9127f8")
 	)
 	(junction
 		(at 127 139.7)
@@ -1528,6 +1488,12 @@
 		(uuid "88c15a9f-00a7-44c1-bac2-3051feb9596b")
 	)
 	(junction
+		(at 180.34 66.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "892318da-0337-4b4e-a3d1-5eb055dc2fbd")
+	)
+	(junction
 		(at 85.09 55.88)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1540,16 +1506,16 @@
 		(uuid "8dd20a36-6f21-4d81-a004-7dd188b00014")
 	)
 	(junction
-		(at 104.14 45.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "8e6ea8ec-6b3b-4619-9c46-8418ed126545")
-	)
-	(junction
 		(at 86.36 86.36)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9908cdbc-37cc-424c-94b5-50e22a569113")
+	)
+	(junction
+		(at 100.33 45.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9df548f3-064e-48e0-9c0a-1efc85fe83ea")
 	)
 	(junction
 		(at 257.81 87.63)
@@ -1823,13 +1789,23 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 67.31) (xy 104.14 60.96)
+			(xy 104.14 67.31) (xy 104.14 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "1b1799a4-64ce-496c-8d18-68bf1dfccbbb")
+	)
+	(wire
+		(pts
+			(xy 217.17 48.26) (xy 222.25 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1b44ad09-0b45-4101-95aa-632c608b84c5")
 	)
 	(wire
 		(pts
@@ -1850,6 +1826,16 @@
 			(type default)
 		)
 		(uuid "1d8b8a74-dbd3-46d4-be55-e91230f0ce13")
+	)
+	(wire
+		(pts
+			(xy 220.98 63.5) (xy 220.98 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1fea021f-52a8-409d-981d-fa0fd1475b07")
 	)
 	(wire
 		(pts
@@ -1940,6 +1926,16 @@
 			(type default)
 		)
 		(uuid "2b8fc0eb-5307-4554-bbb6-48782518a211")
+	)
+	(wire
+		(pts
+			(xy 217.17 68.58) (xy 222.25 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2da6d0d8-2a90-4d1b-ad87-eaf9090b7dac")
 	)
 	(wire
 		(pts
@@ -2233,6 +2229,16 @@
 	)
 	(wire
 		(pts
+			(xy 100.33 45.72) (xy 104.14 45.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "602f8b11-e242-46f1-906f-087ac3a291fe")
+	)
+	(wire
+		(pts
 			(xy 267.97 100.33) (xy 267.97 102.87)
 		)
 		(stroke
@@ -2280,6 +2286,16 @@
 			(type default)
 		)
 		(uuid "6645d5b2-edbe-48f5-b5e0-d0e612d9acb8")
+	)
+	(wire
+		(pts
+			(xy 220.98 62.23) (xy 229.87 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6a3eeff6-347e-403d-aefd-c7a2fd7bd071")
 	)
 	(wire
 		(pts
@@ -2333,13 +2349,23 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 66.04) (xy 182.88 66.04)
+			(xy 179.07 66.04) (xy 180.34 66.04)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "78249629-b621-4290-b0d2-d6652c124b08")
+	)
+	(wire
+		(pts
+			(xy 100.33 66.04) (xy 104.14 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7a6b4313-e848-42ab-b98d-182eaca5167c")
 	)
 	(wire
 		(pts
@@ -2400,16 +2426,6 @@
 			(type default)
 		)
 		(uuid "8eca85a1-a5c2-483f-ada3-9ac8f5c50b41")
-	)
-	(wire
-		(pts
-			(xy 104.14 45.72) (xy 104.14 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8fa2f079-3031-4908-9510-9fb11ed6a789")
 	)
 	(wire
 		(pts
@@ -2480,6 +2496,16 @@
 			(type default)
 		)
 		(uuid "984fc4f9-0051-44fd-a8a6-a8136a86bff3")
+	)
+	(wire
+		(pts
+			(xy 113.03 60.96) (xy 113.03 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "988cc3a6-4beb-4877-9943-8fd1c3a4c781")
 	)
 	(wire
 		(pts
@@ -2583,6 +2609,16 @@
 	)
 	(wire
 		(pts
+			(xy 229.87 62.23) (xy 229.87 58.42)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a6b924e1-6b83-4968-a4d1-e50bd2eba038")
+	)
+	(wire
+		(pts
 			(xy 50.8 128.27) (xy 50.8 129.54)
 		)
 		(stroke
@@ -2633,6 +2669,16 @@
 	)
 	(wire
 		(pts
+			(xy 180.34 66.04) (xy 182.88 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b50d3084-5574-470f-88f2-ce5bb971196d")
+	)
+	(wire
+		(pts
 			(xy 83.82 99.06) (xy 86.36 99.06)
 		)
 		(stroke
@@ -2643,7 +2689,7 @@
 	)
 	(wire
 		(pts
-			(xy 222.25 69.85) (xy 222.25 63.5)
+			(xy 222.25 69.85) (xy 222.25 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2693,7 +2739,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 55.88) (xy 96.52 55.88)
+			(xy 85.09 55.88) (xy 97.79 55.88)
 		)
 		(stroke
 			(width 0)
@@ -2710,6 +2756,16 @@
 			(type default)
 		)
 		(uuid "c5c11d6e-250e-4073-a4f4-a415faa424f5")
+	)
+	(wire
+		(pts
+			(xy 97.79 55.88) (xy 97.79 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c5d7c1a1-2753-4d9c-8826-f8a53234d8f7")
 	)
 	(wire
 		(pts
@@ -2730,6 +2786,16 @@
 			(type default)
 		)
 		(uuid "c629e730-ef48-4bf7-af3b-505366c8721a")
+	)
+	(wire
+		(pts
+			(xy 58.42 63.5) (xy 64.77 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c884c33c-9cb6-4415-aebe-6192553abb95")
 	)
 	(wire
 		(pts
@@ -2783,6 +2849,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 58.42) (xy 214.63 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cf242180-d916-4da8-8ec6-0e4a2798b95a")
+	)
+	(wire
+		(pts
 			(xy 212.09 133.35) (xy 212.09 140.97)
 		)
 		(stroke
@@ -2823,7 +2899,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 48.26) (xy 222.25 48.26)
+			(xy 203.2 48.26) (xy 217.17 48.26)
 		)
 		(stroke
 			(width 0)
@@ -2853,6 +2929,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 63.5) (xy 220.98 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e48f83cb-d2e1-4bdf-8b8b-1462de4a0dce")
+	)
+	(wire
+		(pts
 			(xy 203.2 71.12) (xy 203.2 76.2)
 		)
 		(stroke
@@ -2870,6 +2956,16 @@
 			(type default)
 		)
 		(uuid "e9de5bc2-5500-49fd-9475-db30979256cc")
+	)
+	(wire
+		(pts
+			(xy 97.79 60.96) (xy 113.03 60.96)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ec21c802-37e8-44d9-9ddb-573eaba9ef88")
 	)
 	(wire
 		(pts
@@ -2913,7 +3009,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 45.72) (xy 104.14 45.72)
+			(xy 85.09 45.72) (xy 100.33 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2923,7 +3019,7 @@
 	)
 	(wire
 		(pts
-			(xy 57.15 63.5) (xy 64.77 63.5)
+			(xy 57.15 63.5) (xy 58.42 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2960,16 +3056,6 @@
 			(type default)
 		)
 		(uuid "ff0bd9b8-6fe4-4ac0-91ba-687567fcbc0d")
-	)
-	(wire
-		(pts
-			(xy 222.25 48.26) (xy 222.25 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ff9f7300-7823-4c30-9fff-8b4a70495fc8")
 	)
 	(label "+12V_R_LED"
 		(at 245.11 76.2 0)
@@ -3089,7 +3175,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 69.85 93.98 0)
 			(effects
 				(font
@@ -3098,30 +3184,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 69.85 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 69.85 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 69.85 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -3585,7 +3654,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 181.61 95.25 0)
 			(effects
 				(font
@@ -3594,30 +3663,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 181.61 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 181.61 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -4015,7 +4067,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 86.36 93.98 0)
 			(effects
 				(font
@@ -4024,30 +4076,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 86.36 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 86.36 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 86.36 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -4405,9 +4440,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:PMOS")
-		(at 101.6 55.88 0)
-		(mirror x)
+		(lib_id "easyeda2kicad:SUD50P06-15-GE3")
+		(at 105.41 55.88 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4416,7 +4451,7 @@
 		(fields_autoplaced yes)
 		(uuid "2d47dbd7-2121-49da-9036-8ad488c0eae7")
 		(property "Reference" "Q5"
-			(at 107.95 57.1501 0)
+			(at 97.79 54.6099 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4424,8 +4459,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TJ10S04M3L,LXHQ"
-			(at 107.95 54.6101 0)
+		(property "Value" "SUD50P06-15-GE3"
+			(at 97.79 57.1499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4433,8 +4468,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:TO-252-2"
-			(at 106.68 58.42 0)
+		(property "Footprint" "easyeda2kicad:TO-252-3_L6.5-W5.8-P4.58-BL"
+			(at 105.41 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4442,8 +4477,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 101.6 43.18 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/MOSFET_VISHAY_SUD50P06-15-GE3_SUD50P06-15-GE3_C141584.html"
+			(at 105.41 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4451,8 +4486,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "P-Channel 40 V 10A (Ta) 27W (Tc) Surface Mount DPAK+"
-			(at 101.6 55.88 0)
+		(property "Description" ""
+			(at 105.41 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4460,57 +4495,13 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "PMOS"
-			(at 101.6 38.735 0)
+		(property "LCSC Part" "C141584"
+			(at 105.41 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 101.6 36.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 101.6 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C41355200"
-			(at 101.6 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "TJ10S04M3L,LXHQ"
-			(at 101.6 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 101.6 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -4565,7 +4556,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 129.54 93.98 0)
 			(effects
 				(font
@@ -4574,30 +4565,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 129.54 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 129.54 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 129.54 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -4962,7 +4936,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 165.1 95.25 0)
 			(effects
 				(font
@@ -4971,30 +4945,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 165.1 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 165.1 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 165.1 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -6461,7 +6418,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 115.57 93.98 0)
 			(effects
 				(font
@@ -6470,30 +6427,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 115.57 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 115.57 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 115.57 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -6730,7 +6670,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 214.63 95.25 0)
 			(effects
 				(font
@@ -6739,30 +6679,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 214.63 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 214.63 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 214.63 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -6823,7 +6746,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 257.81 95.25 0)
 			(effects
 				(font
@@ -6832,30 +6755,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 257.81 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 257.81 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 257.81 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -8122,7 +8028,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 198.12 95.25 0)
 			(effects
 				(font
@@ -8131,30 +8037,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 198.12 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 198.12 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 198.12 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -8960,7 +8849,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 270.51 95.25 0)
 			(effects
 				(font
@@ -8969,30 +8858,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 270.51 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 270.51 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 270.51 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -9053,7 +8925,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 53.34 93.98 0)
 			(effects
 				(font
@@ -9062,30 +8934,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 53.34 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 53.34 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 53.34 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -9107,6 +8962,70 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 180.34 66.04 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bd0d2238-2d72-452d-93d0-d78f93eee42b")
+		(property "Reference" "TP8"
+			(at 185.42 62.738 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LEDCTRL_R"
+			(at 182.626 59.436 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+			(at 185.42 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 185.42 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 180.34 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9c532b00-4d81-4e9b-ab3e-79c7817c2017")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
+					(reference "TP8")
 					(unit 1)
 				)
 			)
@@ -9701,6 +9620,70 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 58.42 63.5 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d9b73b50-9956-4c78-ba91-24b127a6798f")
+		(property "Reference" "TP7"
+			(at 63.5 60.198 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "LEDCTRL_L"
+			(at 60.706 56.896 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 63.5 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 58.42 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2db4a8a5-fc4d-4e94-b8ea-ee2a8efa1827")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/f4f29d93-7441-4557-92ff-295630596a60"
+					(reference "TP7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "easyeda2kicad:XL-2835UWC-02")
 		(at 179.07 107.95 90)
 		(unit 1)
@@ -10064,7 +10047,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 101.6 93.98 0)
 			(effects
 				(font
@@ -10073,30 +10056,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 101.6 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 101.6 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 101.6 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -10124,9 +10090,9 @@
 		)
 	)
 	(symbol
-		(lib_id "Simulation_SPICE:PMOS")
-		(at 219.71 58.42 0)
-		(mirror x)
+		(lib_id "easyeda2kicad:SUD50P06-15-GE3")
+		(at 222.25 58.42 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10135,7 +10101,7 @@
 		(fields_autoplaced yes)
 		(uuid "e74aaecf-9a3b-4a54-ae70-f5cbd4f4ed1a")
 		(property "Reference" "Q7"
-			(at 226.06 59.6901 0)
+			(at 214.63 57.1499 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10143,8 +10109,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TJ10S04M3L,LXHQ"
-			(at 226.06 57.1501 0)
+		(property "Value" "SUD50P06-15-GE3"
+			(at 214.63 59.6899 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10152,8 +10118,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:TO-252-2"
-			(at 224.79 60.96 0)
+		(property "Footprint" "easyeda2kicad:TO-252-3_L6.5-W5.8-P4.58-BL"
+			(at 222.25 76.2 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10161,8 +10127,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 219.71 45.72 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/MOSFET_VISHAY_SUD50P06-15-GE3_SUD50P06-15-GE3_C141584.html"
+			(at 222.25 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10170,8 +10136,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "P-Channel 40 V 10A (Ta) 27W (Tc) Surface Mount DPAK+"
-			(at 219.71 58.42 0)
+		(property "Description" ""
+			(at 222.25 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10179,57 +10145,13 @@
 				(hide yes)
 			)
 		)
-		(property "Sim.Device" "PMOS"
-			(at 219.71 41.275 0)
+		(property "LCSC Part" "C141584"
+			(at 222.25 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "Sim.Type" "VDMOS"
-			(at 219.71 39.37 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 219.71 43.18 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C41355200"
-			(at 219.71 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Digikey Part No" "TJ10S04M3L,LXHQ"
-			(at 219.71 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 219.71 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(pin "1"
@@ -10614,7 +10536,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 229.87 95.25 0)
 			(effects
 				(font
@@ -10623,30 +10545,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 229.87 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 229.87 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 229.87 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -10927,7 +10832,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 142.24 95.25 0)
 			(effects
 				(font
@@ -10936,30 +10841,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 142.24 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 142.24 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 142.24 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -11020,7 +10908,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 36.83 93.98 0)
 			(effects
 				(font
@@ -11029,30 +10917,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 36.83 93.98 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 36.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 36.83 93.98 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
@@ -11113,7 +10984,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" ""
 			(at 243.84 95.25 0)
 			(effects
 				(font
@@ -11122,30 +10993,13 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "1W Thick Film Resistors 200V ±100ppm/℃ ±5% 180Ω 2512 Chip Resistor - Surface Mount ROHS"
+		(property "Description" ""
 			(at 243.84 95.25 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C2934094"
-			(at 243.84 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 243.84 95.25 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C2907256"
