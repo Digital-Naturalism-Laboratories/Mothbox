@@ -2156,6 +2156,16 @@
 	)
 	(wire
 		(pts
+			(xy 142.24 124.46) (xy 129.54 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "76d06e4d-6324-4e73-b860-2cf9a741d1f9")
+	)
+	(wire
+		(pts
 			(xy 44.45 134.62) (xy 46.99 134.62)
 		)
 		(stroke
@@ -2233,6 +2243,16 @@
 			(type default)
 		)
 		(uuid "83484ea7-7172-4bec-b766-294e0cc92611")
+	)
+	(wire
+		(pts
+			(xy 142.24 119.38) (xy 142.24 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "84763ce8-ecbf-4c46-8b0a-95844ce972a1")
 	)
 	(wire
 		(pts
@@ -2343,6 +2363,16 @@
 			(type default)
 		)
 		(uuid "8e197f63-7f26-49a8-b16f-3530b2f613ff")
+	)
+	(wire
+		(pts
+			(xy 261.62 127) (xy 255.27 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e68caae-d68d-4a80-9ba6-10220d860ac6")
 	)
 	(wire
 		(pts
@@ -2846,6 +2876,16 @@
 	)
 	(wire
 		(pts
+			(xy 261.62 116.84) (xy 261.62 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fa270cee-6aef-405f-b88b-bf426e3b2b86")
+	)
+	(wire
+		(pts
 			(xy 124.46 53.34) (xy 142.24 53.34)
 		)
 		(stroke
@@ -2923,16 +2963,6 @@
 			(justify left bottom)
 		)
 		(uuid "5db619bb-d73c-462d-918b-009391ba3dbc")
-	)
-	(label "+12V_PCB2"
-		(at 116.84 149.86 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "5e780eaf-96e7-4926-afd9-75aff9774bf0")
 	)
 	(label "+12V_PCB3"
 		(at 176.53 41.91 0)
