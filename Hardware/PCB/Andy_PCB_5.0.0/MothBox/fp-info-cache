@@ -1,4 +1,4 @@
-25898195047449933
+25901694917362659
 ADG706BRUZ
 SOP65P640X120-28N
 
@@ -60,8 +60,8 @@ HDR-TH_4P-P2.54-H-M-W10.4
 
 
 0
-4
-4
+5
+5
 Attractor
 Untitled
 
@@ -103810,6 +103810,13 @@ SMC_L7.1-W6.2-LS8.1-RD
 2
 2
 easyeda2kicad
+SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL
+
+
+0
+8
+8
+easyeda2kicad
 SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL
 
 
@@ -103844,6 +103851,13 @@ SW-TH_16P-L21.7-W9.7-P2.54-BL
 0
 16
 16
+easyeda2kicad
+TO-252-3_L6.5-W5.8-P4.58-BL
+
+
+0
+3
+3
 easyeda2kicad
 TO-263-5_L10.2-W8.9-P1.70-TL
 
