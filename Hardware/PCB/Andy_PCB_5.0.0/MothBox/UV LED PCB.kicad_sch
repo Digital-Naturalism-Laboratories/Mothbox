@@ -5303,7 +5303,7 @@
 				)
 			)
 		)
-		(property "Value" "Attractor"
+		(property "Value" "PZ254R-11-04P"
 			(at 38.608 60.96 0)
 			(effects
 				(font
@@ -5311,7 +5311,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Attractor:HDR-TH_4P-P2.54-H-M-W10.4"
+		(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
 			(at 38.1 60.96 0)
 			(effects
 				(font
@@ -5336,23 +5336,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C49661"
-			(at 38.1 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 38.1 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C492412"
@@ -6501,7 +6484,7 @@
 				)
 			)
 		)
-		(property "Value" "Attractor"
+		(property "Value" "PZ254R-11-04P"
 			(at 38.8165 124.5959 0)
 			(effects
 				(font
@@ -6509,7 +6492,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Attractor:HDR-TH_4P-P2.54-H-M-W10.4"
+		(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
 			(at 38.1 124.46 0)
 			(effects
 				(font
@@ -6534,23 +6517,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C49661"
-			(at 38.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 38.1 113.03 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C492412"
@@ -6812,7 +6778,7 @@
 				)
 			)
 		)
-		(property "Value" "Attractor"
+		(property "Value" "PZ254R-11-04P"
 			(at 167.132 59.436 0)
 			(effects
 				(font
@@ -6820,7 +6786,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Attractor:HDR-TH_4P-P2.54-H-M-W10.4"
+		(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
 			(at 166.37 59.69 0)
 			(effects
 				(font
@@ -6845,23 +6811,6 @@
 					(size 1.27 1.27)
 				)
 				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C49661"
-			(at 166.37 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC PN" ""
-			(at 166.37 48.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
 			)
 		)
 		(property "LCSC Part" "C492412"

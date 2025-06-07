@@ -17,7 +17,7 @@
     },
     "selection_filter": {
       "dimensions": false,
-      "footprints": false,
+      "footprints": true,
       "graphics": true,
       "keepouts": false,
       "lockedItems": true,
