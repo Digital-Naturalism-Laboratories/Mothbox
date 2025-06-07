@@ -233,6 +233,32 @@
 		(layer "F.Fab")
 		(uuid "7dc286f0-4c44-400d-81cb-a90e8f4aa08c")
 	)
+	(fp_text user "11 13 15 17 19 21 23 25 27 29 31 33 35 37 39"
+		(at -3.5 12 270)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "46b12558-b9ac-4ea5-b41e-f65f7c2d6142")
+		(effects
+			(font
+				(size 1 0.95)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
+	(fp_text user "1 3 5 7 9 "
+		(at -3.5 -0.5 270)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "c0d3251d-7303-4b7e-8406-77e8f6b89315")
+		(effects
+			(font
+				(size 1 1.4)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
+	)
 	(fp_text user "E-Paper (2.13in)"
 		(at -7 16 270)
 		(unlocked yes)
