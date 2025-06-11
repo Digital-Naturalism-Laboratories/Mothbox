@@ -131,6 +131,12 @@ computerName = control_values.get("name", "errorname")
 # Wake Time
 nexttime=int(control_values.get("nextWake",0))
 
+# Schedule Stuff
+hours=control_values.get("hours", "error")
+weekdays=control_values.get("weekdays", "error")
+mins=control_values.get("minutes", "error")
+runtime=control_values.get("runtime", "error")
+
 # UTCoffset
 UTCoff=control_values.get("UTCoff", "error")
 
@@ -204,17 +210,24 @@ try:
     draw.text((2, 0), "NAME: " + computerName, font=font_roboto, fill=0)
 
     draw.text((2, 20), "State: "+mode, font=font_roboto, fill=0)
-    draw.text((2, 40), 'WAKE: ' +  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_robotosemicon10, fill=0)
 
-    draw.text((2, 50), 'DAYS: ' + "0 1 2 3 4 5 6 7", font=font10, fill=0)
-    draw.text((2, 60), 'HOURS: ', font=font_robotosemicon10, fill=0)
-    draw.text((2, 70), "15 16 17 21 23 0 1 4", font=font_robotosemicon10, fill=0)
+    #Schedule Stuff
+    draw.text((2, 40), 'RUNTIME: ' + runtime, font=font10, fill=0)
+
+    draw.text((2, 50), 'WAKE: ' +  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_robotosemicon10, fill=0)
+
+
+
+    draw.text((2, 60), 'DAYS: ' + weekdays, font=font10, fill=0)
+    draw.text((2, 70), 'HOURS: ', font=font_robotosemicon10, fill=0)
+    draw.text((2, 80), hours, font=font_robotosemicon10, fill=0)
+    draw.text((2, 90), 'MINUTES: ' + mins, font=font10, fill=0)
 
     # Add disk space info
-    draw.text((2, 90), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
+    draw.text((2, 110), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
 
     # Starting Y position for external info (after previous lines)
-    y_pos=100
+    y_pos=120
     if external_info:
         for line in external_info.strip().split('\n'):
             draw.text((10, y_pos), line, font=font10, fill=0)
@@ -222,9 +235,11 @@ try:
     else:
         draw.text((10, y_pos), "No USB found", font=font10, fill=0)
 
-    draw.text((2, 130), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
-    draw.text((2, 140), '        '+str(lon), font=font_robotosemicon10, fill=0)
+    #GPS stuff
+    draw.text((2, 150), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
+    draw.text((2, 160), '        '+str(lon), font=font_robotosemicon10, fill=0)
 
+    #Battery Stuff
     if(voltage==-100):
         draw.text((2, 205), f"BATTERY: UNKNOWN", font=font10, fill=0)
     else:
@@ -341,4 +356,3 @@ except KeyboardInterrupt:
     #epd.Clear(0xFF)
 '''
  
-

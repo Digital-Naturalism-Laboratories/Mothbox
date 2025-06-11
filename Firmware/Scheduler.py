@@ -195,7 +195,27 @@ def set_nextWakeinControls(filepath, etime):
             else:
                 file.write(line)  # Keep other lines unchanged
 
+def set_timings(filepath, mins,hours,weekdays,runtimes):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
 
+    with open(filepath, "w") as file:
+        for line in lines:
+            print(line)
+            if line.startswith("hours"):
+                file.write("hours=" + str(hours) + "\n")  # Replace with False
+                print("set hours " + hours)
+            elif line.startswith("weekdays"):
+                file.write("weekdays=" + str(weekdays) + "\n")  # Replace with False
+                print("set weekdays " + weekdays)
+            elif line.startswith("runtime"):
+                file.write("runtime=" + str(runtimes) + "\n")  # Replace with False
+                print("set runtime " + runtimes)
+            elif line.startswith("minutes"):
+                file.write("minutes=" + str(mins) + "\n")  # Replace with False
+                print("set mins " + mins)
+            else:
+                file.write(line)  # Keep other lines unchanged
 
 
 def generate_unique_name(serial, lang):
@@ -712,16 +732,31 @@ runtime = (
 onlyflash = 0
 
 # need to add a delay to let the external drives mount!
-time.sleep(10)
+#time.sleep(10)
+#Instead of the sleep delay, we will use the GPS 10 second lookup and make use of this time
+
+print("Checking GPS (if available) for 10 seconds")
+process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+stdout, stderr = process.communicate()
+if stderr:
+  print(f"Error running script: {stderr.decode()}")
+else:
+  print(stdout.decode())
+
 
 # ~~~~~~~ Do the Scheduling ~~~~~~~~~~~~~~~~~~~~
 settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
+print(settings)
+set_timings("/home/pi/Desktop/Mothbox/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
+
 if "runtime" in settings:
     del settings["runtime"]
 if "utc_off" in settings:
     del settings["utc_off"]
 
-print(settings)
+print("printing settings")
 
 if rpiModel == 4:
     modified_dict = modify_hours(
@@ -778,7 +813,6 @@ enable_onlyflash()
 
 #Update the Epaper screen if it is available
 GPIO.cleanup()
-
 print("Updating Epaper display (if available)")
 process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/UpdateDisplay.py'],
                           stdout=subprocess.PIPE,
@@ -790,7 +824,8 @@ else:
   print(stdout.decode())
 
 
-#Final Step - prepare shutdown and wait
+#Final Step (No other code past this, this is where it sits and waits until shutdown)
+# - prepare shutdown and wait
 # Toggle System MODE, shut down if in OFF/DISARMED mode
 if mode == "OFF":
     print("System is in OFF MODE")

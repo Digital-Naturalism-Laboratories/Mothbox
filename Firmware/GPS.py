@@ -13,7 +13,7 @@ latitude = None
 longitude = None
 start_time = time.time()
 tf = TimezoneFinder()
-timeout=5
+timeout=10
 
 start_time = time.time()
 tf = TimezoneFinder()
@@ -94,7 +94,7 @@ try:
         else:
             print("Waiting for GPS data...")
         time.sleep(1)
-    print("Finished Looking for GPS")
+    print("Finished Looking for GPS. GPS device found = "+str(got_gps_fix))
     if UTCtime:
         try:
             dt = datetime.strptime(UTCtime, "%Y-%m-%dT%H:%M:%S.%fZ")
