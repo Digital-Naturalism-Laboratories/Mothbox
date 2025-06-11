@@ -1,4 +1,4 @@
-#! /usr/bin/python3
+#!/usr/bin/python
 from gps import *
 import time
 from datetime import datetime
@@ -17,6 +17,33 @@ timeout=10
 
 start_time = time.time()
 tf = TimezoneFinder()
+
+'''
+#This might be mysticism, the GPS might just need a good view of the sky
+#It seems that (at least for a USB gps) if the GPS has been disconnected and reconnected, gpsmon has to run before it can get timings and stuff
+import signal
+import subprocess
+
+# Start gpsmon in the background (detached)
+proc = subprocess.Popen(['gpsmon'])
+
+# Wait for exactly 3 seconds
+time.sleep(3)
+
+# Send SIGTERM to terminate gpsmon and wait a moment to ensure it exits properly
+proc.terminate()
+time.sleep(0.1)  # Allow time for process cleanup
+
+# If the process didn't exit after terminate(), send SIGKILL as a failsafe (not recommended)
+try:
+    proc.wait(timeout=0.5)
+except subprocess.TimeoutExpired:
+    proc.kill()
+
+print("gpsmon terminated")
+'''
+
+
 
 def get_control_values(filepath):
     """Reads key-value pairs from the control file."""

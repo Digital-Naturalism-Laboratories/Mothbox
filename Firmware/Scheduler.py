@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/python
 
 """
 This script will schedule the next wakeups for the Mothbox
@@ -465,6 +465,20 @@ def run_shutdown_pi5():
     set_wakeup_alarm(next_epoch_time)
     print("Wakeup Alarms have been set!")
 
+    # GPS check / 10 second delay
+    print("Checking GPS (if available) for 10 seconds")
+    process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
+                              stdout=subprocess.PIPE,
+                              stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+    if stderr:
+      print(f"Error running script: {stderr.decode()}")
+    else:
+      print(stdout.decode())
+
+
+
+    #Epaper
     #Update the Epaper screen if it is available 
     GPIO.cleanup()
 
@@ -735,6 +749,7 @@ onlyflash = 0
 #time.sleep(10)
 #Instead of the sleep delay, we will use the GPS 10 second lookup and make use of this time
 
+# GPS check / 10 second delay
 print("Checking GPS (if available) for 10 seconds")
 process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
                           stdout=subprocess.PIPE,
