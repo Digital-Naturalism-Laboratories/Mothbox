@@ -1,5 +1,14 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding:utf-8 -*-
+
+"""
+This script works with the Waveshare epaper 2.13in display
+it will collect information about the pi
+refresh the display
+and then power off the display
+leaving a 0 power high contrast display to view in the field.
+
+"""
 import sys
 import os
 picdir = "/home/pi/Desktop/Mothbox/scripts/RaspberryPi_JetsonNano_Epaper/pic"
@@ -332,3 +341,4 @@ except KeyboardInterrupt:
     #epd.Clear(0xFF)
 '''
  
+
