@@ -1,4 +1,4 @@
-#! /usr/bin/python
+#! /usr/bin/python3
 from gps import *
 import time
 from datetime import datetime
