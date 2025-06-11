@@ -47,6 +47,72 @@ import time
 import os, platform
 from pathlib import Path
 
+#IF the mothbox is supposed to be off, don't take a photo!
+GPIO.setmode(GPIO.BCM)
+
+# Function to check for connection to ground
+def off_connected_to_ground():
+    # Set an internal pull-up resistor (optional, some circuits might have one already)
+    GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+    # Read the pin value
+    pin_value = GPIO.input(off_pin)
+
+    # If pin value is LOW (0), then it's connected to ground
+    return pin_value == 0
+
+
+def debug_connected_to_ground():
+    # Set an internal pull-up resistor (optional, some circuits might have one already)
+    GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+    # Read the pin value
+    pin_value = GPIO.input(debug_pin)
+
+    # If pin value is LOW (0), then it's connected to ground
+    return pin_value == 0
+
+
+
+# Define GPIO pin for checking
+off_pin = 16
+debug_pin = 12
+mode = "ARMED"  # possible modes are OFF or DEBUG or ARMED
+# Set GPIO pin as input
+GPIO.setup(off_pin, GPIO.IN)
+GPIO.setup(debug_pin, GPIO.IN)
+
+# Check for connection
+if debug_connected_to_ground():
+    print("GPIO pin", debug_pin, "DEBUG connected to ground.")
+    mode = "DEBUG"
+else:
+    print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
+
+# Check for connection
+if off_connected_to_ground():
+    print("GPIO pin", off_pin, "OFF PIN connected to ground.")
+    mode = "OFF"  # this check comes second as the OFF state should override the DEBUG state in case both are attached
+else:
+    print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
+
+print("Current Mothbox MODE: ", mode)
+
+if(mode=="OFF"):
+    print("no photo!")
+    #GPIO.cleanup()
+    quit()
+
+
+
+
+
+
+
+
+
+
+
 internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
 extra_photo_storage_minimum=internal_storage_minimum-1
 # Define paths
@@ -504,7 +570,7 @@ def takePhoto_Manual():
               filepath = folderPath+computerName+"_"+timestamp+"_HDR"+str(i)+".bmp"
 
         
-          print(exif_data)
+          #print(exif_data) #This is a LOT of data
           print(camera_settings.get("LensPosition"))
           #https://github.com/hMatoba/Piexif/blob/3422fbe7a12c3ebcc90532d8e1f4e3be32ece80c/piexif/_exif.py#L406
           #https://piexif.readthedocs.io/en/latest/functions.html#dump
@@ -758,7 +824,9 @@ takePhoto_Manual()
 
 
 picam2.stop()
-GPIO.cleanup() #release the GPIO pins to other programs
+
+#cannot call GPIO cleanup here because it will kill the relay turning on the attractor
+GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
 
     
 quit()

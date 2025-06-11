@@ -503,6 +503,85 @@ def run_shutdown_pi5():
     os.system("sudo shutdown -h now")
 
 
+
+def run_shutdown_pi5_FAST():
+    """
+    Shut down the raspberry pi
+    """
+    print("Fast shutdown!")
+    print("but we are running ONE LAST WAKEUP SCHEDULER")
+    #Stop big lights from turning on!
+    debug_script_path = "/home/pi/Desktop/Mothbox/DebugMode.py"
+    # Call the script using subprocess.run
+    subprocess.run([debug_script_path])
+    
+    
+    # SCHEDULE WAKEUP AGAIN FOR SECURITY
+    settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
+    if "runtime" in settings:
+        del settings["runtime"]
+    if "utc_off" in settings:
+        del settings["utc_off"]
+
+    #print(settings)
+
+    # don't need to modify the hours to UTC like we do for pijuice
+    # Build Cron expression
+    # The cron expression is made of five fields. Each field can have the following values.
+    # minute (0-59) |	hour (0 - 23)	|day of the month (1 - 31)	| month (1 - 12)	| day of the week (0 - 6)
+
+    # Loop through each key-value pair in the dictionary
+    for key, value in settings.items():
+        # Check if the value is a string and contains semicolons
+        if isinstance(value, str) and ";" in value:
+            # Replace semicolons with commas
+            settings[key] = value.replace(";", ",")
+    cron_expression = (
+        str(settings["minute"])
+        + " "
+        + str(settings["hour"])
+        + " "
+        + "*"
+        + " "
+        + "*"
+        + " "
+        + str(settings["weekday"])
+    )
+    #print(cron_expression)
+    next_epoch_time = calculate_next_event(cron_expression)
+
+    # Clear existing wakeup alarm (assuming sudo access)
+    clear_wakeup_alarm()
+
+    print(
+        f"Next wakeup event scheduled for: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(next_epoch_time))}"
+    )
+    set_wakeup_alarm(next_epoch_time)
+    print("Wakeup Alarms have been set!")
+
+
+
+    #Epaper
+    #Update the Epaper screen if it is available 
+    GPIO.cleanup()
+
+    print("Updating Epaper display before shutdown (if available)")
+    process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/UpdateDisplay.py'],
+                              stdout=subprocess.PIPE,
+                              stderr=subprocess.PIPE)
+    stdout, stderr = process.communicate()
+    if stderr:
+      print(f"Error running script: {stderr.decode()}")
+    else:
+      print(stdout.decode())
+
+
+
+    # subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])
+    os.system("sudo shutdown -h now")
+
+
+
 def enable_shutdown():
     """Enable Shutdown"""
     with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
@@ -702,6 +781,11 @@ else:
     print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
 
 print("Current Mothbox MODE: ", mode)
+
+if(mode=="OFF"):
+    run_shutdown_pi5_FAST()
+    quit()
+
 
 # ----------END SWITCH CHECK----------------
 
