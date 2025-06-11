@@ -1,0 +1,8 @@
+shutdown_enabled=True
+minutes=69
+OnlyFlash=False
+LastCalibration=1749607646.9861705
+nextWake=1749614400
+name=alertTollo
+softwareversion=4.16.0
+UTCoff=-5
