@@ -1,8 +1,12 @@
 shutdown_enabled=True
 minutes=69
 OnlyFlash=False
-LastCalibration=1749607646.9861705
+LastCalibration=1749611698.250318
 nextWake=1749614400
 name=alertTollo
 softwareversion=4.16.0
+gpstime=1749639876
 UTCoff=-5
+lat=n/a
+lon=n/a
+

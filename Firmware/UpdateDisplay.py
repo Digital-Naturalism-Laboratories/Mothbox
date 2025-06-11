@@ -1,5 +1,3 @@
-
-
 #!/usr/bin/python
 # -*- coding:utf-8 -*-
 import sys
@@ -127,6 +125,11 @@ nexttime=int(control_values.get("nextWake",0))
 # UTCoffset
 UTCoff=control_values.get("UTCoff", "error")
 
+#GPS stuff
+lat=control_values.get("lat", "error")
+lon=control_values.get("lon", "error")
+gpstime=control_values.get("gpstime", "error")
+
 
 #Software Version
 softwareversion=control_values.get("softwareversion", "error")
@@ -210,6 +213,8 @@ try:
     else:
         draw.text((10, y_pos), "No USB found", font=font10, fill=0)
 
+    draw.text((2, 130), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
+    draw.text((2, 140), '        '+str(lon), font=font_robotosemicon10, fill=0)
 
     if(voltage==-100):
         draw.text((2, 205), f"BATTERY: UNKNOWN", font=font10, fill=0)
@@ -256,7 +261,7 @@ except KeyboardInterrupt:
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
     draw.text((120, 60), 'e-Paper demo', font = font15, fill = 0)
-    draw.text((110, 90), u'微雪电子', font = font24, fill = 0)
+    draw.text((110, 90), u'å¾®éªçµå­', font = font24, fill = 0)
     # image = image.rotate(180) # rotate
     epd.display(epd.getbuffer(image))
     time.sleep(2)
