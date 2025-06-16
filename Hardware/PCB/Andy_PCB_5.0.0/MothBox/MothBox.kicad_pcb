@@ -29599,7 +29599,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "unspecified")
-			(uuid "628afe41-4aae-4389-91e9-440a92bab49f")
+			(uuid "b8124f31-1807-4b90-99f8-9795aa581128")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 -3.81 180)
@@ -29621,7 +29621,7 @@
 			(net 7 "/UV LED PCB/+12V_PCB4")
 			(pinfunction "2")
 			(pintype "unspecified")
-			(uuid "268c8371-919d-4dbf-9f44-75723726227e")
+			(uuid "cbabc91b-8910-465b-8729-1059fd2be718")
 		)
 		(embedded_fonts no)
 		(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P.wrl"
@@ -30163,7 +30163,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "unspecified")
-			(uuid "25ce0c46-dc7f-4b03-931b-c371e11aa4cb")
+			(uuid "d7ac04ad-c389-45f9-a4c3-5243010c42bf")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 -3.81 90)
@@ -30185,7 +30185,7 @@
 			(net 8 "+12V")
 			(pinfunction "2")
 			(pintype "unspecified")
-			(uuid "cde5ff3e-56f6-49c1-947a-790b7342501d")
+			(uuid "a475d4b5-0606-4b87-8695-965e19cc3113")
 		)
 		(embedded_fonts no)
 		(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P.wrl"
@@ -32545,7 +32545,7 @@
 			(layers "*.Cu" "*.Mask")
 			(remove_unused_layers no)
 			(solder_mask_margin 0.102)
-			(uuid "6db17f4d-611c-44d4-a7b0-a172b25128bc")
+			(uuid "cac8a6c7-b1af-4ca3-8291-decddade1508")
 		)
 		(embedded_fonts no)
 		(model "${KIPRJMOD}/Library/RASPBERRY_PI_4B_4GB/RASPBERRY_PI_4B_4GB.step"
@@ -33298,7 +33298,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "unspecified")
-			(uuid "3db11850-9467-4669-9432-8040d0ac11df")
+			(uuid "2a5b57cb-f2d0-4ddb-891a-5f9395e412f5")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 -3.81)
@@ -33320,7 +33320,7 @@
 			(net 144 "+24V")
 			(pinfunction "2")
 			(pintype "unspecified")
-			(uuid "407fa94a-b7d2-4c84-b0b0-087fdb775b46")
+			(uuid "44fb6d5b-4bb9-4aea-aa01-24e0928f1a4b")
 		)
 		(embedded_fonts no)
 		(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P.wrl"
@@ -36047,7 +36047,7 @@
 			(net 1 "GND")
 			(pinfunction "1")
 			(pintype "unspecified")
-			(uuid "43f74d90-be40-42d8-892c-ea00963103b4")
+			(uuid "a9192aa0-5e0c-42b4-9eba-76442ce1a76f")
 		)
 		(pad "2" thru_hole circle
 			(at 2.54 -3.81 90)
@@ -36069,7 +36069,7 @@
 			(net 116 "Net-(Q2-D)")
 			(pinfunction "2")
 			(pintype "unspecified")
-			(uuid "4a3c593f-0e03-497e-8696-96f8f5935fe9")
+			(uuid "5cc8c9ba-4ca0-4b0f-9337-39187053c521")
 		)
 		(embedded_fonts no)
 		(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P.wrl"
