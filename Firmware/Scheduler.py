@@ -712,6 +712,8 @@ def set_wakeup_alarm(epoch_time):
     
 
 print("----------------- STARTING Scheduler!-------------------")
+
+
 # First figure out if this is a Pi4 or a Pi5
 
 
@@ -738,6 +740,9 @@ if rpiModel == 4:
 
 
 if rpiModel == 5:
+    print("Sync hwclock to main clock for security")
+    os.system("sudo hwclock -w")
+
     desired_settings = {"POWER_OFF_ON_HALT": "1", "WAKE_ON_GPIO": "0"}
     current_settings = check_eeprom_settings()
 
