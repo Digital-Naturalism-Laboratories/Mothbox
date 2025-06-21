@@ -285,7 +285,7 @@ except KeyboardInterrupt:
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
     draw.text((120, 60), 'e-Paper demo', font = font15, fill = 0)
-    draw.text((110, 90), u'å¾®éªçµå­', font = font24, fill = 0)
+    draw.text((110, 90), u'微雪电子', font = font24, fill = 0)
     # image = image.rotate(180) # rotate
     epd.display(epd.getbuffer(image))
     time.sleep(2)
