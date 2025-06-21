@@ -22,11 +22,11 @@
       "keepouts": false,
       "lockedItems": true,
       "otherItems": true,
-      "pads": false,
+      "pads": true,
       "text": true,
       "tracks": true,
       "vias": true,
-      "zones": false
+      "zones": true
     },
     "visible_items": [
       "vias",
@@ -48,8 +48,8 @@
       "conflict_shadows",
       "shapes"
     ],
-    "visible_layers": "ffffffff_ffffffff_fffffff5_fff5ffff",
-    "zone_display_mode": 1
+    "visible_layers": "ffffffff_ffffffff_fffffff5_fff5f5ff",
+    "zone_display_mode": 0
   },
   "git": {
     "repo_password": "",
