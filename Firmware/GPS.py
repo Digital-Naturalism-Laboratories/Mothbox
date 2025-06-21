@@ -100,6 +100,7 @@ def set_GPS(filepath, lat,lon):
 
 print("startingGPS")
 got_gps_fix = False
+
 try:
     while time.time() - start_time < timeout:
         # Check if there's data from gpsd (timeout = 1 second)
@@ -133,6 +134,8 @@ try:
         # Set system UTC time
         formatted_time = dt.strftime("%Y-%m-%d %H:%M:%S")
         os.system(f"sudo date -u -s \"{formatted_time}\"")
+        print("sync HW clock with system clock")
+        os.system("sudo hwclock -w")
         print("System UTC time set.")
         set_GPStime("/home/pi/Desktop/Mothbox/controls.txt", epoch_time)
 
