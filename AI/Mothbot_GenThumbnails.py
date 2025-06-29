@@ -31,7 +31,6 @@ def crop_rect(
 
 
 
-#TODO - save patch_img width and height along with file path
 def generateThumbnailPatches_JSON(image_path, json_data, patch_folder, skip_existing=True):
     # Load the image using OpenCV
     model_name = json_data.get("version")
@@ -71,6 +70,11 @@ def generateThumbnailPatches_JSON(image_path, json_data, patch_folder, skip_exis
 
             # Send the cropped image and the shape index to the crop_rect function
             img_crop = crop_rect(image, rect)
+            
+            # Get patch dimensions and add to metadata
+            patch_height, patch_width = img_crop.shape[:2]
+            shape["patch_width"] = int(patch_width)
+            shape["patch_height"] = int(patch_height)
 
             cv2.imwrite(
                 patchfullpath,
