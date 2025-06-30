@@ -55,9 +55,9 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"C:\Users\andre\Desktop\Canopy Tower\Gamboa_RDCTop_waveUrta_2024-11-14\2024-11-14"  # raw string
+    r"F:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25\2025-06-25"  # raw string
 )
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 """ KINGDOM = 0
     PHYLUM = 1
@@ -71,7 +71,7 @@ TAXONOMIC_RANK_FILTER_num = 3 #!!! change this number to change the taxonomic ra
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
-OVERWRITE_EXISTING_IDs = False #True
+OVERWRITE_EXISTING_IDs = True #True
 
 # ~~~~Other Global Variables~~~~~~~
 
@@ -132,8 +132,23 @@ def parse_args():
 
 
 def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
+    print("Reading", taxa_path, "extracting", taxon_rank, "values.")
+    df = pl.read_csv(taxa_path, separator='\t')  # Changed separator to '\t' for tab-delimited
+    target_values = set(
+        pl.Series(df.select(taxon_rank).drop_nulls())
+        .str.to_lowercase()
+        .unique()
+        .to_list()
+    )
+    print("Found", len(target_values), taxon_rank, "values: ")
+    #print(target_values)
+  
+    return target_values
+
+
+def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
     """
-    Loads taxon keys from a tab-delimited CSV file into a list.
+    Loads taxon keys from a Comma-delimited CSV file into a list.
 
     Args:
       taxa_path: String. Path to the taxa CSV file.
