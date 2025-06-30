@@ -7,17 +7,14 @@ script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot_ID.py"  # Upd
 
 #you can insert a list of deployments, the ID script will automatically find the date folders!
 input_paths = [
-    r"E:\Panama\Gamboa_MayJayYard_AccionSauro_2025-05-19",
-    r"E:\Panama\Gamboa_MayJayYard_AdeptTurca_2025-05-21",
-    r"E:\Panama\Gamboa_MayJayYard_FondoGorila_2025-05-19",
-    r"E:\Panama\Gamboa_MayJayYard_GrisMejua_2025-05-21",
-    r"E:\Panama\Gamboa_MayJayYard_WaveUrta_2025-05-21",
-    r"E:\Panama\Gamboa_MayJayYard_WingedHapuku_2025-05-19",
+      r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmPalmyard_hopeCobo_2025-06-22\2025-06-22",
+    r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmPalmyard_hopeCobo_2025-06-22\2025-06-23",
+    r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmPalmyard_hopeCobo_2025-06-22\2025-06-24"
 
 ]
 
 
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 """ KINGDOM = 0
     PHYLUM = 1
@@ -32,7 +29,7 @@ TAXONOMIC_RANK_FILTER = 3
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
-OVERWRITE_EXISTING_IDs = False #True
+OVERWRITE_EXISTING_IDs = True 
 
 i=0
 

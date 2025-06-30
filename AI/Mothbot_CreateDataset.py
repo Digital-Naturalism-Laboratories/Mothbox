@@ -18,11 +18,11 @@ import re
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"E:\Panama\Gamboa_MayJayYard_WingedHapuku_2025-05-19\2025-05-20"
+INPUT_PATH = r"F:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25\2025-06-25"
 METADATA_PATH=r'C:\Users\andre\Downloads\Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1(1).csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
-TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryIndonesia_TaxaInsecta.csv" #ce/taxonomy?country=PA&taxon_key=212
 
 SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
 
@@ -101,6 +101,53 @@ def find_detection_matches(folder_path):
     return hu_detection_matches_list, bot_detection_matches_list
 
 
+
+
+def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
+    print("Reading", taxa_path, "extracting", taxon_rank, "values.")
+    df = pl.read_csv(taxa_path, separator='\t')  # Changed separator to '\t' for tab-delimited
+    target_values = set(
+        pl.Series(df.select(taxon_rank).drop_nulls())
+        .str.to_lowercase()
+        .unique()
+        .to_list()
+    )
+    print("Found", len(target_values), taxon_rank, "values: ")
+    #print(target_values)
+  
+    return target_values
+
+
+def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
+    """
+    Loads taxon keys from a Comma-delimited CSV file into a list.
+
+    Args:
+      taxa_path: String. Path to the taxa CSV file.
+      taxa_cols: List of strings. Taxonomic columns in taxa CSV to load (default: ["kingdom", "phylum", "class", "order", "family", "genus", "species"]).
+      taxon_rank: String. Taxonomic rank to which to classify images (must be present as column in the taxa csv at file_path). Default: "order".
+      flag_det_errors: Boolean. Whether to flag holes and smudges blanks (adds "hole" and "circle" and "background" and "blank" to taxon_keys). Default: True.
+
+    Returns:
+      taxon_keys: List. A list of taxon keys to feed to the CustomClassifier for bioCLIP classification.
+    """
+    print("Reading", taxa_path, "extracting", taxon_rank, "values.")
+    df = pl.read_csv(taxa_path, separator='\t')
+    target_values = set(
+        pl.Series(df.select(taxon_rank).drop_nulls())
+        .str.to_lowercase()
+        .unique()
+        .to_list()
+    )
+    print("Found", len(target_values), taxon_rank, "values: ")
+    #print(target_values)
+
+    return target_values
+
+
+
+
+
 def find_csv_match(input_path, metadata_path):
     """
     Finds a matching row in the CSV metadata file based on parsed components from the input path.
@@ -112,14 +159,14 @@ def find_csv_match(input_path, metadata_path):
     Returns:
         dict: A dictionary containing the matching row, or an empty dict if no match is found.
     """
-    # Parse the parent folder's name
     parent_folder = os.path.basename(os.path.dirname(input_path))
-    
-    # Split the parent folder into parts
     parts = parent_folder.split("_")
-    if len(parts) != 4:
-        raise ValueError("The input path does not contain the expected 4 parts in the parent folder's name.")
-
+    if len(parts) == 4:
+        pass  # Use all parts, no action needed
+    elif len(parts) == 5:  # Handle more than four parts (e.g., five or six)
+        parts = parts[1:]  # Discard the first part and keep the rest
+    else:  # Fewer than four parts case remains unchanged in your original logic
+        raise ValueError("The input path does not contain the expected minimum of 4 parts.")
     # Assign the parts to their respective semantic names and normalize them
     area, point, mothbox, deployment_date = [part.strip().lower() for part in parts]
     print("looking for metadata for:")

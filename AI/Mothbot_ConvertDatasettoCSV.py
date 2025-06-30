@@ -127,7 +127,7 @@ def get_gbif_info_online(rank, name):
 # Function to load the taxa lookup CSV into a pandas DataFrame
 def load_taxa_lookup(taxa_list_path):
     # Load the CSV into a pandas DataFrame
-    taxa_lookup_df = pd.read_csv(taxa_list_path)
+    taxa_lookup_df = pd.read_csv(taxa_list_path, sep='\t')
     return taxa_lookup_df
 
 # Function to find the deepest taxon information based on the deepest rank and value
