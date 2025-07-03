@@ -7,9 +7,14 @@ script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot_ID.py"  # Upd
 
 #you can insert a list of deployments, the ID script will automatically find the date folders!
 input_paths = [
-      r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmPalmyard_hopeCobo_2025-06-22\2025-06-22",
-    r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmPalmyard_hopeCobo_2025-06-22\2025-06-23",
-    r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmPalmyard_hopeCobo_2025-06-22\2025-06-24"
+      r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmTree_EfectoMinla_2025-06-22",
+    r"f:\Deployments\Indonesia\Indonesia_Les_BeachPalm_grupoKite_2025-06-23",
+    r"f:\Deployments\Indonesia\Indonesia_Les_BeachPalm_grupoKite_2025-06-25",
+    r"f:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25",
+    r"f:\Deployments\Indonesia\Indonesia_Les_WilanTopInsideTree_EfectoMinla_2025-06-25",
+    r"f:\Deployments\Indonesia\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25",
+    r"f:\Deployments\Indonesia\Les_Alley_EfectoMinla_2025-06-20"
+    r"f:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20"
 
 ]
 

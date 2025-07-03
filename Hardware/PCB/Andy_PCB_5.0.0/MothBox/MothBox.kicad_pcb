@@ -291,7 +291,7 @@
 	(net 159 "Net-(LED6-K)")
 	(net 160 "Net-(LED3-K)")
 	(net 161 "Net-(Q11-B)")
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "006c330a-f2cd-405e-9441-705a240ca5ec")
 		(at 151 92.265671 -90)
@@ -498,7 +498,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "00cc0f9c-2a6b-45eb-a665-895344f3a088")
 		(at 122 163.265671 180)
@@ -665,7 +665,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "01e2e97b-23e7-4d21-9bc9-0ddb8e9ed293")
 		(at 230.5 175.265671 180)
@@ -832,7 +832,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "03490675-0de2-417e-8eb0-71959040db97")
 		(at 40.5 151.265671)
@@ -1039,7 +1039,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "03b7bda2-4124-4c6a-8a0f-c86d90926385")
 		(at 228 181.765671)
@@ -1246,7 +1246,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "07018841-b16d-4720-a573-9025007a08ea")
 		(at 108 124.265671 180)
@@ -1413,7 +1413,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "07dc57ae-9937-442a-a2cb-38c17d5953c4")
 		(at 67 158.265671)
@@ -1620,7 +1620,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "07e36081-bf10-4777-b9ef-c0a8450d50e9")
 		(at 115 67.265671 -90)
@@ -1819,7 +1819,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "0977dea7-5b2b-4b95-be31-44e32a73935c")
 		(at 113.5 131.265671 180)
@@ -2026,7 +2026,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "097e15c8-ad83-47ec-b275-6238b3eb20bc")
 		(at 242.1925 93.435671 180)
@@ -2225,7 +2225,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "0b9c27fa-fcc0-403d-9e79-56bdae724394")
 		(at 216.4325 70.975671)
@@ -2424,7 +2424,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "F.Cu")
 		(uuid "0e549479-d867-4d2d-8622-1d4bdb254d25")
 		(at 216.5 67.765671 90)
@@ -2756,7 +2756,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "0efb8e20-e353-47eb-ad6e-d7f8eace7b87")
 		(at 40.5 148.265671 180)
@@ -2923,7 +2923,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "13f73b23-fae6-431b-b3ca-35ee3e3d28c7")
 		(at 87.5 158.765671 180)
@@ -3090,7 +3090,7 @@
 			)
 		)
 	)
-	(footprint "Attractor:Arducam Owlsight"
+	(footprint "MB_Library:Arducam Owlsight"
 		(layer "F.Cu")
 		(uuid "160c942c-ae00-4b7e-96cb-2ed5e59fa3b5")
 		(at 149.5 131.765671 180)
@@ -3378,7 +3378,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "16b1ba21-f19a-4c7e-8c4f-fa8d59d1ed1c")
 		(at 81 142.765671 180)
@@ -3585,7 +3585,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "204bfc29-c6de-407f-8c9e-c41e74cae790")
 		(at 121 111.265671 90)
@@ -3792,7 +3792,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "27370874-63fe-44ac-92c1-e5ce2b06d4e6")
 		(at 176 159.265671 180)
@@ -3959,7 +3959,7 @@
 			)
 		)
 	)
-	(footprint "Diode_SMD:D_SOD-323"
+	(footprint "MB_Library:D_SOD-323"
 		(layer "F.Cu")
 		(uuid "2e2b4512-0dc8-4b50-9d3a-9d95adf2ae73")
 		(at 253.0775 103.695671)
@@ -4232,7 +4232,7 @@
 			)
 		)
 	)
-	(footprint "MountingHole:MountingHole_6.4mm_M6_Pad"
+	(footprint "MB_Library:MountingHole_6.4mm_M6_Pad"
 		(layer "F.Cu")
 		(uuid "3517d47d-5b47-43cd-97f5-72b349064e8f")
 		(at 136.5 71.765671)
@@ -4333,7 +4333,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Diode_SMD:D_SOD-323"
+	(footprint "MB_Library:D_SOD-323"
 		(layer "F.Cu")
 		(uuid "354019a1-6a34-43c9-9ce7-e7c0fa7366bf")
 		(at 262 96.265671)
@@ -4606,7 +4606,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "384cef86-387a-4a99-939d-0426930e1c93")
 		(at 181.5 176.765671)
@@ -4813,7 +4813,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "F.Cu")
 		(uuid "386d5a59-9fd8-44c6-978e-59713829bea1")
 		(at 242.2725 96.745671 90)
@@ -5145,7 +5145,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "38e2fb3c-7e18-49f7-be5e-88d2e538ba48")
 		(at 68.5 167.265671 180)
@@ -5352,7 +5352,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "39ece780-b9ca-4740-9799-02dcb8071d46")
 		(at 176.249047 162.015671)
@@ -5559,7 +5559,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "3cab1d89-a1ba-44f7-b517-16ee94b6b404")
 		(at 87.5 161.665671)
@@ -5766,7 +5766,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "42441edd-5e97-4039-9499-22afc2e28389")
 		(at 57 194.765671 -90)
@@ -5933,7 +5933,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "F.Cu")
 		(uuid "548cfcd7-776e-4487-8a54-6d812d1a1cf3")
 		(at 216.5 114.765671)
@@ -6038,7 +6038,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "MountingHole:MountingHole_6.4mm_M6_Pad"
+	(footprint "MB_Library:MountingHole_6.4mm_M6_Pad"
 		(layer "F.Cu")
 		(uuid "5531aca7-8b19-4d47-985f-0e54c03dcac0")
 		(at 41.5 187.765671)
@@ -6139,7 +6139,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "5560451f-684e-4c31-8082-16cf3793b4e0")
 		(at 211.5 68.265671 -90)
@@ -6338,7 +6338,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "55c61167-bfd6-448c-93fb-e3b462a59249")
 		(at 228 196.265671)
@@ -6545,7 +6545,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "58f17a70-8fcf-44a4-ab5a-98df91e23b99")
 		(at 212.5 131.765671 90)
@@ -6752,7 +6752,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "5d2c505c-ede0-441d-a284-0131525d9414")
 		(at 87.9275 128.605671)
@@ -6951,7 +6951,7 @@
 			)
 		)
 	)
-	(footprint "Diode_SMD:D_SOD-323"
+	(footprint "MB_Library:D_SOD-323"
 		(layer "F.Cu")
 		(uuid "6103a502-c433-4e8d-8814-2ec2f0928e45")
 		(at 195 65.765671 180)
@@ -7224,7 +7224,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "6231266e-bd41-41b9-81b3-82792007a8e0")
 		(at 246.0875 107.765671 180)
@@ -7423,7 +7423,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "643e279f-8b42-43fd-a07e-fb02b203671d")
 		(at 246.0775 115.195671 -90)
@@ -7622,7 +7622,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "65e06b0e-2951-4463-af9e-fefe1db3b243")
 		(at 38.38 90.765671 180)
@@ -7829,7 +7829,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "6a19a41f-87be-4547-b364-f7c6af7a2c7b")
 		(at 230.5 103.765671 -90)
@@ -8036,7 +8036,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "F.Cu")
 		(uuid "6a49dfc9-0980-46de-a711-5ea0aeee7c38")
 		(at 85.9275 125.605671 180)
@@ -8368,7 +8368,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "702799c5-af2f-4561-815d-bd363b90665c")
 		(at 240.5 99.765671 180)
@@ -8567,7 +8567,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "717a4f8b-1bdd-433c-97b3-84ba05fa5840")
 		(at 60 130.265671)
@@ -8774,7 +8774,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+	(footprint "MB_Library:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
 		(layer "F.Cu")
 		(uuid "7602ba6a-6f16-486c-b3aa-124185bfc24d")
 		(at 206 67.765671 90)
@@ -9018,7 +9018,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "77bedaff-e104-47db-87b3-5b744383ec96")
 		(at 181.5 188.765671 180)
@@ -9225,7 +9225,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "7815fab7-2d33-4456-830f-3538ec6d18df")
 		(at 260 165.765671)
@@ -9392,7 +9392,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "7b68b3e4-c32d-4a97-9189-903e1b76cf3b")
 		(at 258.5 175.265671 180)
@@ -9599,7 +9599,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "F.Cu")
 		(uuid "7dd88b18-bf84-4560-ad32-ab47718c8856")
 		(at 265 165.765671 90)
@@ -9704,7 +9704,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "82a47b0e-7c3b-45a2-930a-3c7082057c57")
 		(at 194 183.265671 180)
@@ -9871,7 +9871,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "85e6f6b9-5fac-4811-aafd-39dbf85f71f4")
 		(at 238.5 117.765671)
@@ -10070,7 +10070,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "87d66878-2819-4df6-8766-9311e3a7553b")
 		(at 60 194.765671 90)
@@ -10277,7 +10277,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "8c4fdf20-3264-40cb-bb1e-510bc515a484")
 		(at 40 161.265671 180)
@@ -10484,7 +10484,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "8dddd48f-310e-4abe-8f55-7befcb6ac15d")
 		(at 176.5 135.765671 90)
@@ -10691,7 +10691,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "9319f514-258c-439d-9238-7280d30b2f8e")
 		(at 88 194.265671 90)
@@ -10898,7 +10898,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
+	(footprint "MB_Library:HDR-TH_4P-P2.54-H-M-W10.4"
 		(layer "F.Cu")
 		(uuid "9350af83-d89e-4b71-90ad-8da108ee0f15")
 		(at 196.5 71.765671 -90)
@@ -11271,7 +11271,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "9eb0b6f1-05c1-41c0-a970-07157c386e80")
 		(at 238 91.765671 -90)
@@ -11478,7 +11478,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+	(footprint "MB_Library:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
 		(layer "F.Cu")
 		(uuid "9ffd2552-610f-48be-a6ff-3e71b5ffd40d")
 		(at 109.5 68.265671 90)
@@ -11722,7 +11722,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "a24da53e-9194-479a-a5de-bd69aa335291")
 		(at 233 122.265671 -90)
@@ -11921,7 +11921,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "a3b4b070-d9c5-4110-b29f-b2027243dd46")
 		(at 241 129.765671)
@@ -12128,7 +12128,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "a7c99258-8ffa-4f7d-89c3-ddec0424a577")
 		(at 196 148.265671 90)
@@ -12335,7 +12335,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "a81b54b3-9279-47a5-8468-ebe8c6c94f63")
 		(at 60 126.765671 180)
@@ -12502,7 +12502,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "a81f4d56-3a8b-4d71-84b3-f71629f070f6")
 		(at 113 175.265671 180)
@@ -12709,7 +12709,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "a9782c64-7e98-4be4-aaa8-9e3094ad8f89")
 		(at 122 166.265671)
@@ -12916,7 +12916,7 @@
 			)
 		)
 	)
-	(footprint "MountingHole:MountingHole_6.4mm_M6_Pad"
+	(footprint "MB_Library:MountingHole_6.4mm_M6_Pad"
 		(layer "F.Cu")
 		(uuid "aa85094d-6d7f-4086-832a-80848b2f6cde")
 		(at 258 192.265671)
@@ -13017,7 +13017,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:TO-252-3_L6.5-W5.8-P4.58-BL"
+	(footprint "MB_Library:TO-252-3_L6.5-W5.8-P4.58-BL"
 		(layer "F.Cu")
 		(uuid "ac0f59db-ade1-4fec-9075-b18291e1d342")
 		(at 237.805 111.755671)
@@ -13194,7 +13194,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "F.Cu")
 		(uuid "adb5daf9-c81c-48ed-9a98-6da501f1bd66")
 		(at 121.85 115.865671 90)
@@ -13299,7 +13299,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "b244464b-050b-4c12-ac38-26beea9b6299")
 		(at 125 92.265671 -90)
@@ -13466,7 +13466,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "b2a33daa-850b-467f-949c-c3c7db89631c")
 		(at 194 185.765671)
@@ -13673,7 +13673,7 @@
 			)
 		)
 	)
-	(footprint "Diode_SMD:D_SOD-323"
+	(footprint "MB_Library:D_SOD-323"
 		(layer "F.Cu")
 		(uuid "b7ed88d4-858a-4225-8dee-dc0e242e41c7")
 		(at 102 65.265671 180)
@@ -13946,7 +13946,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "be582e9b-7886-4ad0-94e6-18646c9d9a62")
 		(at 198 133.265671 180)
@@ -14113,7 +14113,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "bf4203cc-fa89-4597-8a59-40332513b435")
 		(at 263 128.765671)
@@ -14320,7 +14320,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "bf59c4ed-e27d-4bb4-8c68-c018c499a945")
 		(at 38.88 118.895671)
@@ -14487,7 +14487,7 @@
 			)
 		)
 	)
-	(footprint "MountingHole:MountingHole_6.4mm_M6_Pad"
+	(footprint "MB_Library:MountingHole_6.4mm_M6_Pad"
 		(layer "F.Cu")
 		(uuid "bfdad174-9a6e-44a3-b1db-856b02dadf7d")
 		(at 40 73.265671)
@@ -14588,7 +14588,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "c2079955-281b-4713-b393-94adf3644b71")
 		(at 214 104.765671 -90)
@@ -14755,7 +14755,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "c2b75f7e-62d7-4129-a24b-8fb896dc1978")
 		(at 228 190.265671 180)
@@ -14962,7 +14962,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+	(footprint "MB_Library:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
 		(layer "F.Cu")
 		(uuid "c9334062-d1cc-4a7f-bd1f-5a0cf379b0ac")
 		(at 255.5 94.265671 -90)
@@ -15206,7 +15206,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "ca728406-38cd-43c3-8567-8e29b1742995")
 		(at 193 194.265671)
@@ -15413,7 +15413,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "F.Cu")
 		(uuid "cacf1413-0975-4adb-9e0e-18d17065b54a")
 		(at 246.0375 110.995671 -90)
@@ -15745,7 +15745,7 @@
 			)
 		)
 	)
-	(footprint "MountingHole:MountingHole_6.4mm_M6_Pad"
+	(footprint "MB_Library:MountingHole_6.4mm_M6_Pad"
 		(layer "F.Cu")
 		(uuid "cadb29ce-115f-49c4-a2a3-31f2232bdd2e")
 		(at 40.5 134.765671)
@@ -15846,7 +15846,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "cae26e41-8669-40dd-9885-988038c4e564")
 		(at 127.5 91.765671 90)
@@ -16053,7 +16053,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "cb21fb49-4c7b-4b6a-b354-c83bea449563")
 		(at 117.5 71.765671 -90)
@@ -16252,7 +16252,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "cd456a53-ea58-4b10-8ef2-cb2b5956be07")
 		(at 74 194.765671 -90)
@@ -16459,7 +16459,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "d04f983c-da91-4258-aea0-057f665761e0")
 		(at 40 171.265671)
@@ -16666,7 +16666,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "d0e510e7-e89f-4b4e-b15c-be418c5ebfbc")
 		(at 167.5 169.265671 180)
@@ -16873,7 +16873,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "d1df9597-158e-4e5c-9910-30f783d6779b")
 		(at 88.5 173.765671)
@@ -17080,7 +17080,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "d6613022-3929-4b71-9dda-37ec86b39cdf")
 		(at 39 116.265671 180)
@@ -17287,7 +17287,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "F.Cu")
 		(uuid "d697c7dd-c6c9-428d-a839-428535ed6cc4")
 		(at 82.9275 124.605671 90)
@@ -17486,7 +17486,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "d7f39413-546e-4657-a7bb-12103b3ab448")
 		(at 148.4 161.765671 90)
@@ -17693,7 +17693,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "F.Cu")
 		(uuid "d823fd0e-8cce-4bcc-b46e-5ed307d6b44c")
 		(at 236 119.765671 90)
@@ -18025,7 +18025,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "da5aa32b-7cf8-4dec-8506-57285a83977f")
 		(at 113 152.265671)
@@ -18232,7 +18232,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
+	(footprint "MB_Library:HDR-TH_4P-P2.54-H-M-W10.4"
 		(layer "F.Cu")
 		(uuid "e1bc5e9a-2f7a-453d-97de-b463363ccca4")
 		(at 249.5 71.765671 -90)
@@ -18605,7 +18605,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "e26db0e2-9aa9-46f8-986f-470f0407fe46")
 		(at 262.5 103.385671)
@@ -18772,7 +18772,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "e5a48b43-8336-4ba5-8a8b-0df5562628c7")
 		(at 163 193.765671 90)
@@ -18979,7 +18979,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "e67cc075-630b-40b4-b699-d3594babb680")
 		(at 184.5 91.265671 180)
@@ -19186,7 +19186,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "e7a8ea7c-9584-4fd4-be09-ab6024fe7b19")
 		(at 252 173.765671 90)
@@ -19393,7 +19393,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "ea8fa92c-43e5-48f8-b0bf-fabbe07a1786")
 		(at 153.5 193.765671 -90)
@@ -19600,7 +19600,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "eacae9b3-e7cb-4ef2-bd6f-2f8875f47f02")
 		(at 216.45 104.765671 90)
@@ -19807,7 +19807,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "eb1cf05f-8c0f-40b4-9b62-611f580f956b")
 		(at 38.88 102.395671)
@@ -20014,7 +20014,7 @@
 			)
 		)
 	)
-	(footprint "MountingHole:MountingHole_6.4mm_M6_Pad"
+	(footprint "MB_Library:MountingHole_6.4mm_M6_Pad"
 		(layer "F.Cu")
 		(uuid "eb379c10-da61-443d-b588-eda26d2ee3c8")
 		(at 260 79.765671)
@@ -20115,7 +20115,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "ef2c8e0f-a140-47ce-b72f-a31bfaaf67d9")
 		(at 262.5 106.285671 180)
@@ -20322,7 +20322,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "F.Cu")
 		(uuid "f382dc71-e061-4fc4-ac20-d0304af99fec")
 		(at 118.5 67.765671 90)
@@ -20654,7 +20654,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "F.Cu")
 		(uuid "f3c54c6b-55aa-49d2-88df-69bbb6fc595b")
 		(at 125.4 115.865671 90)
@@ -20759,7 +20759,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
+	(footprint "MB_Library:HDR-TH_4P-P2.54-H-M-W10.4"
 		(layer "F.Cu")
 		(uuid "f41775e7-acc9-469f-8014-8a9b6a2b0c62")
 		(at 102.5 71.765671 -90)
@@ -21132,7 +21132,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0805"
+	(footprint "MB_Library:R0805"
 		(layer "F.Cu")
 		(uuid "f4191e96-6c3b-4a1b-9903-b3a05da15b90")
 		(at 145.5 161.765671 -90)
@@ -21299,7 +21299,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "f967d30d-7d34-4292-a086-78504824f36f")
 		(at 121.5 186.265671)
@@ -21506,7 +21506,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:TO-252-3_L6.5-W5.8-P4.58-BL"
+	(footprint "MB_Library:TO-252-3_L6.5-W5.8-P4.58-BL"
 		(layer "F.Cu")
 		(uuid "f9823ab2-8611-41be-8ee8-6143c395e0e2")
 		(at 76.59 125.513171 90)
@@ -21683,7 +21683,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
+	(footprint "MB_Library:LED-SMD_L3.5-W2.8-RD_1.25T-2PWT"
 		(layer "F.Cu")
 		(uuid "faee2ea5-ff6a-43ae-80bf-7314c38b3429")
 		(at 251.5 168.765671 180)
@@ -21890,7 +21890,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+	(footprint "MB_Library:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "02eaeef7-2948-4705-848c-d67fb0d0bb89")
 		(at 241.5 180.265671 90)
@@ -22094,7 +22094,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric"
+	(footprint "MB_Library:C_0805_2012Metric"
 		(layer "B.Cu")
 		(uuid "0b6749b7-d103-418f-8201-4294cee37df9")
 		(at 186 107.265671 90)
@@ -22298,7 +22298,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+	(footprint "MB_Library:SW-SMD_SMXS-08K-TP"
 		(layer "B.Cu")
 		(uuid "0c6bd530-254b-476d-8a3c-2a4b16ff04b2")
 		(at 183 73.265671)
@@ -23472,7 +23472,7 @@
 			)
 		)
 	)
-	(footprint "AQLibrary:EPAPER_PinHeader_2x20_P2.54mm_Vertical"
+	(footprint "MB_Library:EPAPER_PinHeader_2x20_P2.54mm_Vertical"
 		(layer "B.Cu")
 		(uuid "1178f99d-2c8a-4913-8abe-c2538a0d651f")
 		(at 102.5 106.265671 90)
@@ -24217,7 +24217,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "B.Cu")
 		(uuid "1c1e85e1-ca87-4906-a27d-b7980af5a926")
 		(at 248.5 198.765671 180)
@@ -24327,7 +24327,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:C0603"
+	(footprint "MB_Library:C0603"
 		(layer "B.Cu")
 		(uuid "22e0db24-307b-4cbb-9e04-daaa6928920f")
 		(at 255 183.265671 -90)
@@ -24543,7 +24543,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:HDR-TH_40P-P2.54-H-F-R2-C20-W8.5"
+	(footprint "MB_Library:HDR-TH_40P-P2.54-H-F-R2-C20-W8.5"
 		(layer "B.Cu")
 		(uuid "292f6d24-ff4a-40d1-a5e0-7252d7dc5c09")
 		(at 78.5 97.483171)
@@ -25317,7 +25317,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+	(footprint "MB_Library:SW-SMD_SMXS-08K-TP"
 		(layer "B.Cu")
 		(uuid "2999cfd0-eb1d-4c03-a935-350d912e23cd")
 		(at 160 73.265671)
@@ -26491,7 +26491,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+	(footprint "MB_Library:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "2f13afa8-bca3-45f0-9c34-1dcbf1218167")
 		(at 241.5 170.265671 -90)
@@ -26695,7 +26695,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+	(footprint "MB_Library:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "34283909-2c4b-49ab-ac62-215192b771dd")
 		(at 241.5 175.265671 90)
@@ -26899,7 +26899,7 @@
 			)
 		)
 	)
-	(footprint "AQLibrary:Talentcell"
+	(footprint "MB_Library:Talentcell"
 		(layer "B.Cu")
 		(uuid "3d28c347-13ac-4129-9183-1ebf84689387")
 		(at 117.25 172.765671)
@@ -26998,7 +26998,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOT-23-8_L3.0-W1.7-P0.65-LS2.8-BR"
+	(footprint "MB_Library:SOT-23-8_L3.0-W1.7-P0.65-LS2.8-BR"
 		(layer "B.Cu")
 		(uuid "4100b766-c0c1-4792-9fb5-e3a0d1195f9d")
 		(at 247.5 184.765671 90)
@@ -27226,7 +27226,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:F0805"
+	(footprint "MB_Library:F0805"
 		(layer "B.Cu")
 		(uuid "464f0401-f614-491d-b019-dcd2be651cb5")
 		(at 243 183.765671 180)
@@ -27420,7 +27420,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+	(footprint "MB_Library:SW-SMD_SMXS-08K-TP"
 		(layer "B.Cu")
 		(uuid "46ad0440-e44a-43f6-80a6-6308537274c1")
 		(at 235.69 73.265671)
@@ -28594,7 +28594,7 @@
 			)
 		)
 	)
-	(footprint "AQLibrary:GPS5pin_HDR-TH_5P-P2.54-V-F"
+	(footprint "MB_Library:GPS5pin_HDR-TH_5P-P2.54-V-F"
 		(layer "B.Cu")
 		(uuid "5842c18d-e978-4835-8de3-c758eb6e8ba8")
 		(at 195.5 115.065671)
@@ -28893,7 +28893,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"
+	(footprint "MB_Library:SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"
 		(layer "B.Cu")
 		(uuid "587884f5-514a-4a2e-bf0b-5b3a177d773c")
 		(at 170.5 90.265671 -90)
@@ -29276,7 +29276,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0603"
+	(footprint "MB_Library:R0603"
 		(layer "B.Cu")
 		(uuid "5c7ea899-6f69-4eb9-9d65-6214587078d1")
 		(at 250.5 184.765671 90)
@@ -29448,7 +29448,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+	(footprint "MB_Library:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 		(layer "B.Cu")
 		(uuid "5f7092bb-3c93-4c5e-bd70-74ca2560fde8")
 		(at 254.5 111.265671 180)
@@ -29636,7 +29636,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+	(footprint "MB_Library:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "66ef85a3-0cb0-4339-bfda-3ca4c64bf49e")
 		(at 245.5 199.803171 -90)
@@ -29840,7 +29840,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R0603"
+	(footprint "MB_Library:R0603"
 		(layer "B.Cu")
 		(uuid "7224a53e-d69b-421f-b63c-7d01921f0df8")
 		(at 252.5 184.765671 90)
@@ -30012,7 +30012,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+	(footprint "MB_Library:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 		(layer "B.Cu")
 		(uuid "72aa61b5-4d48-407f-818e-de9a3a0a908e")
 		(at 259.47 142.265671 90)
@@ -30200,7 +30200,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:R2512"
+	(footprint "MB_Library:R2512"
 		(layer "B.Cu")
 		(uuid "7effbdbd-1d1f-4f68-bdbc-3582611ad8f6")
 		(at 247 180.265671 180)
@@ -30372,7 +30372,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:TO-263-5_L10.2-W8.9-P1.70-TL"
+	(footprint "MB_Library:TO-263-5_L10.2-W8.9-P1.70-TL"
 		(layer "B.Cu")
 		(uuid "82731b4d-e7e6-40c8-ad16-8dbb0a4ad0fd")
 		(at 233.26 177.765671 180)
@@ -30587,7 +30587,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+	(footprint "MB_Library:SW-SMD_SMXS-08K-TP"
 		(layer "B.Cu")
 		(uuid "88e2d706-7097-4375-8479-2ba28ecd02de")
 		(at 212.5 73.265671)
@@ -31761,7 +31761,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:CP_Elec_10x12.5"
+	(footprint "MB_Library:CP_Elec_10x12.5"
 		(layer "B.Cu")
 		(uuid "9b16d462-e5a5-4a26-9842-fd1ffa791af0")
 		(at 259.5 175.765671 90)
@@ -32196,7 +32196,7 @@
 			)
 		)
 	)
-	(footprint "RASPBERRY_PI_4B_4GB:MODULE_RASPBERRY_PI_4B_4GB_Sideways"
+	(footprint "MB_Library:MODULE_RASPBERRY_PI_4B_4GB_Sideways"
 		(layer "B.Cu")
 		(uuid "9bfe631e-68ae-46e5-a6eb-b5ea95380f4c")
 		(at 88.5 82.765671)
@@ -32560,7 +32560,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"
+	(footprint "MB_Library:SOIC-24_L15.4-W7.5-P1.27-LS10.3-BL"
 		(layer "B.Cu")
 		(uuid "a9fec640-ca2a-42c3-b9d7-991dc61c537b")
 		(at 225.5 90.765671 -90)
@@ -32943,7 +32943,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric"
+	(footprint "MB_Library:C_0805_2012Metric"
 		(layer "B.Cu")
 		(uuid "ab266737-de3e-489d-bd14-2ec62fbbd102")
 		(at 191.5 108.265671 180)
@@ -33147,7 +33147,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+	(footprint "MB_Library:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 		(layer "B.Cu")
 		(uuid "ae171dfb-12e4-4044-9c53-5177c00022a1")
 		(at 236.24 194.235671)
@@ -33335,7 +33335,7 @@
 			)
 		)
 	)
-	(footprint "Package_TO_SOT_SMD:SOT-23"
+	(footprint "MB_Library:SOT-23"
 		(layer "B.Cu")
 		(uuid "b023d7a1-553e-45d9-bf31-3c3947940379")
 		(at 246 149.765671 -90)
@@ -33672,7 +33672,7 @@
 			)
 		)
 	)
-	(footprint "Inductor_SMD:L_Chilisin_BMRG00131360"
+	(footprint "MB_Library:L_Chilisin_BMRG00131360"
 		(layer "B.Cu")
 		(uuid "b5ce7bd0-7ce2-43be-98e5-cd99a5e7cb96")
 		(at 222.5 149.265671 90)
@@ -33916,7 +33916,7 @@
 			)
 		)
 	)
-	(footprint "AQLibrary:GPS4pin_HDR-TH_4P-P2.54-V-F"
+	(footprint "MB_Library:GPS4pin_HDR-TH_4P-P2.54-V-F"
 		(layer "B.Cu")
 		(uuid "be4cf5ca-a3c6-4187-86a9-daa7b5384016")
 		(at 195.5 124.315671)
@@ -34180,7 +34180,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "B.Cu")
 		(uuid "c291f316-457e-4f1a-86b0-95adad4fafee")
 		(at 244.5 169.265671 180)
@@ -34290,7 +34290,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:TO-252-3_L6.5-W5.8-P4.58-BL"
+	(footprint "MB_Library:TO-252-3_L6.5-W5.8-P4.58-BL"
 		(layer "B.Cu")
 		(uuid "c8695442-d40c-4ebd-ad29-0fdec660b06b")
 		(at 241.29 159.970671 -90)
@@ -34472,7 +34472,7 @@
 			)
 		)
 	)
-	(footprint "Resistor_SMD:R_0805_2012Metric"
+	(footprint "MB_Library:R_0805_2012Metric"
 		(layer "B.Cu")
 		(uuid "ca8b83aa-5958-4fd5-b334-0fe49526916f")
 		(at 246 158.765671 -90)
@@ -34676,7 +34676,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SMC_L6.9-W5.9-LS8.0-RD"
+	(footprint "MB_Library:SMC_L6.9-W5.9-LS8.0-RD"
 		(layer "B.Cu")
 		(uuid "cb8c1080-2134-424e-9a27-fe386e291e3f")
 		(at 234.5 166.765671)
@@ -34898,7 +34898,7 @@
 			)
 		)
 	)
-	(footprint "easyeda2kicad:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+	(footprint "MB_Library:SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
 		(layer "B.Cu")
 		(uuid "cbb29ab8-dbfa-4f2e-a8de-c87d367ecb5e")
 		(at 254.0775 129.565671 90)
@@ -35147,7 +35147,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+	(footprint "MB_Library:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
 		(layer "B.Cu")
 		(uuid "d0a063c4-d592-4042-80c9-bf98ab02f969")
 		(at 244 175.265671 -90)
@@ -35351,7 +35351,7 @@
 			)
 		)
 	)
-	(footprint "Capacitor_SMD:CP_Elec_10x10"
+	(footprint "MB_Library:CP_Elec_10x10"
 		(layer "B.Cu")
 		(uuid "db6ca85f-f67f-4d93-ad88-053b54660776")
 		(at 222.5 132.265671 90)
@@ -35786,7 +35786,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "B.Cu")
 		(uuid "e3433b91-ac5a-4c55-8cb2-5b7325ec51e2")
 		(at 252 201.265671)
@@ -35896,7 +35896,7 @@
 		)
 		(embedded_fonts no)
 	)
-	(footprint "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+	(footprint "MB_Library:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
 		(layer "B.Cu")
 		(uuid "f83be7d8-26e2-411a-8792-b4638edaccfb")
 		(at 259.47 156.265671 90)
@@ -36084,7 +36084,7 @@
 			)
 		)
 	)
-	(footprint "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+	(footprint "MB_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 		(layer "B.Cu")
 		(uuid "fcd227a5-0fd3-4144-a819-62e167336d88")
 		(at 247.5 175.765671 180)

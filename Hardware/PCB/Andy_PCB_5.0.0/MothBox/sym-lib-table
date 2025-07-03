@@ -20,4 +20,5 @@
   (lib (name "New_Library")(type "KiCad")(uri "${KIPRJMOD}/Library/Buck-Boost/New_Library.kicad_sym")(options "")(descr ""))
   (lib (name "AQ_Library_0")(type "KiCad")(uri "${KIPRJMOD}/AQ_Library_0.kicad_sym")(options "")(descr ""))
   (lib (name "attractor_AQ")(type "KiCad")(uri "${KIPRJMOD}/Library/Attractor/attractor_AQ.kicad_sym")(options "")(descr ""))
+  (lib (name "MB_Library")(type "KiCad")(uri "${KIPRJMOD}/MB_Library.kicad_sym")(options "")(descr ""))
 )
