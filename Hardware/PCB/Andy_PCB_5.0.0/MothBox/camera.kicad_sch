@@ -5,7 +5,7 @@
 	(uuid "e7ccf719-ef9e-446a-b2fd-e8a59a6a6964")
 	(paper "A4")
 	(lib_symbols
-		(symbol "AQ_Library_0:MountingHole_1/4inbolt"
+		(symbol "MB_Library:MountingHole_1/4inbolt"
 			(pin_names
 				(offset 1.016)
 			)
@@ -88,7 +88,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "AQ_Library_0:Talentcell"
+		(symbol "MB_Library:Talentcell"
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
@@ -150,7 +150,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "attractor:camera2"
+		(symbol "MB_Library:camera2"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -227,7 +227,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:MountingHole_1/4inbolt")
+		(lib_id "MB_Library:MountingHole_1/4inbolt")
 		(at 68.58 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -291,7 +291,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:MountingHole_1/4inbolt")
+		(lib_id "MB_Library:MountingHole_1/4inbolt")
 		(at 97.79 142.24 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -355,7 +355,7 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor:camera2")
+		(lib_id "MB_Library:camera2")
 		(at 68.58 40.64 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -419,7 +419,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:MountingHole_1/4inbolt")
+		(lib_id "MB_Library:MountingHole_1/4inbolt")
 		(at 30.48 104.14 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -483,7 +483,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:MountingHole_1/4inbolt")
+		(lib_id "MB_Library:MountingHole_1/4inbolt")
 		(at 30.48 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -547,7 +547,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:MountingHole_1/4inbolt")
+		(lib_id "MB_Library:MountingHole_1/4inbolt")
 		(at 147.32 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -611,7 +611,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:MountingHole_1/4inbolt")
+		(lib_id "MB_Library:MountingHole_1/4inbolt")
 		(at 128.27 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -675,7 +675,7 @@
 		)
 	)
 	(symbol
-		(lib_id "AQ_Library_0:Talentcell")
+		(lib_id "MB_Library:Talentcell")
 		(at 204.47 36.83 0)
 		(unit 1)
 		(exclude_from_sim yes)

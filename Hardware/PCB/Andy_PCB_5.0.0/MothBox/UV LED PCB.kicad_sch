@@ -5,7 +5,132 @@
 	(uuid "1c121218-0fa6-452f-bea7-d9d214802d3f")
 	(paper "A4")
 	(lib_symbols
-		(symbol "BC817:BC817_NPN_BJT"
+		(symbol "MB_Library:+12V"
+			(power)
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MB_Library:BC817_NPN_BJT"
 			(pin_numbers
 				(hide yes)
 			)
@@ -249,34 +374,28 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:R_US"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-			)
+		(symbol "MB_Library:DB142R-5.08-2P"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "R"
-				(at 2.54 0 90)
+			(property "Reference" "CN"
+				(at 0 6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "R_US"
-				(at -2.54 0 90)
+			(property "Value" "DB142R-5.08-2P"
+				(at 0 -6.35 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
-				(at 1.016 -0.254 90)
+			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+				(at 0 -8.89 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -284,7 +403,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -293,7 +412,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Resistor, US symbol"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -302,8 +421,8 @@
 					(hide yes)
 				)
 			)
-			(property "ki_keywords" "R res resistor"
-				(at 0 0 0)
+			(property "LCSC Part" "C2898709"
+				(at 0 -11.43 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -311,20 +430,21 @@
 					(hide yes)
 				)
 			)
-			(property "ki_fp_filters" "R_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
+			(symbol "DB142R-5.08-2P_0_1"
+				(rectangle
+					(start -2.54 3.81)
+					(end 2.54 -3.81)
+					(stroke
+						(width 0)
+						(type default)
 					)
-					(hide yes)
+					(fill
+						(type background)
+					)
 				)
-			)
-			(symbol "R_US_0_1"
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 0 2.54)
-					)
+				(circle
+					(center -1.27 2.54)
+					(radius 0.38)
 					(stroke
 						(width 0)
 						(type default)
@@ -333,60 +453,10 @@
 						(type none)
 					)
 				)
-				(polyline
-					(pts
-						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.286) (xy 0 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "R_US_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "~"
+				(pin unspecified line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -401,10 +471,10 @@
 						)
 					)
 				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "~"
+				(pin unspecified line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -422,7 +492,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Diode:ESD5Zxx"
+		(symbol "MB_Library:ESD5Zxx"
 			(pin_numbers
 				(hide yes)
 			)
@@ -571,279 +641,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "attractor_AQ:PZ254R-11-04P"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "PZ254R-11-04P"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
-				(at 0 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C492412"
-				(at 0 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PZ254R-11-04P_0_1"
-				(rectangle
-					(start -2.54 6.35)
-					(end 2.54 -6.35)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -1.27 5.08)
-					(radius 0.38)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 3.81 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 1.27 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -1.27 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -3.81 0)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "easyeda2kicad:DB142R-5.08-2P"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "CN"
-				(at 0 6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "DB142R-5.08-2P"
-				(at 0 -6.35 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C2898709"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "DB142R-5.08-2P_0_1"
-				(rectangle
-					(start -2.54 3.81)
-					(end 2.54 -3.81)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -1.27 2.54)
-					(radius 0.38)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 1.27 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -1.27 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "easyeda2kicad:FDS4435BZ"
+		(symbol "MB_Library:FDS4435BZ"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1814,132 +1612,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+12V"
-			(power)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Value" "+12V"
-				(at 0 3.556 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+12V\""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "+12V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+12V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "power:GND"
+		(symbol "MB_Library:GND"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -2030,6 +1703,333 @@
 						)
 					)
 					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MB_Library:PZ254R-11-04P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PZ254R-11-04P"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C492412"
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PZ254R-11-04P_0_1"
+				(rectangle
+					(start -2.54 6.35)
+					(end 2.54 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -1.27 5.08)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MB_Library:R_US"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "R"
+				(at 2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "R_US"
+				(at -2.54 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 1.016 -0.254 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Resistor, US symbol"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "R res resistor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "R_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "R_US_0_1"
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.286) (xy 1.016 1.905) (xy 0 1.524) (xy -1.016 1.143) (xy 0 0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy 1.016 0.381) (xy 0 0) (xy -1.016 -0.381) (xy 0 -0.762)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -0.762) (xy 1.016 -1.143) (xy 0 -1.524) (xy -1.016 -1.905) (xy 0 -2.286)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -2.286) (xy 0 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "R_US_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3952,7 +3952,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:FDS4435BZ")
+		(lib_id "MB_Library:FDS4435BZ")
 		(at 215.9 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4047,7 +4047,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 129.54 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4113,7 +4113,7 @@
 		)
 	)
 	(symbol
-		(lib_id "BC817:BC817_NPN_BJT")
+		(lib_id "MB_Library:BC817_NPN_BJT")
 		(at 64.77 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4230,7 +4230,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 190.5 55.88 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4315,7 +4315,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 200.66 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4380,7 +4380,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:DB142R-5.08-2P")
+		(lib_id "MB_Library:DB142R-5.08-2P")
 		(at 219.71 144.78 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4457,7 +4457,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 67.31 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4522,7 +4522,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 190.5 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4588,7 +4588,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 252.73 81.28 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4654,7 +4654,7 @@
 		)
 	)
 	(symbol
-		(lib_id "BC817:BC817_NPN_BJT")
+		(lib_id "MB_Library:BC817_NPN_BJT")
 		(at 64.77 134.62 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4771,7 +4771,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 67.31 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4837,7 +4837,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:ESD5Zxx")
+		(lib_id "MB_Library:ESD5Zxx")
 		(at 129.54 142.24 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4924,7 +4924,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 198.12 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4989,7 +4989,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 74.93 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5054,7 +5054,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 50.8 134.62 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5138,7 +5138,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 50.8 68.58 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5222,7 +5222,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 190.5 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5287,7 +5287,7 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor_AQ:PZ254R-11-04P")
+		(lib_id "MB_Library:PZ254R-11-04P")
 		(at 38.1 49.53 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5369,7 +5369,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:FDS4435BZ")
+		(lib_id "MB_Library:FDS4435BZ")
 		(at 218.44 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5463,7 +5463,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 129.54 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5529,7 +5529,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 46.99 118.11 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5595,7 +5595,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 176.53 132.08 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5679,7 +5679,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 50.8 54.61 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5745,7 +5745,7 @@
 		)
 	)
 	(symbol
-		(lib_id "BC817:BC817_NPN_BJT")
+		(lib_id "MB_Library:BC817_NPN_BJT")
 		(at 187.96 68.58 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5862,7 +5862,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 67.31 121.92 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5947,7 +5947,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:ESD5Zxx")
+		(lib_id "MB_Library:ESD5Zxx")
 		(at 252.73 74.93 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6034,7 +6034,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 176.53 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6100,7 +6100,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:ESD5Zxx")
+		(lib_id "MB_Library:ESD5Zxx")
 		(at 129.54 72.39 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6187,7 +6187,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 193.04 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6253,7 +6253,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 74.93 116.84 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6318,7 +6318,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 193.04 119.38 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6403,7 +6403,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 193.04 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6468,7 +6468,7 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor_AQ:PZ254R-11-04P")
+		(lib_id "MB_Library:PZ254R-11-04P")
 		(at 38.1 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6550,7 +6550,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:FDS4435BZ")
+		(lib_id "MB_Library:FDS4435BZ")
 		(at 92.71 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6645,7 +6645,7 @@
 		)
 	)
 	(symbol
-		(lib_id "BC817:BC817_NPN_BJT")
+		(lib_id "MB_Library:BC817_NPN_BJT")
 		(at 190.5 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6762,7 +6762,7 @@
 		)
 	)
 	(symbol
-		(lib_id "attractor_AQ:PZ254R-11-04P")
+		(lib_id "MB_Library:PZ254R-11-04P")
 		(at 166.37 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6844,7 +6844,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Diode:ESD5Zxx")
+		(lib_id "MB_Library:ESD5Zxx")
 		(at 255.27 142.24 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6931,7 +6931,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 173.99 68.58 270)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7015,7 +7015,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 67.31 143.51 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7081,7 +7081,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:FDS4435BZ")
+		(lib_id "MB_Library:FDS4435BZ")
 		(at 102.87 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7176,7 +7176,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 255.27 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7242,7 +7242,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
+		(lib_id "MB_Library:+12V")
 		(at 67.31 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7307,7 +7307,7 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
+		(lib_id "MB_Library:GND")
 		(at 232.41 151.13 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7372,7 +7372,7 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_US")
+		(lib_id "MB_Library:R_US")
 		(at 67.31 55.88 180)
 		(unit 1)
 		(exclude_from_sim no)
