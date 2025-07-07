@@ -8,7 +8,7 @@
 		(title "MothBeam12V")
 		(date "2024-10-20")
 		(rev "A")
-		(company "LabLab GmbH")
+		(company "LabLab GmbH - modified by DINALAB")
 	)
 	(lib_symbols
 		(symbol "Connector:TestPoint_Small"
