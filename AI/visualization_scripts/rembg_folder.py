@@ -4,7 +4,7 @@ from rembg import new_session, remove
 from PIL import Image
 import argparse
 
-INPUT_PATH=r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches"
+INPUT_PATH=r"/Users/brianna/Desktop/mothpatches"
 
 
 #command line arguments
@@ -25,7 +25,7 @@ def remove_backgrounds_from_folder(input_folder, output_folder):
     valid_files = [filename for filename in os.listdir(input_folder) if filename.lower().endswith(valid_extensions)]
     total_files = len(valid_files)
 
-    model_name = "unet"
+    model_name = "u2net"
     rembg_session = new_session(model_name)
 
     if total_files == 0:
