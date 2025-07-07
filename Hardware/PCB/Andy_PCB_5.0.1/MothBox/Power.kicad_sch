@@ -3255,7 +3255,7 @@
 	)
 	(text "Current and Voltage measurement\n"
 		(exclude_from_sim no)
-		(at 201.422 18.288 0)
+		(at 201.168 16.002 0)
 		(effects
 			(font
 				(size 1.778 1.778)
@@ -3501,12 +3501,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b4033dfc-7176-4fd3-84f1-7e09f769e796")
-	)
-	(junction
-		(at 52.07 73.66)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bc36d0a9-f077-482a-9c3d-dd93c8a28ce3")
 	)
 	(junction
 		(at 71.12 110.49)
@@ -3776,6 +3770,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 121.92) (xy 172.72 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "326392c4-9eb5-4336-a9da-5a36dfc3902f")
+	)
+	(wire
+		(pts
 			(xy 124.46 53.34) (xy 124.46 55.88)
 		)
 		(stroke
@@ -3946,16 +3950,6 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 67.31) (xy 52.07 73.66)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "56ac7b6b-102c-4e86-9805-9567c3f1fe26")
-	)
-	(wire
-		(pts
 			(xy 87.63 113.03) (xy 87.63 115.57)
 		)
 		(stroke
@@ -4016,6 +4010,16 @@
 	)
 	(wire
 		(pts
+			(xy 52.07 67.31) (xy 52.07 73.66)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "64e9d95f-878b-4657-9a18-707b6350e89b")
+	)
+	(wire
+		(pts
 			(xy 189.23 55.88) (xy 190.5 55.88)
 		)
 		(stroke
@@ -4023,6 +4027,16 @@
 			(type default)
 		)
 		(uuid "665307ec-6851-4e73-87c8-5a692a29e7d6")
+	)
+	(wire
+		(pts
+			(xy 172.72 123.19) (xy 168.91 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "669e7197-74ac-48cf-8b66-04452e26a264")
 	)
 	(wire
 		(pts
@@ -4496,7 +4510,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 19.05) (xy 63.5 73.66)
+			(xy 63.5 19.05) (xy 63.5 67.31)
 		)
 		(stroke
 			(width 0.1524)
@@ -4586,7 +4600,7 @@
 	)
 	(wire
 		(pts
-			(xy 52.07 73.66) (xy 53.34 73.66)
+			(xy 52.07 67.31) (xy 53.34 67.31)
 		)
 		(stroke
 			(width 0)
@@ -4665,7 +4679,7 @@
 		(uuid "3ae70919-1da1-43ab-b696-b194c8332c5d")
 	)
 	(label "PWR_IN"
-		(at 52.07 66.04 0)
+		(at 52.07 73.66 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5711,6 +5725,71 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "#PWR06")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MB_Library:PWR_FLAG")
+		(at 172.72 121.92 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "336abc6e-973b-4d6c-85eb-78a8ba23b474")
+		(property "Reference" "#FLG03"
+			(at 172.72 120.015 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PWR_FLAG"
+			(at 176.022 117.856 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 172.72 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 172.72 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Special symbol for telling ERC where power comes from"
+			(at 172.72 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3052f9f8-4985-4ee9-b430-5505b211ccfa")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "#FLG03")
 					(unit 1)
 				)
 			)
@@ -7542,7 +7621,7 @@
 			)
 		)
 		(property "Value" "+5V"
-			(at 170.942 117.856 0)
+			(at 167.386 117.856 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8220,24 +8299,23 @@
 	)
 	(symbol
 		(lib_id "MB_Library:0805L010_60WR")
-		(at 58.42 73.66 180)
+		(at 58.42 67.31 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f71416ab-319c-4b0c-94bc-5276b708da20")
 		(property "Reference" "F1"
-			(at 58.42 67.31 0)
+			(at 58.928 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "Polyfuse"
-			(at 58.42 69.85 0)
+		(property "Value" "5A"
+			(at 58.42 70.104 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8245,7 +8323,7 @@
 			)
 		)
 		(property "Footprint" "easyeda2kicad:F0805"
-			(at 58.42 66.04 0)
+			(at 58.42 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8254,7 +8332,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 58.42 73.66 0)
+			(at 58.42 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8263,7 +8341,7 @@
 			)
 		)
 		(property "Description" "Resettable fuse, polymeric positive temperature coefficient"
-			(at 58.42 73.66 0)
+			(at 58.42 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8272,7 +8350,7 @@
 			)
 		)
 		(property "LCSC Part no " ""
-			(at 58.42 73.66 0)
+			(at 58.42 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8281,7 +8359,7 @@
 			)
 		)
 		(property "LCSC PN" ""
-			(at 58.42 73.66 0)
+			(at 58.42 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8289,7 +8367,7 @@
 			)
 		)
 		(property "LCSC Part" "C22435897"
-			(at 58.42 63.5 0)
+			(at 58.42 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
