@@ -55,9 +55,9 @@ from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
 INPUT_PATH = (
-    r"F:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25\2025-06-26"  # raw string
+    r"/Users/brianna/Desktop/Indonesia_Deployments/2025-06-22"  # raw string
 )
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"/Users/brianna/Desktop/IndonesiaSpeciesListGBIF.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 """ KINGDOM = 0
     PHYLUM = 1
@@ -540,8 +540,8 @@ def get_bioclip_prediction_imgpath(img, classifier):
     winner = ""
     winnerprob = ""
 
-    img_features = classifier.create_image_features(images)
-    for probs in classifier.create_probabilities(img_features, classifier.txt_features):
+    img_embeddings = classifier.create_image_features(images)
+    for probs in classifier.create_probabilities(img_embeddings, classifier.txt_embeddings):
         topk = probs.topk(k=5)
         index = 0
         for pred in classifier.format_grouped_probs(
@@ -570,8 +570,8 @@ def get_bioclip_prediction_PILimg(img, classifier):
     winner = ""
     winnerprob = ""
 
-    img_features = classifier.create_image_features(images)
-    for probs in classifier.create_probabilities(img_features, classifier.txt_features):
+    img_embeddings = classifier.create_image_features(images)
+    for probs in classifier.create_probabilities(img_embeddings, classifier.txt_embeddings):
         topk = probs.topk(k=5)
         index = 0
         for pred in classifier.format_grouped_probs(
@@ -678,7 +678,7 @@ def ID_matched_img_json_pairs(
     print("Loading TOL classifier")
     classifier = TreeOfLifeClassifier()
     print("TOL: number of labels:", len(classifier.txt_names))
-    print("TOL: image embeddings shape:", classifier.txt_features.shape)
+    print("TOL: image embeddings shape:", classifier.txt_embeddings.shape)
 
     print("Finding embeddings matching the targets.")
     found_items = []
@@ -693,20 +693,20 @@ def ID_matched_img_json_pairs(
     txt_feature_ary = []
     new_txt_names = []
     for i, txt_name in found_items:
-        txt_feature_ary.append(classifier.txt_features[:, i])
+        txt_feature_ary.append(classifier.txt_embeddings[:, i])
         new_txt_names.append(txt_name)
 
     print("Creating embeddings for custom labels")
     custom_labels = ["hole", "circle", "background", "wall", "floor", "blank", "sky"]
     clc = CustomLabelsClassifier(custom_labels)
     for i, label in enumerate(custom_labels):
-        txt_feature_ary.append(clc.txt_features[:, i])
+        txt_feature_ary.append(clc.txt_embeddings[:, i])
         new_txt_names.append([[label, label, label, label, label, "", label], label])
 
     classifier.txt_names = new_txt_names
-    classifier.txt_features = torch.stack(txt_feature_ary, dim=1)
+    classifier.txt_embeddings = torch.stack(txt_feature_ary, dim=1)
     print("TOL: Updated number of labels:", len(classifier.txt_names))
-    print("TOL: Updated image embeddings shape:", classifier.txt_features.shape)
+    print("TOL: Updated image embeddings shape:", classifier.txt_embeddings.shape)
 
     #Process Human Detections
     print("processing Human Detections.........")
