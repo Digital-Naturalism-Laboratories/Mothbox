@@ -15,9 +15,9 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
-INPUT_PATH = r"D:\Panama\Totumas_Summit_StudyCod_2024-09-21\2024-09-23"  # raw string
+INPUT_PATH = r"C:\Users\andre\Desktop\Dinacon Stuff\beachPalm"  # raw string
 
-YOLO_MODEL = r"C:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
+YOLO_MODEL = r"c:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 
 IMGSZ = 1600  # Should be same imgsz as used in training for best results!
 
@@ -52,10 +52,9 @@ IMGSZ=args.imgsz
 def scan_for_images(date_folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""
   jpeg_files = []
-  for date_folder in date_folders:
-    for filename in os.listdir(date_folder):
-        if filename.endswith(".jpg"):
-            jpeg_files.append(os.path.join(date_folder, filename))
+  for filename in os.listdir(date_folder_path):
+      if filename.endswith(".jpg"):
+          jpeg_files.append(os.path.join(date_folder_path, filename))
   return jpeg_files
 
 def is_valid_image(image_path): #in case there is an occasional corrupt image
@@ -370,7 +369,7 @@ if __name__ == "__main__":
 
     
     for date_folder_path in date_folders:
-        print(date_folders)
+        print(date_folder_path)
         images = scan_for_images(date_folder_path)
         process_jpg_files(images, date_folder_path)
 
