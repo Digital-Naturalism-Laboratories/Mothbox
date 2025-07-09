@@ -2,6 +2,9 @@ import os
 from PIL import Image
 import imagehash
 import shutil
+
+folder_path=r"/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-04/patches"
+
 def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=8, threshold=5, min_resolution=(0, 0)):
     """
     Process all JPGs in `input_folder`, compare visual similarity using perceptual hash,
@@ -50,7 +53,7 @@ def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=
 # Example usage
 if __name__ == "__main__":
     find_unique_insects(
-        input_folder=r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29\patches",
+        input_folder=folder_path,
         threshold=18,
         min_resolution=(60, 60)  # e.g. skip anything smaller than 60x60
     )
