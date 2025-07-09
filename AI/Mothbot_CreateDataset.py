@@ -16,8 +16,8 @@ from datetime import datetime
 import re
 
 import piexif
-import naturtag
-from naturtag import tag_images
+#import naturtag
+#from naturtag import tag_images
 #import exiv2
 import subprocess
 import threading
@@ -25,11 +25,11 @@ import threading
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29"
-METADATA_PATH=r'C:\Users\andre\Downloads\Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1(1).csv'
-UTC_OFFSET= -5 #Panama is -5, change for different locations
+INPUT_PATH = r"/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-04"
+METADATA_PATH=r'/Users/brianna/Desktop/Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1.csv'
+UTC_OFFSET= 8 #Panama is -5, change for different locations
 
-TAXA_LIST_PATH = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryIndonesia_TaxaInsecta.csv" #ce/taxonomy?country=PA&taxon_key=212
+TAXA_LIST_PATH = r"/Users/brianna/Desktop/IndonesiaSpeciesListGBIF.csv" #ce/taxonomy?country=PA&taxon_key=212
 
 SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
 
@@ -577,7 +577,8 @@ def add_taxonomy_with_exiftool(image_path, taxonomic_list):
 
 
 class ExifToolSession:
-    def __init__(self, exiftool_path="exiftool-13.32_64/exiftool"):
+    #def __init__(self, exiftool_path="exiftool-13.32_64/exiftool"): #this is for windows
+    def __init__(self, exiftool_path="exiftool"): #this is for mac
         self.process = subprocess.Popen(
             [exiftool_path, "-stay_open", "True", "-@", "-"],
             stdin=subprocess.PIPE,
@@ -726,7 +727,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
     print("adding taxon info to exif "+str(taxonomic_list))
-    full_patch_path=Path(INPUT_PATH+"\\"+the_patch_path)
+    # full_patch_path=Path(INPUT_PATH+"\\"+the_patch_path) #this is for windows
+    full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #this is mac version
     #add_taxonomy_subject_and_tags(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_naturtag(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_naturtag(full_patch_path, taxonomic_list)
