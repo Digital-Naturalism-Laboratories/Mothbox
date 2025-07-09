@@ -20,6 +20,7 @@ import naturtag
 from naturtag import tag_images
 #import exiv2
 import subprocess
+import threading
 
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
@@ -540,6 +541,7 @@ def write_taxonomy_with_naturtag(image_path, taxonomic_list, include_common_name
         img.save(image_path, exif=piexif.dump(exif_dict))
         print("✅ Fallback EXIF tags written")
 
+#this works but goes SUPER slow because it opens exiftool every single time
 def add_taxonomy_with_exiftool(image_path, taxonomic_list):
     """
     Adds taxonomy tags using exiftool to fields recognized by iNaturalist.
@@ -562,16 +564,80 @@ def add_taxonomy_with_exiftool(image_path, taxonomic_list):
         ]
 
     # Build final command
-    cmd = ["exiftool-13.32_64/exiftool"] + exiftool_args + ["-overwrite_original", image_path]
+    #the following command works for windows, but likely not macs
+    cmd = ["exiftool-13.32_64/exiftool"] + exiftool_args + ["-overwrite_original -fast2 -stay_open true", image_path]
     
     result = subprocess.run(cmd, capture_output=True, text=True)
-
+    '''
     if result.returncode == 0:
         print(f"✅ Metadata written successfully to {image_path}")
     else:
         print(f"❌ Error from exiftool:\n{result.stderr}")
+    '''
 
-def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator):
+
+class ExifToolSession:
+    def __init__(self, exiftool_path="exiftool-13.32_64/exiftool"):
+        self.process = subprocess.Popen(
+            [exiftool_path, "-stay_open", "True", "-@", "-"],
+            stdin=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True,
+            bufsize=1  # line-buffered
+        )
+
+        # Start a background thread to drain stderr
+        self.stderr_output = []
+        self.stderr_thread = threading.Thread(target=self._drain_stderr, daemon=True)
+        self.stderr_thread.start()
+
+    def _drain_stderr(self):
+        for line in self.process.stderr:
+            self.stderr_output.append(line.strip())
+
+    def add_taxonomy_with_exiftool(self, full_patch_path, taxonomic_list):
+        args = []
+
+        # Format taxonomy tags
+        for entry in taxonomic_list:
+            if "_" in entry:
+                level, value = entry.split("_", 1)
+                tag = f"taxonomy:{level.lower()}={value}"
+                args.append(f"-XMP-dc:Subject+={tag}")
+                args.append(f"-XMP-MicrosoftPhoto:LastKeywordXMP+={tag}")
+
+        args.extend([
+            "-overwrite_original",
+            "-fast2",
+            str(full_patch_path),
+            "-execute\n"
+        ])
+
+        self.process.stdin.write("\n".join(args))
+        self.process.stdin.flush()
+
+        # Drain stdout until {ready}
+        output_lines = []
+        while True:
+            line = self.process.stdout.readline()
+            if not line:
+                break
+            if line.strip() == "{ready}":
+                break
+            output_lines.append(line.strip())
+
+        if output_lines:
+            print(f"⚠️ ExifTool output for {full_patch_path}:")
+            for line in output_lines:
+                print("  ", line)
+
+    def close(self):
+        self.process.stdin.write("-stay_open\nFalse\n")
+        self.process.stdin.flush()
+        self.process.wait()
+
+def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator, tagger):
   """Creates a FiftyOne sample using the 51 python interface
 
   Args:
@@ -653,7 +719,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
     #print(naturtag.metadata.image_metadata.ImageMetadata(image_path=r"c:\Users\andre\Desktop\Dinacon Stuff\test\cuervoCinife_2025_06_30__04_53_06_HDR0_0_Mothbot_yolo11m_4500_imgsz1600_b1_2024-01-18.pt.jpg"))
     #add_taxonomy_subject_and_tags_exiv2(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_exiv2_cli(str(full_patch_path), taxonomic_list)
-    add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list)
+    tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) #this works but is super slow beacause it opens exif tool every time
+    #tagger.add_taxonomy_with_exiftool(full_patch_path, taxonomic_list)
     
     taxonomic_list.append(ID_by)
 
@@ -998,18 +1065,22 @@ if __name__ == "__main__":
   # Iterate through human pairs and load data
   metadata= find_csv_match(INPUT_PATH, METADATA_PATH)
 
+  tagger = ExifToolSession()
+
+
   for image_path, json_path in hu_pairs:
     full_image_path = image_path
     labels, image_height, image_width, notmetadata, detection_creator = load_anylabeling_data(json_path)
-    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator )
+    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator, tagger)
     samples.append(sample)
 
   for image_path, json_path in bot_pairs:
     full_image_path = image_path
     labels, image_height, image_width, notmetadata, detection_creator = load_anylabeling_data(json_path)
-    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator )
+    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator, tagger )
     samples.append(sample)
 
+  tagger.close()
   # Create dataset
   dataset = fo.Dataset()
 
