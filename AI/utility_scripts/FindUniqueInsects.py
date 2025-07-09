@@ -2,19 +2,21 @@ import os
 from PIL import Image
 import imagehash
 import shutil
-
-def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=8, threshold=5):
+def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=8, threshold=5, min_resolution=(0, 0)):
     """
     Process all JPGs in `input_folder`, compare visual similarity using perceptual hash,
     and copy one representative image per visually similar group to `output_folder`.
+    
+    Only includes images larger than `min_size` (width, height).
     """
-    output_folder=input_folder+"/"+output_folder
 
+    output_folder=input_folder+"/"+output_folder
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
     seen_hashes = []
     copied_files = 0
+    min_width, min_height = min_resolution
 
     for filename in os.listdir(input_folder):
         if not filename.lower().endswith(".jpg"):
@@ -23,17 +25,19 @@ def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=
         filepath = os.path.join(input_folder, filename)
         try:
             img = Image.open(filepath).convert("RGB")
+
+            # Skip small images
+            if img.width < min_width or img.height < min_height:
+                print(f"🚫 Skipping {filename}: too small ({img.width}x{img.height})")
+                continue
+
             img_hash = imagehash.phash(img, hash_size=hash_size)
         except Exception as e:
             print(f"❌ Skipping {filename}: {e}")
             continue
 
-        # Check similarity with previously seen hashes
-        is_duplicate = False
-        for existing_hash in seen_hashes:
-            if abs(img_hash - existing_hash) <= threshold:
-                is_duplicate = True
-                break
+        # Check similarity
+        is_duplicate = any(abs(img_hash - h) <= threshold for h in seen_hashes)
 
         if not is_duplicate:
             seen_hashes.append(img_hash)
@@ -43,7 +47,10 @@ def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=
             print(f"✅ Copied unique: {filename}")
 
     print(f"\n🎉 Done! Copied {copied_files} unique insect images to '{output_folder}'.")
-
 # Example usage
 if __name__ == "__main__":
-    find_unique_insects(r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29\patches", threshold=15)
+    find_unique_insects(
+        input_folder=r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29\patches",
+        threshold=18,
+        min_resolution=(60, 60)  # e.g. skip anything smaller than 60x60
+    )
