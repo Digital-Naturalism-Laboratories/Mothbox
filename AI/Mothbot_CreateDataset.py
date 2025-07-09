@@ -599,7 +599,7 @@ class ExifToolSession:
     def add_taxonomy_with_exiftool(self, full_patch_path, taxonomic_list):
         args = []
 
-        # Format taxonomy tags
+        # 1. Format taxonomy tags
         for entry in taxonomic_list:
             if "_" in entry:
                 level, value = entry.split("_", 1)
@@ -607,6 +607,19 @@ class ExifToolSession:
                 args.append(f"-XMP-dc:Subject+={tag}")
                 args.append(f"-XMP-MicrosoftPhoto:LastKeywordXMP+={tag}")
 
+        # 2. Extract datetime from filename
+        filename = Path(full_patch_path).name
+        match = re.search(r"_(\d{4})_(\d{2})_(\d{2})__?(\d{2})_(\d{2})_(\d{2})", filename)
+        if match:
+            y, m, d, h, mi, s = match.groups()
+            datetime_str = f"{y}:{m}:{d} {h}:{mi}:{s}"
+            args.append(f"-DateTimeOriginal={datetime_str}")
+            args.append(f"-CreateDate={datetime_str}")
+            args.append(f"-ModifyDate={datetime_str}")
+        else:
+            print(f"⚠️ No datetime found in filename: {filename}")
+
+        # 3. Finalize arguments
         args.extend([
             "-overwrite_original",
             "-fast2",
@@ -614,10 +627,11 @@ class ExifToolSession:
             "-execute\n"
         ])
 
+        # 4. Send to ExifTool
         self.process.stdin.write("\n".join(args))
         self.process.stdin.flush()
 
-        # Drain stdout until {ready}
+        # 5. Drain stdout
         output_lines = []
         while True:
             line = self.process.stdout.readline()
