@@ -15,10 +15,16 @@ import csv
 from datetime import datetime
 import re
 
+import piexif
+import naturtag
+from naturtag import tag_images
+#import exiv2
+import subprocess
+
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"F:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25\2025-06-25"
+INPUT_PATH = r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29"
 METADATA_PATH=r'C:\Users\andre\Downloads\Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1(1).csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
@@ -284,6 +290,287 @@ def extract_number(raw_height):
   else:
     return None
 
+
+
+def write_taxonomy_with_exiv2_cli(image_path, taxonomic_list):
+    """
+    Writes iNaturalist-readable taxonomy tags to an image using the exiv2 CLI.
+    """
+    tags = []
+    for entry in taxonomic_list:
+        if "_" in entry:
+            level, value = entry.split("_", 1)
+            tag = f"taxonomy:{level.lower()}={value}"
+            # Add tag to both dc:subject and MicrosoftPhoto LastKeywordXMP
+            tags.append(f"-M\"set Xmp.dc.subject {tag}\"")
+            tags.append(f"-M\"set Xmp.MicrosoftPhoto.LastKeywordXMP {tag}\"")
+
+    # Combine the command
+    command = ["exiv2"] + tags + [image_path]
+
+    try:
+        result = subprocess.run(" ".join(command), shell=True, capture_output=True, text=True)
+        if result.returncode == 0:
+            print(f"✅ Tags written to {image_path}")
+        else:
+            print(f"❌ exiv2 failed:\n{result.stderr}")
+    except FileNotFoundError:
+        print("❌ exiv2 CLI tool not found. Make sure it's installed and in your system PATH.")
+
+
+def add_taxonomy_subject_and_tags_exiv2(image_path, output_path, taxonomic_list):
+    """
+    Adds taxonomy information to a photo's EXIF/XMP data using exiv2,
+    targeting fields iNaturalist is known to recognize.
+
+    Args:
+        image_path (str): Path to the input image file.
+        output_path (str): Path where the modified image will be saved.
+        taxonomic_list (list): A list of taxonomy strings like "Kingdom_Animalia".
+    """
+    # Step 1: Build semicolon-separated taxonomy string for XMP/IPTC Keywords/Subject
+    subject_keywords = []
+    for item in taxonomic_list:
+        if "_" in item:
+            level, value = item.split("_", 1)
+            # iNaturalist often just looks for the raw scientific name in keywords,
+            # but including the "taxonomy:level=" format is good for general use.
+            # Let's add both for good measure, or just the value.
+            # For iNaturalist, a simple list of names (e.g., "Homo sapiens; Chordata")
+            # in Subject/Keywords is often sufficient.
+            subject_keywords.append(value.replace("_", " ")) # Space for readability
+            subject_keywords.append(f"taxonomy:{level.lower()}={value.replace('_', ' ')}")
+
+    # Make sure we have unique values and join them
+    unique_subject_keywords = sorted(list(set(subject_keywords)))
+    keywords_str = ";".join(unique_subject_keywords)
+
+    # For the XMP dc:title, iNaturalist often picks the most specific taxon
+    # or the full scientific name (Genus species) if available.
+    # Let's try to get the species if present, otherwise the lowest rank.
+    dc_title = ""
+    species_found = False
+    for item in reversed(taxonomic_list): # Iterate in reverse to get most specific
+        if "Species_" in item:
+            dc_title = item.split("Species_", 1)[1].replace("_", " ")
+            species_found = True
+            break
+        elif "_" in item and not dc_title: # If no species, take the lowest rank
+            dc_title = item.split("_", 1)[1].replace("_", " ")
+    
+    if not dc_title and taxonomic_list: # Fallback if no specific rank found
+        dc_title = taxonomic_list[-1].split("_", 1)[1].replace("_", " ")
+
+    # Step 2: Open image with exiv2
+    try:
+        image = exiv2.ImageFactory.open(image_path)
+        image.readMetadata()
+
+        # Get existing metadata if any
+        exif_data = image.exifData()
+        iptc_data = image.iptcData()
+        xmp_data = image.xmpData()
+
+        # Step 3: Set EXIF/XMP/IPTC tags
+        # iNaturalist specifically mentions looking at Subject tags (which map to XMP/IPTC Keywords)
+        # and dc:title (XMP Title). UserComment is also checked.
+
+        # XMP Subject (often used for keywords/tags)
+        # exiv2 treats XMP arrays as lists directly
+        # First, clear existing Subject array if we're replacing
+        if 'Xmp.dc.subject' in xmp_data:
+            del xmp_data['Xmp.dc.subject']
+        # Add new subjects (keywords)
+        for keyword in unique_subject_keywords:
+            xmp_data.add('Xmp.dc.subject', keyword)
+        print(f"Set Xmp.dc.subject: {unique_subject_keywords}")
+
+        # IPTC Keywords (also often used for tags, syncs with XMP Subject)
+        # IPTC keywords are typically multi-string.
+        # Clear existing keywords if we're replacing
+        if 'Iptc.Application2.Keywords' in iptc_data:
+            del iptc_data['Iptc.Application2.Keywords']
+        for keyword in unique_subject_keywords:
+            iptc_data.add('Iptc.Application2.Keywords', keyword)
+        print(f"Set Iptc.Application2.Keywords: {unique_subject_keywords}")
+
+
+        # XMP dc:title (Title of the image, iNaturalist can parse this for taxon)
+        if dc_title:
+            xmp_data['Xmp.dc.title'] = dc_title
+            print(f"Set Xmp.dc.title: {dc_title}")
+
+        # UserComment (EXIF, more general notes)
+        # exiv2 handles encoding for UserComment. Just provide the string.
+        # The ASCII\x00\x00\x00 prefix is often managed by the library.
+        exif_data['Exif.Photo.UserComment'] = taxonomy_str
+        print(f"Set Exif.Photo.UserComment: {taxonomy_str}")
+
+        # --- Ensure common EXIF tags are present (optional, but good practice) ---
+        # iNaturalist often checks for DateTimeOriginal for observation date.
+        # If it's missing, add current timestamp.
+        if 'Exif.Photo.DateTimeOriginal' not in exif_data:
+            now = datetime.datetime.now().strftime("%Y:%m:%d %H:%M:%S")
+            exif_data['Exif.Photo.DateTimeOriginal'] = now
+            print(f"Added Exif.Photo.DateTimeOriginal: {now}")
+        
+        # Ensure Exif.Image.DateTime (also a creation date field)
+        if 'Exif.Image.DateTime' not in exif_data:
+            now = datetime.datetime.now().strftime("%Y:%m:%d %H:%M:%S")
+            exif_data['Exif.Image.DateTime'] = now
+            print(f"Added Exif.Image.DateTime: {now}")
+
+        # Step 4: Write metadata back to the image
+        image.setExifData(exif_data)
+        image.setIptcData(iptc_data)
+        image.setXmpData(xmp_data)
+        image.writeMetadata(output_path)
+        print(f"Metadata written to: {output_path}")
+
+    except exiv2.Exiv2Error as e:
+        print(f"Exiv2 error: {e}")
+    except FileNotFoundError:
+        print(f"Error: Image not found at {image_path}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+def add_taxonomy_subject_and_tags(image_path, output_path, taxonomic_list):
+    # Step 1: Build semicolon-separated taxonomy string
+    exif_subject = []
+    for item in taxonomic_list:
+        if "_" in item:
+            level, value = item.split("_", 1)
+            tag = f"taxonomy:{level.lower()}={value}"
+            exif_subject.append(tag)
+    
+    taxonomy_str = ";".join(exif_subject)  # For all EXIF fields
+    taxonomy_str=taxonomy_str+";nothing"
+    # Step 2: Load image and EXIF
+    img = Image.open(image_path)
+    exif_bytes = img.info.get("exif")
+    if exif_bytes:
+        exif_dict = piexif.load(exif_bytes)
+    else:
+        exif_dict = {"0th": {}, "Exif": {}, "GPS": {}, "1st": {}, "thumbnail": None}
+
+    # Step 3: Encode XP fields in UTF-16LE with null terminator
+    def encode_xp(value):
+        return value.encode("utf-16le") + b'\x00\x00'
+
+    encoded_taxonomy = encode_xp(taxonomy_str)
+
+    # Step 4: Write to XPSubject and XPKeywords
+    exif_dict["0th"][piexif.ImageIFD.XPSubject] = encoded_taxonomy
+    exif_dict["0th"][piexif.ImageIFD.XPKeywords] = encoded_taxonomy
+
+    # Optional: still set UserComment (as plain UTF-8)
+    user_comment_bytes = b"ASCII\x00\x00\x00" + taxonomy_str.encode("utf-8")
+    exif_dict["Exif"][piexif.ExifIFD.UserComment] = user_comment_bytes
+
+    # Step 5: Save the updated image
+    exif_bytes = piexif.dump(exif_dict)
+    img.save(output_path, exif=exif_bytes)
+    print(f"Saved taxonomy (semicolon-separated) to Subject and Tags: {output_path}")
+
+
+
+
+
+
+def write_taxonomy_with_naturtag_old(image_path, taxonomic_list, include_common_names=False):
+    """
+    Writes taxonomy tags into image EXIF/XMP metadata using naturtag.
+
+    - image_path: path to the JPEG to tag
+    - taxonomic_list: list like ['KINGDOM_Animalia', 'PHYLUM_Arthropoda', ...]
+    - include_common_names: whether to add any common-name tags (usually False)
+    """
+    # Build structured taxonomy keywords
+    keywords = []
+    for entry in taxonomic_list:
+        if "_" in entry:
+            level, val = entry.split("_", 1)
+            keywords.append(f"taxonomy:{level.lower()}={val}")
+
+    # Call tag_images correctly, passing keywords to the proper parameter
+    tag_images(
+        image_path,
+        keywords=keywords,               # custom taxonomy tags
+        common_names=include_common_names,
+        create_xmp=True                  # ensures XMP metadata is embedded
+    )
+    print(f"✅ Taxonomy tags written using naturtag to: {image_path}")
+
+
+def write_taxonomy_with_naturtag(image_path, taxonomic_list, include_common_names=False):
+    # Construct taxonomy keywords
+    keywords = []
+    for entry in taxonomic_list:
+        if "_" in entry:
+            level, val = entry.split("_", 1)
+            keywords.append(f"taxonomy:{level.lower()}={val}")
+
+    # Wrap call to catch warnings or recover
+    try:
+        tag_images(
+            image_path,
+            keywords=keywords,
+            common_names=include_common_names,
+            create_xmp=True  # ensures proper XMP embedding
+        )
+        print(f"✅ Successfully tagged: {image_path}")
+    except Exception as e:
+        print(f"❗ naturtag failed with error:\n{e}")
+        print("➡️ Attempting fallback: writing only EXIF tags via piexif")
+
+        # Fallback: write EXIF XP fields only
+        import piexif
+        from PIL import Image
+
+        def encode_xp(val):
+            return val.encode("utf-16le") + b'\x00\x00'
+
+        taxonomy_str = ";".join(keywords)
+        img = Image.open(image_path)
+        exif_bytes = img.info.get("exif")
+        exif_dict = piexif.load(exif_bytes) if exif_bytes else {"0th": {}, "Exif": {}, "GPS": {}, "1st": {}, "thumbnail": None}
+
+        exif_dict["0th"][piexif.ImageIFD.XPSubject] = encode_xp(taxonomy_str)
+        exif_dict["0th"][piexif.ImageIFD.XPKeywords] = encode_xp(taxonomy_str)
+        img.save(image_path, exif=piexif.dump(exif_dict))
+        print("✅ Fallback EXIF tags written")
+
+def add_taxonomy_with_exiftool(image_path, taxonomic_list):
+    """
+    Adds taxonomy tags using exiftool to fields recognized by iNaturalist.
+    Tags are written to XMP:Subject and MicrosoftPhoto:LastKeywordXMP.
+    """
+    keywords = []
+    for entry in taxonomic_list:
+        if "_" in entry:
+            level, value = entry.split("_", 1)
+            keywords.append(f"taxonomy:{level.lower()}={value}")
+
+    # You can add more tags like inat:taxon_id=XXXXX if needed
+
+    # Join keywords as separate args
+    exiftool_args = []
+    for kw in keywords:
+        exiftool_args += [
+            f"-XMP-dc:Subject+={kw}",
+            f"-XMP-MicrosoftPhoto:LastKeywordXMP+={kw}"
+        ]
+
+    # Build final command
+    cmd = ["exiftool-13.32_64/exiftool"] + exiftool_args + ["-overwrite_original", image_path]
+    
+    result = subprocess.run(cmd, capture_output=True, text=True)
+
+    if result.returncode == 0:
+        print(f"✅ Metadata written successfully to {image_path}")
+    else:
+        print(f"❌ Error from exiftool:\n{result.stderr}")
+
 def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator):
   """Creates a FiftyOne sample using the 51 python interface
 
@@ -358,6 +645,16 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         # Format the filtered dictionary
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
+    print("adding taxon info to exif "+str(taxonomic_list))
+    full_patch_path=Path(INPUT_PATH+"\\"+the_patch_path)
+    #add_taxonomy_subject_and_tags(full_patch_path, full_patch_path, taxonomic_list)
+    #write_taxonomy_with_naturtag(full_patch_path, full_patch_path, taxonomic_list)
+    #write_taxonomy_with_naturtag(full_patch_path, taxonomic_list)
+    #print(naturtag.metadata.image_metadata.ImageMetadata(image_path=r"c:\Users\andre\Desktop\Dinacon Stuff\test\cuervoCinife_2025_06_30__04_53_06_HDR0_0_Mothbot_yolo11m_4500_imgsz1600_b1_2024-01-18.pt.jpg"))
+    #add_taxonomy_subject_and_tags_exiv2(full_patch_path, full_patch_path, taxonomic_list)
+    #write_taxonomy_with_exiv2_cli(str(full_patch_path), taxonomic_list)
+    add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list)
+    
     taxonomic_list.append(ID_by)
 
     if shape_type == 'rotation': #Todo - these should be handled as a polygon in 51, because they only have regular rects they call "Detections" but we have rotated rects (that should be stored as polylines via polyline.fromrotatedboundingbox https://docs.voxel51.com/user_guide/using_datasets.html#rotated-bounding-boxes)
@@ -485,6 +782,14 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 detection_By=sample.detection_By
 
             )
+
+            #add GPS info to the thumbnail patch
+            print("adding GPS to "+patchfullpath)
+            add_gps_exif(patchfullpath, patchfullpath,float(sample.latitude), float(sample.longitude))
+
+
+
+
             patch_samples.append(patch_sample)
             detnum=detnum+1
 
@@ -503,6 +808,54 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
     dataset.save()
     return patch_ds
 
+
+
+def deg_to_dms_rational(deg_float):
+    """Convert decimal degrees to degrees, minutes, seconds in rational format"""
+    deg = int(deg_float)
+    min_float = abs(deg_float - deg) * 60
+    minute = int(min_float)
+    sec_float = (min_float - minute) * 60
+    sec = int(sec_float * 10000)
+
+    return ((abs(deg), 1), (minute, 1), (sec, 10000))
+
+def add_gps_exif(input_path, output_path, lat, lng, altitude=None):
+    # Load image
+    img = Image.open(input_path)
+
+    # Try to load existing EXIF data, or start fresh
+    exif_bytes = img.info.get("exif")
+    if exif_bytes:
+        exif_dict = piexif.load(exif_bytes)
+    else:
+        exif_dict = {"0th": {}, "Exif": {}, "GPS": {}, "1st": {}, "thumbnail": None}
+
+    # Check if GPS data already exists
+    gps_existing = exif_dict.get("GPS", {})
+    if gps_existing.get(piexif.GPSIFD.GPSLatitude) and gps_existing.get(piexif.GPSIFD.GPSLongitude):
+        print("GPS data already exists. No changes made.")
+        return
+    
+    # Create GPS IFD
+    gps_ifd = {
+        piexif.GPSIFD.GPSLatitudeRef: 'N' if lat >= 0 else 'S',
+        piexif.GPSIFD.GPSLatitude: deg_to_dms_rational(lat),
+        piexif.GPSIFD.GPSLongitudeRef: 'E' if lng >= 0 else 'W',
+        piexif.GPSIFD.GPSLongitude: deg_to_dms_rational(lng),
+    }
+
+    if altitude is not None:
+        gps_ifd[piexif.GPSIFD.GPSAltitudeRef] = 0 if altitude >= 0 else 1
+        gps_ifd[piexif.GPSIFD.GPSAltitude] = (int(abs(altitude * 100)), 100)
+
+    # Inject GPS into EXIF
+    exif_dict['GPS'] = gps_ifd
+    exif_bytes = piexif.dump(exif_dict)
+
+    # Save the image with new EXIF
+    img.save(output_path, exif=exif_bytes)
+    print(f"Saved image with GPS data: {output_path}")
 
 def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", target_size=(1024, -1)):
     """
