@@ -46,4 +46,4 @@ def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=
 
 # Example usage
 if __name__ == "__main__":
-    find_unique_insects(r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29\patches")
+    find_unique_insects(r"C:\Users\andre\Desktop\Dinacon Stuff\Indonesia_Les_BeachPalm_grupoKite_2025-06-25\2025-06-29\patches", threshold=15)
