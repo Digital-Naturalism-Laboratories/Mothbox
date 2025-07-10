@@ -445,7 +445,7 @@ def add_taxonomy_subject_and_tags(image_path, output_path, taxonomic_list):
             exif_subject.append(tag)
     
     taxonomy_str = ";".join(exif_subject)  # For all EXIF fields
-    taxonomy_str=taxonomy_str+";nothing"
+    # taxonomy_str=taxonomy_str+";nothing"
     # Step 2: Load image and EXIF
     img = Image.open(image_path)
     exif_bytes = img.info.get("exif")
