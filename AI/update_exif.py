@@ -1,11 +1,12 @@
 import csv
+import json
 import re
 import subprocess
 import threading
 from pathlib import Path
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-CSV_PATH = "/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-04/BriID/2025-07-04_BriID_exportdate_2025-07-10.csv"
+CSV_PATH = "/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-05/BriHemipteraOnly/2025-07-05_BriHemipteraOnly_exportdate_2025-07-11.csv"
 EXIFTOOL_BIN = "exiftool"
 RANK_ORDER = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 # ──────────────────────────────────────────────────────────────────────────────
@@ -28,10 +29,22 @@ class ExifToolSession:
         for line in self.process.stderr:
             self._stderr_lines.append(line.strip())
 
-    def wipe_and_write_taxa(self, image_path: str, taxa_list: list[str]) -> None:
-        args = []
+    def _read_all_tags(self, image_path: str) -> dict:
+        try:
+            result = subprocess.run(
+                [EXIFTOOL_BIN, "-j", "-n", image_path],
+                capture_output=True, text=True, check=True
+            )
+            data = json.loads(result.stdout)[0]
+            return data
+        except Exception as e:
+            print(f"⚠️ Could not read EXIF from {image_path}: {e}")
+            return {}
 
-        # ── Deduplicate and clean ──
+    def wipe_and_rewrite_taxa_only(self, image_path: str, taxa_list: list[str]) -> None:
+        existing_tags = self._read_all_tags(image_path)
+
+        # ── Clean & deduplicate taxa for iNaturalist format ──
         seen = set()
         clean_taxa = []
         for taxon in taxa_list:
@@ -40,34 +53,46 @@ class ExifToolSession:
                 clean_taxa.append(cleaned)
                 seen.add(cleaned)
 
-        # ── First, remove ALL prior metadata ──
-        args += ["-all="]
+        # ── Build exiftool args ──
+        args = ["-all="]  # Start clean to avoid duplication
 
-        # ── Add new cleaned keywords ──
+        # Restore previous non-taxonomic metadata (preserve GPS, camera, datetime, etc.)
+        for tag, value in existing_tags.items():
+            tag_lc = tag.lower()
+            if any(kw in tag_lc for kw in ["subject", "keyword", "usercomment", "imagedescription"]):
+                continue  # Skip old taxonomy tags
+            if tag == "SourceFile":
+                continue  # Skip source reference
+            safe_value = str(value).replace("\n", " ").replace("\r", "")
+            args.append(f"-{tag}={safe_value}")
+
+        # Re-add cleaned taxonomy to XMP-dc:Subject & MicrosoftPhoto LastKeywordXMP
         for tag in clean_taxa:
             args += [
                 f"-XMP-dc:Subject+={tag}",
-                f"-XMP-MicrosoftPhoto:LastKeywordXMP+={tag}",
-                f"-MWG:Keywords+={tag}",
+                f"-XMP-MicrosoftPhoto:LastKeywordXMP+={tag}"
             ]
 
-        # ── Set timestamp from filename ──
+        # Attempt to recover DateTimeOriginal from filename if not already preserved
         filename = Path(image_path).name
         m = re.search(r"_(\d{4})_(\d{2})_(\d{2})__?(\d{2})_(\d{2})_(\d{2})", filename)
         if m:
             y, mon, d, h, mi, s = m.groups()
             ts = f"{y}:{mon}:{d} {h}:{mi}:{s}"
-            args += [
-                f"-DateTimeOriginal={ts}",
-                f"-CreateDate={ts}",
-                f"-ModifyDate={ts}"
-            ]
+            if not any("DateTimeOriginal" in t for t in args):
+                args.append(f"-DateTimeOriginal={ts}")
+            if not any("CreateDate" in t for t in args):
+                args.append(f"-CreateDate={ts}")
+            if not any("ModifyDate" in t for t in args):
+                args.append(f"-ModifyDate={ts}")
 
+        # Final exiftool command block
         args += ["-overwrite_original", str(image_path), "-execute\n"]
 
         self.process.stdin.write("\n".join(args) + "\n")
         self.process.stdin.flush()
 
+        # Wait for confirmation from exiftool
         while True:
             if self.process.stdout.readline().strip() == "{ready}":
                 break
@@ -98,8 +123,8 @@ def embed_taxa_from_csv(csv_path: str):
                 print(f"⚠️ No taxonomy: {img_path}")
                 continue
 
-            print(f"✅ Updating tags: {', '.join(taxa)} → {img_path}")
-            session.wipe_and_write_taxa(img_path, taxa)
+            print(f"✅ Writing clean taxa: {', '.join(taxa)} → {img_path}")
+            session.wipe_and_rewrite_taxa_only(img_path, taxa)
 
         session.close()
 

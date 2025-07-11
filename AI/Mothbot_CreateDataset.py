@@ -25,7 +25,7 @@ import threading
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-04"
+INPUT_PATH = r"/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-05"
 METADATA_PATH=r'/Users/brianna/Desktop/Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, change for different locations
 

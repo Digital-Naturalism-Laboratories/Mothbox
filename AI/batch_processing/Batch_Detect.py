@@ -5,12 +5,8 @@ import time
 
 script_path = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot_Detect.py"  # Update this with your actual script path
 input_paths = [
-    r"f:\Deployments\Indonesia\Indonesia_Les_BeachPalm_grupoKite_2025-06-25",
-    r"f:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25",
-    r"f:\Deployments\Indonesia\Indonesia_Les_WilanTopInsideTree_EfectoMinla_2025-06-25",
-    r"f:\Deployments\Indonesia\Les_Alley_EfectoMinla_2025-06-20",
-    r"f:\Deployments\Indonesia\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25",
-    r"f:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20",
+    r"/Users/brianna/Desktop/Indonesia_Deployments/Les_ByRoadWilan_CuervoCinife_2025-07-07",
+    r"/Users/brianna/Desktop/Indonesia_Deployments/Les_Dryriverbed_efectoMinla_2025-07-07",
 ]
 
 YOLO_MODEL=r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
