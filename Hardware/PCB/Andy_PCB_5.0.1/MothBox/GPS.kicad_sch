@@ -11,7 +11,7 @@
 		(company "Digital Naturalism Laboritories")
 	)
 	(lib_symbols
-		(symbol "MB_Library:+3.3V"
+		(symbol "MothBox_Symbol_Library:+3.3V"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -136,7 +136,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:2.54-1*4P母"
+		(symbol "MothBox_Symbol_Library:2.54-1*4P母"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -290,7 +290,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:C_Small"
+		(symbol "MothBox_Symbol_Library:C_Small"
 			(pin_numbers
 				(hide yes)
 			)
@@ -430,7 +430,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:GND"
+		(symbol "MothBox_Symbol_Library:GND"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -531,7 +531,506 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:PM2.54-1*5"
+		(symbol "MothBox_Symbol_Library:PCA9535PW"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 -43.18 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PCA9535PW"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
+				(at -1.27 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at -1.27 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PCA9535PW_0_1"
+				(rectangle
+					(start 10.16 2.54)
+					(end -10.16 -41.91)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+			)
+			(symbol "PCA9535PW_1_1"
+				(pin input line
+					(at -11.43 0 0)
+					(length 5.08)
+					(name "VDD"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "24"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -5.08 0)
+					(length 5.08)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "22"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -7.62 0)
+					(length 5.08)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "23"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -12.7 0)
+					(length 5.08)
+					(name "INT"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -30.48 0)
+					(length 5.08)
+					(name "A0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "21"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -33.02 0)
+					(length 5.08)
+					(name "A1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -35.56 0)
+					(length 5.08)
+					(name "A2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at -11.43 -40.64 0)
+					(length 5.08)
+					(name "VSS"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "12"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 0 180)
+					(length 5.08)
+					(name "IO0_0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -2.54 180)
+					(length 5.08)
+					(name "IO0_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -5.08 180)
+					(length 5.08)
+					(name "IO0_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -7.62 180)
+					(length 5.08)
+					(name "IO0_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -10.16 180)
+					(length 5.08)
+					(name "IO0_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -12.7 180)
+					(length 5.08)
+					(name "IO0_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -15.24 180)
+					(length 5.08)
+					(name "IO0_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "10"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -17.78 180)
+					(length 5.08)
+					(name "IO0_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "11"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -22.86 180)
+					(length 5.08)
+					(name "IO1_0"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "13"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -25.4 180)
+					(length 5.08)
+					(name "IO1_1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "14"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -27.94 180)
+					(length 5.08)
+					(name "IO1_2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "15"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -30.48 180)
+					(length 5.08)
+					(name "IO1_3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "16"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -33.02 180)
+					(length 5.08)
+					(name "IO1_4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "17"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -35.56 180)
+					(length 5.08)
+					(name "IO1_5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "18"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -38.1 180)
+					(length 5.08)
+					(name "IO1_6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "19"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin input line
+					(at 11.43 -40.64 180)
+					(length 5.08)
+					(name "IO1_7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "20"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "MothBox_Symbol_Library:PM2.54-1*5"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -703,7 +1202,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:SMXS-08K-TP"
+		(symbol "MothBox_Symbol_Library:SMXS-08K-TP"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1247,505 +1746,6 @@
 						)
 					)
 					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "_pauls_library:PCA9535PW"
-			(pin_names
-				(offset 1.016)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "U"
-				(at 0 -43.18 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "PCA9535PW"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
-				(at -1.27 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at -1.27 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PCA9535PW_0_1"
-				(rectangle
-					(start 10.16 2.54)
-					(end -10.16 -41.91)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-			)
-			(symbol "PCA9535PW_1_1"
-				(pin input line
-					(at -11.43 0 0)
-					(length 5.08)
-					(name "VDD"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "24"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -5.08 0)
-					(length 5.08)
-					(name "SCL"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "22"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -7.62 0)
-					(length 5.08)
-					(name "SDA"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "23"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -12.7 0)
-					(length 5.08)
-					(name "INT"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -30.48 0)
-					(length 5.08)
-					(name "A0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "21"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -33.02 0)
-					(length 5.08)
-					(name "A1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -35.56 0)
-					(length 5.08)
-					(name "A2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -11.43 -40.64 0)
-					(length 5.08)
-					(name "VSS"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "12"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 0 180)
-					(length 5.08)
-					(name "IO0_0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -2.54 180)
-					(length 5.08)
-					(name "IO0_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -5.08 180)
-					(length 5.08)
-					(name "IO0_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -7.62 180)
-					(length 5.08)
-					(name "IO0_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -10.16 180)
-					(length 5.08)
-					(name "IO0_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -12.7 180)
-					(length 5.08)
-					(name "IO0_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "9"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -15.24 180)
-					(length 5.08)
-					(name "IO0_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "10"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -17.78 180)
-					(length 5.08)
-					(name "IO0_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "11"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -22.86 180)
-					(length 5.08)
-					(name "IO1_0"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "13"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -25.4 180)
-					(length 5.08)
-					(name "IO1_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "14"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -27.94 180)
-					(length 5.08)
-					(name "IO1_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "15"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -30.48 180)
-					(length 5.08)
-					(name "IO1_3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "16"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -33.02 180)
-					(length 5.08)
-					(name "IO1_4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "17"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -35.56 180)
-					(length 5.08)
-					(name "IO1_5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "18"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -38.1 180)
-					(length 5.08)
-					(name "IO1_6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "19"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at 11.43 -40.64 180)
-					(length 5.08)
-					(name "IO1_7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "20"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4925,7 +4925,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 43.18 76.2 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4991,7 +4991,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:2.54-1*4P母")
+		(lib_id "MothBox_Symbol_Library:2.54-1*4P母")
 		(at 49.53 55.88 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5045,8 +5045,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2718488"
-			(at 49.53 69.85 0)
+		(property "AVAILABILITY" ""
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2718488"
+			(at 49.53 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5076,7 +5121,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 227.33 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5141,7 +5186,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 129.54 133.35 0)
 		(mirror y)
 		(unit 1)
@@ -5208,7 +5253,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 171.45 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5273,7 +5318,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 43.18 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5339,7 +5384,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 133.35 182.88 0)
 		(mirror y)
 		(unit 1)
@@ -5405,7 +5450,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 43.18 91.44 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5471,7 +5516,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:C_Small")
+		(lib_id "MothBox_Symbol_Library:C_Small")
 		(at 48.26 138.43 0)
 		(mirror x)
 		(unit 1)
@@ -5526,17 +5571,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part No" "311-1140-2-ND"
-			(at 45.72 140.9635 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C49678"
+		(property "AVAILABILITY" ""
 			(at 48.26 138.43 0)
 			(effects
 				(font
@@ -5545,12 +5580,58 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" ""
+		(property "DESCRIPTION" ""
 			(at 48.26 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey_Part_No" "311-1140-2-ND"
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" "C49678"
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -5569,7 +5650,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 48.26 140.97 0)
 		(mirror y)
 		(unit 1)
@@ -5635,7 +5716,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:SMXS-08K-TP")
+		(lib_id "MothBox_Symbol_Library:SMXS-08K-TP")
 		(at 289.56 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5662,7 +5743,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
 			(at 289.56 97.79 0)
 			(effects
 				(font
@@ -5689,8 +5770,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5439767"
-			(at 289.56 100.33 0)
+		(property "AVAILABILITY" ""
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C5439767"
+			(at 289.56 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5756,7 +5882,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:PM2.54-1*5")
+		(lib_id "MothBox_Symbol_Library:PM2.54-1*5")
 		(at 49.53 83.82 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5810,8 +5936,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5116488"
-			(at 49.53 99.06 0)
+		(property "AVAILABILITY" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C5116488"
+			(at 49.53 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5844,7 +6015,7 @@
 		)
 	)
 	(symbol
-		(lib_id "_pauls_library:PCA9535PW")
+		(lib_id "MothBox_Symbol_Library:PCA9535PW")
 		(at 146.05 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5888,6 +6059,51 @@
 			)
 		)
 		(property "Description" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
 			(at 146.05 140.97 0)
 			(effects
 				(font
@@ -5978,7 +6194,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:SMXS-08K-TP")
+		(lib_id "MothBox_Symbol_Library:SMXS-08K-TP")
 		(at 181.61 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6005,7 +6221,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
 			(at 181.61 97.79 0)
 			(effects
 				(font
@@ -6032,8 +6248,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5439767"
-			(at 181.61 100.33 0)
+		(property "AVAILABILITY" ""
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C5439767"
+			(at 181.61 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6099,7 +6360,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 133.35 170.18 0)
 		(mirror y)
 		(unit 1)
@@ -6165,7 +6426,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 48.26 133.35 0)
 		(mirror y)
 		(unit 1)
@@ -6232,7 +6493,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:SMXS-08K-TP")
+		(lib_id "MothBox_Symbol_Library:SMXS-08K-TP")
 		(at 237.49 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6258,7 +6519,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
 			(at 237.49 97.79 0)
 			(effects
 				(font
@@ -6285,8 +6546,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5439767"
-			(at 237.49 100.33 0)
+		(property "AVAILABILITY" ""
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C5439767"
+			(at 237.49 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6352,7 +6658,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:SMXS-08K-TP")
+		(lib_id "MothBox_Symbol_Library:SMXS-08K-TP")
 		(at 130.81 80.01 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6379,7 +6685,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
 			(at 130.81 97.79 0)
 			(effects
 				(font
@@ -6406,8 +6712,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C5439767"
-			(at 130.81 100.33 0)
+		(property "AVAILABILITY" ""
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C5439767"
+			(at 130.81 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6473,7 +6824,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 279.4 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6538,7 +6889,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 52.07 182.88 0)
 		(mirror y)
 		(unit 1)
@@ -6604,7 +6955,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:C_Small")
+		(lib_id "MothBox_Symbol_Library:C_Small")
 		(at 129.54 138.43 0)
 		(mirror x)
 		(unit 1)
@@ -6659,17 +7010,7 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part No" "311-1140-2-ND"
-			(at 127 140.9635 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part no " "C49678"
+		(property "AVAILABILITY" ""
 			(at 129.54 138.43 0)
 			(effects
 				(font
@@ -6678,12 +7019,58 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" ""
+		(property "DESCRIPTION" ""
 			(at 129.54 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey_Part_No" "311-1140-2-ND"
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" "C49678"
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -6702,7 +7089,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 43.18 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6767,7 +7154,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 120.65 93.98 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6832,7 +7219,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 129.54 140.97 0)
 		(mirror y)
 		(unit 1)
@@ -6898,7 +7285,7 @@
 		)
 	)
 	(symbol
-		(lib_id "_pauls_library:PCA9535PW")
+		(lib_id "MothBox_Symbol_Library:PCA9535PW")
 		(at 64.77 140.97 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6942,6 +7329,51 @@
 			)
 		)
 		(property "Description" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
 			(at 64.77 140.97 0)
 			(effects
 				(font

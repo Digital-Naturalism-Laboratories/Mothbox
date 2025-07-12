@@ -18,4 +18,5 @@
   (lib (name "Buck_Boost_footprint")(type "KiCad")(uri "${KIPRJMOD}/Library/Buck-Boost/Buck_Boost_footprint.pretty")(options "")(descr ""))
   (lib (name "AQLibrary")(type "KiCad")(uri "${KIPRJMOD}/AQLibrary.pretty")(options "")(descr ""))
   (lib (name "MB_Library")(type "KiCad")(uri "${KIPRJMOD}/MB_Library.pretty")(options "")(descr ""))
+  (lib (name "MothBox_footprints_Library")(type "KiCad")(uri "${KIPRJMOD}/MothBox_footprints_Library.pretty")(options "")(descr ""))
 )

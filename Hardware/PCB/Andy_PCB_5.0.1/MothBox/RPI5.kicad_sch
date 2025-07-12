@@ -11,7 +11,7 @@
 		(company "Digital Naturalism Laboritories")
 	)
 	(lib_symbols
-		(symbol "MB_Library:+3.3V"
+		(symbol "MothBox_Symbol_Library:+3.3V"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -136,7 +136,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:+5V"
+		(symbol "MothBox_Symbol_Library:+5V"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -261,7 +261,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:2.54-2*20"
+		(symbol "MothBox_Symbol_Library:2.54-2*20"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1052,7 +1052,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:GND"
+		(symbol "MothBox_Symbol_Library:GND"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -3545,7 +3545,7 @@
 	)
 	(symbol
 		(lib_name "RASPBERRY_PI_4B_4GB_1")
-		(lib_id "MB_Library:RASPBERRY_PI_4B_4GB_1")
+		(lib_id "MothBox_Symbol_Library:RASPBERRY_PI_4B_4GB_1")
 		(at 102.87 173.99 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3698,16 +3698,6 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part No" "SC1113"
-			(at 102.87 173.99 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Availability" "Not in stock"
 			(at 102.87 173.99 0)
 			(effects
@@ -3728,12 +3718,58 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" ""
+		(property "AVAILABILITY" ""
 			(at 102.87 173.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey_Part_No" "SC1113"
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(instances
@@ -3746,7 +3782,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 137.16 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3812,7 +3848,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 97.79 124.46 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3878,7 +3914,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+5V")
+		(lib_id "MothBox_Symbol_Library:+5V")
 		(at 97.79 39.37 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3944,7 +3980,7 @@
 	)
 	(symbol
 		(lib_name "RASPBERRY_PI_4B_4GB_2")
-		(lib_id "MB_Library:RASPBERRY_PI_4B_4GB_2")
+		(lib_id "MothBox_Symbol_Library:RASPBERRY_PI_4B_4GB_2")
 		(at 71.12 71.12 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4007,7 +4043,52 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part no " "C5224014"
+		(property "AVAILABILITY" ""
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" "C5224014"
 			(at 71.12 71.12 0)
 			(effects
 				(font
@@ -4146,7 +4227,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 100.33 46.99 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4211,7 +4292,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 213.36 102.87 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4277,7 +4358,7 @@
 	)
 	(symbol
 		(lib_name "RASPBERRY_PI_4B_4GB_1")
-		(lib_id "MB_Library:RASPBERRY_PI_4B_4GB_1")
+		(lib_id "MothBox_Symbol_Library:RASPBERRY_PI_4B_4GB_1")
 		(at 64.77 172.72 0)
 		(unit 1)
 		(exclude_from_sim yes)
@@ -4430,16 +4511,6 @@
 				(hide yes)
 			)
 		)
-		(property "Digikey Part No" "SC1113"
-			(at 64.77 172.72 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify bottom)
-				(hide yes)
-			)
-		)
 		(property "Availability" "Not in stock"
 			(at 64.77 172.72 0)
 			(effects
@@ -4460,12 +4531,58 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" ""
+		(property "AVAILABILITY" ""
 			(at 64.77 172.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey_Part_No" "SC1113"
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(instances
@@ -4478,7 +4595,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+5V")
+		(lib_id "MothBox_Symbol_Library:+5V")
 		(at 195.58 60.96 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4543,7 +4660,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:2.54-2*20")
+		(lib_id "MothBox_Symbol_Library:2.54-2*20")
 		(at 184.15 87.63 0)
 		(mirror y)
 		(unit 1)
@@ -4568,7 +4685,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:HDR-TH_40P-P2.54-H-F-R2-C20-W8.5"
+		(property "Footprint" "easyeda_footprints:HDR-TH_40P-P2.54-H-F-R2-C20-W8.5"
 			(at 184.15 118.11 0)
 			(effects
 				(font
@@ -4595,8 +4712,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2897440"
-			(at 184.15 120.65 0)
+		(property "AVAILABILITY" ""
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2897440"
+			(at 184.15 87.63 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4734,7 +4896,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+3.3V")
+		(lib_id "MothBox_Symbol_Library:+3.3V")
 		(at 172.72 62.23 0)
 		(unit 1)
 		(exclude_from_sim no)

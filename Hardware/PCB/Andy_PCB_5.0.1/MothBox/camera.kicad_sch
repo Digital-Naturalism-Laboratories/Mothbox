@@ -11,7 +11,7 @@
 		(company "Digital Naturalism Laboritories")
 	)
 	(lib_symbols
-		(symbol "MB_Library:MountingHole_1/4inbolt"
+		(symbol "MothBox_Symbol_Library:MountingHole_1/4inbolt"
 			(pin_names
 				(offset 1.016)
 			)
@@ -94,7 +94,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:Talentcell"
+		(symbol "MothBox_Symbol_Library:Talentcell"
 			(exclude_from_sim no)
 			(in_bom no)
 			(on_board yes)
@@ -156,7 +156,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:camera2"
+		(symbol "MothBox_Symbol_Library:camera2"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -233,7 +233,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:MountingHole_1/4inbolt")
+		(lib_id "MothBox_Symbol_Library:MountingHole_1/4inbolt")
 		(at 147.32 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -287,6 +287,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -297,7 +342,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:MountingHole_1/4inbolt")
+		(lib_id "MothBox_Symbol_Library:MountingHole_1/4inbolt")
 		(at 147.32 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -351,6 +396,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -361,7 +451,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:camera2")
+		(lib_id "MothBox_Symbol_Library:camera2")
 		(at 104.14 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -415,6 +505,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -425,7 +560,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:MountingHole_1/4inbolt")
+		(lib_id "MothBox_Symbol_Library:MountingHole_1/4inbolt")
 		(at 99.06 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -479,6 +614,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -489,7 +669,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:MountingHole_1/4inbolt")
+		(lib_id "MothBox_Symbol_Library:MountingHole_1/4inbolt")
 		(at 99.06 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -543,6 +723,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -553,7 +778,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:MountingHole_1/4inbolt")
+		(lib_id "MothBox_Symbol_Library:MountingHole_1/4inbolt")
 		(at 194.31 132.08 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -607,6 +832,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -617,7 +887,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:MountingHole_1/4inbolt")
+		(lib_id "MothBox_Symbol_Library:MountingHole_1/4inbolt")
 		(at 194.31 110.49 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -671,6 +941,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -681,7 +996,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:Talentcell")
+		(lib_id "MothBox_Symbol_Library:Talentcell")
 		(at 181.61 59.69 0)
 		(unit 1)
 		(exclude_from_sim yes)
@@ -726,6 +1041,51 @@
 			)
 		)
 		(property "Description" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
 			(at 181.61 59.69 0)
 			(effects
 				(font

@@ -12,7 +12,7 @@
 	)
 	(lib_symbols)
 	(sheet
-		(at 176.53 45.72)
+		(at 182.88 45.72)
 		(size 41.275 38.735)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -28,7 +28,7 @@
 		)
 		(uuid "23e8100d-dc92-4d1f-bb27-d65b0331e323")
 		(property "Sheetname" "RPI5"
-			(at 176.53 45.0084 0)
+			(at 182.88 45.0084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -37,7 +37,7 @@
 			)
 		)
 		(property "Sheetfile" "RPI5.kicad_sch"
-			(at 176.53 85.0396 0)
+			(at 182.88 85.0396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -54,7 +54,7 @@
 		)
 	)
 	(sheet
-		(at 161.29 95.25)
+		(at 182.88 95.25)
 		(size 41.275 38.735)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -70,7 +70,7 @@
 		)
 		(uuid "25f161be-2136-4f06-bcb6-1cc6303e8ec0")
 		(property "Sheetname" "UV LED PCB"
-			(at 161.29 94.5384 0)
+			(at 182.88 94.5384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -79,7 +79,7 @@
 			)
 		)
 		(property "Sheetfile" "UV_LED_PCB.kicad_sch"
-			(at 161.29 134.5696 0)
+			(at 182.88 134.5696 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -138,8 +138,8 @@
 		)
 	)
 	(sheet
-		(at 41.91 97.79)
-		(size 50.8 39.37)
+		(at 85.09 95.25)
+		(size 40.64 39.37)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -154,7 +154,7 @@
 		)
 		(uuid "84c07412-33ce-4c0b-96a0-a76ad52e50ee")
 		(property "Sheetname" "camera battery and mechanical"
-			(at 41.91 97.0784 0)
+			(at 85.09 94.5384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -163,7 +163,7 @@
 			)
 		)
 		(property "Sheetfile" "camera.kicad_sch"
-			(at 41.91 137.7446 0)
+			(at 85.09 135.2046 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -180,7 +180,7 @@
 		)
 	)
 	(sheet
-		(at 132.08 45.72)
+		(at 134.62 45.72)
 		(size 40.005 38.735)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -196,7 +196,7 @@
 		)
 		(uuid "d22974ea-9095-4b9a-829f-a5d553626ed9")
 		(property "Sheetname" "GPS and Switches"
-			(at 132.08 45.0084 0)
+			(at 134.62 45.0084 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -205,7 +205,7 @@
 			)
 		)
 		(property "Sheetfile" "GPS.kicad_sch"
-			(at 132.08 85.0396 0)
+			(at 134.62 85.0396 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -222,8 +222,8 @@
 		)
 	)
 	(sheet
-		(at 114.3 95.25)
-		(size 41.275 38.735)
+		(at 135.89 95.25)
+		(size 39.37 38.735)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -238,7 +238,7 @@
 		)
 		(uuid "f4f29d93-7441-4557-92ff-295630596a60")
 		(property "Sheetname" "Photo LED's"
-			(at 114.3 94.5384 0)
+			(at 135.89 94.5384 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -247,7 +247,7 @@
 			)
 		)
 		(property "Sheetfile" "Photo_LEDs.kicad_sch"
-			(at 114.3 134.5696 0)
+			(at 135.89 134.5696 0)
 			(effects
 				(font
 					(size 1.27 1.27)

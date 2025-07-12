@@ -593,8 +593,8 @@
         },
         {
           "group_by": false,
-          "label": "Ali Express Link",
-          "name": "Ali Express Link",
+          "label": "Ali_Express_Link",
+          "name": "Ali_Express_Link",
           "show": false
         },
         {
@@ -623,20 +623,20 @@
         },
         {
           "group_by": false,
-          "label": "Digikey Part No",
-          "name": "Digikey Part No",
+          "label": "Digikey_Part_No",
+          "name": "Digikey_Part_No",
           "show": false
         },
         {
           "group_by": false,
-          "label": "LCSC PN",
-          "name": "LCSC PN",
+          "label": "LCSC_PN",
+          "name": "LCSC_PN",
           "show": false
         },
         {
           "group_by": false,
-          "label": "LCSC Part no ",
-          "name": "LCSC Part no ",
+          "label": "LCSC_Part_No",
+          "name": "LCSC_Part_No",
           "show": true
         },
         {
@@ -755,8 +755,14 @@
         },
         {
           "group_by": false,
-          "label": "LCSC Part",
-          "name": "LCSC Part",
+          "label": "LCSC_Part",
+          "name": "LCSC_Part",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
           "show": false
         }
       ],

@@ -11,7 +11,7 @@
 		(company "Digital Naturalism Laboritories")
 	)
 	(lib_symbols
-		(symbol "MB_Library:+12V"
+		(symbol "MothBox_Symbol_Library:+12V"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -136,7 +136,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:GND"
+		(symbol "MothBox_Symbol_Library:GND"
 			(power)
 			(pin_numbers
 				(hide yes)
@@ -237,7 +237,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:R_Small"
+		(symbol "MothBox_Symbol_Library:R_Small"
 			(pin_numbers
 				(hide yes)
 			)
@@ -362,7 +362,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:R_US"
+		(symbol "MothBox_Symbol_Library:R_US"
 			(pin_numbers
 				(hide yes)
 			)
@@ -535,7 +535,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MB_Library:TestPoint"
+		(symbol "MothBox_Symbol_Library:TestPoint"
 			(pin_numbers
 				(hide yes)
 			)
@@ -642,849 +642,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_1"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "YJQ10N2A"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Pauls_Footprints:DFN2020-3"
-				(at 5.08 -1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C919558"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "N-Channel MOSFET"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "YJQ10N2A_1_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "YJQ10N2A_1_1_1"
-				(pin input line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(hide yes)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "YJQ10N2A_2"
-			(pin_names
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "Q"
-				(at 5.08 1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "YJQ10N2A"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" "Pauls_Footprints:DFN2020-3"
-				(at 5.08 -1.905 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-						(italic yes)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-					(hide yes)
-				)
-			)
-			(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC" "C919558"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "N-Channel MOSFET"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "SOT?23*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "YJQ10N2A_2_0_1"
-				(polyline
-					(pts
-						(xy 0.254 1.905) (xy 0.254 -1.905)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.254 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 0.508) (xy 0.762 -0.508)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
-					)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 1.651 0)
-					(radius 2.794)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 2.54 1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(circle
-					(center 2.54 -1.778)
-					(radius 0.254)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "YJQ10N2A_2_1_1"
-				(pin input line
-					(at -3.81 0 0)
-					(length 2.54)
-					(name "G"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "6"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(hide yes)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "8"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 2.54 -5.08 90)
-					(length 2.54)
-					(hide yes)
-					(name "S"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "7"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "easyeda_libraries:XL-5730UWC-05"
+		(symbol "MothBox_Symbol_Library:XL-5730UWC-05"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -1684,6 +842,1690 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "YJQ10N2A_1_1_1"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "YJQ10N2A"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Pauls_Footprints:DFN2020-3"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C919558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "YJQ10N2A_1_1_1_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "YJQ10N2A_1_1_1_1_1"
+				(pin input line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "YJQ10N2A_1_1_1_1"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "YJQ10N2A"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Pauls_Footprints:DFN2020-3"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C919558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "YJQ10N2A_1_1_1_1_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "YJQ10N2A_1_1_1_1_1_1"
+				(pin input line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "YJQ10N2A_2_1_1"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "YJQ10N2A"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Pauls_Footprints:DFN2020-3"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C919558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "YJQ10N2A_2_1_1_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "YJQ10N2A_2_1_1_1_1"
+				(pin input line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "YJQ10N2A_2_1_1_1"
+			(pin_names
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "Q"
+				(at 5.08 1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "YJQ10N2A"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" "Pauls_Footprints:DFN2020-3"
+				(at 5.08 -1.905 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+						(italic yes)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+					(hide yes)
+				)
+			)
+			(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C919558"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "N-Channel MOSFET"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "SOT?23*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "YJQ10N2A_2_1_1_1_0_1"
+				(polyline
+					(pts
+						(xy 0.254 1.905) (xy 0.254 -1.905)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.254 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 2.286) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 0.508) (xy 0.762 -0.508)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.778) (xy 3.302 -1.778) (xy 3.302 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy 2.032 0.381) (xy 2.032 -0.381) (xy 1.016 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 1.651 0)
+					(radius 2.794)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 2.54 1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(circle
+					(center 2.54 -1.778)
+					(radius 0.254)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.794 0.508) (xy 2.921 0.381) (xy 3.683 0.381) (xy 3.81 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 0.381) (xy 2.921 -0.254) (xy 3.683 -0.254) (xy 3.302 0.381)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "YJQ10N2A_2_1_1_1_1_1"
+				(pin input line
+					(at -3.81 0 0)
+					(length 2.54)
+					(name "G"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(hide yes)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 -5.08 90)
+					(length 2.54)
+					(hide yes)
+					(name "S"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3108,7 +3950,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 106.68 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3134,7 +3976,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 119.38 95.25 0)
 			(effects
 				(font
@@ -3161,8 +4003,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 121.92 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 106.68 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3189,8 +4076,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_2")
-		(lib_id "_pauls_library:YJQ10N2A")
+		(lib_name "YJQ10N2A_2_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_2_1_1")
 		(at 222.25 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3217,7 +4104,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Pauls_Footprints:DFN2020-3"
+		(property "Footprint" "pauls_footprints:DFN2020-3"
 			(at 227.33 113.665 0)
 			(effects
 				(font
@@ -3248,6 +4135,51 @@
 			)
 		)
 		(property "LCSC" "C919558"
+			(at 222.25 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 222.25 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 222.25 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 222.25 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 222.25 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
 			(at 222.25 111.76 0)
 			(effects
 				(font
@@ -3293,7 +4225,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 77.47 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3319,7 +4251,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 90.17 85.09 0)
 			(effects
 				(font
@@ -3346,8 +4278,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 92.71 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 77.47 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3374,7 +4351,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 27.94 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3400,7 +4377,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 40.64 85.09 0)
 			(effects
 				(font
@@ -3427,8 +4404,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 43.18 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 27.94 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3455,7 +4477,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 160.02 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3481,7 +4503,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 172.72 88.9 0)
 			(effects
 				(font
@@ -3508,8 +4530,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 175.26 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 160.02 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3536,7 +4603,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 60.96 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3562,7 +4629,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 73.66 74.93 0)
 			(effects
 				(font
@@ -3589,8 +4656,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 76.2 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 60.96 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3617,7 +4729,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 193.04 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3643,7 +4755,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 205.74 68.58 0)
 			(effects
 				(font
@@ -3670,8 +4782,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 208.28 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 193.04 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 193.04 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 193.04 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 193.04 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 193.04 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 193.04 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3698,7 +4855,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 44.45 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3724,7 +4881,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 57.15 95.25 0)
 			(effects
 				(font
@@ -3751,8 +4908,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 59.69 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 44.45 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3779,7 +4981,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 238.76 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -3842,6 +5044,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 238.76 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 238.76 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 238.76 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 238.76 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 238.76 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6985da8e-5f1e-479d-9683-3e50c1518be3")
 		)
@@ -3858,7 +5105,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 27.94 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3884,7 +5131,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 40.64 74.93 0)
 			(effects
 				(font
@@ -3911,8 +5158,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 43.18 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 27.94 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3939,7 +5231,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 252.73 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3965,7 +5257,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 265.43 78.74 0)
 			(effects
 				(font
@@ -3992,8 +5284,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 267.97 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 252.73 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 252.73 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 252.73 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 252.73 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 252.73 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 252.73 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4020,7 +5357,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 209.55 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4046,7 +5383,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 222.25 78.74 0)
 			(effects
 				(font
@@ -4073,8 +5410,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 224.79 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 209.55 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 209.55 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 209.55 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 209.55 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 209.55 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 209.55 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4101,7 +5483,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 176.53 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -4164,6 +5546,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 176.53 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 176.53 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 176.53 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 176.53 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 176.53 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e61e056a-bd20-4ddf-8679-6b7f4110071d")
 		)
@@ -4180,7 +5607,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 160.02 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -4243,6 +5670,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "394da7d8-1429-488f-b9af-6a9dc78e6535")
 		)
@@ -4259,7 +5731,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 224.79 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4285,7 +5757,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 237.49 78.74 0)
 			(effects
 				(font
@@ -4312,8 +5784,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 240.03 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 224.79 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 224.79 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 224.79 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 224.79 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 224.79 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 224.79 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4340,7 +5857,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 160.02 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4366,7 +5883,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 172.72 78.74 0)
 			(effects
 				(font
@@ -4393,8 +5910,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 175.26 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 160.02 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4421,7 +5983,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 120.65 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4447,7 +6009,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 133.35 95.25 0)
 			(effects
 				(font
@@ -4474,8 +6036,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 135.89 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 120.65 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4502,7 +6109,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 92.71 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -4565,6 +6172,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8464dc14-9716-4dcd-bc1d-1bf8168bf51a")
 		)
@@ -4581,7 +6233,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 224.79 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -4644,6 +6296,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 224.79 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 224.79 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 224.79 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 224.79 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 224.79 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7f6362cb-9f29-4b7f-9a41-daf5c32f8d9b")
 		)
@@ -4660,7 +6357,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_US")
+		(lib_id "MothBox_Symbol_Library:R_US")
 		(at 91.44 116.84 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4711,7 +6408,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part no " "C84376"
+		(property "AVAILABILITY" ""
 			(at 91.44 116.84 0)
 			(effects
 				(font
@@ -4720,12 +6417,49 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" ""
+		(property "DESCRIPTION" ""
 			(at 91.44 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" "C84376"
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -4744,7 +6478,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 252.73 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4770,7 +6504,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 265.43 88.9 0)
 			(effects
 				(font
@@ -4797,8 +6531,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 267.97 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 252.73 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 252.73 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 252.73 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 252.73 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 252.73 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 252.73 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4825,7 +6604,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 92.71 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4851,7 +6630,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 105.41 74.93 0)
 			(effects
 				(font
@@ -4878,8 +6657,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 107.95 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 92.71 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4906,7 +6730,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 60.96 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -4969,6 +6793,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8007567b-289f-4888-bf5b-e6e7bc99c41d")
 		)
@@ -4985,7 +6854,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 193.04 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -5048,6 +6917,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 193.04 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 193.04 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 193.04 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 193.04 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 193.04 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4faca9e5-5232-4c2d-bc35-9999d2afa3a7")
 		)
@@ -5064,7 +6978,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 265.43 77.47 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5090,7 +7004,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 278.13 77.47 0)
 			(effects
 				(font
@@ -5117,8 +7031,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 280.67 77.47 0)
+		(property "AVAILABILITY" ""
+			(at 265.43 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 265.43 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 265.43 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 265.43 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 265.43 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 265.43 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5145,7 +7104,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 106.68 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -5208,6 +7167,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b12e63b5-9351-4cff-9405-48b3624e8cc9")
 		)
@@ -5224,7 +7228,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 99.06 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5290,7 +7294,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 160.02 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5316,7 +7320,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 172.72 68.58 0)
 			(effects
 				(font
@@ -5343,8 +7347,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 175.26 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 160.02 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5371,7 +7420,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 238.76 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5397,7 +7446,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 251.46 68.58 0)
 			(effects
 				(font
@@ -5424,8 +7473,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 254 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 238.76 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 238.76 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 238.76 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 238.76 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 238.76 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 238.76 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5452,7 +7546,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:TestPoint")
+		(lib_id "MothBox_Symbol_Library:TestPoint")
 		(at 176.53 101.6 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5503,6 +7597,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 176.53 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 176.53 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 176.53 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 176.53 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 176.53 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8ab2006f-951f-462d-b8b8-5c3fe43a18c2")
 		)
@@ -5516,7 +7655,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 209.55 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5542,7 +7681,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 222.25 88.9 0)
 			(effects
 				(font
@@ -5569,8 +7708,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 224.79 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 209.55 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 209.55 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 209.55 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 209.55 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 209.55 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 209.55 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5597,7 +7781,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 44.45 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -5660,6 +7844,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "602a2303-9dea-44cc-9c0e-ec98b2e5e5cf")
 		)
@@ -5676,7 +7905,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+12V")
+		(lib_id "MothBox_Symbol_Library:+12V")
 		(at 106.68 53.34 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5742,7 +7971,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 27.94 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -5805,6 +8034,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "48245bae-b854-4a02-8b61-93cd7ffe032c")
 		)
@@ -5821,7 +8095,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 193.04 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5847,7 +8121,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 205.74 78.74 0)
 			(effects
 				(font
@@ -5874,8 +8148,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 208.28 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 193.04 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 193.04 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 193.04 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 193.04 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 193.04 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 193.04 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5902,7 +8221,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 77.47 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5928,7 +8247,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 90.17 74.93 0)
 			(effects
 				(font
@@ -5955,8 +8274,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 92.71 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 77.47 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5983,7 +8347,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_US")
+		(lib_id "MothBox_Symbol_Library:R_US")
 		(at 217.17 115.57 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6034,7 +8398,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part no " "C84376"
+		(property "AVAILABILITY" ""
 			(at 217.17 115.57 0)
 			(effects
 				(font
@@ -6043,12 +8407,49 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC PN" ""
+		(property "DESCRIPTION" ""
 			(at 217.17 115.57 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 217.17 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 217.17 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 217.17 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" "C84376"
+			(at 217.17 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
 			)
 		)
 		(pin "2"
@@ -6067,7 +8468,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 238.76 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6093,7 +8494,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 251.46 88.9 0)
 			(effects
 				(font
@@ -6120,8 +8521,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 254 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 238.76 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 238.76 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 238.76 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 238.76 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 238.76 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 238.76 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6148,7 +8594,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 224.79 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6174,7 +8620,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 237.49 68.58 0)
 			(effects
 				(font
@@ -6201,8 +8647,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 240.03 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 224.79 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 224.79 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 224.79 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 224.79 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 224.79 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 224.79 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6229,7 +8720,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 133.35 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6255,7 +8746,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 146.05 73.66 0)
 			(effects
 				(font
@@ -6282,8 +8773,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 148.59 73.66 0)
+		(property "AVAILABILITY" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 133.35 73.66 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6310,7 +8846,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 106.68 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6336,7 +8872,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 119.38 85.09 0)
 			(effects
 				(font
@@ -6363,8 +8899,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 121.92 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 106.68 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6391,7 +8972,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 265.43 87.63 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6417,7 +8998,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 278.13 87.63 0)
 			(effects
 				(font
@@ -6444,8 +9025,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 280.67 87.63 0)
+		(property "AVAILABILITY" ""
+			(at 265.43 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 265.43 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 265.43 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 265.43 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 265.43 87.63 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 265.43 87.63 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6472,7 +9098,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 224.79 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6498,7 +9124,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 237.49 88.9 0)
 			(effects
 				(font
@@ -6525,8 +9151,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 240.03 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 224.79 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 224.79 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 224.79 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 224.79 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 224.79 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 224.79 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6553,7 +9224,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 133.35 83.82 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6579,7 +9250,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 146.05 83.82 0)
 			(effects
 				(font
@@ -6606,8 +9277,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 148.59 83.82 0)
+		(property "AVAILABILITY" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 133.35 83.82 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6634,7 +9350,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 44.45 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6660,7 +9376,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 57.15 85.09 0)
 			(effects
 				(font
@@ -6687,8 +9403,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 59.69 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 44.45 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6715,7 +9476,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 176.53 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6741,7 +9502,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 189.23 88.9 0)
 			(effects
 				(font
@@ -6768,8 +9529,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 191.77 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 176.53 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 176.53 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 176.53 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 176.53 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 176.53 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 176.53 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6796,7 +9602,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 133.35 93.98 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6822,7 +9628,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 146.05 93.98 0)
 			(effects
 				(font
@@ -6849,8 +9655,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 148.59 93.98 0)
+		(property "AVAILABILITY" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 133.35 93.98 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6877,7 +9728,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 120.65 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6903,7 +9754,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 133.35 74.93 0)
 			(effects
 				(font
@@ -6930,8 +9781,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 135.89 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 120.65 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6958,7 +9854,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 265.43 67.31 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6984,7 +9880,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 278.13 67.31 0)
 			(effects
 				(font
@@ -7011,8 +9907,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 280.67 67.31 0)
+		(property "AVAILABILITY" ""
+			(at 265.43 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 265.43 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 265.43 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 265.43 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 265.43 67.31 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 265.43 67.31 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7039,7 +9980,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 209.55 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7065,7 +10006,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 222.25 68.58 0)
 			(effects
 				(font
@@ -7092,8 +10033,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 224.79 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 209.55 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 209.55 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 209.55 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 209.55 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 209.55 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 209.55 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7120,7 +10106,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 120.65 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -7183,6 +10169,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "636969e4-ce4b-48bf-b3ed-e1e101cd9334")
 		)
@@ -7199,7 +10230,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 92.71 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7225,7 +10256,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 105.41 95.25 0)
 			(effects
 				(font
@@ -7252,8 +10283,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 107.95 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 92.71 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7280,7 +10356,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 44.45 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7306,7 +10382,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 57.15 74.93 0)
 			(effects
 				(font
@@ -7333,8 +10409,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 59.69 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 44.45 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7361,7 +10482,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 133.35 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -7424,6 +10545,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6411f3fe-eada-4645-bb11-5382ee2fe9bd")
 		)
@@ -7440,7 +10606,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 106.68 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7466,7 +10632,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 119.38 74.93 0)
 			(effects
 				(font
@@ -7493,8 +10659,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 121.92 74.93 0)
+		(property "AVAILABILITY" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 106.68 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7521,7 +10732,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 193.04 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7547,7 +10758,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 205.74 88.9 0)
 			(effects
 				(font
@@ -7574,8 +10785,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 208.28 88.9 0)
+		(property "AVAILABILITY" ""
+			(at 193.04 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 193.04 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 193.04 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 193.04 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 193.04 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 193.04 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7602,7 +10858,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:TestPoint")
+		(lib_id "MothBox_Symbol_Library:TestPoint")
 		(at 44.45 102.87 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7653,6 +10909,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1ec909c1-ee17-49de-b4a3-dfae277b0361")
 		)
@@ -7666,7 +10967,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 60.96 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7692,7 +10993,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 73.66 95.25 0)
 			(effects
 				(font
@@ -7719,8 +11020,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 76.2 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 60.96 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7747,7 +11093,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 238.76 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7773,7 +11119,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 251.46 78.74 0)
 			(effects
 				(font
@@ -7800,8 +11146,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 254 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 238.76 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 238.76 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 238.76 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 238.76 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 238.76 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 238.76 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7828,7 +11219,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:TestPoint")
+		(lib_id "MothBox_Symbol_Library:TestPoint")
 		(at 91.44 111.76 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7879,6 +11270,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2db4a8a5-fc4d-4e94-b8ea-ee2a8efa1827")
 		)
@@ -7892,7 +11328,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 77.47 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7918,7 +11354,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 90.17 95.25 0)
 			(effects
 				(font
@@ -7945,8 +11381,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 92.71 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 77.47 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7973,7 +11454,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 209.55 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -8036,6 +11517,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 209.55 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a45b98f7-3b47-4821-a4c6-dd22bf6c1636")
 		)
@@ -8052,7 +11578,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:+12V")
+		(lib_id "MothBox_Symbol_Library:+12V")
 		(at 238.76 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8118,7 +11644,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 176.53 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8144,7 +11670,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 189.23 78.74 0)
 			(effects
 				(font
@@ -8171,8 +11697,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 191.77 78.74 0)
+		(property "AVAILABILITY" ""
+			(at 176.53 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 176.53 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 176.53 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 176.53 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 176.53 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 176.53 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8199,7 +11770,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 252.73 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8225,7 +11796,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 265.43 68.58 0)
 			(effects
 				(font
@@ -8252,8 +11823,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 267.97 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 252.73 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 252.73 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 252.73 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 252.73 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 252.73 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 252.73 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8280,7 +11896,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 120.65 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8306,7 +11922,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 133.35 85.09 0)
 			(effects
 				(font
@@ -8333,8 +11949,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 135.89 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 120.65 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8361,8 +12022,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_1")
-		(lib_id "_pauls_library:YJQ10N2A")
+		(lib_name "YJQ10N2A_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_1_1_1")
 		(at 96.52 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8389,7 +12050,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Pauls_Footprints:DFN2020-3"
+		(property "Footprint" "pauls_footprints:DFN2020-3"
 			(at 101.6 114.935 0)
 			(effects
 				(font
@@ -8420,6 +12081,51 @@
 			)
 		)
 		(property "LCSC" "C919558"
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
 			(at 96.52 113.03 0)
 			(effects
 				(font
@@ -8465,7 +12171,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:GND")
+		(lib_id "MothBox_Symbol_Library:GND")
 		(at 224.79 120.65 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8530,7 +12236,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 176.53 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8556,7 +12262,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 189.23 68.58 0)
 			(effects
 				(font
@@ -8583,8 +12289,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 191.77 68.58 0)
+		(property "AVAILABILITY" ""
+			(at 176.53 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 176.53 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 176.53 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 176.53 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 176.53 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 176.53 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8611,7 +12362,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 60.96 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8637,7 +12388,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 73.66 85.09 0)
 			(effects
 				(font
@@ -8664,8 +12415,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 76.2 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 60.96 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8692,7 +12488,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 77.47 59.69 0)
 		(mirror y)
 		(unit 1)
@@ -8755,6 +12551,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3baef05b-9488-46a9-a780-cfbbc69c7065")
 		)
@@ -8771,7 +12612,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 265.43 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -8834,6 +12675,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 265.43 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 265.43 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 265.43 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 265.43 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 265.43 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "15e1262f-76b5-4ba3-a07a-01ec977711e7")
 		)
@@ -8850,7 +12736,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 92.71 85.09 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -8876,7 +12762,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 105.41 85.09 0)
 			(effects
 				(font
@@ -8903,8 +12789,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 107.95 85.09 0)
+		(property "AVAILABILITY" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 92.71 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8931,7 +12862,7 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:R_Small")
+		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 252.73 58.42 0)
 		(mirror y)
 		(unit 1)
@@ -8994,6 +12925,51 @@
 				(hide yes)
 			)
 		)
+		(property "AVAILABILITY" ""
+			(at 252.73 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 252.73 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 252.73 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 252.73 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 252.73 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c6f58a1a-426a-4125-8029-6da4ded574c8")
 		)
@@ -9010,7 +12986,7 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda_libraries:XL-5730UWC-05")
+		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
 		(at 27.94 95.25 90)
 		(unit 1)
 		(exclude_from_sim no)
@@ -9036,7 +13012,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 40.64 95.25 0)
 			(effects
 				(font
@@ -9063,8 +13039,53 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C2843887"
-			(at 43.18 95.25 0)
+		(property "AVAILABILITY" ""
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2843887"
+			(at 27.94 95.25 90)
 			(effects
 				(font
 					(size 1.27 1.27)
