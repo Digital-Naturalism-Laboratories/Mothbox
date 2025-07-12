@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "1c121218-0fa6-452f-bea7-d9d214802d3f")
 	(paper "A4")
+	(title_block
+		(title "MothBox")
+		(date "2025-07-12")
+		(rev "5.0.1")
+		(company "Digital Naturalism Laboritories")
+	)
 	(lib_symbols
 		(symbol "MB_Library:+12V"
 			(power)
@@ -488,160 +494,6 @@
 						)
 					)
 					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "MB_Library:PZ254R-11-04P"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "H"
-				(at 0 8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "PZ254R-11-04P"
-				(at 0 -8.89 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
-				(at 0 -11.43 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
-				(at 0 -13.97 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C492412"
-				(at 0 -16.51 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "PZ254R-11-04P_0_1"
-				(rectangle
-					(start -2.54 6.35)
-					(end 2.54 -6.35)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(circle
-					(center -1.27 5.08)
-					(radius 0.38)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 3.81 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 1.27 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -1.27 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -3.81 0)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2509,6 +2361,232 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "easyeda_libraries:PZ254R-12-8P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "H"
+				(at 0 8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "PZ254R-12-8P"
+				(at 0 -8.89 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+				(at 0 -11.43 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-12-8P_C492432.html"
+				(at 0 -13.97 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C492432"
+				(at 0 -16.51 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "PZ254R-12-8P_0_1"
+				(rectangle
+					(start -2.54 6.35)
+					(end 2.54 -6.35)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -1.27 5.08)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 3.81 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 1.27 0)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -1.27 0)
+					(length 2.54)
+					(name "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 -3.81 0)
+					(length 2.54)
+					(name "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 3.81 180)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 1.27 180)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 -1.27 180)
+					(length 2.54)
+					(name "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 -3.81 180)
+					(length 2.54)
+					(name "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "8"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(rectangle
 		(start 26.67 27.94)
@@ -2627,6 +2705,16 @@
 			)
 		)
 		(uuid "8c75c7b2-f494-4de8-bb64-bb34ff154d53")
+	)
+	(text "v5.0.0 used the: PZ254R-11-04P single row connector"
+		(exclude_from_sim no)
+		(at 59.182 87.63 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "995f6043-336d-497e-8ebd-97bccc0a7005")
 	)
 	(text "UV PCB3 current consumtiom = 500mA"
 		(exclude_from_sim no)
@@ -2749,6 +2837,54 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f84b4b68-4d9b-4ab5-8e96-02e8031b3da2")
+	)
+	(no_connect
+		(at 229.87 50.8)
+		(uuid "13042cd0-7913-4b42-a21c-baae6e67ccfe")
+	)
+	(no_connect
+		(at 105.41 116.84)
+		(uuid "2e4a50d1-6acf-4057-b041-5bf7ecf709a5")
+	)
+	(no_connect
+		(at 229.87 48.26)
+		(uuid "4e67baba-d49d-4c4f-b9d4-9d1a999d75fd")
+	)
+	(no_connect
+		(at 229.87 55.88)
+		(uuid "50f7d621-e263-41d0-8b4d-2c0f70e56729")
+	)
+	(no_connect
+		(at 105.41 119.38)
+		(uuid "5475324b-9886-4c3d-917a-2dff356bb8df")
+	)
+	(no_connect
+		(at 104.14 52.07)
+		(uuid "582f3e56-15fe-458a-a92f-c88bfb8a53d4")
+	)
+	(no_connect
+		(at 104.14 57.15)
+		(uuid "61dea813-5495-4b4e-a212-c305406a1286")
+	)
+	(no_connect
+		(at 104.14 54.61)
+		(uuid "736897ad-96cc-4a64-96b2-b099c69844b7")
+	)
+	(no_connect
+		(at 105.41 114.3)
+		(uuid "96ceb07b-55d1-412c-9ec8-44f13d217dc1")
+	)
+	(no_connect
+		(at 105.41 121.92)
+		(uuid "d334b4d4-c13d-4121-90b1-0e86b98ab4b8")
+	)
+	(no_connect
+		(at 104.14 49.53)
+		(uuid "e825b903-dfa5-415b-b98c-8a2408f1c93d")
+	)
+	(no_connect
+		(at 229.87 53.34)
+		(uuid "ec084039-b7ec-4d2f-857f-0313d3240096")
 	)
 	(wire
 		(pts
@@ -3957,7 +4093,7 @@
 			(uuid "e79f213c-2220-405f-adde-3b91305f632b")
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "D2")
 					(unit 1)
@@ -4142,88 +4278,6 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:PZ254R-11-04P")
-		(at 99.06 53.34 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "51ea333c-1ccd-4d63-82ce-71af2ddaaa5f")
-		(property "Reference" "A1"
-			(at 99.568 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PZ254R-11-04P"
-			(at 101.6 61.722 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
-			(at 99.06 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
-			(at 99.06 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 99.06 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C492412"
-			(at 99.06 69.85 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "af767b38-5bcd-4a99-8ed1-b09c42eaa6e4")
-		)
-		(pin "3"
-			(uuid "d833345e-799a-423a-aeda-ffcfc2e023af")
-		)
-		(pin "2"
-			(uuid "b6a437e0-a667-4045-9626-71231674c424")
-		)
-		(pin "4"
-			(uuid "914f1a5d-d338-4bfa-a8f5-4896aa332015")
-		)
-		(instances
-			(project ""
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
-					(reference "A1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "MB_Library:ESD5Zxx")
 		(at 208.28 52.07 90)
 		(mirror x)
@@ -4369,9 +4423,104 @@
 			(uuid "079ccf69-d247-414b-b33e-2205fadd60ac")
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "#PWR049")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda_libraries:PZ254R-12-8P")
+		(at 100.33 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7e217299-49cc-40a9-9c2b-1345eb4ac95e")
+		(property "Reference" "H10"
+			(at 100.33 106.68 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PZ254R-12-8P"
+			(at 100.33 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+			(at 100.33 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-12-8P_C492432.html"
+			(at 100.33 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 100.33 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C492432"
+			(at 100.33 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "d52014cb-4605-40ff-afa9-46da8a0f369a")
+		)
+		(pin "6"
+			(uuid "227b124d-aab2-4fab-900e-cccbfc301d39")
+		)
+		(pin "4"
+			(uuid "879ca163-ce5c-4ad0-992d-0ad153474781")
+		)
+		(pin "2"
+			(uuid "027e8b7f-9cdd-4c04-a52f-ae17f7b6f0f5")
+		)
+		(pin "5"
+			(uuid "48d9fa24-552e-48f9-9f59-2ec257e89bec")
+		)
+		(pin "3"
+			(uuid "61a3ed6a-8bbc-4f71-9a12-2a1230bc4b0a")
+		)
+		(pin "1"
+			(uuid "db7c446a-2b3e-4939-bfcd-19f298cad1c0")
+		)
+		(pin "8"
+			(uuid "8626ed89-3e70-44d7-9c2d-5cefdce9b19f")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
+					(reference "H10")
 					(unit 1)
 				)
 			)
@@ -4435,7 +4584,7 @@
 			(uuid "ed1b44f6-e674-44ab-95c3-2f46154654ff")
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "#PWR053")
 					(unit 1)
@@ -4510,88 +4659,6 @@
 		)
 	)
 	(symbol
-		(lib_id "MB_Library:PZ254R-11-04P")
-		(at 100.33 118.11 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "985c44de-4433-46e0-bc0d-5a7b6601604f")
-		(property "Reference" "A2"
-			(at 100.838 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PZ254R-11-04P"
-			(at 104.648 109.474 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
-			(at 100.33 129.54 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
-			(at 100.33 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 100.33 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C492412"
-			(at 100.33 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "22b51211-ddb9-4aab-a323-01f533f7159a")
-		)
-		(pin "3"
-			(uuid "20e93338-81b8-436b-a876-e735a41ee59f")
-		)
-		(pin "2"
-			(uuid "a1cd2549-6310-4d17-9892-a6febc37fcee")
-		)
-		(pin "4"
-			(uuid "c5193d1b-3289-4c9d-881d-7252b7c56792")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
-					(reference "A2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "MB_Library:GND")
 		(at 91.44 139.7 0)
 		(unit 1)
@@ -4652,88 +4719,6 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "#PWR044")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "MB_Library:PZ254R-11-04P")
-		(at 224.79 52.07 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "af100ec3-63c6-4f9d-a51d-5416dc712ba5")
-		(property "Reference" "A3"
-			(at 225.298 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "PZ254R-11-04P"
-			(at 230.886 43.942 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:HDR-TH_4P-P2.54-H-M-W10.4"
-			(at 224.79 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-11-04P_C492412.html"
-			(at 224.79 66.04 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 224.79 52.07 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C492412"
-			(at 224.79 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "10442908-e8d8-4f78-88c2-a110c1e4e3e6")
-		)
-		(pin "3"
-			(uuid "df7606f9-4f52-4a3f-9f0f-fd72c4b24ee3")
-		)
-		(pin "2"
-			(uuid "0ab04a46-e3eb-416b-9018-5310c7eea42a")
-		)
-		(pin "4"
-			(uuid "dc812692-2ee6-49cc-a54e-543392623d29")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
-					(reference "A3")
 					(unit 1)
 				)
 			)
@@ -5196,6 +5181,196 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
 					(reference "R21")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda_libraries:PZ254R-12-8P")
+		(at 99.06 53.34 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "d8a46e7e-c601-4cc9-a90c-3d4dcbd995cd")
+		(property "Reference" "H8"
+			(at 99.06 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PZ254R-12-8P"
+			(at 99.06 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+			(at 99.06 64.77 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-12-8P_C492432.html"
+			(at 99.06 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 99.06 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C492432"
+			(at 99.06 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "7946c192-7393-4370-9dce-9492ff5bc8af")
+		)
+		(pin "6"
+			(uuid "2fbd52cc-704d-41ca-99e8-3d36360a4492")
+		)
+		(pin "4"
+			(uuid "310d3c10-5730-445b-82ed-03396bc14542")
+		)
+		(pin "2"
+			(uuid "fc4a77d7-b99c-4278-8863-89074b966ec7")
+		)
+		(pin "5"
+			(uuid "d75a70ad-6f0d-4406-b911-25f03912fb0a")
+		)
+		(pin "3"
+			(uuid "e71ee5ca-1343-4bbe-878c-9f9b6af85dbf")
+		)
+		(pin "1"
+			(uuid "bb5c68dd-a751-41c2-b4da-8ca711be6290")
+		)
+		(pin "8"
+			(uuid "feb3971e-11eb-4560-96a0-5ac01514d45b")
+		)
+		(instances
+			(project ""
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
+					(reference "H8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda_libraries:PZ254R-12-8P")
+		(at 224.79 52.07 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dd1f1dda-e227-4cde-8d8c-3e30a069b5a7")
+		(property "Reference" "H9"
+			(at 224.79 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "PZ254R-12-8P"
+			(at 224.79 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+			(at 224.79 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Pin-Header-Female-Header_XFCN-PZ254R-12-8P_C492432.html"
+			(at 224.79 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 224.79 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C492432"
+			(at 224.79 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "7"
+			(uuid "18b46d73-710b-4cfa-a63f-3e91f48b42c4")
+		)
+		(pin "6"
+			(uuid "12c55125-5e49-42c5-828d-d9db1256f1b8")
+		)
+		(pin "4"
+			(uuid "08daa222-c05c-4c40-83f8-224a79a25fbb")
+		)
+		(pin "2"
+			(uuid "8f0e6063-0708-4dea-aa58-509a5240372d")
+		)
+		(pin "5"
+			(uuid "0e9e682b-2393-40f1-8a40-7a0e8748969e")
+		)
+		(pin "3"
+			(uuid "15833b93-e46f-4a00-ae08-18cddf9535a1")
+		)
+		(pin "1"
+			(uuid "cab41684-4ff8-4ec4-8678-e05bc9d6c1a6")
+		)
+		(pin "8"
+			(uuid "1f61a2ce-41a6-4a55-8e83-682b3eb70cc1")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/25f161be-2136-4f06-bcb6-1cc6303e8ec0"
+					(reference "H9")
 					(unit 1)
 				)
 			)

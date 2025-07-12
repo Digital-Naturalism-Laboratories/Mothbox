@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "1c121218-0fa6-452f-bea7-d9d214802d3f")
 	(paper "User" 381 254)
+	(title_block
+		(title "MothBox")
+		(date "2025-07-12")
+		(rev "5.0.1")
+		(company "Digital Naturalism Laboritories")
+	)
 	(lib_symbols
 		(symbol "MB_Library:+3.3V"
 			(power)

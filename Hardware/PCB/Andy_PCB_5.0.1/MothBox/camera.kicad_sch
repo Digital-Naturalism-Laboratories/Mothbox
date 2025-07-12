@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "e7ccf719-ef9e-446a-b2fd-e8a59a6a6964")
 	(paper "A4")
+	(title_block
+		(title "MothBox")
+		(date "2025-07-12")
+		(rev "5.0.1")
+		(company "Digital Naturalism Laboritories")
+	)
 	(lib_symbols
 		(symbol "MB_Library:MountingHole_1/4inbolt"
 			(pin_names

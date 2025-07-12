@@ -4,6 +4,12 @@
 	(generator_version "9.0")
 	(uuid "9021e528-fc76-4423-a3f3-30f5652071cc")
 	(paper "A4")
+	(title_block
+		(title "MothBox")
+		(date "2025-07-12")
+		(rev "5.0.1")
+		(company "Digital Naturalism Laboritories")
+	)
 	(lib_symbols)
 	(sheet
 		(at 176.53 45.72)
@@ -72,7 +78,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "UV LED PCB.kicad_sch"
+		(property "Sheetfile" "UV_LED_PCB.kicad_sch"
 			(at 161.29 134.5696 0)
 			(effects
 				(font
@@ -240,7 +246,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Sheetfile" "Photo LEDS's.kicad_sch"
+		(property "Sheetfile" "Photo_LEDs.kicad_sch"
 			(at 114.3 134.5696 0)
 			(effects
 				(font
