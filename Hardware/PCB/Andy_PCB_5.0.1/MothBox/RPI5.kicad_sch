@@ -3772,6 +3772,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 102.87 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/23e8100d-dc92-4d1f-bb27-d65b0331e323"
@@ -4005,7 +4023,7 @@
 				)
 			)
 		)
-		(property "Footprint" "AQLibrary:EPAPER_PinHeader_2x20_P2.54mm_Vertical"
+		(property "Footprint" "MothBox_footprints_Library:EPAPER_PinHeader_2x20_P2.54mm_Vertical"
 			(at 71.12 71.12 0)
 			(effects
 				(font
@@ -4089,6 +4107,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C5224014"
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 71.12 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 71.12 71.12 0)
 			(effects
 				(font
@@ -4585,6 +4621,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 64.77 172.72 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/23e8100d-dc92-4d1f-bb27-d65b0331e323"
@@ -4685,7 +4739,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:HDR-TH_40P-P2.54-H-F-R2-C20-W8.5"
+		(property "Footprint" "MothBox_footprints_Library:HDR-TH_40P-P2.54-H-F-R2-C20-W8.5"
 			(at 184.15 118.11 0)
 			(effects
 				(font
@@ -4758,6 +4812,24 @@
 			)
 		)
 		(property "LCSC_Part" "C2897440"
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 184.15 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 184.15 87.63 0)
 			(effects
 				(font

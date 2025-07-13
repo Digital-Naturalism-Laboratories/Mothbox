@@ -5204,7 +5204,7 @@
 				(justify right bottom)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_2512_6332Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_2512_6332Metric"
 			(at 137.16 67.31 0)
 			(effects
 				(font
@@ -5285,6 +5285,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 137.16 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 137.16 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "07c577f8-2304-46df-95bf-65f9297ddda6")
 		)
@@ -5325,7 +5343,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
+		(property "Footprint" "MothBox_footprints_Library:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
 			(at 191.77 83.82 0)
 			(effects
 				(font
@@ -5406,6 +5424,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 191.77 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 191.77 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eb6c6c74-2de9-4111-b646-0b1965ceac07")
 		)
@@ -5454,7 +5490,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:SMC_L6.9-W5.9-LS8.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:SMC_L6.9-W5.9-LS8.0-RD"
 			(at 99.06 146.05 0)
 			(effects
 				(font
@@ -5664,6 +5700,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 106.68 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 106.68 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "622f586c-08d4-498f-80d3-d63cfa6952ce")
 		)
@@ -5704,7 +5758,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:TO-263-5_L10.2-W8.9-P1.70-TL"
+		(property "Footprint" "MothBox_footprints_Library:TO-263-5_L10.2-W8.9-P1.70-TL"
 			(at 77.47 162.56 0)
 			(effects
 				(font
@@ -5914,6 +5968,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 77.47 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 77.47 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "396ab717-0384-4a27-850e-20a0147d4996")
 		)
@@ -6031,7 +6103,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1812_4532Metric"
+		(property "Footprint" "Fuse:Fuse_1812_4532Metric"
 			(at 86.36 73.66 0)
 			(effects
 				(font
@@ -6113,6 +6185,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 81.28 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 81.28 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8bf4f7d6-846f-4429-b89d-dddcca096c1b")
 		)
@@ -6153,7 +6243,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
+		(property "Footprint" "MothBox_footprints_Library:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
 			(at 50.8 86.36 0)
 			(effects
 				(font
@@ -6226,6 +6316,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 50.8 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 50.8 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 50.8 86.36 0)
 			(effects
 				(font
@@ -6676,7 +6784,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 147.32 146.05 0)
 			(effects
 				(font
@@ -6749,6 +6857,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C3011704"
+			(at 147.32 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 147.32 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 147.32 146.05 0)
 			(effects
 				(font
@@ -6863,7 +6989,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Inductor_SMD:L_Chilisin_BMRG00131360"
+		(property "Footprint" "MothBox_footprints_Library:L_Chilisin_BMRG00131360"
 			(at 113.03 138.43 0)
 			(effects
 				(font
@@ -6944,6 +7070,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "830b1239-f3ae-42fa-839e-53532e330115")
 		)
@@ -6985,7 +7129,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pauls_Footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 155.575 72.39 0)
 			(effects
 				(font
@@ -7052,6 +7196,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 157.48 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 157.48 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 157.48 77.47 90)
 			(effects
 				(font
@@ -7170,7 +7332,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -7243,6 +7405,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C3011704"
+			(at 92.71 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 92.71 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -7491,7 +7671,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
+		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
 			(at 77.47 81.28 90)
 			(effects
 				(font
@@ -7564,6 +7744,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 77.47 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 77.47 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 77.47 81.28 90)
 			(effects
 				(font
@@ -7680,7 +7878,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 120.65 151.13 0)
 			(effects
 				(font
@@ -7761,6 +7959,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "f376d155-c5c7-4f87-a4c2-071efbf87a8a")
 		)
@@ -7802,7 +8018,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 146.05 90.17 0)
 			(effects
 				(font
@@ -7866,6 +8082,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 146.05 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 146.05 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 146.05 90.17 90)
 			(effects
 				(font
@@ -8046,7 +8280,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+		(property "Footprint" "MothBox_footprints_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 			(at 142.24 138.43 0)
 			(effects
 				(font
@@ -8118,6 +8352,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 137.16 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 137.16 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "85f81abe-db5d-4455-8fc2-9c910d485a96")
 		)
@@ -8158,7 +8410,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 120.65 143.51 0)
 			(effects
 				(font
@@ -8231,6 +8483,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C84376"
+			(at 120.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 120.65 143.51 0)
 			(effects
 				(font
@@ -8346,7 +8616,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Pauls_Footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 73.025 72.39 0)
 			(effects
 				(font
@@ -8421,6 +8691,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 71.12 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 71.12 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f75f43c7-cabd-404b-8c0a-f00e351a8f9b")
 		)
@@ -8468,7 +8756,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 96.52 44.45 0)
 			(effects
 				(font
@@ -8549,6 +8837,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 104.14 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 104.14 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "367d83dc-252d-44f5-826c-4b54b2d17643")
 		)
@@ -8591,7 +8897,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_10x12.5"
+		(property "Footprint" "MothBox_footprints_Library:CP_Elec_10x12.5"
 			(at 49.53 143.51 0)
 			(effects
 				(font
@@ -8664,6 +8970,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C90272"
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 49.53 143.51 0)
 			(effects
 				(font
@@ -8776,6 +9100,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 210.82 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 210.82 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 210.82 82.55 0)
 			(effects
 				(font
@@ -9029,7 +9371,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 71.12 88.9 0)
 			(effects
 				(font
@@ -9093,6 +9435,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 71.12 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 71.12 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 71.12 88.9 0)
 			(effects
 				(font
@@ -9209,7 +9569,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23-8"
+		(property "Footprint" "MothBox_footprints_Library:SOT-23-8"
 			(at 116.84 44.45 0)
 			(effects
 				(font
@@ -9290,6 +9650,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "73343cef-3e3e-4ae5-852f-d6d550d63142")
 		)
@@ -9350,7 +9728,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
+		(property "Footprint" "MothBox_footprints_Library:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
 			(at 231.14 81.28 0)
 			(effects
 				(font
@@ -9431,6 +9809,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 231.14 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 231.14 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "252fad10-278e-4c12-92a5-cf63f1f1ec96")
 		)
@@ -9480,7 +9876,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
+		(property "Footprint" "MothBox_footprints_Library:SOT-23"
 			(at 218.44 90.17 0)
 			(effects
 				(font
@@ -9588,6 +9984,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "58f7f584-f76e-4e52-87d5-b9cebfd25251")
 		)
@@ -9633,7 +10047,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
 			(at 130.81 43.18 0)
 			(effects
 				(font
@@ -9706,6 +10120,33 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" "C3011704"
 			(at 130.81 43.18 0)
 			(effects
 				(font
@@ -9822,7 +10263,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 90.17 44.45 0)
 			(effects
 				(font
@@ -9903,6 +10344,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 97.79 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 97.79 44.45 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d42041b1-4433-46e1-807d-9dec3e05b3cc")
 		)
@@ -9945,7 +10404,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:CP_Elec_10x10"
+		(property "Footprint" "MothBox_footprints_Library:CP_Elec_10x10"
 			(at 134.62 146.05 0)
 			(effects
 				(font
@@ -10026,6 +10485,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e4eca802-a8f2-4595-96b4-508e01b00eb3")
 		)
@@ -10068,7 +10545,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 55.88 143.51 0)
 			(effects
 				(font
@@ -10149,6 +10626,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "dc7b8ce5-86ae-443b-947d-abd5385e017c")
 		)
@@ -10191,7 +10686,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 149.86 78.74 0)
 			(effects
 				(font
@@ -10255,6 +10750,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 149.86 78.74 0)
 			(effects
 				(font

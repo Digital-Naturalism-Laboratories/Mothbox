@@ -260,7 +260,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
+		(property "Footprint" "MothBox_footprints_Library:MountingHole_6.4mm_M6_Pad"
 			(at 147.32 110.49 0)
 			(effects
 				(font
@@ -324,6 +324,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 147.32 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 147.32 110.49 0)
 			(effects
 				(font
@@ -369,7 +387,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
+		(property "Footprint" "MothBox_footprints_Library:MountingHole_6.4mm_M6_Pad"
 			(at 147.32 132.08 0)
 			(effects
 				(font
@@ -441,6 +459,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 147.32 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -469,7 +505,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "graphic"
 			(at 115.57 60.96 0)
 			(effects
 				(font
@@ -478,7 +514,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Attractor:Arducam Owlsight"
+		(property "Footprint" "MothBox_footprints_Library:Arducam Owlsight"
 			(at 104.14 59.69 0)
 			(effects
 				(font
@@ -542,6 +578,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 104.14 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 104.14 59.69 0)
 			(effects
 				(font
@@ -587,7 +641,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
+		(property "Footprint" "MothBox_footprints_Library:MountingHole_6.4mm_M6_Pad"
 			(at 99.06 110.49 0)
 			(effects
 				(font
@@ -651,6 +705,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 99.06 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 99.06 110.49 0)
 			(effects
 				(font
@@ -696,7 +768,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
+		(property "Footprint" "MothBox_footprints_Library:MountingHole_6.4mm_M6_Pad"
 			(at 99.06 132.08 0)
 			(effects
 				(font
@@ -760,6 +832,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 99.06 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 99.06 132.08 0)
 			(effects
 				(font
@@ -805,7 +895,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
+		(property "Footprint" "MothBox_footprints_Library:MountingHole_6.4mm_M6_Pad"
 			(at 194.31 132.08 0)
 			(effects
 				(font
@@ -869,6 +959,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 194.31 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 194.31 132.08 0)
 			(effects
 				(font
@@ -914,7 +1022,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_6.4mm_M6_Pad"
+		(property "Footprint" "MothBox_footprints_Library:MountingHole_6.4mm_M6_Pad"
 			(at 194.31 110.49 0)
 			(effects
 				(font
@@ -986,6 +1094,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 194.31 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(instances
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/84c07412-33ce-4c0b-96a0-a76ad52e50ee"
@@ -1014,7 +1140,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "~"
+		(property "Value" "graphic"
 			(at 196.85 61.595 0)
 			(effects
 				(font
@@ -1023,7 +1149,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "AQLibrary:Talentcell"
+		(property "Footprint" "MothBox_footprints_Library:Talentcell"
 			(at 181.61 59.69 0)
 			(effects
 				(font
@@ -1086,6 +1212,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 181.61 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 181.61 59.69 0)
 			(effects
 				(font

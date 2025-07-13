@@ -4097,7 +4097,7 @@
 		(uuid "00452379-ed3c-46e0-9cf1-37a6d343af8f")
 	)
 	(label "Attractor_3"
-		(at 78.74 176.53 0)
+		(at 78.74 168.91 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4107,7 +4107,7 @@
 		(uuid "00ff7cc3-17bf-49ea-8c04-d14b301cf6d9")
 	)
 	(label "Fri"
-		(at 78.74 146.05 0)
+		(at 78.74 153.67 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4117,7 +4117,7 @@
 		(uuid "013032c6-92c6-4228-8f3b-9e5900976b5c")
 	)
 	(label "Wed"
-		(at 78.74 151.13 0)
+		(at 78.74 148.59 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4127,7 +4127,7 @@
 		(uuid "09e3c317-8f21-4c85-9a8d-ec16d7361648")
 	)
 	(label "Test_Debug"
-		(at 78.74 163.83 0)
+		(at 78.74 181.61 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4147,7 +4147,7 @@
 		(uuid "18766455-38e3-417e-9537-e9b9efbb0067")
 	)
 	(label "Thur"
-		(at 78.74 148.59 0)
+		(at 78.74 151.13 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4217,7 +4217,7 @@
 		(uuid "3a7f5466-ce90-4776-9f97-9d7ed3cda978")
 	)
 	(label "Armed{slash}Disarmed"
-		(at 78.74 158.75 0)
+		(at 78.74 140.97 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4287,7 +4287,7 @@
 		(uuid "54f23bf2-757a-4636-b87b-b8b75d0d72ae")
 	)
 	(label "Tue"
-		(at 78.74 153.67 0)
+		(at 78.74 146.05 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4297,7 +4297,7 @@
 		(uuid "569f8006-37a2-42e0-bf28-de4cbb519973")
 	)
 	(label "Sat"
-		(at 78.74 143.51 0)
+		(at 78.74 156.21 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4307,7 +4307,7 @@
 		(uuid "572ae928-7b46-4f55-8d55-4f45ffb61ed8")
 	)
 	(label "HI{slash}LOW_PWR"
-		(at 78.74 166.37 0)
+		(at 78.74 179.07 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4317,7 +4317,7 @@
 		(uuid "5813ca76-7ca0-4890-8a96-f96123e6acce")
 	)
 	(label "Mon"
-		(at 78.74 156.21 0)
+		(at 78.74 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4337,7 +4337,7 @@
 		(uuid "6c108056-1b07-413a-b6de-1c3b9452e9ee")
 	)
 	(label "C2"
-		(at 78.74 181.61 0)
+		(at 78.74 163.83 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4347,7 +4347,7 @@
 		(uuid "73b86413-c09b-4d50-ac0a-18388f017c0e")
 	)
 	(label "C1"
-		(at 78.74 179.07 0)
+		(at 78.74 166.37 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4497,7 +4497,7 @@
 		(uuid "9cb97658-c26f-4459-8cf2-b11529fb65d9")
 	)
 	(label "Attractor_2"
-		(at 78.74 173.99 0)
+		(at 78.74 171.45 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4547,7 +4547,7 @@
 		(uuid "b0d044c1-f05f-4dc1-876a-cbdeece31091")
 	)
 	(label "Sun"
-		(at 78.74 140.97 0)
+		(at 78.74 158.75 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4627,7 +4627,7 @@
 		(uuid "e53b12a5-3585-493b-9f86-4c8a475f8d9e")
 	)
 	(label "Attractor_1"
-		(at 78.74 171.45 0)
+		(at 78.74 173.99 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4657,7 +4657,7 @@
 		(uuid "e8caff7c-79aa-4468-804a-710c2c58b2b9")
 	)
 	(label "INT{slash}EXT_Attractor"
-		(at 78.74 168.91 0)
+		(at 78.74 176.53 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5009,7 +5009,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "GPS 4 pin 2.54-1*4P母"
+		(property "Value" "GPS 4 pin 2.54-1*4P"
 			(at 53.34 57.1499 0)
 			(effects
 				(font
@@ -5018,7 +5018,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "AQLibrary:GPS4pin_HDR-TH_4P-P2.54-V-F"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical"
 			(at 49.53 67.31 0)
 			(effects
 				(font
@@ -5091,6 +5091,24 @@
 			)
 		)
 		(property "LCSC_Part" "C2718488"
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 49.53 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 49.53 55.88 0)
 			(effects
 				(font
@@ -5544,7 +5562,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
 			(at 48.26 138.43 0)
 			(effects
 				(font
@@ -5625,7 +5643,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C49678"
+		(property "LCSC_Part_No" "C3011704"
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 48.26 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 48.26 138.43 0)
 			(effects
 				(font
@@ -5743,7 +5779,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "MothBox_footprints_Library:SW-SMD_SMXS-08K-TP"
 			(at 289.56 97.79 0)
 			(effects
 				(font
@@ -5816,6 +5852,24 @@
 			)
 		)
 		(property "LCSC_Part" "C5439767"
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 289.56 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 289.56 80.01 0)
 			(effects
 				(font
@@ -5909,7 +5963,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "AQLibrary:GPS5pin_HDR-TH_5P-P2.54-V-F"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x05_P2.54mm_Vertical"
 			(at 49.53 96.52 0)
 			(effects
 				(font
@@ -5990,6 +6044,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 49.53 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "9ee5b785-4067-4644-b58c-ced19ec97780")
 		)
@@ -6040,7 +6112,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
+		(property "Footprint" "MothBox_footprints_Library:TSSOP-24_4.4x7.8mm_P0.65mm"
 			(at 144.78 140.97 0)
 			(effects
 				(font
@@ -6104,6 +6176,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 146.05 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 146.05 140.97 0)
 			(effects
 				(font
@@ -6221,7 +6311,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "MothBox_footprints_Library:SW-SMD_SMXS-08K-TP"
 			(at 181.61 97.79 0)
 			(effects
 				(font
@@ -6294,6 +6384,24 @@
 			)
 		)
 		(property "LCSC_Part" "C5439767"
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 181.61 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 181.61 80.01 0)
 			(effects
 				(font
@@ -6519,7 +6627,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "MothBox_footprints_Library:SW-SMD_SMXS-08K-TP"
 			(at 237.49 97.79 0)
 			(effects
 				(font
@@ -6592,6 +6700,24 @@
 			)
 		)
 		(property "LCSC_Part" "C5439767"
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 237.49 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 237.49 80.01 0)
 			(effects
 				(font
@@ -6685,7 +6811,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:SW-SMD_SMXS-08K-TP"
+		(property "Footprint" "MothBox_footprints_Library:SW-SMD_SMXS-08K-TP"
 			(at 130.81 97.79 0)
 			(effects
 				(font
@@ -6758,6 +6884,24 @@
 			)
 		)
 		(property "LCSC_Part" "C5439767"
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 130.81 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 130.81 80.01 0)
 			(effects
 				(font
@@ -6983,7 +7127,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
 			(at 129.54 138.43 0)
 			(effects
 				(font
@@ -7064,7 +7208,25 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C49678"
+		(property "LCSC_Part_No" "C3011704"
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 129.54 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 129.54 138.43 0)
 			(effects
 				(font
@@ -7310,7 +7472,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm"
+		(property "Footprint" "MothBox_footprints_Library:TSSOP-24_4.4x7.8mm_P0.65mm"
 			(at 63.5 140.97 0)
 			(effects
 				(font
@@ -7374,6 +7536,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 64.77 140.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 64.77 140.97 0)
 			(effects
 				(font

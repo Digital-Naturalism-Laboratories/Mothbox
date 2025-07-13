@@ -1,0 +1,314 @@
+(footprint "DFN2020-3"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(descr "U-DFN2020-6 (Type F) (https://www.diodes.com/assets/Package-Files/U-DFN2020-6-Type-F.pdf) ")
+	(tags "U-DFN2020-6 (Type F)")
+	(property "Reference" "REF**"
+		(at 0 -2 0)
+		(layer "F.SilkS")
+		(uuid "00b7d301-8341-4d63-b786-c50dbc128043")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "YJQ10N2A"
+		(at 0 2 0)
+		(layer "F.Fab")
+		(uuid "314eb289-d502-4d00-ab9f-9bd53347fcdf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e078e3be-7639-40a5-b4de-84f2b1032157")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3ff7f9f4-ff96-4bbf-825b-d03c6739aad0")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C919558"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "28abf264-92f2-4941-ba61-acde16c659c6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "AVAILABILITY" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dda59209-7341-4b24-926c-07975f5697ab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "DESCRIPTION" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "491aa59f-c5d2-425d-9a61-7a9842fffe35")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Link" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f1c971f8-b1cd-47c3-ad3d-ba451a1d570f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PACKAGE" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "08f0fee5-6d13-41fe-bc61-3e61111ab03f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PRICE" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b7f62b80-dbc3-436a-af01-32337ebbf50a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start 1 -1.15)
+		(end 0 -1.15)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f2acd8a9-5efd-43ee-a59b-9d9a75566b05")
+	)
+	(fp_line
+		(start 1 1.15)
+		(end -1 1.15)
+		(stroke
+			(width 0.12)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3b0c186f-f837-48af-9de5-59159f3618e4")
+	)
+	(fp_line
+		(start -1.4 -1.25)
+		(end -1.4 1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "7bc85960-af2c-4b80-b109-93bf3b15dd67")
+	)
+	(fp_line
+		(start -1.4 1.25)
+		(end 1.4 1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "47038220-6a14-4771-8261-9e1dbc50ede4")
+	)
+	(fp_line
+		(start 1.4 -1.25)
+		(end -1.4 -1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "884cc417-ca0d-43a0-b489-7f2387641208")
+	)
+	(fp_line
+		(start 1.4 1.25)
+		(end 1.4 -1.25)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "394f35c0-993d-4ad1-83d0-40d0d0bef25d")
+	)
+	(fp_line
+		(start -1 1)
+		(end -1 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "bd38ff4d-012a-4ebc-bbfd-187d9f56a2e9")
+	)
+	(fp_line
+		(start -0.5 -1)
+		(end -1 -0.5)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "2d633d11-12ee-44b5-ab86-fbe8df93f871")
+	)
+	(fp_line
+		(start -0.5 -1)
+		(end 1 -1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "c7799cd4-2737-435c-b59a-5f0b900a145b")
+	)
+	(fp_line
+		(start 1 -1)
+		(end 1 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "7b753f39-dd2b-4f74-a04b-a613ef245a85")
+	)
+	(fp_line
+		(start 1 1)
+		(end -1 1)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "eed92a8a-2b4a-46d9-a9ce-ba6a86f9d90c")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0.1 0)
+		(layer "F.Fab")
+		(uuid "8dbdb382-a436-4a17-9561-eab4096fbdba")
+		(effects
+			(font
+				(size 0.3 0.3)
+				(thickness 0.05)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -0.9375 0.65)
+		(size 0.425 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "87138d9e-c0a7-41c4-a5b5-bb51163e2906")
+	)
+	(pad "2" smd rect
+		(at 0 0.7)
+		(size 0.8 0.48)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7c9b2303-679f-4706-9645-833c7c4bb6a5")
+	)
+	(pad "2" smd rect
+		(at 0.9375 0.65)
+		(size 0.425 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8c6745a5-6e45-4680-a408-8c7c5785591f")
+	)
+	(pad "3" smd rect
+		(at -0.9375 -0.65)
+		(size 0.425 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "feb69b57-8dc4-4691-b475-ef7f7711d4b2")
+	)
+	(pad "3" smd rect
+		(at -0.9375 0)
+		(size 0.425 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8d501bb5-0815-4c79-a2c6-598f4e129d1c")
+	)
+	(pad "3" smd rect
+		(at 0 -0.325)
+		(size 1.15 0.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8ffe8e39-e2a1-4404-b829-ed14df192bca")
+	)
+	(pad "3" smd rect
+		(at 0.9375 -0.65)
+		(size 0.425 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6575bbe3-e921-429d-a5be-eb8091907b5d")
+	)
+	(pad "3" smd rect
+		(at 0.9375 0)
+		(size 0.425 0.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e547a3c0-050e-4ffa-9bdf-cb7658202ca9")
+	)
+	(embedded_fonts no)
+	(model "${KICAD6_3DMODEL_DIR}/Package_DFN_QFN.3dshapes/Diodes_UDFN2020-6_Type-F.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

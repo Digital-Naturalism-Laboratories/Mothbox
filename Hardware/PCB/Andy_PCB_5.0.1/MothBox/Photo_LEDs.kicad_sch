@@ -852,7 +852,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_1_1_1"
+		(symbol "YJQ10N2A_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -934,7 +934,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_0_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -1101,7 +1101,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_1_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -1273,7 +1273,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_1_1_1_1"
+		(symbol "YJQ10N2A_1_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -1355,7 +1355,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_1_0_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -1522,7 +1522,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_1_1_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -1694,7 +1694,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_2_1_1"
+		(symbol "YJQ10N2A_2_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -1776,7 +1776,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_0_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -1943,7 +1943,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_1_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -2115,7 +2115,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_2_1_1_1"
+		(symbol "YJQ10N2A_2_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -2197,7 +2197,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_1_0_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -2364,7 +2364,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_1_1_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -2563,6 +2563,16 @@
 		)
 		(uuid bba3fbc2-1cbe-403f-9154-2fc4a16986d3)
 	)
+	(text "wrong symbol pins"
+		(exclude_from_sim no)
+		(at 112.776 118.618 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "18310bd8-aae7-4cf0-9c48-5cb9ce08509d")
+	)
 	(text "v5.0.0 used XINGLIGHT XL-2835UWC-02 \n\n60mA 6000K~7500K Yellow lens -20℃~+85℃ Positive Stick White 120° 200mW 3.4V SMD2835 LED Indication - Discrete ROH\n\nFigure out:\nEach string used around 83mA\n\nhow many batches per transistor thing\n\nwhat is the light angle of these LEDS (if any) without lens is cheaper\n\nCurrent per led = 60mA\nTotal current = 8(columns) x 60mA\n			  = 480mA\nTotal Luminous required = ?? lm  \nPer led luminous = ??? lm\n10 led Luminous = ???? lm"
 		(exclude_from_sim no)
 		(at 82.804 174.244 0)
@@ -2584,6 +2594,16 @@
 			)
 		)
 		(uuid "6ffa042b-5fa2-4e1f-b5b0-30335c290a2f")
+	)
+	(text "wrong symbol pins"
+		(exclude_from_sim no)
+		(at 243.078 120.904 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "a05c003c-36b7-429f-8474-ec9b111be1cc")
 	)
 	(text "Left Photo LEDs Control"
 		(exclude_from_sim no)
@@ -2608,19 +2628,19 @@
 		(uuid "d19cecf2-da7e-4554-afeb-287016d149f9")
 	)
 	(junction
-		(at 176.53 101.6)
+		(at 176.53 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0c6b082d-c5a9-4d26-a966-9ff09bcfc466")
 	)
 	(junction
-		(at 238.76 101.6)
+		(at 238.76 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "154e62ec-dc4f-4fb6-b0e9-e7663491e488")
 	)
 	(junction
-		(at 252.73 53.34)
+		(at 252.73 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1731837e-5358-4612-b059-275cd94c3b3c")
@@ -2638,13 +2658,19 @@
 		(uuid "2bb329f7-18a7-492f-98d3-5b44f524c760")
 	)
 	(junction
+		(at 160.02 63.5)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e4e2097-7b52-4126-96b7-373fc4b76969")
+	)
+	(junction
 		(at 44.45 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2f1c4c8e-c80f-4659-afe1-afccc05c1d35")
 	)
 	(junction
-		(at 209.55 53.34)
+		(at 209.55 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "37655626-e945-4c16-92e5-183e1d8f2690")
@@ -2668,19 +2694,19 @@
 		(uuid "50e55a69-bf85-4d49-ba81-d1b285ae2b7b")
 	)
 	(junction
-		(at 176.53 53.34)
+		(at 176.53 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5672183b-160a-4148-b4c8-abaf03d6b849")
 	)
 	(junction
-		(at 193.04 101.6)
+		(at 193.04 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5d27e8be-22e4-40d8-887d-5cd2c7066839")
 	)
 	(junction
-		(at 265.43 62.23)
+		(at 265.43 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "640912d6-46ab-493b-85ba-77ce3184c7e4")
@@ -2704,7 +2730,7 @@
 		(uuid "7ea05acf-07ab-4115-b7a9-4c994cb050b2")
 	)
 	(junction
-		(at 224.79 101.6)
+		(at 224.79 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "8dd20a36-6f21-4d81-a004-7dd188b00014")
@@ -2722,19 +2748,25 @@
 		(uuid "a0745e74-be37-4f0d-8d6a-df5dd0df06ea")
 	)
 	(junction
-		(at 217.17 111.76)
+		(at 160.02 55.88)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "aeeac54f-ac09-4c62-978f-f77ebd2543c9")
+	)
+	(junction
+		(at 217.17 113.03)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b34d580c-4a59-4372-8ad7-49b62ca15e70")
 	)
 	(junction
-		(at 224.79 53.34)
+		(at 224.79 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b92ef8cc-9118-4a42-ba09-7d5f87718fe5")
 	)
 	(junction
-		(at 193.04 53.34)
+		(at 193.04 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "bff15cd5-2fa2-408f-b2f1-72756964cf46")
@@ -2746,13 +2778,13 @@
 		(uuid "c1efdf3b-c1dc-47b6-89e4-8e4d2115f36a")
 	)
 	(junction
-		(at 238.76 53.34)
+		(at 238.76 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c4f2f633-22d4-4766-85be-272e7dd525ab")
 	)
 	(junction
-		(at 209.55 101.6)
+		(at 209.55 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cd314410-b62c-41c8-b567-02d30bac1bf9")
@@ -2764,7 +2796,7 @@
 		(uuid "d7d3bbeb-2ebe-46ec-99c4-3814e5604906")
 	)
 	(junction
-		(at 252.73 101.6)
+		(at 252.73 102.87)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dd593078-6442-4a7e-844a-989a627d7b11")
@@ -2776,7 +2808,7 @@
 		(uuid "e9e38022-a42f-419a-a26d-9b3010af4641")
 	)
 	(junction
-		(at 224.79 119.38)
+		(at 224.79 120.65)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ec2d04e2-68a6-4d2f-b204-aac226857157")
@@ -2788,7 +2820,7 @@
 		(uuid "f0ba31a8-0c75-4a11-b4a9-ab026ec81f0a")
 	)
 	(no_connect
-		(at 229.87 68.58)
+		(at 229.87 69.85)
 		(uuid "0b95d9ab-4a8b-459a-a503-114156f199a2")
 	)
 	(no_connect
@@ -2796,11 +2828,11 @@
 		(uuid "0dedf3d2-e6d0-4fda-aad3-d8d8571a3f95")
 	)
 	(no_connect
-		(at 181.61 78.74)
+		(at 181.61 80.01)
 		(uuid "144a6837-6fb5-4a6b-a0e0-6f4630b8e46b")
 	)
 	(no_connect
-		(at 270.51 82.55)
+		(at 270.51 83.82)
 		(uuid "1b6bde37-f7cf-4909-946d-eea5b233cefb")
 	)
 	(no_connect
@@ -2808,11 +2840,11 @@
 		(uuid "2ae366ba-b1ee-4dc1-9cd7-4d46531aa0d4")
 	)
 	(no_connect
-		(at 270.51 72.39)
+		(at 270.51 73.66)
 		(uuid "394aca96-afde-4be0-aba1-1329d6690acf")
 	)
 	(no_connect
-		(at 229.87 88.9)
+		(at 229.87 90.17)
 		(uuid "3a6f619b-6fa7-4e24-b09e-1f7e4b2e4474")
 	)
 	(no_connect
@@ -2820,7 +2852,7 @@
 		(uuid "3a9b7945-5de0-49bb-90e4-a9d3327fb114")
 	)
 	(no_connect
-		(at 243.84 78.74)
+		(at 243.84 80.01)
 		(uuid "3b4c21de-2d0f-4816-9da8-401b47e6e9cf")
 	)
 	(no_connect
@@ -2828,15 +2860,15 @@
 		(uuid "4b686266-798e-476f-8ac0-fe8aab8aab18")
 	)
 	(no_connect
-		(at 214.63 88.9)
+		(at 214.63 90.17)
 		(uuid "4c6caecf-af36-46df-857d-5f6eb87d5f44")
 	)
 	(no_connect
-		(at 214.63 68.58)
+		(at 214.63 69.85)
 		(uuid "550d5a5e-bf7c-408f-a20e-48be8363505f")
 	)
 	(no_connect
-		(at 243.84 68.58)
+		(at 243.84 69.85)
 		(uuid "59f04581-f5c8-432b-8da1-8f621108a52b")
 	)
 	(no_connect
@@ -2848,7 +2880,7 @@
 		(uuid "602714e6-f851-4adf-96d0-594dda76b774")
 	)
 	(no_connect
-		(at 229.87 78.74)
+		(at 229.87 80.01)
 		(uuid "64ca0fa3-947f-46f5-9f9e-e860a207469b")
 	)
 	(no_connect
@@ -2860,7 +2892,7 @@
 		(uuid "6e6ae5c4-d2d5-4397-b95f-75192a213344")
 	)
 	(no_connect
-		(at 165.1 78.74)
+		(at 165.1 80.01)
 		(uuid "6f4d9951-f0e4-4cc7-8480-8b08794c7ea6")
 	)
 	(no_connect
@@ -2876,15 +2908,15 @@
 		(uuid "77d6073e-7e9d-4738-888c-2173a50d8805")
 	)
 	(no_connect
-		(at 181.61 88.9)
+		(at 181.61 90.17)
 		(uuid "7dc54138-57db-424d-8a31-447887f451f0")
 	)
 	(no_connect
-		(at 243.84 88.9)
+		(at 243.84 90.17)
 		(uuid "7eab8787-8cf1-4b5f-8d11-c4645d0baf31")
 	)
 	(no_connect
-		(at 257.81 78.74)
+		(at 257.81 80.01)
 		(uuid "8155a268-fcd3-43d7-95a2-2a0bba5f54b4")
 	)
 	(no_connect
@@ -2912,15 +2944,15 @@
 		(uuid "9d8a12a0-cf11-46d2-8eed-136d072c76d4")
 	)
 	(no_connect
-		(at 198.12 68.58)
+		(at 198.12 69.85)
 		(uuid "a14f0071-811c-4d50-a041-a13b13b50f63")
 	)
 	(no_connect
-		(at 198.12 88.9)
+		(at 198.12 90.17)
 		(uuid "ac7a9538-3f0a-4687-8e24-929a97f60099")
 	)
 	(no_connect
-		(at 181.61 68.58)
+		(at 181.61 69.85)
 		(uuid "ad8b1ff1-0076-4f40-8aff-90ec122eb298")
 	)
 	(no_connect
@@ -2932,11 +2964,11 @@
 		(uuid "b55cb987-c34a-4727-b07d-6547a596c2ea")
 	)
 	(no_connect
-		(at 257.81 68.58)
+		(at 257.81 69.85)
 		(uuid "beef10a0-4a57-41d1-811f-f26f591b8e6c")
 	)
 	(no_connect
-		(at 165.1 88.9)
+		(at 165.1 90.17)
 		(uuid "c3145906-6d36-4f3b-9b3e-02edf5a46f67")
 	)
 	(no_connect
@@ -2956,19 +2988,19 @@
 		(uuid "f04b87f2-46c1-426f-925b-8d7ae45b15d3")
 	)
 	(no_connect
-		(at 214.63 78.74)
+		(at 214.63 80.01)
 		(uuid "f11decd9-acde-4a7f-aa89-e336ead97fa2")
 	)
 	(no_connect
-		(at 257.81 88.9)
+		(at 257.81 90.17)
 		(uuid "f4e72c03-b012-4157-b255-66beda97d7a6")
 	)
 	(no_connect
-		(at 165.1 68.58)
+		(at 165.1 69.85)
 		(uuid "f61e094a-d43b-4b0e-8d71-b929c4f98457")
 	)
 	(no_connect
-		(at 198.12 78.74)
+		(at 198.12 80.01)
 		(uuid "f79d1c54-13e7-4861-8f2e-47a8004f89cd")
 	)
 	(no_connect
@@ -2977,7 +3009,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 53.34) (xy 193.04 53.34)
+			(xy 176.53 54.61) (xy 193.04 54.61)
 		)
 		(stroke
 			(width 0)
@@ -2997,7 +3029,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 101.6) (xy 176.53 101.6)
+			(xy 160.02 102.87) (xy 176.53 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3017,7 +3049,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 55.88) (xy 224.79 53.34)
+			(xy 224.79 57.15) (xy 224.79 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3027,7 +3059,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 55.88) (xy 176.53 53.34)
+			(xy 176.53 57.15) (xy 176.53 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3037,7 +3069,27 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 93.98) (xy 193.04 101.6)
+			(xy 265.43 93.98) (xy 265.43 102.87)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "09394919-88f9-4c3f-b043-ec08d89f6917")
+	)
+	(wire
+		(pts
+			(xy 160.02 64.77) (xy 160.02 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0a2ec04f-2bdd-4a41-9ab6-eba855c57af8")
+	)
+	(wire
+		(pts
+			(xy 193.04 95.25) (xy 193.04 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3047,7 +3099,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 53.34) (xy 224.79 53.34)
+			(xy 209.55 54.61) (xy 224.79 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3057,7 +3109,17 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 119.38) (xy 224.79 120.65)
+			(xy 160.02 55.88) (xy 160.02 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12d2ccfd-5766-49cd-9309-c25ae2d2cba8")
+	)
+	(wire
+		(pts
+			(xy 224.79 120.65) (xy 224.79 121.92)
 		)
 		(stroke
 			(width 0)
@@ -3067,7 +3129,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 101.6) (xy 238.76 101.6)
+			(xy 224.79 102.87) (xy 238.76 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3077,7 +3139,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 55.88) (xy 238.76 53.34)
+			(xy 238.76 57.15) (xy 238.76 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3087,7 +3149,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 60.96) (xy 238.76 63.5)
+			(xy 238.76 62.23) (xy 238.76 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3137,6 +3199,26 @@
 	)
 	(wire
 		(pts
+			(xy 160.02 60.96) (xy 160.02 63.5)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "257d5fb6-4f77-45d0-b42f-0f20de7f4ecb")
+	)
+	(wire
+		(pts
+			(xy 160.02 57.15) (xy 160.02 55.88)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2776fe52-b0a3-4ef6-aa2d-612915672d0a")
+	)
+	(wire
+		(pts
 			(xy 88.9 113.03) (xy 91.44 113.03)
 		)
 		(stroke
@@ -3147,7 +3229,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 60.96) (xy 209.55 63.5)
+			(xy 209.55 62.23) (xy 209.55 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3157,7 +3239,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 60.96) (xy 224.79 63.5)
+			(xy 224.79 62.23) (xy 224.79 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3167,7 +3249,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 53.34) (xy 176.53 53.34)
+			(xy 160.02 54.61) (xy 176.53 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3177,7 +3259,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 55.88) (xy 265.43 53.34)
+			(xy 265.43 57.15) (xy 265.43 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3237,7 +3319,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 60.96) (xy 176.53 63.5)
+			(xy 176.53 62.23) (xy 176.53 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3267,7 +3349,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 53.34) (xy 238.76 53.34)
+			(xy 224.79 54.61) (xy 238.76 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3287,7 +3369,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 119.38) (xy 224.79 119.38)
+			(xy 217.17 120.65) (xy 224.79 120.65)
 		)
 		(stroke
 			(width 0)
@@ -3297,7 +3379,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 93.98) (xy 176.53 101.6)
+			(xy 176.53 95.25) (xy 176.53 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3307,7 +3389,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 55.88) (xy 252.73 53.34)
+			(xy 252.73 57.15) (xy 252.73 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3327,7 +3409,7 @@
 	)
 	(wire
 		(pts
-			(xy 217.17 111.76) (xy 218.44 111.76)
+			(xy 217.17 113.03) (xy 218.44 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3337,23 +3419,13 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 101.6) (xy 252.73 101.6)
+			(xy 265.43 102.87) (xy 252.73 102.87)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "5b541648-267c-4d46-80b5-6199e7ae1726")
-	)
-	(wire
-		(pts
-			(xy 265.43 93.98) (xy 265.43 101.6)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5b580b47-b4ad-4d74-9a0f-11929b0eb7f0")
 	)
 	(wire
 		(pts
@@ -3367,7 +3439,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 93.98) (xy 224.79 101.6)
+			(xy 224.79 95.25) (xy 224.79 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3387,7 +3459,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 111.76) (xy 217.17 111.76)
+			(xy 214.63 113.03) (xy 217.17 113.03)
 		)
 		(stroke
 			(width 0)
@@ -3407,7 +3479,7 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 60.96) (xy 265.43 62.23)
+			(xy 265.43 62.23) (xy 265.43 63.5)
 		)
 		(stroke
 			(width 0)
@@ -3427,17 +3499,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 55.88) (xy 160.02 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6645d5b2-edbe-48f5-b5e0-d0e612d9acb8")
-	)
-	(wire
-		(pts
-			(xy 209.55 101.6) (xy 224.79 101.6)
+			(xy 209.55 102.87) (xy 224.79 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3487,7 +3549,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 53.34) (xy 265.43 53.34)
+			(xy 252.73 54.61) (xy 265.43 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3497,23 +3559,13 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 53.34) (xy 252.73 53.34)
+			(xy 238.76 54.61) (xy 252.73 54.61)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "7da14610-664d-41ce-b635-85384a3b0472")
-	)
-	(wire
-		(pts
-			(xy 160.02 60.96) (xy 160.02 63.5)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7eae4287-1c8f-43f1-bfbb-6f781e56cb96")
 	)
 	(wire
 		(pts
@@ -3537,7 +3589,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 116.84) (xy 224.79 119.38)
+			(xy 224.79 118.11) (xy 224.79 120.65)
 		)
 		(stroke
 			(width 0)
@@ -3567,6 +3619,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 80.01) (xy 165.1 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "88684f70-085a-455d-9e01-fd1bcb555d1d")
+	)
+	(wire
+		(pts
 			(xy 44.45 100.33) (xy 44.45 102.87)
 		)
 		(stroke
@@ -3577,7 +3639,7 @@
 	)
 	(wire
 		(pts
-			(xy 176.53 101.6) (xy 193.04 101.6)
+			(xy 176.53 102.87) (xy 193.04 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3587,7 +3649,17 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 101.6) (xy 209.55 101.6)
+			(xy 165.1 90.17) (xy 165.1 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8bb37878-0300-4567-ad13-cdde940e766a")
+	)
+	(wire
+		(pts
+			(xy 193.04 102.87) (xy 209.55 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3597,7 +3669,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 93.98) (xy 160.02 101.6)
+			(xy 160.02 93.98) (xy 160.02 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3637,7 +3709,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 55.88) (xy 209.55 53.34)
+			(xy 209.55 57.15) (xy 209.55 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3657,7 +3729,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 50.8) (xy 238.76 53.34)
+			(xy 238.76 52.07) (xy 238.76 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3667,7 +3739,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 93.98) (xy 252.73 101.6)
+			(xy 252.73 95.25) (xy 252.73 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3687,7 +3759,17 @@
 	)
 	(wire
 		(pts
-			(xy 265.43 62.23) (xy 265.43 63.5)
+			(xy 165.1 69.85) (xy 165.1 68.58)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aaa2e385-6703-438b-a838-8eb7fb6f696e")
+	)
+	(wire
+		(pts
+			(xy 265.43 63.5) (xy 265.43 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3697,7 +3779,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 53.34) (xy 209.55 53.34)
+			(xy 193.04 54.61) (xy 209.55 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3747,7 +3829,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 101.6) (xy 252.73 101.6)
+			(xy 238.76 102.87) (xy 252.73 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3757,7 +3839,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 60.96) (xy 193.04 63.5)
+			(xy 193.04 62.23) (xy 193.04 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3777,7 +3859,7 @@
 	)
 	(wire
 		(pts
-			(xy 224.79 101.6) (xy 224.79 106.68)
+			(xy 224.79 102.87) (xy 224.79 107.95)
 		)
 		(stroke
 			(width 0)
@@ -3817,7 +3899,7 @@
 	)
 	(wire
 		(pts
-			(xy 209.55 93.98) (xy 209.55 101.6)
+			(xy 209.55 95.25) (xy 209.55 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3827,7 +3909,7 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 93.98) (xy 238.76 101.6)
+			(xy 238.76 95.25) (xy 238.76 102.87)
 		)
 		(stroke
 			(width 0)
@@ -3857,7 +3939,7 @@
 	)
 	(wire
 		(pts
-			(xy 252.73 60.96) (xy 252.73 63.5)
+			(xy 252.73 62.23) (xy 252.73 64.77)
 		)
 		(stroke
 			(width 0)
@@ -3867,7 +3949,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 55.88) (xy 193.04 53.34)
+			(xy 193.04 57.15) (xy 193.04 54.61)
 		)
 		(stroke
 			(width 0)
@@ -3907,7 +3989,7 @@
 	)
 	(global_label "PHOTO_LED_CTRL"
 		(shape input)
-		(at 214.63 111.76 180)
+		(at 214.63 113.03 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3917,7 +3999,7 @@
 		)
 		(uuid "0a899edb-548f-44f7-858d-218e22bdef3f")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 195.4977 111.76 0)
+			(at 195.4977 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3976,7 +4058,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 119.38 95.25 0)
 			(effects
 				(font
@@ -4057,6 +4139,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 106.68 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7db42af5-9fe0-4034-8603-9acd156218d0")
 		)
@@ -4076,9 +4176,9 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_2_1_1_1")
-		(lib_id "MothBox_Symbol_Library:YJQ10N2A_2_1_1")
-		(at 222.25 111.76 0)
+		(lib_name "YJQ10N2A_2_1_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_2_1_1_1_1")
+		(at 222.25 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4087,7 +4187,7 @@
 		(fields_autoplaced yes)
 		(uuid "0d59858a-fa0b-4dbf-b5dd-ac2a44b9fe97")
 		(property "Reference" "Q3"
-			(at 228.6 110.4899 0)
+			(at 228.6 111.7599 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4096,7 +4196,7 @@
 			)
 		)
 		(property "Value" "YJQ10N2A"
-			(at 228.6 113.0299 0)
+			(at 228.6 114.2999 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4104,8 +4204,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "pauls_footprints:DFN2020-3"
-			(at 227.33 113.665 0)
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
+			(at 227.33 114.935 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4116,7 +4216,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4126,7 +4226,7 @@
 			)
 		)
 		(property "Description" "20V Vds, 10V Vgs, 13A Id, 9.5m Ohm, N-Channel MOSFET, DFN2020-3"
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4135,7 +4235,7 @@
 			)
 		)
 		(property "LCSC" "C919558"
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4144,7 +4244,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4153,7 +4253,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4162,7 +4262,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4171,7 +4271,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4180,7 +4280,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 222.25 111.76 0)
+			(at 222.25 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 222.25 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 222.25 113.03 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4251,7 +4369,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 90.17 85.09 0)
 			(effects
 				(font
@@ -4332,6 +4450,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 77.47 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d25ebf73-cc35-4fbc-b2e4-1f024dbc4c9f")
 		)
@@ -4377,7 +4513,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 40.64 85.09 0)
 			(effects
 				(font
@@ -4458,6 +4594,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 27.94 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "8b1efaca-6093-4b95-9b41-730b15ee7923")
 		)
@@ -4495,7 +4649,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 162.56 98.806 0)
+			(at 162.56 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4503,7 +4657,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 172.72 88.9 0)
 			(effects
 				(font
@@ -4584,6 +4738,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 160.02 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4b22bd86-2333-423e-8a26-759a78c0a419")
 		)
@@ -4629,7 +4801,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 73.66 74.93 0)
 			(effects
 				(font
@@ -4710,6 +4882,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 60.96 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2fb9fb33-b85c-428f-ad1d-6782aa88fe4c")
 		)
@@ -4730,7 +4920,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 193.04 68.58 90)
+		(at 193.04 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4738,7 +4928,7 @@
 		(dnp no)
 		(uuid "1f7a1daf-9c1c-4713-9671-7cd1cf4b4d78")
 		(property "Reference" "LED31"
-			(at 189.23 68.0699 90)
+			(at 189.23 69.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4747,7 +4937,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 195.326 78.74 0)
+			(at 195.326 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4755,8 +4945,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 205.74 68.58 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 205.74 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4765,7 +4955,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 68.58 0)
+			(at 193.04 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4774,7 +4964,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 68.58 0)
+			(at 193.04 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4783,7 +4973,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 193.04 68.58 90)
+			(at 193.04 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4792,7 +4982,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 193.04 68.58 90)
+			(at 193.04 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4801,7 +4991,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 193.04 68.58 90)
+			(at 193.04 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4810,7 +5000,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 193.04 68.58 90)
+			(at 193.04 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4819,7 +5009,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 193.04 68.58 90)
+			(at 193.04 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4828,7 +5018,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 193.04 68.58 90)
+			(at 193.04 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 193.04 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 193.04 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4881,7 +5089,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 57.15 95.25 0)
 			(effects
 				(font
@@ -4962,6 +5170,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 44.45 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "422d920f-cdf3-4e7b-b88b-bbe7c43501bd")
 		)
@@ -4982,7 +5208,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 238.76 58.42 0)
+		(at 238.76 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4991,7 +5217,7 @@
 		(dnp no)
 		(uuid "2529f1a3-bce7-4190-a9f9-8e1bf262e5cb")
 		(property "Reference" "R13"
-			(at 237.49 57.15 0)
+			(at 237.49 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -5000,7 +5226,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 237.49 59.69 0)
+			(at 237.49 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5008,8 +5234,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 238.76 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5018,7 +5244,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5027,7 +5253,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5036,7 +5262,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5045,7 +5271,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5054,7 +5280,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5063,7 +5289,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5072,7 +5298,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5081,7 +5307,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 238.76 58.42 0)
+			(at 238.76 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 238.76 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 238.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5131,7 +5375,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 40.64 74.93 0)
 			(effects
 				(font
@@ -5212,6 +5456,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 27.94 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c82648b9-b605-4ee9-b0af-a72949cb321d")
 		)
@@ -5232,7 +5494,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 252.73 78.74 90)
+		(at 252.73 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5240,7 +5502,7 @@
 		(dnp no)
 		(uuid "27f505d7-2a23-4384-bd94-8da522fc04d5")
 		(property "Reference" "LED44"
-			(at 248.92 78.2299 90)
+			(at 248.92 79.4999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5249,7 +5511,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 259.08 88.646 0)
+			(at 259.08 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5257,8 +5519,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 265.43 78.74 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 265.43 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5267,7 +5529,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 78.74 0)
+			(at 252.73 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5276,7 +5538,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 252.73 78.74 0)
+			(at 252.73 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5285,7 +5547,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 252.73 78.74 90)
+			(at 252.73 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5294,7 +5556,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 252.73 78.74 90)
+			(at 252.73 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5303,7 +5565,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 252.73 78.74 90)
+			(at 252.73 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5312,7 +5574,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 252.73 78.74 90)
+			(at 252.73 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5321,7 +5583,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 252.73 78.74 90)
+			(at 252.73 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5330,7 +5592,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 252.73 78.74 90)
+			(at 252.73 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 252.73 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 252.73 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5358,7 +5638,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 209.55 78.74 90)
+		(at 209.55 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5366,7 +5646,7 @@
 		(dnp no)
 		(uuid "280f1f26-0d95-48b0-8614-2a68bec279ed")
 		(property "Reference" "LED35"
-			(at 205.74 78.2299 90)
+			(at 205.74 79.4999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5375,7 +5655,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 215.9 88.646 0)
+			(at 215.9 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5383,8 +5663,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 222.25 78.74 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 222.25 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5393,7 +5673,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 78.74 0)
+			(at 209.55 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5402,7 +5682,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 78.74 0)
+			(at 209.55 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5411,7 +5691,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 209.55 78.74 90)
+			(at 209.55 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5420,7 +5700,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 209.55 78.74 90)
+			(at 209.55 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5429,7 +5709,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 209.55 78.74 90)
+			(at 209.55 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5438,7 +5718,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 209.55 78.74 90)
+			(at 209.55 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5447,7 +5727,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 209.55 78.74 90)
+			(at 209.55 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5456,7 +5736,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 209.55 78.74 90)
+			(at 209.55 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 209.55 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 209.55 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5484,7 +5782,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 176.53 58.42 0)
+		(at 176.53 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -5493,7 +5791,7 @@
 		(dnp no)
 		(uuid "2bf0eb94-8ea8-459b-ade6-2437be4e1fe8")
 		(property "Reference" "R7"
-			(at 175.26 57.15 0)
+			(at 175.26 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -5502,7 +5800,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 175.26 59.69 0)
+			(at 175.26 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5510,8 +5808,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 176.53 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5520,7 +5818,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5529,7 +5827,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5538,7 +5836,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5547,7 +5845,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5556,7 +5854,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5565,7 +5863,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5574,7 +5872,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5583,7 +5881,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 176.53 58.42 0)
+			(at 176.53 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 176.53 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 176.53 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5634,7 +5950,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 160.02 58.42 0)
 			(effects
 				(font
@@ -5715,6 +6031,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 160.02 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "394da7d8-1429-488f-b9af-6a9dc78e6535")
 		)
@@ -5732,7 +6066,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 224.79 78.74 90)
+		(at 224.79 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5740,7 +6074,7 @@
 		(dnp no)
 		(uuid "2e414f66-8321-454a-940d-fb8636ac539f")
 		(property "Reference" "LED38"
-			(at 220.98 78.2299 90)
+			(at 220.98 79.4999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5749,7 +6083,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 231.14 88.646 0)
+			(at 231.14 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5757,8 +6091,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 237.49 78.74 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 237.49 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5767,7 +6101,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 78.74 0)
+			(at 224.79 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5776,7 +6110,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 224.79 78.74 0)
+			(at 224.79 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5785,7 +6119,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 224.79 78.74 90)
+			(at 224.79 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5794,7 +6128,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 224.79 78.74 90)
+			(at 224.79 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5803,7 +6137,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 224.79 78.74 90)
+			(at 224.79 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5812,7 +6146,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 224.79 78.74 90)
+			(at 224.79 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5821,7 +6155,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 224.79 78.74 90)
+			(at 224.79 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5830,7 +6164,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 224.79 78.74 90)
+			(at 224.79 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 224.79 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 224.79 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5875,7 +6227,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 166.37 88.646 0)
+			(at 166.37 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5883,7 +6235,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 172.72 78.74 0)
 			(effects
 				(font
@@ -5964,6 +6316,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 160.02 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "97ab433a-afe5-4b33-9c4c-abdc60b6baaf")
 		)
@@ -6009,7 +6379,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 133.35 95.25 0)
 			(effects
 				(font
@@ -6090,6 +6460,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 120.65 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "606c1117-3b91-46fc-8002-1dc35264bc14")
 		)
@@ -6136,7 +6524,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 92.71 59.69 0)
 			(effects
 				(font
@@ -6209,6 +6597,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 92.71 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 92.71 59.69 0)
 			(effects
 				(font
@@ -6234,7 +6640,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 224.79 58.42 0)
+		(at 224.79 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6243,7 +6649,7 @@
 		(dnp no)
 		(uuid "3d4a0302-51d6-45ff-a865-b0ada0277857")
 		(property "Reference" "R12"
-			(at 223.52 57.15 0)
+			(at 223.52 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -6252,7 +6658,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 223.52 59.69 0)
+			(at 223.52 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6260,8 +6666,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 224.79 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6270,7 +6676,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6279,7 +6685,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6288,7 +6694,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6297,7 +6703,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6306,7 +6712,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6315,7 +6721,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6324,7 +6730,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6333,7 +6739,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 224.79 58.42 0)
+			(at 224.79 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 224.79 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 224.79 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6381,7 +6805,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 90.424 116.586 90)
 			(effects
 				(font
@@ -6462,6 +6886,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 91.44 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "e2e21dc1-1a5e-4219-a31e-2e84b292a984")
 		)
@@ -6479,7 +6921,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 252.73 88.9 90)
+		(at 252.73 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6487,7 +6929,7 @@
 		(dnp no)
 		(uuid "476dfbc9-53a4-4c86-897c-6235675ed740")
 		(property "Reference" "LED45"
-			(at 248.92 88.3899 90)
+			(at 248.92 89.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6496,7 +6938,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 255.27 98.806 0)
+			(at 255.27 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6504,8 +6946,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 265.43 88.9 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 265.43 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6514,7 +6956,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 88.9 0)
+			(at 252.73 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6523,7 +6965,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 252.73 88.9 0)
+			(at 252.73 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6532,7 +6974,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 252.73 88.9 90)
+			(at 252.73 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6541,7 +6983,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 252.73 88.9 90)
+			(at 252.73 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6550,7 +6992,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 252.73 88.9 90)
+			(at 252.73 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6559,7 +7001,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 252.73 88.9 90)
+			(at 252.73 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6568,7 +7010,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 252.73 88.9 90)
+			(at 252.73 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6577,7 +7019,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 252.73 88.9 90)
+			(at 252.73 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 252.73 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 252.73 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6630,7 +7090,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 105.41 74.93 0)
 			(effects
 				(font
@@ -6711,6 +7171,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 92.71 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3f1e9f6b-5b89-4378-b062-72ecc3ca5da7")
 		)
@@ -6757,7 +7235,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 60.96 59.69 0)
 			(effects
 				(font
@@ -6830,6 +7308,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 60.96 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 60.96 59.69 0)
 			(effects
 				(font
@@ -6855,7 +7351,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 193.04 58.42 0)
+		(at 193.04 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6864,7 +7360,7 @@
 		(dnp no)
 		(uuid "4c3e84eb-dde0-4ef6-bfe6-a229c01fb4f0")
 		(property "Reference" "R8"
-			(at 191.77 57.15 0)
+			(at 191.77 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -6873,7 +7369,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 191.77 59.69 0)
+			(at 191.77 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6881,8 +7377,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 193.04 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6891,7 +7387,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6900,7 +7396,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6909,7 +7405,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6918,7 +7414,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6927,7 +7423,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6936,7 +7432,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6945,7 +7441,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6954,7 +7450,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 193.04 58.42 0)
+			(at 193.04 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 193.04 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 193.04 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6979,7 +7493,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 265.43 77.47 90)
+		(at 265.43 78.74 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6987,7 +7501,7 @@
 		(dnp no)
 		(uuid "52408343-3e8c-4676-91bd-9a974de46a8b")
 		(property "Reference" "LED47"
-			(at 261.62 76.9599 90)
+			(at 261.62 78.2299 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6996,7 +7510,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 271.78 87.376 0)
+			(at 271.78 88.646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7004,8 +7518,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 278.13 77.47 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 278.13 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7014,7 +7528,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 77.47 0)
+			(at 265.43 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7023,7 +7537,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 265.43 77.47 0)
+			(at 265.43 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7032,7 +7546,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 265.43 77.47 90)
+			(at 265.43 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7041,7 +7555,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 265.43 77.47 90)
+			(at 265.43 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7050,7 +7564,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 265.43 77.47 90)
+			(at 265.43 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7059,7 +7573,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 265.43 77.47 90)
+			(at 265.43 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7068,7 +7582,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 265.43 77.47 90)
+			(at 265.43 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7077,7 +7591,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 265.43 77.47 90)
+			(at 265.43 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 265.43 78.74 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 265.43 78.74 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7131,7 +7663,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 106.68 59.69 0)
 			(effects
 				(font
@@ -7204,6 +7736,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 106.68 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 106.68 59.69 0)
 			(effects
 				(font
@@ -7312,7 +7862,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 162.306 78.74 0)
+			(at 162.306 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7320,7 +7870,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 172.72 68.58 0)
 			(effects
 				(font
@@ -7401,6 +7951,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 160.02 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7d5d3499-86bc-4302-abe9-c4dd0107fa01")
 		)
@@ -7421,7 +7989,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 238.76 68.58 90)
+		(at 238.76 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7429,7 +7997,7 @@
 		(dnp no)
 		(uuid "5ca62dad-ea1b-441e-825c-12c63cabfdc7")
 		(property "Reference" "LED40"
-			(at 234.95 68.0699 90)
+			(at 234.95 69.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7438,7 +8006,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 241.046 78.74 0)
+			(at 241.046 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7446,8 +8014,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 251.46 68.58 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 251.46 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7456,7 +8024,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 68.58 0)
+			(at 238.76 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7465,7 +8033,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.76 68.58 0)
+			(at 238.76 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7474,7 +8042,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 238.76 68.58 90)
+			(at 238.76 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7483,7 +8051,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 238.76 68.58 90)
+			(at 238.76 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7492,7 +8060,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 238.76 68.58 90)
+			(at 238.76 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7501,7 +8069,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 238.76 68.58 90)
+			(at 238.76 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7510,7 +8078,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 238.76 68.58 90)
+			(at 238.76 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7519,7 +8087,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 238.76 68.58 90)
+			(at 238.76 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 238.76 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 238.76 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7547,7 +8133,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:TestPoint")
-		(at 176.53 101.6 180)
+		(at 176.53 102.87 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7555,7 +8141,7 @@
 		(dnp no)
 		(uuid "61d7fe8f-c2bc-456c-b906-b5f272fd2b35")
 		(property "Reference" "TP6"
-			(at 176.53 110.49 0)
+			(at 176.53 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7563,15 +8149,15 @@
 			)
 		)
 		(property "Value" "LED R GND"
-			(at 176.53 107.696 0)
+			(at 176.53 108.966 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
-			(at 171.45 101.6 0)
+		(property "Footprint" "MothBox_footprints_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+			(at 171.45 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7580,7 +8166,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 171.45 101.6 0)
+			(at 171.45 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7589,7 +8175,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 176.53 101.6 0)
+			(at 176.53 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7598,7 +8184,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 176.53 101.6 0)
+			(at 176.53 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7607,7 +8193,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 176.53 101.6 0)
+			(at 176.53 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7616,7 +8202,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 176.53 101.6 0)
+			(at 176.53 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7625,7 +8211,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 176.53 101.6 0)
+			(at 176.53 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7634,7 +8220,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 176.53 101.6 0)
+			(at 176.53 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 176.53 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 176.53 102.87 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7656,7 +8260,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 209.55 88.9 90)
+		(at 209.55 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7664,7 +8268,7 @@
 		(dnp no)
 		(uuid "66bf32c2-6ecc-4474-ba48-a271e2cbe262")
 		(property "Reference" "LED36"
-			(at 205.74 88.3899 90)
+			(at 205.74 89.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7673,7 +8277,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 212.09 98.806 0)
+			(at 212.09 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7681,8 +8285,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 222.25 88.9 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 222.25 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7691,7 +8295,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 88.9 0)
+			(at 209.55 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7700,7 +8304,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 88.9 0)
+			(at 209.55 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7709,7 +8313,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 209.55 88.9 90)
+			(at 209.55 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7718,7 +8322,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 209.55 88.9 90)
+			(at 209.55 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7727,7 +8331,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 209.55 88.9 90)
+			(at 209.55 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7736,7 +8340,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 209.55 88.9 90)
+			(at 209.55 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7745,7 +8349,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 209.55 88.9 90)
+			(at 209.55 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7754,7 +8358,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 209.55 88.9 90)
+			(at 209.55 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 209.55 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 209.55 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7808,7 +8430,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 44.45 59.69 0)
 			(effects
 				(font
@@ -7881,6 +8503,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 44.45 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 44.45 59.69 0)
 			(effects
 				(font
@@ -7998,7 +8638,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 27.94 59.69 0)
 			(effects
 				(font
@@ -8079,6 +8719,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 27.94 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "48245bae-b854-4a02-8b61-93cd7ffe032c")
 		)
@@ -8096,7 +8754,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 193.04 78.74 90)
+		(at 193.04 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8104,7 +8762,7 @@
 		(dnp no)
 		(uuid "7a53b289-749e-423c-9bd5-b5679f9d9068")
 		(property "Reference" "LED32"
-			(at 189.23 78.2299 90)
+			(at 189.23 79.4999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8113,7 +8771,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 199.39 88.646 0)
+			(at 199.39 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8121,8 +8779,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 205.74 78.74 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 205.74 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8131,7 +8789,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 78.74 0)
+			(at 193.04 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8140,7 +8798,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 78.74 0)
+			(at 193.04 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8149,7 +8807,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 193.04 78.74 90)
+			(at 193.04 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8158,7 +8816,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 193.04 78.74 90)
+			(at 193.04 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8167,7 +8825,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 193.04 78.74 90)
+			(at 193.04 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8176,7 +8834,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 193.04 78.74 90)
+			(at 193.04 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8185,7 +8843,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 193.04 78.74 90)
+			(at 193.04 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8194,7 +8852,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 193.04 78.74 90)
+			(at 193.04 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 193.04 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 193.04 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8247,7 +8923,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 90.17 74.93 0)
 			(effects
 				(font
@@ -8328,6 +9004,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 77.47 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "168336ac-3496-42f4-9dbe-fb024b54cb14")
 		)
@@ -8348,7 +9042,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_US")
-		(at 217.17 115.57 180)
+		(at 217.17 116.84 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8356,7 +9050,7 @@
 		(dnp no)
 		(uuid "8b73ab37-3095-463d-8dae-bc2b31f62922")
 		(property "Reference" "R9"
-			(at 213.614 115.062 0)
+			(at 213.614 116.332 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8364,15 +9058,15 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 213.868 117.094 0)
+			(at 213.868 118.364 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
-			(at 216.154 115.316 90)
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
+			(at 216.154 116.586 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8381,7 +9075,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8390,7 +9084,7 @@
 			)
 		)
 		(property "Description" "125mW Thick Film Resistors 150V ±100ppm/℃ ±1% 10kΩ 0805 Chip Resistor - Surface Mount ROHS"
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8399,7 +9093,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8408,7 +9102,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8417,7 +9111,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8426,7 +9120,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8435,7 +9129,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8444,7 +9138,25 @@
 			)
 		)
 		(property "LCSC_Part_No" "C84376"
-			(at 217.17 115.57 0)
+			(at 217.17 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 217.17 116.84 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 217.17 116.84 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8469,7 +9181,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 238.76 88.9 90)
+		(at 238.76 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8477,7 +9189,7 @@
 		(dnp no)
 		(uuid "8cb36bd6-c696-4309-969d-d7846ab73b8f")
 		(property "Reference" "LED42"
-			(at 234.95 88.3899 90)
+			(at 234.95 89.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8486,7 +9198,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 241.3 98.806 0)
+			(at 241.3 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8494,8 +9206,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 251.46 88.9 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 251.46 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8504,7 +9216,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 88.9 0)
+			(at 238.76 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8513,7 +9225,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.76 88.9 0)
+			(at 238.76 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8522,7 +9234,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 238.76 88.9 90)
+			(at 238.76 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8531,7 +9243,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 238.76 88.9 90)
+			(at 238.76 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8540,7 +9252,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 238.76 88.9 90)
+			(at 238.76 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8549,7 +9261,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 238.76 88.9 90)
+			(at 238.76 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8558,7 +9270,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 238.76 88.9 90)
+			(at 238.76 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8567,7 +9279,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 238.76 88.9 90)
+			(at 238.76 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 238.76 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 238.76 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8595,7 +9325,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 224.79 68.58 90)
+		(at 224.79 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8603,7 +9333,7 @@
 		(dnp no)
 		(uuid "8e77007c-ada6-4c0b-8e58-5108240a6213")
 		(property "Reference" "LED37"
-			(at 220.98 68.0699 90)
+			(at 220.98 69.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8612,7 +9342,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 227.076 78.74 0)
+			(at 227.076 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8620,8 +9350,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 237.49 68.58 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 237.49 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8630,7 +9360,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 68.58 0)
+			(at 224.79 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8639,7 +9369,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 224.79 68.58 0)
+			(at 224.79 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8648,7 +9378,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 224.79 68.58 90)
+			(at 224.79 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8657,7 +9387,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 224.79 68.58 90)
+			(at 224.79 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8666,7 +9396,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 224.79 68.58 90)
+			(at 224.79 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8675,7 +9405,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 224.79 68.58 90)
+			(at 224.79 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8684,7 +9414,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 224.79 68.58 90)
+			(at 224.79 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8693,7 +9423,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 224.79 68.58 90)
+			(at 224.79 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 224.79 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 224.79 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8746,7 +9494,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 146.05 73.66 0)
 			(effects
 				(font
@@ -8827,6 +9575,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 133.35 73.66 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "df1c7140-90d6-4c6c-86de-e50d53e0901f")
 		)
@@ -8872,7 +9638,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 119.38 85.09 0)
 			(effects
 				(font
@@ -8953,6 +9719,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 106.68 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "264f0ac6-22a8-4c33-afec-44212a1c673e")
 		)
@@ -8973,7 +9757,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 265.43 87.63 90)
+		(at 265.43 88.9 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -8981,7 +9765,7 @@
 		(dnp no)
 		(uuid "90fe6d43-074e-4a45-8663-226775bd7969")
 		(property "Reference" "LED48"
-			(at 261.62 87.1199 90)
+			(at 261.62 88.3899 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8990,7 +9774,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 267.97 97.536 0)
+			(at 267.97 98.806 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8998,8 +9782,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 278.13 87.63 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 278.13 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9008,7 +9792,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 87.63 0)
+			(at 265.43 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9017,7 +9801,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 265.43 87.63 0)
+			(at 265.43 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9026,7 +9810,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 265.43 87.63 90)
+			(at 265.43 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9035,7 +9819,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 265.43 87.63 90)
+			(at 265.43 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9044,7 +9828,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 265.43 87.63 90)
+			(at 265.43 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9053,7 +9837,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 265.43 87.63 90)
+			(at 265.43 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9062,7 +9846,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 265.43 87.63 90)
+			(at 265.43 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9071,7 +9855,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 265.43 87.63 90)
+			(at 265.43 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 265.43 88.9 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 265.43 88.9 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9099,7 +9901,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 224.79 88.9 90)
+		(at 224.79 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9107,7 +9909,7 @@
 		(dnp no)
 		(uuid "988c4f0e-8739-4b2c-88b9-b3a29616e1c2")
 		(property "Reference" "LED39"
-			(at 220.98 88.3899 90)
+			(at 220.98 89.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9116,7 +9918,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 227.33 98.806 0)
+			(at 227.33 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9124,8 +9926,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 237.49 88.9 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 237.49 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9134,7 +9936,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 88.9 0)
+			(at 224.79 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9143,7 +9945,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 224.79 88.9 0)
+			(at 224.79 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9152,7 +9954,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 224.79 88.9 90)
+			(at 224.79 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9161,7 +9963,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 224.79 88.9 90)
+			(at 224.79 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9170,7 +9972,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 224.79 88.9 90)
+			(at 224.79 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9179,7 +9981,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 224.79 88.9 90)
+			(at 224.79 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9188,7 +9990,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 224.79 88.9 90)
+			(at 224.79 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9197,7 +9999,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 224.79 88.9 90)
+			(at 224.79 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 224.79 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 224.79 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9250,7 +10070,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 146.05 83.82 0)
 			(effects
 				(font
@@ -9331,6 +10151,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 133.35 83.82 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "a14d1bbf-cafd-4056-8d5d-00e8b33308ce")
 		)
@@ -9376,7 +10214,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 57.15 85.09 0)
 			(effects
 				(font
@@ -9457,6 +10295,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 44.45 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e2a23761-9325-4750-a87b-399893430fee")
 		)
@@ -9477,7 +10333,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 176.53 88.9 90)
+		(at 176.53 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9485,7 +10341,7 @@
 		(dnp no)
 		(uuid "a9be17a8-e7a8-46f7-bad5-b26ba6a85e5a")
 		(property "Reference" "LED30"
-			(at 172.72 88.3899 90)
+			(at 172.72 89.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9494,7 +10350,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 179.07 98.806 0)
+			(at 179.07 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9502,8 +10358,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 189.23 88.9 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 189.23 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9512,7 +10368,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 88.9 0)
+			(at 176.53 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9521,7 +10377,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 176.53 88.9 0)
+			(at 176.53 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9530,7 +10386,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 176.53 88.9 90)
+			(at 176.53 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9539,7 +10395,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 176.53 88.9 90)
+			(at 176.53 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9548,7 +10404,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 176.53 88.9 90)
+			(at 176.53 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9557,7 +10413,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 176.53 88.9 90)
+			(at 176.53 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9566,7 +10422,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 176.53 88.9 90)
+			(at 176.53 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9575,7 +10431,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 176.53 88.9 90)
+			(at 176.53 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 176.53 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 176.53 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9628,7 +10502,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 146.05 93.98 0)
 			(effects
 				(font
@@ -9709,6 +10583,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 133.35 93.98 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "c648fb4c-d069-45fa-aa51-b97a0adfb456")
 		)
@@ -9754,7 +10646,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 133.35 74.93 0)
 			(effects
 				(font
@@ -9835,6 +10727,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 120.65 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "248afc0f-5ee2-4d9b-a688-4669e2a5fb38")
 		)
@@ -9855,7 +10765,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 265.43 67.31 90)
+		(at 265.43 68.58 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9863,7 +10773,7 @@
 		(dnp no)
 		(uuid "b19f919d-0af1-4cf9-93f3-d8affccf08dc")
 		(property "Reference" "LED46"
-			(at 261.62 66.7999 90)
+			(at 261.62 68.0699 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9872,7 +10782,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 267.716 77.47 0)
+			(at 267.716 78.74 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9880,8 +10790,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 278.13 67.31 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 278.13 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9890,7 +10800,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 265.43 67.31 0)
+			(at 265.43 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9899,7 +10809,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 265.43 67.31 0)
+			(at 265.43 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9908,7 +10818,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 265.43 67.31 90)
+			(at 265.43 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9917,7 +10827,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 265.43 67.31 90)
+			(at 265.43 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9926,7 +10836,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 265.43 67.31 90)
+			(at 265.43 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9935,7 +10845,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 265.43 67.31 90)
+			(at 265.43 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9944,7 +10854,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 265.43 67.31 90)
+			(at 265.43 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9953,7 +10863,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 265.43 67.31 90)
+			(at 265.43 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 265.43 68.58 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 265.43 68.58 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9981,7 +10909,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 209.55 68.58 90)
+		(at 209.55 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -9989,7 +10917,7 @@
 		(dnp no)
 		(uuid "ba797a1b-885f-4cbf-83fe-f650e1c1680c")
 		(property "Reference" "LED34"
-			(at 205.74 68.0699 90)
+			(at 205.74 69.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9998,7 +10926,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 211.836 78.74 0)
+			(at 211.836 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10006,8 +10934,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 222.25 68.58 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 222.25 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10016,7 +10944,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 209.55 68.58 0)
+			(at 209.55 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10025,7 +10953,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 209.55 68.58 0)
+			(at 209.55 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10034,7 +10962,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 209.55 68.58 90)
+			(at 209.55 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10043,7 +10971,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 209.55 68.58 90)
+			(at 209.55 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10052,7 +10980,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 209.55 68.58 90)
+			(at 209.55 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10061,7 +10989,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 209.55 68.58 90)
+			(at 209.55 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10070,7 +10998,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 209.55 68.58 90)
+			(at 209.55 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10079,7 +11007,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 209.55 68.58 90)
+			(at 209.55 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 209.55 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 209.55 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10133,7 +11079,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 120.65 59.69 0)
 			(effects
 				(font
@@ -10214,6 +11160,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 120.65 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "636969e4-ce4b-48bf-b3ed-e1e101cd9334")
 		)
@@ -10256,7 +11220,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 105.41 95.25 0)
 			(effects
 				(font
@@ -10337,6 +11301,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 92.71 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7093654e-789d-434b-be59-247dc9b4e067")
 		)
@@ -10382,7 +11364,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 57.15 74.93 0)
 			(effects
 				(font
@@ -10463,6 +11445,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 44.45 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "aa1e4b03-16a5-4fde-a186-2afad825cedf")
 		)
@@ -10509,7 +11509,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 133.35 59.69 0)
 			(effects
 				(font
@@ -10590,6 +11590,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 133.35 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "6411f3fe-eada-4645-bb11-5382ee2fe9bd")
 		)
@@ -10632,7 +11650,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 119.38 74.93 0)
 			(effects
 				(font
@@ -10713,6 +11731,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 106.68 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b765824b-99e7-487a-a35f-da2443193505")
 		)
@@ -10733,7 +11769,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 193.04 88.9 90)
+		(at 193.04 90.17 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10741,7 +11777,7 @@
 		(dnp no)
 		(uuid "cab8dd01-1f10-4899-8ef8-c24d3a0f20f9")
 		(property "Reference" "LED33"
-			(at 189.23 88.3899 90)
+			(at 189.23 89.6599 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10750,7 +11786,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 195.58 98.806 0)
+			(at 195.58 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10758,8 +11794,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 205.74 88.9 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 205.74 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10768,7 +11804,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 193.04 88.9 0)
+			(at 193.04 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10777,7 +11813,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 193.04 88.9 0)
+			(at 193.04 90.17 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10786,7 +11822,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 193.04 88.9 90)
+			(at 193.04 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10795,7 +11831,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 193.04 88.9 90)
+			(at 193.04 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10804,7 +11840,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 193.04 88.9 90)
+			(at 193.04 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10813,7 +11849,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 193.04 88.9 90)
+			(at 193.04 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10822,7 +11858,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 193.04 88.9 90)
+			(at 193.04 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10831,7 +11867,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 193.04 88.9 90)
+			(at 193.04 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 193.04 90.17 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 193.04 90.17 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10882,7 +11936,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+		(property "Footprint" "MothBox_footprints_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 			(at 39.37 102.87 0)
 			(effects
 				(font
@@ -10954,6 +12008,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 44.45 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "1ec909c1-ee17-49de-b4a3-dfae277b0361")
 		)
@@ -10993,7 +12065,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 73.66 95.25 0)
 			(effects
 				(font
@@ -11074,6 +12146,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 60.96 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "806dd2d9-249c-44a6-bfc2-b2812d3b9546")
 		)
@@ -11094,7 +12184,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 238.76 78.74 90)
+		(at 238.76 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11102,7 +12192,7 @@
 		(dnp no)
 		(uuid "d117ba3a-cbda-450f-a7d0-0da3b556e012")
 		(property "Reference" "LED41"
-			(at 234.95 78.2299 90)
+			(at 234.95 79.4999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11111,7 +12201,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 245.11 88.646 0)
+			(at 245.11 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11119,8 +12209,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 251.46 78.74 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 251.46 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11129,7 +12219,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 78.74 0)
+			(at 238.76 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11138,7 +12228,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 238.76 78.74 0)
+			(at 238.76 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11147,7 +12237,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 238.76 78.74 90)
+			(at 238.76 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11156,7 +12246,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 238.76 78.74 90)
+			(at 238.76 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11165,7 +12255,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 238.76 78.74 90)
+			(at 238.76 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11174,7 +12264,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 238.76 78.74 90)
+			(at 238.76 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11183,7 +12273,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 238.76 78.74 90)
+			(at 238.76 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11192,7 +12282,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 238.76 78.74 90)
+			(at 238.76 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 238.76 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 238.76 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11243,7 +12351,7 @@
 				)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm"
+		(property "Footprint" "MothBox_footprints_Library:TestPoint_THTPad_D1.0mm_Drill0.5mm"
 			(at 96.52 111.76 0)
 			(effects
 				(font
@@ -11315,6 +12423,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 91.44 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "2db4a8a5-fc4d-4e94-b8ea-ee2a8efa1827")
 		)
@@ -11354,7 +12480,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 90.17 95.25 0)
 			(effects
 				(font
@@ -11435,6 +12561,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 77.47 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "7ca0bebb-2995-46bb-8438-11dca57514fd")
 		)
@@ -11455,7 +12599,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 209.55 58.42 0)
+		(at 209.55 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11464,7 +12608,7 @@
 		(dnp no)
 		(uuid "dec6bcc3-6260-443c-81ea-a7a081330e4f")
 		(property "Reference" "R10"
-			(at 208.28 57.15 0)
+			(at 208.28 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -11473,7 +12617,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 208.28 59.69 0)
+			(at 208.28 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11481,8 +12625,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 209.55 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11491,7 +12635,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11500,7 +12644,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11509,7 +12653,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11518,7 +12662,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11527,7 +12671,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11536,7 +12680,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11545,7 +12689,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11554,7 +12698,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 209.55 58.42 0)
+			(at 209.55 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 209.55 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 209.55 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11579,7 +12741,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:+12V")
-		(at 238.76 50.8 0)
+		(at 238.76 52.07 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11588,7 +12750,7 @@
 		(fields_autoplaced yes)
 		(uuid "e17abeb7-2de6-4f57-b7aa-8b55cdda8377")
 		(property "Reference" "#PWR037"
-			(at 238.76 54.61 0)
+			(at 238.76 55.88 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11597,7 +12759,7 @@
 			)
 		)
 		(property "Value" "+12V"
-			(at 238.76 45.72 0)
+			(at 238.76 46.99 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11605,7 +12767,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 238.76 50.8 0)
+			(at 238.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11614,7 +12776,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 238.76 50.8 0)
+			(at 238.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11623,7 +12785,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 238.76 50.8 0)
+			(at 238.76 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11645,7 +12807,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 176.53 78.74 90)
+		(at 176.53 80.01 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11653,7 +12815,7 @@
 		(dnp no)
 		(uuid "e1dc6ff8-0774-4b6d-964b-818d6108a001")
 		(property "Reference" "LED29"
-			(at 172.72 78.2299 90)
+			(at 172.72 79.4999 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11662,7 +12824,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 182.88 88.646 0)
+			(at 182.88 89.916 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11670,8 +12832,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 189.23 78.74 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 189.23 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11680,7 +12842,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 78.74 0)
+			(at 176.53 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11689,7 +12851,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 176.53 78.74 0)
+			(at 176.53 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11698,7 +12860,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 176.53 78.74 90)
+			(at 176.53 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11707,7 +12869,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 176.53 78.74 90)
+			(at 176.53 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11716,7 +12878,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 176.53 78.74 90)
+			(at 176.53 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11725,7 +12887,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 176.53 78.74 90)
+			(at 176.53 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11734,7 +12896,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 176.53 78.74 90)
+			(at 176.53 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11743,7 +12905,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 176.53 78.74 90)
+			(at 176.53 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 176.53 80.01 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 176.53 80.01 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11771,7 +12951,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 252.73 68.58 90)
+		(at 252.73 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11779,7 +12959,7 @@
 		(dnp no)
 		(uuid "e4818389-ab86-4da8-836c-c5e2a2aed3f0")
 		(property "Reference" "LED43"
-			(at 248.92 68.0699 90)
+			(at 248.92 69.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11788,7 +12968,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 255.016 78.74 0)
+			(at 255.016 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11796,8 +12976,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 265.43 68.58 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 265.43 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11806,7 +12986,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 252.73 68.58 0)
+			(at 252.73 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11815,7 +12995,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 252.73 68.58 0)
+			(at 252.73 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11824,7 +13004,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 252.73 68.58 90)
+			(at 252.73 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11833,7 +13013,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 252.73 68.58 90)
+			(at 252.73 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11842,7 +13022,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 252.73 68.58 90)
+			(at 252.73 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11851,7 +13031,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 252.73 68.58 90)
+			(at 252.73 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11860,7 +13040,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 252.73 68.58 90)
+			(at 252.73 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11869,7 +13049,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 252.73 68.58 90)
+			(at 252.73 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 252.73 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 252.73 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11922,7 +13120,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 133.35 85.09 0)
 			(effects
 				(font
@@ -12003,6 +13201,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 120.65 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "9b9df614-0aa5-41ca-8c88-94bbbc7fb2fd")
 		)
@@ -12022,8 +13238,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_1_1_1_1")
-		(lib_id "MothBox_Symbol_Library:YJQ10N2A_1_1_1")
+		(lib_name "YJQ10N2A_1_1_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_1_1_1_1_1")
 		(at 96.52 113.03 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12050,7 +13266,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "pauls_footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 101.6 114.935 0)
 			(effects
 				(font
@@ -12134,6 +13350,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 96.52 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "e20dd685-5e51-4f48-82f8-79e3487d8536")
 		)
@@ -12172,7 +13406,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:GND")
-		(at 224.79 120.65 0)
+		(at 224.79 121.92 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12180,7 +13414,7 @@
 		(dnp no)
 		(uuid "e6ba4f17-88c7-4563-b4a7-50d0b790e958")
 		(property "Reference" "#PWR034"
-			(at 224.79 127 0)
+			(at 224.79 128.27 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12189,7 +13423,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 228.092 123.952 0)
+			(at 228.092 125.222 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12197,7 +13431,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 224.79 120.65 0)
+			(at 224.79 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12206,7 +13440,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 224.79 120.65 0)
+			(at 224.79 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12215,7 +13449,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 224.79 120.65 0)
+			(at 224.79 121.92 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12237,7 +13471,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:XL-5730UWC-05")
-		(at 176.53 68.58 90)
+		(at 176.53 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -12245,7 +13479,7 @@
 		(dnp no)
 		(uuid "ea2eba9e-b2d3-495e-a944-7a5c7885b788")
 		(property "Reference" "LED28"
-			(at 172.72 68.0699 90)
+			(at 172.72 69.3399 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12254,7 +13488,7 @@
 			)
 		)
 		(property "Value" "XL-5730UWC-05"
-			(at 178.816 78.74 0)
+			(at 178.816 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12262,8 +13496,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
-			(at 189.23 68.58 0)
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
+			(at 189.23 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12272,7 +13506,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 68.58 0)
+			(at 176.53 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12281,7 +13515,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 176.53 68.58 0)
+			(at 176.53 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12290,7 +13524,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 176.53 68.58 90)
+			(at 176.53 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12299,7 +13533,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 176.53 68.58 90)
+			(at 176.53 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12308,7 +13542,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 176.53 68.58 90)
+			(at 176.53 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12317,7 +13551,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 176.53 68.58 90)
+			(at 176.53 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12326,7 +13560,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 176.53 68.58 90)
+			(at 176.53 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12335,7 +13569,25 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
-			(at 176.53 68.58 90)
+			(at 176.53 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 176.53 69.85 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 176.53 69.85 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12388,7 +13640,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 73.66 85.09 0)
 			(effects
 				(font
@@ -12469,6 +13721,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 60.96 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d239daf0-3e49-4628-8675-0f63957bd0d0")
 		)
@@ -12515,7 +13785,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
 			(at 77.47 59.69 0)
 			(effects
 				(font
@@ -12588,6 +13858,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 77.47 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 77.47 59.69 0)
 			(effects
 				(font
@@ -12613,7 +13901,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 265.43 58.42 0)
+		(at 265.43 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12622,7 +13910,7 @@
 		(dnp no)
 		(uuid "f14fd8b6-5a8b-4926-a641-dbcd673d310f")
 		(property "Reference" "R15"
-			(at 264.16 57.15 0)
+			(at 264.16 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -12631,7 +13919,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 264.16 59.69 0)
+			(at 264.16 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12639,8 +13927,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 265.43 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12649,7 +13937,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12658,7 +13946,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12667,7 +13955,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12676,7 +13964,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12685,7 +13973,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12694,7 +13982,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12703,7 +13991,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12712,7 +14000,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 265.43 58.42 0)
+			(at 265.43 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 265.43 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 265.43 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12762,7 +14068,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 105.41 85.09 0)
 			(effects
 				(font
@@ -12843,6 +14149,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 92.71 85.09 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "802c269e-2ca3-482d-b981-bc2fdce28b53")
 		)
@@ -12863,7 +14187,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
-		(at 252.73 58.42 0)
+		(at 252.73 59.69 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -12872,7 +14196,7 @@
 		(dnp no)
 		(uuid "fa7d7ac6-a5f2-4004-8cf9-e6dfc0a44f7f")
 		(property "Reference" "R14"
-			(at 251.46 57.15 0)
+			(at 251.46 58.42 0)
 			(effects
 				(font
 					(size 1.016 1.016)
@@ -12881,7 +14205,7 @@
 			)
 		)
 		(property "Value" "18R"
-			(at 251.46 59.69 0)
+			(at 251.46 60.96 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12889,8 +14213,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_1210_3225Metric"
-			(at 252.73 58.42 0)
+		(property "Footprint" "MothBox_footprints_Library:R_1210_3225Metric"
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12899,7 +14223,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12908,7 +14232,7 @@
 			)
 		)
 		(property "Description" "CL1210FN18RP"
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12917,7 +14241,7 @@
 			)
 		)
 		(property "LCSC" "C48392080"
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12926,7 +14250,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12935,7 +14259,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12944,7 +14268,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12953,7 +14277,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12962,7 +14286,25 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 252.73 58.42 0)
+			(at 252.73 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 252.73 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 252.73 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13012,7 +14354,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:LED-SMD_3P-L5.7-W3.0-RD"
+		(property "Footprint" "MothBox_footprints_Library:LED-SMD_3P-L5.7-W3.0-RD"
 			(at 40.64 95.25 0)
 			(effects
 				(font
@@ -13085,6 +14427,24 @@
 			)
 		)
 		(property "LCSC_Part" "C2843887"
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 27.94 95.25 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 27.94 95.25 90)
 			(effects
 				(font

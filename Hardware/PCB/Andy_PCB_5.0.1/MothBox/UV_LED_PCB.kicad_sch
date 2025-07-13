@@ -985,7 +985,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_1_1_1"
+		(symbol "YJQ10N2A_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -1067,7 +1067,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_0_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -1234,7 +1234,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_1_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -1406,7 +1406,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_1_1_1_1"
+		(symbol "YJQ10N2A_1_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -1488,7 +1488,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_1_0_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -1655,7 +1655,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_1_1_1_1_1_1"
+			(symbol "YJQ10N2A_1_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -1827,7 +1827,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_2_1_1"
+		(symbol "YJQ10N2A_2_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -1909,7 +1909,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_0_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -2076,7 +2076,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_1_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -2248,7 +2248,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_2_1_1_1"
+		(symbol "YJQ10N2A_2_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -2330,7 +2330,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_1_0_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -2497,7 +2497,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_2_1_1_1_1_1"
+			(symbol "YJQ10N2A_2_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -2669,7 +2669,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_3_1_1"
+		(symbol "YJQ10N2A_3_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -2751,7 +2751,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_3_1_1_0_1"
+			(symbol "YJQ10N2A_3_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -2918,7 +2918,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_3_1_1_1_1"
+			(symbol "YJQ10N2A_3_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -3090,7 +3090,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_3_1_1_1"
+		(symbol "YJQ10N2A_3_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -3172,7 +3172,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_3_1_1_1_0_1"
+			(symbol "YJQ10N2A_3_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -3339,7 +3339,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_3_1_1_1_1_1"
+			(symbol "YJQ10N2A_3_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -3511,7 +3511,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_4_1_1"
+		(symbol "YJQ10N2A_4_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -3593,7 +3593,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_4_1_1_0_1"
+			(symbol "YJQ10N2A_4_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -3760,7 +3760,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_4_1_1_1_1"
+			(symbol "YJQ10N2A_4_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -3932,7 +3932,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "YJQ10N2A_4_1_1_1"
+		(symbol "YJQ10N2A_4_1_1_1_1_1"
 			(pin_names
 				(hide yes)
 			)
@@ -4014,7 +4014,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "YJQ10N2A_4_1_1_1_0_1"
+			(symbol "YJQ10N2A_4_1_1_1_1_1_0_1"
 				(polyline
 					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
@@ -4181,7 +4181,7 @@
 					)
 				)
 			)
-			(symbol "YJQ10N2A_4_1_1_1_1_1"
+			(symbol "YJQ10N2A_4_1_1_1_1_1_1_1"
 				(pin input line
 					(at -3.81 0 0)
 					(length 2.54)
@@ -5351,7 +5351,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 208.534 139.446 90)
 			(effects
 				(font
@@ -5424,6 +5424,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C84376"
+			(at 209.55 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 209.55 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 209.55 139.7 0)
 			(effects
 				(font
@@ -5670,7 +5688,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 81.534 70.866 90)
 			(effects
 				(font
@@ -5751,6 +5769,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 82.55 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "066cdba1-d638-4abd-a977-4329a253d867")
 		)
@@ -5792,7 +5828,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
+		(property "Footprint" "MothBox_footprints_Library:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
 			(at 226.06 127 0)
 			(effects
 				(font
@@ -5865,6 +5901,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 226.06 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 226.06 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 226.06 127 0)
 			(effects
 				(font
@@ -5989,7 +6043,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
+		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
 			(at 88.265 118.11 0)
 			(effects
 				(font
@@ -6070,6 +6124,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 83.82 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 83.82 118.11 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ccf862a9-cd79-4e04-bdd6-8ea932adcd79")
 		)
@@ -6114,7 +6186,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
+		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
 			(at 86.995 53.34 0)
 			(effects
 				(font
@@ -6195,6 +6267,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 82.55 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 82.55 53.34 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5ddf0170-c051-46a7-9586-efa59cee63d9")
 		)
@@ -6239,7 +6329,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
+		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
 			(at 216.535 127 0)
 			(effects
 				(font
@@ -6320,6 +6410,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 212.09 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 212.09 127 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "01c0dda3-2379-403e-9d98-37ba1b441363")
 		)
@@ -6364,7 +6472,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Diode_SMD:D_SOD-323"
+		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
 			(at 212.725 52.07 0)
 			(effects
 				(font
@@ -6437,6 +6545,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C435886"
+			(at 208.28 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 208.28 52.07 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 208.28 52.07 90)
 			(effects
 				(font
@@ -6534,7 +6660,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "7e217299-49cc-40a9-9c2b-1345eb4ac95e")
 		(property "Reference" "H10"
 			(at 100.33 106.68 0)
@@ -6552,7 +6677,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+		(property "Footprint" "MothBox_footprints_Library:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
 			(at 100.33 129.54 0)
 			(effects
 				(font
@@ -6625,6 +6750,24 @@
 			)
 		)
 		(property "LCSC_Part" "C492432"
+			(at 100.33 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 100.33 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 100.33 118.11 0)
 			(effects
 				(font
@@ -6865,8 +7008,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_1_1_1_1")
-		(lib_id "MothBox_Symbol_Library:YJQ10N2A_1_1_1")
+		(lib_name "YJQ10N2A_1_1_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_1_1_1_1_1")
 		(at 214.63 135.89 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6893,7 +7036,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "pauls_footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 219.71 137.795 0)
 			(effects
 				(font
@@ -6977,6 +7120,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 214.63 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 214.63 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "07e6c146-f1bf-4351-8603-268b3c9de467")
 		)
@@ -7014,8 +7175,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_4_1_1_1")
-		(lib_id "MothBox_Symbol_Library:YJQ10N2A_4_1_1")
+		(lib_name "YJQ10N2A_4_1_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_4_1_1_1_1")
 		(at 213.36 66.04 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7042,7 +7203,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "pauls_footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 218.44 67.945 0)
 			(effects
 				(font
@@ -7118,6 +7279,24 @@
 			)
 		)
 		(property "PRICE" ""
+			(at 213.36 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 213.36 66.04 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 213.36 66.04 0)
 			(effects
 				(font
@@ -7229,8 +7408,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_3_1_1_1")
-		(lib_id "MothBox_Symbol_Library:YJQ10N2A_3_1_1")
+		(lib_name "YJQ10N2A_3_1_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_3_1_1_1_1")
 		(at 87.63 67.31 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7257,7 +7436,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "pauls_footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 92.71 69.215 0)
 			(effects
 				(font
@@ -7341,6 +7520,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 87.63 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ae8e38b8-3d3e-48e9-9431-a5fe429a7e97")
 		)
@@ -7402,7 +7599,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 82.804 134.366 90)
 			(effects
 				(font
@@ -7483,6 +7680,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 83.82 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 83.82 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d2e4da14-cb25-4a8e-9c34-35e521688067")
 		)
@@ -7501,12 +7716,12 @@
 	(symbol
 		(lib_id "MothBox_Symbol_Library:PZ254R-12-8P")
 		(at 99.06 53.34 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "d8a46e7e-c601-4cc9-a90c-3d4dcbd995cd")
 		(property "Reference" "H8"
 			(at 99.06 41.91 0)
@@ -7524,7 +7739,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+		(property "Footprint" "MothBox_footprints_Library:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
 			(at 99.06 64.77 0)
 			(effects
 				(font
@@ -7605,6 +7820,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 99.06 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 99.06 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "7"
 			(uuid "7946c192-7393-4370-9dce-9492ff5bc8af")
 		)
@@ -7641,12 +7874,12 @@
 	(symbol
 		(lib_id "MothBox_Symbol_Library:PZ254R-12-8P")
 		(at 224.79 52.07 0)
+		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "dd1f1dda-e227-4cde-8d8c-3e30a069b5a7")
 		(property "Reference" "H9"
 			(at 224.79 40.64 0)
@@ -7664,7 +7897,7 @@
 				)
 			)
 		)
-		(property "Footprint" "easyeda_footprints:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
+		(property "Footprint" "MothBox_footprints_Library:HDR-TH_8P-P2.54-H-M-R2-C4-S2.54"
 			(at 224.79 63.5 0)
 			(effects
 				(font
@@ -7737,6 +7970,24 @@
 			)
 		)
 		(property "LCSC_Part" "C492432"
+			(at 224.79 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 224.79 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 224.79 52.07 0)
 			(effects
 				(font
@@ -7844,8 +8095,8 @@
 		)
 	)
 	(symbol
-		(lib_name "YJQ10N2A_2_1_1_1")
-		(lib_id "MothBox_Symbol_Library:YJQ10N2A_2_1_1")
+		(lib_name "YJQ10N2A_2_1_1_1_1_1")
+		(lib_id "MothBox_Symbol_Library:YJQ10N2A_2_1_1_1_1")
 		(at 88.9 130.81 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7872,7 +8123,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "pauls_footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 93.98 132.715 0)
 			(effects
 				(font
@@ -7956,6 +8207,24 @@
 				(hide yes)
 			)
 		)
+		(property "Ali_Express_Link" ""
+			(at 88.9 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 88.9 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "ff0cf9f1-5da4-4ff5-abeb-c09d6fa5129d")
 		)
@@ -8017,7 +8286,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
 			(at 207.264 69.596 90)
 			(effects
 				(font
@@ -8090,6 +8359,24 @@
 			)
 		)
 		(property "LCSC_Part_No" "C84376"
+			(at 208.28 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 208.28 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
 			(at 208.28 69.85 0)
 			(effects
 				(font
