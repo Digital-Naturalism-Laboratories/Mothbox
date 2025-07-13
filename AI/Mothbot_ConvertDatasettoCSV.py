@@ -11,11 +11,10 @@ from datetime import datetime, timedelta
 import unicodedata
 import pandas as pd
 
-INPUT_PATH = r'/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-05/BriHemipteraOnly'
-UTC_OFFSET=-5 #panama
+INPUT_PATH = r'E:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20\AQ'
+UTC_OFFSET=8 #indonesia
 # Specify the path to your taxonomy CSV file
-TAXA_LIST_PATH = r'/Users/brianna/Desktop/IndonesiaSpeciesListGBIF.csv'
-
+TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv"
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
 def OLDcreate_occurrence_id(filename, latitude, longitude):
