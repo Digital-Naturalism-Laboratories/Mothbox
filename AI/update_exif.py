@@ -4,16 +4,20 @@ import re
 import subprocess
 import threading
 from pathlib import Path
+import os
+import platform
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-CSV_PATH = "/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-05/BriHemipteraOnly/2025-07-05_BriHemipteraOnly_exportdate_2025-07-11.csv"
-EXIFTOOL_BIN = "exiftool"
+CSV_PATH = r"e:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20\AQ\2025-06-20_AQ_exportdate_2025-07-13.csv"
+exifPath="exiftool" #mac or linux
+if(platform.system()=='Windows'):
+    exifPath="exiftool-13.32_64/exiftool"
 RANK_ORDER = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 # ──────────────────────────────────────────────────────────────────────────────
 
 
 class ExifToolSession:
-    def __init__(self, exiftool_path=EXIFTOOL_BIN):
+    def __init__(self, exiftool_path=exifPath):
         self.process = subprocess.Popen(
             [exiftool_path, "-stay_open", "True", "-@", "-"],
             stdin=subprocess.PIPE,
@@ -32,7 +36,7 @@ class ExifToolSession:
     def _read_all_tags(self, image_path: str) -> dict:
         try:
             result = subprocess.run(
-                [EXIFTOOL_BIN, "-j", "-n", image_path],
+                [exifPath, "-j", "-n", image_path],
                 capture_output=True, text=True, check=True
             )
             data = json.loads(result.stdout)[0]

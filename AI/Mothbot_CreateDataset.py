@@ -22,14 +22,18 @@ import piexif
 import subprocess
 import threading
 
+
+import platform
+#platform.system() # 'Windows' 'Linux'
+
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-05"
-METADATA_PATH=r'/Users/brianna/Desktop/Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1.csv'
+INPUT_PATH = r"E:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20"
+METADATA_PATH=r'Mothbox_Main_Metadata_Field_Sheet_Example.csv'
 UTC_OFFSET= 8 #Panama is -5, change for different locations
 
-TAXA_LIST_PATH = r"/Users/brianna/Desktop/IndonesiaSpeciesListGBIF.csv" #ce/taxonomy?country=PA&taxon_key=212
+TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv" #ce/taxonomy?country=PA&taxon_key=212
 
 SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
 
@@ -541,44 +545,12 @@ def write_taxonomy_with_naturtag(image_path, taxonomic_list, include_common_name
         img.save(image_path, exif=piexif.dump(exif_dict))
         print("✅ Fallback EXIF tags written")
 
-#this works but goes SUPER slow because it opens exiftool every single time
-def add_taxonomy_with_exiftool(image_path, taxonomic_list):
-    """
-    Adds taxonomy tags using exiftool to fields recognized by iNaturalist.
-    Tags are written to XMP:Subject and MicrosoftPhoto:LastKeywordXMP.
-    """
-    keywords = []
-    for entry in taxonomic_list:
-        if "_" in entry:
-            level, value = entry.split("_", 1)
-            keywords.append(f"taxonomy:{level.lower()}={value}")
-
-    # You can add more tags like inat:taxon_id=XXXXX if needed
-
-    # Join keywords as separate args
-    exiftool_args = []
-    for kw in keywords:
-        exiftool_args += [
-            f"-XMP-dc:Subject+={kw}",
-            f"-XMP-MicrosoftPhoto:LastKeywordXMP+={kw}"
-        ]
-
-    # Build final command
-    #the following command works for windows, but likely not macs
-    cmd = ["exiftool-13.32_64/exiftool"] + exiftool_args + ["-overwrite_original -fast2 -stay_open true", image_path]
-    
-    result = subprocess.run(cmd, capture_output=True, text=True)
-    '''
-    if result.returncode == 0:
-        print(f"✅ Metadata written successfully to {image_path}")
-    else:
-        print(f"❌ Error from exiftool:\n{result.stderr}")
-    '''
-
 
 class ExifToolSession:
-    #def __init__(self, exiftool_path="exiftool-13.32_64/exiftool"): #this is for windows
-    def __init__(self, exiftool_path="exiftool"): #this is for mac
+    exifPath="exiftool" #mac or linux
+    if(platform.system()=='Windows'):
+        exifPath="exiftool-13.32_64/exiftool"
+    def __init__(self, exiftool_path=exifPath): 
         self.process = subprocess.Popen(
             [exiftool_path, "-stay_open", "True", "-@", "-"],
             stdin=subprocess.PIPE,
@@ -643,7 +615,7 @@ class ExifToolSession:
             output_lines.append(line.strip())
 
         if output_lines:
-            print(f"⚠️ ExifTool output for {full_patch_path}:")
+            print(f"✅  ExifTool output for {full_patch_path}:")
             for line in output_lines:
                 print("  ", line)
 
@@ -727,8 +699,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
     print("adding taxon info to exif "+str(taxonomic_list))
-    # full_patch_path=Path(INPUT_PATH+"\\"+the_patch_path) #this is for windows
-    full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #this is mac version
+    full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #should work on mac or windows
     #add_taxonomy_subject_and_tags(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_naturtag(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_naturtag(full_patch_path, taxonomic_list)

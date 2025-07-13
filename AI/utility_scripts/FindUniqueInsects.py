@@ -3,7 +3,7 @@ from PIL import Image
 import imagehash
 import shutil
 
-folder_path=r"/Users/brianna/Desktop/Indonesia_Deployments/Les_DurianFarm_EfectoMinla_2025-07-04/2025-07-04/patches"
+folder_path=r"E:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20\patches"
 
 def find_unique_insects(input_folder, output_folder="unique_insects", hash_size=8, threshold=5, min_resolution=(0, 0)):
     """
