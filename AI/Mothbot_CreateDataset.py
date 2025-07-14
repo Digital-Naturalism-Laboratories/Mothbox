@@ -24,13 +24,13 @@ import threading
 
 
 import platform
-#platform.system() # 'Windows' 'Linux'
+#platform.system() # ' ' 'Linux'
 
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-INPUT_PATH = r"E:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20"
-METADATA_PATH=r'Mothbox_Main_Metadata_Field_Sheet_Example.csv'
+INPUT_PATH = r"/Volumes/Mothbox C/Deployments/Indonesia/Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25/2025-06-25"
+METADATA_PATH=r'/Users/brianna/Desktop/Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv" #ce/taxonomy?country=PA&taxon_key=212

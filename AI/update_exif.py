@@ -8,7 +8,7 @@ import os
 import platform
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-CSV_PATH = r"e:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20\AQ\2025-06-20_AQ_exportdate_2025-07-13.csv"
+CSV_PATH = r"/Volumes/Mothbox C/Deployments/Indonesia/Les_Alley_EfectoMinla_2025-06-20/2025-06-20/BriID/2025-06-20_BriID_exportdate_2025-07-13.csv"
 exifPath="exiftool" #mac or linux
 if(platform.system()=='Windows'):
     exifPath="exiftool-13.32_64/exiftool"

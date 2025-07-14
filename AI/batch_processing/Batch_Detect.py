@@ -3,13 +3,13 @@ import os
 import time
 
 
-script_path = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot_Detect.py"  # Update this with your actual script path
+script_path = r"AI/batch_processing/Batch_Detect.py"  # Update this with your actual script path
 input_paths = [
-    r"/Users/brianna/Desktop/Indonesia_Deployments/Les_ByRoadWilan_CuervoCinife_2025-07-07",
-    r"/Users/brianna/Desktop/Indonesia_Deployments/Les_Dryriverbed_efectoMinla_2025-07-07",
+    r"/Volumes/Mothbox C/Deployments/Indonesia/Les_Landak_LiquidSerau_2025-07-12",
+    r"/Volumes/Mothbox C/Deployments/Indonesia/Les_BatuPayung_EfectoMinla_2025-07-12",
 ]
 
-YOLO_MODEL=r"C:\Users\andre\Documents\GitHub\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
+YOLO_MODEL=r"AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 IMGSZ=1600# Should be same imgsz as used in training for best results!
 i=0
 
