@@ -3830,6 +3830,12 @@
 		(uuid "043df7ba-89e9-46dd-b292-816741c73907")
 	)
 	(junction
+		(at 100.33 54.61)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "066a6166-9277-447f-b7cf-058da404da8f")
+	)
+	(junction
 		(at 104.14 52.07)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3846,12 +3852,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0d2c2037-3fc7-4d2b-9453-15a39fb787e6")
-	)
-	(junction
-		(at 97.79 54.61)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "13ffc01d-34aa-40fd-b360-ccf5db9db2cb")
 	)
 	(junction
 		(at 186.69 87.63)
@@ -4383,7 +4383,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 74.93) (xy 130.81 74.93)
+			(xy 97.79 74.93) (xy 130.81 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4393,7 +4393,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 54.61) (xy 97.79 54.61)
+			(xy 106.68 54.61) (xy 100.33 54.61)
 		)
 		(stroke
 			(width 0.1524)
@@ -4643,7 +4643,7 @@
 	)
 	(wire
 		(pts
-			(xy 85.09 74.93) (xy 86.36 74.93)
+			(xy 85.09 74.93) (xy 92.71 74.93)
 		)
 		(stroke
 			(width 0)
@@ -4800,6 +4800,16 @@
 			(type default)
 		)
 		(uuid "8ca86cd0-088d-411d-9815-155b6fb79357")
+	)
+	(wire
+		(pts
+			(xy 96.52 54.61) (xy 100.33 54.61)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9781e6a0-6007-4746-b696-90557401f85b")
 	)
 	(wire
 		(pts
@@ -4983,13 +4993,13 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 54.61) (xy 96.52 54.61)
+			(xy 96.52 54.61) (xy 100.33 54.61)
 		)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
-		(uuid "c1a0d23f-7c01-4845-974d-c3dcd0ad2ec8")
+		(uuid "c3ca84e8-adcc-4154-a89a-50c15de07aeb")
 	)
 	(wire
 		(pts
@@ -5243,7 +5253,7 @@
 	)
 	(wire
 		(pts
-			(xy 97.79 50.8) (xy 97.79 54.61)
+			(xy 100.33 50.8) (xy 100.33 54.61)
 		)
 		(stroke
 			(width 0)
@@ -6623,7 +6633,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:Polyfuse_Small")
-		(at 88.9 74.93 90)
+		(at 95.25 74.93 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6631,7 +6641,7 @@
 		(dnp no)
 		(uuid "2922c1af-465d-4ddc-8cbc-ea4b3d519b4b")
 		(property "Reference" "F2"
-			(at 88.646 71.882 90)
+			(at 94.996 71.882 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6639,7 +6649,7 @@
 			)
 		)
 		(property "Value" "6A trip"
-			(at 89.662 77.216 90)
+			(at 96.012 77.216 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6647,7 +6657,7 @@
 			)
 		)
 		(property "Footprint" "Fuse:Fuse_1812_4532Metric"
-			(at 93.98 73.66 0)
+			(at 100.33 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6657,7 +6667,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 88.9 74.93 0)
+			(at 95.25 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6666,7 +6676,7 @@
 			)
 		)
 		(property "Description" "Resettable fuse, polymeric positive temperature coefficient, small symbol"
-			(at 88.9 74.93 0)
+			(at 95.25 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6675,7 +6685,7 @@
 			)
 		)
 		(property "LCSC" "C7500481"
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6684,7 +6694,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6693,7 +6703,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6702,7 +6712,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6711,7 +6721,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6720,7 +6730,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6729,7 +6739,7 @@
 			)
 		)
 		(property "Ali_Express_Link" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6738,7 +6748,7 @@
 			)
 		)
 		(property "LCSC_PN" ""
-			(at 88.9 74.93 90)
+			(at 95.25 74.93 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10658,7 +10668,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:FRC0603J103TS")
-		(at 97.79 45.72 270)
+		(at 100.33 45.72 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -10667,7 +10677,7 @@
 		(dnp no)
 		(uuid "f35f1a0f-e817-4951-9deb-39672b1e781e")
 		(property "Reference" "R6"
-			(at 93.472 43.942 90)
+			(at 96.012 43.942 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10676,7 +10686,7 @@
 			)
 		)
 		(property "Value" "4.7K"
-			(at 91.694 46.736 90)
+			(at 94.234 46.736 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10685,7 +10695,7 @@
 			)
 		)
 		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
-			(at 90.17 45.72 0)
+			(at 92.71 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10694,7 +10704,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 45.72 0)
+			(at 100.33 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10703,7 +10713,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 97.79 45.72 0)
+			(at 100.33 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10712,7 +10722,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10721,7 +10731,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10730,7 +10740,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10739,7 +10749,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10748,7 +10758,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10757,7 +10767,7 @@
 			)
 		)
 		(property "LCSC_Part" "C2930027"
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10766,7 +10776,7 @@
 			)
 		)
 		(property "Ali_Express_Link" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10775,7 +10785,7 @@
 			)
 		)
 		(property "LCSC_PN" ""
-			(at 97.79 45.72 90)
+			(at 100.33 45.72 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11346,7 +11356,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:+3.3V")
-		(at 97.79 40.64 0)
+		(at 100.33 40.64 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11355,7 +11365,7 @@
 		(dnp no)
 		(uuid "ff67b9e0-32b7-44f8-8863-eb46e299a7f2")
 		(property "Reference" "#PWR016"
-			(at 97.79 44.45 0)
+			(at 100.33 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11364,7 +11374,7 @@
 			)
 		)
 		(property "Value" "+3.3V"
-			(at 92.964 37.592 0)
+			(at 95.504 37.592 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11372,7 +11382,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 97.79 40.64 0)
+			(at 100.33 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11381,7 +11391,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 97.79 40.64 0)
+			(at 100.33 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11390,7 +11400,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 97.79 40.64 0)
+			(at 100.33 40.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
