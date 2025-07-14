@@ -11,8 +11,8 @@ from datetime import datetime, timedelta
 import unicodedata
 import pandas as pd
 
-INPUT_PATH = r'E:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20\AQ'
-UTC_OFFSET=8 #indonesia
+INPUT_PATH = r'/Volumes/Mothbox C/Deployments/Indonesia/Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25/2025-06-25/BriID'
+UTC_OFFSET=8 #indonesiaD
 # Specify the path to your taxonomy CSV file
 TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv"
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
