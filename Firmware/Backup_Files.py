@@ -8,15 +8,16 @@ This script first defines paths for the desktop, photos folder, and backup folde
 
     Get the storage information (total and available space) of a path.
     Find the sizes of all external devices in terms of total storage capacity (not available because this will change)
-    Rank them in order  of their total storage capacity
+    Rank external storage in order  of their total storage capacity
     Check if the first option has space available to copy the new files
       if not, choose the next option in terms of total storage
-    Copy all the files from the internal storage to the external storage
-    Move the files from the directory of "fresh" files to the internal "backedup" folder
-    if the internal storage gets too small, delete the internal "backedup" folder
+    Copy all the files from a specified folder (photos) on the internal storage to the external storage into a new folder (external>photos_backedup)
+    Move the files from the directory of "fresh" files (photos) to the internal "backedup" folder (photos_backedup)
+    if the internal storage gets too small (past a certain threshold, let's say 8gb), delete the internal "photos_backedup" folder
 Finally, the script checks if the photos folder exists and then finds the largest external storage. It compares the total space and available space on both the desktop and the external storage to determine if the external storage has enough space for the backup. If so, it creates a backup folder on the external storage and copies the photos. Otherwise, it informs the user about insufficient space.
 
 Note:
+    This script currently gets called every minute by Chron. Arky said this uses a lot of energy to do this backing up all the time. Maybe there's a way to back up less frequently but more reliably? Also maybe there's a way to TURN OFF the usb power, until the backup script starts, and then copy?
     This script assumes the user running the script has read and write permissions to the desktop and any external storage devices.
     You might need to adjust the user name in desktop_path depending on your Raspberry Pi setup.
 """
