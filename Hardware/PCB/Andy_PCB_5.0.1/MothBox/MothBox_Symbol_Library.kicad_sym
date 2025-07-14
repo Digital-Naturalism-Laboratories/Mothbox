@@ -3329,7 +3329,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Pauls_Footprints:DFN2020-3"
+		(property "Footprint" "MothBox_footprints_Library:DFN2020-3"
 			(at 5.08 -1.905 0)
 			(effects
 				(font
