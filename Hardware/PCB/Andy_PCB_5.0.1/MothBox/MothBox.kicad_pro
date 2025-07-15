@@ -638,7 +638,7 @@
           "group_by": false,
           "label": "LCSC_Part_No",
           "name": "LCSC_Part_No",
-          "show": true
+          "show": false
         },
         {
           "group_by": false,
@@ -758,7 +758,7 @@
           "group_by": false,
           "label": "LCSC_Part",
           "name": "LCSC_Part",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,

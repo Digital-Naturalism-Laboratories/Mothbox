@@ -3634,7 +3634,7 @@
 	)
 	(rectangle
 		(start 30.48 114.3)
-		(end 166.37 172.72)
+		(end 171.45 172.72)
 		(stroke
 			(width 0.5842)
 			(type solid)
@@ -3878,6 +3878,12 @@
 		(uuid "305facbe-d479-4ddf-96eb-ee05ec469bf0")
 	)
 	(junction
+		(at 154.94 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "30d714b6-853f-4e66-b401-9fcbe3eff295")
+	)
+	(junction
 		(at 71.12 92.71)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3912,6 +3918,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5233d46e-2f31-4041-a4be-50425353df2b")
+	)
+	(junction
+		(at 151.13 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5575850e-7475-42ec-b7a3-705fb64cdbc8")
 	)
 	(junction
 		(at 143.51 74.93)
@@ -4004,6 +4016,12 @@
 		(uuid "9dcb6c18-6125-425c-bde6-2c54b266d0c4")
 	)
 	(junction
+		(at 134.62 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b28c896e-ee85-4413-9ea1-716e89c51a01")
+	)
+	(junction
 		(at 137.16 138.43)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4022,6 +4040,12 @@
 		(uuid "bc8e736a-4242-437c-a46a-d2fbb423d6de")
 	)
 	(junction
+		(at 147.32 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c3795e7d-36a4-44c3-adac-4e0b177fcf9e")
+	)
+	(junction
 		(at 147.32 74.93)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4032,6 +4056,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cbd22080-3e7d-4b04-a6b5-7aa37b4b0758")
+	)
+	(junction
+		(at 154.94 152.4)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e7dde4b3-3ad6-48e9-b834-94bca81494a0")
 	)
 	(junction
 		(at 185.42 81.28)
@@ -4173,6 +4203,16 @@
 	)
 	(wire
 		(pts
+			(xy 162.56 138.43) (xy 154.94 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "18b562ee-2593-4828-8d97-10bdb4066ac6")
+	)
+	(wire
+		(pts
 			(xy 147.32 143.51) (xy 147.32 138.43)
 		)
 		(stroke
@@ -4183,7 +4223,17 @@
 	)
 	(wire
 		(pts
-			(xy 134.62 148.59) (xy 134.62 157.48)
+			(xy 154.94 138.43) (xy 151.13 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "20cf92a8-c331-49f1-a6d3-fa212a4b85f1")
+	)
+	(wire
+		(pts
+			(xy 134.62 148.59) (xy 134.62 152.4)
 		)
 		(stroke
 			(width 0)
@@ -4423,7 +4473,7 @@
 	)
 	(wire
 		(pts
-			(xy 147.32 148.59) (xy 147.32 157.48)
+			(xy 147.32 148.59) (xy 147.32 152.4)
 		)
 		(stroke
 			(width 0)
@@ -4490,6 +4540,16 @@
 			(type default)
 		)
 		(uuid "5f8f70bc-ed32-41e2-8b24-1739639ce191")
+	)
+	(wire
+		(pts
+			(xy 134.62 152.4) (xy 147.32 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "605f409b-6efa-4eec-a037-d79f5dfd4275")
 	)
 	(wire
 		(pts
@@ -4773,6 +4833,16 @@
 	)
 	(wire
 		(pts
+			(xy 162.56 143.51) (xy 162.56 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8543783f-bfba-4052-b891-c461056469f2")
+	)
+	(wire
+		(pts
 			(xy 106.68 138.43) (xy 106.68 140.97)
 		)
 		(stroke
@@ -4800,6 +4870,36 @@
 			(type default)
 		)
 		(uuid "8ca86cd0-088d-411d-9815-155b6fb79357")
+	)
+	(wire
+		(pts
+			(xy 134.62 152.4) (xy 134.62 157.48)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "915be0ee-9ffb-4a0d-ad2d-6249e6ac75f0")
+	)
+	(wire
+		(pts
+			(xy 154.94 143.51) (xy 154.94 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "916263ca-d0f9-479c-b13b-1a596bdcc4b0")
+	)
+	(wire
+		(pts
+			(xy 154.94 152.4) (xy 147.32 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "917e8a61-d16c-4445-ab0d-572abba240f2")
 	)
 	(wire
 		(pts
@@ -4893,6 +4993,16 @@
 	)
 	(wire
 		(pts
+			(xy 154.94 148.59) (xy 154.94 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa43d563-f593-4e96-85e5-c56228af387f")
+	)
+	(wire
+		(pts
 			(xy 143.51 74.93) (xy 147.32 74.93)
 		)
 		(stroke
@@ -4900,6 +5010,16 @@
 			(type default)
 		)
 		(uuid "aadb3aeb-1f3d-4b00-8bcc-de8839d55549")
+	)
+	(wire
+		(pts
+			(xy 162.56 152.4) (xy 162.56 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ab45876a-b3d9-43ee-bce1-31fe53394d58")
 	)
 	(wire
 		(pts
@@ -5090,6 +5210,16 @@
 			(type default)
 		)
 		(uuid "d72d0e7a-ea68-4fa6-bab5-54e3b39236ee")
+	)
+	(wire
+		(pts
+			(xy 154.94 152.4) (xy 162.56 152.4)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "dc981ac9-a9f1-41b6-9c4f-6e6e5ed136b6")
 	)
 	(wire
 		(pts
@@ -5522,6 +5652,42 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 137.16 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 137.16 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 137.16 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C19702"
+			(at 137.16 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1951aef8-145d-4d3b-a673-87eaef080a9a")
 		)
@@ -5729,6 +5895,33 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 137.16 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 137.16 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 137.16 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "07c577f8-2304-46df-95bf-65f9297ddda6")
 		)
@@ -5796,7 +5989,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2898746"
+		(property "LCSC" ""
 			(at 180.34 83.82 0)
 			(effects
 				(font
@@ -5868,6 +6061,42 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC_Part" "C2898746"
+			(at 180.34 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 180.34 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 180.34 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 180.34 83.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "eb6c6c74-2de9-4111-b646-0b1965ceac07")
 		)
@@ -5894,7 +6123,7 @@
 		(at 214.63 77.47 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "16652c97-866b-454d-8488-71228afba6af")
@@ -5996,6 +6225,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 214.63 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 214.63 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 214.63 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 214.63 77.47 0)
 			(effects
 				(font
@@ -6244,7 +6500,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C5449119"
+		(property "LCSC_Part_No" ""
 			(at 106.68 146.05 90)
 			(effects
 				(font
@@ -6263,6 +6519,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 106.68 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 106.68 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 106.68 146.05 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 106.68 146.05 90)
 			(effects
 				(font
@@ -6512,7 +6795,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C51661"
+		(property "LCSC_Part_No" ""
 			(at 77.47 144.78 0)
 			(effects
 				(font
@@ -6531,6 +6814,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 77.47 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 77.47 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 77.47 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 77.47 144.78 0)
 			(effects
 				(font
@@ -6684,7 +6994,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C7500481"
+		(property "LCSC" ""
 			(at 95.25 74.93 90)
 			(effects
 				(font
@@ -6748,6 +7058,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 95.25 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C7500481"
+			(at 95.25 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 95.25 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 95.25 74.93 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 95.25 74.93 90)
 			(effects
 				(font
@@ -6823,7 +7169,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2898746"
+		(property "LCSC" ""
 			(at 58.42 86.36 0)
 			(effects
 				(font
@@ -6887,6 +7233,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 58.42 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2898746"
+			(at 58.42 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 58.42 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 58.42 86.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 58.42 86.36 0)
 			(effects
 				(font
@@ -6986,7 +7368,7 @@
 		(at 45.72 137.16 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "34236419-906e-4f05-868a-8f5198638852")
@@ -7088,6 +7470,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 45.72 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 45.72 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 45.72 137.16 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 45.72 137.16 0)
 			(effects
 				(font
@@ -7308,72 +7717,6 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:GND")
-		(at 147.32 157.48 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "53057759-0c80-4e40-a0ab-3fbe76276ce3")
-		(property "Reference" "#PWR013"
-			(at 147.32 163.83 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 147.32 162.56 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 147.32 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 147.32 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 147.32 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "23eb0e37-19e6-4666-a4b9-7d4b001ae9bb")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "#PWR013")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "MothBox_Symbol_Library:GND")
 		(at 157.48 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7456,7 +7799,7 @@
 			)
 		)
 		(property "Value" "0.1uF 50V"
-			(at 147.828 149.352 0)
+			(at 141.478 148.844 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7464,7 +7807,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
 			(at 147.32 146.05 0)
 			(effects
 				(font
@@ -7536,7 +7879,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C3011704"
+		(property "LCSC_Part_No" ""
 			(at 147.32 146.05 0)
 			(effects
 				(font
@@ -7555,6 +7898,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 147.32 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 147.32 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 147.32 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 147.32 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C14663"
 			(at 147.32 146.05 0)
 			(effects
 				(font
@@ -7741,7 +8120,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C497913"
+		(property "LCSC_Part_No" ""
 			(at 113.03 138.43 90)
 			(effects
 				(font
@@ -7760,6 +8139,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 113.03 138.43 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C497913"
 			(at 113.03 138.43 90)
 			(effects
 				(font
@@ -7875,7 +8290,7 @@
 				)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -7947,7 +8362,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C3011704"
+		(property "LCSC_Part_No" ""
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -7966,6 +8381,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 92.71 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 92.71 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 92.71 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 92.71 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C14663"
 			(at 92.71 132.08 0)
 			(effects
 				(font
@@ -8241,7 +8692,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C571388"
+		(property "LCSC" ""
 			(at 85.09 81.28 90)
 			(effects
 				(font
@@ -8305,6 +8756,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 85.09 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C571388"
+			(at 85.09 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 85.09 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 85.09 81.28 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 85.09 81.28 90)
 			(effects
 				(font
@@ -8421,7 +8908,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 120.65 151.13 0)
 			(effects
 				(font
@@ -8493,7 +8980,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C114531"
+		(property "LCSC_Part_No" ""
 			(at 120.65 151.13 0)
 			(effects
 				(font
@@ -8512,6 +8999,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C22978"
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 120.65 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 120.65 151.13 0)
 			(effects
 				(font
@@ -8672,7 +9195,7 @@
 		(at 137.16 138.43 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "9f4419cb-a2bc-43b3-b2ef-6e00cd83a8c0")
@@ -8782,6 +9305,33 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 137.16 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 137.16 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 137.16 138.43 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "85f81abe-db5d-4455-8fc2-9c910d485a96")
 		)
@@ -8850,6 +9400,42 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 78.74 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 78.74 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 78.74 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2938482"
+			(at 78.74 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "66c78ead-52f9-4af7-8039-96bfafeb905b")
 		)
@@ -8911,7 +9497,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:R_0805_2012Metric"
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
 			(at 120.65 143.51 0)
 			(effects
 				(font
@@ -8983,7 +9569,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C84376"
+		(property "LCSC_Part_No" ""
 			(at 120.65 143.51 0)
 			(effects
 				(font
@@ -9002,6 +9588,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 120.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C25804"
+			(at 120.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 120.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 120.65 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 120.65 143.51 0)
 			(effects
 				(font
@@ -9192,7 +9814,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part" "C2930027"
+		(property "LCSC_Part" "C23162"
 			(at 104.14 45.72 90)
 			(effects
 				(font
@@ -9211,6 +9833,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 104.14 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 104.14 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 104.14 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 104.14 45.72 90)
 			(effects
 				(font
@@ -9333,7 +9982,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C90272"
+		(property "LCSC_Part_No" ""
 			(at 49.53 143.51 0)
 			(effects
 				(font
@@ -9360,6 +10009,42 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C90272"
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "fbb47357-216d-4494-8779-8f47f357cd99")
 		)
@@ -9370,6 +10055,192 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:C_Small")
+		(at 154.94 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ba40176f-2048-4c61-82b4-8e346cdb4288")
+		(property "Reference" "C10"
+			(at 156.21 144.272 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 155.702 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C19702"
+			(at 154.94 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "96a8fb7f-cdd0-43a6-8ca0-bfc44382b8c3")
+		)
+		(pin "1"
+			(uuid "56b929fb-7756-4d2a-8480-e721d0ba66dc")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -9482,6 +10353,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 199.39 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 199.39 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 199.39 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 199.39 82.55 0)
 			(effects
 				(font
@@ -9708,6 +10606,183 @@
 		)
 	)
 	(symbol
+		(lib_id "MothBox_Symbol_Library:C_Polarized_Small_US")
+		(at 134.62 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c582ad8d-5037-43e3-987e-d41e1c9356f8")
+		(property "Reference" "C4"
+			(at 134.874 143.764 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "470uF 50V"
+			(at 128.016 148.844 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:CP_Elec_10x12.5"
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "470uF 50V 530mA@120Hz ±20% SMD,D12.5xL13.5mm Aluminum Electrolytic Capacitors - SMD ROHS"
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C90272"
+			(at 134.62 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "4b31b507-ad5b-48f7-98aa-64ff47205276")
+		)
+		(pin "1"
+			(uuid "b254f15e-993a-4886-9dd0-e7591f273c95")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "C4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:R_Small")
 		(at 78.74 88.9 0)
 		(unit 1)
@@ -9817,6 +10892,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 78.74 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C25804"
 			(at 78.74 88.9 0)
 			(effects
 				(font
@@ -10032,6 +11143,33 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 116.84 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "73343cef-3e3e-4ae5-852f-d6d550d63142")
 		)
@@ -10119,7 +11257,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2898746"
+		(property "LCSC" ""
 			(at 219.71 81.28 0)
 			(effects
 				(font
@@ -10183,6 +11321,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 219.71 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2898746"
+			(at 219.71 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 219.71 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 219.71 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 219.71 81.28 0)
 			(effects
 				(font
@@ -10261,6 +11435,42 @@
 		)
 		(property "Description" "-4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23"
 			(at 157.48 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 157.48 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 157.48 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 157.48 77.47 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2938482"
+			(at 157.48 77.47 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10359,7 +11569,43 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2938367"
+		(property "LCSC" ""
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C2938367"
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 154.94 90.17 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 154.94 90.17 0)
 			(effects
 				(font
@@ -10440,7 +11686,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C14663"
+		(property "LCSC" ""
 			(at 130.81 43.18 0)
 			(effects
 				(font
@@ -10512,7 +11758,43 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C3011704"
+		(property "LCSC_Part_No" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 130.81 43.18 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C14663"
 			(at 130.81 43.18 0)
 			(effects
 				(font
@@ -10667,6 +11949,192 @@
 		)
 	)
 	(symbol
+		(lib_id "MothBox_Symbol_Library:C_Small")
+		(at 162.56 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ed98f823-a781-4ab6-be7e-6342afc6fad9")
+		(property "Reference" "C11"
+			(at 163.83 144.272 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10uF"
+			(at 163.322 148.336 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C19702"
+			(at 162.56 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "2124fe4b-d9f4-4b6b-b031-e6fe58177761")
+		)
+		(pin "1"
+			(uuid "cfd2bcfd-43ad-4adb-9dc4-5e66babdfb73")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "C11")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:FRC0603J103TS")
 		(at 100.33 45.72 270)
 		(mirror x)
@@ -10766,7 +12234,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part" "C2930027"
+		(property "LCSC_Part" "C23162"
 			(at 100.33 45.72 90)
 			(effects
 				(font
@@ -10785,6 +12253,33 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 100.33 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 100.33 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 100.33 45.72 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
 			(at 100.33 45.72 90)
 			(effects
 				(font
@@ -10803,147 +12298,6 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "MothBox_Symbol_Library:C_Polarized_Small_US")
-		(at 134.62 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "f3c94815-58fe-4364-9b21-206c8f9655ee")
-		(property "Reference" "C4"
-			(at 137.16 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "330uF 50V"
-			(at 135.382 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MothBox_footprints_Library:CP_Elec_10x10"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "330uF 50V ±20% SMD,D10xL10.2mm Aluminum Electrolytic Capacitors - SMD ROHS"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "AVAILABILITY" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DESCRIPTION" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PACKAGE" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PRICE" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC_Part_No" "C2687701"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ali_Express_Link" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC_PN" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "e4eca802-a8f2-4595-96b4-508e01b00eb3")
-		)
-		(pin "1"
-			(uuid "33f77857-7aae-4be8-a439-fb3725994d1c")
-		)
-		(instances
-			(project "MothBo"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -10976,7 +12330,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
 			(at 55.88 143.51 0)
 			(effects
 				(font
@@ -11048,7 +12402,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part_No" "C3011704"
+		(property "LCSC_Part_No" ""
 			(at 55.88 143.51 0)
 			(effects
 				(font
@@ -11067,6 +12421,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 55.88 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C14663"
 			(at 55.88 143.51 0)
 			(effects
 				(font
@@ -11207,6 +12597,42 @@
 				(hide yes)
 			)
 		)
+		(property "Sim.Device" ""
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C25804"
+			(at 149.86 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "1b65e0d0-ab9b-4424-92d8-ea50fa0497fc")
 		)
@@ -11331,6 +12757,42 @@
 			)
 		)
 		(property "LCSC_PN" ""
+			(at 148.59 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 148.59 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 148.59 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 148.59 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C25804"
 			(at 148.59 92.71 0)
 			(effects
 				(font
