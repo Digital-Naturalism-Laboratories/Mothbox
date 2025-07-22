@@ -518,7 +518,7 @@
       "gencad": "",
       "idf": "",
       "netlist": "MothBo.net",
-      "plot": "gerber_RevA",
+      "plot": "production/",
       "pos_files": "",
       "specctra_dsn": "",
       "step": "MothBox.step",
