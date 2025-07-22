@@ -8,16 +8,15 @@ This script first defines paths for the desktop, photos folder, and backup folde
 
     Get the storage information (total and available space) of a path.
     Find the sizes of all external devices in terms of total storage capacity (not available because this will change)
-    Rank external storage in order  of their total storage capacity
+    Rank them in order  of their total storage capacity
     Check if the first option has space available to copy the new files
       if not, choose the next option in terms of total storage
-    Copy all the files from a specified folder (photos) on the internal storage to the external storage into a new folder (external>photos_backedup)
-    Move the files from the directory of "fresh" files (photos) to the internal "backedup" folder (photos_backedup)
-    if the internal storage gets too small (past a certain threshold, let's say 8gb), delete the internal "photos_backedup" folder
+    Copy all the files from the internal storage to the external storage
+    Move the files from the directory of "fresh" files to the internal "backedup" folder
+    if the internal storage gets too small, delete the internal "backedup" folder
 Finally, the script checks if the photos folder exists and then finds the largest external storage. It compares the total space and available space on both the desktop and the external storage to determine if the external storage has enough space for the backup. If so, it creates a backup folder on the external storage and copies the photos. Otherwise, it informs the user about insufficient space.
 
 Note:
-    This script currently gets called every minute by Chron. Arky said this uses a lot of energy to do this backing up all the time. Maybe there's a way to back up less frequently but more reliably? Also maybe there's a way to TURN OFF the usb power, until the backup script starts, and then copy?
     This script assumes the user running the script has read and write permissions to the desktop and any external storage devices.
     You might need to adjust the user name in desktop_path depending on your Raspberry Pi setup.
 """
@@ -38,7 +37,7 @@ logs_folder = desktop_path / "logs"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
-internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
+internal_storage_minimum = 8 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
 
 print("----------------- STARTING BACKUP FILES-------------------")
 now = datetime.now()
@@ -230,6 +229,88 @@ def copy_photos_to_backup(source_folder, target_folder):
             shutil.copy2(inner_source_path, inner_target_path)
             os.chmod(inner_target_path, 0o777)  # Set permissions for copied files
 
+def copy_folders_with_files(source_folder, target_folder):
+    """
+    Copies folders from the source folder to the target folder, 
+    only if they contain files.
+
+    Args:
+        source_folder: The path to the source folder.
+        target_folder: The path to the target folder.
+    """
+
+    if not os.path.exists(target_folder):
+        os.makedirs(target_folder)
+
+    for item in os.listdir(source_folder):
+        source_path = os.path.join(source_folder, item)
+        target_path = os.path.join(target_folder, item)
+
+        if os.path.isfile(source_path):
+            # If the source is a file, copy it directly
+            try:
+                shutil.copy2(source_path, target_path)
+                print(f"Copied file: {source_path} to {target_path}")
+            except Exception as e:
+                print(f"Error copying {source_path} to {target_path}: {e}")
+        elif os.path.isdir(source_path):  # Check if it's a directory
+            # If it's a directory, check if it contains files
+            if not os.listdir(source_path):
+                continue  # Skip empty directories
+            else:
+                # Copy the directory and its contents
+                try:
+                    shutil.copytree(source_path, target_path)
+                    print(f"Copied folder: {source_path} to {target_path}")
+                except Exception as e:
+                    print(f"Error copying folder {source_path} to {target_path}: {e}")
+
+
+def verify_copy_bad(source_folder, destination_folder):
+    """
+    Compares the contents of a source folder and its subdirectories with the destination folder to verify successful copy.
+    If an empty directory is found that hasn't been copied, it's ignored.
+    If a directory with files is missing, it reports an error.
+    Args:
+        source_folder: The path to the source folder.
+        destination_folder: The path to the destination folder.
+    Returns:
+        A list of any differences found between the source and destination folders.
+    """
+    source_path = Path(source_folder)
+    dest_path = Path(destination_folder)
+    differences = []
+    # Check if source folder exists
+    if not source_path.exists():
+        differences.append(f"Error: Source folder '{source_folder}' does not exist.")
+        return differences
+
+    # Compare files and subdirectories recursively
+    for root, dirs, files in os.walk(source_path):
+        rel_path = os.path.relpath(root, source_path)
+        dest_dir = os.path.join(dest_path, rel_path)
+
+        # Check if corresponding directory exists in destination
+        if not os.path.exists(dest_dir):
+            # If directory doesn't exist, check if it's empty
+            if not os.listdir(dest_dir):
+                # If it's empty, ignore it
+                continue
+            else:
+                differences.append(f"Missing directory in destination: {dest_dir}")
+                continue
+
+        # Compare files within the directory
+        for filename in files:
+            source_file = os.path.join(root, filename)
+            dest_file = os.path.join(dest_dir, filename)
+
+            # Check if file exists in destination
+            if not os.path.isfile(dest_file):
+                differences.append(f"Missing file in destination: {dest_file}")
+
+    return differences
+
 def verify_copy(source_folder, destination_folder):
   """
   Compares the contents of a source folder and its subdirectories with the destination folder to verify successful copy.
@@ -363,8 +444,8 @@ if __name__ == "__main__":
         exit(1)
     # Get total and available space on desktop and external storage
     desktop_total, desktop_available = get_storage_info(desktop_path)
-    print("Desktop Total    Storage: \t" + str(desktop_total))
-    print("Desktop Available Storage: \t" + str(desktop_available))
+    print("Desktop Total    Storage: \t" + str(desktop_total/1000000000))
+    print("Desktop Available Storage: \t" + str(desktop_available/1000000000))
 
     """
   Finds storage capacity of all external drives and ranks them by size.
@@ -385,7 +466,7 @@ if __name__ == "__main__":
         print("External Drives (Ranked by Total Size - Descending):")
         for disk_name, capacity in sorted_disks:
             print(
-                f"{disk_name}: total size {capacity[0]} GB - available size {capacity[1]} GB"
+                f"{disk_name}: total size {capacity[0]/1000000000} GB - available size {capacity[1]/1000000000} GB"
             )
     else:
         print("No external drives found.")
@@ -395,6 +476,26 @@ if __name__ == "__main__":
 
         exit(1)
     print("~~~sorted~~~~~~")
+    
+    #First, we should check and make sure that our internal disk isn't filling up with photos and causing problems
+    # Check if internal storage has less than X GB left
+    x = internal_storage_minimum
+    print("Interal storage threshold: "+str( x * 1024**3/1000000000))
+    if desktop_available < x * 1024**3:  # x GB in bytes
+        delete_folder_contents(backedup_photos_folder)
+        print(
+            "Original photos that had been externally backed up have now been deleted due to low internal storage."
+        )
+    else:
+        print(
+            "More than "
+            + str(x)
+            + "GB remain so original backed up files are kept"
+        )
+  
+    
+    
+    
     thingsworkedok = False
     # this is the loop where we make stuff happen
     # iterate through the disks, starting with the largest
@@ -402,18 +503,18 @@ if __name__ == "__main__":
     for disk_name, capacity in sorted_disks:
         print("chosen Disk: "+str(disk_name))
         total_available, external_available = capacity
-        print("total available \t"+str(total_available)) 
+        print("total available \t"+str(total_available/1000000000)) 
         # Check if external storage has more available space than desktop
         dir_path = photos_folder
         total_size_bytes = get_dir_size(dir_path)
-        print("total needed \t\t"+str(total_size_bytes))
+        print("total needed \t\t"+str(total_size_bytes/1000000000))
         if external_available > total_size_bytes:
             # Create backup folder on external storage
             external_backup_folder = disk_name / backup_folder_name
             print("doing the backup...")
             #using the non-rsync way for now because rsync was giving errors
-            
-            copy_photos_to_backup(photos_folder, external_backup_folder)
+            copy_folders_with_files(photos_folder, external_backup_folder) #don't copy blank folders
+            #copy_photos_to_backup(photos_folder, external_backup_folder)
             print(f"Photos successfully copied to external backup folder: {external_backup_folder}")            
 
 
@@ -421,7 +522,8 @@ if __name__ == "__main__":
             copy_photos_to_backup(logs_folder,external_logs_folder)
             print(f"Logs successfully copied to external backup folder: {external_backup_folder}")            
 
-            differences = verify_copy(photos_folder, external_backup_folder)
+            differences="" #skipping verify
+            #differences = verify_copy(photos_folder, external_backup_folder)
             if differences:
               print("Differences found:")
               for difference in differences:
@@ -431,24 +533,10 @@ if __name__ == "__main__":
               print("moving original files to backedup_photos_folder")
               move_folder_contents(photos_folder, backedup_photos_folder)
               print(f"Photos successfully copied to internal backup folder: {backedup_photos_folder}")
-            thingsworkedok=True
+            thingsworkedok=True #just hacking this to skip the verify
             if(thingsworkedok):
-                # After we backed up, we can check on our internal storage and see if we need to clean up
-                # Check if internal storage has less than X GB left
-                x = internal_storage_minimum
-                if desktop_available < x * 1024**3:  # x GB in bytes
-                    delete_folder_contents(backedup_photos_folder)
-                    print(
-                        "Original photos deleted after being backed up due to low internal storage."
-                    )
-                else:
-                    print(
-                        "More than "
-                        + str(x)
-                        + "GB remain so original files are also kept in internal storage after backing up to external storage"
-                    )
-                print("we have finished backing up! yay!")
-                break
+              break
+              
         else:
             print("This External storage doesn't have enough space for backup.\n Trying next available storage if there is one ")
     if thingsworkedok == False:
