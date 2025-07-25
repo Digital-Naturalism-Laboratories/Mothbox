@@ -15,9 +15,15 @@ from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPat
 
 #~~~~Variables to Change~~~~~~~
 
+<<<<<<< Updated upstream
 INPUT_PATH = r"/Volumes/Mothbox C/Deployments/Indonesia/Les_Landak_LiquidSerau_2025-07-12"  # raw string
 
 YOLO_MODEL = r"/Users/brianna/Documents/GitHub/Mothbox/AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
+=======
+INPUT_PATH = r"D:\MothboxData_Hubert\data\Panama\Azuero_AbilioPON045_PrizeCrab_2025-04-10\2025-04-13"  # raw string
+
+YOLO_MODEL = r"C:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox Github\Mothbox\AI\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
+>>>>>>> Stashed changes
 
 IMGSZ = 1600  # Should be same imgsz as used in training for best results!
 

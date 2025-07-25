@@ -54,9 +54,16 @@ from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
 
 # ~~~~Variables to Change~~~~~~~
+<<<<<<< Updated upstream
 INPUT_PATH = r"/Volumes/Mothbox C/Deployments/Indonesia/Les_WilanForestEdge_EfectoMinla_2025-07-01"
 
 SPECIES_LIST = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+=======
+INPUT_PATH = (
+    r"D:\MothboxData_Hubert\data\Panama\Azuero_AbilioPON045_PrizeCrab_2025-04-10\2025-04-13"  # raw string
+)
+SPECIES_LIST = r"C:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox Github\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+>>>>>>> Stashed changes
 
 """ KINGDOM = 0
     PHYLUM = 1

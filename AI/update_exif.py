@@ -8,7 +8,12 @@ import os
 import platform
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
+<<<<<<< Updated upstream
 CSV_PATH = r"/Volumes/Mothbox C/Deployments/Indonesia/Les_Alley_EfectoMinla_2025-06-20/2025-06-20/BriID/2025-06-20_BriID_exportdate_2025-07-13.csv"
+=======
+CSV_PATH = r"D:/MothboxData_Hubert/data/Panama/Azuero_EcoVenaoAZ017_flatHapuku_2025-04-11/2025-04-12/ID_HS_OrderLevel/2025-04-12_ID_HS_OrderLevel_exportdate_2025-07-09.csv"
+
+>>>>>>> Stashed changes
 exifPath="exiftool" #mac or linux
 if(platform.system()=='Windows'):
     exifPath="exiftool-13.32_64/exiftool"
