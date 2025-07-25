@@ -11,18 +11,11 @@ from datetime import datetime, timedelta
 import unicodedata
 import pandas as pd
 
-<<<<<<< Updated upstream
-INPUT_PATH = r'/Volumes/Mothbox C/Deployments/Indonesia/Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25/2025-06-25/BriID'
-UTC_OFFSET=8 #indonesiaD
-# Specify the path to your taxonomy CSV file
-TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv"
-=======
 INPUT_PATH = r'D:\MothboxData_Hubert\data\Panama\Azuero_EcoVenaoAZ033_unrulyArao_2025-04-11\2025-04-12\ID_HS_OrderLevel'
 UTC_OFFSET=-5 #panama
 # Specify the path to your taxonomy CSV file
 TAXA_LIST_PATH = r'c:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox Github\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv'
 
->>>>>>> Stashed changes
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
 def OLDcreate_occurrence_id(filename, latitude, longitude):

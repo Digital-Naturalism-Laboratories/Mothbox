@@ -29,19 +29,13 @@ import platform
 # Import the function from json_to_csv_converter.py
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
-<<<<<<< Updated upstream
-INPUT_PATH = r"/Volumes/Mothbox C/Deployments/Indonesia/Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25/2025-06-25"
-METADATA_PATH=r'/Users/brianna/Desktop/Auto Calculations - Mothbox Main Metadata field sheet (Bilingue) (Responses) - Form responses 1.csv'
-UTC_OFFSET= 8 #Panama is -5, change for different locations
 
-TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv" #ce/taxonomy?country=PA&taxon_key=212
-=======
-INPUT_PATH = r"F:\MothboxData_Hubert\data\Panama\Azuero_EcoVenaoAZ018_calmoBarbo_2025-04-11\2025-04-11\ID_HS_OrderLevel"
-METADATA_PATH = r'F:\MothboxData_Hubert\mothbox_metadata.csv'
+INPUT_PATH = r"D:\MothboxData_Hubert\data\Panama\Azuero_EcoVenaoAZ018_calmoBarbo_2025-04-11\2025-04-11\ID_HS_OrderLevel"
+METADATA_PATH = r'D:\MothboxData_Hubert\mothbox_metadata.csv'
 UTC_OFFSET= -5 #Panama is -5, change for different locations
 
 TAXA_LIST_PATH = r"c:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox Github\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
->>>>>>> Stashed changes
+
 
 SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
 
