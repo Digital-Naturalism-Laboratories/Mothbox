@@ -3,7 +3,7 @@ layout: default
 title: License and Disclaimer
 parent: About the Mothbox
 has_children: false
-nav_order: 9
+nav_order: 7
 ---
 # CERN Open Hardware Licence Version 2 - Weakly Reciprocal
 
