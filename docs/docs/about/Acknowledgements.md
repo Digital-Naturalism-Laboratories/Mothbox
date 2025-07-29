@@ -30,14 +30,16 @@ Bri Johns is an open science hardware researcher. After her role steering the Ga
 # Acknowledgements
 
 The Mothbox has been made possibly with help from many individuals and groups like 
+* Wildlabs.net
+* ARM
+* The American Museum of Natural History
 
 * Daisy Dent
 * Yash Sondhi
 * Owen Mcmillan
 * Sol Parra Santos
 * Experiment.com
-* Wildlabs.net
-* ARM
+
 * Christopher Lawrence
 * Phoebe Zarnetske and the Michigan X-prize group
 * GOSH community openhardware.science
@@ -45,21 +47,28 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Julian Stirling
 * Wildlives Rhode Island group
 * Matt Flagg
-* Pro-eco azuero
+* Pro-Eco Azuero
+* Ponterra
+
 * Totumas Crew
  * Jessie Tejara-Fabian
  * Jeff Dietrich
  * Mulget Amaru
-* Ponterra
 * Beetlepalooza (Sponsored by Imageomics Lab at Ohio State University)
 * Bucket of Bugs Beetlepalooza group
   * Elizabeth Campolongo, Ernie Parke, Andy Quitmeyer, Matt Thompson
 * Autodesk Foundation (Software Donation)
+* The McGuire Center for Lepidoptery
+
 * University of Washington (Project Storage Space)
+
+* PCB Assistance
+  * Paul Parkview 
+  * Josh Muffin
+  * Joel Murphy
+
 * [TroubleMaker Shenzhen](https://troublemaker.site/)
   * Henk, Terry, and Ming
-* Paul Parkview
-  * KiCAD help  
 
 
 
