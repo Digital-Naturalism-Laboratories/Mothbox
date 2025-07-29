@@ -92,6 +92,25 @@ The v4 has many features that improved upon previous versiions such as
 * Ability to function as its own hotspot for debugging
 * Refined options for UV attractants (Mothbeam, external or internal attractors)
 
+![PXL_20240806_222621232 MP-EDIT](https://github.com/user-attachments/assets/4fe95d31-b786-4dbc-875e-f3d002bb78e3)
+
+
+
+# V5
+*2025 Q2 -2026 Q2*
+
+**$70,000 USD** + PhD Student
+
+
+The target of the v5 mothbox is to make a mass-manufacturable version of the device. We managed to win the Wildlabs award for the second year in a row! This gave us $50k to do rapid prototyping to design a Mothbox PCB that can be readily made by manufacturers around the world! Jesse Barber from the American Musuem of Natural History also supported the project with 20k to help do workshops and training in US national parks as well as the Museum in NYC. In addition to this, Bri Johns got funding to start an entire PhD on the Mothbox at Monash University in Melbourne, Australia!
+
+Key v5 features:
+* Minimal parts needed to order (just PCB, Pi, Camera, Battery, Box)
+* Rapid build time! Can assemble electronics in 20 minutes
+* Reduced cost. Integration of many parts into PCB shaves lots of money off the parts cost.
+![20250616_145820](https://github.com/user-attachments/assets/2f878777-d2f1-47e7-9e6d-ff9ed639c667)
+
+
 # Mothbeam
 The Mothbeam is an open-source ultra-low cost Lepiled alternative. It developed in parallel with the Mothbox after Led Designer, Mortiz Buttlar, heard of the Mothbox and offered to contribute his expertise. He developed an ultra low cost set of modular PCBs that could be waterproofed and cooled when manufactured with low cost methods. It's not a partially standalone project as well as integrated into the Mothbox as a UV attractor.
 
