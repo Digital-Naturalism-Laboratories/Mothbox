@@ -11,11 +11,11 @@ from datetime import datetime, timedelta
 import unicodedata
 import pandas as pd
 
-INPUT_PATH = r'D:\MothboxData_Hubert\data\Panama\Azuero_EcoVenaoAZ033_unrulyArao_2025-04-11\2025-04-12\ID_HS_OrderLevel'
-UTC_OFFSET=-5 #panama
-# Specify the path to your taxonomy CSV file
-TAXA_LIST_PATH = r'c:\Users\Hubert\Desktop\Biodiversity Monitoring\MothBox\Mothbox Github\Mothbox\AI\SpeciesList_CountryPanama_TaxaInsecta.csv'
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26\AQMStest"
+UTC_OFFSET=-5 #panama is -5   indonesia is 8
 
+# Specify the path to your taxonomy CSV file
+TAXA_LIST_PATH = r"SpeciesList_CountryIndonesia_TaxaInsecta.csv"
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
 def OLDcreate_occurrence_id(filename, latitude, longitude):
@@ -130,39 +130,34 @@ def load_taxa_lookup(taxa_list_path):
     taxa_lookup_df = pd.read_csv(taxa_list_path, sep='\t')
     return taxa_lookup_df
 
-# Function to find the deepest taxon information based on the deepest rank and value
 def find_deepest_taxon_info(taxa_list, taxa_values, taxa_lookup):
-    # Step 1: Determine the deepest rank and its corresponding value
-    deepest_rank = None
-    deepest_value = None
+    # Step 1: Build a reversed list of available taxonomic ranks and values (deepest first)
+    valid_ranks = [(rank, value) for rank, value in zip(taxa_list, taxa_values) if value not in ("", None)]
+    valid_ranks.reverse()  # Start from the most specific (species) and go up to kingdom
 
-    # Find the deepest rank with a non-empty value
-    for rank, value in zip(taxa_list, taxa_values):
-        if value != "" and value is not None:
-            deepest_rank = rank
-            deepest_value = value
-
-    # Check if we found a deepest rank and value
-    if deepest_rank and deepest_value:
-        #print(f"Deepest Rank: {deepest_rank}, Deepest Value: {deepest_value}")
-
-        # Step 2: Filter rows in taxa_lookup where 'taxonRank' matches the deepest rank (case insensitive)
-        filtered_rows = taxa_lookup[taxa_lookup['taxonRank'].str.lower() == deepest_rank.lower()]
+    # Step 2: Attempt to find a match starting from the deepest rank
+    for rank, value in valid_ranks:
+        # Filter rows where 'taxonRank' matches this rank (case-insensitive)
+        filtered_rows = taxa_lookup[taxa_lookup['taxonRank'].str.lower() == rank.lower()]
         
-        # Step 3: Find the row where the 'deepest_value' matches (case insensitive)
-        matched_row = filtered_rows[filtered_rows[deepest_rank].str.lower() == deepest_value.lower()]
+        # Ensure the column exists in the dataframe
+        if rank not in filtered_rows.columns:
+            continue
 
-        # Step 4: If a match is found, return taxonKey and scientificName
+        # Find the row where this taxon value matches (case-insensitive)
+        matched_row = filtered_rows[filtered_rows[rank].str.lower() == value.lower()]
+
+        # Step 3: If a match is found, return taxonKey and scientificName
         if not matched_row.empty:
             taxon_id = matched_row['taxonKey'].values[0]
             scientific_name = matched_row['scientificName'].values[0]
             return taxon_id, scientific_name
-        else:
-            print("No match found for the given deepest rank and value.")
-            return None, None
-    else:
-        print(str(taxa_values)+"No valid deepest rank and value found. Probably ID'ed as an Error category, don't worry")
-        return None, None
+
+    # Step 4: If no match found at any level, return None
+    print(str(taxa_values) + " No match found at any rank level.")
+    return None, None
+
+
 def create_uniquedatasetID(deployment_name, oid_dict):
   """
   Creates a deployment name by concatenating the given deployment_name 
