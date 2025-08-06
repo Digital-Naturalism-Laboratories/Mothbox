@@ -57,6 +57,9 @@ pip install numpy
 pip install fiftyone
 ```
 ```
+fiftyone plugins download https://github.com/voxel51/fiftyone-plugins --plugin-names @voxel51/io
+```
+```
 pip install ultralytics
 ```
 (Ultralytics is a big one that might take a while to install)
@@ -93,6 +96,15 @@ sudo pip install pillow
 
 ```
 sudo pip install numpy
+```
+```
+pip install fiftyone
+```
+```
+pip install fiftyone
+```
+```
+fiftyone plugins download https://github.com/voxel51/fiftyone-plugins --plugin-names @voxel51/io
 ```
 
 ```
