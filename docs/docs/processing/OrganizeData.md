@@ -48,7 +48,7 @@ The "raw" photos we capture look like this. They are insects on a white backgrou
 ![image](https://github.com/user-attachments/assets/b7c24479-4508-4823-b978-6c5e3e1918b9)
 
 ### Metadata
-Next we [create a metadata file](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/createmetadata/) for each raw photo. This contains information about the sampling like:
+Next we [create a metadata file](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Auto%20Calculations%20-%20Mothbox%20Main%20Metadata%20field%20sheet%20(Bilingue)%20(Responses)%20-%20Form%20responses%201.csv) for each raw photo. This contains information about the sampling like:
 ```
 - GPS: [lat,lon]
 - Person Who Collected it
