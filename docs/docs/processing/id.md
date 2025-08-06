@@ -13,7 +13,7 @@ Like many of the other processing scripts, this program takes in several Inputs 
 
 INPUT_PATH  - set this to the folder you want to ID (or a parent folder for a group of nights you want to ID).
 
-SPECIES_LIST - path to a CSV file downloaded from GBIF's species list generator. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212).
+SPECIES_LIST - path to a CSV file downloaded from GBIF's species list generator. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216). 
 
 TAXONOMIC_RANK_FILTER=Rank.ORDER
 This is the filter where you determine how deep you want the detections to go. The default is set to Rank.ORDER to try to determine what the ID of the creature is down to the ORDER level. You can change this all the way until Rank.SPECIES, but the accuracy of the AI model falls off the deeper you get. 
