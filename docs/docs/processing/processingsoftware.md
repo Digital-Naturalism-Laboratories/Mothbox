@@ -7,9 +7,10 @@ nav_order: 0
 ---
 
 # Download Software to Help Run Post-Processing Scripts
-* [Python](https://www.python.org/downloads/)
+* [Python](https://www.python.org/downloads/) (Currently it is using Python 3.12- later versions might give grumpiness)
 * [Visual Studio Code](https://code.visualstudio.com/download) (This is an interface for running and using code)
 * [Github Desktop](https://desktop.github.com/download/)
+* [ExifTool](https://exiftool.org/)
 
 
 After you install the above software on your computer (in particular, Python), you can then install some more software in a special, magical nerdy way.
