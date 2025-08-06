@@ -150,7 +150,7 @@ def find_deepest_taxon_info(taxa_list, taxa_values, taxa_lookup):
         # Step 3: If a match is found, return taxonKey and scientificName
         if not matched_row.empty:
             taxon_id = matched_row['taxonKey'].values[0]
-            scientific_name = matched_row['scientificName'].values[0]
+            scientific_name = matched_row['scientificName'].values[0] #GBIF Species lists don't apparently have a common name
             return taxon_id, scientific_name
 
     # Step 4: If no match found at any level, return None
@@ -259,6 +259,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                     tclass = tag[len("CLASS"):].strip('_')
                 elif tag.startswith("ORDER"):
                     order = tag[len("ORDER"):].strip('_')
+                    #print("found an ORDER tag!")
                 elif tag.startswith("FAMILY"):
                     family = tag[len("FAMILY"):].strip('_')
                 elif tag.startswith("GENUS"):
@@ -271,8 +272,10 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                     scientificName = tag[len("scientificName"):].strip('_')
                 elif tag.startswith("IDby"):
                     identified_by = tag[len("IDby"):].strip('_')
-                elif tag.startswith("ERROR"):
+                elif tag.upper().startswith("ERROR"):
                     commonName="ERROR"
+                    #print("found an error tag!")
+                
 
 
             if tag.startswith("taxonID"):

@@ -708,7 +708,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
     #print(naturtag.metadata.image_metadata.ImageMetadata(image_path=r"c:\Users\andre\Desktop\Dinacon Stuff\test\cuervoCinife_2025_06_30__04_53_06_HDR0_0_Mothbot_yolo11m_4500_imgsz1600_b1_2024-01-18.pt.jpg"))
     #add_taxonomy_subject_and_tags_exiv2(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_exiv2_cli(str(full_patch_path), taxonomic_list)
-    tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) #this works but is super slow beacause it opens exif tool every time
+    tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) 
     #tagger.add_taxonomy_with_exiftool(full_patch_path, taxonomic_list)
     
     taxonomic_list.append(ID_by)
