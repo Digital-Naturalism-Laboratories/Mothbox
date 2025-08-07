@@ -1,0 +1,7 @@
+[project]
+name = "mothbot"
+version = "0.1.0"
+description = "Hopefully a virtual environment manager that should let anyone run mothbot easily!"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
