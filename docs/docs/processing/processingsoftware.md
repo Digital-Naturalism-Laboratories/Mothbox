@@ -15,6 +15,51 @@ nav_order: 0
 
 After you install the above software on your computer (in particular, Python), you can then install some more software in a special, magical nerdy way.
 
+# (EXPERIMENTAL) Set up a managed environment with uv
+In order for custom scripts to run on a computer, they often need to reference specific libraries. Big projects might use many different libraries together to perform a task, and it can get tricky to manage all the different libraries that might need to be installed on your system. On top of that, sometimes these libraries get updated in ways that are incompatible with others versions of other software. In order to help make this easier, we can install a special program called a package manager. We are using a thing called ["uv"](https://docs.astral.sh/uv/)
+
+**Install UV**
+
+There's guides available about how to install, but the easiest way is just to type this in a terminal
+```
+pip install uv
+```
+**Go to Mothbot Directory**
+In the terminal change the directory to the directory where you AI/Mothbot folder is (that you downloaded from the github)
+for instance on my computer, I type:
+
+```
+cd C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot
+```
+
+next run these lines. After the first line, it might ask you if you want to replace an existing environment, you can say yes!
+
+```
+uv venv
+.venv\Scripts\activate
+```
+now your terminal should have a little marking on the left side that shows you are inside a custom "environment." It probably says "Mothbot" 
+<img width="732" height="94" alt="image" src="https://github.com/user-attachments/assets/760f9c77-8f66-4213-a2e3-cb52bed5477d" />
+
+now we will use the magic of uv to install all the things this software needs in one step
+```
+uv pip install -r requirements.txt
+```
+This might take a little bit as it downloads all the extra software you need (and the correct versions we need!).
+
+after this, you can then just type:
+
+```
+python Mothbot_Detect.py
+```
+Or replace that script name with any script you want to run (like Mothbot_ID.py)
+
+
+
+
+
+
+
 # Download More Software Using the Terminal
 
 Python installs a special thing called "pip" onto your machine, and you can use pip to install extra open source software and libraries onto your computer super easily!
