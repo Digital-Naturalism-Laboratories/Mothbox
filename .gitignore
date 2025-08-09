@@ -9,3 +9,6 @@ AI/utility_scripts/RemoveAccents_FTP.py
 *.pyc
 /AI/__pycache__
 /AI/__pycache__
+/Hardware/PCB/AndyMothbeam_forMBv5.0.1/Mothbeam_UV_365_395_405/Mothbeam-backups
+/Hardware/PCB/AndyMothbeam_forMBv5.0.1/Mothbeam_UV_365_395_405/Mothbeam-backups
+/Hardware/PCB/AndyMothbeam_forMBv5.0.1/Mothbeam/Mothbeam-backups
