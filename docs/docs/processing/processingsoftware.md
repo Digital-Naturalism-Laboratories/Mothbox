@@ -29,29 +29,71 @@ If you look into this set of scripts you downloaded, you can go into the Mothbox
 
 ![image](https://github.com/user-attachments/assets/1968dbe9-37c2-46ae-8afe-7f58c7e57774)
 
+# Open Visual Studio Code
+Visual Studio Code is an open source editor for dealing with programming scripts. It has some handy built-in features that will help us run this code you downloaded.
+Open the program. 
+Click "Open Folder"
+<img width="1903" height="1032" alt="image" src="https://github.com/user-attachments/assets/1afd9157-e431-4bb7-9044-e8b78bcc1667" />
+The folder you want to open is called "Mothbot" inside the folder called "AI" in the github folder.
+<img width="951" height="532" alt="image" src="https://github.com/user-attachments/assets/5f074db6-522a-4bc8-a747-c6d6f321db36" />
+Now at the top of Visual Studio Code click "Terminal>New Terminal"
+<img width="498" height="405" alt="image" src="https://github.com/user-attachments/assets/012c1e3c-a8d3-4c81-ab05-a883ffb09aee" />
+This opens a special zone at the bottom of the screen that lets us configure some software in special ways.
+You will use this to type special codes in to set up your computer to prepare it for processing data!
+
 # Set up coding managed environment with uv
 In order for custom scripts to run on a computer, they often need to reference specific libraries. Big projects might use many different libraries together to perform a task, and it can get tricky to manage all the different libraries that might need to be installed on your system. On top of that, sometimes these libraries get updated in ways that are incompatible with others versions of other software. In order to help make this easier, we can install a special program called a package manager. We are using a thing called ["uv"](https://docs.astral.sh/uv/)
 
 **Install UV**
 
-There's guides available about how to install, but the easiest way is just to type this in a terminal
+There's guides available about how to install, but the easiest way is just to type this in the terminal
 ```
 pip install uv
 ```
+<img width="1715" height="540" alt="image" src="https://github.com/user-attachments/assets/e472ed6c-65ef-4993-bec4-02aa86f7cc81" />
+
+
 **Go to Mothbot Directory**
-In the terminal change the directory to the directory where you AI/Mothbot folder is (that you downloaded from the github)
+Since you opened this folder, your terminal should say that it is in the correct directory ("Mothbox/AI/Mothbot"). 
+<img width="494" height="29" alt="image" src="https://github.com/user-attachments/assets/369dbb5c-b56f-4939-9042-cb0981a7b114" />
+
+But if your terminal says something else, click in the terminal change the directory to the directory where your AI/Mothbot folder is (that you downloaded from the github)
 for instance on my computer, I type:
 
 ```
 cd C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot
 ```
 
-next run these lines. After the first line, it might ask you if you want to replace an existing environment, you can say yes!
+next run each of these lines, and press enter after each line. (After the first line, it might ask you if you want to replace an existing environment, you can say yes!)
 
 ```
 uv venv
+```
+<img width="734" height="89" alt="image" src="https://github.com/user-attachments/assets/45bf1bb6-b604-4548-b770-3f4f3165d54f" />
+
+```
 .venv\Scripts\activate
 ```
+
+NOTE: If you are using windows, you might get an error after you write the "activate" line. The error will likely look like this
+<img width="1599" height="179" alt="image" src="https://github.com/user-attachments/assets/f110e074-a8ed-4190-a9de-39c368420ad1" />
+```
+Press the windows-button on your keyboard.
+2. Type ‘PowerShell’
+3. Right-click Windows PowerShell
+4. Click Run as Administrator
+5. Run the following command and confirm with ‘Y’
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+```
+
+Now run this again
+```
+.venv\Scripts\activate
+```
+and it should work!
+<img width="628" height="39" alt="image" src="https://github.com/user-attachments/assets/058d04fa-d265-400a-9199-b2b5a3648914" />
+
+
 now your terminal should have a little marking on the left side that shows you are inside a custom "environment." It probably says "Mothbot" 
 <img width="732" height="94" alt="image" src="https://github.com/user-attachments/assets/760f9c77-8f66-4213-a2e3-cb52bed5477d" />
 
@@ -60,8 +102,16 @@ now we will use the magic of uv to install all the things this software needs in
 uv pip install -r requirements.txt
 ```
 This might take a little bit as it downloads all the extra software you need (and the correct versions we need!).
+<img width="737" height="134" alt="image" src="https://github.com/user-attachments/assets/75ba6943-6ae6-4d1f-a7b6-5412434c70d0" />
 
-after this, you can then just type:
+
+
+# Now you can run scripts!
+Your environment should be set up, and now after this, you can run scripts!
+
+
+
+## Run scripts by typing in the names of the scripts
 
 ```
 python Mothbot_Detect.py
@@ -69,8 +119,15 @@ python Mothbot_Detect.py
 Or replace that script name with any script you want to run (like Mothbot_ID.py)
 
 
+## Or Run scripts in Visual Studio with a big button
+You can open scripts in your folder and then just hit the big "|>" run button
+<img width="1861" height="652" alt="image" src="https://github.com/user-attachments/assets/5c2b339f-8da9-48a0-9805-37d5e7ad59f8" />
 
-
+(Note you might need to re-activate your environment at the bottom of the screen in the terminal before hitting the Run button
+```
+.venv\Scripts\activate
+```
+)
 
 
 
