@@ -1394,28 +1394,28 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "easyeda2kicad:JNJ-LEJB0111W60_26MIL_450-460NM"
+		(symbol "easyeda2kicad:JNJ-LTJB0115W30_56MIL_450-460NM"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "LED"
-				(at 0 6.35 0)
+				(at 0 5.08 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "JNJ-LEJB0111W60/26MIL/450-460NM"
-				(at 0 -6.35 0)
+			(property "Value" "JNJ-LTJB0115W30/56MIL/450-460NM"
+				(at 0 -10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" "easyeda2kicad:LED-SMD_3P-L3.5-W3.5_JNJ-LEJB0111W60"
-				(at 0 -8.89 0)
+			(property "Footprint" "easyeda2kicad:LED-SMD_3P-L3.5-W3.5-FD-1"
+				(at 0 -12.7 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1441,8 +1441,8 @@
 					(hide yes)
 				)
 			)
-			(property "LCSC Part" "C19185871"
-				(at 0 -11.43 0)
+			(property "LCSC Part" "C19185864"
+				(at 0 -15.24 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -1450,7 +1450,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "JNJ-LEJB0111W60_26MIL_450-460NM_0_1"
+			(symbol "JNJ-LTJB0115W30_56MIL_450-460NM_0_1"
 				(polyline
 					(pts
 						(xy -4.06 3.3) (xy -3.05 2.79) (xy -3.56 2.29) (xy -4.06 3.3)
@@ -1473,18 +1473,6 @@
 					)
 					(fill
 						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 1.27) (xy -2.54 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
 					)
 				)
 				(polyline
@@ -1560,25 +1548,7 @@
 					)
 				)
 				(pin unspecified line
-					(at -5.08 1.27 0)
-					(length 2.54)
-					(name "K"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -1.27 0)
+					(at -5.08 0 0)
 					(length 2.54)
 					(name "K"
 						(effects
@@ -1605,210 +1575,6 @@
 							)
 						)
 					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "easyeda2kicad:JNJ-LEJW0113W30_C36MIL_5500-6500K"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "LED"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "JNJ-LEJW0113W30/C36MIL/5500-6500K"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:LED-SMD_3P-L3.5-W3.5-R-RD-B"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C19185868"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "JNJ-LEJW0113W30_C36MIL_5500-6500K_0_1"
-				(polyline
-					(pts
-						(xy -4.06 3.3) (xy -3.05 2.79) (xy -3.56 2.29) (xy -4.06 3.3)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -3.05 4.32) (xy -2.03 3.81) (xy -2.54 3.3) (xy -3.05 4.32)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.29 1.52) (xy -3.3 2.54) (xy -2.29 1.52)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 2.54) (xy -2.29 3.56) (xy -1.27 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 1.78) (xy -1.27 -1.78)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.27 0) (xy -2.54 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 1.78) (xy -1.27 0) (xy 1.27 -1.78) (xy 1.27 1.78)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 0) (xy 1.27 0)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 0 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
 					(number "1"
 						(effects
 							(font
@@ -1818,16 +1584,16 @@
 					)
 				)
 				(pin unspecified line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "2"
+					(at 5.08 -5.08 180)
+					(length 4.064)
+					(name "A"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "2"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -2596,6 +2362,216 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "easyeda2kicad:XL-HD6070UWC-A2-BD"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "LED"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "XL-HD6070UWC-A2-BD"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:LED-SMD_XL-HD6070UBC-A2"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C42458854"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "XL-HD6070UWC-A2-BD_0_1"
+				(polyline
+					(pts
+						(xy -4.06 3.3) (xy -3.05 2.79) (xy -3.56 2.29) (xy -4.06 3.3)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -3.05 4.32) (xy -2.03 3.81) (xy -2.54 3.3) (xy -3.05 4.32)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.29 1.52) (xy -3.3 2.54) (xy -2.29 1.52)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy -2.29 3.56) (xy -1.27 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 1.78) (xy -1.27 -1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 0) (xy -2.54 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.27 1.78) (xy -1.27 0) (xy 1.27 -1.78) (xy 1.27 1.78)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 0) (xy 1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 2.54)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 0 -5.08 90)
+					(length 4.064)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 2.54)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:GND"
 			(power)
 			(pin_names
@@ -2760,9 +2736,9 @@
 		)
 		(uuid "9d6ed428-24bc-427f-a139-72de3d32ab14")
 	)
-	(text "LCSC versions of LEDs\n\n- 365 C2833504 (silverlight brand 700ma)\n\n- 395 C2833576 (silverlight brand 700ma)\n\n- 405 C2833578 (silverlight brand 700ma)\n\n\n- 450 - C19185871 (Blue 350ma)\n\n- 520 C19185875 (Green 700ma)\n\n- White C19185868 (5500-7000k 700ma)"
+	(text "LCSC versions of LEDs\n\n- 365 C2833504 (silverlight brand 700ma)\n\n- 395 C2833576 (silverlight brand 700ma)\n\n- 405 C2833578 (silverlight brand 700ma)\n\n\n- 450 - C19185871 (Blue 350ma) (Blue Alternate C19185864 )\n\n- 520 C19185875 (Green 700ma)\n\n- White C19185868 (5500-7000k 700ma)\n\n- white smd 6070 C42458854"
 		(exclude_from_sim no)
-		(at 245.872 76.708 0)
+		(at 246.38 69.85 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3033,6 +3009,16 @@
 	)
 	(wire
 		(pts
+			(xy 204.47 76.2) (xy 204.47 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0d2390d5-a19e-4df1-befc-e5cbd235deb2")
+	)
+	(wire
+		(pts
 			(xy 45.72 134.62) (xy 48.26 134.62)
 		)
 		(stroke
@@ -3060,6 +3046,16 @@
 			(type default)
 		)
 		(uuid "1af8c16c-9736-4abb-8276-754f9baa2fb7")
+	)
+	(wire
+		(pts
+			(xy 203.2 13.97) (xy 203.2 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f526ec2-9878-42ba-91ff-095bf6108dfe")
 	)
 	(wire
 		(pts
@@ -3093,6 +3089,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 20.32) (xy 201.93 20.32)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "22967228-ded3-48a3-9822-b144560c0b3d")
+	)
+	(wire
+		(pts
 			(xy 201.93 30.48) (xy 201.93 45.72)
 		)
 		(stroke
@@ -3110,6 +3116,16 @@
 			(type default)
 		)
 		(uuid "2a38ca30-6a0f-40f9-b609-05c8e25498f9")
+	)
+	(wire
+		(pts
+			(xy 199.39 86.36) (xy 201.93 86.36)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c225884-3190-465f-8eae-190e43e038bc")
 	)
 	(wire
 		(pts
@@ -3453,7 +3469,7 @@
 	)
 	(wire
 		(pts
-			(xy 204.47 30.48) (xy 214.63 30.48)
+			(xy 207.01 20.32) (xy 217.17 20.32)
 		)
 		(stroke
 			(width 0)
@@ -3643,16 +3659,6 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 20.32) (xy 203.2 19.05)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd75b617-fb95-4310-8c81-c1425493207a")
-	)
-	(wire
-		(pts
 			(xy 41.91 134.62) (xy 41.91 127)
 		)
 		(stroke
@@ -3703,7 +3709,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 19.05) (xy 204.47 19.05)
+			(xy 203.2 13.97) (xy 204.47 13.97)
 		)
 		(stroke
 			(width 0)
@@ -4155,7 +4161,7 @@
 		)
 	)
 	(label "T1"
-		(at 214.63 30.48 0)
+		(at 217.17 20.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4307,7 +4313,7 @@
 	)
 	(hierarchical_label "LED+"
 		(shape input)
-		(at 204.47 19.05 0)
+		(at 204.47 13.97 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -4382,7 +4388,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint_Small")
-		(at 214.63 30.48 0)
+		(at 217.17 20.32 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom no)
@@ -4390,7 +4396,7 @@
 		(dnp yes)
 		(uuid "0fe4d4ce-df97-4fc5-8d51-6e1ac6df2fdf")
 		(property "Reference" "TP2"
-			(at 214.122 27.432 0)
+			(at 216.662 17.272 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4399,7 +4405,7 @@
 			)
 		)
 		(property "Value" "LED2+"
-			(at 213.106 33.02 0)
+			(at 215.646 22.86 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4408,7 +4414,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
-			(at 219.71 30.48 0)
+			(at 222.25 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4417,7 +4423,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 219.71 30.48 0)
+			(at 222.25 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4426,7 +4432,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 214.63 30.48 0)
+			(at 217.17 20.32 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4639,85 +4645,6 @@
 			(project "mothbeam12V"
 				(path "/a270892a-30ca-43aa-91d1-ed114756b159"
 					(reference "TP5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "easyeda2kicad:JNJ-LEJW0113W30_C36MIL_5500-6500K")
-		(at 201.93 81.28 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2f689a81-3071-4bf6-a090-e8c517d71d4e")
-		(property "Reference" "LED3"
-			(at 171.45 83.058 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "JNJ-LEJW0113W30/C36MIL/5500-6500K"
-			(at 171.45 80.518 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L3.5-W3.5-R-RD-B"
-			(at 212.09 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 201.93 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 201.93 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C19185868"
-			(at 214.63 81.28 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ef1f6472-f34f-4d44-a57a-110f54f24886")
-		)
-		(pin "3"
-			(uuid "8bf6cb96-6dc8-40f9-9ac6-1c9d252f09a7")
-		)
-		(pin "2"
-			(uuid "5809bd9c-47f5-4d26-9ebd-b97f583ea05b")
-		)
-		(instances
-			(project ""
-				(path "/a270892a-30ca-43aa-91d1-ed114756b159"
-					(reference "LED3")
 					(unit 1)
 				)
 			)
@@ -5419,85 +5346,6 @@
 		)
 	)
 	(symbol
-		(lib_id "easyeda2kicad:JNJ-LEJB0111W60_26MIL_450-460NM")
-		(at 203.2 25.4 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b14a6010-6c86-485a-9659-e1621f68d6bc")
-		(property "Reference" "LED2"
-			(at 180.086 29.21 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "JNJ-LEJB0111W60/26MIL/450-460NM"
-			(at 180.086 26.67 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L3.5-W3.5_JNJ-LEJB0111W60"
-			(at 212.09 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 203.2 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" ""
-			(at 203.2 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC Part" "C19185871"
-			(at 214.63 25.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "b59a480d-e7da-4202-bbe3-a3185a78035c")
-		)
-		(pin "1"
-			(uuid "9be54ff7-d575-44a1-bdc1-87e88857a752")
-		)
-		(pin "3"
-			(uuid "eb29d87b-1856-4c2d-9268-30d3c673b291")
-		)
-		(instances
-			(project ""
-				(path "/a270892a-30ca-43aa-91d1-ed114756b159"
-					(reference "LED2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "easyeda2kicad:BCR421UW6-7")
 		(at 60.96 134.62 180)
 		(unit 1)
@@ -6082,6 +5930,88 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:XL-HD6070UWC-A2-BD")
+		(at 199.39 81.28 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "db9de071-6fc6-4f30-9e82-3a693884717e")
+		(property "Reference" "LED4"
+			(at 194.31 80.7699 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "XL-HD6070UWC-A2-BD"
+			(at 194.31 83.3099 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LED-SMD_XL-HD6070UBC-A2"
+			(at 212.09 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 199.39 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 199.39 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C42458854"
+			(at 214.63 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "03558352-a394-441a-af63-7129f2f51411")
+		)
+		(pin "1"
+			(uuid "b531730e-387a-4edd-8d17-f2da37a899d9")
+		)
+		(pin "2"
+			(uuid "c641c0b1-2f58-4ec6-ad92-97185f74d230")
+		)
+		(instances
+			(project ""
+				(path "/a270892a-30ca-43aa-91d1-ed114756b159"
+					(reference "LED4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 45.72 143.51 0)
 		(unit 1)
@@ -6163,6 +6093,87 @@
 			(project "mothbeam12V"
 				(path "/a270892a-30ca-43aa-91d1-ed114756b159"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "easyeda2kicad:JNJ-LTJB0115W30_56MIL_450-460NM")
+		(at 201.93 25.4 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e4490ed8-e69e-4408-bc61-5e81aa2b9393")
+		(property "Reference" "LED3"
+			(at 151.13 24.13 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "JNJ-LTJB0115W30/56MIL/450-460NM"
+			(at 151.13 26.67 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:LED-SMD_3P-L3.5-W3.5-FD-1"
+			(at 214.63 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 201.93 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 201.93 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C19185864"
+			(at 217.17 25.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "5ff6a986-a0eb-49b7-84f2-2461619836f1")
+		)
+		(pin "2"
+			(uuid "29e2622a-0fed-4da6-967f-6c641301e001")
+		)
+		(pin "1"
+			(uuid "af08b986-a993-4470-8677-d438d4852b9d")
+		)
+		(instances
+			(project ""
+				(path "/a270892a-30ca-43aa-91d1-ed114756b159"
+					(reference "LED3")
 					(unit 1)
 				)
 			)
