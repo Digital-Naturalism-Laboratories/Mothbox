@@ -37,7 +37,13 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--input_path", default=INPUT_PATH, required=False)
 parser.add_argument("--yolo_model",default=YOLO_MODEL, required=False)
 parser.add_argument("--imgsz", default=IMGSZ,type=int, required=False)
+parser.add_argument("--gen_bot_det_evenif_human_exists", default=GEN_BOT_DET_EVENIF_HUMAN_EXISTS, required=False)
+parser.add_argument("--overwrite_prev_bot_detections", default=OVERWRITE_PREV_BOT_DETECTIONS,required=False )
+parser.add_argument("--gen_thumbnails", default=GEN_THUMBNAILS, required=False)
 args = parser.parse_args()
+
+
+
 
 print(f"Processing {args.input_path} with model {args.yolo_model} and image size {args.imgsz}")
 
