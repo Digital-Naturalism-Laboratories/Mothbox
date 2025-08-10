@@ -85,6 +85,10 @@ Press the windows-button on your keyboard.
 5. Run the following command and confirm with ‘Y’
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
+NOTE: If you are using a Mac, you will have to add the word 'source' at the front of this line of code. 
+```
+source .venv\Scripts\activate
+```
 
 Now run this again
 ```
@@ -121,7 +125,7 @@ Following the [instructions from this helpful post](https://stackoverflow.com/qu
    _Solution for Linux/MacOS_
 ```
      "python.terminal.activateEnvInCurrentTerminal": true,
-     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"",
+     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 ```
 Note how there might already be a line that says "python.defaultInterpreterPath," that's ok, you can paste your new line below it and it will override that. Or you can even comment it out with // just in case
 <img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/55bbc962-919a-4170-bf13-45cf106c6bb3" />
@@ -146,6 +150,11 @@ You can open scripts in your folder and then just hit the big "|>" run button
 (Note you might need to re-activate your environment at the bottom of the screen in the terminal before hitting the Run button
 ```
 .venv\Scripts\activate
+```
+OR if you have a Mac:
+
+```
+source .venv\Scripts\activate
 ```
 )
 
