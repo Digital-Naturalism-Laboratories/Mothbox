@@ -104,11 +104,31 @@ uv pip install -r requirements.txt
 This might take a little bit as it downloads all the extra software you need (and the correct versions we need!).
 <img width="737" height="134" alt="image" src="https://github.com/user-attachments/assets/75ba6943-6ae6-4d1f-a7b6-5412434c70d0" />
 
+## Auto Activate virtual environment in VS Code
+We want to do one more thing in Visual Studio code to make sure it defaults to activating this cool (Mothbot) environment we just set up. 
+
+Following the [instructions from this helpful post](https://stackoverflow.com/questions/58433333/auto-activate-virtual-environment-in-visual-studio-code), 
+
+* Ctrl+Shift+P,
+* search for "User Settings (JSON)"
+
+* Add the following two lines:
+    _Solution for Windows_
+```
+     "python.terminal.activateEnvInCurrentTerminal": true,
+     "python.defaultInterpreterPath": "${workspaceFolder}\\.venv\\Scripts\\python.exe",
+```
+   _Solution for Linux/MacOS_
+```
+     "python.terminal.activateEnvInCurrentTerminal": true,
+     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"",
+```
+Note how there might already be a line that says "python.defaultInterpreterPath," that's ok, you can paste your new line below it and it will override that. Or you can even comment it out with // just in case
+<img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/55bbc962-919a-4170-bf13-45cf106c6bb3" />
 
 
 # Now you can run scripts!
 Your environment should be set up, and now after this, you can run scripts!
-
 
 
 ## Run scripts by typing in the names of the scripts
@@ -119,7 +139,7 @@ python Mothbot_Detect.py
 Or replace that script name with any script you want to run (like Mothbot_ID.py)
 
 
-## Or Run scripts in Visual Studio with a big button
+## Or Run scripts in Visual Studio with a Big Button
 You can open scripts in your folder and then just hit the big "|>" run button
 <img width="1861" height="652" alt="image" src="https://github.com/user-attachments/assets/5c2b339f-8da9-48a0-9805-37d5e7ad59f8" />
 
@@ -128,8 +148,6 @@ You can open scripts in your folder and then just hit the big "|>" run button
 .venv\Scripts\activate
 ```
 )
-
-
 
 
 
