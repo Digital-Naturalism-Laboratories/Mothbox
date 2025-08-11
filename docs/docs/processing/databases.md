@@ -5,6 +5,16 @@ parent: Processing Data
 has_children: false
 nav_order: 5
 ---
+
+# Make Sure Exiftool is installed
+There is a thing called "ExifTool" that (because exif data on images is super convoluted) needs to be installed to run CreateDataset
+<img width="740" height="285" alt="image" src="https://github.com/user-attachments/assets/b4ecdccf-0567-4ca7-a983-2bd2b6065776" />
+
+if you are using windows, you don't actually have to install it i think. It just points to a relatively positioned folder in the github that has the .exe it runs
+if you are running mac or linux, you need to download exiftool (or the mac package .pkg is actually in in the AI folder of the github already for you as well)
+
+
+
 # Generate Dataset
 The Mothbot_CreateDataset.py script creates a user-friendly, editable dataset for you. It uses a program called Fiftyone to create the User Interface.
 
@@ -12,22 +22,11 @@ The Mothbot_CreateDataset.py script creates a user-friendly, editable dataset fo
 ## Inputs
 We generally will only edit one night at a time.
 ![image](https://github.com/user-attachments/assets/a27f495f-c621-4843-a33f-57a56780df21)
+there are additional files you need like a
+-Species list
+-Metadata file
 
-
-## Pre-processing Thumbnails
-The first time you run the CreateDataset script on a night's data, the first thing it needs to do is create thumbnails for each of the creatures it detected.
-
-![image](https://github.com/user-attachments/assets/1787f882-d496-4dd3-b9da-a81d618ddc40)
-
-This can take a while, and the terminal will show a progress bar.
-
-These thumbnail patch images will be stored in a little folder alongside that night's data called "patches."
-
-![image](https://github.com/user-attachments/assets/329c697d-89a3-4659-99c6-4c8f9b9951c4)
-
-![image](https://github.com/user-attachments/assets/587c14fb-c59e-4f56-8b41-7dfd25225aa7)
-
-Whenever you run this script again, however, it should go much faster, as it won't have to create those thumbnails.
+luckily both are already in the AI file, and already relatively linked in the standard create dataset script. You can replace those files with your own files, or just run as is to test it!
 
 ## Results
 After it completes all the processing, a couple things will happen.
