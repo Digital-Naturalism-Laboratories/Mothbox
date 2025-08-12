@@ -24,4 +24,6 @@ fiftyone-db==1.3.0
 polars==1.4.1
 gradio==5.42.0
 gradio-client==1.11.1
+babel==2.17.0
+tkfilebrowser==2.3.2
 
