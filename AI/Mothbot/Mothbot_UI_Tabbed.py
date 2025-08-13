@@ -2,8 +2,49 @@ import sys
 import os
 import re
 import gradio as gr
+import subprocess
+import sys
+import shlex
 
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
+
+
+
+def run_detection(selected_folders, yolo_model, gen_bot, overwrite_bot):
+    if not selected_folders:
+        yield "No nightly folders selected.\n"
+        return
+
+    for folder in selected_folders:
+        yield f"--- Running detection for {folder} ---\n"
+        cmd = [
+            sys.executable,  # same Python environment
+            "Mothbot_Detect.py",
+            "--input_path", folder,
+            "--yolo_model", yolo_model,
+            "--imgsz", "1600",
+            "--gen_bot_det_evenif_human_exists", str(gen_bot),
+            "--overwrite_prev_bot_detections", str(overwrite_bot),
+        ]
+
+        process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            bufsize=1
+        )
+
+        # Stream output line by line
+        for line in process.stdout:
+            yield line
+
+        process.wait()
+        yield f"--- Finished {folder} ---\n"
+
+
+
+
 
 def select_folder():
     """Open a native folder picker and return the selected folder path (or None)."""
@@ -95,7 +136,53 @@ with gr.Blocks() as demo:
         confirm_btn.click(fn=confirm_selection, inputs=[folder_choices, mapping_state], outputs=selected_paths)
 
     with gr.Tab("Detect"):
-        gr.Markdown("### Detect tab placeholder")
+        gr.Markdown("### Detection Settings")
+
+        # Display selected nightly folders from Deployments tab
+        gr.Markdown("**Selected Nightly Folders:**")
+        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+
+        # YOLO Model selector
+        gr.Markdown("**YOLO Model Path:**")
+        yolo_model_path = gr.Textbox(
+            value=r"../AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
+            label="YOLO Model Path"
+        )
+        yolo_model_file = gr.File(
+            label="or Choose a YOLO .pt file",
+            file_types=[".pt"],
+            type="filepath"
+        )
+
+        def update_yolo_path(file_obj):
+            if file_obj is not None:
+                return file_obj.name  # full path of uploaded/selected file
+            return gr.update()
+
+        yolo_model_file.change(
+            update_yolo_path,
+            inputs=yolo_model_file,
+            outputs=yolo_model_path
+        )
+
+        # True/False toggles using checkboxes
+        GEN_BOT_DET_EVENIF_HUMAN_EXISTS = gr.Checkbox(
+            value=True,
+            label="GEN_BOT_DET_EVENIF_HUMAN_EXISTS"
+        )
+
+        OVERWRITE_PREV_BOT_DETECTIONS = gr.Checkbox(
+            value=False,
+            label="OVERWRITE_PREV_BOT_DETECTIONS"
+        )
+
+        # Keep Detect tab list in sync with Deployments selections
+        selected_paths.change(
+            lambda val: gr.update(value=val),
+            inputs=selected_paths,
+            outputs=selected_from_deployments
+        )
+
 
     with gr.Tab("ID"):
         gr.Markdown("### ID tab placeholder")
