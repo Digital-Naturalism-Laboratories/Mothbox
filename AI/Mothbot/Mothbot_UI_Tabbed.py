@@ -8,7 +8,7 @@ import shlex
 
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 
-def run_detection(selected_folders, yolo_model, gen_bot, overwrite_bot):
+def run_detection(selected_folders, yolo_model, imsz, gen_bot, overwrite_bot):
     import subprocess
 
     if not selected_folders:
@@ -26,7 +26,7 @@ def run_detection(selected_folders, yolo_model, gen_bot, overwrite_bot):
             "Mothbot_Detect.py",
             "--input_path", folder,
             "--yolo_model", yolo_model,
-            "--imgsz", "1600",
+            "--imgsz", str(imsz),
             "--gen_bot_det_evenif_human_exists", str(gen_bot),
             "--overwrite_prev_bot_detections", str(overwrite_bot),
         ]
@@ -168,6 +168,7 @@ with gr.Blocks() as demo:
             return gr.update()
 
         yolo_model_file.change(update_yolo_path, inputs=yolo_model_file, outputs=yolo_model_path)
+        imgsz = gr.Number(label="🖼️ Image Size", value=1600)
 
         GEN_BOT_DET_EVENIF_HUMAN_EXISTS = gr.Checkbox(
             value=True, label="GEN_BOT_DET_EVENIF_HUMAN_EXISTS"
@@ -189,6 +190,7 @@ with gr.Blocks() as demo:
             inputs=[
                 selected_paths,
                 yolo_model_path,
+                imgsz,
                 GEN_BOT_DET_EVENIF_HUMAN_EXISTS,
                 OVERWRITE_PREV_BOT_DETECTIONS
             ],
