@@ -8,17 +8,21 @@ import shlex
 
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 
-
-
 def run_detection(selected_folders, yolo_model, gen_bot, overwrite_bot):
+    import subprocess
+
     if not selected_folders:
         yield "No nightly folders selected.\n"
         return
 
+    output_log = ""
+
     for folder in selected_folders:
-        yield f"--- Running detection for {folder} ---\n"
+        output_log += f"--- Running detection for {folder} ---\n"
+        yield output_log
+
         cmd = [
-            sys.executable,  # same Python environment
+            sys.executable,
             "Mothbot_Detect.py",
             "--input_path", folder,
             "--yolo_model", yolo_model,
@@ -27,21 +31,32 @@ def run_detection(selected_folders, yolo_model, gen_bot, overwrite_bot):
             "--overwrite_prev_bot_detections", str(overwrite_bot),
         ]
 
-        process = subprocess.Popen(
-            cmd,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-            text=True,
-            bufsize=1
-        )
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True
+            )
 
-        # Stream output line by line
-        for line in process.stdout:
-            yield line
+            for line in iter(process.stdout.readline, ''):
+                cleaned_line = line.replace('\r', '')
+                output_log += cleaned_line
+                yield output_log
 
-        process.wait()
-        yield f"--- Finished {folder} ---\n"
+            process.stdout.close()
+            process.wait()
 
+            if process.returncode != 0:
+                output_log += f"\n❌ Detection for {folder} exited with error code {process.returncode}\n"
+            else:
+                output_log += f"✅ Detection completed for {folder}\n"
+
+            yield output_log
+
+        except Exception as e:
+            output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
+            yield output_log
 
 
 
