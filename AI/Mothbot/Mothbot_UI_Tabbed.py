@@ -154,28 +154,29 @@ with gr.Blocks() as demo:
         gr.Markdown("### Detection Settings")
 
         selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+        with gr.Row():
+            # YOLO model selection
+            yolo_model_path = gr.Textbox(
+                value=r"../AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
+                label="YOLO Model Path"
+            )
+            yolo_model_file = gr.File(label="Choose a YOLO .pt file", file_types=[".pt"], type="filepath")
 
-        # YOLO model selection
-        yolo_model_path = gr.Textbox(
-            value=r"../AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
-            label="YOLO Model Path"
-        )
-        yolo_model_file = gr.File(label="Choose a YOLO .pt file", file_types=[".pt"], type="filepath")
+            def update_yolo_path(file_obj):
+                if file_obj is not None:
+                    return file_obj.name
+                return gr.update()
 
-        def update_yolo_path(file_obj):
-            if file_obj is not None:
-                return file_obj.name
-            return gr.update()
+            yolo_model_file.change(update_yolo_path, inputs=yolo_model_file, outputs=yolo_model_path)
+            with gr.Column():
+                imgsz = gr.Number(label="🖼️ Image Size", value=1600)
 
-        yolo_model_file.change(update_yolo_path, inputs=yolo_model_file, outputs=yolo_model_path)
-        imgsz = gr.Number(label="🖼️ Image Size", value=1600)
-
-        GEN_BOT_DET_EVENIF_HUMAN_EXISTS = gr.Checkbox(
-            value=True, label="GEN_BOT_DET_EVENIF_HUMAN_EXISTS"
-        )
-        OVERWRITE_PREV_BOT_DETECTIONS = gr.Checkbox(
-            value=False, label="OVERWRITE_PREV_BOT_DETECTIONS"
-        )
+                GEN_BOT_DET_EVENIF_HUMAN_EXISTS = gr.Checkbox(
+                    value=True, label="GEN_BOT_DET_EVENIF_HUMAN_EXISTS"
+                )
+                OVERWRITE_PREV_BOT_DETECTIONS = gr.Checkbox(
+                    value=False, label="OVERWRITE_PREV_BOT_DETECTIONS"
+                )
 
         # Keep Detect tab synced with Deployments
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
