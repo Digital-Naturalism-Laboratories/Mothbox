@@ -25,7 +25,8 @@ Arguments:
 
 """
 
-import cv2.version
+print("Loading all the ID libraries...")
+#import cv2.version
 import polars as pl
 import os
 import sys
@@ -47,7 +48,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = (
 import cv2
 import torch
 import json
-import PIL.Image
+#import PIL.Image
 import polars as pl
 import numpy as np
 from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
@@ -91,7 +92,7 @@ embedding_labels_path = INPUT_PATH + "/embedding_labels.json"
 def parse_args():
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--data-path",
+        "--input_path",
         required=False,
         default=INPUT_PATH,
         help="path to images for classification (ex: datasets/test_images/data)",
@@ -114,12 +115,12 @@ def parse_args():
         help="whether to flag detection errors like holes and smudges (default: --flag-det-errors)",
     )
     parser.add_argument(
-        "--taxa-csv",
+        "--taxa_csv",
         default=SPECIES_LIST,
         help="CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})",
     )
     parser.add_argument(
-        "--taxa-cols",
+        "--taxa_cols",
         default=TAXA_COLS,
         help=f"taxonomic columns in taxa CSV to load (default: {TAXA_COLS})",
     )
@@ -834,8 +835,8 @@ if __name__ == "__main__":
     taxon_filter_num=int(args.rank)
     TAXONOMIC_RANK_FILTER = Rank(taxon_filter_num)
     # Find all the dated folders that our data lives in
-    print("Looking in this folder for MothboxData: " + args.data_path)
-    date_folders = find_date_folders(args.data_path)
+    print("Looking in this folder for MothboxData: " + args.input_path)
+    date_folders = find_date_folders(args.input_path)
     print(
         "Found ",
         str(len(date_folders)) + " dated folders potentially full of mothbox data",

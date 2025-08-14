@@ -8,9 +8,15 @@ import shlex
 
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 
-def run_detection(selected_folders, yolo_model, imsz, gen_bot, overwrite_bot):
-    import subprocess
 
+TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
+
+def get_index(selected_word):
+    return TAXA_COLS.index(selected_word)
+
+def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
+    import subprocess
+    
     if not selected_folders:
         yield "No nightly folders selected.\n"
         return
@@ -18,7 +24,7 @@ def run_detection(selected_folders, yolo_model, imsz, gen_bot, overwrite_bot):
     output_log = ""
 
     for folder in selected_folders:
-        output_log += f"--- Running detection for {folder} ---\n"
+        output_log += f"---🕵🏾‍♀️ Running detection for {folder} ---\n"
         yield output_log
 
         cmd = [
@@ -27,7 +33,7 @@ def run_detection(selected_folders, yolo_model, imsz, gen_bot, overwrite_bot):
             "--input_path", folder,
             "--yolo_model", yolo_model,
             "--imgsz", str(imsz),
-            "--gen_bot_det_evenif_human_exists", str(gen_bot),
+            #"--gen_bot_det_evenif_human_exists", str(gen_bot),
             "--overwrite_prev_bot_detections", str(overwrite_bot),
         ]
 
@@ -58,6 +64,62 @@ def run_detection(selected_folders, yolo_model, imsz, gen_bot, overwrite_bot):
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
 
+
+
+
+def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bot):
+    import subprocess
+    
+    if not selected_folders:
+        yield "No nightly folders selected.\n"
+        return
+
+    output_log = ""
+
+    for folder in selected_folders:
+        output_log += f"---🔍 Running IDENTIFICATION for {folder} ---\n"
+        yield output_log
+
+        cmd = [
+            sys.executable,
+            "Mothbot_ID.py",
+            "--input_path", folder,
+            "--taxa_csv", species_list,
+            "--rank", str(chosenrank)
+
+            #"--gen_bot_det_evenif_human_exists", str(gen_bot),
+            
+            #not implemented yet
+            # "--overwrite_prev_bot_detections", str(overwrite_bot),
+        ]
+
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True
+            )
+
+            for line in iter(process.stdout.readline, ''):
+                cleaned_line = line.replace('\r', '')
+                output_log += cleaned_line
+                yield output_log
+
+            process.stdout.close()
+            process.wait()
+
+            if process.returncode != 0:
+                output_log += f"\n❌ Identification for {folder} exited with error code {process.returncode}\n"
+            else:
+                output_log += f"✅ Detection completed for {folder}\n"
+
+            yield output_log
+
+        except Exception as e:
+            output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
+            yield output_log
+    output_log += f"------ ID processing finished ------"
 
 
 
@@ -129,12 +191,13 @@ def confirm_selection(selected_labels, mapping):
 # ----- UI STUFF --------------
 
 with gr.Blocks() as demo:
+    # ~~~~~~~~ DEPLOYMENT TAB ~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Deployments"):
         gr.Markdown("### Pick a main folder of Deployments to process: ")
         
         with gr.Row():
             status = gr.Textbox(label="Status", lines=3, interactive=False)
-            pick_btn = gr.Button("Pick Main Folder (native dialog)")
+            pick_btn = gr.Button("Pick Deployment Folder")
         
         mapping_state = gr.State({})
         toggle_label_state = gr.State("Select All")
@@ -156,7 +219,8 @@ with gr.Blocks() as demo:
                              outputs=[folder_choices, toggle_label_state])
         toggle_label_state.change(lambda lbl: gr.update(value=lbl), inputs=toggle_label_state, outputs=toggle_all_btn)
         confirm_btn.click(fn=confirm_selection, inputs=[folder_choices, mapping_state], outputs=selected_paths)
-
+    
+    #~~~~~~~~~~~~ DETECTION TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Detect"):
         gr.Markdown("### Detection Settings")
 
@@ -164,7 +228,7 @@ with gr.Blocks() as demo:
         with gr.Row():
             # YOLO model selection
             yolo_model_path = gr.Textbox(
-                value=r"../AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
+                value=r"../trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
                 label="YOLO Model Path"
             )
             yolo_model_file = gr.File(label="Choose a YOLO .pt file", file_types=[".pt"], type="filepath")
@@ -178,9 +242,11 @@ with gr.Blocks() as demo:
             with gr.Column():
                 imgsz = gr.Number(label="🖼️ Image Size", value=1600)
 
+                ''' # Not sure when we use this?
                 GEN_BOT_DET_EVENIF_HUMAN_EXISTS = gr.Checkbox(
                     value=True, label="GEN_BOT_DET_EVENIF_HUMAN_EXISTS"
                 )
+                '''
                 OVERWRITE_PREV_BOT_DETECTIONS = gr.Checkbox(
                     value=False, label="OVERWRITE_PREV_BOT_DETECTIONS"
                 )
@@ -189,28 +255,96 @@ with gr.Blocks() as demo:
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
         # Run detection button
-        run_btn = gr.Button("Run Detection", variant="primary")
+        DET_run_btn = gr.Button("Run Detection", variant="primary")
 
-        output_box = gr.Textbox(label="Detection Output", lines=20)
+        DET_output_box = gr.Textbox(label="Detection Output", lines=20)
 
-        run_btn.click(
+        DET_run_btn.click(
             fn=run_detection,
             inputs=[
                 selected_paths,
                 yolo_model_path,
                 imgsz,
-                GEN_BOT_DET_EVENIF_HUMAN_EXISTS,
+                #GEN_BOT_DET_EVENIF_HUMAN_EXISTS,
                 OVERWRITE_PREV_BOT_DETECTIONS
             ],
-            outputs=output_box
+            outputs=DET_output_box
         )
+    #~~~~~~~~~~~~ IDENTIFICATION TAB ~~~~~~~~~~~~~~~~~~~~~~
 
     with gr.Tab("ID"):
-        gr.Markdown("### ID tab placeholder")
+        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+
+        with gr.Row():
+            # Species selection
+            species_path = gr.Textbox(
+                #default path
+                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
+                label="Species List CSV"
+            )
+            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], type="filepath")
+
+            def update_species_path(file_obj):
+                if file_obj is not None:
+                    return file_obj.name
+                return gr.update()
+            species_csv_file.change(update_species_path, inputs=species_csv_file, outputs=species_path)
+
+        with gr.Row():
+            with gr.Column():
+                gr.Markdown("### Select how deep you want to try to automatically Identify:")
+                radio = gr.Radio(TAXA_COLS, label="Select one", type="value", value="order")
+                taxa_output = gr.Number(label="Index",value=TAXA_COLS.index("order"))
+                radio.change(get_index, inputs=radio, outputs=taxa_output)
+    
+            with gr.Column():
+                ID_HUMANDETECTIONS = gr.Checkbox(
+                    value=True, label="Identify Human Detections"
+                )
+                ID_BOTDETECTIONS = gr.Checkbox(
+                    value=True, label="Identify Human Detections"
+                )
+                OVERWRITE_PREV_BOT_IDENTIFICATIONS = gr.Checkbox(
+                    value=False, label="OVERWRITE_PREV_BOT_IDENTIFICATIONS"
+                )
+
+        # Keep Detect tab synced with Deployments
+        selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
+
+        # Run detection button
+        ID_run_btn = gr.Button("Run Detection", variant="primary")
+
+        ID_output_box = gr.Textbox(label="Detection Output", lines=20)
+
+        ID_run_btn.click(
+            fn=run_ID,
+            inputs=[
+                selected_paths,
+                species_path,
+                taxa_output,
+                ID_HUMANDETECTIONS,
+                ID_BOTDETECTIONS,
+                OVERWRITE_PREV_BOT_DETECTIONS
+            ],
+            outputs=ID_output_box
+        )
 
     with gr.Tab("Create Dataset"):
-        gr.Markdown("### Create Dataset tab placeholder")
+        with gr.Row():
+            # Metadata selection
+            metadata_path = gr.Textbox(
+                #default path
+                value=r"../Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv",
+                label="Metadata CSV"
+            )
+            metadata_csv_file = gr.File(label="Choose a Metadata CSV File", file_types=[".csv"], type="filepath")
 
+            def update_metadata_path(file_obj):
+                if file_obj is not None:
+                    return file_obj.name
+                return gr.update()
+
+            metadata_csv_file.change(update_metadata_path, inputs=metadata_csv_file, outputs=metadata_path)
     with gr.Tab("Create CSV"):
         gr.Markdown("### Create CSV tab placeholder")
 

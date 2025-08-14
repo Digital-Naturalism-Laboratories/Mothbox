@@ -66,8 +66,8 @@ for input_path in input_paths:
     print("starting to process: "+input_path)
     subprocess.run([
         "python", script_path,
-        "--data-path", input_path,
-        "--taxa-csv", SPECIES_LIST,
+        "--input_path", input_path,
+        "--taxa_csv", SPECIES_LIST,
         "--rank", str(TAXONOMIC_RANK_FILTER)
     ], check=True)
 
