@@ -203,8 +203,39 @@ with gr.Blocks() as demo:
         toggle_label_state = gr.State("Select All")
 
         gr.Markdown("### Nightly Folders to be Processed:")
+        
+        with gr.Row():
+            folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
+            with gr.Column():
+                toggle_all_btn = gr.Button("Select All")
+                #confirm_btn = gr.Button("Confirm Selected")  # You can keep this if you still want manual confirm
 
+        selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed")
 
+        pick_btn.click(
+            fn=pick_and_list,
+            outputs=[status, folder_choices, mapping_state, toggle_label_state]
+        )
+
+        toggle_all_btn.click(
+            fn=toggle_select_all,
+            inputs=[folder_choices, mapping_state, toggle_label_state],
+            outputs=[folder_choices, toggle_label_state]
+        )
+
+        toggle_label_state.change(
+            lambda lbl: gr.update(value=lbl),
+            inputs=toggle_label_state,
+            outputs=toggle_all_btn
+        )
+
+        #Update JSON automatically on checkbox changes
+        folder_choices.change(
+            fn=confirm_selection,  # Same function you used before
+            inputs=[folder_choices, mapping_state],
+            outputs=selected_paths
+        )
+        '''
         with gr.Row():
             folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
             with gr.Column():
@@ -219,7 +250,10 @@ with gr.Blocks() as demo:
                              outputs=[folder_choices, toggle_label_state])
         toggle_label_state.change(lambda lbl: gr.update(value=lbl), inputs=toggle_label_state, outputs=toggle_all_btn)
         confirm_btn.click(fn=confirm_selection, inputs=[folder_choices, mapping_state], outputs=selected_paths)
-    
+        '''
+
+
+
     #~~~~~~~~~~~~ DETECTION TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Detect"):
         gr.Markdown("### Detection Settings")
