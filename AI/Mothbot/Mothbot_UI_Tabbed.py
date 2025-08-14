@@ -125,23 +125,30 @@ def confirm_selection(selected_labels, mapping):
         return []
     return [mapping[label] for label in selected_labels if label in mapping]
 
+
+# ----- UI STUFF --------------
+
 with gr.Blocks() as demo:
     with gr.Tab("Deployments"):
-        gr.Markdown("### Pick a main folder and select nightly subfolders (YYYY-MM-DD)")
-
-        pick_btn = gr.Button("Pick Main Folder (native dialog)")
-        status = gr.Textbox(label="Status", lines=3, interactive=False)
-
+        gr.Markdown("### Pick a main folder of Deployments to process: ")
+        
+        with gr.Row():
+            status = gr.Textbox(label="Status", lines=3, interactive=False)
+            pick_btn = gr.Button("Pick Main Folder (native dialog)")
+        
         mapping_state = gr.State({})
         toggle_label_state = gr.State("Select All")
 
-        folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
+        gr.Markdown("### Nightly Folders to be Processed:")
+
 
         with gr.Row():
-            toggle_all_btn = gr.Button("Select All")
-            confirm_btn = gr.Button("Confirm Selected")
+            folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
+            with gr.Column():
+                toggle_all_btn = gr.Button("Select All")
+                confirm_btn = gr.Button("Confirm Selected")
 
-        selected_paths = gr.JSON(label="Confirmed Nightly Full Paths")
+        selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed")
 
         pick_btn.click(fn=pick_and_list, outputs=[status, folder_choices, mapping_state, toggle_label_state])
         toggle_all_btn.click(fn=toggle_select_all,
