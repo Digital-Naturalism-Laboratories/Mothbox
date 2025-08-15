@@ -51,6 +51,8 @@ print(f"Processing {args.input_path} with model {args.yolo_model} and image size
 INPUT_PATH=args.input_path
 YOLO_MODEL=args.yolo_model
 IMGSZ=args.imgsz
+GEN_BOT_DET_EVENIF_HUMAN_EXISTS=bool(int(args.gen_bot_det_evenif_human_exists)) #Note that Arg parser can't do booleans right, so you have to do this workaround
+OVERWRITE_PREV_BOT_DETECTIONS=bool(int(args.overwrite_prev_bot_detections))
 
 
 
@@ -146,6 +148,7 @@ def process_jpg_files(img_files, date_folder):
         if os.path.isfile(bot_json_path):
             print(bot_json_path)
             print("Earlier BOT detection file exists, check to see if we should skip it, ")
+            #print(OVERWRITE_PREV_BOT_DETECTIONS)
             try:
                 with open(bot_json_path, 'r') as json_file:
                     json_data = json.load(json_file)

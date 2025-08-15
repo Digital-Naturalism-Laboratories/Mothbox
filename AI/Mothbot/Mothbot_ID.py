@@ -130,6 +130,24 @@ def parse_args():
         choices=["cpu", "cuda"],
         help="device on which to run pybioblip ('cpu' or 'cuda', default: 'cpu')",
     )
+    parser.add_argument(
+        "--ID_Hum",
+        required=False,
+        default=ID_HUMANDETECTIONS,
+        help="ID detections made by humans?",
+    )
+    parser.add_argument(
+        "--ID_Bot",
+        required=False,
+        default=ID_BOTDETECTIONS,
+        help="ID detections made by robots?",
+    )
+    parser.add_argument(
+        "--overwrite_prev_bot_ID",
+        default=OVERWRITE_EXISTING_IDs,
+        required=False,
+        help="If IDs already exist, should we overwrite?",
+    )
 
     return parser.parse_args()
 
@@ -834,6 +852,12 @@ if __name__ == "__main__":
     args = parse_args()
     taxon_filter_num=int(args.rank)
     TAXONOMIC_RANK_FILTER = Rank(taxon_filter_num)
+    OVERWRITE_EXISTING_IDs= bool(int(args.overwrite_prev_bot_ID)) #note arg parser can't do booleans, so you need this workaround!
+    ID_BOTDETECTIONS=bool(int(args.ID_Bot))
+    ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
+
+
+
     # Find all the dated folders that our data lives in
     print("Looking in this folder for MothboxData: " + args.input_path)
     date_folders = find_date_folders(args.input_path)

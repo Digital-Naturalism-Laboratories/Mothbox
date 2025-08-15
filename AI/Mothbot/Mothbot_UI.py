@@ -16,7 +16,8 @@ def get_index(selected_word):
 
 def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
     import subprocess
-    
+    print("OVERWRITE DET")
+    print(overwrite_bot)
     if not selected_folders:
         yield "No nightly folders selected.\n"
         return
@@ -34,7 +35,7 @@ def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
             "--yolo_model", yolo_model,
             "--imgsz", str(imsz),
             #"--gen_bot_det_evenif_human_exists", str(gen_bot),
-            "--overwrite_prev_bot_detections", str(overwrite_bot),
+            "--overwrite_prev_bot_detections", str(int(overwrite_bot)),
         ]
 
         try:
@@ -85,8 +86,10 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
             "Mothbot_ID.py",
             "--input_path", folder,
             "--taxa_csv", species_list,
-            "--rank", str(chosenrank)
-
+            "--rank", str(chosenrank),
+            "--ID_Hum", str(int(IDHum)),
+            "--ID_Bot", str(int(IDBot)),
+            "--overwrite_prev_bot_ID",str(int(overwrite_bot))
             #"--gen_bot_det_evenif_human_exists", str(gen_bot),
             
             #not implemented yet
@@ -235,22 +238,7 @@ with gr.Blocks() as demo:
             inputs=[folder_choices, mapping_state],
             outputs=selected_paths
         )
-        '''
-        with gr.Row():
-            folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
-            with gr.Column():
-                toggle_all_btn = gr.Button("Select All")
-                confirm_btn = gr.Button("Confirm Selected")
 
-        selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed")
-
-        pick_btn.click(fn=pick_and_list, outputs=[status, folder_choices, mapping_state, toggle_label_state])
-        toggle_all_btn.click(fn=toggle_select_all,
-                             inputs=[folder_choices, mapping_state, toggle_label_state],
-                             outputs=[folder_choices, toggle_label_state])
-        toggle_label_state.change(lambda lbl: gr.update(value=lbl), inputs=toggle_label_state, outputs=toggle_all_btn)
-        confirm_btn.click(fn=confirm_selection, inputs=[folder_choices, mapping_state], outputs=selected_paths)
-        '''
 
 
 
@@ -299,7 +287,6 @@ with gr.Blocks() as demo:
                 selected_paths,
                 yolo_model_path,
                 imgsz,
-                #GEN_BOT_DET_EVENIF_HUMAN_EXISTS,
                 OVERWRITE_PREV_BOT_DETECTIONS
             ],
             outputs=DET_output_box
@@ -346,9 +333,9 @@ with gr.Blocks() as demo:
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
         # Run detection button
-        ID_run_btn = gr.Button("Run Detection", variant="primary")
+        ID_run_btn = gr.Button("Run Identification", variant="primary")
 
-        ID_output_box = gr.Textbox(label="Detection Output", lines=20)
+        ID_output_box = gr.Textbox(label="Identification Output", lines=20)
 
         ID_run_btn.click(
             fn=run_ID,
@@ -358,7 +345,7 @@ with gr.Blocks() as demo:
                 taxa_output,
                 ID_HUMANDETECTIONS,
                 ID_BOTDETECTIONS,
-                OVERWRITE_PREV_BOT_DETECTIONS
+                OVERWRITE_PREV_BOT_IDENTIFICATIONS
             ],
             outputs=ID_output_box
         )
