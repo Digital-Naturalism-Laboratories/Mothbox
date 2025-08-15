@@ -21,6 +21,7 @@ import piexif
 #import exiv2
 import subprocess
 import threading
+import argparse
 
 
 import platform
@@ -38,6 +39,37 @@ TAXA_LIST_PATH = r"..\SpeciesList_CountryIndonesia_TaxaInsecta.csv" # downloaded
 
 
 SKIP_EXISTING_THUMBNAIL_PATCHES=True  # If false, this will redo the 
+
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--input_path",
+        required=False,
+        default=INPUT_PATH,
+        help="path to images for classification (ex: datasets/test_images/data)",
+    )
+
+    parser.add_argument(
+        "--utcoff",
+        default=UTC_OFFSET,
+        help="rank to which to classify; must be column in --taxa-csv (default: {UTC_OFFSET})", 
+    )
+
+    parser.add_argument(
+        "--taxa_csv",
+        default=TAXA_LIST_PATH,
+        help="CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})",
+    )
+    parser.add_argument(
+        "--metadata",
+        default=METADATA_PATH,
+        help="Your CSV with metadata about deployments (default: {METADATA_PATH})",
+    )
+    
+
+    return parser.parse_args()
 
 class bcolors:
     HEADER = '\033[95m'
@@ -318,11 +350,11 @@ def write_taxonomy_with_exiv2_cli(image_path, taxonomic_list):
     try:
         result = subprocess.run(" ".join(command), shell=True, capture_output=True, text=True)
         if result.returncode == 0:
-            print(f"✅ Tags written to {image_path}")
+            print(f" Tags written to {image_path}") # cannot do ✅
         else:
-            print(f"❌ exiv2 failed:\n{result.stderr}")
+            print(f" exiv2 failed:\n{result.stderr}") #cannot do ❌
     except FileNotFoundError:
-        print("❌ exiv2 CLI tool not found. Make sure it's installed and in your system PATH.")
+        print(" exiv2 CLI tool not found. Make sure it's installed and in your system PATH.") #cannot do ❌
 
 
 def add_taxonomy_subject_and_tags_exiv2(image_path, output_path, taxonomic_list):
@@ -506,7 +538,7 @@ def write_taxonomy_with_naturtag_old(image_path, taxonomic_list, include_common_
         common_names=include_common_names,
         create_xmp=True                  # ensures XMP metadata is embedded
     )
-    print(f"✅ Taxonomy tags written using naturtag to: {image_path}")
+    print(f" Taxonomy tags written using naturtag to: {image_path}")
 
 
 def write_taxonomy_with_naturtag(image_path, taxonomic_list, include_common_names=False):
@@ -525,9 +557,9 @@ def write_taxonomy_with_naturtag(image_path, taxonomic_list, include_common_name
             common_names=include_common_names,
             create_xmp=True  # ensures proper XMP embedding
         )
-        print(f"✅ Successfully tagged: {image_path}")
+        print(f" Successfully tagged: {image_path}")
     except Exception as e:
-        print(f"❗ naturtag failed with error:\n{e}")
+        print(f" naturtag failed with error:\n{e}")
         print("➡️ Attempting fallback: writing only EXIF tags via piexif")
 
         # Fallback: write EXIF XP fields only
@@ -545,7 +577,7 @@ def write_taxonomy_with_naturtag(image_path, taxonomic_list, include_common_name
         exif_dict["0th"][piexif.ImageIFD.XPSubject] = encode_xp(taxonomy_str)
         exif_dict["0th"][piexif.ImageIFD.XPKeywords] = encode_xp(taxonomy_str)
         img.save(image_path, exif=piexif.dump(exif_dict))
-        print("✅ Fallback EXIF tags written")
+        print("Fallback EXIF tags written")
 
 
 class ExifToolSession:
@@ -617,7 +649,7 @@ class ExifToolSession:
             output_lines.append(line.strip())
 
         if output_lines:
-            print(f"✅  ExifTool output for {full_patch_path}:")
+            print(f"  ExifTool output for {full_patch_path}:")
             for line in output_lines:
                 print("  ", line)
 
@@ -1047,6 +1079,14 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
 
 if __name__ == "__main__":
   ### START
+
+  args = parse_args()
+  INPUT_PATH=args.input_path
+  METADATA_PATH=args.metadata
+  TAXA_LIST_PATH=args.taxa_csv
+  UTC_OFFSET=int(args.utcoff)
+
+
   #pairs = find_image_json_pairs(INPUT_PATH)
   hu_pairs, bot_pairs = find_detection_matches(INPUT_PATH)
 

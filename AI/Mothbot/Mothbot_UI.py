@@ -14,6 +14,16 @@ TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"
 def get_index(selected_word):
     return TAXA_COLS.index(selected_word)
 
+
+def dataset_update_radio_options(selected_folders):
+    # Ensure we hand Radio a list of strings
+    choices = [str(x) for x in selected_folders] if isinstance(selected_folders, list) else []
+    # Return a generic update (works across Gradio versions)
+    return gr.update(choices=choices, value=None)  # or value=choices[0] to auto-select first
+
+def dataset_use_selected_folder(folder):
+    return f"{folder}" if folder else "No folder selected."
+
 def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
     import subprocess
     print("OVERWRITE DET")
@@ -115,7 +125,7 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
             if process.returncode != 0:
                 output_log += f"\n❌ Identification for {folder} exited with error code {process.returncode}\n"
             else:
-                output_log += f"✅ Detection completed for {folder}\n"
+                output_log += f"✅ Identification completed for {folder}\n"
 
             yield output_log
 
@@ -123,6 +133,60 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
     output_log += f"------ ID processing finished ------"
+
+
+def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
+    import subprocess
+    
+    if not selected_folder:
+        yield "No nightly folder selected.\n"
+        return
+
+    output_log = ""
+    folder=selected_folder
+    output_log += f"---📋 Creating Dataset for {folder} ---\n"
+    yield output_log
+
+    cmd = [
+        sys.executable,
+        "Mothbot_CreateDataset.py",
+        "--input_path", folder,
+        "--taxa_csv", species_list,
+        "--metadata", str(metadata),
+        "--utcoff", str(int(Utcoffset)),
+        #"--gen_bot_det_evenif_human_exists", str(gen_bot),
+        
+        #not implemented yet
+        # "--overwrite_prev_bot_detections", str(overwrite_bot),
+    ]
+
+    try:
+        process = subprocess.Popen(
+            cmd,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True
+        )
+
+        for line in iter(process.stdout.readline, ''):
+            cleaned_line = line.replace('\r', '')
+            output_log += cleaned_line
+            yield output_log
+
+        process.stdout.close()
+        process.wait()
+
+        if process.returncode != 0:
+            output_log += f"\n❌ Create dataset for {folder} exited with error code {process.returncode}\n"
+        else:
+            output_log += f"✅ Create Dataset completed for {folder}\n"
+
+        yield output_log
+
+    except Exception as e:
+        output_log += f"\n❌ Exception while Create Dataset processing {folder}: {str(e)}\n"
+        yield output_log
+    output_log += f"------ CreateDataset processing finished ------"
 
 
 
@@ -138,8 +202,8 @@ def select_folder():
         try:
             import webview
             _WINDOW = webview.create_window("Select Folder", hidden=True)
-            result = _WINDOW.create_file_dialog(webview.FOLDER_DIALOG)
-            folder_selected = result[0] if result else None
+            datafolder_result = _WINDOW.create_file_dialog(webview.FOLDER_DIALOG)
+            folder_selected = datafolder_result[0] if datafolder_result else None
         except Exception:
             folder_selected = None
     return folder_selected or None
@@ -251,9 +315,10 @@ with gr.Blocks() as demo:
             # YOLO model selection
             yolo_model_path = gr.Textbox(
                 value=r"../trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
-                label="YOLO Model Path"
+                label="YOLO Model Path",
+                scale=1
             )
-            yolo_model_file = gr.File(label="Choose a YOLO .pt file", file_types=[".pt"], type="filepath")
+            yolo_model_file = gr.File(label="Choose a YOLO .pt file", file_types=[".pt"], height=120, type="filepath")
 
             def update_yolo_path(file_obj):
                 if file_obj is not None:
@@ -303,7 +368,7 @@ with gr.Blocks() as demo:
                 value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
                 label="Species List CSV"
             )
-            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], type="filepath")
+            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
 
             def update_species_path(file_obj):
                 if file_obj is not None:
@@ -329,10 +394,10 @@ with gr.Blocks() as demo:
                     value=False, label="OVERWRITE_PREV_BOT_IDENTIFICATIONS"
                 )
 
-        # Keep Detect tab synced with Deployments
+        # Keep ID tab synced with Deployments
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
-        # Run detection button
+        # Run ID button
         ID_run_btn = gr.Button("Run Identification", variant="primary")
 
         ID_output_box = gr.Textbox(label="Identification Output", lines=20)
@@ -350,7 +415,10 @@ with gr.Blocks() as demo:
             outputs=ID_output_box
         )
 
+    #~~~~~~~~~~~~ IDENTIFICATION TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Create Dataset"):
+        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+
         with gr.Row():
             # Metadata selection
             metadata_path = gr.Textbox(
@@ -358,7 +426,7 @@ with gr.Blocks() as demo:
                 value=r"../Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv",
                 label="Metadata CSV"
             )
-            metadata_csv_file = gr.File(label="Choose a Metadata CSV File", file_types=[".csv"], type="filepath")
+            metadata_csv_file = gr.File(label="Choose a Metadata CSV File", file_types=[".csv"], height=120, type="filepath")
 
             def update_metadata_path(file_obj):
                 if file_obj is not None:
@@ -366,6 +434,64 @@ with gr.Blocks() as demo:
                 return gr.update()
 
             metadata_csv_file.change(update_metadata_path, inputs=metadata_csv_file, outputs=metadata_path)
+        with gr.Row():
+            # Species selection
+            species_path = gr.Textbox(
+                #default path
+                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
+                label="Species List CSV"
+            )
+            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
+
+            def update_species_path(file_obj):
+                if file_obj is not None:
+                    return file_obj.name
+                return gr.update()
+            species_csv_file.change(update_species_path, inputs=species_csv_file, outputs=species_path)
+
+        UTCoff = gr.Number(label="🕙 UTC Offset:", value=-5)
+       
+
+        # Keep Detect tab synced with Deployments
+        selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
+
+        #Choose which folder to dataset
+        single_folder_choice = gr.Radio(label="Select One Folder", choices=[], interactive=True)
+        
+        datafolder_result = gr.Textbox(label="Result")
+        
+        # Whenever the JSON changes, update the Radio choices
+        selected_from_deployments.change(
+            fn=dataset_update_radio_options,
+            inputs=selected_from_deployments,
+            outputs=single_folder_choice
+        )
+        
+        # When user selects a folder, pass it to a function
+        single_folder_choice.change(
+            fn=dataset_use_selected_folder,
+            inputs=single_folder_choice,
+            outputs=datafolder_result
+        )
+
+
+        # Run detection button
+        Dataset_run_btn = gr.Button("Create Dataset", variant="primary")
+
+        Dataset_output_box = gr.Textbox(label="Dataset Creation Output", lines=20)
+
+        Dataset_run_btn.click(
+            fn=run_Dataset,
+            inputs=[
+                datafolder_result,
+                species_path,
+                metadata_path,
+                UTCoff,
+            ],
+            outputs=Dataset_output_box
+        )
+
+
     with gr.Tab("Create CSV"):
         gr.Markdown("### Create CSV tab placeholder")
 
