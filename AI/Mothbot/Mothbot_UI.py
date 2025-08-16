@@ -100,10 +100,6 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
             "--ID_Hum", str(int(IDHum)),
             "--ID_Bot", str(int(IDBot)),
             "--overwrite_prev_bot_ID",str(int(overwrite_bot))
-            #"--gen_bot_det_evenif_human_exists", str(gen_bot),
-            
-            #not implemented yet
-            # "--overwrite_prev_bot_detections", str(overwrite_bot),
         ]
 
         try:
@@ -154,10 +150,7 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
         "--taxa_csv", species_list,
         "--metadata", str(metadata),
         "--utcoff", str(int(Utcoffset)),
-        #"--gen_bot_det_evenif_human_exists", str(gen_bot),
-        
-        #not implemented yet
-        # "--overwrite_prev_bot_detections", str(overwrite_bot),
+
     ]
 
     try:
@@ -187,7 +180,73 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
         output_log += f"\n❌ Exception while Create Dataset processing {folder}: {str(e)}\n"
         yield output_log
     output_log += f"------ CreateDataset processing finished ------"
+    yield output_log
 
+
+
+def run_CSV(selected_folders, species_list, Utcoffset):
+    import subprocess
+    
+    if not selected_folders:
+        yield "No nightly folders selected.\n"
+        return
+
+    output_log = ""
+
+
+    converted_folders = []  # List to store paths of folders with samples.json
+
+    for folder in selected_folders:
+        output_log += f"---🔍 Generating CSVs for Datasets in {folder} ---\n"
+        yield output_log
+
+        for root, _, files in os.walk(folder):
+            if "samples.json" in files:
+                output_log += f"Found 'samples.json' in {root}\n"  # Log the location
+                converted_folders.append(root)  # Add to the list
+                #break  # Stop searching once found
+
+    if converted_folders:
+        print("Executing commands on the following folders:")
+        for folder in converted_folders:
+            cmd = [
+                sys.executable,
+                "Mothbot_ConvertDatasettoCSV.py",
+                "--input_path", folder,
+                "--taxa_csv", species_list,
+                "--utcoff", str(int(Utcoffset)),
+            ]
+            print(f"Executing command: {cmd}") # Debugging
+
+
+            try:
+                process = subprocess.Popen(
+                    cmd,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.STDOUT,
+                    text=True
+                )
+
+                for line in iter(process.stdout.readline, ''):
+                    cleaned_line = line.replace('\r', '')
+                    output_log += cleaned_line
+                    yield output_log
+
+                process.stdout.close()
+                process.wait()
+
+                if process.returncode != 0:
+                    output_log += f"\n❌ CSV for {folder} exited with error code {process.returncode}\n"
+                else:
+                    output_log += f"✅ CSV completed for {folder}\n"
+
+                yield output_log
+
+            except Exception as e:
+                output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
+                yield output_log
+    output_log += f"------ CSV processing finished ------"
+    yield output_log
 
 
 def select_folder():
@@ -415,7 +474,7 @@ with gr.Blocks() as demo:
             outputs=ID_output_box
         )
 
-    #~~~~~~~~~~~~ IDENTIFICATION TAB ~~~~~~~~~~~~~~~~~~~~~~
+    #~~~~~~~~~~~~ Create Dataset TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Create Dataset"):
         selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
 
@@ -452,7 +511,7 @@ with gr.Blocks() as demo:
         UTCoff = gr.Number(label="🕙 UTC Offset:", value=-5)
        
 
-        # Keep Detect tab synced with Deployments
+        # Keep Dataset tab synced with Deployments
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
         #Choose which folder to dataset
@@ -475,7 +534,7 @@ with gr.Blocks() as demo:
         )
 
 
-        # Run detection button
+        # Run Create Dataset button
         Dataset_run_btn = gr.Button("Create Dataset", variant="primary")
 
         Dataset_output_box = gr.Textbox(label="Dataset Creation Output", lines=20)
@@ -491,8 +550,60 @@ with gr.Blocks() as demo:
             outputs=Dataset_output_box
         )
 
+    #~~~~~~~~~~~~ Create CSV TAB ~~~~~~~~~~~~~~~~~~~~~~
+    with gr.Tab("Generate CSV"):
+        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
 
-    with gr.Tab("Create CSV"):
-        gr.Markdown("### Create CSV tab placeholder")
+        with gr.Row():
+            # Metadata selection
+            metadata_path = gr.Textbox(
+                #default path
+                value=r"../Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv",
+                label="Metadata CSV"
+            )
+            metadata_csv_file = gr.File(label="Choose a Metadata CSV File", file_types=[".csv"], height=120, type="filepath")
+
+            def update_metadata_path(file_obj):
+                if file_obj is not None:
+                    return file_obj.name
+                return gr.update()
+
+            metadata_csv_file.change(update_metadata_path, inputs=metadata_csv_file, outputs=metadata_path)
+        with gr.Row():
+            # Species selection
+            species_path = gr.Textbox(
+                #default path
+                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
+                label="Species List CSV"
+            )
+            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
+
+            def update_species_path(file_obj):
+                if file_obj is not None:
+                    return file_obj.name
+                return gr.update()
+            species_csv_file.change(update_species_path, inputs=species_csv_file, outputs=species_path)
+
+        UTCoff = gr.Number(label="🕙 UTC Offset:", value=-5)
+       
+
+        # Keep Dataset tab synced with Deployments
+        selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
+
+
+        # Run CSV button
+        CSV_run_btn = gr.Button("Generate CSV ", variant="primary")
+
+        CSV_output_box = gr.Textbox(label="CSV Creation Output", lines=20)
+
+        CSV_run_btn.click(
+            fn=run_CSV,
+            inputs=[
+                selected_paths,
+                species_path,
+                UTCoff,
+            ],
+            outputs=CSV_output_box
+        )
 
 demo.launch(inbrowser=True)

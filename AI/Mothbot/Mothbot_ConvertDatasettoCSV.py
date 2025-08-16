@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 #from pygbif import species
 import unicodedata
 import pandas as pd
+import argparse
 
 INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
 UTC_OFFSET=-5 #panama is -5   indonesia is 8
@@ -17,6 +18,34 @@ UTC_OFFSET=-5 #panama is -5   indonesia is 8
 # Specify the path to your taxonomy CSV file
 TAXA_LIST_PATH = r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv"
 TAXA = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
+
+
+
+def parse_args():
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--input_path",
+        required=False,
+        default=INPUT_PATH,
+        help="path to images for classification (ex: datasets/test_images/data)",
+    )
+
+    parser.add_argument(
+        "--utcoff",
+        default=UTC_OFFSET,
+        help="rank to which to classify; must be column in --taxa-csv (default: {UTC_OFFSET})", 
+    )
+
+    parser.add_argument(
+        "--taxa_csv",
+        default=TAXA_LIST_PATH,
+        help="CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})",
+    )
+
+    
+
+    return parser.parse_args()
+
 
 def OLDcreate_occurrence_id(filename, latitude, longitude):
     # Step 1: Process filename
@@ -353,5 +382,11 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
 
 # This code will only run if this script is executed directly
 if __name__ == "__main__":
+
+    args = parse_args()
+    INPUT_PATH=args.input_path
+    TAXA_LIST_PATH=args.taxa_csv
+    UTC_OFFSET=int(args.utcoff)
+    
     # Call the function with the input path
     json_to_csv(INPUT_PATH, UTC_OFFSET, TAXA_LIST_PATH)
