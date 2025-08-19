@@ -204,6 +204,31 @@ If you CONNECT these two wires together (grounding pin P27), then the Mothbox wi
 
 Next you can decide if you want to add a voltage monitor (below), or a [Solar Panel or Extra Battery](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/), or if you haven't yet made your [UV attractor, it's time to do that!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/)
 
+# (Optional) Connect an Eink display
+If you purchased a [little E-eink display](https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual#Working_With_Raspberry_Pi) to get a better idea of what's happening inside your mothbox's brain, then you can easily connected it!
+
+It should come with a set of colored wires attached to a connector. The connector plugs into the display, and then the wires connect to the pins coming out of your raspberry pi like so:
+
+| Epaper Pin | Physical Pin on Pi |
+|---|---|
+| VCC | 3.3V |
+| GND | GND (20) |
+| DIN | 19 |
+| CLK | 23 |
+| CS | 24 |
+| DC | 22 |
+| RST | 11 |
+| BUSY | 18 |
+
+if you have your Relay hat on (which you probably do), the connections will look like this (for reference the white cable is going between RST and pin 11):
+![20250819_142216](https://github.com/user-attachments/assets/dc5c9e09-704a-4961-9e08-01107630a7a5)
+
+Then, i usually put a glob of sticky-tack on the back of the display, and connect it to the battery to keep it in place.
+<img width="366" height="467" alt="image" src="https://github.com/user-attachments/assets/f777970f-8ac7-47c0-b336-f71ed08ac246" />
+
+<img width="529" height="650" alt="image" src="https://github.com/user-attachments/assets/5f0979c4-03bd-4e39-aaf4-2cd540123ed8" />
+
+
 
 # (Optional) Monitor your voltage!
 The mothbox images are programmed to monitor and log their voltages. This doesn't affect their use, but there may be situations for advanced users where you might want to only turn your mothbox on if it has a certain percentage of its battery charged. For instance, if you connect a solar panel to your Mothbox, you might want to wait until your battery is fully charged before arming it to run for an entire night.
