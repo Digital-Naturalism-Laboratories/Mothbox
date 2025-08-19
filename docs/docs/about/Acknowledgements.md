@@ -40,6 +40,8 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * Sol Parra Santos
 * Experiment.com
 
+* [Craig Durkin](https://wandrer.earth/) set up this documentation site backend for us
+
 * Christopher Lawrence
 * Phoebe Zarnetske and the Michigan X-prize group
 * GOSH community openhardware.science
