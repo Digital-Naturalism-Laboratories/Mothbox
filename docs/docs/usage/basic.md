@@ -6,7 +6,7 @@ has_children: true
 nav_order: 1
 ---
 # Charge the Battery before 1st use!
-{:.warning}
+{: .warning }
 >When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
 
 Save yourself a headache, and charge your battery before you connect it the first time!
