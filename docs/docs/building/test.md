@@ -5,9 +5,11 @@ parent: Building Mothbox
 #has_children: true
 nav_order: 8
 ---
-# Charge the Battery Before First Use!
-{: .warning }
->When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
+{: .important-title }
+> Important: Charge the Battery Before First Use!
+>
+> When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
+
 The Talentcell batteries may work a bit different than you are used to. You need to make sure the battery's power switch is set to "On"
 <img width="1123" height="702" alt="1fa99c2d-2f04-4c1a-99c8-b2f886d633de" src="https://github.com/user-attachments/assets/70f83747-9a77-40e3-b2a8-0d3eb0bcf480" />
 and you need to plug in the charging cable. 
