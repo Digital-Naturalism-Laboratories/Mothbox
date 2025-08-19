@@ -106,10 +106,10 @@ nav_sort: case_sensitive # Capital letters sorted before lowercase
 
 # External navigation links
 nav_external_links:
-  - title: Version v3.21
-    url: https://digital-naturalism-laboratories.github.io/Mothboxv3.21/
-  - title: Version v4.0
-    url: https://quitmeyer.github.io/Mothboxv4.0/
+#  - title: Version v3.21
+#    url: https://digital-naturalism-laboratories.github.io/Mothboxv3.21/
+#  - title: Version v4.0
+#    url: https://quitmeyer.github.io/Mothboxv4.0/
     
 liquid:
    error_mode: strict
