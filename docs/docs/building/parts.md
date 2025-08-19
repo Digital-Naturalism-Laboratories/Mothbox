@@ -50,6 +50,10 @@ OR
 * (Optional) Power sensor for monitoring battery levels
    *[Buy](https://www.amazon.com/gp/product/B07S8QYDF8/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)    
 
+### Display (Optional) (18$)
+* The latest versions of the Mothbox firmware support inexpensive e-ink displays! This is not needed for operation, but can be very useful for debugging or organizing mothboxes!
+* [Waveshare 2.13in Eink Hat](https://www.amazon.com/waveshare-2-13inch-HAT-Compatible-Resolution/dp/B071S8HT76/ref=sr_1_1?crid=1PQPLWMCC8AIC&dib=eyJ2IjoiMSJ9.cJ-_2FsOdoowTXSlZB4J18_NV1_zddnfPM62gQuumIpAuDKKUo29wtB4xSU1W0zF6PqVLdzdy-HRKqK0Znhe-qEr04m5HnketgiC3eVIQpipVc6cr_ZVciJaKMO-q2nLB9Sjv9nESI5nAl1gDMW1Bvh3Nl9tn54kutReW_k5H9M6KychHu20eIhj-pLmMeAJ4kLphJnlcPAGfm1aRCfSmvuyZuwEqaF3kSSbE1E8bD4.UXGKdsLM5_uGnP440hTLYVQcGdiVNX6nXT-o_09osgk&dib_tag=se&keywords=waveshare+2.13&qid=1755630559&sprefix=waveshare+2.%2Caps%2C253&sr=8-1) 
+
 
 ### Lighting ($60)
 * Photography Lights (2x)
