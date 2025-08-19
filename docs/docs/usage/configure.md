@@ -74,12 +74,28 @@ Importantly Debug Mode does these functions:
 Double click on the icon on the desktop that says "Debug Mode."
 If it asks, say "run in command line."
 
+<img width="1281" height="746" alt="image" src="https://github.com/user-attachments/assets/d2cb93a9-bbae-434e-8603-a4a859f5c515" />
+
 It should run and program and then ask you for your admin password. The pass w or d is "luna" like before.
 
 <img width="1276" height="750" alt="image" src="https://github.com/user-attachments/assets/3348d254-a764-4d46-abc9-3322c537a15e" />
 Note that sometimes, if your mothbox was busy taking photos, it might not bring up the part that asks for the admin password. You should double click the "Debug Mode" file and run it again until you see that screen that asks you for this password. That's how you know it worked and the wifi won't shut off in 5 minutes.
 
 # Change the Localisation on your Mothbox
+Now you have all the time in the world to adjust settings in your Mothbox!
+
+First thing we should do is help the Mothbox know where it is in the world! This is important so that it can know what timezone to use for date calculations.
+Press the HomeButton>Preferences>Raspberry Pi Configuration
+<img width="621" height="722" alt="image" src="https://github.com/user-attachments/assets/3c3f6416-394e-4ab5-8ee1-c3eeab9ef81a" />
+
+Now, go to "Localisation Options" and select "Set Timezone"
+<img width="609" height="493" alt="image" src="https://github.com/user-attachments/assets/20b38d2a-08c1-4b0e-809b-d9e5a39e4dfe" />
+
+Choose that options that are right for your mothbox, 
+
+# Set the Time
+
+
 
 
 
