@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Data Organization
-parent: Using Mothbox
-nav_order: 7
+parent: Processing Data
+nav_order: 1
 ---
 
 # Documenting Deployments
