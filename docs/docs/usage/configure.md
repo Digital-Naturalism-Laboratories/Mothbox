@@ -48,8 +48,39 @@ Download [TigerVNC](https://sourceforge.net/projects/tigervnc/files/stable/)
 This is special VNC software that will create a portal to let you log in to your Mothbox.
 
 ## Log in to your Mothbox
+Now that your computer and the mothbox have their wifi's connected, we can log into it! Open the Tiger VNC Software. 
+Type "mothbox.local" for the VNC server
+<img width="456" height="188" alt="image" src="https://github.com/user-attachments/assets/e13b05ad-ad86-4c59-b59c-bea284618a7b" />
+
+press "connect"
+
+and soon it should ask you for the username and password for the pi.
+
+{: .note }
+> username: pi pazz: luna
+
+
+# Turn on "Debug Mode"
+You should now be able to see the desktop of your Mothbox! Isn't that neat?!
+The first thing you will want to do is turn on "Debug Mode."
+
+Importantly Debug Mode does these functions:
+* turns off the lights of your mothbox that might be lighting up your entire workspace!
+* Cancels all the other automatically occcuring processes such as
+  * Stops the Mothbox from turning itself off
+  * Stops the Mothbox's wifi from disconnecting after 5 mins
+  * stops the Mothbox from taking photos and flashing lights every minute
+ 
+Double click on the icon on the desktop that says "Debug Mode."
+If it asks, say "run in command line."
+
+It should run and program and then ask you for your admin password. The pass w or d is "luna" like before.
 
 <img width="1276" height="750" alt="image" src="https://github.com/user-attachments/assets/3348d254-a764-4d46-abc9-3322c537a15e" />
+Note that sometimes, if your mothbox was busy taking photos, it might not bring up the part that asks for the admin password. You should double click the "Debug Mode" file and run it again until you see that screen that asks you for this password. That's how you know it worked and the wifi won't shut off in 5 minutes.
+
+# Change the Localisation on your Mothbox
+
 
 
 
