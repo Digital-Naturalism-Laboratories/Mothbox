@@ -1,10 +1,13 @@
 ---
 layout: default
-title: Setup Machine Vision
-parent: Programming Mothbox
+title: Bonus: Training AI
+parent: Processing Data
 has_children: true
-nav_order: 6
+nav_order: 9
 ---
+This is not necessary to use for the Mothbot, Post-processing software. This is an advanced, bonus guide for how you can train any kind of open-weighted machine vision model to detect things you want to detect. This guide is just here for additional edification if you are interested in going into deeper customizations on these projects.
+
+
 Here's how to build an AI machine vision program from scratch. This will let you use open source projects like YOLO to automatically detect insects in your high resolution photos. This guide will show you the basics of machine learning programs such as setting up your computer, organizing files, training the AI, and processing images.
 
 All the scripts and folders referenced are available on the [Mothbox Github](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI) under "AI".
