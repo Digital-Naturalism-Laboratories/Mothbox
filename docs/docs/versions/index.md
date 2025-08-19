@@ -3,7 +3,7 @@ layout: default
 title: Previous Versions
 nav_order: 11
 has_children: true
-permalink: /docs/about
+permalink: /docs/versions
 ---
 
 # Earlier Versions
