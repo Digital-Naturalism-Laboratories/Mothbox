@@ -5,6 +5,19 @@ parent: Building Mothbox
 #has_children: true
 nav_order: 8
 ---
+# Charge the Battery Before First Use!
+{: .warning }
+>When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
+The Talentcell batteries may work a bit different than you are used to. You need to make sure the battery's power switch is set to "On"
+<img width="1123" height="702" alt="1fa99c2d-2f04-4c1a-99c8-b2f886d633de" src="https://github.com/user-attachments/assets/70f83747-9a77-40e3-b2a8-0d3eb0bcf480" />
+and you need to plug in the charging cable. 
+<img width="1143" height="848" alt="89c8d0fb-9d72-4c14-9f52-55b8ca5f633e" src="https://github.com/user-attachments/assets/d5926ffc-4a87-4e12-bfb8-b2efd0101784" />
+
+The battery is only 100% charged when the LED on the charger goes from red to green.
+
+{: .note }
+>Ignore the green lights on the battery. They are not good indicators of if the battery is charged or not. The battery can show 2 green bars but still be 90% dead.
+
 
 # Connect to Battery
 Now is the big moment to see if everything works! You can connect the plug to the OUT port of the battery.
