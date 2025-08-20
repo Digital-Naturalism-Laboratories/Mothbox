@@ -135,5 +135,23 @@ An even easier approach though is that you can CLONE the SD card of your current
 * Pull out its SD card
 * Follow [this guide to clone this SD card to other SD cards and put them in the other Mothboxes](https://quitmeyer.github.io/Mothboxv4.0/docs/programming/clone/)
 
-# More Things You Can Configure In Your Mothbox
-( Guides coming soon)
+# Change Camera Settings (Optional)
+By default, the cameras in the mothbox are set to:
+* Automatically calibrate focus every 10 minutes
+* Automatically calibrate exposure every 10 minutes
+* Optimize the image for the largest resolution and fastest "shutter speed" (to reduce moving insect blur)
+
+Maybe you want your mothbox camera to do something else? I have just the file you can mess around with!
+
+Most people will never ever touch this file, but if you want to change stuff, open the file called "camera_settings.csv"
+
+<img width="2004" height="924" alt="image" src="https://github.com/user-attachments/assets/315c70a7-7f46-4b22-a713-b6834c25d684" />
+
+This is an easy to edit file that will control as many camera settings as we have available!
+
+Some of the main ones folks might want to mess with are:
+
+AutoCalibration - can make it fully manual (not really reccomended, things like focus can drop off with slight shifts)
+AutoCalibrationPeriod - can change how long the camera waits before recalibrating all its settings. Default is 10 minutes, but you can make it more or less.
+VerticalFlip - This is important if you are building your mothbox a little differently and need to install the camera upside down.
+
