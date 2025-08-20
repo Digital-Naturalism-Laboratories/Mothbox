@@ -9,7 +9,7 @@ nav_order: 1
 # Change the Timezone
 This is probably one of the only things one needs to change with their Mothbox after they first flash the SD card. This guide will show you how to easily get into your Mothbox's brain, however, and customize anything you want!
 
-# Logging in to your Mothbox
+## Logging in to your Mothbox
 
 The Mothbox is a tiny standalone computer, but it doesn't have a keyboard, mouse, or monitor! So how can you change its programming and settings? Well, you can virtually log into your Mothbox from another computer using Wifi! It's a process called VNC (Virtual Network Computing) and we will show you how to do it!
 
@@ -21,13 +21,13 @@ The Mothbox is a tiny standalone computer, but it doesn't have a keyboard, mouse
 
 
 
-## Turn the Mothbox "On"
+### Turn the Mothbox "On"
 Make sure you are only configuring 1 mothbox at a time or else things are going to get weird and confusing.
 
-## Connect to the Wifi
+### Connect to the Wifi
 There are two ways to connect to your Mothbox. 
 
-### The Mothbox makes its own Wifi
+#### The Mothbox makes its own Wifi
 If there are no Wifi sources that the Mothbox recognizes, the Raspberry Pi in the Mothbox will make its own wifi called "mothboxwifi."  (It will only create this wifi in the first 1-5 minutes it is running)
 
 {: .note }
@@ -35,19 +35,19 @@ If there are no Wifi sources that the Mothbox recognizes, the Raspberry Pi in th
 
 You can connect directly to this wifi with your computer. You won't be able to access the internet via this wifi, but you will be able to control this Mothbox.
 
-### The Mothbox connects to your Wifi (with a special name)
+#### The Mothbox connects to your Wifi (with a special name)
 The Mothbox also has some pre-registered Wifis that it will connect to automatically! So if you change your personal Wifi to have a specific name and password, it will automatically connect to them and let you keep access to the internet. You can also make a phone have a hotspot with these credentials and your phone and computer can both connect to that hotspot.
 
 
 {: .note }
 > wifi: wififormothbox pazz: opensourcehardware
 
-# Get VNC Software
+### Get VNC Software
 Download [TigerVNC](https://sourceforge.net/projects/tigervnc/files/stable/)
 
 This is special VNC software that will create a portal to let you log in to your Mothbox.
 
-## Log in to your Mothbox
+### Log in to your Mothbox
 Now that your computer and the mothbox have their wifi's connected, we can log into it! Open the Tiger VNC Software. 
 Type "mothbox.local" for the VNC server
 
@@ -61,7 +61,7 @@ and soon it should ask you for the username and password for the pi.
 > username: pi pazz: luna
 
 
-# Turn on "Debug Mode"
+### Turn on "Debug Mode"
 You should now be able to see the desktop of your Mothbox! Isn't that neat?!
 The first thing you will want to do is turn on "Debug Mode."
 
@@ -83,7 +83,7 @@ It should run and program and then ask you for your admin password. The pass w o
 
 Note that sometimes, if your mothbox was busy taking photos, it might not bring up the part that asks for the admin password. You should double click the "Debug Mode" file and run it again until you see that screen that asks you for this password. That's how you know it worked and the wifi won't shut off in 5 minutes.
 
-# Change the Localisation on your Mothbox
+## Change the Localisation on your Mothbox
 Now you have all the time in the world to adjust settings in your Mothbox!
 
 First thing we should do is help the Mothbox know where it is in the world! This is important so that it can know what timezone to use for date calculations.
@@ -97,7 +97,7 @@ Now, go to "Localisation Options" and select "Set Timezone"
 
 Choose that options that are right for your mothbox, 
 
-# Set the Time
+## Set the Time
 Setting the time on a Raspberry Pi weirdly isn't very straightforward. So we made you a special script!
 On the desktop double click the icon that says "SetTimeandDate.py" 
 
@@ -113,6 +113,18 @@ Now type in the desired Year month day hour minute and second you want to set yo
 >
 > If your mothbox is connected to the internet, and you already changed the timezone, it SHOULD automatically set the correct time for you. But if that doesn't happen the above approach works fine!
 
+## Update the UTC settings
+To make all your data consistent, there's two more files you should tweak to make sure the UTC offset is correct.
+Open the "Mothbox" folder on the desktop. Find the file called "schedule_settings.csv"
+change the UTC offset to your UTC offset. Save the file.
+
+<img width="1954" height="584" alt="image" src="https://github.com/user-attachments/assets/dff563fd-ebf0-48b5-a2d3-3a55e78d7296" />
+
+Then open the file called "controls.txt" and change the UTC offset part as well:
+
+<img width="1070" height="536" alt="image" src="https://github.com/user-attachments/assets/fd035eb0-08dd-440d-bdc4-b701d0ce5e63" />
+
+Future versions of the mothbox firmware will make it so that you don't have to do that step, (you can also tweak this post-processing) but do for now, change these values to be sure.
 
 # Set the Configuration for a LOT of mothboxes
 Maybe you have 20 or 50 mothboxes you want to configure to be the same timezone. Well that's easy to do, just follow this guide 50 times with each mothbox. (lol)
