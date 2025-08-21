@@ -128,9 +128,14 @@ Following the [instructions from this helpful post](https://stackoverflow.com/qu
      "python.terminal.activateEnvInCurrentTerminal": true,
      "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
 ```
-Note how there might already be a line that says "python.defaultInterpreterPath," that's ok, you can paste your new line below it and it will override that. Or you can even comment it out with // just in case
-<img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/55bbc962-919a-4170-bf13-45cf106c6bb3" />
 
+{: .note }
+> Note how there might already be a line that says "python.defaultInterpreterPath," that's ok, you can paste your new line below it and it will override that. Or you can even comment it out with // just in case
+> <img width="1148" height="302" alt="image" src="https://github.com/user-attachments/assets/55bbc962-919a-4170-bf13-45cf106c6bb3" />
+
+
+{: .important }
+> Sometimes the program Visual Studio Code will auto-update itself, and you will have to redo these user settings
 
 # Now you can run scripts!
 Your environment should be set up, and now after this, you can run scripts!
