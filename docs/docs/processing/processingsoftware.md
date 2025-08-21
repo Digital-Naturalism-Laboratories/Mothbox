@@ -9,9 +9,9 @@ nav_order: 0
 # Download Software to Help Run Post-Processing Scripts
 Download all these and install them on your computer.
 * [Github Desktop](https://desktop.github.com/download/)
-* [Python](https://www.python.org/downloads/) (Currently it is using Python 3.12- later versions might give grumpiness)
-* [Visual Studio Code](https://code.visualstudio.com/download) (This is an interface for running and using code)
-* [ExifTool](https://exiftool.org/)
+* [Python](https://www.python.org/downloads/) (Currently it is using Python 3.11- later versions might give grumpiness)
+* [Visual Studio Code](https://code.visualstudio.com/download) (This is an interface for running and editing scripts)
+* [ExifTool](https://exiftool.org/) (If you are using windows you shouldn't have to do this, just for linux and mac, the exe is already packaged into the github repo)
 
 
 # Download Mothbot Scripts 
@@ -38,6 +38,7 @@ The folder you want to open is called "Mothbot" inside the folder called "AI" in
 <img width="951" height="532" alt="image" src="https://github.com/user-attachments/assets/5f074db6-522a-4bc8-a747-c6d6f321db36" />
 Now at the top of Visual Studio Code click "Terminal>New Terminal"
 <img width="498" height="405" alt="image" src="https://github.com/user-attachments/assets/012c1e3c-a8d3-4c81-ab05-a883ffb09aee" />
+
 This opens a special zone at the bottom of the screen that lets us configure some software in special ways.
 You will use this to type special codes in to set up your computer to prepare it for processing data!
 
@@ -147,19 +148,21 @@ Or replace that script name with any script you want to run (like Mothbot_ID.py)
 You can open scripts in your folder and then just hit the big "|>" run button
 <img width="1861" height="652" alt="image" src="https://github.com/user-attachments/assets/5c2b339f-8da9-48a0-9805-37d5e7ad59f8" />
 
-(Note you might need to re-activate your environment at the bottom of the screen in the terminal before hitting the Run button
-```
-.venv\Scripts\activate
-```
-OR if you have a Mac:
 
-```
-source .venv\Scripts\activate
-```
-)
-
+{: .important-title }
+> Activating your Environment Manually
+>
+> If, for some reason, your Visual Studio wasn't able to auto-activate the virtual environment you might need to re-activate your environment at the bottom of the screen in the terminal before hitting the Run button.
+> ```
+> .venv\Scripts\activate
+> ```
+> OR if you have a Mac:
+>
+> ```
+> source .venv\Scripts\activate
+> ```
 
 
 # Go to the Next Steps
 
-Next follow the other instructions on this site for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information!
+Next follow the other instructions on this site for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information! I would personally start with the next link about how to [organize your data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/OrganizeData/) since some parts of the scripts rely on your data to be arranged in a certain way. But hey! you do you!
