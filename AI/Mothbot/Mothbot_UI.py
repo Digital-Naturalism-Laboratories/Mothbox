@@ -26,8 +26,8 @@ def dataset_use_selected_folder(folder):
 
 def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
     import subprocess
-    print("OVERWRITE DET")
-    print(overwrite_bot)
+    #print("OVERWRITE DET")
+    #print(overwrite_bot)
     if not selected_folders:
         yield "No nightly folders selected.\n"
         return
@@ -47,19 +47,27 @@ def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
             #"--gen_bot_det_evenif_human_exists", str(gen_bot),
             "--overwrite_prev_bot_detections", str(int(overwrite_bot)),
         ]
-
+        #needed to add some stuff here to catch weird char encoding errors thrown by YOLO
         try:
             process = subprocess.Popen(
                 cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
-                text=True
+                text=True,
+                bufsize=1,  # line-buffered
+                encoding="utf-8",      # force utf-8 decoding
+                errors="replace"       # or "ignore" to drop bad bytes
             )
 
-            for line in iter(process.stdout.readline, ''):
-                cleaned_line = line.replace('\r', '')
-                output_log += cleaned_line
-                yield output_log
+            # Read output line by line until process finishes
+            while True:
+                line = process.stdout.readline()
+                if not line and process.poll() is not None:
+                    break  # process ended
+                if line:
+                    cleaned_line = line.replace('\r', '')
+                    output_log += cleaned_line
+                    yield output_log
 
             process.stdout.close()
             process.wait()

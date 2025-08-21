@@ -103,6 +103,7 @@ def process_jpg_files(img_files, date_folder):
         human_json_path = os.path.join(date_folder, filename[:-4] + ".json")
         bot_json_path = os.path.join(date_folder, filename[:-4] + "_botdetection.json")
 
+        # **Check -1: see if image is not corrupt
         #verify if the image file is ok
         if not is_valid_image(image_path):
             print(f"Skipping corrupt image: {image_path}")
@@ -118,7 +119,7 @@ def process_jpg_files(img_files, date_folder):
         print(f"({progress:.2f}%) Processing:  {filename} ")
 
 
-        # **Check 0: Ensure the image file has more than 0 bytes**
+        # **Check 0: Ensure the image file has more than 0 bytes, this is one of our checks for a corrupt image**
         if not os.path.isfile(image_path) or os.path.getsize(image_path) == 0:
             print(f"Skipping {filename}: Image file is missing or empty.")
             continue
@@ -171,8 +172,14 @@ def process_jpg_files(img_files, date_folder):
         #We have been given the go ahead to overwrite any existing detection .json files, and if human data exists, we should still create a bot file in parallel.
 
         # Process with Yolo to detect any creatures
-        print("Predict a new image: ", image_path)
-        results = model.predict(source=image_path, imgsz=IMGSZ)
+        """Run YOLO on an image, skip if corrupt or unreadable."""
+        try:
+            print("Predict a new image with error catchers:", image_path)
+            results = model.predict(source=image_path, imgsz=IMGSZ)
+        except Exception as e:  # catch *any* error YOLO/PIL/numpy might throw
+            print(f"❌ Skipping corrupt/unreadable image: {image_path} ({e})")
+            print(f"Skipping {filename}: Image file is missing or empty and messed up in YOLO.")
+            continue
 
         # Extract OBB coordinates and crop
         shapes=[]
