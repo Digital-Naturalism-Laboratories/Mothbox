@@ -5,7 +5,7 @@ parent: Processing Data
 has_children: false
 nav_order: 1
 ---
-Our data comes in from the field to a server and is organized like this. 
+We organize our photographic data we get from the Mothboxes like shown below: 
 ```
 .
 └── Country/ (Country it is operated in)
@@ -17,6 +17,19 @@ Our data comes in from the field to a server and is organized like this.
             ├── DEVICE_YYYY-MM-DD-HH-MM-SS.json (Yolo detection with auto-ID)
             └── DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
 ```
+In addition to the photo data, there are two other files you will need to completely process your data.
+* Metadata CSV
+    * This ties the photos and IDs to metadata like location and date
+* Species List
+    * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)    
+
+These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
+
+{: .important-title }
+> Please Organize Your Data like this!
+>
+> There might be better ways to organize this stuff, and we are open to suggestions! But for now, it's important to try to organize your data like this because the scripts we are whipping together to process your images rely on an organization and naming structure like this to tie together the different types of data!
+
 ## Deployment
 Each "deployment" is a device left out in the field somewhere.
 The deployment has a unique name like this:
