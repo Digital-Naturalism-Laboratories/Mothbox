@@ -181,6 +181,19 @@ def set_computerName(filepath, compname):
                 print("set name " + compname)
             else:
                 file.write(line)  # Keep other lines unchanged
+def set_UTCinControls(filepath, utcoff):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+    with open(filepath, "w") as file:
+        for line in lines:
+            print(line)
+            if line.startswith("UTCoff="):
+                file.write("UTCoff=" + str(utcoff) + "\n")  # Replace with False
+                print("set next UTC offset in controls " + str(utcoff))
+            else:
+                file.write(line)  # Keep other lines unchanged
+
 
 def set_nextWakeinControls(filepath, etime):
     with open(filepath, "r") as file:
@@ -766,7 +779,7 @@ GPIO.setmode(GPIO.BCM)
 # Define GPIO pin for checking
 off_pin = 16
 debug_pin = 12
-mode = "ARMED"  # possible modes are OFF or DEBUG or ARMED
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE
 # Set GPIO pin as input
 GPIO.setup(off_pin, GPIO.IN)
 GPIO.setup(debug_pin, GPIO.IN)
@@ -855,9 +868,13 @@ settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
 print(settings)
 set_timings("/home/pi/Desktop/Mothbox/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
 
+
+
 if "runtime" in settings:
     del settings["runtime"]
 if "utc_off" in settings:
+    utc_off=settings["utc_off"]
+    set_UTCinControls("/home/pi/Desktop/Mothbox/controls.txt",utc_off)
     del settings["utc_off"]
 
 print("printing settings")
@@ -930,7 +947,7 @@ else:
 
 #Final Step (No other code past this, this is where it sits and waits until shutdown)
 # - prepare shutdown and wait
-# Toggle System MODE, shut down if in OFF/DISARMED mode
+# Toggle System MODE, shut down if in OFF/INACTIVE mode
 if mode == "OFF":
     print("System is in OFF MODE")
     if rpiModel == 4:
@@ -945,8 +962,8 @@ elif mode == "DEBUG":
     # Call the script using subprocess.run
     subprocess.run([debug_script_path])
     # stopcron()
-elif mode == "ARMED":
-    print("System is armed")
+elif mode == "ACTIVE":
+    print("System is ACTIVE")
 else:
     print("Invalid mode")
 
