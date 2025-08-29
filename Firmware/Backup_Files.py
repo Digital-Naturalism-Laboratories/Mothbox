@@ -37,7 +37,7 @@ logs_folder = desktop_path / "logs"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
-internal_storage_minimum = 58 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
+internal_storage_minimum = 8 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
 
 print("----------------- STARTING BACKUP FILES-------------------")
 now = datetime.now()
