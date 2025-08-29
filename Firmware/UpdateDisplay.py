@@ -74,7 +74,7 @@ GPIO.setmode(GPIO.BCM)
 # Define GPIO pin for checking
 off_pin = 16
 debug_pin = 12
-mode = "ARMED"  # possible modes are OFF or DEBUG or ARMED
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ARMED
 # Set GPIO pin as input
 GPIO.setup(off_pin, GPIO.IN)
 GPIO.setup(debug_pin, GPIO.IN)
@@ -137,6 +137,7 @@ weekdays=control_values.get("weekdays", "error")
 mins=control_values.get("minutes", "error")
 runtime=control_values.get("runtime", "error")
 
+
 # UTCoffset
 UTCoff=control_values.get("UTCoff", "error")
 
@@ -188,6 +189,8 @@ try:
     font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font10 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 10)
+    font7 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 7)
+
     font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/bigshoulders/BigShoulders-Bold.ttf',12)
     #font_josans= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/josans/JosefinSans-Medium.ttf',15)
     #font_space= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf',15)
@@ -196,7 +199,9 @@ try:
     #font_robotoslab=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf',15)
     #font_robotosemicon=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Regular.ttf',15)
     font_robotosemicon10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf',11)
-    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',15)
+    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',16)
+    font_roboto15=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',15)
+
     font_roboto10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',10)
 
     logging.info("E-paper refresh")
@@ -206,28 +211,31 @@ try:
     # Setup for portrait mode
     image = Image.new('1', (epd.width, epd.height), 255)  # Portrait: width=122, height=250
     draw = ImageDraw.Draw(image)
+    
+    #Start Drawing stuff to the display
+    
     # Draw text elements (adjust coordinates to suit portrait layout)
-    draw.text((2, 0), "NAME: " + computerName, font=font_roboto, fill=0)
+    draw.text((2,7), "NAME: ", font=font7, fill=0)
+    draw.text((0, 0), "      " + computerName, font=font_roboto, fill=0)
 
-    draw.text((2, 20), "State: "+mode, font=font_roboto, fill=0)
+    draw.text((2, 20), "state: "+mode, font=font_roboto, fill=0)
 
     #Schedule Stuff
-    draw.text((2, 40), 'RUNTIME: ' + runtime, font=font10, fill=0)
-
-    draw.text((2, 50), 'WAKE: ' +  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_robotosemicon10, fill=0)
-
+    draw.text((2, 37), 'next wake:', font=font_robotosemicon10, fill=0)
+    draw.text((2, 47),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
 
 
-    draw.text((2, 60), 'DAYS: ' + weekdays, font=font10, fill=0)
-    draw.text((2, 70), 'HOURS: ', font=font_robotosemicon10, fill=0)
-    draw.text((2, 80), hours, font=font_robotosemicon10, fill=0)
-    draw.text((2, 90), 'MINUTES: ' + mins, font=font10, fill=0)
+    draw.text((2, 65), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
+    draw.text((2, 76), 'DAYS: ' + weekdays, font=font10, fill=0)
+    draw.text((2, 87), 'HOURS: ', font=font_robotosemicon10, fill=0)
+    draw.text((2, 98), hours, font=font_robotosemicon10, fill=0)
+    draw.text((2, 109), 'MINUTES: ' + mins, font=font10, fill=0)
 
     # Add disk space info
-    draw.text((2, 110), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
+    draw.text((2, 130), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
 
     # Starting Y position for external info (after previous lines)
-    y_pos=120
+    y_pos=140
     if external_info:
         for line in external_info.strip().split('\n'):
             draw.text((10, y_pos), line, font=font10, fill=0)
@@ -236,8 +244,8 @@ try:
         draw.text((10, y_pos), "No USB found", font=font10, fill=0)
 
     #GPS stuff
-    draw.text((2, 150), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
-    draw.text((2, 160), '        '+str(lon), font=font_robotosemicon10, fill=0)
+    draw.text((2, 180), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
+    draw.text((2, 190), '        '+str(lon), font=font_robotosemicon10, fill=0)
 
     #Battery Stuff
     if(voltage==-100):
@@ -249,7 +257,7 @@ try:
     draw.text((2, 225), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
     
     draw.text((2, 237), 'MOTHBOX', font=font_bigs, fill=0)
-    draw.text((50, 240), 'version 4.16.0', font=font10, fill=0)
+    draw.text((50, 240), 'version '+softwareversion, font=font10, fill=0)
     
     
     # Send to display
@@ -285,7 +293,7 @@ except KeyboardInterrupt:
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
     draw.text((120, 60), 'e-Paper demo', font = font15, fill = 0)
-    draw.text((110, 90), u'微雪电子', font = font24, fill = 0)
+    draw.text((110, 90), u'å¾®éªçµå­', font = font24, fill = 0)
     # image = image.rotate(180) # rotate
     epd.display(epd.getbuffer(image))
     time.sleep(2)
@@ -312,7 +320,7 @@ except KeyboardInterrupt:
     draw.text((120, 20), 'version 5.0.0', font = font15, fill = 255)
     draw.text((60, 0), "Name: "+mbname, font = font10, fill = 255)
 
-    draw.text((30, 60), "mothbox is ARMED", font = font15, fill = 255)
+    draw.text((30, 60), "mothbox is ACTIVE", font = font15, fill = 255)
 
     
     draw.text((30, 80), "current time: "+time.strftime('%H:%M:%S') +" UTC:-5", font = font15, fill = 255)
