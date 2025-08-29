@@ -37,7 +37,7 @@ logs_folder = desktop_path / "logs"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup"
-internal_storage_minimum = 8 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
+internal_storage_minimum = 58 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
 
 print("----------------- STARTING BACKUP FILES-------------------")
 now = datetime.now()
@@ -249,7 +249,7 @@ def copy_folders_with_files(source_folder, target_folder):
         if os.path.isfile(source_path):
             # If the source is a file, copy it directly
             try:
-                shutil.copy2(source_path, target_path)
+                shutil.copy2(source_path, target_path,dirs_exist_ok = True)
                 print(f"Copied file: {source_path} to {target_path}")
             except Exception as e:
                 print(f"Error copying {source_path} to {target_path}: {e}")
@@ -260,7 +260,7 @@ def copy_folders_with_files(source_folder, target_folder):
             else:
                 # Copy the directory and its contents
                 try:
-                    shutil.copytree(source_path, target_path)
+                    shutil.copytree(source_path, target_path,dirs_exist_ok = True)
                     print(f"Copied folder: {source_path} to {target_path}")
                 except Exception as e:
                     print(f"Error copying folder {source_path} to {target_path}: {e}")
