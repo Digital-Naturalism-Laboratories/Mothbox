@@ -18,6 +18,23 @@ You can [fill out a form online](https://docs.google.com/forms/d/e/1FAIpQLSdtyvT
 
 You can even use a [pre-filled form for use in Panama](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=pp_url&entry.1104269680=4.15&entry.843642143=White+felt+/+Fieltro+blanco&entry.123854981=programA+(19;21;23;2;4)&entry.953889331=Panama&entry.1661969381=1.5&entry.1081287715=Mothbeam+v2&entry.1268323211=internal+-+top+of+box&entry.766401184=Internal+USB)
 
+
+
+# Inventory of Mothboxes
+If you are running a project with many Mothboxes (more than about 4), you probably want to start keeping an inventory. Field equipment can get lost, forgotten, or busted up, so it's handy to know what you have available if a new opportunity strikes!
+Here's an [example of how we organize our inventory of mothboxes](https://docs.google.com/spreadsheets/d/1W60RJSNnirpbALVyalLmYodYBUhqQkD_vb8ZOFOarns/edit?usp=sharing). (If you have suggestions for better organizational schema, please let us know!)
+
+## Mothbox Name
+The Mothboxes all have a unique, persistant name (based on the Pi's serial number). The names are in the format of (descriptiveword+animal) and are made from the thousand most common descriptive words and animals in both English and Spanish.
+
+This is why you will have names like "CoolJirafa" or "PrizeCrab."
+The name should be written on a sticker on the Mothbox. Like "FondoGorila."
+![PXL_20240909_045245636 MP](https://github.com/user-attachments/assets/691bfe74-70c5-4f82-8cdb-def6d7871c8d)
+Updated mothboxes will also show the name prominently on the epaper display!
+
+
+
+
 # Portable Field Guide
 
 The steps below show you what to do to make sure your Mothbox will run in the field. This is also available as a small print-out that fits inside the Mothbox. We print and laminate them and include them with each Mothbox to make sure everyone knows how to use it. This field guide is available in English and Spanish (and hopefully even more languages soon!).
