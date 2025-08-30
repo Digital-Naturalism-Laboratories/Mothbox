@@ -22,7 +22,7 @@ We organize our photographic data we get from "Deployments" of the Mothboxes lik
             ├── DEVICE_YYYY-MM-DD-HH-MM-SS.json (Yolo detection with auto-ID)
             └── DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
 ```
-In addition to the photo data, there are two other files you will need to completely process your data.
+In addition to the Deployment photo data, there are two other files you will need to completely process your data.
 * Metadata CSV
     * This ties the photos and IDs to metadata like location and date
 * Species List
@@ -81,33 +81,72 @@ Each sample photo might also have a similarly named file next to it, but the fil
 There are files that have the same name as the Raw Image but end with ".json". These are human-created "Ground-Truth" datasets. They don't have "botdetection" on the ends their file names.
 
 
+# Metadata
+Equally as important as the photographic data you collect is the metadata about your deployments. We need to [create a metadata file](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Auto%20Calculations%20-%20Mothbox%20Main%20Metadata%20field%20sheet%20(Bilingue)%20(Responses)%20-%20Form%20responses%201.csv) for each raw photo. This contains information about the sampling like:
+
+* occurrenceID (file name with unique timestamp of the specific individual photo ("gradoVerdín_2024_07_25__21_12_05_HDR0_crop_0.jpg")
+* basisOfRecord (i.e. MACHINE_DETECTED)
+* deployment ID
+* eventDate (timestamp)
+* GPS data
+* raw_photo (location of the original "raw photo")
+* identifier (Who did the most up to date ID? i.e. "Mothbot" or "Hubert Szczygiel"
+* cv_confidence (how confident the AI was in detecting this if machine detected)
+* Taxonomic information: class	order	family	genus	species	commonName	scientificName
 
 
+We have printable forms that field technicians can take to their sites: 
+
+* [English Metadata Field Sheet (Printable)](https://docs.google.com/document/d/138JZj5jImSbsMy4HENhGG927nZ7LnpokHBwIVP40MgM/edit?usp=sharing)
+* [Hoja de metadatos de campo en español (imprimible)](https://docs.google.com/document/d/1a0biZUbMgTlj4iQnYNFXaaA3HtSSpRODiZAXmBr1tMo/edit?usp=sharing)
 
 
+Alternatively, fill out the [online version of the form (bilingüe)](https://docs.google.com/forms/d/e/1FAIpQLSdgCwPrF7kEagmb3gvLT0CNaEj_S5SUKgE84Er7Go7YfueTxg/viewform?usp=sf_link).
+
+{:.important}
+> Remember to collect this metadata for EVERY SINGLE DEPLOYMENT or else it is not useful in the end!
+
+{:.important}
+> All photos from a single deployment should be in a folder named with the convention: "AREA_POINT_MOTHBOXID_YYYY-MM-DD"
+
+# Species List
+The species list is used by the indentification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216). 
+
+If you want to go super broad, you could just try to get a list of all arthropods, or you could limit things to a specific family of moths. It's up to you!
 
 # Processing Pipeline
-## Metadata
-Next we [create a metadata file](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Auto%20Calculations%20-%20Mothbox%20Main%20Metadata%20field%20sheet%20(Bilingue)%20(Responses)%20-%20Form%20responses%201.csv) for each raw photo. This contains information about the sampling like:
-```
-- GPS: [lat,lon]
-- Person Who Collected it
-- Land Use Type
-- Type of Mothbox Deployed
-- Any additional Data
-```
 
-### Detection Data
-Finally the data about individual insects is stored in another .json file that has the same name as the original raw photo. This detection data is created by several scripts.
-[First a script (Mothbox_Detect.py)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/) uses a trained Yolo model to detect where there might be interesting creatures present in the image. Its data looks like this when visualized in a program like X-Anylabelling:
-![image](https://github.com/user-attachments/assets/3b5bf6d8-4b3a-4dc0-ab31-53846459cb1c)
+## Detection
+The first thing we need to do when processing mothbox data is to "detect" where all the creatures are in a "raw photo."
 
-Then we feed all those detections in another pass to a [different script called Mothbox_ID.py, which uses BioCLIP](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/) to automatically ID the different creatures detected. 
-It gives the detections labels based on the taxa it predicts them to be:
-![image](https://github.com/user-attachments/assets/30f74418-08eb-437d-8447-1b2f3387b610)
+In other words, we want to go from a raw photo that might have many insects:
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="48%">
 
-### Database Editing
-Finally there are some remaining scripts that help you open this data in database visualization and editing systems like Voxel51. 
+to a collection of many small photos that each only show one insect.
+![gradoVerdín_2024_07_25__21_12_05_HDR0_crop_0](https://github.com/user-attachments/assets/29d89307-5bc3-422a-839a-c67c49860f08)
+
+<img width="746" height="471" alt="image" src="https://github.com/user-attachments/assets/303a6ae0-b80f-44ff-b58a-9dc3582b9e68" />
+
+You can run this stage of the [processing automatically with the Mothbot Detection script](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/).
+
+
+
+## Identification
+Next in the processing steps, we feed all those detections in another pass to a [different script called Mothbox_ID.py, which uses BioCLIP](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/id/) to automatically ID the different creatures detected. 
+
+It will try to give each detection a label based on what type of creature it thinks it is. It will perform and additional filtering step and label any incorrectly detected images as an Error (for instance if a piece of dirt or blurry photo was detected).
+![image](https://github.com/user-attachments/assets/cc728466-d9d8-456d-be97-fef16d56eac0)
+
+You can run this stage of the [processing automatically with the Mothbot ID script.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/id/)
+
+## Editing the Database
+Finally there are some remaining scripts that let a human expert go through this automatically detected and identified data to Identify things to deeper levels or fix incorrect IDs.
+
 ![image](https://github.com/user-attachments/assets/b7b0ba22-1786-4239-8de3-3a71ca0ff865)
 
+You can run this stage of the [processing automatically with the Mothbot Create Database script.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/databases/)
 
+
+# Start Processing
+
+Go to the [next steps in this section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/) to start processing your data!
