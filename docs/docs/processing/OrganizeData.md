@@ -10,6 +10,8 @@ There are three key types of data you need to collect to process information fro
 *    Metadata
 *    Species List
 
+## Basic Organization
+
 We organize our photographic data we get from "Deployments" of the Mothboxes like shown below: 
 ```
 .
@@ -46,8 +48,11 @@ The deployment has a unique name like this:
 AREA_SITE_DEVICE_YYYY-MM-DD
 ```
 The "Area" is a broad area that a specific field agent tends to work on, like "MtTotumas" (No spaces)
+
 The "Site" is a human name for the very specific place you left the Mothbox, like "TreeNearLodge" (No Spaces)
+
 The "Device" is a unique name that the Mothbox calls itself. These are names based off the internal serial number of the Raspberry Pi on the Mothbox meshed with a list we made of Spanish and English verbs, nouns, and adjectives. Like "FuerteFrog"
+
 Then there is a date stamp that marks the first day a mothbox was left out in the field. like 2024-04-30. The format is YYYY-MM-DD.
 
 ## Nightly Folders
