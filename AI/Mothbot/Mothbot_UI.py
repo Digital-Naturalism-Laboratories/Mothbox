@@ -324,7 +324,7 @@ def confirm_selection(selected_labels, mapping):
 
 # ----- UI STUFF --------------
 
-with gr.Blocks() as demo:
+with gr.Blocks(title="Mothbot") as demo:
     # ~~~~~~~~ DEPLOYMENT TAB ~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Deployments"):
         gr.Markdown("### Pick a main folder of Deployments to process: ")
@@ -614,4 +614,4 @@ with gr.Blocks() as demo:
             outputs=CSV_output_box
         )
 
-demo.launch(inbrowser=True)
+demo.launch(inbrowser=True, favicon_path='favicon.png')
