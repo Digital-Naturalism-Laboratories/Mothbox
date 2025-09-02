@@ -1756,6 +1756,214 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "easyeda2kicad:BH1750FVI-TR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "U"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "BH1750FVI-TR"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:WSOF-6_L2.6-W1.6-P0.50-TL-EP"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Sensors_ROHM_BH1750FVI-TR_BH1750FVI-TR_C78960.html"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C78960"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "BH1750FVI-TR_0_1"
+				(rectangle
+					(start -10.16 7.62)
+					(end 10.16 -5.59)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center -8.89 6.35)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -12.7 2.54 0)
+					(length 2.54)
+					(name "VCC"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -12.7 0 0)
+					(length 2.54)
+					(name "ADDR"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -12.7 -2.54 0)
+					(length 2.54)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 5.08 180)
+					(length 2.54)
+					(name "EP"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 2.54 180)
+					(length 2.54)
+					(name "SCL"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 0 180)
+					(length 2.54)
+					(name "DVI"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 12.7 -2.54 180)
+					(length 2.54)
+					(name "SDA"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(rectangle
 		(start 23.622 100.33)
@@ -2115,6 +2323,12 @@
 		(uuid "c0e3a590-f971-406e-a508-744652bcbefd")
 	)
 	(junction
+		(at 43.18 193.04)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "c4056066-e682-4e06-81df-f0c69b400211")
+	)
+	(junction
 		(at 106.68 72.39)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2137,6 +2351,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "dbc502d3-8d5d-4c39-9dfd-38b86ac349f7")
+	)
+	(junction
+		(at 46.99 203.2)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e6012ee6-22da-4ec8-8d82-4b8b20a1f516")
 	)
 	(junction
 		(at 120.65 161.29)
@@ -2181,6 +2401,10 @@
 		(uuid "86a558d8-e715-4144-a303-6afde4283ac9")
 	)
 	(no_connect
+		(at 72.39 195.58)
+		(uuid "8c538899-9839-4737-8c76-536178daaf07")
+	)
+	(no_connect
 		(at 212.09 156.21)
 		(uuid "9c99be99-1805-4cd5-978a-bec5b565abd6")
 	)
@@ -2195,6 +2419,10 @@
 	(no_connect
 		(at 212.09 151.13)
 		(uuid "ba23d93a-c835-4937-ba0a-b2e16ebd4142")
+	)
+	(no_connect
+		(at 72.39 200.66)
+		(uuid "c37744ca-396b-4df8-82e0-968d3d53f618")
 	)
 	(no_connect
 		(at 212.09 143.51)
@@ -2379,6 +2607,16 @@
 			(type default)
 		)
 		(uuid "153c13b7-d5c9-4e12-ac8f-8d9935b20669")
+	)
+	(wire
+		(pts
+			(xy 43.18 193.04) (xy 46.99 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "15f29c61-c01a-4e4a-b144-32be925e74ef")
 	)
 	(wire
 		(pts
@@ -2822,6 +3060,16 @@
 	)
 	(wire
 		(pts
+			(xy 46.99 200.66) (xy 46.99 203.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46f1f18a-3d74-4133-8724-bd978d97f82d")
+	)
+	(wire
+		(pts
 			(xy 160.02 30.48) (xy 160.02 49.53)
 		)
 		(stroke
@@ -3209,6 +3457,16 @@
 			(type default)
 		)
 		(uuid "69a88e25-8295-471f-8c8a-92af205fb9e2")
+	)
+	(wire
+		(pts
+			(xy 43.18 190.5) (xy 43.18 193.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b2758e4-e387-4073-a11a-7766875a41fe")
 	)
 	(wire
 		(pts
@@ -3659,6 +3917,16 @@
 			(type default)
 		)
 		(uuid "8de24314-fffc-4fe5-a486-2aee0c6490de")
+	)
+	(wire
+		(pts
+			(xy 46.99 193.04) (xy 46.99 198.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8e5960f1-34db-4180-ba59-c21a8bdb37a5")
 	)
 	(wire
 		(pts
@@ -5742,6 +6010,28 @@
 			)
 		)
 	)
+	(global_label "SCL"
+		(shape input)
+		(at 72.39 198.12 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7aeef8f6-8252-4afc-84e9-be1c6d0adba4")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 78.8828 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "GPS_PPS"
 		(shape input)
 		(at 267.97 157.48 180)
@@ -5760,6 +6050,28 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SDA"
+		(shape input)
+		(at 72.39 203.2 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "93f7e436-c4c9-4e75-a10c-05531f1bff5a")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 78.9433 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)
@@ -5913,6 +6225,138 @@
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "#PWR022")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:GND")
+		(at 43.18 198.12 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "09810fed-4d41-4ab3-8fbb-12f06e641695")
+		(property "Reference" "#PWR065"
+			(at 43.18 204.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 39.37 200.152 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 43.18 198.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d071a30f-6a09-464b-aa69-494c5df8b380")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "#PWR065")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:+3.3V")
+		(at 43.18 190.5 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0d29fb72-88ab-40c0-ab4a-b4a8f711b640")
+		(property "Reference" "#PWR064"
+			(at 43.18 194.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 38.862 187.198 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 43.18 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 43.18 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 43.18 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a7819949-0519-4c29-b4b1-f5ab5ba2e78d")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "#PWR064")
 					(unit 1)
 				)
 			)
@@ -8984,6 +9428,98 @@
 		)
 	)
 	(symbol
+		(lib_id "easyeda2kicad:BH1750FVI-TR")
+		(at 59.69 200.66 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "b48c72a8-68df-47e0-aa7a-79d29c46fd93")
+		(property "Reference" "U17"
+			(at 59.69 187.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "BH1750FVI-TR"
+			(at 59.69 190.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "easyeda2kicad:WSOF-6_L2.6-W1.6-P0.50-TL-EP"
+			(at 59.69 210.82 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Sensors_ROHM_BH1750FVI-TR_BH1750FVI-TR_C78960.html"
+			(at 59.69 213.36 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 59.69 200.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C78960"
+			(at 59.69 215.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "eddae7e6-7e14-4447-a518-af0b0acb92e0")
+		)
+		(pin "3"
+			(uuid "d0ed98a1-4e40-445f-83a7-916c0adfb52c")
+		)
+		(pin "2"
+			(uuid "6022299d-f07e-4a1d-960f-9cc44f1ec8e3")
+		)
+		(pin "1"
+			(uuid "89ba677b-e67b-4a17-9127-6eaa403ce6d0")
+		)
+		(pin "5"
+			(uuid "f5209659-2a8c-4d35-a02d-67411100f116")
+		)
+		(pin "7"
+			(uuid "9a7cfe33-74ad-4eaa-8414-c2477884ede6")
+		)
+		(pin "4"
+			(uuid "3fd01488-7f24-4931-9939-d39a8b6d4cdf")
+		)
+		(instances
+			(project ""
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "U17")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:C_Small")
 		(at 116.84 118.11 0)
 		(mirror x)
@@ -9849,6 +10385,260 @@
 			(project ""
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
 					(reference "U15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:GND")
+		(at 46.99 203.2 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "ef4bcb1d-4b63-445d-b4ca-3955529742e8")
+		(property "Reference" "#PWR063"
+			(at 46.99 209.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 43.688 205.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 46.99 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 46.99 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 46.99 203.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5e3192e9-5262-4d9c-bee7-4a1dd78be279")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "#PWR063")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:C_Small")
+		(at 43.18 195.58 0)
+		(mirror x)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f44c5cd5-fa19-469b-b2fb-66bd7b4eba35")
+		(property "Reference" "C13"
+			(at 40.64 193.0335 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 40.64 195.5735 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Digikey_Part_No" "311-1140-2-ND"
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C14663"
+			(at 43.18 195.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "02a962a9-7d72-42e6-a041-d6e13d1a4463")
+		)
+		(pin "1"
+			(uuid "e7d82035-0b4d-4dec-b311-1f04a9b737b9")
+		)
+		(instances
+			(project "MothBox"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/d22974ea-9095-4b9a-829f-a5d553626ed9"
+					(reference "C13")
 					(unit 1)
 				)
 			)
