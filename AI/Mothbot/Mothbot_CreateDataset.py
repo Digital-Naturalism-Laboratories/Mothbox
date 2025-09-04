@@ -734,7 +734,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         # Format the filtered dictionary
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
-    print("adding taxon info to exif "+str(taxonomic_list))
+    #print("adding taxon info to exif "+str(taxonomic_list))
     full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #should work on mac or windows
     #add_taxonomy_subject_and_tags(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_naturtag(full_patch_path, full_patch_path, taxonomic_list)
