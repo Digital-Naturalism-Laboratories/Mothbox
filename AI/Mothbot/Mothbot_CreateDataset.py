@@ -687,13 +687,13 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["punto"]=metadata.get("point","") #point is maybe a special key name in 51
   
   
-  latitude=metadata.get("latitude","")
-  longitude=metadata.get("longitude","")
+  latitude=metadata.get("latitude","0.00000")
+  longitude=metadata.get("longitude","0.00000")
   geolocation = fo.GeoLocation(latitude=latitude, longitude=longitude)
   sample["location"]=geolocation
   sample["longitude"]=longitude
   sample["latitude"]=latitude
-  therawgroundheight=metadata.get("height (placement above ground)","")
+  therawgroundheight=metadata.get("height (placement above ground)","-1")
   sample["ground_height"]= extract_number(therawgroundheight)
 
   sample["deployment_name"]=metadata.get("deployment.name","")
