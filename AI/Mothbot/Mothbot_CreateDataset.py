@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\A\2025-06-26"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 
@@ -211,7 +211,9 @@ def find_csv_match(input_path, metadata_path):
     elif len(parts) == 5:  # Handle more than four parts (e.g., five or six)
         parts = parts[1:]  # Discard the first part and keep the rest
     else:  # Fewer than four parts case remains unchanged in your original logic
-        raise ValueError("The input path does not contain the expected minimum of 4 parts.")
+        print("The input path folder does not have a name formatted like Area_point_mothboxname_deploymentdate. Thus we will not be able to connect metadata")
+        print("No metadata found")
+        return {}
     # Assign the parts to their respective semantic names and normalize them
     area, point, mothbox, deployment_date = [part.strip().lower() for part in parts]
     print("looking for metadata for:")
