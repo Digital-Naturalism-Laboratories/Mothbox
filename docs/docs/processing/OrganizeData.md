@@ -16,7 +16,7 @@ We organize our photographic data we get from "Deployments" of the Mothboxes lik
 ```
 .
 └── Country/ (Country it is operated in)
-    └── Deployment_YYYY-MM-DD/  (Deployment Folder)
+    └── COUNTRY_PROJECT_SITE_DEVICE_YYYY-MM-DD/  (Deployment Folder)
         ├── YYYY-MM-01 (first nightly folder of a deployment)
         ├── YYYY-MM-02 (second...)
         └── YYYY-MM-03/
@@ -45,9 +45,9 @@ Each "deployment" is a data from device left out in the field somewhere.
 ## Deployment Name
 The deployment has a unique name like this:
 ```
-AREA_SITE_DEVICE_YYYY-MM-DD
+PROJECT_SITE_DEVICE_YYYY-MM-DD
 ```
-The "Area" is a broad area that a specific field agent tends to work on, like "MtTotumas" (No spaces)
+The "Project" is a broad project that you are collecting this data for. You couldname it something like "BatSurvey" or "MtTotumasDrySeason" (No spaces)
 
 The "Site" is a human name for the very specific place you left the Mothbox, like "TreeNearLodge" (No Spaces)
 
@@ -113,7 +113,7 @@ Alternatively, fill out
 > Remember to collect this metadata for EVERY SINGLE DEPLOYMENT or else it is not useful in the end!
 
 {:.important}
-> All photos from a single deployment should be in a folder named with the convention: "AREA_POINT_MOTHBOXID_YYYY-MM-DD"
+> All photos from a single deployment should be in a folder named with the convention: "PROJECT_SITE_MOTHBOXID_YYYY-MM-DD" (the COUNTRY_ prefix is optional)
 
 # Species List
 The species list is used by the indentification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216). 
