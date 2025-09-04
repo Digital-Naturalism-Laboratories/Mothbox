@@ -99,14 +99,15 @@ Equally as important as the photographic data you collect is the metadata about 
 * cv_confidence (how confident the AI was in detecting this if machine detected)
 * Taxonomic information: class	order	family	genus	species	commonName	scientificName
 
+You should [fill out a row on that form](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Auto%20Calculations%20-%20Mothbox%20Main%20Metadata%20field%20sheet%20(Bilingue)%20(Responses)%20-%20Form%20responses%201.csv) for each of your deployments.
 
 We have printable forms that field technicians can take to their sites: 
 
-* [English Metadata Field Sheet (Printable)](https://docs.google.com/document/d/138JZj5jImSbsMy4HENhGG927nZ7LnpokHBwIVP40MgM/edit?usp=sharing)
-* [Hoja de metadatos de campo en español (imprimible)](https://docs.google.com/document/d/1a0biZUbMgTlj4iQnYNFXaaA3HtSSpRODiZAXmBr1tMo/edit?usp=sharing)
+* [English Metadata Field Sheet (Printable)](https://drive.google.com/file/d/1rVujqoBMaxdqsiW63DhljWCpULg9bjxY/view?usp=drive_link)
 
+Alternatively, fill out 
+* the [online version of the form (bilingüe)](https://docs.google.com/forms/d/e/1FAIpQLSdgCwPrF7kEagmb3gvLT0CNaEj_S5SUKgE84Er7Go7YfueTxg/viewform?usp=sf_link).
 
-Alternatively, fill out the [online version of the form (bilingüe)](https://docs.google.com/forms/d/e/1FAIpQLSdgCwPrF7kEagmb3gvLT0CNaEj_S5SUKgE84Er7Go7YfueTxg/viewform?usp=sf_link).
 
 {:.important}
 > Remember to collect this metadata for EVERY SINGLE DEPLOYMENT or else it is not useful in the end!
