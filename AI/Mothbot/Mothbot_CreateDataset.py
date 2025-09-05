@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 
@@ -203,6 +203,7 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
     """
     Finds a row in the CSV where 'deployment.name' matches the folder name of input_path.
     Tolerates the presence/absence of the first leading prefix on either side.
+    Matching is case-insensitive.
     If multiple matches are found, prints a warning and returns only the first one.
 
     Returns:
@@ -211,7 +212,8 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
     parent_folder = os.path.basename(os.path.dirname(input_path)).strip()
     alt_parent = _without_first_prefix(parent_folder)
 
-    folder_variants = {parent_folder, alt_parent}
+    # store variants in lowercase for case-insensitive matching
+    folder_variants = {parent_folder.lower(), alt_parent.lower()}
 
     matches = []
     print(f"scanning for metadata matches... (folder variants: {folder_variants})")
@@ -224,7 +226,7 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
                 continue
 
             alt_dep = _without_first_prefix(dep_name)
-            dep_variants = {dep_name, alt_dep}
+            dep_variants = {dep_name.lower(), alt_dep.lower()}
 
             # if any variant intersects, it's a match
             if folder_variants & dep_variants:
@@ -239,7 +241,6 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
 
     print(f"✅ Matched deployment.name = '{matches[0].get('deployment.name')}'")
     return matches[0]
-
 
 def load_anylabeling_data(json_path): #TODO load METADATA STRAIGHT FROM CSV - METADATA_PATH - Maybe metadata gets loaded into its own 51 thing via the WHOLe dataset?
   
