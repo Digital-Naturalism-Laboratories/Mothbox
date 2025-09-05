@@ -15,14 +15,19 @@ There are three key types of data you need to collect to process information fro
 We organize our photographic data we get from "Deployments" of the Mothboxes like shown below: 
 ```
 .
-└── Country/ (Country it is operated in)
-    └── COUNTRY_PROJECT_SITE_DEVICE_YYYY-MM-DD/  (Deployment Folder)
+└── Dataset/ (Collection of deployments)
+    └── Dataset_PROJECT_SITE_DEVICE_YYYY-MM-DD/  (Deployment Folder)
+        ├── metadata.csv
+        ├── species_list.csv
         ├── YYYY-MM-01 (first nightly folder of a deployment)
-        ├── YYYY-MM-02 (second...)
-        └── YYYY-MM-03/
-            ├── DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
-            ├── DEVICE_YYYY-MM-DD-HH-MM-SS.json (Yolo detection with auto-ID)
-            └── DEVICE_YYYY-MM-DD-HH-MM-SS_metadata.json
+        ├── YYYY-MM-02 (second nightly folder...)
+        └── YYYY-MM-03/ (Third nightly folder...)
+            ├── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0.jpg  (Raw Image collected)
+            ├── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0_botdetection.json (auto-created Yolo detection with auto-ID)
+            └── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0.json (human, ground truth detection data)
+            ├── patches/ (an automatically created folder made by the detection script)
+                ├── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0_PATCHINDEX_DETECTIONMODEL.pt.jpg.jpg  (Raw Image collected)
+
 ```
 In addition to the Deployment photo data, there are two other files you will need to completely process your data.
 * Metadata CSV
@@ -31,7 +36,7 @@ In addition to the Deployment photo data, there are two other files you will nee
     * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)    
 
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
-
+You can also organize them into each Deployment if you want like we show above.
 {: .important-title }
 > Please Organize Your Data like this!
 >
