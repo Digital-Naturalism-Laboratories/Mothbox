@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 
@@ -190,43 +190,55 @@ def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_err
     return target_values
 
 
+def _without_first_prefix(name: str) -> str:
+    """Return the string with the first underscore-separated prefix removed.
+    e.g. 'Indonesia_Les_Wilan...' -> 'Les_Wilan...'. If no underscore, returns original.
+    """
+    if not name:
+        return name
+    parts = name.split('_', 1)
+    return parts[1] if len(parts) == 2 else name
 
-def find_csv_match(input_path, metadata_path):
+def find_csv_match(input_path: str, metadata_path: str) -> dict:
     """
     Finds a row in the CSV where 'deployment.name' matches the folder name of input_path.
+    Tolerates the presence/absence of the first leading prefix on either side.
     If multiple matches are found, prints a warning and returns only the first one.
-    
-    Parameters:
-        input_path (str): Path to a file inside the deployment folder.
-        metadata_path (str): Path to the CSV metadata file.
-    
+
     Returns:
-        dict | None: The first matching row as a dict, or None if no match is found.
+        dict: The first matching row as a dict, or {} if no match is found.
     """
-    
-    # Get the parent folder name
-    parent_folder = os.path.basename(os.path.dirname(input_path))
-    
+    parent_folder = os.path.basename(os.path.dirname(input_path)).strip()
+    alt_parent = _without_first_prefix(parent_folder)
+
+    folder_variants = {parent_folder, alt_parent}
+
     matches = []
-    print("scanning for metadata matches...")
-    # Read the CSV file and search for matching rows
+    print(f"scanning for metadata matches... (folder variants: {folder_variants})")
+
     with open(metadata_path, mode='r', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
-        
         for row in reader:
-            if row.get("deployment.name") == parent_folder:
+            dep_name = (row.get("deployment.name") or "").strip()
+            if not dep_name:
+                continue
+
+            alt_dep = _without_first_prefix(dep_name)
+            dep_variants = {dep_name, alt_dep}
+
+            # if any variant intersects, it's a match
+            if folder_variants & dep_variants:
                 matches.append(row)
-    
+
     if not matches:
-        print(f"⚠️ No match found for '{parent_folder}' in {metadata_path}")
+        print(f"⚠️ No match found for '{parent_folder}' (or '{alt_parent}') in {metadata_path}")
         return {}
-    
-    print(matches)
+
     if len(matches) > 1:
         print(f"⚠️ Warning: Multiple matches found for '{parent_folder}', using the first one.")
-    
-    return matches[0]
 
+    print(f"✅ Matched deployment.name = '{matches[0].get('deployment.name')}'")
+    return matches[0]
 
 
 def load_anylabeling_data(json_path): #TODO load METADATA STRAIGHT FROM CSV - METADATA_PATH - Maybe metadata gets loaded into its own 51 thing via the WHOLe dataset?
