@@ -24,7 +24,7 @@ We organize our photographic data we get from "Deployments" of the Mothboxes lik
         └── YYYY-MM-03/ (Third nightly folder...)
             ├── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0.jpg  (Raw Image collected)
             ├── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0_botdetection.json (auto-created Yolo detection with auto-ID)
-            └── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0.json (human, ground truth detection data)
+            └── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0.json (human, ground truth detection data- optional)
             ├── patches/ (an automatically created folder made by the detection script)
                 ├── DEVICE_YYYY-MM-DD-HH-MM-SS_HDR0_PATCHINDEX_DETECTIONMODEL.pt.jpg.jpg  (Raw Image collected)
 
