@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\A\2025-06-26"
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 
@@ -191,62 +191,41 @@ def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_err
 
 
 
-
-
 def find_csv_match(input_path, metadata_path):
     """
-    Finds a matching row in the CSV metadata file based on parsed components from the input path.
-
-    Args:
-        input_path (str): Path to the folder containing the data.
+    Finds a row in the CSV where 'deployment.name' matches the folder name of input_path.
+    If multiple matches are found, prints a warning and returns only the first one.
+    
+    Parameters:
+        input_path (str): Path to a file inside the deployment folder.
         metadata_path (str): Path to the CSV metadata file.
-
+    
     Returns:
-        dict: A dictionary containing the matching row, or an empty dict if no match is found.
+        dict | None: The first matching row as a dict, or None if no match is found.
     """
+    
+    # Get the parent folder name
     parent_folder = os.path.basename(os.path.dirname(input_path))
-    parts = parent_folder.split("_")
-    if len(parts) == 4:
-        pass  # Use all parts, no action needed
-    elif len(parts) == 5:  # Handle more than four parts (e.g., five or six)
-        parts = parts[1:]  # Discard the first part and keep the rest
-    else:  # Fewer than four parts case remains unchanged in your original logic
-        print("The input path folder does not have a name formatted like Area_point_mothboxname_deploymentdate. Thus we will not be able to connect metadata")
-        print("No metadata found")
-        return {}
-    # Assign the parts to their respective semantic names and normalize them
-    area, point, mothbox, deployment_date = [part.strip().lower() for part in parts]
-    print("looking for metadata for:")
-    print(area+"_"+point+"_"+mothbox+"_"+deployment_date)
-
-    # Read the CSV file and search for a matching row
+    
+    matches = []
+    print("scanning for metadata matches...")
+    # Read the CSV file and search for matching rows
     with open(metadata_path, mode='r', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         
         for row in reader:
-            # Normalize CSV values
-            row_area = row.get("area", "").strip().lower()
-            row_point = row.get("point", "").strip().lower()
-            row_mothbox = row.get("mothbox", "").strip().lower()
-            row_deployment_date = row.get("deployment.date", "").strip()
-
-            # Convert deployment date format from DD/MM/YYYY to YYYY-MM-DD
-            try:
-                formatted_date = datetime.strptime(row_deployment_date, "%d/%m/%Y").strftime("%Y-%m-%d")
-            except ValueError:
-                continue
-
-            # Check if all components match
-            if (row_area == area and
-                row_point == point and
-                row_mothbox == mothbox and
-                formatted_date == deployment_date):
-                print("found metadata!")
-                return row
-
-    # Return an empty dictionary if no match is found
-    print("No metadata found")
-    return {}
+            if row.get("deployment.name") == parent_folder:
+                matches.append(row)
+    
+    if not matches:
+        print(f"⚠️ No match found for '{parent_folder}' in {metadata_path}")
+        return {}
+    
+    print(matches)
+    if len(matches) > 1:
+        print(f"⚠️ Warning: Multiple matches found for '{parent_folder}', using the first one.")
+    
+    return matches[0]
 
 
 
@@ -651,9 +630,10 @@ class ExifToolSession:
             output_lines.append(line.strip())
 
         if output_lines:
-            print(f"  ExifTool output for {full_patch_path}:")
+            #print(f"  ExifTool output for {full_patch_path}:")
             for line in output_lines:
-                print("  ", line)
+                None
+                #print("  ", line)
 
     def close(self):
         self.process.stdin.write("-stay_open\nFalse\n")
@@ -742,6 +722,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
     #print(naturtag.metadata.image_metadata.ImageMetadata(image_path=r"c:\Users\andre\Desktop\Dinacon Stuff\test\cuervoCinife_2025_06_30__04_53_06_HDR0_0_Mothbot_yolo11m_4500_imgsz1600_b1_2024-01-18.pt.jpg"))
     #add_taxonomy_subject_and_tags_exiv2(full_patch_path, full_patch_path, taxonomic_list)
     #write_taxonomy_with_exiv2_cli(str(full_patch_path), taxonomic_list)
+    print("adding taxonomy with Exiftool...(can take a couple seconds)")
     tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) 
     #tagger.add_taxonomy_with_exiftool(full_patch_path, taxonomic_list)
     
