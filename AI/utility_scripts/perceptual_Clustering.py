@@ -1,11 +1,11 @@
 import os
-import shutil
 import torch
 import numpy as np
 from PIL import Image
 from tqdm import tqdm
 import torchvision.transforms as T
 import hdbscan
+import piexif
 
 # --------------------------
 # 1. Load DINOv2 model
@@ -50,30 +50,46 @@ def extract_embeddings(image_folder):
 # 3. Cluster with HDBSCAN
 # --------------------------
 def cluster_embeddings(embeddings):
-    clusterer = hdbscan.HDBSCAN(min_cluster_size=5, metric="euclidean")
+    clusterer = hdbscan.HDBSCAN(
+        min_cluster_size=3,          # smaller clusters allowed
+        min_samples=1,               # fewer items marked as noise
+        cluster_selection_epsilon=0.05,  # expand clusters slightly
+        metric="euclidean"
+    )
     labels = clusterer.fit_predict(embeddings)
     return labels
 
 # --------------------------
-# 4. Save results
+# 4. Write Description metadata
 # --------------------------
-def save_clusters(image_folder, filenames, labels, output_folder="clusters"):
-    os.makedirs(output_folder, exist_ok=True)
+def write_cluster_to_description(image_folder, filenames, labels):
     for fname, label in zip(filenames, labels):
-        cluster_dir = os.path.join(output_folder, f"cluster_{label}")
-        os.makedirs(cluster_dir, exist_ok=True)
-        src = os.path.join(image_folder, fname)
-        dst = os.path.join(cluster_dir, fname)
-        shutil.copy(src, dst)
-    print(f"✅ Saved clustered images in '{output_folder}/'")
+        path = os.path.join(image_folder, fname)
+        try:
+            # Load existing EXIF
+            exif_dict = piexif.load(path)
+
+            # Windows Explorer "Description" → EXIF ImageDescription (0x010E)
+            description = f"Cluster {label}"
+            exif_dict["0th"][piexif.ImageIFD.ImageDescription] = description.encode("utf-8")
+
+            # Save EXIF back to file
+            exif_bytes = piexif.dump(exif_dict)
+            piexif.insert(exif_bytes, path)
+
+        except Exception as e:
+            print(f"⚠️ Could not update {fname}: {e}")
+    print("✅ Cluster IDs written into 'Description' field (visible in Explorer).")
+
 
 # --------------------------
 # 5. Main
 # --------------------------
 if __name__ == "__main__":
-    input_folder = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26\patches"  # 🔹 change this to your folder path
-    output_folder = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26\patches\clusters"
+    input_folder = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25\patches"  # 🔹 change this to your folder path
+    #output_folder = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26\patches\clusters"
 
     embeddings, filenames = extract_embeddings(input_folder)
     labels = cluster_embeddings(embeddings)
-    save_clusters(input_folder, filenames, labels, output_folder)
+    #save_clusters(input_folder, filenames, labels, output_folder)
+    write_cluster_to_description(input_folder, filenames, labels)
