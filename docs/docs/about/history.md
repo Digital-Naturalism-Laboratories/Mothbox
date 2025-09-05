@@ -99,10 +99,10 @@ The v4 has many features that improved upon previous versiions such as
 # V5
 *2025 Q2 -2026 Q2*
 
-**$70,000 USD** + PhD Student
+**$106,000 USD** + 3.5 years PhD Student
 
 
-The target of the v5 mothbox is to make a mass-manufacturable version of the device. We managed to win the Wildlabs award for the second year in a row! This gave us $50k to do rapid prototyping to design a Mothbox PCB that can be readily made by manufacturers around the world! Jesse Barber from the American Musuem of Natural History also supported the project with 20k to help do workshops and training in US national parks as well as the Museum in NYC. In addition to this, Bri Johns got funding to start an entire PhD on the Mothbox at Monash University in Melbourne, Australia!
+The target of the v5 mothbox is to make a mass-manufacturable version of the device. We managed to win the Wildlabs award for the second year in a row! This gave us $50k to do rapid prototyping to design a Mothbox PCB that can be readily made by manufacturers around the world! Jesse Barber from the American Musuem of Natural History also supported the project with 20k to help do workshops and training in US national parks as well as the Museum in NYC. We also receieved a grant for $36K from the Gathering for Open Science Hardware. In addition to this, Bri Johns got funding to start an entire PhD on the Mothbox at Monash University in Melbourne, Australia!
 
 Key v5 features:
 * Minimal parts needed to order (just PCB, Pi, Camera, Battery, Box)
