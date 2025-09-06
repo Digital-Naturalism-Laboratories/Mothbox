@@ -20,6 +20,7 @@ Here's a [link to a list of most of the parts collected for you.](https://www.am
 
 ### Raspberry Pi and Scheduling Devices
 * [Raspberry Pi 5 (4GB and up)](https://www.sparkfun.com/products/23550) ($60)
+  * you also need an SD card for the Pi. You should find one with speeds rated "A2" or higher. 64gb and up is nice.
 * **plus** a [rechargeable RTC battery](https://www.sparkfun.com/products/23590) ($5)
 * [USB A to C power cables (SHORT)](https://www.amazon.com/gp/product/B0C4NJYPTX/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&th=1)
 
