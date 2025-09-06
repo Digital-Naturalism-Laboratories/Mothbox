@@ -26,7 +26,6 @@ Arguments:
 """
 
 print("Loading all the ID libraries...")
-#import cv2.version
 import polars as pl
 import os
 import sys
@@ -40,6 +39,16 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from PIL import ImageFile
+
+
+#perception clustering
+import torch
+from tqdm import tqdm
+import torchvision.transforms as T
+import hdbscan
+
+
+
 
 ImageFile.LOAD_TRUNCATED_IMAGES = (
     True  # makes ok for use images that are messed up slightly
@@ -681,9 +690,112 @@ def add_metadata_to_json(json_path, metadata_path):
     print(f"Metadata added to {json_path}")
 
 
+####################################
+# --------------------------
+# # Perceptual Processing Functions
+# --------------------------
+####################################
+
+# --------------------------
+# 1. Load DINOv2 model
+# --------------------------
+device = "cuda" if torch.cuda.is_available() else "cpu"
+model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14").to(device)
+model.eval()
+
+# Image preprocessing
+transform = T.Compose([
+    T.Resize(256),
+    T.CenterCrop(224),
+    T.ToTensor(),
+    T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
+])
+
+# --------------------------
+# 2. Extract embeddings
+# --------------------------
+def get_embedding(img_path):
+    img = Image.open(img_path).convert("RGB")
+    img_tensor = transform(img).unsqueeze(0).to(device)
+    with torch.no_grad():
+        feat = model(img_tensor)  # shape [1, 384]
+    return feat.cpu().numpy().squeeze()
+
+
+def extract_embeddings(image_files):
+    embeddings, filenames = [], []
+    for image_file in tqdm(image_files, desc="Extracting embeddings"):
+        try:
+            feat = get_embedding(image_file)
+            embeddings.append(feat)
+            filenames.append(image_file)
+        except Exception as e:
+            print(f"⚠️ Skipping {image_file}: {e}")
+    return np.array(embeddings)
+
+def extract_embeddings_from_folder(image_folder):
+    embeddings, filenames = [], []
+    for fname in tqdm(os.listdir(image_folder), desc="Extracting embeddings"):
+        if not fname.lower().endswith((".jpg", ".jpeg", ".png")):
+            continue
+        path = os.path.join(image_folder, fname)
+        try:
+            feat = get_embedding(path)
+            embeddings.append(feat)
+            filenames.append(fname)
+        except Exception as e:
+            print(f"⚠️ Skipping {fname}: {e}")
+    return np.array(embeddings), filenames
+
+# --------------------------
+# 3. Cluster with HDBSCAN
+# --------------------------
+def cluster_embeddings(embeddings):
+    clusterer = hdbscan.HDBSCAN(
+        min_cluster_size=3,          # smaller clusters allowed
+        min_samples=1,               # fewer items marked as noise
+        cluster_selection_epsilon=0.05,  # expand clusters slightly
+        metric="euclidean"
+    )
+    labels = clusterer.fit_predict(embeddings)
+
+    # Count clusters (ignore -1 which means "noise")
+    unique_labels = set(labels)
+    if -1 in unique_labels:
+        unique_labels.remove(-1)
+    n_clusters = len(unique_labels)
+
+    print(f"✅ The clusterer (HDBSCAN() created {n_clusters} clusters of similar insect photos (and {np.sum(labels == -1)} noise points - ie insect photos that were unique).")
+
+    return labels
+
+# --------------------------
+# 4. Write cluster to JSON
+# --------------------------
+def write_cluster_to_json(filepaths, json_paths, idxes, labels):
+    for fname,json_path,i, label in zip(filepaths, json_paths,idxes, labels):
+        try:
+            with open(json_path, "r") as f:
+                data = json.load(f)
+            if 0 <= i < len(data["shapes"]):
+                shape = data["shapes"][i]
+                shape["clusterID"] = int(label)
+            with open(json_path, "w") as f:
+                json.dump(data, f, indent=4)
+            
+        except Exception as e:
+            print(f"⚠️ Could not update {fname}: {e}")
+    print("✅ Cluster IDs written into 'Json' field.")
+
+
+
+
+
+
+
+
 def ID_matched_img_json_pairs(
-    hu_matched_img_json_pairs,bot_matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_the_det_errors
-):
+    hu_matched_img_json_pairs,bot_matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_the_det_errors):
     # load up the Pybioclip stuff
     taxon_keys_list = load_taxon_keys(
         taxa_path=taxa_path,
@@ -731,6 +843,10 @@ def ID_matched_img_json_pairs(
 
     #Process Human Detections
     print("processing Human Detections.........")
+    patch_paths_hu = []  # define this once before your loop
+    json_paths_hu = []
+    idx_paths_hu = []
+
     if(ID_HUMANDETECTIONS):
         # Next process each pair and generate temporary files for the ROI of each detection in each image
         # Iterate through image-JSON pairs
@@ -759,31 +875,25 @@ def ID_matched_img_json_pairs(
                     if was_pre_ided_list[idx] and OVERWRITE_EXISTING_IDs==False:  # skip processing if IDed
                         continue
 
-                    #Use thumbnails now, so don't need to crop every image fresh
-                    """image = Image.open(image_path)
-                    cv_image = np.array(image)
-
-                    cv_image_cropped = warp_rotation(cv_image, coordinates)
-
-                    # pil_image = Image.fromarray(cv_image_cropped)
-                    pil_image = Image.fromarray(
-                        cv_image_cropped[:, :, ::-1]
-                    )  # numpy images are inverted
-
-                    pred, conf, winningdict = get_bioclip_prediction_PILimg(
-                        pil_image, classifier
-                    )
-                    """
                     patchfullpath=os.path.dirname(image_path)+"/"+ thepatch_list[idx]
+
                     patchPIL=Image.open(patchfullpath)
                     pred, conf, winningdict = get_bioclip_prediction_imgpath(patchPIL,classifier)
 
                     # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
                     update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
 
+                    #add path to list of patches for perceptual processing
+                    patch_paths_hu.append(patchfullpath)
+                    json_paths_hu.append(json_path)
+                    idx_paths_hu.append(idx)
+
+
     #Process BOT Detections
     print("processing BOT Detections.........")
-
+    patch_paths_bots = []  # define this once before your loop
+    json_paths_bots = []
+    idx_paths_bots = []
     if(ID_BOTDETECTIONS):
         # Next process each pair and generate temporary files for the ROI of each detection in each image
         # Iterate through image-JSON pairs
@@ -827,6 +937,9 @@ def ID_matched_img_json_pairs(
                     )
                     """
                     patchfullpath=os.path.dirname(image_path)+"/"+ thepatch_list[idx]
+                    
+
+
                     patchPIL=Image.open(patchfullpath)
                     pred, conf, winningdict = get_bioclip_prediction_imgpath(patchPIL,classifier)
 
@@ -835,6 +948,26 @@ def ID_matched_img_json_pairs(
                     # next we can make a copy of the detection json with IDs / or figure out how to ADD the IDs
                     update_json_labels_and_scores(json_path, idx, pred, conf, winningdict)
 
+                    #add path to list of patches for later perceptual processing
+                    patch_paths_bots.append(patchfullpath)
+                    json_paths_bots.append(json_path)
+                    idx_paths_bots.append(idx)
+
+    #process perceptual similarities for bot and hu detections
+
+    #Hu detections first
+    if(len(patch_paths_hu)>0):
+        embeddings = extract_embeddings(patch_paths_hu)
+        labels = cluster_embeddings(embeddings)
+        #save_clusters(input_folder, filenames, labels, output_folder)
+        write_cluster_to_json(patch_paths_hu, json_paths_hu, idx_paths_hu, labels)
+    
+    #bot detections first
+    if(len(patch_paths_bots)>0):
+        embeddings = extract_embeddings(patch_paths_bots)
+        labels = cluster_embeddings(embeddings)
+        #save_clusters(input_folder, filenames, labels, output_folder)
+        write_cluster_to_json(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
 
 
 if __name__ == "__main__":
@@ -885,6 +1018,7 @@ if __name__ == "__main__":
         + " pairs of images and HUMAN detection data to try to ID",
     )
     # Example Pair
+    print("example human detection and json pair:")
     if(len(hu_matched_img_json_pairs)>0):
         print(hu_matched_img_json_pairs[0])
   
@@ -894,6 +1028,7 @@ if __name__ == "__main__":
         + " pairs of images and BOT detection data to try to ID",
     )
     # Example Pair
+    print("example human detection and json pair:")
     if(len(bot_matched_img_json_pairs)>0):
         print(bot_matched_img_json_pairs[0])
 
