@@ -1134,7 +1134,7 @@ if __name__ == "__main__":
 
   active_fields = fo.DatasetAppConfig.default_active_fields(thepatch_dataset)
   active_fields.paths.extend(["clusterID"])
-  active_fields.paths.extend(["tags"])
+  #active_fields.paths.extend(["sample tags"])
   thepatch_dataset.app_config.active_fields = active_fields
   
 
@@ -1142,7 +1142,7 @@ if __name__ == "__main__":
 
   color_scheme=fo.ColorScheme(
 
-      color_pool=["#ff0000", "#00ff00", "#0000ff", "pink", "yellowgreen"],
+      color_pool=["#ff0000", "#00ff00","#00ffff", "#0000ff","#FF8E24", "#0077ff","#00ffff", "#cc00ff","#00ffc8", "#fffb00",],
 
       fields=[
 
