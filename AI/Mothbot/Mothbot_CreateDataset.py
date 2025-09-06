@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 
@@ -653,7 +653,7 @@ class ExifToolSession:
         self.process.stdin.flush()
         self.process.wait()
 
-def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator, tagger):
+def create_sample(image_path, labels, image_height, image_width, metadata, detection_creator):# skipping exif tagger for now, tagger):
   """Creates a FiftyOne sample using the 51 python interface
 
   Args:
@@ -702,11 +702,14 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
 
   sample["detection_By"]=detection_creator
 
+
+
   detections_list=[]
 
   for label in labels:
     direction = label['direction']
     label_name = label['label']
+    theclusterID= label['clusterID']
     score = label['score']
     points = label['points']
     shape_type = label['shape_type']
@@ -727,17 +730,11 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         # Format the filtered dictionary
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
-    #print("adding taxon info to exif "+str(taxonomic_list))
     full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #should work on mac or windows
-    #add_taxonomy_subject_and_tags(full_patch_path, full_patch_path, taxonomic_list)
-    #write_taxonomy_with_naturtag(full_patch_path, full_patch_path, taxonomic_list)
-    #write_taxonomy_with_naturtag(full_patch_path, taxonomic_list)
-    #print(naturtag.metadata.image_metadata.ImageMetadata(image_path=r"c:\Users\andre\Desktop\Dinacon Stuff\test\cuervoCinife_2025_06_30__04_53_06_HDR0_0_Mothbot_yolo11m_4500_imgsz1600_b1_2024-01-18.pt.jpg"))
-    #add_taxonomy_subject_and_tags_exiv2(full_patch_path, full_patch_path, taxonomic_list)
-    #write_taxonomy_with_exiv2_cli(str(full_patch_path), taxonomic_list)
     print("adding taxonomy with Exiftool...(can take a couple seconds)")
-    tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) 
-    #tagger.add_taxonomy_with_exiftool(full_patch_path, taxonomic_list)
+
+    # skipping exif tagger
+    #tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) 
     
     taxonomic_list.append(ID_by)
 
@@ -764,7 +761,8 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         confidence=score,
         shape=shape_type,
         rot_direction=direction,
-        patch_path=the_patch_path
+        patch_path=the_patch_path,
+        clusterID=theclusterID
 
       )
 
@@ -837,6 +835,7 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 #attributes={},
                 #ID_by=detection.ID_by,
                 confidence=detection.confidence,
+                clusterID=detection.clusterID,
                 shape=detection.shape,
                 direction=detection.rot_direction,
                 #direction = sample.direction,
@@ -867,9 +866,10 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
 
             )
 
+            # Disabling for now
             #add GPS info to the thumbnail patch
-            print("adding GPS to "+patchfullpath)
-            add_gps_exif(patchfullpath, patchfullpath,float(sample.latitude), float(sample.longitude))
+            #print("adding GPS to "+patchfullpath)
+            #add_gps_exif(patchfullpath, patchfullpath,float(sample.latitude), float(sample.longitude))
 
 
 
@@ -1024,6 +1024,7 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 #attributes={},
                 #ID_by=detection.ID_by,
                 confidence=detection.confidence,
+                clusterID=detection.clusterID,
                 shape=detection.shape,
                 direction=detection.direction,
                 #direction = sample.direction,
@@ -1090,22 +1091,23 @@ if __name__ == "__main__":
   # Iterate through human pairs and load data
   metadata= find_csv_match(INPUT_PATH, METADATA_PATH)
 
-  tagger = ExifToolSession()
+  #skipping exif stuff for now, will break out to separate step
+  #tagger = ExifToolSession()
 
 
   for image_path, json_path in hu_pairs:
     full_image_path = image_path
     labels, image_height, image_width, notmetadata, detection_creator = load_anylabeling_data(json_path)
-    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator, tagger)
+    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator)#, tagger)
     samples.append(sample)
 
   for image_path, json_path in bot_pairs:
     full_image_path = image_path
     labels, image_height, image_width, notmetadata, detection_creator = load_anylabeling_data(json_path)
-    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator, tagger )
+    sample = create_sample(full_image_path, labels, image_height, image_width, metadata, detection_creator)#, tagger )
     samples.append(sample)
 
-  tagger.close()
+  #tagger.close()
   # Create dataset
   dataset = fo.Dataset()
 
@@ -1148,7 +1150,7 @@ if __name__ == "__main__":
 
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order
-  sorted_dataset = thepatch_dataset.sort_by("patch_width",True)
+  sorted_dataset = thepatch_dataset.sort_by("clusterID",True)
 
   # Launch the FiftyOne App with the sorted view
   session = fo.launch_app(sorted_dataset)
