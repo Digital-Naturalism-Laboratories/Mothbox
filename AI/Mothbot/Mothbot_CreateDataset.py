@@ -731,9 +731,10 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
     full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #should work on mac or windows
-    print("adding taxonomy with Exiftool...(can take a couple seconds)")
 
     # skipping exif tagger
+    #print("adding taxonomy with Exiftool...(can take a couple seconds)")
+
     #tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) 
     
     taxonomic_list.append(ID_by)
@@ -1131,8 +1132,121 @@ if __name__ == "__main__":
 
 
 
+  active_fields = fo.DatasetAppConfig.default_active_fields(thepatch_dataset)
+  active_fields.paths.extend(["clusterID"])
+  active_fields.paths.extend(["tags"])
+  thepatch_dataset.app_config.active_fields = active_fields
+  
+
+  # Create a custom color scheme
+
+  color_scheme=fo.ColorScheme(
+
+      color_pool=["#ff0000", "#00ff00", "#0000ff", "pink", "yellowgreen"],
+
+      fields=[
+
+          {
+
+              "path": "ground_truth",
+
+              "colorByAttribute": "eval",
+
+              "valueColors": [
+
+                  # false negatives: blue
+
+                  {"value": "fn", "color": "#0000ff"},
+
+                  # true positives: green
+
+                  {"value": "tp", "color": "#00ff00"},
+
+              ]
+
+          },
+
+          {
+
+              "path": "predictions",
+
+              "colorByAttribute": "eval",
+
+              "valueColors": [
+
+                  # false positives: red
+
+                  {"value": "fp", "color": "#ff0000"},
+
+                  # true positives: green
+
+                  {"value": "tp", "color": "#00ff00"},
+
+              ]
+
+          },
+
+          {
+
+              "path": "segmentations",
+
+              "maskTargetsColors": [
+
+                  # 12: red
+
+                  {"intTarget": 12, "color": "#ff0000"},
+
+                  # 15: green
+
+                  {"intTarget": 15, "color": "#00ff00"},
+
+              ]
+
+          }
+
+      ],
+
+      color_by="value",
+
+      opacity=0.5,
+
+      default_colorscale= {"name": "rdbu", "list": None},
+
+      colorscales=[
+
+          {
+
+              # field definition overrides the default_colorscale
+
+              "path": "clusterID",
+
+              # if name is defined, it will override the list
+
+              "name": None,
+
+              "list": [
+
+                  {"value": -1.0, "color": "rgb(0,255,255)"},
+
+                  {"value": 15, "color": "rgb(255,0,0)"},
+
+                  {"value": 60.0, "color": "rgb(0,0,255)"},
+
+              ],
+
+          }
+
+      ],
+
+  )
+
+
+
+
+
   # Apply the sidebar groups configuration to the app config
   thepatch_dataset.app_config.sidebar_groups = sidebar_groups
+
 
   # Save the updated app config
   thepatch_dataset.compute_metadata()
@@ -1152,8 +1266,11 @@ if __name__ == "__main__":
   # Sort the dataset by patch_width in ascending order
   sorted_dataset = thepatch_dataset.sort_by("clusterID",True)
 
+
+
+
   # Launch the FiftyOne App with the sorted view
-  session = fo.launch_app(sorted_dataset)
+  session = fo.launch_app(sorted_dataset,  color_scheme=color_scheme)
   print(f"{bcolors.OKGREEN}The app is running, open your browser to use{bcolors.ENDC}")
   print(f"{bcolors.WARNING} or press CTRL+C to kill app{bcolors.ENDC}")
 
