@@ -3,16 +3,28 @@ import os
 import time
 
 
-script_path = r"AI/batch_processing/Batch_Detect.py"  # Update this with your actual script path
-input_paths = [
-    r"/Volumes/Mothbox C/Deployments/Indonesia/Les_Landak_LiquidSerau_2025-07-12",
-    r"/Volumes/Mothbox C/Deployments/Indonesia/Les_BatuPayung_EfectoMinla_2025-07-12",
+script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot/Mothbot_Detect.py"  # Update this with your actual script path
+nightly_deployment_input_paths = [
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_BeachPalm_grupoKite_2025-06-23\2025-06-22",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_BeachPalm_grupoKite_2025-06-23\2025-06-23",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_BeachPalm_grupoKite_2025-06-23\2025-06-24",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21",
+
 ]
 
-YOLO_MODEL=r"AI/trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
+YOLO_MODEL=r"../trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 IMGSZ=1600# Should be same imgsz as used in training for best results!
-i=0
 
+GEN_BOT_DET_EVENIF_HUMAN_EXISTS=True #if we encounter a human detection, but still want a parallel bot detection, make this true
+OVERWRITE_PREV_BOT_DETECTIONS=False #if true, if there are previous machine detections, it will overwrite those machine detections with our current ones. This script should NEVER overwrite a human detection
+
+#You should always leave Gen_Thumbnails as true. It will intelligently detect if a thumbnail exists and skip it if need be.
+GEN_THUMBNAILS=True
+
+
+
+i=0
 
 def time_it(func):
     """A decorator to time the execution of a function.
@@ -37,7 +49,7 @@ def time_it(func):
 
 start_time_overall = time.time()
 
-for input_path in input_paths:
+for input_path in nightly_deployment_input_paths:
     print("starting to process: "+input_path)
     subprocess.run([
         "python", script_path,

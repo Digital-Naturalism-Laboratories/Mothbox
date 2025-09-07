@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
+INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 

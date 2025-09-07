@@ -66,7 +66,7 @@ from bioclip.predict import create_classification_dict
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"  # raw string
+   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"  # raw string
 )
 SPECIES_LIST = r"..\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 

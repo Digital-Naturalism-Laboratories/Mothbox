@@ -3,18 +3,16 @@ import os
 import time
 #from bioclip import  Rank
 
-script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot_ID.py"  # Update this with your actual script path
+script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot/Mothbot_ID.py"  # Update this with your actual script path
 
 #you can insert a list of deployments, the ID script will automatically find the date folders!
 input_paths = [
-      r"f:\Deployments\Indonesia\Indonesia_Les_BeachFarmTree_EfectoMinla_2025-06-22",
-    r"f:\Deployments\Indonesia\Indonesia_Les_BeachPalm_grupoKite_2025-06-23",
-    r"f:\Deployments\Indonesia\Indonesia_Les_BeachPalm_grupoKite_2025-06-25",
-    r"f:\Deployments\Indonesia\Indonesia_Les_WilanFirstHilltree_cuervoCinife_2025-06-25",
-    r"f:\Deployments\Indonesia\Indonesia_Les_WilanTopInsideTree_EfectoMinla_2025-06-25",
-    r"f:\Deployments\Indonesia\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25",
-    r"f:\Deployments\Indonesia\Les_Alley_EfectoMinla_2025-06-20"
-    r"f:\Deployments\Indonesia\Les_BeachPalm_hopeCobo_2025-06-20"
+      r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_BeachPalm_grupoKite_2025-06-23\2025-06-22",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_BeachPalm_grupoKite_2025-06-23\2025-06-23",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_BeachPalm_grupoKite_2025-06-23\2025-06-24",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-20",
+    r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21",
+
 
 ]
 
@@ -61,7 +59,7 @@ def time_it(func):
 print("starting batch processing of IDs")
 
 start_time_overall = time.time()
-print(TAXONOMIC_RANK_FILTER)
+#print(TAXONOMIC_RANK_FILTER)
 for input_path in input_paths:
     print("starting to process: "+input_path)
     subprocess.run([
