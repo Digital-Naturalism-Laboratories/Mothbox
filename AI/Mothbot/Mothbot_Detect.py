@@ -11,12 +11,12 @@ from pathlib import Path
 import argparse
 from PIL import Image  # For image format verification
 from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPatches_JSON
-
+import torch
 
 #~~~~Variables to Change~~~~~~~
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"  # raw string
+INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-05"  # raw string
 
 YOLO_MODEL = r"..\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 
@@ -26,11 +26,13 @@ IMGSZ = 1600  # Should be same imgsz as used in training for best results!
 
 #SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. 
 GEN_BOT_DET_EVENIF_HUMAN_EXISTS=True #if we encounter a human detection, but still want a parallel bot detection, make this true
-OVERWRITE_PREV_BOT_DETECTIONS=False #if true, if there are previous machine detections, it will overwrite those machine detections with our current ones. This script should NEVER overwrite a human detection
+OVERWRITE_PREV_BOT_DETECTIONS=True #if true, if there are previous machine detections, it will overwrite those machine detections with our current ones. This script should NEVER overwrite a human detection
 
 #You should always leave Gen_Thumbnails as true. It will intelligently detect if a thumbnail exists and skip it if need be.
 GEN_THUMBNAILS=True
 
+print(torch.cuda.is_available())
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 #command line arguments
 parser = argparse.ArgumentParser()
@@ -111,7 +113,7 @@ def process_jpg_files(img_files, date_folder):
 
         # Calculate progress
         processed_files = idx + 1
-        progress = (processed_files / total_img_files) * 100
+        progress = (processed_files-1 / total_img_files) * 100
 
         # Print progress
         print()
@@ -175,7 +177,7 @@ def process_jpg_files(img_files, date_folder):
         """Run YOLO on an image, skip if corrupt or unreadable."""
         try:
             print("Predict a new image with error catchers:", image_path)
-            results = model.predict(source=image_path, imgsz=IMGSZ)
+            results = model.predict(source=image_path, imgsz=IMGSZ, device=DEVICE)
         except Exception as e:  # catch *any* error YOLO/PIL/numpy might throw
             print(f"❌ Skipping corrupt/unreadable image: {image_path} ({e})")
             print(f"Skipping {filename}: Image file is missing or empty and messed up in YOLO.")
@@ -380,6 +382,20 @@ if __name__ == "__main__":
     #input_path = get_input_path()
     #model_path = get_yolo_model_path()
     #YOLO_MODEL = model_path
+    
+    # Check if CUDA is available
+    if torch.cuda.is_available():
+        print("CUDA is available!")
+        print("CUDA version:", torch.version.cuda)
+        print("Number of GPUs:", torch.cuda.device_count())
+        print("Current device:", torch.cuda.current_device())
+        print("GPU Name:", torch.cuda.get_device_name(torch.cuda.current_device()))
+        device = torch.device("cuda")
+    else:
+        print("CUDA not available, using CPU")
+        device = torch.device("cpu")
+
+    input()
 
     input_path=INPUT_PATH #Cheat UI for now
     model_path=YOLO_MODEL
