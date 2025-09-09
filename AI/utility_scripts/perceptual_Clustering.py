@@ -83,11 +83,12 @@ def write_cluster_to_description(image_folder, filenames, labels):
 
 
 # --------------------------
-# 4. Rename files with cluster prefix
+# 4. Rename files with cluster prefix (safe overwrite)
 # --------------------------
 def prefix_cluster_to_filename(image_folder, filenames, labels, copy_instead=False):
     """
     Prefix cluster labels to filenames instead of writing metadata.
+    If a file already has a Cluster prefix, it will be replaced (not duplicated).
 
     Args:
         image_folder (str): Folder containing the images.
@@ -95,12 +96,19 @@ def prefix_cluster_to_filename(image_folder, filenames, labels, copy_instead=Fal
         labels (list[int]): Corresponding cluster labels.
         copy_instead (bool): If True, makes copies instead of renaming originals.
     """
+    cluster_pattern = re.compile(r"^Cluster\d+_")  # matches "Cluster123_"
+
     for fname, label in zip(filenames, labels):
         old_path = os.path.join(image_folder, fname)
 
         # Split into name + extension
         name, ext = os.path.splitext(fname)
-        new_name = f"Cluster{label}_{name}{ext}"
+
+        # Remove old Cluster prefix if present
+        clean_name = cluster_pattern.sub("", name)
+
+        # Build new name with correct cluster prefix
+        new_name = f"Cluster{label}_{clean_name}{ext}"
         new_path = os.path.join(image_folder, new_name)
 
         try:

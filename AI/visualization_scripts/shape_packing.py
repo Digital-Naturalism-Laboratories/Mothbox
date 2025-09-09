@@ -10,12 +10,12 @@ import matplotlib.pyplot as plt
 # ----------------------------
 # CONFIG
 # ----------------------------
-folder = r"D:\x-anylabeling-matting\onlybig\test\*.png"
+folder = r"D:\x-anylabeling-matting\onlybig\*.png"
 
 scale_factor = 0.2         # global scale factor (applied to all images first)
 
 # 🔀 NEW: random scaling options
-random_scale = True        # enable per-image random scale
+random_scale = False       # enable per-image random scale
 min_scale = 0.1            # min relative scale factor
 max_scale = 2.5            # max relative scale factor
 
@@ -205,7 +205,23 @@ def visualize(placed, out_size=(1500, 1500), bg_color=None, debug=False):
 # MAIN
 # ----------------------------
 if __name__ == "__main__":
-    paths = sorted(glob.glob(folder))
+    paths = glob.glob(folder)
+
+    # Choose how to sort
+    sort_mode = "reverse"       # options: "alphabetical", "reverse", "none"
+
+    if sort_mode == "alphabetical":
+        paths = sorted(paths)
+    elif sort_mode == "reverse":
+        paths = sorted(paths, reverse=True)
+    elif sort_mode == "none":
+        pass  # keep as returned by glob
+    else:
+        raise ValueError(f"Unknown sort_mode: {sort_mode}")
+
+
+
+
     if not paths:
         raise RuntimeError(f"No PNGs found at {folder}")
 
