@@ -83,13 +83,47 @@ def write_cluster_to_description(image_folder, filenames, labels):
 
 
 # --------------------------
+# 4. Rename files with cluster prefix
+# --------------------------
+def prefix_cluster_to_filename(image_folder, filenames, labels, copy_instead=False):
+    """
+    Prefix cluster labels to filenames instead of writing metadata.
+
+    Args:
+        image_folder (str): Folder containing the images.
+        filenames (list[str]): List of filenames in the cluster.
+        labels (list[int]): Corresponding cluster labels.
+        copy_instead (bool): If True, makes copies instead of renaming originals.
+    """
+    for fname, label in zip(filenames, labels):
+        old_path = os.path.join(image_folder, fname)
+
+        # Split into name + extension
+        name, ext = os.path.splitext(fname)
+        new_name = f"Cluster{label}_{name}{ext}"
+        new_path = os.path.join(image_folder, new_name)
+
+        try:
+            if copy_instead:
+                shutil.copy2(old_path, new_path)
+            else:
+                os.rename(old_path, new_path)
+        except Exception as e:
+            print(f"⚠️ Could not rename {fname}: {e}")
+
+    action = "copied" if copy_instead else "renamed"
+    print(f"✅ Files successfully {action} with cluster prefixes.")
+
+# --------------------------
 # 5. Main
 # --------------------------
 if __name__ == "__main__":
-    input_folder = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25\patches"  # 🔹 change this to your folder path
+    input_folder = r"D:\x-anylabeling-matting\onlybig"  # 🔹 change this to your folder path
     #output_folder = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26\patches\clusters"
 
     embeddings, filenames = extract_embeddings(input_folder)
     labels = cluster_embeddings(embeddings)
     #save_clusters(input_folder, filenames, labels, output_folder)
-    write_cluster_to_description(input_folder, filenames, labels)
+    #write_cluster_to_description(input_folder, filenames, labels) #doesn't work with pngs
+    prefix_cluster_to_filename(input_folder, filenames, labels)
+
