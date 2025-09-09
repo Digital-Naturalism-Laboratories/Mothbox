@@ -47,6 +47,8 @@ from tqdm import tqdm
 import torchvision.transforms as T
 import hdbscan
 
+from datetime import datetime, timedelta
+from collections import defaultdict
 
 
 
@@ -66,7 +68,7 @@ from bioclip.predict import create_classification_dict
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-25"  # raw string
+   r"C:\Users\andre\Desktop\MB_Test_Zone\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"  # raw string
 )
 SPECIES_LIST = r"..\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
@@ -779,7 +781,7 @@ def write_cluster_to_json(filepaths, json_paths, idxes, labels):
                 data = json.load(f)
             if 0 <= i < len(data["shapes"]):
                 shape = data["shapes"][i]
-                shape["clusterID"] = int(label)
+                shape["clusterID"] = float(label)
             with open(json_path, "w") as f:
                 json.dump(data, f, indent=4)
             
@@ -789,6 +791,74 @@ def write_cluster_to_json(filepaths, json_paths, idxes, labels):
 
 
 
+
+
+def temporal_subclusters(
+    patch_paths_hu, json_paths_hu, idx_paths_hu, labels, gap_minutes=1
+):
+    """
+    Creates temporal subclusters within perceptual clusters based on timestamp proximity.
+
+    Args:
+        patch_paths_hu (list[str]): Paths to parent images
+        json_paths_hu (list[str]): Paths to JSON metadata
+        idx_paths_hu (list[str]): Paths to cropped insect images
+        labels (list[int]): Cluster IDs for each detection (from HDBSCAN etc.)
+        gap_minutes (int, optional): Maximum gap (in minutes) allowed between
+                                     consecutive detections in the same temporal chain.
+                                     Default = 1.
+
+    Returns:
+        list[str]: A list of new cluster IDs (like "3.1", "3.2") aligned with inputs.
+    """
+    # Initialize result list (default keep -1 for noise)
+    new_labels = [str(l) if l != -1 else "-1" for l in labels]
+
+    # Group indices by cluster
+    cluster_to_indices = defaultdict(list)
+    for idx, cl in enumerate(labels):
+        if cl != -1:  # skip noise
+            cluster_to_indices[cl].append(idx)
+
+    # Regex to extract timestamp from filename
+    ts_pattern = re.compile(r"(\d{4}_\d{2}_\d{2}__\d{2}_\d{2}_\d{2})")
+
+    # Loop through each perceptual cluster
+    for cluster_id, indices in cluster_to_indices.items():
+        timestamps = []
+        for i in indices:
+            fname = os.path.basename(patch_paths_hu[i])
+            match = ts_pattern.search(fname)
+            if not match:
+                raise ValueError(f"Could not parse timestamp from filename: {fname}")
+            ts_str = match.group(1)
+            ts = datetime.strptime(ts_str, "%Y_%m_%d__%H_%M_%S")
+            timestamps.append((i, ts))
+
+        # Sort detections in this cluster by time
+        timestamps.sort(key=lambda x: x[1])
+
+        # Find temporal sequences
+        gap = timedelta(minutes=gap_minutes)
+        seq_id = 1
+        prev_time = None
+
+        for i, ts in timestamps:
+            if prev_time is None:
+                # start first sequence
+                new_labels[i] = f"{cluster_id}.{seq_id}"
+                prev_time = ts
+            else:
+                if ts - prev_time <= gap:
+                    # same sequence
+                    new_labels[i] = f"{cluster_id}.{seq_id}"
+                else:
+                    # new sequence
+                    seq_id += 1
+                    new_labels[i] = f"{cluster_id}.{seq_id}"
+                prev_time = ts
+
+    return new_labels
 
 
 
@@ -960,13 +1030,14 @@ def ID_matched_img_json_pairs(
         embeddings = extract_embeddings(patch_paths_hu)
         labels = cluster_embeddings(embeddings)
         #save_clusters(input_folder, filenames, labels, output_folder)
+        labels=temporal_subclusters(patch_paths_hu, json_paths_hu, idx_paths_hu, labels)
         write_cluster_to_json(patch_paths_hu, json_paths_hu, idx_paths_hu, labels)
     
     #bot detections first
     if(len(patch_paths_bots)>0):
         embeddings = extract_embeddings(patch_paths_bots)
         labels = cluster_embeddings(embeddings)
-        #save_clusters(input_folder, filenames, labels, output_folder)
+        labels=temporal_subclusters(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
         write_cluster_to_json(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
 
 
