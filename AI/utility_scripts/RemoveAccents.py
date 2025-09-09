@@ -7,7 +7,7 @@ import os
 import unicodedata
 
 # Global variable for the input path
-INPUT_PATH = r"C:\Users\andre\Desktop\x-anylabeling-matting\hoyaone"  # Replace <Your_Input_Path> with the path to your folder
+INPUT_PATH = r"d:\x-anylabeling-matting"  # Replace <Your_Input_Path> with the path to your folder
 
 def remove_accents(input_str):
     """
