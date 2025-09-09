@@ -25,7 +25,7 @@ random_rotate = True       # rotate shapes randomly
 max_rotation = 360         # max random rotation (degrees)
 debug_view = False          # outline view instead of images
 padding = 10                # polygon padding (collision spacing)
-out_size = (1500, 1500)    # output canvas size
+out_size = (5000, 5000)    # output canvas size
 
 
 # ----------------------------
