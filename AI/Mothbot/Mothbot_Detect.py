@@ -390,12 +390,10 @@ if __name__ == "__main__":
         print("Number of GPUs:", torch.cuda.device_count())
         print("Current device:", torch.cuda.current_device())
         print("GPU Name:", torch.cuda.get_device_name(torch.cuda.current_device()))
-        device = torch.device("cuda")
+        DEVICE = torch.device("cuda")
     else:
         print("CUDA not available, using CPU")
-        device = torch.device("cpu")
-
-    input()
+        DEVICE = torch.device("cpu")
 
     input_path=INPUT_PATH #Cheat UI for now
     model_path=YOLO_MODEL

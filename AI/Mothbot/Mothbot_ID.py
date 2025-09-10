@@ -68,9 +68,9 @@ from bioclip.predict import create_classification_dict
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"C:\Users\andre\Desktop\MB_Test_Zone\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"  # raw string
+   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-05"  # raw string
 )
-SPECIES_LIST = r"..\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"..\SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.15468dl.epzeza.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 
 """ KINGDOM = 0
@@ -98,7 +98,8 @@ taxa_path = SPECIES_LIST
 # Paths to save filtered list of embeddings/labels
 image_embeddings_path = INPUT_PATH + "/image_embeddings.npy"
 embedding_labels_path = INPUT_PATH + "/embedding_labels.json"
-
+print(torch.cuda.is_available())
+DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -139,7 +140,8 @@ def parse_args():
         "--device",
         required=False,
         choices=["cpu", "cuda"],
-        help="device on which to run pybioblip ('cpu' or 'cuda', default: 'cpu')",
+        default=DEVICE,
+        help="device on which to run pybioblip ('cpu' or 'cuda', default: what your comp detects)",
     )
     parser.add_argument(
         "--ID_Hum",
@@ -701,8 +703,9 @@ def add_metadata_to_json(json_path, metadata_path):
 # --------------------------
 # 1. Load DINOv2 model
 # --------------------------
-device = "cuda" if torch.cuda.is_available() else "cpu"
-model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14").to(device)
+#device = "cuda" if torch.cuda.is_available() else "cpu"
+
+model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14").to(DEVICE)
 model.eval()
 
 # Image preprocessing
@@ -718,7 +721,7 @@ transform = T.Compose([
 # --------------------------
 def get_embedding(img_path):
     img = Image.open(img_path).convert("RGB")
-    img_tensor = transform(img).unsqueeze(0).to(device)
+    img_tensor = transform(img).unsqueeze(0).to(DEVICE)
     with torch.no_grad():
         feat = model(img_tensor)  # shape [1, 384]
     return feat.cpu().numpy().squeeze()
@@ -879,7 +882,7 @@ def ID_matched_img_json_pairs(
     )
 
     print("Loading TOL classifier")
-    classifier = TreeOfLifeClassifier()
+    classifier = TreeOfLifeClassifier(device=DEVICE)
     print("TOL: number of labels:", len(classifier.txt_names))
     print("TOL: image embeddings shape:", classifier.txt_embeddings.shape)
 
@@ -901,7 +904,7 @@ def ID_matched_img_json_pairs(
 
     print("Creating embeddings for custom labels")
     custom_labels = ["hole", "circle", "background", "wall", "floor", "blank", "sky"]
-    clc = CustomLabelsClassifier(custom_labels)
+    clc = CustomLabelsClassifier(custom_labels, device=DEVICE)
     for i, label in enumerate(custom_labels):
         txt_feature_ary.append(clc.txt_embeddings[:, i])
         new_txt_names.append([[label, label, label, label, label, "", label], label])
@@ -1060,7 +1063,17 @@ if __name__ == "__main__":
     ID_BOTDETECTIONS=bool(int(args.ID_Bot))
     ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
 
-
+    # Check if CUDA is available
+    if torch.cuda.is_available():
+        print("CUDA is available!")
+        print("CUDA version:", torch.version.cuda)
+        print("Number of GPUs:", torch.cuda.device_count())
+        print("Current device:", torch.cuda.current_device())
+        print("GPU Name:", torch.cuda.get_device_name(torch.cuda.current_device()))
+        DEVICE = torch.device("cuda")
+    else:
+        print("CUDA not available, using CPU")
+        DEVICE = torch.device("cpu")
 
     # Find all the dated folders that our data lives in
     print("Looking in this folder for MothboxData: " + args.input_path)
@@ -1111,7 +1124,7 @@ if __name__ == "__main__":
         flag_the_det_errors=args.flag_det_errors,
         taxa_path=args.taxa_csv,
         taxa_cols=args.taxa_cols,
-        device="cuda",
+        device=DEVICE,
     )
 
     print("Finished Automatic Identification")
