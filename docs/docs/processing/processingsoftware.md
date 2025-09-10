@@ -106,6 +106,12 @@ now we will use the magic of uv to install all the things this software needs in
 ```
 uv pip install -r requirements.txt
 ```
+
+IF your computer **does not have CUDA** available on its GPU, you can install the non-cuda version of the requirements with a separate file like this:
+```
+uv pip install -r requirements_nocuda.txt
+```
+
 This might take a little bit as it downloads all the extra software you need (and the correct versions we need!).
 <img width="737" height="134" alt="image" src="https://github.com/user-attachments/assets/75ba6943-6ae6-4d1f-a7b6-5412434c70d0" />
 
