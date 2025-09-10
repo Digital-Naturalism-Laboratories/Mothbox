@@ -11,6 +11,7 @@ python-dateutil==2.9.0.post0
 pytz==2025.2
 pyyaml==6.0.2
 regex==2025.9.1
+--extra-index-url https://download.pytorch.org/whl/cu118
 torch==2.7.1+cu118
 torchaudio==2.7.1+cu118
 torchvision==0.22.1+cu118
