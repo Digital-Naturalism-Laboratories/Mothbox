@@ -335,12 +335,12 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "eventDate":formattedUTC_dateTime,
                 "eventTime":formattedUTC_dateTime.split("T")[1],
                 "UTCOFFSET":utc_offset,
-                "mothbox":sample["mothbox"],
-                "software":sample["software"],
+                "mothbox":sample["device"],
+                "software":sample["firmware"],
                 "sheet":sample["sheet"],
-                "country":sample["country"],
-                "area":sample["area"], 
-                "point":sample["punto"],
+                "country":sample["datasetcollection"],
+                "area":sample["project"], 
+                "point":sample["site"],
                 "latitude":sample["latitude"],
                 "longitude":sample["longitude"],
                 "ground_height":sample["ground_height"],
@@ -354,7 +354,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "data_storage_location":sample["data_storage_location"],
                 "crew":sample["crew"], 
                 "notes": "", #sample["notes"], #Disabled for now, hubert doesn't want notes for each critter sighting
-                "schedule":sample["program"],
+                "schedule":sample["schedule"],
                 "habitat":sample["habitat"], 
 
                 #detection specific
