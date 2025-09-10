@@ -31,7 +31,7 @@ import platform
 from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 
-INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\ExampleDataset\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
+INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-05"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
 UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
 
@@ -1142,7 +1142,7 @@ if __name__ == "__main__":
 
   color_scheme=fo.ColorScheme(
 
-      color_pool=["#ff0000", "#00ff00","#00ffff", "#0000ff","#FF8E24", "#0077ff","#00ffff", "#cc00ff","#00ffc8", "#fffb00",],
+      color_pool=["#771e1e", "#289128","#185C5C", "#1f1fd3","#d31f73" ,"#AF621A", "#1a6ac5","#27a560", "#cc00ff","#a5c70f", "#ff7b00",],
 
       fields=[
 

@@ -6,6 +6,7 @@ import random
 from shapely.geometry import Polygon
 from shapely import affinity
 import matplotlib.pyplot as plt
+from collections import defaultdict
 
 # ----------------------------
 # CONFIG
@@ -70,6 +71,61 @@ def get_shape(path, scale_factor=1.0):
     }
 
 
+
+
+# Make faster by making a grid
+
+class SpatialGrid:
+    def __init__(self, cell_size=300):
+        self.cell_size = cell_size
+        self.cells = defaultdict(list)  # (col,row) -> list of (shape, (x,y))
+
+    def _cell_coords(self, x, y):
+        return int(math.floor(x / self.cell_size)), int(math.floor(y / self.cell_size))
+
+    def insert(self, shape, x, y):
+        """Insert shape (dict with 'padded_local' and 'anchor') at world coords (x,y)."""
+        minx, miny, maxx, maxy = shape["padded_local"].bounds
+        minx += x - shape["anchor"][0]
+        maxx += x - shape["anchor"][0]
+        miny += y - shape["anchor"][1]
+        maxy += y - shape["anchor"][1]
+
+        col1, row1 = self._cell_coords(minx, miny)
+        col2, row2 = self._cell_coords(maxx, maxy)
+
+        for col in range(col1, col2 + 1):
+            for row in range(row1, row2 + 1):
+                self.cells[(col, row)].append((shape, (x, y)))
+
+    def nearby(self, shape, x, y):
+        """Return list of nearby (shape, (px,py)) tuples. Deduplicated by id(shape)."""
+        minx, miny, maxx, maxy = shape["padded_local"].bounds
+        minx += x - shape["anchor"][0]
+        maxx += x - shape["anchor"][0]
+        miny += y - shape["anchor"][1]
+        maxy += y - shape["anchor"][1]
+
+        col1, row1 = self._cell_coords(minx, miny)
+        col2, row2 = self._cell_coords(maxx, maxy)
+
+        neighbors = []
+        # include a 1-cell padding around candidate
+        for col in range(col1 - 1, col2 + 2):
+            for row in range(row1 - 1, row2 + 2):
+                neighbors.extend(self.cells.get((col, row), []))
+
+        # dedupe by object id (fast and works with dicts)
+        seen = set()
+        unique = []
+        for sh, pos in neighbors:
+            sid = id(sh)
+            if sid not in seen:
+                seen.add(sid)
+                unique.append((sh, pos))
+        return unique
+
+
 # ----------------------------
 # 2. Packing algorithm
 # ----------------------------
@@ -79,6 +135,13 @@ def pack_shapes(shapes,
                 max_rotation=360,
                 animate=False):
     placed = []
+    # auto-pick cell size from shapes as a heuristic (tune multiplier as needed)
+    if shapes:
+        median_max_dim = int(np.median([max(s["w"], s["h"]) for s in shapes]))
+        cell_size = max(64, int(median_max_dim * 1.5))
+    else:
+        cell_size = 300
+    grid = SpatialGrid(cell_size=cell_size)
     center = (0, 0)
 
     if animate:
@@ -116,15 +179,26 @@ def pack_shapes(shapes,
 
             dx, dy = x - shape["anchor"][0], y - shape["anchor"][1]
             cand_padded_world = affinity.translate(padded_local, xoff=dx, yoff=dy)
+            cand_bbox = cand_padded_world.bounds  # (minx, miny, maxx, maxy)
 
-            # check collisions
+            # get only nearby placed shapes from spatial grid
+            neighbors = grid.nearby({"padded_local": padded_local, "anchor": shape["anchor"]}, x, y)
+
             collision = False
-            for placed_shape, (px, py) in placed:
+            for placed_shape, (px, py) in neighbors:
                 placed_padded_world = affinity.translate(
                     placed_shape["padded_local"],
                     xoff=px - placed_shape["anchor"][0],
                     yoff=py - placed_shape["anchor"][1]
                 )
+
+                # QUICK AABB reject (cheap)
+                pminx, pminy, pmaxx, pmaxy = placed_padded_world.bounds
+                cminx, cminy, cmaxx, cmaxy = cand_bbox
+                if cmaxx < pminx or cminx > pmaxx or cmaxy < pminy or cminy > pmaxy:
+                    continue
+
+                # only if bboxes overlap do we do the expensive shapely intersection test
                 if cand_padded_world.intersects(placed_padded_world):
                     collision = True
                     break
@@ -140,6 +214,7 @@ def pack_shapes(shapes,
                     "path": shape["path"],
                 }
                 placed.append((new_shape, (x, y)))
+                grid.insert(new_shape, x, y)  # add to grid
 
                 if animate:
                     canvas = visualize(placed, out_size=out_size, bg_color=bg_color, debug=debug_view)
@@ -157,6 +232,8 @@ def pack_shapes(shapes,
         plt.show()
 
     return placed
+
+
 
 
 # ----------------------------
