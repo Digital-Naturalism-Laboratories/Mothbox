@@ -188,7 +188,7 @@ def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_err
       taxa_path: String. Path to the taxa CSV file.
       taxa_cols: List of strings. Taxonomic columns in taxa CSV to load (default: ["kingdom", "phylum", "class", "order", "family", "genus", "species"]).
       taxon_rank: String. Taxonomic rank to which to classify images (must be present as column in the taxa csv at file_path). Default: "order".
-      flag_det_errors: Boolean. Whether to flag holes and smudges blanks (adds "hole" and "circle" and "background" and "blank" to taxon_keys). Default: True.
+      flag_det_errors: Boolean. Whether to flag holes and smudges blanks (adds "hole" and "background" and "blank" to taxon_keys). Default: True.
 
     Returns:
       taxon_keys: List. A list of taxon keys to feed to the CustomClassifier for bioCLIP classification.
@@ -256,9 +256,7 @@ def process_files_in_directory(data_path, classifier, taxon_rank="order"):
             key = f"data/{file}"
             predstring = str(pred).strip().lower()
             print(predstring)
-            if predstring=="circle":
-                print("Circle!")
-            if predstring in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
+            if predstring in ["hole", "background", "wall", "floor", "blank", "sky"]:
                 predictions[key] = f"abiotic_{pred}"
             else:
                 predictions[key] = taxon_rank + "_" + pred
@@ -649,7 +647,7 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
         # do stuff here now
 
         predstring = str(pred).strip().lower()
-        if predstring in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
+        if predstring in ["hole", "background", "wall", "floor", "blank", "sky"]:
             shape["label"] = "ERROR_" + pred
         else:            
             shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "") + "_" + pred
@@ -669,7 +667,7 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
             "species",
         ]:
             if rank in winningdict:
-                if winningdict[rank].strip().lower() in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
+                if winningdict[rank].strip().lower() in ["hole", "background", "wall", "floor", "blank", "sky"]:
                     shape[rank] = "ERROR_" + winningdict[rank]
                 else:    
                     shape[rank] = winningdict[rank]
@@ -916,7 +914,7 @@ def ID_matched_img_json_pairs(
         new_txt_names.append(txt_name)
 
     print("Creating embeddings for custom labels")
-    custom_labels = ["hole", "circle", "background", "wall", "floor", "blank", "sky"]
+    custom_labels = ["hole", "background", "wall", "floor", "blank", "sky"]
     clc = CustomLabelsClassifier(custom_labels, device=DEVICE)
     for i, label in enumerate(custom_labels):
         txt_feature_ary.append(clc.txt_embeddings[:, i])
