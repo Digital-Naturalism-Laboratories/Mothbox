@@ -68,7 +68,7 @@ from bioclip.predict import create_classification_dict
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-05"  # raw string
+   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-06"  # raw string
 )
 SPECIES_LIST = r"..\SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.15468dl.epzeza.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
@@ -254,7 +254,11 @@ def process_files_in_directory(data_path, classifier, taxon_rank="order"):
                 + f"  This is the winner: {pred} with a score of {winner['score']}"
             )
             key = f"data/{file}"
-            if pred in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
+            predstring = str(pred).strip().lower()
+            print(predstring)
+            if predstring=="circle":
+                print("Circle!")
+            if predstring in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
                 predictions[key] = f"abiotic_{pred}"
             else:
                 predictions[key] = taxon_rank + "_" + pred
@@ -642,7 +646,13 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
 
     if 0 <= index < len(data["shapes"]):
         shape = data["shapes"][index]
-        shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "") + "_" + pred
+        # do stuff here now
+
+        predstring = str(pred).strip().lower()
+        if predstring in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
+            shape["label"] = "ERROR_" + pred
+        else:            
+            shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "") + "_" + pred
         shape["score"] = conf
         shape["description"] = (
             "ID_BioCLIP"  # Put what Robot did the ID, put "" for human / ground_truth
@@ -659,7 +669,10 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
             "species",
         ]:
             if rank in winningdict:
-                shape[rank] = winningdict[rank]
+                if winningdict[rank].strip().lower() in ["hole", "circle", "background", "wall", "floor", "blank", "sky"]:
+                    shape[rank] = "ERROR_" + winningdict[rank]
+                else:    
+                    shape[rank] = winningdict[rank]
 
     with open(json_path, "w") as f:
         json.dump(data, f, indent=4)
