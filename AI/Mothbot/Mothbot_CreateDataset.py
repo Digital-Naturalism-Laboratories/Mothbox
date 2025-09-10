@@ -671,13 +671,13 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   )
   
   sample["uploaded"]=metadata.get("uploaded","")
-  sample["sd"]=metadata.get("sd.card","")
-  sample["mothbox"]=metadata.get("mothbox","")
-  sample["software"]=str(metadata.get("software",""))
+  sample["sd"]=metadata.get("sd_card","")
+  sample["device"]=metadata.get("device","")
+  sample["firmware"]=str(metadata.get("firmware",""))
   sample["sheet"]=metadata.get("sheet","")
-  sample["country"]=metadata.get("country","")
-  sample["area"]=metadata.get("area","")
-  sample["punto"]=metadata.get("point","") #point is maybe a special key name in 51
+  sample["datasetcollection"]=metadata.get("dataset","") #call it a dataset collection here to not confuse with the fiftyonedataset
+  sample["project"]=metadata.get("project","")
+  sample["site"]=metadata.get("site","")
   
   
   latitude=metadata.get("latitude","0.00000")
@@ -686,16 +686,16 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["location"]=geolocation
   sample["longitude"]=longitude
   sample["latitude"]=latitude
-  therawgroundheight=metadata.get("height (placement above ground)","-1")
+  therawgroundheight=metadata.get("height_above_ground","-1")
   sample["ground_height"]= extract_number(therawgroundheight)
 
-  sample["deployment_name"]=metadata.get("deployment.name","")
-  sample["deployment_date"]=metadata.get("deployment.date","")
-  sample["collect_date"]=metadata.get("collect.date","")
-  sample["data_storage_location"]=metadata.get("data.storage.location","")
+  sample["deployment_name"]=metadata.get("deployment_name","")
+  sample["deployment_date"]=metadata.get("deployment_date","")
+  sample["collect_date"]=metadata.get("collect_date","")
+  sample["data_storage_location"]=metadata.get("data_storage_location","")
   sample["crew"]=metadata.get("crew","")
   sample["notes"]=metadata.get("notes","")
-  sample["program"]=metadata.get("program","")
+  sample["schedule"]=metadata.get("schedule","")
   sample["habitat"]=metadata.get("habitat","")
   sample["attractor"]=metadata.get("attractor","")
   sample["attractor_location"]=metadata.get("attractor_location","")
@@ -844,13 +844,13 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 
                 uploaded=sample.uploaded,
 
-                mothbox=sample.mothbox,
+                device=sample.device,
                 sd=sample.sd, #Dots might be bad in key name
-                software=sample.software,
+                firmware=sample.firmware,
                 sheet=sample.sheet,
-                country=sample.country,
-                area=sample.area,
-                punto=sample.punto, #point is maybe a special key name in 51
+                datasetcollection=sample.datasetcollection,
+                project=sample.project,
+                site=sample.site, 
                 ground_height=sample.ground_height,
                 deployment_name = sample.deployment_name,
                 deployment_date = sample.deployment_date,
@@ -858,7 +858,7 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 data_storage_location = sample.data_storage_location,
                 crew=sample.crew,
                 notes=sample.notes,
-                program=sample.program,
+                schedule=sample.schedule,
                 habitat=sample.habitat,
                 attractor=sample.attractor,
                 attractor_location=sample.attractor_location,
@@ -1033,13 +1033,13 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 
                 uploaded=sample.uploaded,
 
-                mothbox=sample.mothbox,
+                device=sample.device,
                 sd=sample.sd, #Dots might be bad in key name
-                software=sample.software,
+                firmware=sample.firmware,
                 sheet=sample.sheet,
-                country=sample.country,
-                area=sample.area,
-                punto=sample.punto, #point is maybe a special key name in 51
+                datasetcollection=sample.datasetcollection,
+                project=sample.project,
+                site=sample.site, 
                 ground_height=sample.ground_height,
                 deployment_name = sample.deployment_name,
                 deployment_date = sample.deployment_date,
@@ -1047,7 +1047,7 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 data_storage_location = sample.data_storage_location,
                 crew=sample.crew,
                 notes=sample.notes,
-                program=sample.program,
+                schedule=sample.schedule,
                 habitat=sample.habitat,
                 attractor=sample.attractor,
                 attractor_location=sample.attractor_location,
