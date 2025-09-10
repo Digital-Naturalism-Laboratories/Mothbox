@@ -92,7 +92,6 @@ ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
 OVERWRITE_EXISTING_IDs = True #True
-
 # ~~~~Other Global Variables~~~~~~~
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
@@ -106,6 +105,7 @@ image_embeddings_path = INPUT_PATH + "/image_embeddings.npy"
 embedding_labels_path = INPUT_PATH + "/embedding_labels.json"
 print(torch.cuda.is_available())
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
+DOI= ""
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -1061,6 +1061,35 @@ def ID_matched_img_json_pairs(
         labels=temporal_subclusters(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
         write_cluster_to_json(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
 
+def extract_doi_from_csv_path(csv_path: str) -> str:
+    """
+    Extracts the DOI from a filename like:
+      SpeciesList_..._doi.org10.15468dl.epzeza.csv
+    and returns the full DOI URL.
+
+    Works for any DOI variant formatted as "doi.org10....".
+    Returns "no_doi" if no valid DOI is found.
+    """
+    filename = os.path.basename(csv_path)
+
+    # Try to find the DOI chunk (everything after 'doi.org' up to .csv)
+    match = re.search(r"(doi\.org[0-9A-Za-z\.\-]+)", filename)
+    if not match:
+        return "no_doi"
+
+    doi_raw = match.group(1)  # e.g. "doi.org10.15468dl.epzeza"
+    doi_core = doi_raw.replace("doi.org", "")  # e.g. "10.15468dl.epzeza"
+
+    # General DOI rule: starts with "10." and has a slash somewhere
+    # Fix by inserting a slash between the prefix and the rest
+    m = re.match(r"(10\.\d+)(.+)", doi_core)
+    if not m:
+        return "no_doi"
+
+    prefix, suffix = m.groups()
+    doi_fixed = f"{prefix}/{suffix}"
+
+    return f"https://doi.org/{doi_fixed}"
 
 if __name__ == "__main__":
 
@@ -1081,6 +1110,13 @@ if __name__ == "__main__":
     ID_BOTDETECTIONS=bool(int(args.ID_Bot))
     ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
 
+
+    # get species list DOI
+    
+    doi=extract_doi_from_csv_path(args.taxa_csv)
+    
+    print("using species list: "+doi)
+
     # Check if CUDA is available
     if torch.cuda.is_available():
         print("CUDA is available!")
@@ -1092,6 +1128,9 @@ if __name__ == "__main__":
     else:
         print("CUDA not available, using CPU")
         DEVICE = torch.device("cpu")
+
+
+
 
     # Find all the dated folders that our data lives in
     print("Looking in this folder for MothboxData: " + args.input_path)
