@@ -64,6 +64,12 @@ import polars as pl
 import numpy as np
 from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
+#import bioclip
+import importlib.metadata
+
+VERSION = "pybioclip_"+importlib.metadata.version("pybioclip")
+print("ID model: "+VERSION)
+
 
 # ~~~~Variables to Change~~~~~~~
 
@@ -206,7 +212,7 @@ def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_err
 
     return target_values
 
-
+#We don't use this function much anymore
 def process_files_in_directory(data_path, classifier, taxon_rank="order"):
     """
     Processes files within a specified subdirectory.
@@ -645,6 +651,7 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
     if 0 <= index < len(data["shapes"]):
         shape = data["shapes"][index]
         # do stuff here now
+        shape["ID_by"] = VERSION
 
         predstring = str(pred).strip().lower()
         if predstring in ["hole", "background", "wall", "floor", "blank", "sky"]:
