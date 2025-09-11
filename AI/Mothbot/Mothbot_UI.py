@@ -5,6 +5,7 @@ import gradio as gr
 import subprocess
 import sys
 import shlex
+from tkinter import Tk, filedialog
 
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 
@@ -259,8 +260,8 @@ def run_CSV(selected_folders, species_list, Utcoffset):
 
 def select_folder():
     """Open a native folder picker and return the selected folder path (or None)."""
+    print(sys.platform)
     if sys.platform == "win32":
-        from tkinter import Tk, filedialog
         tk = Tk()
         tk.withdraw()
         folder_selected = filedialog.askdirectory()
