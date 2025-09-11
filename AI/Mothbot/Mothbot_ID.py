@@ -25,7 +25,7 @@ Arguments:
 
 """
 import ssl
-ssl._create_default_https_context = ssl._create_unverified_context
+ssl._create_default_https_context = ssl._create_unverified_context #needed for some macs to automatically download files associated with some of the libraries 
 print("Loading all the ID libraries...")
 import polars as pl
 import os
@@ -576,11 +576,11 @@ def get_rotated_rect_raw_coordinates(json_file):
                 points = shape["points"]
                 # x, y, w, h, angle = extract_rectangle_coordinates(points)
                 coordinates_list.append(points)
-                if (
-                    shape["identifier_bot"] != ""
-                ):  # detect if there's been an identification (if so it would say something like pybioclip)
-                    pre_ided = True
-                    #print("it was previously IDed")
+                
+                if "identifier_bot" in shape:
+                    if shape["identifier_bot"] != "": # detect if there's been an identification (if so it would say something like pybioclip)
+                        pre_ided = True
+                        #print("it was previously IDed")
                 pre_ided_list.append(pre_ided)
 
         return coordinates_list, pre_ided_list, patch_list
