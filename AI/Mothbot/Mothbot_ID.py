@@ -184,9 +184,110 @@ def current_timestamp() -> str:
     now = datetime.now().astimezone()  # local time with UTC offset
     return now.strftime("%Y-%m-%d__%H_%M_%S_(%z)")
 
+def load_taxon_keys(taxa_path, taxa_cols=None, taxon_rank="order", flag_det_errors=True):
+    """
+    Read taxa_path (path, bytes, or file-like) robustly handling encoding issues
+    and return a set of unique, lowercased values for taxon_rank.
 
+    Returns:
+        set(str): lowercased unique taxon_rank values
+    """
+    print(f"Reading {taxa_path!s}, extracting {taxon_rank} values.")
 
-def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
+    # encodings to try in order (utf-8 first, then common windows/latin fallbacks)
+    encodings = ("utf-8", "utf-8-sig", "utf-16", "cp1252", "latin-1")
+
+    raw = None
+    text = None
+
+    # Accept bytes/bytearray directly
+    if isinstance(taxa_path, (bytes, bytearray)):
+        raw = bytes(taxa_path)
+
+    # Accept an already-open file-like object
+    elif hasattr(taxa_path, "read"):
+        try:
+            # try reading bytes first (some file-like objects are in binary mode)
+            raw = taxa_path.read()
+        except Exception:
+            # if that fails, try text-mode read
+            taxa_path.seek(0)
+            text = taxa_path.read()
+
+    # Otherwise treat it as a filesystem path-like
+    else:
+        p = Path(taxa_path)
+        if not p.exists():
+            raise FileNotFoundError(f"taxa_path not found: {taxa_path}")
+        with open(p, "rb") as f:
+            raw = f.read()
+
+    # If we already have text (not bytes), use it
+    if text is None:
+        # If raw is already str (unlikely) use it
+        if isinstance(raw, str):
+            text = raw
+        else:
+            # Try the encodings in order
+            decoded = None
+            for enc in encodings:
+                try:
+                    decoded = raw.decode(enc)
+                    # quick sanity check: if decoding produced something non-empty, accept it
+                    if decoded is not None:
+                        text = decoded
+                        break
+                except Exception:
+                    continue
+            # Last-resort: decode with replacement so we never raise UnicodeDecodeError
+            if text is None:
+                text = raw.decode("utf-8", errors="replace")
+
+    # Try to load into Polars; prefer tab-separated but fall back to automatic parsing.
+    try:
+        df = pl.read_csv(io.StringIO(text), separator="\t")
+    except Exception:
+        try:
+            df = pl.read_csv(io.StringIO(text))  # let polars infer delimiter
+        except Exception:
+            # final fallback: use pandas to parse then convert to polars
+            import pandas as pd
+            df_pd = pd.read_csv(io.StringIO(text), sep="\t")
+            df = pl.from_pandas(df_pd)
+
+    # If user provided a taxa_cols mapping/dictionary, prefer it for column lookup
+    chosen_col = None
+    if taxa_cols and isinstance(taxa_cols, dict):
+        chosen_col = taxa_cols.get(taxon_rank, None)
+
+    # If chosen_col not set or not present, do case-insensitive matching against dataframe columns
+    if not chosen_col or chosen_col not in df.columns:
+        cols_lower = {c.lower(): c for c in df.columns}
+        if taxon_rank.lower() in cols_lower:
+            chosen_col = cols_lower[taxon_rank.lower()]
+        elif chosen_col and chosen_col in df.columns:
+            # keep chosen_col if it exists
+            pass
+        else:
+            raise KeyError(f"taxon_rank '{taxon_rank}' not found in file columns: {list(df.columns)}")
+
+    # Extract unique non-null values and normalize to lowercase strings
+    try:
+        vals = df[chosen_col].drop_nulls().unique().to_list()
+        target_values = {str(v).lower() for v in vals if v is not None and str(v).strip() != ""}
+    except Exception:
+        # conservative fallback: iterate rows if the vectorized route fails
+        vals = []
+        for rec in df.select(chosen_col).to_dicts():
+            v = rec.get(chosen_col)
+            if v is not None:
+                vals.append(v)
+        target_values = {str(v).lower() for v in vals if str(v).strip() != ""}
+
+    print("Found", len(target_values), taxon_rank, "values.")
+    return target_values
+
+def load_taxon_keys_old(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
     print("Reading", taxa_path, "extracting", taxon_rank, "values.")
     df = pl.read_csv(taxa_path, separator='\t')  # Changed separator to '\t' for tab-delimited
     target_values = set(
@@ -904,8 +1005,11 @@ def temporal_subclusters(
 
     return new_labels
 
-
-
+# Patch get_txt_names to always use UTF-8
+def fixed_get_txt_names(self):
+    txt_names_json = self.get_cached_datafile("embeddings/txt_emb_species.json")
+    with open(txt_names_json, encoding="utf-8") as fd:
+        return json.load(fd)
 
 
 def ID_matched_img_json_pairs(
@@ -918,6 +1022,7 @@ def ID_matched_img_json_pairs(
     if os.path.exists(cache_path):
         print(f"Loading cached embeddings from {cache_path}")
         cache = torch.load(cache_path, map_location=device)
+        TreeOfLifeClassifier.get_txt_names = fixed_get_txt_names # weird patch
         classifier = TreeOfLifeClassifier(device=device)  # still need classifier structure
         classifier.txt_names = cache["txt_names"]
         classifier.txt_embeddings = cache["txt_embeddings"].to(device)
@@ -941,7 +1046,8 @@ def ID_matched_img_json_pairs(
 
 
         print("Loading TOL classifier")
-        classifier = TreeOfLifeClassifier(device=DEVICE)
+        TreeOfLifeClassifier.get_txt_names = fixed_get_txt_names # weird patch to make it not give an undefined character error!  
+        classifier = TreeOfLifeClassifier(device=DEVICE) #it used to crash here
         print("TOL: number of labels:", len(classifier.txt_names))
         print("TOL: image embeddings shape:", classifier.txt_embeddings.shape)
 
@@ -968,6 +1074,7 @@ def ID_matched_img_json_pairs(
             txt_feature_ary.append(clc.txt_embeddings[:, i])
             new_txt_names.append([[label, label, label, label, label, "", label], label])
 
+        #HERE TO FIX
         classifier.txt_names = new_txt_names
         classifier.txt_embeddings = torch.stack(txt_feature_ary, dim=1)
         print("TOL: Updated number of labels:", len(classifier.txt_names))
