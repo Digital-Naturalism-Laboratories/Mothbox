@@ -16,7 +16,7 @@ from datetime import datetime
 #~~~~Variables to Change~~~~~~~
 
 
-INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-06"  # raw string
+INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21"  # raw string
 
 YOLO_MODEL = r"..\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 
@@ -214,18 +214,11 @@ def process_jpg_files(img_files, date_folder):
                 points = points.tolist() 
                 points = [item for sublist in points for item in sublist]  #flatten
 
-
+                print(confidence)
                 shape = {
                     "points": points,
                     "direction": angle,
                     "score": float(confidence),
-                    "identifier_bot":"",
-                    "identifier_human":"",
-                    "timestamp_detection":current_timestamp(),
-                    "detector_bot":model_name,
-                    "confidence_detection":confidence
-                    #"detector_human":""
-                    
 
                 }
 
@@ -234,6 +227,11 @@ def process_jpg_files(img_files, date_folder):
                 if(GEN_THUMBNAILS):
                     thepatchpath=generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
                 shape["patch_path"]=thepatchpath
+                shape["confidence_detection"]=confidence
+                shape["identifier_bot"]=""
+                shape["identifier_human"]=""
+                shape["timestamp_detection"]=current_timestamp()
+                shape["detector_bot"]=str(model_name)
                 shapes.append(shape)
 
                 
@@ -273,7 +271,12 @@ def process_jpg_files(img_files, date_folder):
             "flags": {},
             "attributes": {},
             "points": shape["points"],
-            "patch_path":shape["patch_path"]
+            "patch_path":shape["patch_path"],
+            "confidence_detection":shape["confidence_detection"],
+            "identifier_bot":shape["identifier_bot"],
+            "identifier_human":shape["identifier_human"],
+            "timestamp_detection":shape["timestamp_detection"],
+            "detector_bot":shape["detector_bot"]
             }
             data["shapes"].append(shape_data)
 
