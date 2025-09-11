@@ -56,17 +56,18 @@ ImageFile.LOAD_TRUNCATED_IMAGES = (
     True  # makes ok for use images that are messed up slightly
 )
 
-import cv2
+#import cv2
 import torch
 import json
 #import PIL.Image
 import polars as pl
-import numpy as np
 from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
-#import bioclip
-import importlib.metadata
+import warnings
+warnings.filterwarnings("ignore", message="xFormers is not available*")
+warnings.filterwarnings("ignore", message="'force_all_finite' was renamed")
 
+import importlib.metadata
 VERSION = "pybioclip_"+importlib.metadata.version("pybioclip")
 print("ID model: "+VERSION)
 
@@ -74,7 +75,7 @@ print("ID model: "+VERSION)
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-06"  # raw string
+   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21"  # raw string
 )
 SPECIES_LIST = r"..\SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.15468dl.epzeza.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
@@ -90,7 +91,7 @@ SPECIES_LIST = r"..\SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.154
 TAXONOMIC_RANK_FILTER_num = 3 #!!! change this number to change the taxonomic rank we filter with. IE filter to order with "3" or filter to genus with "5"
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
-# you can See if a json file has an existing ID by looking at "description": "ID_BioCLIP"
+# you can See if a json file has an existing ID by looking at identifier_bot: pybioclip  
 OVERWRITE_EXISTING_IDs = True #True
 # ~~~~Other Global Variables~~~~~~~
 
@@ -103,7 +104,7 @@ taxa_path = SPECIES_LIST
 # Paths to save filtered list of embeddings/labels
 image_embeddings_path = INPUT_PATH + "/image_embeddings.npy"
 embedding_labels_path = INPUT_PATH + "/embedding_labels.json"
-print(torch.cuda.is_available())
+#print(torch.cuda.is_available())
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 DOI= ""
 
@@ -363,7 +364,8 @@ def rotate_image_to_vertical(image, angle):
     image = image.rotate(-angle, expand=True)
     return image
 
-
+""" 
+#don't use anymore
 def crop_rect(
     img, rect, interpolation=cv2.INTER_LINEAR
 ):  # cv2.INTER_LANCZOS4  cv2.INTER_LINEAR cv2.INTER_CUBIC
@@ -383,7 +385,7 @@ def crop_rect(
     img_crop = cv2.getRectSubPix(img_rot, size, center)
 
     return img_crop, img_rot
-
+ """
 
 def update_main_list(main_list, new_items):
     """Updates the main list with new items, avoiding duplicates.
@@ -406,7 +408,7 @@ def update_main_list(main_list, new_items):
 
     return main_list
 
-
+# not sure we use this anymore
 def rotate_cropped(img, points):
     # print("shape of cnt: {}".format(points.shape))
     rect = cv2.minAreaRect(points)
@@ -470,8 +472,8 @@ def get_rotated_rect_raw_coordinates(json_file):
                 # x, y, w, h, angle = extract_rectangle_coordinates(points)
                 coordinates_list.append(points)
                 if (
-                    shape["description"] != ""
-                ):  # detect if there's been an identification (if so it would say something like IDbyBIOCLIP)
+                    shape["identifier_bot"] != ""
+                ):  # detect if there's been an identification (if so it would say something like pybioclip)
                     pre_ided = True
                 pre_ided_list.append(pre_ided)
 
@@ -500,7 +502,7 @@ def calculate_rotation_angle(points):
     angle = np.arctan2(p2[1] - p1[1], p2[0] - p1[0]) * 180 / np.pi
     return angle
 
-
+#not sure we use this
 def rotate_image_around_center(image, angle):
     """Rotates an image around its center by the specified angle."""
     cv_image = np.array(image)
@@ -522,7 +524,7 @@ def crop_image(image, x, y, w, h):
     cropped_image = image.crop((x, y, x + w, y + h))
     return cropped_image
 
-
+#not sure this is being used
 def warp_rotation(img, points):
     # cnt = np.array(points)
     cnt = np.array([[int(x), int(y)] for x, y in points])
@@ -661,10 +663,12 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
 
     if 0 <= index < len(data["shapes"]):
         shape = data["shapes"][index]
+        
         # do stuff here now
         shape["identifier_bot"] = VERSION
         shape["species_list"]= DOI
-        shape["timestamp_ID"]=current_timestamp()
+        shape["timestamp_ID_bot"]=current_timestamp()
+        shape["confidence_ID"] = conf
 
 
 
@@ -673,10 +677,10 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
             shape["label"] = "ERROR_" + pred
         else:            
             shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "") + "_" + pred
-        shape["confidence_detection"] = conf
-        shape["description"] = (
-            "ID_BioCLIP"  # Put what Robot did the ID, put "" for human / ground_truth
-        )
+
+        #shape["description"] = (
+        #    VERSION  # Put what Robot did the ID, put "" for human / ground_truth
+        #)
 
         # Add taxonomic ranks only if they exist in the winningdict
         for rank in [
@@ -1055,21 +1059,7 @@ def ID_matched_img_json_pairs(
                     # print(coordinates)
                     if was_pre_ided_list[idx] and OVERWRITE_EXISTING_IDs==False:  # skip processing if IDed
                         continue
-                    #Use thumbnails now, so don't need to crop every image fresh
-                    """image = Image.open(image_path)
-                    cv_image = np.array(image)
 
-                    cv_image_cropped = warp_rotation(cv_image, coordinates)
-
-                    # pil_image = Image.fromarray(cv_image_cropped)
-                    pil_image = Image.fromarray(
-                        cv_image_cropped[:, :, ::-1]
-                    )  # numpy images are inverted
-
-                    pred, conf, winningdict = get_bioclip_prediction_PILimg(
-                        pil_image, classifier
-                    )
-                    """
                     patchfullpath=os.path.dirname(image_path)+"/"+ thepatch_list[idx]
                     
 

@@ -24,7 +24,6 @@ YOLO_MODEL = r"..\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yo
 IMGSZ = 1600  # Should be same imgsz as used in training for best results!
 
 
-#SKIP_PREVIOUS_GENERATED = True #If you ran a detection before, or partially ran one, and do not want to re-create these detections leave this as TRUE. 
 GEN_BOT_DET_EVENIF_HUMAN_EXISTS=True #if we encounter a human detection, but still want a parallel bot detection, make this true
 OVERWRITE_PREV_BOT_DETECTIONS=True #if true, if there are previous machine detections, it will overwrite those machine detections with our current ones. This script should NEVER overwrite a human detection
 
