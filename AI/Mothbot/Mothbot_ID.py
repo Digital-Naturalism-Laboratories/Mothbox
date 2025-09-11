@@ -92,7 +92,7 @@ TAXONOMIC_RANK_FILTER_num = 3 #!!! change this number to change the taxonomic ra
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
 # you can See if a json file has an existing ID by looking at identifier_bot: pybioclip  
-OVERWRITE_EXISTING_IDs = True #True
+OVERWRITE_EXISTING_IDs = False #True
 # ~~~~Other Global Variables~~~~~~~
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
@@ -475,6 +475,7 @@ def get_rotated_rect_raw_coordinates(json_file):
                     shape["identifier_bot"] != ""
                 ):  # detect if there's been an identification (if so it would say something like pybioclip)
                     pre_ided = True
+                    #print("it was previously IDed")
                 pre_ided_list.append(pre_ided)
 
         return coordinates_list, pre_ided_list, patch_list
