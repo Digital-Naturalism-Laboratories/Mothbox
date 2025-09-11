@@ -15,7 +15,7 @@ torch
 torchvision
 torchaudio
 tqdm==4.67.1
-typing-extensions==4.15.0
+typing-extensions
 tzdata==2025.2
 ultralytics==8.3.175
 ultralytics-thop==2.0.15
