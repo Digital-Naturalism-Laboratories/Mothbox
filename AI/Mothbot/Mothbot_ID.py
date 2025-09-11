@@ -902,50 +902,78 @@ def temporal_subclusters(
 
 def ID_matched_img_json_pairs(
     hu_matched_img_json_pairs,bot_matched_img_json_pairs, taxa_path, taxa_cols, taxon_rank, device, flag_the_det_errors):
-    # load up the Pybioclip stuff
-    taxon_keys_list = load_taxon_keys(
-        taxa_path=taxa_path,
-        taxa_cols=taxa_cols,
-        taxon_rank=taxon_rank.lower(),
-        flag_det_errors=flag_the_det_errors,
-    )
-    target_values = taxon_keys_list
-    print(
-        #f"We are predicting from the following {len(taxon_keys_list)} taxon keys: {taxon_keys_list}"
-    )
 
-    print("Loading TOL classifier")
-    classifier = TreeOfLifeClassifier(device=DEVICE)
-    print("TOL: number of labels:", len(classifier.txt_names))
-    print("TOL: image embeddings shape:", classifier.txt_embeddings.shape)
 
-    print("Finding embeddings matching the targets.")
-    found_items = []
-    for i, txt_name in enumerate(classifier.txt_names):
-        name_dict = create_classification_dict(txt_name, Rank.SPECIES)
-        if name_dict[taxon_rank].lower() in target_values:
-            found_items.append((i, txt_name))
+    # derive cache filename
+    cache_path = os.path.splitext(taxa_path)[0] + ".pt"
 
-    print("Found", len(found_items), "embeddings matching the", taxon_rank, "values")
+    if os.path.exists(cache_path):
+        print(f"Loading cached embeddings from {cache_path}")
+        cache = torch.load(cache_path, map_location=device)
+        classifier = TreeOfLifeClassifier(device=device)  # still need classifier structure
+        classifier.txt_names = cache["txt_names"]
+        classifier.txt_embeddings = cache["txt_embeddings"].to(device)
+        print("TOL: Loaded number of labels:", len(classifier.txt_names))
+        print("TOL: Loaded image embeddings shape:", classifier.txt_embeddings.shape)
+        #return classifier
 
-    print("Building the image embedding tensor")
-    txt_feature_ary = []
-    new_txt_names = []
-    for i, txt_name in found_items:
-        txt_feature_ary.append(classifier.txt_embeddings[:, i])
-        new_txt_names.append(txt_name)
+    # ----------------------
+    # No cache → build fresh
+    # ----------------------
+    else:
+        # load up the Pybioclip stuff
+        taxon_keys_list = load_taxon_keys(
+            taxa_path=taxa_path,
+            taxa_cols=taxa_cols,
+            taxon_rank=taxon_rank.lower(),
+            flag_det_errors=flag_the_det_errors,
+        )
 
-    print("Creating embeddings for custom labels")
-    custom_labels = ["hole", "background", "wall", "floor", "blank", "sky"]
-    clc = CustomLabelsClassifier(custom_labels, device=DEVICE)
-    for i, label in enumerate(custom_labels):
-        txt_feature_ary.append(clc.txt_embeddings[:, i])
-        new_txt_names.append([[label, label, label, label, label, "", label], label])
+        target_values = taxon_keys_list
 
-    classifier.txt_names = new_txt_names
-    classifier.txt_embeddings = torch.stack(txt_feature_ary, dim=1)
-    print("TOL: Updated number of labels:", len(classifier.txt_names))
-    print("TOL: Updated image embeddings shape:", classifier.txt_embeddings.shape)
+
+        print("Loading TOL classifier")
+        classifier = TreeOfLifeClassifier(device=DEVICE)
+        print("TOL: number of labels:", len(classifier.txt_names))
+        print("TOL: image embeddings shape:", classifier.txt_embeddings.shape)
+
+        print("Finding embeddings matching the targets.")
+        found_items = []
+        for i, txt_name in enumerate(classifier.txt_names):
+            name_dict = create_classification_dict(txt_name, Rank.SPECIES)
+            if name_dict[taxon_rank].lower() in target_values:
+                found_items.append((i, txt_name))
+
+        print("Found", len(found_items), "embeddings matching the", taxon_rank, "values")
+
+        print("Building the image embedding tensor")
+        txt_feature_ary = []
+        new_txt_names = []
+        for i, txt_name in found_items:
+            txt_feature_ary.append(classifier.txt_embeddings[:, i])
+            new_txt_names.append(txt_name)
+
+        print("Creating embeddings for custom labels")
+        custom_labels = ["hole", "background", "wall", "floor", "blank", "sky"]
+        clc = CustomLabelsClassifier(custom_labels, device=DEVICE)
+        for i, label in enumerate(custom_labels):
+            txt_feature_ary.append(clc.txt_embeddings[:, i])
+            new_txt_names.append([[label, label, label, label, label, "", label], label])
+
+        classifier.txt_names = new_txt_names
+        classifier.txt_embeddings = torch.stack(txt_feature_ary, dim=1)
+        print("TOL: Updated number of labels:", len(classifier.txt_names))
+        print("TOL: Updated image embeddings shape:", classifier.txt_embeddings.shape)
+
+        # ----------------------
+        # Save cache
+        # ----------------------
+        print(f"Saving embeddings cache to {cache_path}")
+        torch.save({
+            "txt_names": classifier.txt_names,
+            "txt_embeddings": classifier.txt_embeddings.cpu(),  # save portable CPU tensors
+        }, cache_path)
+
 
     #Process Human Detections
     print("processing Human Detections.........")
