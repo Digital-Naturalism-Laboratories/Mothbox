@@ -89,10 +89,13 @@ SPECIES_LIST = r"..\SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.154
     SPECIES = 6"""
 
 TAXONOMIC_RANK_FILTER_num = 3 #!!! change this number to change the taxonomic rank we filter with. IE filter to order with "3" or filter to genus with "5"
+
+# you can See if a json file has an existing ID by looking at identifier_bot: pybioclip  
+OVERWRITE_EXISTING_IDs = True #True
+
+#you probably always want these below as true
 ID_HUMANDETECTIONS = True
 ID_BOTDETECTIONS = True
-# you can See if a json file has an existing ID by looking at identifier_bot: pybioclip  
-OVERWRITE_EXISTING_IDs = False #True
 # ~~~~Other Global Variables~~~~~~~
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
