@@ -170,6 +170,17 @@ def parse_args():
 
     return parser.parse_args()
 
+# FUNCTIONS ~~~~~~~~~~~~~
+
+def current_timestamp() -> str:
+    """
+    Returns the current timestamp in format:
+    YYYY-MM-DD__HH_MM_SS_(±HHMM)
+    """
+    now = datetime.now().astimezone()  # local time with UTC offset
+    return now.strftime("%Y-%m-%d__%H_%M_%S_(%z)")
+
+
 
 def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
     print("Reading", taxa_path, "extracting", taxon_rank, "values.")
@@ -651,14 +662,18 @@ def update_json_labels_and_scores(json_path, index, pred, conf, winningdict):
     if 0 <= index < len(data["shapes"]):
         shape = data["shapes"][index]
         # do stuff here now
-        shape["ID_by"] = VERSION
+        shape["identifier_bot"] = VERSION
+        shape["species_list"]= DOI
+        shape["timestamp_ID"]=current_timestamp()
+
+
 
         predstring = str(pred).strip().lower()
         if predstring in ["hole", "background", "wall", "floor", "blank", "sky"]:
             shape["label"] = "ERROR_" + pred
         else:            
             shape["label"] = str(TAXONOMIC_RANK_FILTER).replace("Rank.", "") + "_" + pred
-        shape["score"] = conf
+        shape["confidence_detection"] = conf
         shape["description"] = (
             "ID_BioCLIP"  # Put what Robot did the ID, put "" for human / ground_truth
         )
@@ -1113,9 +1128,9 @@ if __name__ == "__main__":
 
     # get species list DOI
     
-    doi=extract_doi_from_csv_path(args.taxa_csv)
+    DOI=extract_doi_from_csv_path(args.taxa_csv)
     
-    print("using species list: "+doi)
+    print("using species list: "+DOI)
 
     # Check if CUDA is available
     if torch.cuda.is_available():

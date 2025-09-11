@@ -12,11 +12,11 @@ import argparse
 from PIL import Image  # For image format verification
 from Mothbot_GenThumbnails import generateThumbnailPatches, generateThumbnailPatches_JSON
 import torch
-
+from datetime import datetime
 #~~~~Variables to Change~~~~~~~
 
 
-INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_prizecrab_2025-02-05\2025-02-05"  # raw string
+INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-06"  # raw string
 
 YOLO_MODEL = r"..\trained_models\yolo11m_4500_imgsz1600_b1_2024-01-18\weights\yolo11m_4500_imgsz1600_b1_2024-01-18.pt"
 
@@ -59,7 +59,13 @@ OVERWRITE_PREV_BOT_DETECTIONS=bool(int(args.overwrite_prev_bot_detections))
 
 
 #~~~~Other Stuff~~~~~~~
-
+def current_timestamp() -> str:
+    """
+    Returns the current timestamp in format:
+    YYYY-MM-DD__HH_MM_SS_(±HHMM)
+    """
+    now = datetime.now().astimezone()  # local time with UTC offset
+    return now.strftime("%Y-%m-%d__%H_%M_%S_(%z)")
 
 def scan_for_images(date_folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""
@@ -113,11 +119,10 @@ def process_jpg_files(img_files, date_folder):
 
         # Calculate progress
         processed_files = idx + 1
-        progress = (processed_files-1 / total_img_files) * 100
+        progress = ((processed_files-1) / total_img_files) * 100
 
         # Print progress
-        print()
-        print()
+
         print(f"({progress:.2f}%) Processing:  {filename} ")
 
 
@@ -213,12 +218,18 @@ def process_jpg_files(img_files, date_folder):
                 shape = {
                     "points": points,
                     "direction": angle,
-                    "score": float(confidence)
+                    "score": float(confidence),
+                    "identifier_bot":"",
+                    "identifier_human":"",
+                    "timestamp_detection":current_timestamp(),
+                    "detector_bot":model_name,
+                    "confidence_detection":confidence
+                    #"detector_human":""
+                    
 
                 }
 
-                # print("bounding box: {}".format(box))
-                # cv2.drawContours(result.orig_img, [box], 0, (0, 0, 255), 2)
+
 
                 if(GEN_THUMBNAILS):
                     thepatchpath=generateThumbnailPatches(result.orig_img, image_path, rect, idx, model_name)
@@ -398,11 +409,12 @@ if __name__ == "__main__":
     input_path=INPUT_PATH #Cheat UI for now
     model_path=YOLO_MODEL
     date_folders = find_date_folders(input_path)
-
+    print(str(len(date_folders))+"  nightly folders found to process")
     
     for date_folder_path in date_folders:
         print(date_folder_path)
         images = scan_for_images(date_folder_path)
+        print(str(len(images))+"  images to process in this night: "+str(date_folder_path))
         process_jpg_files(images, date_folder_path)
 
     print("Finished Running Detections!")
