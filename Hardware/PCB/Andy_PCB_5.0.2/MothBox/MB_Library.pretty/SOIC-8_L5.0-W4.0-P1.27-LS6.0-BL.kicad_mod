@@ -1,0 +1,218 @@
+(footprint "SOIC-8_L5.0-W4.0-P1.27-LS6.0-BL"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -6.71 0)
+		(layer "F.SilkS")
+		(uuid "7c0a8671-178b-40f1-a34a-6f4ddc4f1053")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "FDS4435BZ"
+		(at 0 6.71 0)
+		(layer "F.Fab")
+		(uuid "d06a1fc7-7ff5-4592-96de-f0ab04719436")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5e9ad71d-b02e-4a01-8987-27fad00ce8c8")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9a5ef934-3db7-42de-83eb-f8f4cec7b688")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start 2.5 -1.5)
+		(end 2.5 1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5aab082a-e235-40e5-8183-3c1f29cd78cd")
+	)
+	(fp_line
+		(start -2.5 1.5)
+		(end 2.5 1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6e215b91-71c5-4fd8-aef8-ef0c54d1e33c")
+	)
+	(fp_line
+		(start -2.5 1.5)
+		(end -2.5 0.73)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "de1fdd58-5eba-40d8-b041-5a4e13ac2aed")
+	)
+	(fp_line
+		(start -2.5 -1.5)
+		(end 2.5 -1.5)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d5ba5e33-b700-4f70-af53-d0aba4ebe03a")
+	)
+	(fp_line
+		(start -2.5 -1.5)
+		(end -2.5 -0.73)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "9d237a57-509e-4dc5-9823-5071c75f8b23")
+	)
+	(fp_arc
+		(start -2.48726 -0.729889)
+		(mid -2.50635 0.729972)
+		(end -2.5 -0.73)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "41cd8029-d131-4dd4-b0e9-c0f6db2383d2")
+	)
+	(fp_circle
+		(center -1.78 1.02)
+		(end -1.63 1.02)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "1df4050f-61f2-44b9-97e6-e506cfda53e2")
+	)
+	(fp_circle
+		(center -1.91 3.4)
+		(end -1.76 3.4)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(fill no)
+		(layer "Cmts.User")
+		(uuid "60cd5533-928d-4ba6-a49f-6f7d4b592dd3")
+	)
+	(fp_circle
+		(center -2.41 2.54)
+		(end -2.38 2.54)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "37b4f0dc-2a1a-45d6-84b0-2564aebbc068")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "2c55ce8a-b9a2-4d88-afff-73d4730e3e41")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd oval
+		(at -1.91 2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "0d2efe5e-cbd9-4c77-aba8-2979dabf84a5")
+	)
+	(pad "2" smd oval
+		(at -0.63 2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "511c9def-cebb-4641-8c49-6a4787b6cc5c")
+	)
+	(pad "3" smd oval
+		(at 0.63 2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f47efa5e-259c-47ff-a66c-29dbfeeee4df")
+	)
+	(pad "4" smd oval
+		(at 1.9 2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "31c6c370-2ab9-46b7-b4e6-38f1f24bafcd")
+	)
+	(pad "5" smd oval
+		(at 1.9 -2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "22c2cdea-cef8-4e69-b1b3-140e90e5ecba")
+	)
+	(pad "6" smd oval
+		(at 0.63 -2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2221ce2e-2e78-4c05-9fbd-f2b34e49bac2")
+	)
+	(pad "7" smd oval
+		(at -0.63 -2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "619f149d-1989-497e-8949-7f1689588d34")
+	)
+	(pad "8" smd oval
+		(at -1.91 -2.71 180)
+		(size 0.57 1.95)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "9593cb35-bbb7-460e-9553-ab171cd06fcd")
+	)
+	(embedded_fonts no)
+	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/SOIC-8_L4.9-W3.9-H1.7-LS6.0-P1.27.wrl"
+		(offset
+			(xyz 0 0 -0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)
