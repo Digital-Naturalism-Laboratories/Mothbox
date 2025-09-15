@@ -13,7 +13,7 @@ from shapely.affinity import translate, rotate as shapely_rotate
 # CONFIG
 # ----------------------------
 folder = r"D:\x-anylabeling-matting\onlybig\*.png"
-base_image_path = r"c:\Users\andre\Documents\GitHub\Mothbox\Firmware\graphics\croppedlogonotext_4000px.png"  # input base mask
+base_image_path = r"c:\Users\andre\Documents\GitHub\Mothbox\Firmware\graphics\croptext_6200px.png"  # input base mask
 
 # Packing modes
 pack_mode = "bottom_up"   # options: "spiral", "random", "edge", "bottom_up"
@@ -26,7 +26,7 @@ min_scale = 0.1
 max_scale = 2.5
 
 # for base image
-base_scale = 1  # 2 = 200% size, for example
+base_scale = 2  # 2 = 200% size, for example
 
 animate = True
 bg_color = None

@@ -40,7 +40,7 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 from PIL import ImageFile
-
+import shapely
 
 #perception clustering
 import torch
@@ -1189,22 +1189,7 @@ def ID_matched_img_json_pairs(
                     json_paths_bots.append(json_path)
                     idx_paths_bots.append(idx)
 
-    #process perceptual similarities for bot and hu detections
 
-    #Hu detections first
-    if(len(patch_paths_hu)>0):
-        embeddings = extract_embeddings(patch_paths_hu)
-        labels = cluster_embeddings(embeddings)
-        #save_clusters(input_folder, filenames, labels, output_folder)
-        labels=temporal_subclusters(patch_paths_hu, json_paths_hu, idx_paths_hu, labels)
-        write_cluster_to_json(patch_paths_hu, json_paths_hu, idx_paths_hu, labels)
-    
-    #bot detections first
-    if(len(patch_paths_bots)>0):
-        embeddings = extract_embeddings(patch_paths_bots)
-        labels = cluster_embeddings(embeddings)
-        labels=temporal_subclusters(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
-        write_cluster_to_json(patch_paths_bots, json_paths_bots, idx_paths_bots, labels)
 
 def extract_doi_from_csv_path(csv_path: str) -> str:
     """
