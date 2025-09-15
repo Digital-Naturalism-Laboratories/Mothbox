@@ -20,16 +20,21 @@ pack_mode = "edge"   # options: "spiral", "random", "edge"
 max_random_tries = 500  # for mode B
 edge_step = 10          # inward step size for mode C
 
-scale_factor = 0.1
+scale_factor = 0.3
 random_scale = False
 min_scale = 0.1
 max_scale = 2.5
+
+# for base image
+base_scale = 2  # 50% size, for example
 
 animate = True
 bg_color = None
 random_rotate = True
 max_rotation = 360
-debug_view = True
+debug_view = False
+debug_mask = False
+
 padding = 10
 out_size = (5000, 5000)
 
@@ -88,6 +93,10 @@ def load_base_shape(mask_path, threshold=127):
     if mask_img is None:
         raise ValueError(f"Could not load mask image: {mask_path}")
 
+
+    if base_scale != 1.0:
+        mask_img = cv2.resize(mask_img, None, fx=base_scale, fy=base_scale, interpolation=cv2.INTER_AREA)
+
     # Determine which channel to use for mask
     if mask_img.shape[2] == 4:
         # PNG with alpha channel
@@ -139,7 +148,7 @@ def get_shape(path, scale_factor=1.0):
                          interpolation=cv2.INTER_AREA)
 
     alpha = img[:, :, 3]
-    mask = (alpha > 0).astype(np.uint8) * 255
+    mask = (alpha > 10).astype(np.uint8) * 255 #set a little above 0 so it does catch big clear regions
 
     contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contour = max(contours, key=cv2.contourArea)
@@ -527,9 +536,9 @@ if __name__ == "__main__":
                         random_rotate=random_rotate,
                         max_rotation=max_rotation,
                         animate=animate,
-                        pack_mode="random", debug_mask=True, debug_view=debug_view)   # "spiral" | "random" | "edge"
+                        pack_mode="random", debug_mask=debug_mask, debug_view=debug_view)   # "spiral" | "random" | "edge"
 
-    result = visualize(placed, base_poly=base_poly, out_size=out_size, bg_color=bg_color, debug_mask=True,debug_shapes=debug_view )
+    result = visualize(placed, base_poly=base_poly, out_size=out_size, bg_color=bg_color, debug_mask=debug_mask,debug_shapes=debug_view )
     cv2.imwrite("packed_into_shape.png", result)
     print("✅ Saved packed_into_shape.png")
 
