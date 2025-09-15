@@ -484,7 +484,7 @@ def visualize(
         py = int(round(y - shape["anchor"][1]))
         img = shape["img"]
         h, w = img.shape[:2]
-
+        
         # ---- safe ROI blending to prevent broadcasting errors ----
         px0 = max(px, 0)
         py0 = max(py, 0)
@@ -498,10 +498,25 @@ def visualize(
 
         roi = canvas[py0:py1, px0:px1].astype(np.float32)
         alpha_sub = img[y0:y1, x0:x1, 3:4].astype(np.float32) / 255.0
-        img_sub = img[y0:y1, x0:x1, :3].astype(np.float32)
+        img_sub   = img[y0:y1, x0:x1, :3].astype(np.float32)
 
+        # Skip if shape is completely outside the canvas
+        if roi.size == 0 or img_sub.size == 0 or alpha_sub.size == 0:
+            print(f"[WARN] Skipped shape at ({px},{py}) — outside canvas or too small")
+            continue
+
+        # Make sure dimensions align
+        if (roi.shape[0] != img_sub.shape[0]) or (roi.shape[1] != img_sub.shape[1]):
+            print(f"[WARN] Skipped shape at ({px},{py}) — dimension mismatch "
+                f"(roi={roi.shape}, img={img_sub.shape}, alpha={alpha_sub.shape})")
+            continue
+
+        # Blend
         roi[:, :, :3] = alpha_sub * img_sub + (1 - alpha_sub) * roi[:, :, :3]
-        roi[:, :, 3:4] = np.clip(roi[:, :, 3:4] + img[y0:y1, x0:x1, 3:4].astype(np.float32), 0, 255)
+        roi[:, :, 3:4] = np.clip(
+            roi[:, :, 3:4] + img[y0:y1, x0:x1, 3:4].astype(np.float32), 0, 255
+        )
+
         canvas[py0:py1, px0:px1] = roi.astype(np.uint8)
 
         # Debug: draw polygons of shapes
