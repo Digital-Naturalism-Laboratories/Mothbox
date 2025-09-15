@@ -13,14 +13,14 @@ from shapely.ops import unary_union
 # CONFIG
 # ----------------------------
 folder = r"D:\x-anylabeling-matting\onlybig\*.png"
-base_image_path = r"c:\Users\andre\Documents\GitHub\Mothbox\Firmware\graphics\croptext_3100px.png"  # input base mask
+base_image_path = r"c:\Users\andre\Documents\GitHub\Mothbox\Firmware\graphics\croptext_6200px.png"  # input base mask
 
 # Packing modes
 pack_mode = "edge"   # options: "spiral", "random", "edge"
 max_random_tries = 500  # for mode B
 edge_step = 10          # inward step size for mode C
 
-scale_factor = 0.3
+scale_factor = 0.1
 random_scale = False
 min_scale = 0.1
 max_scale = 2.5
@@ -362,7 +362,7 @@ def pack_shapes(
             angle_deg = random.uniform(0, max_rotation)
             cx, cy = shape["anchor"]
             rot_poly = affinity.rotate(rot_poly, angle_deg, origin=shape["anchor"])
-            M = cv2.getRotationMatrix2D((cx, cy), angle_deg, 1.0)
+            M = cv2.getRotationMatrix2D((cx, cy), -angle_deg, 1.0)
             rot_img = cv2.warpAffine(
                 shape["img"], M, (shape["w"], shape["h"]),
                 flags=cv2.INTER_LINEAR,
