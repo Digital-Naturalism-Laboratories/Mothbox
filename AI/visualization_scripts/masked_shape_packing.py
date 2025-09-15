@@ -26,7 +26,7 @@ min_scale = 0.1
 max_scale = 2.5
 
 # for base image
-base_scale = 2  # 2 = 200% size, for example
+base_scale = 1  # 2 = 200% size, for example
 
 animate = True
 bg_color = None
@@ -550,6 +550,7 @@ def visualize(
 if __name__ == "__main__":
     base_poly, out_size = load_base_shape(base_image_path)
     paths = glob.glob(folder)
+    paths = sorted(paths, reverse=True)
     if not paths:
         raise RuntimeError(f"No PNGs found at {folder}")
 
