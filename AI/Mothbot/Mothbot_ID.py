@@ -33,23 +33,16 @@ import sys
 import json
 import argparse
 import re
-import tempfile
 
 import io
 from pathlib import Path
 import numpy as np
 from PIL import Image
 from PIL import ImageFile
-import shapely
 
 #perception clustering
 import torch
-from tqdm import tqdm
-import torchvision.transforms as T
-import hdbscan
-
-from datetime import datetime, timedelta
-from collections import defaultdict
+from datetime import datetime
 
 
 
@@ -58,10 +51,7 @@ ImageFile.LOAD_TRUNCATED_IMAGES = (
 )
 
 #import cv2
-import torch
-import json
-#import PIL.Image
-import polars as pl
+
 from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
 import warnings
@@ -666,19 +656,6 @@ def warp_rotation(img, points):
     return warped
 
 
-def get_path_from_img_temp(im):
-    # im = Image.open(matching_pairs_img_json_detections[0][0])
-
-    with io.BytesIO() as output:
-        im.save(output, format="JPEG")
-        output.seek(0)
-        with tempfile.NamedTemporaryFile(suffix=".jpg") as temp:
-            temp.write(output.read())
-            temp.seek(0)
-            thepath = Path(temp.name)
-
-    print(thepath)
-
 
 def get_bioclip_prediction(img_path, classifier):
 
@@ -836,175 +813,6 @@ def add_metadata_to_json(json_path, metadata_path):
 
     print(f"Metadata added to {json_path}")
 
-
-####################################
-# --------------------------
-# # Perceptual Processing Functions
-# --------------------------
-####################################
-
-# --------------------------
-# 1. Load DINOv2 model
-# --------------------------
-#device = "cuda" if torch.cuda.is_available() else "cpu"
-
-model = torch.hub.load("facebookresearch/dinov2", "dinov2_vits14").to(DEVICE)
-model.eval()
-
-# Image preprocessing
-transform = T.Compose([
-    T.Resize(256),
-    T.CenterCrop(224),
-    T.ToTensor(),
-    T.Normalize(mean=(0.5, 0.5, 0.5), std=(0.5, 0.5, 0.5))
-])
-
-# --------------------------
-# 2. Extract embeddings
-# --------------------------
-def get_embedding(img_path):
-    img = Image.open(img_path).convert("RGB")
-    img_tensor = transform(img).unsqueeze(0).to(DEVICE)
-    with torch.no_grad():
-        feat = model(img_tensor)  # shape [1, 384]
-    return feat.cpu().numpy().squeeze()
-
-
-def extract_embeddings(image_files):
-    embeddings, filenames = [], []
-    for image_file in tqdm(image_files, desc="Extracting embeddings"):
-        try:
-            feat = get_embedding(image_file)
-            embeddings.append(feat)
-            filenames.append(image_file)
-        except Exception as e:
-            print(f"⚠️ Skipping {image_file}: {e}")
-    return np.array(embeddings)
-
-def extract_embeddings_from_folder(image_folder):
-    embeddings, filenames = [], []
-    for fname in tqdm(os.listdir(image_folder), desc="Extracting embeddings"):
-        if not fname.lower().endswith((".jpg", ".jpeg", ".png")):
-            continue
-        path = os.path.join(image_folder, fname)
-        try:
-            feat = get_embedding(path)
-            embeddings.append(feat)
-            filenames.append(fname)
-        except Exception as e:
-            print(f"⚠️ Skipping {fname}: {e}")
-    return np.array(embeddings), filenames
-
-# --------------------------
-# 3. Cluster with HDBSCAN
-# --------------------------
-def cluster_embeddings(embeddings):
-    clusterer = hdbscan.HDBSCAN(
-        min_cluster_size=3,          # smaller clusters allowed
-        min_samples=1,               # fewer items marked as noise
-        cluster_selection_epsilon=0.05,  # expand clusters slightly
-        metric="euclidean"
-    )
-    labels = clusterer.fit_predict(embeddings)
-
-    # Count clusters (ignore -1 which means "noise")
-    unique_labels = set(labels)
-    if -1 in unique_labels:
-        unique_labels.remove(-1)
-    n_clusters = len(unique_labels)
-
-    print(f"✅ The clusterer (HDBSCAN() created {n_clusters} clusters of similar insect photos (and {np.sum(labels == -1)} noise points - ie insect photos that were unique).")
-
-    return labels
-
-# --------------------------
-# 4. Write cluster to JSON
-# --------------------------
-def write_cluster_to_json(filepaths, json_paths, idxes, labels):
-    for fname,json_path,i, label in zip(filepaths, json_paths,idxes, labels):
-        try:
-            with open(json_path, "r") as f:
-                data = json.load(f)
-            if 0 <= i < len(data["shapes"]):
-                shape = data["shapes"][i]
-                shape["clusterID"] = float(label)
-            with open(json_path, "w") as f:
-                json.dump(data, f, indent=4)
-            
-        except Exception as e:
-            print(f"⚠️ Could not update {fname}: {e}")
-    print("✅ Cluster IDs written into 'Json' field.")
-
-
-
-
-
-def temporal_subclusters(
-    patch_paths_hu, json_paths_hu, idx_paths_hu, labels, gap_minutes=1
-):
-    """
-    Creates temporal subclusters within perceptual clusters based on timestamp proximity.
-
-    Args:
-        patch_paths_hu (list[str]): Paths to parent images
-        json_paths_hu (list[str]): Paths to JSON metadata
-        idx_paths_hu (list[str]): Paths to cropped insect images
-        labels (list[int]): Cluster IDs for each detection (from HDBSCAN etc.)
-        gap_minutes (int, optional): Maximum gap (in minutes) allowed between
-                                     consecutive detections in the same temporal chain.
-                                     Default = 1.
-
-    Returns:
-        list[str]: A list of new cluster IDs (like "3.1", "3.2") aligned with inputs.
-    """
-    # Initialize result list (default keep -1 for noise)
-    new_labels = [str(l) if l != -1 else "-1" for l in labels]
-
-    # Group indices by cluster
-    cluster_to_indices = defaultdict(list)
-    for idx, cl in enumerate(labels):
-        if cl != -1:  # skip noise
-            cluster_to_indices[cl].append(idx)
-
-    # Regex to extract timestamp from filename
-    ts_pattern = re.compile(r"(\d{4}_\d{2}_\d{2}__\d{2}_\d{2}_\d{2})")
-
-    # Loop through each perceptual cluster
-    for cluster_id, indices in cluster_to_indices.items():
-        timestamps = []
-        for i in indices:
-            fname = os.path.basename(patch_paths_hu[i])
-            match = ts_pattern.search(fname)
-            if not match:
-                raise ValueError(f"Could not parse timestamp from filename: {fname}")
-            ts_str = match.group(1)
-            ts = datetime.strptime(ts_str, "%Y_%m_%d__%H_%M_%S")
-            timestamps.append((i, ts))
-
-        # Sort detections in this cluster by time
-        timestamps.sort(key=lambda x: x[1])
-
-        # Find temporal sequences
-        gap = timedelta(minutes=gap_minutes)
-        seq_id = 1
-        prev_time = None
-
-        for i, ts in timestamps:
-            if prev_time is None:
-                # start first sequence
-                new_labels[i] = f"{cluster_id}.{seq_id}"
-                prev_time = ts
-            else:
-                if ts - prev_time <= gap:
-                    # same sequence
-                    new_labels[i] = f"{cluster_id}.{seq_id}"
-                else:
-                    # new sequence
-                    seq_id += 1
-                    new_labels[i] = f"{cluster_id}.{seq_id}"
-                prev_time = ts
-
-    return new_labels
 
 # Patch get_txt_names to always use UTF-8
 def fixed_get_txt_names(self):
