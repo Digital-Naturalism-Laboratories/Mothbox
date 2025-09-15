@@ -8,17 +8,17 @@ from shapely import affinity
 import matplotlib.pyplot as plt
 from collections import defaultdict
 from shapely.ops import unary_union
-
+from shapely.affinity import translate, rotate as shapely_rotate
 # ----------------------------
 # CONFIG
 # ----------------------------
 folder = r"D:\x-anylabeling-matting\onlybig\*.png"
-base_image_path = r"c:\Users\andre\Documents\GitHub\Mothbox\Firmware\graphics\croptext_6200px.png"  # input base mask
+base_image_path = r"c:\Users\andre\Documents\GitHub\Mothbox\Firmware\graphics\croppedlogonotext_4000px.png"  # input base mask
 
 # Packing modes
-pack_mode = "edge"   # options: "spiral", "random", "edge"
+pack_mode = "bottom_up"   # options: "spiral", "random", "edge", "bottom_up"
 max_random_tries = 500  # for mode B
-edge_step = 10          # inward step size for mode C
+edge_step = 10          # inward step size for edge mode
 
 scale_factor = 0.3
 random_scale = False
@@ -26,7 +26,7 @@ min_scale = 0.1
 max_scale = 2.5
 
 # for base image
-base_scale = 2  # 50% size, for example
+base_scale = 2  # 2 = 200% size, for example
 
 animate = True
 bg_color = None
@@ -35,7 +35,7 @@ max_rotation = 360
 debug_view = False
 debug_mask = False
 
-padding = 10
+padding = 1 #pixels to pad around each shape (float allowed; we'll ceil it for pixel dilation).
 out_size = (5000, 5000)
 
 
@@ -222,6 +222,11 @@ class SpatialGrid:
 # ----------------------------
 # 2. Packing algorithm
 # ----------------------------
+
+
+# ----------------------------
+# Packing algorithm with mask raster
+# ----------------------------
 def pack_shapes(
     shapes,
     base_poly,
@@ -238,14 +243,14 @@ def pack_shapes(
     debug_view=False,
 ):
     """
-    Pack shapes inside base_poly (pixel coordinates). Prevents overlaps using an occupancy mask.
+    Pack shapes inside base_poly (pixel coordinates) using an occupancy mask.
     - shapes: list of dicts with keys: 'img'(RGBA numpy), 'poly'(local shapely polygon), 'anchor'(x,y), 'w','h','path'
     - base_poly: shapely Polygon or MultiPolygon in image pixel coords (top-left origin).
     - out_size: (W,H) optional; if None it's inferred from base_poly.bounds.
-    - padding: pixels to pad around each shape (float allowed; we'll ceil it for pixel dilation).
-    - pack_mode: "spiral" | "random" | "edge"
+    - padding: pixels to pad around each shape.
+    - pack_mode: "spiral" | "random" | "edge" | "bottom_up" | "center_outwards"
     """
-    # ---- derive canvas and origin (handles masks that don't start at 0,0) ----
+    # ---- canvas size ----
     minx, miny, maxx, maxy = base_poly.bounds
     origin_x = int(math.floor(minx))
     origin_y = int(math.floor(miny))
@@ -255,12 +260,8 @@ def pack_shapes(
     else:
         W, H = out_size
 
-    # local poly (shifted so (0,0) maps to top-left of returned canvas)
-    base_poly_local = affinity.translate(base_poly, xoff=-origin_x, yoff=-origin_y)
-
-    # occupancy raster (H rows, W cols); 0 = free, 1 = occupied
+    base_poly_local = translate(base_poly, xoff=-origin_x, yoff=-origin_y)
     occupancy = np.zeros((H, W), dtype=np.uint8)
-
     placed = []
 
     # ---- animation setup ----
@@ -270,135 +271,146 @@ def pack_shapes(
         ax.set_aspect("equal")
         ax.axis("off")
 
-    # ---- helper: pixel dilation for padding ----
+    # ---- helper: padding mask ----
     pad_px = int(math.ceil(max(0.0, padding)))
-
     def make_padded_mask(img_rgba):
-        """Return boolean mask of same (h,w) with padding applied."""
-        alpha = (img_rgba[:, :, 3] > 0).astype(np.uint8)  # 0/1
-        if pad_px <= 0:
-            return alpha.astype(bool)
-        k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (pad_px * 2 + 1, pad_px * 2 + 1))
-        dil = cv2.dilate(alpha, k, iterations=1)
-        return (dil > 0)
+        alpha = (img_rgba[:, :, 3] > 0).astype(np.uint8)
+        if pad_px > 0:
+            k = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (pad_px*2+1, pad_px*2+1))
+            alpha = cv2.dilate(alpha, k)
+        return alpha.astype(bool)
 
-    # ---- candidate generators (world coords) ----
-    centroid = base_poly.centroid.coords[0]
+    # ---- rasterize base_poly for fast lookup ----
+    def rasterize_mask(base_poly, W, H):
+        canvas = np.zeros((H, W), dtype=np.uint8)
+        if isinstance(base_poly, MultiPolygon):
+            for poly in base_poly.geoms:
+                coords = np.array(poly.exterior.coords, np.int32)
+                cv2.fillPoly(canvas, [coords], 1)
+        else:
+            coords = np.array(base_poly.exterior.coords, np.int32)
+            cv2.fillPoly(canvas, [coords], 1)
+        return canvas.astype(bool)
+    mask_raster = rasterize_mask(base_poly_local, W, H)
 
-    def spiral_candidates(center, max_radius=max(W, H) * 2, step_theta=0.25, step_r=0.7):
+    # ---- candidate generators ----
+    centroid = base_poly_local.centroid.coords[0]
+
+    def spiral_candidates(center, max_radius=max(W,H)*2, step_theta=0.25, step_r=0.7):
         theta, radius = 0.0, 20.0
         while radius < max_radius:
-            yield (center[0] + radius * math.cos(theta),
-                   center[1] + radius * math.sin(theta))
+            yield (center[0] + radius*math.cos(theta),
+                   center[1] + radius*math.sin(theta))
             theta += step_theta
             radius += step_r
 
-    def random_candidates(base_poly, n=500):
-        minx, miny, maxx, maxy = base_poly.bounds
+    def random_candidates_mask(mask, n=500):
+        H, W = mask.shape
         tries = 0
         while tries < n:
-            rx = random.uniform(minx, maxx)
-            ry = random.uniform(miny, maxy)
-            if base_poly.contains(Point(rx, ry)):
-                yield (rx, ry)
+            x = random.randint(0, W-1)
+            y = random.randint(0, H-1)
+            if mask[y, x]:
+                yield (x, y)
             tries += 1
 
     def edge_inward_candidates(base_poly, step=edge_step):
-        # pick largest polygon if multipolygon
         poly = base_poly
         if isinstance(base_poly, MultiPolygon):
             poly = max(base_poly.geoms, key=lambda p: p.area)
         boundary = np.array(poly.exterior.coords)
         centroid_pt = np.array(poly.centroid.coords[0])
-        subs = max(1, len(boundary) // 300)
+        subs = max(1, len(boundary)//300)
         for pt in boundary[::subs]:
             pt = np.array(pt)
             vec = centroid_pt - pt
             dist = np.linalg.norm(vec)
-            if dist == 0:
-                continue
-            dir_vec = vec / dist
-            steps = max(1, int(dist // step))
+            if dist==0: continue
+            dir_vec = vec/dist
+            steps = max(1,int(dist//step))
             for i in range(steps):
-                cand = pt + dir_vec * (i * step)
+                cand = pt + dir_vec*(i*step)
                 yield (float(cand[0]), float(cand[1]))
 
-    # ---- placement helpers using occupancy + polygon containment ----
+    def bottom_up_candidates(mask, step_x=5, step_y=5):
+        H, W = mask.shape
+        for y in range(H-1, -1, -step_y):
+            for x in range(0, W, step_x):
+                if mask[y, x]:
+                    yield (x, y)
+
+    def center_outwards_candidates(mask, step=5):
+        H, W = mask.shape
+        cx, cy = W//2, H//2
+        # spiral out from center
+        max_r = int(math.hypot(W, H))
+        theta, r = 0.0, 0.0
+        step_theta = 0.25
+        step_r = step
+        while r < max_r:
+            x = int(cx + r*math.cos(theta))
+            y = int(cy + r*math.sin(theta))
+            if 0<=x<W and 0<=y<H and mask[y, x]:
+                yield (x, y)
+            theta += step_theta
+            r += step_r*step_theta/(2*math.pi)
+
+    # ---- placement helpers ----
     def can_place_at(shape, x, y, pad_mask_bool, padded_local):
-        """Return True if shape (with pad_mask_bool) can be placed at world (x,y)."""
         w_s, h_s = shape["w"], shape["h"]
-        # top-left in occupancy coords (subtract anchor and origin)
-        px = int(round(x - shape["anchor"][0])) - origin_x
-        py = int(round(y - shape["anchor"][1])) - origin_y
-
-        # bounds check
-        if px < 0 or py < 0 or px + w_s > W or py + h_s > H:
-            return False
-
-        # containment: candidate polygon must lie fully inside mask
-        dx, dy = x - shape["anchor"][0], y - shape["anchor"][1]
-        cand_padded_world = affinity.translate(padded_local, xoff=dx, yoff=dy)
-        if not base_poly.contains(cand_padded_world):
-            return False
-
-        # occupancy collision (pixel-wise)
-        roi = occupancy[py:py + h_s, px:px + w_s]
-        # pad_mask_bool is boolean mask (h_s,w_s)
-        if np.any(roi[pad_mask_bool]):
-            return False
-
+        px = int(round(x - shape["anchor"][0]))
+        py = int(round(y - shape["anchor"][1]))
+        if px<0 or py<0 or px+w_s>W or py+h_s>H: return False
+        roi = occupancy[py:py+h_s, px:px+w_s]
+        if np.any(roi[pad_mask_bool]): return False
         return True
 
     def commit_place(shape, x, y, pad_mask_bool):
-        """Mark occupancy and append to placed list."""
         w_s, h_s = shape["w"], shape["h"]
-        px = int(round(x - shape["anchor"][0])) - origin_x
-        py = int(round(y - shape["anchor"][1])) - origin_y
-        roi = occupancy[py:py + h_s, px:px + w_s]
+        px = int(round(x - shape["anchor"][0]))
+        py = int(round(y - shape["anchor"][1]))
+        roi = occupancy[py:py+h_s, px:px+w_s]
         roi = roi.copy()
         roi[pad_mask_bool] = 1
-        occupancy[py:py + h_s, px:px + w_s] = roi
+        occupancy[py:py+h_s, px:px+w_s] = roi
         placed.append((shape, (x, y)))
 
-    # ---- main loop: iterate shapes in order ----
-    for shape in shapes:
-        # start with original image & polygon (local coords)
+    # ---- main loop ----
+    for idx, shape in enumerate(shapes):
+        print(f"placing shape #{idx+1} / {len(shapes)}")
         rot_img = shape["img"].copy()
         rot_poly = shape["poly"]
 
-        # optional random rotation (rotate both the polygon and the RGBA image)
         if random_rotate:
             angle_deg = random.uniform(0, max_rotation)
             cx, cy = shape["anchor"]
-            rot_poly = affinity.rotate(rot_poly, angle_deg, origin=shape["anchor"])
+            rot_poly = shapely_rotate(rot_poly, angle_deg, origin=shape["anchor"])
             M = cv2.getRotationMatrix2D((cx, cy), -angle_deg, 1.0)
-            rot_img = cv2.warpAffine(
-                shape["img"], M, (shape["w"], shape["h"]),
-                flags=cv2.INTER_LINEAR,
-                borderMode=cv2.BORDER_CONSTANT,
-                borderValue=(0, 0, 0, 0)
-            )
+            rot_img = cv2.warpAffine(rot_img, M, (shape["w"], shape["h"]),
+                                     flags=cv2.INTER_LINEAR,
+                                     borderMode=cv2.BORDER_CONSTANT,
+                                     borderValue=(0,0,0,0))
 
-        # padded polygon for containment tests
-        padded_local = rot_poly.buffer(padding) if padding > 0 else rot_poly
+        padded_local = rot_poly.buffer(padding) if padding>0 else rot_poly
+        pad_mask_bool = make_padded_mask(rot_img)
 
-        # pixel padded alpha mask for occupancy tests
-        pad_mask_bool = make_padded_mask(rot_img)  # shape (h,w) boolean
-
-        # pick candidate generator for this shape
-        if pack_mode == "spiral":
+        # pick candidate generator
+        if pack_mode=="spiral":
             candidates = spiral_candidates(centroid)
-        elif pack_mode == "random":
-            candidates = random_candidates(base_poly, n=max_random_tries)
-        elif pack_mode == "edge":
-            candidates = edge_inward_candidates(base_poly, step=edge_step)
+        elif pack_mode=="random":
+            candidates = random_candidates_mask(mask_raster, n=max_random_tries)
+        elif pack_mode=="edge":
+            candidates = edge_inward_candidates(base_poly_local, step=edge_step)
+        elif pack_mode=="bottom_up":
+            candidates = bottom_up_candidates(mask_raster, step_x=edge_step, step_y=edge_step)
+        elif pack_mode=="center_outwards":
+            candidates = center_outwards_candidates(mask_raster, step=edge_step)
         else:
             raise ValueError(f"Unknown pack_mode: {pack_mode}")
 
         placed_flag = False
-        for (x, y) in candidates:
+        for x, y in candidates:
             if can_place_at(shape, x, y, pad_mask_bool, padded_local):
-                # create new_shape with rotated geometry & image for rendering
                 new_shape = {
                     "poly": rot_poly,
                     "padded_local": padded_local,
@@ -406,15 +418,13 @@ def pack_shapes(
                     "anchor": shape["anchor"],
                     "w": shape["w"],
                     "h": shape["h"],
-                    "path": shape.get("path", ""),
+                    "path": shape.get("path",""),
                 }
-                # commit to occupancy and list
                 commit_place(new_shape, x, y, pad_mask_bool)
                 placed_flag = True
 
-                # animate preview
                 if animate:
-                    canvas = visualize(placed, base_poly=base_poly_local, out_size=(W, H),
+                    canvas = visualize(placed, base_poly=base_poly_local, out_size=(W,H),
                                        bg_color=bg_color, debug_shapes=debug_view, debug_mask=debug_mask)
                     ax.clear()
                     ax.imshow(cv2.cvtColor(canvas, cv2.COLOR_BGRA2RGBA))
@@ -423,15 +433,13 @@ def pack_shapes(
                 break
 
         if not placed_flag:
-            print(f"⚠️ Could not place shape (skipped): {shape.get('path','<unknown>')}")
+            print(f"⚠️ Could not place shape: {shape.get('path','<unknown>')}")
 
     if animate:
         plt.ioff()
         plt.show()
 
     return placed
-
-
 
 # ----------------------------
 # 3. Rendering (same as before)
@@ -484,7 +492,7 @@ def visualize(
         py = int(round(y - shape["anchor"][1]))
         img = shape["img"]
         h, w = img.shape[:2]
-        
+
         # ---- safe ROI blending to prevent broadcasting errors ----
         px0 = max(px, 0)
         py0 = max(py, 0)
@@ -500,9 +508,9 @@ def visualize(
         alpha_sub = img[y0:y1, x0:x1, 3:4].astype(np.float32) / 255.0
         img_sub   = img[y0:y1, x0:x1, :3].astype(np.float32)
 
-        # Skip if shape is completely outside the canvas
+        # Skip if shape is too small completely outside the canvas
         if roi.size == 0 or img_sub.size == 0 or alpha_sub.size == 0:
-            print(f"[WARN] Skipped shape at ({px},{py}) — outside canvas or too small")
+            print(f"[WARN] Skipped shape with size ({img_sub.size}) at ({px},{py}) and roi ({roi.size}) — outside canvas or too small")
             continue
 
         # Make sure dimensions align
@@ -551,7 +559,7 @@ if __name__ == "__main__":
                         random_rotate=random_rotate,
                         max_rotation=max_rotation,
                         animate=animate,
-                        pack_mode="random", debug_mask=debug_mask, debug_view=debug_view)   # "spiral" | "random" | "edge"
+                        pack_mode=pack_mode, debug_mask=debug_mask, debug_view=debug_view)   # "spiral" | "random" | "edge"
 
     result = visualize(placed, base_poly=base_poly, out_size=out_size, bg_color=bg_color, debug_mask=debug_mask,debug_shapes=debug_view )
     cv2.imwrite("packed_into_shape.png", result)
