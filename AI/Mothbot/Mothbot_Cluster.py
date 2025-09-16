@@ -17,37 +17,25 @@ Arguments:
 """
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context #needed for some macs to automatically download files associated with some of the libraries 
-
 # import polars as pl
 import os
 import sys
 import json
 import argparse
 import re
-# import tempfile
-
-# import io
-# from pathlib import Path
 import numpy as np
 from PIL import Image
 from PIL import ImageFile
-
 #perception clustering
 import torch
 from tqdm import tqdm
 import torchvision.transforms as T
 import hdbscan
-
 from datetime import datetime, timedelta
 from collections import defaultdict
-
-
-
 ImageFile.LOAD_TRUNCATED_IMAGES = (
     True  # makes ok for use images that are messed up slightly
 )
-
-#import cv2
 import torch
 import json
 #import PIL.Image
@@ -60,7 +48,7 @@ warnings.filterwarnings("ignore", message="'force_all_finite' was renamed")
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21"  # raw string
+   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20"  # raw string
 )
 
 #you probably always want these below as true

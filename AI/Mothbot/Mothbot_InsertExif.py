@@ -1,28 +1,18 @@
 #!/usr/bin/env python3
-
 import os
 import json
-import fiftyone as fo
-
 from pathlib import Path
 from PIL import Image
 from datetime import datetime
 import re
-
 import piexif
-#import naturtag
-#from naturtag import tag_images
-#import exiv2
 import subprocess
 import threading
 import argparse
-
-
 import platform
-#platform.system() # ' ' 'Linux'
 
 
-
+#TODO: make work for entire deployment
 INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20"
 
 #you probably always want these below as true
@@ -117,50 +107,6 @@ def find_detection_matches(folder_path):
 
 
     return hu_detection_matches_list, bot_detection_matches_list
-
-
-
-
-def load_taxon_keys(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
-    print("Reading", taxa_path, "extracting", taxon_rank, "values.")
-    df = pl.read_csv(taxa_path, separator='\t')  # Changed separator to '\t' for tab-delimited
-    target_values = set(
-        pl.Series(df.select(taxon_rank).drop_nulls())
-        .str.to_lowercase()
-        .unique()
-        .to_list()
-    )
-    print("Found", len(target_values), taxon_rank, "values: ")
-    #print(target_values)
-  
-    return target_values
-
-
-def load_taxon_keys_comma(taxa_path, taxa_cols, taxon_rank="order", flag_det_errors=True):
-    """
-    Loads taxon keys from a Comma-delimited CSV file into a list.
-
-    Args:
-      taxa_path: String. Path to the taxa CSV file.
-      taxa_cols: List of strings. Taxonomic columns in taxa CSV to load (default: ["kingdom", "phylum", "class", "order", "family", "genus", "species"]).
-      taxon_rank: String. Taxonomic rank to which to classify images (must be present as column in the taxa csv at file_path). Default: "order".
-      flag_det_errors: Boolean. Whether to flag holes and smudges blanks (adds "hole" and "circle" and "background" and "blank" to taxon_keys). Default: True.
-
-    Returns:
-      taxon_keys: List. A list of taxon keys to feed to the CustomClassifier for bioCLIP classification.
-    """
-    print("Reading", taxa_path, "extracting", taxon_rank, "values.")
-    df = pl.read_csv(taxa_path, separator='\t')
-    target_values = set(
-        pl.Series(df.select(taxon_rank).drop_nulls())
-        .str.to_lowercase()
-        .unique()
-        .to_list()
-    )
-    print("Found", len(target_values), taxon_rank, "values: ")
-    #print(target_values)
-
-    return target_values
 
 
 
