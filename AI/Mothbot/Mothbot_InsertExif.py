@@ -13,7 +13,7 @@ import platform
 
 
 #TODO: make work for entire deployment
-INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20"
+INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21"
 
 #you probably always want these below as true
 ID_HUMANDETECTIONS = True
@@ -127,6 +127,8 @@ def load_anylabeling_data(json_path, image_path, tagger):
   # Extract relevant data from the detection labels
   detections = data['shapes']
 
+  nightfolder =os.path.dirname(image_path)
+
   for label in detections:
 
 
@@ -151,7 +153,7 @@ def load_anylabeling_data(json_path, image_path, tagger):
         # Format the filtered dictionary
         taxonomic_list = [f"{key.upper()}_{value}" for key, value in filtered_dict.items()]
 
-    full_patch_path=Path(INPUT_PATH+"/"+the_patch_path) #should work on mac or windows
+    full_patch_path=Path(nightfolder+"/"+the_patch_path) #should work on mac or windows
 
     print("adding taxonomy with Exiftool...(can take a couple seconds)")
 

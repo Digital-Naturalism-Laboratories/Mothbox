@@ -35,7 +35,6 @@ ImageFile.LOAD_TRUNCATED_IMAGES = (
     True  # makes ok for use images that are messed up slightly
 )
 
-#TODO - make it work with multi folder (whole deployment)
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
