@@ -33,31 +33,18 @@ import sys
 import json
 import argparse
 import re
-
 import io
 from pathlib import Path
 import numpy as np
 from PIL import Image
 from PIL import ImageFile
-
-#perception clustering
 import torch
 from datetime import datetime
-
-
-
 ImageFile.LOAD_TRUNCATED_IMAGES = (
     True  # makes ok for use images that are messed up slightly
 )
-
-#import cv2
-
 from bioclip import TreeOfLifeClassifier, Rank, CustomLabelsClassifier
 from bioclip.predict import create_classification_dict
-import warnings
-warnings.filterwarnings("ignore", message="xFormers is not available*")
-warnings.filterwarnings("ignore", message="'force_all_finite' was renamed")
-
 import importlib.metadata
 VERSION = "pybioclip_"+importlib.metadata.version("pybioclip")
 print("ID model: "+VERSION)
@@ -66,7 +53,7 @@ print("ID model: "+VERSION)
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21"  # raw string
+   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20"  # raw string
 )
 SPECIES_LIST = r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 

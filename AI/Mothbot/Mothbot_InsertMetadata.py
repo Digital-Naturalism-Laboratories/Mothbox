@@ -865,7 +865,7 @@ if __name__ == "__main__":
     print(
         "Found ",
         str(len(hu_matched_img_json_pairs))
-        + " pairs of images and HUMAN detection data to try to ID",
+        + " pairs of images and HUMAN detection data to insert metadata",
     )
     # Example Pair
     print("example human detection and json pair:")
@@ -875,7 +875,7 @@ if __name__ == "__main__":
     print(
         "Found ",
         str(len(bot_matched_img_json_pairs))
-        + " pairs of images and BOT detection data to try to ID",
+        + " pairs of images and BOT detection data to insert metadata",
     )
     # Example Pair
     print("example human detection and json pair:")
