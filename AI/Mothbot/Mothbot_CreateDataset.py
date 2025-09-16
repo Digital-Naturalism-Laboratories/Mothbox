@@ -201,7 +201,7 @@ def _without_first_prefix(name: str) -> str:
 
 def find_csv_match(input_path: str, metadata_path: str) -> dict:
     """
-    Finds a row in the CSV where 'deployment.name' matches the folder name of input_path.
+    Finds a row in the CSV where 'deployment_name' matches the folder name of input_path.
     Tolerates the presence/absence of the first leading prefix on either side.
     Matching is case-insensitive.
     If multiple matches are found, prints a warning and returns only the first one.
@@ -221,7 +221,7 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
     with open(metadata_path, mode='r', newline='', encoding='utf-8') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            dep_name = (row.get("deployment.name") or "").strip()
+            dep_name = (row.get("deployment_name") or "").strip()
             if not dep_name:
                 continue
 
@@ -239,7 +239,7 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
     if len(matches) > 1:
         print(f"⚠️ Warning: Multiple matches found for '{parent_folder}', using the first one.")
 
-    print(f"✅ Matched deployment.name = '{matches[0].get('deployment.name')}'")
+    print(f"✅ Matched deployment.name = '{matches[0].get('deployment_name')}'")
     return matches[0]
 
 def load_anylabeling_data(json_path): #TODO load METADATA STRAIGHT FROM CSV - METADATA_PATH - Maybe metadata gets loaded into its own 51 thing via the WHOLe dataset?
