@@ -72,7 +72,12 @@ def parse_args():
         default=ID_BOTDETECTIONS,
         help="ID detections made by robots?",
     )
-
+    parser.add_argument(
+        "--metadata",
+        required=False,
+        default=METADATA_PATH ,
+        help="path to csv of field metadata",
+    )
 
     return parser.parse_args()
 
@@ -550,6 +555,7 @@ if __name__ == "__main__":
     args = parse_args()
     ID_BOTDETECTIONS=bool(int(args.ID_Bot))
     ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
+    METADATA_PATH= args.metadata
 
     # ~~~~~~~~~~~~~~~~ GATHERING DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
