@@ -17,7 +17,7 @@ input_paths = [
 
 
 
-SPECIES_LIST = r"C:\Users\andre\Documents\GitHub\Mothbox\AI\SpeciesList_CountryIndonesia_TaxaInsecta.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
+SPECIES_LIST = r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv"  # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=212
 
 """ KINGDOM = 0
     PHYLUM = 1
@@ -56,7 +56,8 @@ def time_it(func):
 
     return wrapper
 
-print("starting batch processing of IDs")
+total_paths=len(input_paths)
+print("starting batch processing of IDs from this many inputs: "+str(total_paths))
 
 start_time_overall = time.time()
 #print(TAXONOMIC_RANK_FILTER)
