@@ -30,9 +30,11 @@ We organize our photographic data we get from "Deployments" of the Mothboxes lik
 
 ```
 In addition to the Deployment photo data, there are two other files you will need to completely process your data.
-* Metadata CSV
+* [Metadata CSV](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv)
     * This ties the photos and IDs to metadata like location and date
-* Species List
+    * the column headings of the CSV should be
+    * Timestamp,device,firmware,sheet,schedule,dataset,project,site,latitude,longitude,height_above_ground,habitat,deployment_date,collect_date,data_storage_location,crew,notes,attractor,attractor_location,UTC,deployment_name
+* [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.15468dl.epzeza.csv)
     * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)    
 
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
