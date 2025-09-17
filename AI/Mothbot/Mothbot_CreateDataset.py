@@ -239,7 +239,7 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
     if len(matches) > 1:
         print(f"⚠️ Warning: Multiple matches found for '{parent_folder}', using the first one.")
 
-    print(f"✅ Matched deployment.name = '{matches[0].get('deployment_name')}'")
+    print(f"✅ Matched deployment_name = '{matches[0].get('deployment_name')}'")
     return matches[0]
 
 def load_anylabeling_data(json_path): #TODO load METADATA STRAIGHT FROM CSV - METADATA_PATH - Maybe metadata gets loaded into its own 51 thing via the WHOLe dataset?
@@ -710,11 +710,23 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
     direction = label['direction']
     label_name = label['label']
     theclusterID= label['clusterID']
+
+    l_timestamp_cluster= label['timestamp_cluster']
+    l_confidence_ID = label['confidence_ID']
+    l_timestamp_ID_bot = label['timestamp_ID_bot']
+    l_confidence_detection = label['confidence_detection']
+    l_identifier_bot = label['identifier_bot']
+    l_identifier_human = label['identifier_human']
+    l_timestamp_detection = label['timestamp_detection']
+    l_detector_bot = label['detector_bot']
+    l_species_list = label['species_list']
+    
     score = label['score']
     points = label['points']
     shape_type = label['shape_type']
     ID_by = "IDby_"+label['description']
     the_patch_path= label['patch_path']
+
 
     desired_keys = ['kingdom', 'phylum', 'class', 'order', 'family', 'genus', 'species']
 
@@ -757,13 +769,24 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
         tags=taxonomic_list,
         label="creature",
         bounding_box=[left, top, width, height],
-        #attributes={},
-        #ID_by=ID_by,
+
         confidence=score,
         shape=shape_type,
         rot_direction=direction,
         patch_path=the_patch_path,
-        clusterID=theclusterID
+        clusterID=theclusterID,
+
+        timestamp_cluster = l_timestamp_cluster,
+        confidence_ID = l_confidence_ID,
+        timestamp_ID_bot = l_timestamp_ID_bot,
+        confidence_detection = l_confidence_detection,
+        identifier_bot = l_identifier_bot,
+        identifier_human = l_identifier_human,
+        timestamp_detection = l_timestamp_detection,
+        detector_bot = l_detector_bot,
+        species_list = l_species_list,
+        
+
 
       )
 
@@ -837,6 +860,17 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 #ID_by=detection.ID_by,
                 confidence=detection.confidence,
                 clusterID=detection.clusterID,
+
+                timestamp_cluster = detection.timestamp_cluster,
+                confidence_ID = detection.confidence_ID,
+                timestamp_ID_bot = detection.timestamp_ID_bot,
+                confidence_detection = detection.confidence_detection,
+                identifier_bot = detection.identifier_bot,
+                identifier_human = detection.identifier_human,
+                timestamp_detection = detection.timestamp_detection,
+                detector_bot = detection.detector_bot,
+                species_list = detection.species_list,
+
                 shape=detection.shape,
                 direction=detection.rot_direction,
                 #direction = sample.direction,
@@ -1026,6 +1060,17 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 #ID_by=detection.ID_by,
                 confidence=detection.confidence,
                 clusterID=detection.clusterID,
+
+                timestamp_cluster = detection.timestamp_cluster,
+                confidence_ID = detection.confidence_ID,
+                timestamp_ID_bot = detection.timestamp_ID_bot,
+                confidence_detection = detection.confidence_detection,
+                identifier_bot = detection.identifier_bot,
+                identifier_human = detection.identifier_human,
+                timestamp_detection = detection.timestamp_detection,
+                detector_bot = detection.detector_bot,
+                species_list = detection.species_list,
+
                 shape=detection.shape,
                 direction=detection.direction,
                 #direction = sample.direction,
