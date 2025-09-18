@@ -22,8 +22,9 @@ import piexif
 import subprocess
 import threading
 import argparse
-
-
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 import platform
 #platform.system() # ' ' 'Linux'
 
