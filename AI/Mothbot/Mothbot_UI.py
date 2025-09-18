@@ -2,15 +2,92 @@ import sys
 import os
 import re
 import gradio as gr
-import subprocess
+#import subprocess
 import sys
-import shlex
-from tkinter import Tk, filedialog
+#import shlex
+import tkinter as tk
+from tkinter import filedialog
+from multiprocessing import Process, Queue
 
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
+
+
+
+
+# A function that runs in a separate process to handle the folder dialog
+def show_folder_dialog(queue):
+    """
+    Function to run in a separate process to safely open the folder dialog.
+    """
+    try:
+        root = tk.Tk()
+        root.withdraw()
+        folder_path = filedialog.askdirectory()
+        root.destroy()
+        queue.put(folder_path)
+    except Exception as e:
+        queue.put(None)
+
+# A function that runs in a separate process to handle the file dialog
+def show_file_dialog(queue):
+    """
+    Function to run in a separate process to safely open the file dialog.
+    """
+    try:
+        root = tk.Tk()
+        root.withdraw()
+        file_path = filedialog.askopenfilename()
+        root.destroy()
+        queue.put(file_path)
+    except Exception as e:
+        queue.put(None)
+
+# Main function for the Gradio interface to get the folder path
+def get_folder_path():
+    """
+    This function spawns a new process to handle the folder dialog
+    and waits for the result.
+    """
+    queue = Queue()
+    p = Process(target=show_folder_dialog, args=(queue,))
+    p.start()
+    p.join()
+    folder_path = queue.get()
+
+    if folder_path:
+        print(f"Selected folder: {folder_path}")
+        return folder_path
+    else:
+        print ("No folder selected or an error occurred.")
+        return None
+
+# Main function for the Gradio interface to get the file path
+def get_file_path():
+    """
+    This function spawns a new process to handle the file dialog
+    and waits for the result.
+    """
+    queue = Queue()
+    p = Process(target=show_file_dialog, args=(queue,))
+    p.start()
+    p.join()
+    file_path = queue.get()
+
+    if file_path:
+        return f"Selected file: {file_path}"
+    else:
+        return "No file selected or an error occurred."
+
+
+
+
+
+
+
+
 
 def get_index(selected_word):
     return TAXA_COLS.index(selected_word)
@@ -257,8 +334,8 @@ def run_CSV(selected_folders, species_list, Utcoffset):
     output_log += f"------ CSV processing finished ------"
     yield output_log
 
-
-def select_folder():
+# DON't use this anymore, doesnt work on 75% of computers
+def select_folder_old():
     """Open a native folder picker and return the selected folder path (or None)."""
     print(sys.platform)
     if sys.platform == "win32":
@@ -287,7 +364,7 @@ def find_nightly_folders_recursive(directory):
     return sorted(matches)
 
 def pick_and_list():
-    folder = select_folder()
+    folder = get_folder_path()
     if not folder:
         return "No folder selected.", gr.update(choices=[], value=[]), {}, "Select All"
 
@@ -614,5 +691,5 @@ with gr.Blocks(title="Mothbot") as demo:
             ],
             outputs=CSV_output_box
         )
-
-demo.launch(inbrowser=True, favicon_path='favicon.png')
+if __name__ == "__main__":
+    demo.launch(inbrowser=True, favicon_path='favicon.png')
