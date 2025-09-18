@@ -530,10 +530,10 @@ with gr.Blocks(title="Mothbot") as demo:
     
             with gr.Column():
                 ID_HUMANDETECTIONS = gr.Checkbox(
-                    value=True, label="Identify Human Detections"
+                    value=True, label="Identify Human Detections (Leave as True)"
                 )
                 ID_BOTDETECTIONS = gr.Checkbox(
-                    value=True, label="Identify Human Detections"
+                    value=True, label="Identify Bot Detections (Leave as True)"
                 )
                 OVERWRITE_PREV_BOT_IDENTIFICATIONS = gr.Checkbox(
                     value=False, label="OVERWRITE_PREV_BOT_IDENTIFICATIONS"
