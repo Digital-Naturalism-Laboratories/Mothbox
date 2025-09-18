@@ -510,7 +510,7 @@ with gr.Blocks(title="Mothbot") as demo:
             # Species selection
             species_path = gr.Textbox(
                 #default path
-                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
+                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv",
                 label="Species List CSV"
             )
             species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
@@ -583,7 +583,7 @@ with gr.Blocks(title="Mothbot") as demo:
             # Species selection
             species_path = gr.Textbox(
                 #default path
-                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
+                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv",
                 label="Species List CSV"
             )
             species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
