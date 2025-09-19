@@ -192,7 +192,7 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
         yield output_log
 
         cmd = [
-            sys.executable,
+            sys.executable, "-u", #try to make it stream better?
             "Mothbot_ID.py",
             "--input_path", folder,
             "--taxa_csv", species_list,
@@ -565,7 +565,57 @@ def confirm_selection(selected_labels, mapping):
 #########################################################################################
 
 
-with gr.Blocks(title="Mothbot") as demo:
+with gr.Blocks(title="Mothbot",
+               css="""
+                /* Tab 1 - Pastel Red */
+                button.svelte-1ipelgc:nth-child(1).selected {
+                    background-color: #ff9999 !important;
+                    color: #ffffff !important;
+                }
+
+                /* Tab 2 - Pastel Orange */
+                button.svelte-1ipelgc:nth-child(2).selected {
+                    background-color: #ffcc99 !important;
+                    color: #000000 !important;
+                }
+
+                /* Tab 3 - Pastel Yellow */
+                button.svelte-1ipelgc:nth-child(3).selected {
+                    background-color: #ffff99 !important;
+                    color: #000000 !important;
+                }
+
+                /* Tab 4 - Pastel Green */
+                button.svelte-1ipelgc:nth-child(4).selected {
+                    background-color: #ccffcc !important;
+                    color: #000000 !important;
+                }
+
+                /* Tab 5 - Pastel Blue */
+                button.svelte-1ipelgc:nth-child(5).selected {
+                    background-color: #99ccff !important;
+                    color: #000000 !important;
+                }
+
+                /* Tab 6 - Pastel Indigo */
+                button.svelte-1ipelgc:nth-child(6).selected {
+                    background-color: #cc99ff !important;
+                    color: #ffffff !important;
+                }
+
+                /* Tab 7 - Pastel Violet */
+                button.svelte-1ipelgc:nth-child(7).selected {
+                    background-color: #ff99ff !important;
+                    color: #000000 !important;
+                }
+                """
+               
+               
+               
+               
+               
+               
+            ) as demo:
     # ~~~~~~~~ DEPLOYMENT TOP ~~~~~~~~~~~~~~~~~~~
 
     
@@ -695,9 +745,11 @@ with gr.Blocks(title="Mothbot") as demo:
                 taxa_output,
                 ID_HUMANDETECTIONS,
                 ID_BOTDETECTIONS,
-                OVERWRITE_PREV_BOT_IDENTIFICATIONS
+                OVERWRITE_PREV_BOT_IDENTIFICATIONS,
+                
             ],
-            outputs=ID_output_box
+            outputs=ID_output_box,
+
         )
     #~~~~~~~~~~~~ Metadata Tab ~~~~~~~~~~~~~~~~~~~~~~
 
