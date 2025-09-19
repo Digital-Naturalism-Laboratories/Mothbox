@@ -15,7 +15,7 @@ NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
 
-
+dataset_process = None
 
 # A function that runs in a separate process to handle the folder dialog
 def show_folder_dialog(queue):
@@ -380,16 +380,15 @@ def run_exif(selected_folders ):
             yield output_log
     output_log += f"------  Insert Exif processing finished ------"
     yield output_log
-
-
 def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
-    
+    global dataset_process
+
     if not selected_folder:
         yield "No nightly folder selected.\n"
         return
 
     output_log = ""
-    folder=selected_folder
+    folder = selected_folder
     output_log += f"---📋 Creating Dataset for {folder} ---\n"
     yield output_log
 
@@ -400,27 +399,26 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
         "--taxa_csv", species_list,
         "--metadata", str(metadata),
         "--utcoff", str(int(Utcoffset)),
-
     ]
 
     try:
-        process = subprocess.Popen(
+        dataset_process = subprocess.Popen(
             cmd,
             stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT,
             text=True
         )
 
-        for line in iter(process.stdout.readline, ''):
+        for line in iter(dataset_process.stdout.readline, ''):
             cleaned_line = line.replace('\r', '')
             output_log += cleaned_line
             yield output_log
 
-        process.stdout.close()
-        process.wait()
+        dataset_process.stdout.close()
+        dataset_process.wait()
 
-        if process.returncode != 0:
-            output_log += f"\n❌ Create dataset for {folder} exited with error code {process.returncode}\n"
+        if dataset_process.returncode != 0:
+            output_log += f"\n❌ Create dataset for {folder} exited with error code {dataset_process.returncode}\n"
         else:
             output_log += f"✅ Create Dataset completed for {folder}\n"
 
@@ -429,9 +427,19 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
     except Exception as e:
         output_log += f"\n❌ Exception while Create Dataset processing {folder}: {str(e)}\n"
         yield output_log
+    finally:
+        dataset_process = None  # clear reference when finished
+
     output_log += f"------ CreateDataset processing finished ------"
     yield output_log
 
+def kill_Dataset():
+    global dataset_process
+    if dataset_process and dataset_process.poll() is None:  # still running
+        dataset_process.terminate()
+        return "⚠️ Dataset process was terminated by user."
+    else:
+        return "ℹ️ No dataset process is currently running."
 
 
 def run_CSV(selected_folders, species_list, Utcoffset):
@@ -602,6 +610,10 @@ with gr.Blocks(title="Mothbot") as demo:
     taxa_btn.click(
         fn=get_file_path,
         outputs=[species_path]
+    )
+    yolo_btn.click(
+        fn=get_file_path,
+        outputs=[yolo_model_path]
     )
     toggle_all_btn.click(
         fn=toggle_select_all,
@@ -779,12 +791,13 @@ with gr.Blocks(title="Mothbot") as demo:
             outputs=datafolder_result
         )
 
-
-        # Run Create Dataset button
-        Dataset_run_btn = gr.Button("Create Dataset", variant="primary")
+        with gr.Row():
+            # Run Create Dataset button
+            Dataset_run_btn = gr.Button("Create Dataset", variant="primary")        
+            # Kill process button
+            Dataset_kill_btn = gr.Button("Stop Dataset", variant="stop")
 
         Dataset_output_box = gr.Textbox(label="Dataset Creation Output", lines=20)
-
         Dataset_run_btn.click(
             fn=run_Dataset,
             inputs=[
@@ -795,7 +808,11 @@ with gr.Blocks(title="Mothbot") as demo:
             ],
             outputs=Dataset_output_box
         )
-
+        Dataset_kill_btn.click(
+            fn=kill_Dataset,
+            inputs=[],
+            outputs=Dataset_output_box
+        )
     #~~~~~~~~~~~~ Create CSV TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Generate CSV"):
 
