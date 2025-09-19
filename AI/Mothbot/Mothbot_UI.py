@@ -599,7 +599,10 @@ with gr.Blocks(title="Mothbot") as demo:
         fn=get_file_path,
         outputs=[metadata_csv_file]
     )
-
+    taxa_btn.click(
+        fn=get_file_path,
+        outputs=[species_path]
+    )
     toggle_all_btn.click(
         fn=toggle_select_all,
         inputs=[folder_choices, mapping_state, toggle_label_state],
