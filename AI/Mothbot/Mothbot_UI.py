@@ -130,7 +130,7 @@ def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
         yield output_log
 
         cmd = [
-            sys.executable,
+            sys.executable,"-u", #try to make it stream better?
             "Mothbot_Detect.py",
             "--input_path", folder,
             "--yolo_model", yolo_model,
@@ -247,7 +247,7 @@ def run_metadata(selected_folders,metadata ):
         yield output_log
 
         cmd = [
-            sys.executable,
+            sys.executable,"-u", #try to make it stream better?
             "Mothbot_InsertMetadata.py",
             "--input_path", folder,
             "--metadata", str(metadata),
@@ -297,7 +297,7 @@ def run_cluster(selected_folders ):
         yield output_log
 
         cmd = [
-            sys.executable,
+            sys.executable,"-u", #try to make it stream better?
             "Mothbot_Cluster.py",
             "--input_path", folder,
         ]
@@ -347,7 +347,7 @@ def run_exif(selected_folders ):
         yield output_log
 
         cmd = [
-            sys.executable,
+            sys.executable,"-u", #try to make it stream better?
             "Mothbot_InsertExif.py",
             "--input_path", folder,
         ]
@@ -393,7 +393,7 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
     yield output_log
 
     cmd = [
-        sys.executable,
+        sys.executable,"-u", #try to make it stream better?
         "Mothbot_CreateDataset.py",
         "--input_path", folder,
         "--taxa_csv", species_list,
