@@ -796,7 +796,7 @@ with gr.Blocks(title="Mothbot") as demo:
     #~~~~~~~~~~~~ Create CSV TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Generate CSV"):
 
-        UTCoff = gr.Number(label="🕙 UTC Offset: (This should be in your metadata, this will be removed soon)", value=-5)
+        UTCoff = gr.Number(label="🕙 UTC Offset: (This should be in your metadata, this will be removed soon!)", value=-5)
        
         # Run CSV button
         CSV_run_btn = gr.Button("Generate CSV ", variant="primary")
