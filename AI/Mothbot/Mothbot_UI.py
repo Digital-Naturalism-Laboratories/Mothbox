@@ -2,7 +2,7 @@ import sys
 import os
 import re
 import gradio as gr
-#import subprocess
+import subprocess
 import sys
 #import shlex
 import tkinter as tk
@@ -77,9 +77,12 @@ def get_file_path():
     file_path = queue.get()
 
     if file_path:
-        return f"Selected file: {file_path}"
+        print(f"Selected file: {file_path}")
+
+        return file_path
     else:
-        return "No file selected or an error occurred."
+        print ("No file selected or an error occurred.")
+        return None
 
 
 
@@ -103,7 +106,6 @@ def dataset_use_selected_folder(folder):
     return f"{folder}" if folder else "No folder selected."
 
 def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
-    import subprocess
     #print("OVERWRITE DET")
     #print(overwrite_bot)
     if not selected_folders:
@@ -165,7 +167,6 @@ def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
 
 
 def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bot):
-    import subprocess
     
     if not selected_folders:
         yield "No nightly folders selected.\n"
@@ -217,8 +218,154 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
     output_log += f"------ ID processing finished ------"
 
 
+
+
+def run_metadata(selected_folders,metadata ):
+    
+    if not selected_folders:
+        yield "No nightly folders selected.\n"
+        return
+
+    output_log = ""
+
+    for folder in selected_folders:
+        output_log += f"---🔍 Running METADATA for {folder} ---\n"
+        yield output_log
+
+        cmd = [
+            sys.executable,
+            "Mothbot_InsertMetadata.py",
+            "--input_path", folder,
+            "--metadata", str(metadata),
+        ]
+
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True
+            )
+
+            for line in iter(process.stdout.readline, ''):
+                cleaned_line = line.replace('\r', '')
+                output_log += cleaned_line
+                yield output_log
+
+            process.stdout.close()
+            process.wait()
+
+            if process.returncode != 0:
+                output_log += f"\n❌ Insert Metadata for {folder} exited with error code {process.returncode}\n"
+            else:
+                output_log += f"✅ Insert Metadata completed for {folder}\n"
+
+            yield output_log
+
+        except Exception as e:
+            output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
+            yield output_log
+    output_log += f"------ Insert Metadata processing finished ------"
+
+
+
+def run_cluster(selected_folders ):
+    
+    if not selected_folders:
+        yield "No nightly folders selected.\n"
+        return
+
+    output_log = ""
+
+    for folder in selected_folders:
+        output_log += f"---🔍 Running Cluster for {folder} ---\n"
+        yield output_log
+
+        cmd = [
+            sys.executable,
+            "Mothbot_Cluster.py",
+            "--input_path", folder,
+        ]
+
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True
+            )
+
+            for line in iter(process.stdout.readline, ''):
+                cleaned_line = line.replace('\r', '')
+                output_log += cleaned_line
+                yield output_log
+
+            process.stdout.close()
+            process.wait()
+
+            if process.returncode != 0:
+                output_log += f"\n❌  Cluster  for {folder} exited with error code {process.returncode}\n"
+            else:
+                output_log += f"✅  Cluster  completed for {folder}\n"
+
+            yield output_log
+
+        except Exception as e:
+            output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
+            yield output_log
+    output_log += f"------  Cluster  processing finished ------"
+
+
+
+
+def run_exif(selected_folders ):
+    
+    if not selected_folders:
+        yield "No nightly folders selected.\n"
+        return
+
+    output_log = ""
+
+    for folder in selected_folders:
+        output_log += f"---🔍 Running Insert Exif for {folder} ---\n"
+        yield output_log
+
+        cmd = [
+            sys.executable,
+            "Mothbot_InsertExif.py",
+            "--input_path", folder,
+        ]
+
+        try:
+            process = subprocess.Popen(
+                cmd,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                text=True
+            )
+
+            for line in iter(process.stdout.readline, ''):
+                cleaned_line = line.replace('\r', '')
+                output_log += cleaned_line
+                yield output_log
+
+            process.stdout.close()
+            process.wait()
+
+            if process.returncode != 0:
+                output_log += f"\n❌  Insert Exif  for {folder} exited with error code {process.returncode}\n"
+            else:
+                output_log += f"✅   Insert Exif completed for {folder}\n"
+
+            yield output_log
+
+        except Exception as e:
+            output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
+            yield output_log
+    output_log += f"------  Insert Exif processing finished ------"
+
+
 def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
-    import subprocess
     
     if not selected_folder:
         yield "No nightly folder selected.\n"
@@ -271,7 +418,6 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
 
 
 def run_CSV(selected_folders, species_list, Utcoffset):
-    import subprocess
     
     if not selected_folders:
         yield "No nightly folders selected.\n"
@@ -334,24 +480,6 @@ def run_CSV(selected_folders, species_list, Utcoffset):
     output_log += f"------ CSV processing finished ------"
     yield output_log
 
-# DON't use this anymore, doesnt work on 75% of computers
-def select_folder_old():
-    """Open a native folder picker and return the selected folder path (or None)."""
-    print(sys.platform)
-    if sys.platform == "win32":
-        tk = Tk()
-        tk.withdraw()
-        folder_selected = filedialog.askdirectory()
-        tk.destroy()
-    else:
-        try:
-            import webview
-            _WINDOW = webview.create_window("Select Folder", hidden=True)
-            datafolder_result = _WINDOW.create_file_dialog(webview.FOLDER_DIALOG)
-            folder_selected = datafolder_result[0] if datafolder_result else None
-        except Exception:
-            folder_selected = None
-    return folder_selected or None
 
 def find_nightly_folders_recursive(directory):
     matches = []
@@ -403,50 +531,57 @@ def confirm_selection(selected_labels, mapping):
 # ----- UI STUFF --------------
 
 with gr.Blocks(title="Mothbot") as demo:
-    # ~~~~~~~~ DEPLOYMENT TAB ~~~~~~~~~~~~~~~~~~~
-    with gr.Tab("Deployments"):
-        gr.Markdown("### Pick a main folder of Deployments to process: ")
-        
-        with gr.Row():
-            status = gr.Textbox(label="Status", lines=3, interactive=False)
-            pick_btn = gr.Button("Pick Deployment Folder")
-        
-        mapping_state = gr.State({})
-        toggle_label_state = gr.State("Select All")
+    # ~~~~~~~~ DEPLOYMENT TOP ~~~~~~~~~~~~~~~~~~~
 
-        gr.Markdown("### Nightly Folders to be Processed:")
-        
-        with gr.Row():
+    gr.Markdown("### Pick a main folder of Deployments to process: ")
+    
+    with gr.Row():
+        status = gr.Textbox(label="Status", lines=3, interactive=False)
+        pick_btn = gr.Button("Pick Deployment Folder")
+    
+    mapping_state = gr.State({})
+    toggle_label_state = gr.State("Select All")
+    
+    gr.Markdown("### Nightly Folders to be Processed:")
+    
+    with gr.Row():
+        with gr.Column():
             folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
-            with gr.Column():
-                toggle_all_btn = gr.Button("Select All")
-                #confirm_btn = gr.Button("Confirm Selected")  # You can keep this if you still want manual confirm
+            toggle_all_btn = gr.Button("Select All")
+        with gr.Column():
+            metadata_btn = gr.Button("Select Metadata File")  
+            metadata_csv_file = gr.Text(label="metadata field sheet:", value=r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv')
 
-        selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed")
+    selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed")
 
-        pick_btn.click(
-            fn=pick_and_list,
-            outputs=[status, folder_choices, mapping_state, toggle_label_state]
-        )
+    pick_btn.click(
+        fn=pick_and_list,
+        outputs=[status, folder_choices, mapping_state, toggle_label_state]
+    )
+    
+    metadata_btn.click(
+        fn=get_file_path,
+        outputs=[metadata_csv_file]
+    )
 
-        toggle_all_btn.click(
-            fn=toggle_select_all,
-            inputs=[folder_choices, mapping_state, toggle_label_state],
-            outputs=[folder_choices, toggle_label_state]
-        )
+    toggle_all_btn.click(
+        fn=toggle_select_all,
+        inputs=[folder_choices, mapping_state, toggle_label_state],
+        outputs=[folder_choices, toggle_label_state]
+    )
 
-        toggle_label_state.change(
-            lambda lbl: gr.update(value=lbl),
-            inputs=toggle_label_state,
-            outputs=toggle_all_btn
-        )
+    toggle_label_state.change(
+        lambda lbl: gr.update(value=lbl),
+        inputs=toggle_label_state,
+        outputs=toggle_all_btn
+    )
 
-        #Update JSON automatically on checkbox changes
-        folder_choices.change(
-            fn=confirm_selection,  # Same function you used before
-            inputs=[folder_choices, mapping_state],
-            outputs=selected_paths
-        )
+    #Update JSON automatically on checkbox changes
+    folder_choices.change(
+        fn=confirm_selection,  # Same function you used before
+        inputs=[folder_choices, mapping_state],
+        outputs=selected_paths
+    )
 
 
 
@@ -559,6 +694,71 @@ with gr.Blocks(title="Mothbot") as demo:
             ],
             outputs=ID_output_box
         )
+    #~~~~~~~~~~~~ Metadata Tab ~~~~~~~~~~~~~~~~~~~~~~
+
+    with gr.Tab("Insert Metadata"):
+        #selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+
+        # Keep ID tab synced with Deployments
+        #selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
+
+        # Run ID button
+        metadata_run_btn = gr.Button("Insert Metadata", variant="primary")
+
+        metadata_output_box = gr.Textbox(label="Insert Metadata Output", lines=20)
+
+        metadata_run_btn.click(
+            fn=run_metadata,
+            inputs=[
+                selected_paths,
+                metadata_csv_file,
+            ],
+            outputs=metadata_output_box
+        )
+
+    #~~~~~~~~~~~~ Cluster Tab ~~~~~~~~~~~~~~~~~~~~~~
+
+    with gr.Tab("Cluster Perceptually"):
+        #selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+
+        # Keep ID tab synced with Deployments
+        #selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
+
+        # Run ID button
+        cluster_run_btn = gr.Button("Cluster Perceptually", variant="primary")
+
+        cluster_output_box = gr.Textbox(label="Cluster Output", lines=20)
+
+        cluster_run_btn.click(
+            fn=run_cluster,
+            inputs=[
+                selected_paths,
+            ],
+            outputs=cluster_output_box
+        )
+
+#~~~~~~~~~~~~ Exif Tab ~~~~~~~~~~~~~~~~~~~~~~
+
+    with gr.Tab("Insert Exif"):
+        #selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
+
+        # Keep ID tab synced with Deployments
+        #selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
+
+        # Run ID button
+        exif_run_btn = gr.Button("Insert Exif (Optional)", variant="primary")
+
+        exif_output_box = gr.Textbox(label="Insert Exif Output", lines=20)
+
+        exif_run_btn.click(
+            fn=run_exif,
+            inputs=[
+                selected_paths,
+            ],
+            outputs=exif_output_box
+        )
+
+
 
     #~~~~~~~~~~~~ Create Dataset TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Create Dataset"):
