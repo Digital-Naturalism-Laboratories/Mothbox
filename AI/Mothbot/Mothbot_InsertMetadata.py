@@ -28,6 +28,11 @@ import numpy as np
 from PIL import Image
 from PIL import ImageFile
 
+
+import io #put these 3 lines here so radio can read stuff without breaking
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
+
 from datetime import datetime, timedelta
 from collections import defaultdict
 import csv

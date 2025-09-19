@@ -10,7 +10,9 @@ import subprocess
 import threading
 import argparse
 import platform
-
+import io #put these 3 lines here so radio can read stuff without breaking
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 #TODO: make work for entire deployment
 INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20\2025-06-21"

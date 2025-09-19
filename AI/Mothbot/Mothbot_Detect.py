@@ -180,7 +180,8 @@ def process_jpg_files(img_files, date_folder):
         # Process with Yolo to detect any creatures
         """Run YOLO on an image, skip if corrupt or unreadable."""
         try:
-            print("Predict a new image with error catchers:", image_path)
+            #print("Predict a new image with error catchers:", image_path)
+            print("Predict where insects are on a new image :", image_path)
             results = model.predict(source=image_path, imgsz=IMGSZ, device=DEVICE)
         except Exception as e:  # catch *any* error YOLO/PIL/numpy might throw
             print(f"❌ Skipping corrupt/unreadable image: {image_path} ({e})")

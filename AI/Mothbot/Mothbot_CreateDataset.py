@@ -23,7 +23,7 @@ import subprocess
 import threading
 import argparse
 import sys
-import io
+import io #put these two lines here so radio can read stuff without breaking
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 import platform
 #platform.system() # ' ' 'Linux'

@@ -1,7 +1,8 @@
 import subprocess
-import os
 import time
-#from bioclip import  Rank
+
+
+
 
 script_path = r"c:/Users/andre/Documents/GitHub/Mothbox/AI/Mothbot/Mothbot_InsertMetadata.py"  # Update this with your actual script path
 

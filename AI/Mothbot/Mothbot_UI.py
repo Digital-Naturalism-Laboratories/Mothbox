@@ -105,6 +105,17 @@ def dataset_update_radio_options(selected_folders):
 def dataset_use_selected_folder(folder):
     return f"{folder}" if folder else "No folder selected."
 
+
+
+
+########################################################
+#
+#       Processing Functions
+#
+#
+#############################################################
+
+
 def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
     #print("OVERWRITE DET")
     #print(overwrite_bot)
@@ -162,6 +173,8 @@ def run_detection(selected_folders, yolo_model, imsz, overwrite_bot):
         except Exception as e:
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
+    output_log += "----------- Finished running Batch --------------"
+    yield output_log
 
 
 
@@ -216,6 +229,7 @@ def run_ID(selected_folders, species_list, chosenrank, IDHum,IDBot, overwrite_bo
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
     output_log += f"------ ID processing finished ------"
+    yield output_log
 
 
 
@@ -266,6 +280,7 @@ def run_metadata(selected_folders,metadata ):
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
     output_log += f"------ Insert Metadata processing finished ------"
+    yield output_log
 
 
 
@@ -314,6 +329,7 @@ def run_cluster(selected_folders ):
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
     output_log += f"------  Cluster  processing finished ------"
+    yield output_log
 
 
 
@@ -363,6 +379,7 @@ def run_exif(selected_folders ):
             output_log += f"\n❌ Exception while processing {folder}: {str(e)}\n"
             yield output_log
     output_log += f"------  Insert Exif processing finished ------"
+    yield output_log
 
 
 def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
@@ -528,31 +545,50 @@ def confirm_selection(selected_labels, mapping):
     return [mapping[label] for label in selected_labels if label in mapping]
 
 
+
+#########################################################################################
+#   _____ 
+#  /     \
+# |  (o)  |     (This is supposed to be an eyeball)
+#  \_____/ 
+#         
+#        
 # ----- UI STUFF --------------
+#########################################################################################
+
 
 with gr.Blocks(title="Mothbot") as demo:
     # ~~~~~~~~ DEPLOYMENT TOP ~~~~~~~~~~~~~~~~~~~
 
-    gr.Markdown("### Pick a main folder of Deployments to process: ")
     
     with gr.Row():
-        status = gr.Textbox(label="Status", lines=3, interactive=False)
-        pick_btn = gr.Button("Pick Deployment Folder")
+        with gr.Column():
+            gr.Markdown("### Pick a main folder of Deployments to process: ")
+            status = gr.Textbox(label="Status", lines=3, interactive=False)
+
+            folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
+            toggle_all_btn = gr.Button("Select All", size='sm')
+            pick_btn = gr.Button("Pick Deployment Folder", size='lg', variant="primary")
+
+            #gr.Markdown("### Nightly Folders to be Processed:")
+        with gr.Column():
+            gr.Markdown("### Additional Processing Files:")
+            with gr.Row():
+                with gr.Column():
+                    metadata_csv_file = gr.Text(label="metadata field sheet:", value=r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv')
+                    metadata_btn = gr.Button("Select Metadata File")  
+                with gr.Column():
+                    species_path = gr.Text(label="Species List:", value=r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv")
+                    taxa_btn = gr.Button("Select Species List")  
+                with gr.Column():                    
+                    yolo_model_path = gr.Text(value=r"../trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",label="YOLO Model Path",)
+                    yolo_btn = gr.Button("Select Yolo Model Path")  
     
     mapping_state = gr.State({})
     toggle_label_state = gr.State("Select All")
     
-    gr.Markdown("### Nightly Folders to be Processed:")
-    
-    with gr.Row():
-        with gr.Column():
-            folder_choices = gr.CheckboxGroup(label="Nightly Folders", choices=[], value=[], interactive=True)
-            toggle_all_btn = gr.Button("Select All")
-        with gr.Column():
-            metadata_btn = gr.Button("Select Metadata File")  
-            metadata_csv_file = gr.Text(label="metadata field sheet:", value=r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv')
 
-    selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed")
+    selected_paths = gr.JSON(label="Confirmed Nightly Folders to be Processed", visible=False)
 
     pick_btn.click(
         fn=pick_and_list,
@@ -584,42 +620,15 @@ with gr.Blocks(title="Mothbot") as demo:
     )
 
 
-
-
     #~~~~~~~~~~~~ DETECTION TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Detect"):
-        gr.Markdown("### Detection Settings")
-
-        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
         with gr.Row():
-            # YOLO model selection
-            yolo_model_path = gr.Textbox(
-                value=r"../trained_models/yolo11m_4500_imgsz1600_b1_2024-01-18/weights/yolo11m_4500_imgsz1600_b1_2024-01-18.pt",
-                label="YOLO Model Path",
-                scale=1
+            #gr.Markdown("### Detection Settings")
+            imgsz = gr.Number(label="Yolo processing img size (should be same as yolo model) (leave default)", value=1600)
+
+            OVERWRITE_PREV_BOT_DETECTIONS = gr.Checkbox(
+                value=True, label="Overwrite any previous Bot Detections (Create new detection files)"
             )
-            yolo_model_file = gr.File(label="Choose a YOLO .pt file", file_types=[".pt"], height=120, type="filepath")
-
-            def update_yolo_path(file_obj):
-                if file_obj is not None:
-                    return file_obj.name
-                return gr.update()
-
-            yolo_model_file.change(update_yolo_path, inputs=yolo_model_file, outputs=yolo_model_path)
-            with gr.Column():
-                imgsz = gr.Number(label="🖼️ Image Size", value=1600)
-
-                ''' # Not sure when we use this?
-                GEN_BOT_DET_EVENIF_HUMAN_EXISTS = gr.Checkbox(
-                    value=True, label="GEN_BOT_DET_EVENIF_HUMAN_EXISTS"
-                )
-                '''
-                OVERWRITE_PREV_BOT_DETECTIONS = gr.Checkbox(
-                    value=False, label="OVERWRITE_PREV_BOT_DETECTIONS"
-                )
-
-        # Keep Detect tab synced with Deployments
-        selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
         # Run detection button
         DET_run_btn = gr.Button("Run Detection", variant="primary")
@@ -639,29 +648,13 @@ with gr.Blocks(title="Mothbot") as demo:
     #~~~~~~~~~~~~ IDENTIFICATION TAB ~~~~~~~~~~~~~~~~~~~~~~
 
     with gr.Tab("ID"):
-        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
-
-        with gr.Row():
-            # Species selection
-            species_path = gr.Textbox(
-                #default path
-                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv",
-                label="Species List CSV"
-            )
-            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
-
-            def update_species_path(file_obj):
-                if file_obj is not None:
-                    return file_obj.name
-                return gr.update()
-            species_csv_file.change(update_species_path, inputs=species_csv_file, outputs=species_path)
 
         with gr.Row():
             with gr.Column():
-                gr.Markdown("### Select how deep you want to try to automatically Identify:")
-                radio = gr.Radio(TAXA_COLS, label="Select one", type="value", value="order")
-                taxa_output = gr.Number(label="Index",value=TAXA_COLS.index("order"))
-                radio.change(get_index, inputs=radio, outputs=taxa_output)
+                radio = gr.Radio(TAXA_COLS, label="Select how deep you want to try to automatically Identify:", type="value", value="order")
+                with gr.Column():
+                    taxa_output = gr.Number(label="Taxa Index",value=TAXA_COLS.index("order"), visible=False)
+                    radio.change(get_index, inputs=radio, outputs=taxa_output)
     
             with gr.Column():
                 ID_HUMANDETECTIONS = gr.Checkbox(
@@ -671,11 +664,8 @@ with gr.Blocks(title="Mothbot") as demo:
                     value=True, label="Identify Bot Detections (Leave as True)"
                 )
                 OVERWRITE_PREV_BOT_IDENTIFICATIONS = gr.Checkbox(
-                    value=False, label="OVERWRITE_PREV_BOT_IDENTIFICATIONS"
+                    value=True, label="OVERWRITE_PREVIOUS_BOT_IDENTIFICATIONS (Create new automated IDs)"
                 )
-
-        # Keep ID tab synced with Deployments
-        selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
         # Run ID button
         ID_run_btn = gr.Button("Run Identification", variant="primary")
@@ -762,40 +752,8 @@ with gr.Blocks(title="Mothbot") as demo:
 
     #~~~~~~~~~~~~ Create Dataset TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Create Dataset"):
-        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
-
-        with gr.Row():
-            # Metadata selection
-            metadata_path = gr.Textbox(
-                #default path
-                value=r"../Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv",
-                label="Metadata CSV"
-            )
-            metadata_csv_file = gr.File(label="Choose a Metadata CSV File", file_types=[".csv"], height=120, type="filepath")
-
-            def update_metadata_path(file_obj):
-                if file_obj is not None:
-                    return file_obj.name
-                return gr.update()
-
-            metadata_csv_file.change(update_metadata_path, inputs=metadata_csv_file, outputs=metadata_path)
-        with gr.Row():
-            # Species selection
-            species_path = gr.Textbox(
-                #default path
-                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv",
-                label="Species List CSV"
-            )
-            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
-
-            def update_species_path(file_obj):
-                if file_obj is not None:
-                    return file_obj.name
-                return gr.update()
-            species_csv_file.change(update_species_path, inputs=species_csv_file, outputs=species_path)
-
-        UTCoff = gr.Number(label="🕙 UTC Offset:", value=-5)
-       
+        UTCoff = gr.Number(label="🕙 UTC Offset: (You should have actually put this in your metadata, this will be removed soon)", value=-5)
+        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[], visible=False)
 
         # Keep Dataset tab synced with Deployments
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
@@ -803,15 +761,14 @@ with gr.Blocks(title="Mothbot") as demo:
         #Choose which folder to dataset
         single_folder_choice = gr.Radio(label="Select One Folder", choices=[], interactive=True)
         
-        datafolder_result = gr.Textbox(label="Result")
-        
+        datafolder_result = gr.Textbox(label="Chosen Night to Analyze")
         # Whenever the JSON changes, update the Radio choices
         selected_from_deployments.change(
             fn=dataset_update_radio_options,
             inputs=selected_from_deployments,
             outputs=single_folder_choice
         )
-        
+
         # When user selects a folder, pass it to a function
         single_folder_choice.change(
             fn=dataset_use_selected_folder,
@@ -830,7 +787,7 @@ with gr.Blocks(title="Mothbot") as demo:
             inputs=[
                 datafolder_result,
                 species_path,
-                metadata_path,
+                metadata_csv_file,
                 UTCoff,
             ],
             outputs=Dataset_output_box
@@ -838,45 +795,9 @@ with gr.Blocks(title="Mothbot") as demo:
 
     #~~~~~~~~~~~~ Create CSV TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Generate CSV"):
-        selected_from_deployments = gr.JSON(label="Nightly Folders", value=[])
 
-        with gr.Row():
-            # Metadata selection
-            metadata_path = gr.Textbox(
-                #default path
-                value=r"../Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv",
-                label="Metadata CSV"
-            )
-            metadata_csv_file = gr.File(label="Choose a Metadata CSV File", file_types=[".csv"], height=120, type="filepath")
-
-            def update_metadata_path(file_obj):
-                if file_obj is not None:
-                    return file_obj.name
-                return gr.update()
-
-            metadata_csv_file.change(update_metadata_path, inputs=metadata_csv_file, outputs=metadata_path)
-        with gr.Row():
-            # Species selection
-            species_path = gr.Textbox(
-                #default path
-                value=r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv",
-                label="Species List CSV"
-            )
-            species_csv_file = gr.File(label="Choose a Species List CSV File", file_types=[".csv"], height=120, type="filepath")
-
-            def update_species_path(file_obj):
-                if file_obj is not None:
-                    return file_obj.name
-                return gr.update()
-            species_csv_file.change(update_species_path, inputs=species_csv_file, outputs=species_path)
-
-        UTCoff = gr.Number(label="🕙 UTC Offset:", value=-5)
+        UTCoff = gr.Number(label="🕙 UTC Offset: (This should be in your metadata, this will be removed soon)", value=-5)
        
-
-        # Keep Dataset tab synced with Deployments
-        selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
-
-
         # Run CSV button
         CSV_run_btn = gr.Button("Generate CSV ", variant="primary")
 

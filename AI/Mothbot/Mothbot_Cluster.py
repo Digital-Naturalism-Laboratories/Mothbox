@@ -42,7 +42,9 @@ import json
 import warnings
 warnings.filterwarnings("ignore", message="xFormers is not available*")
 warnings.filterwarnings("ignore", message="'force_all_finite' was renamed")
-
+import io #put these 3 lines here so radio can read stuff without breaking
+import sys
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="replace")
 
 
 # ~~~~Variables to Change~~~~~~~
