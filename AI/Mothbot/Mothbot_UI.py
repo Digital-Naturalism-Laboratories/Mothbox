@@ -8,7 +8,7 @@ import sys
 import tkinter as tk
 from tkinter import filedialog
 from multiprocessing import Process, Queue
-
+import glob
 NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
 
 
@@ -525,20 +525,37 @@ def pick_and_list():
     if not matches:
         return f"Selected folder: {folder}\nNo nightly subfolders found.", gr.update(choices=[], value=[]), {}, "Select All"
 
+    choices = []
     labels = []
     mapping = {}
+    seen_values = set()
+
     for p in matches:
-        label = os.path.basename(os.path.dirname(p)) + "/" + os.path.basename(p)
-        base = label
+        # base "value" (clean) you want to keep stable
+        base_value = os.path.basename(os.path.dirname(p)) + "/" + os.path.basename(p)
+        value = base_value
         i = 1
-        while label in mapping:
-            label = f"{base} ({i})"
+        # Ensure unique values
+        while value in seen_values:
+            value = f"{base_value} ({i})"
             i += 1
-        labels.append(label)
-        mapping[label] = os.path.abspath(p)
+        seen_values.add(value)
+
+        # Count JPEGs
+        jpeg_count = len(glob.glob(os.path.join(p, "*.jpg"))) + len(
+            glob.glob(os.path.join(p, "*.jpeg"))
+        )
+
+        # Decorated label shown to the user
+        decorated_label = f"{value} ({jpeg_count} Images)"
+
+        # IMPORTANT: append a tuple of name, value so Gradio can render label/value
+        choice = (decorated_label,value)
+        choices.append(choice)
+        mapping[value] = os.path.abspath(p)
 
     status = f"Selected folder: {folder}\nFound {len(labels)} nightly folders."
-    return status, gr.update(choices=labels, value=[]), mapping, "Select All"
+    return status, gr.update(choices=choices, value=[]), mapping, "Select All"
 
 def toggle_select_all(current_values, mapping, button_label):
     """Toggles between selecting all and deselecting all."""
