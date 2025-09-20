@@ -5,6 +5,37 @@ parent: Processing Data
 has_children: false
 nav_order: 3
 ---
+
+## Using the Mothbot UI to Detect Organisms
+
+Now that you've opened up the Mothbot UI, you should see a web page that looks like this: 
+
+<img width="1285" height="801" alt="mothbotAI" src="https://github.com/user-attachments/assets/5236dbff-9166-4234-9d76-faafdbe8b024" /><br>
+
+The first thing you need to do is upload the deployment folder you would like to analyse. Click the orange button that says "Pick Deployment Folder"
+
+<img width="1272" height="710" alt="selectingdeploymentfolder" src="https://github.com/user-attachments/assets/699f4fd5-7d87-40fd-9ff5-a201b0863a08" /><br>
+
+>Note: on a Mac, you may not have a pop up window appear. Instead, you will see the Python application jumping up and down at the bottom of your desktop screen in your Dock. Click on it and it will open a window.
+
+Then select the nightly folders you want to analyse. 
+
+<img width="1278" height="543" alt="nightlyfolders" src="https://github.com/user-attachments/assets/34d0ab5e-3c96-4b71-849d-58fd1f7501b9" /><br>
+
+Then you can scroll down on the page and hit the big "Run Detection" button. 
+
+<img width="1259" height="699" alt="rundetection" src="https://github.com/user-attachments/assets/12731e9e-a608-430d-8419-0b4cf478f6ef" /><br>
+
+>Note: If you have already ran a detection for a deployment before, but would like to override your existing detections, you can select the checkbox that says "Overwrite any previous Bot Detections (Create new detection files)"
+
+For now, you don't need to worry about changing what is in the field "Yolo processing img size." I'll get to that below.
+
+### Additional Processing Files
+
+By default, The Mothbot UI automatically uploads a species list for Insects in Panama and 
+
+## Run this Script Manually
+
 This script tries to find any creatures in your photos. It takes two inputs:
 * a folder pointing to the data you want to analyze
 * a yolo11 AI model trained for detecting creatures
@@ -19,7 +50,7 @@ Also if you look at the variable SKIP_PREVIOUS_GENERATED (underlined in green ab
 
 _Note: the script is also set up to detect any HUMAN generated detections and not overwrite those ever._
 
-# Results
+### Results
 This process can take 5-20 minutes for a normal night's dataset (depending on the number of creatures and the speed of your computer).
 
 ![image](https://github.com/user-attachments/assets/d7d001fd-94ad-4d5d-bde7-1073bc72e8c7)
