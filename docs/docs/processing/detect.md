@@ -30,6 +30,10 @@ Then you can scroll down on the page and hit the big "Run Detection" button.
 
 For now, you don't need to worry about changing what is in the field "Yolo processing img size." I'll get to that below.
 
+When the detections have finished, you will see a green checkbox next to text that reads "Detection completed"
+
+<img width="1194" height="449" alt="detectionsfinished" src="https://github.com/user-attachments/assets/35491b84-9586-46cb-a312-986d0a39ba7e" />
+
 ### Additional Processing Files
 
 By default, the Mothbot UI automatically uploads a species list for Insects in Panama and a metadata sheet that we have been using here in Panama. Depending on your needs, you may want to upload your own species list and metadata sheet to be used with your data (See the [Organizing Data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/OrganizeData/#metadata) step for more information on how to organize these files for your project). 
@@ -37,6 +41,9 @@ By default, the Mothbot UI automatically uploads a species list for Insects in P
 <img width="633" height="538" alt="additionalfilesdetect" src="https://github.com/user-attachments/assets/fb314634-0ee6-4d53-aeaa-9511b276c7c1" /><br>
 
 You do not need to worry about selecting a yolo model path. YOLO is the object detection algorithm that we use in the Detect Script, and is usually something the Mothbox team will update on our end.
+
+## Next Step: Identifying Detected Organisms
+We can now move to the next step of data processing, which is identifying all the organisms we've just detected. Head to the next step ["Identify Detections"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/id/) to continue.
 
 ## Run this Script Manually
 
