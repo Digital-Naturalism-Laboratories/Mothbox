@@ -541,13 +541,25 @@ def pick_and_list():
             i += 1
         seen_values.add(value)
 
-        # Count JPEGs
+        # Count JPEGs in base folder
         jpeg_count = len(glob.glob(os.path.join(p, "*.jpg"))) + len(
             glob.glob(os.path.join(p, "*.jpeg"))
         )
 
+        # Count JSON files in base folder
+        json_count = len(glob.glob(os.path.join(p, "*.json")))
+
+        # Count JPEGs in "patches" subfolder if it exists
+        patches_folder = os.path.join(p, "patches")
+        patches_count = 0
+        if os.path.isdir(patches_folder):
+            patches_count = len(glob.glob(os.path.join(patches_folder, "*.jpg"))) + len(
+                glob.glob(os.path.join(patches_folder, "*.jpeg"))
+            )
+
         # Decorated label shown to the user
-        decorated_label = f"{value} ({jpeg_count} Images)"
+        decorated_label = f"{value} ({jpeg_count} Images, {json_count} JSONs, {patches_count} Patches)"
+
 
         # IMPORTANT: append a tuple of name, value so Gradio can render label/value
         choice = (decorated_label,value)
