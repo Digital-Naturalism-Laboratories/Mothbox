@@ -52,7 +52,7 @@ Each "deployment" is a data from device left out in the field somewhere.
 ## Deployment Name
 The deployment has a unique name like this:
 ```
-PROJECT_SITE_DEVICE_YYYY-MM-DD
+Dataset_PROJECT_SITE_DEVICE_YYYY-MM-DD
 ```
 The "Project" is a broad project that you are collecting this data for. You couldname it something like "BatSurvey" or "MtTotumasDrySeason" (No spaces)
 
@@ -61,6 +61,8 @@ The "Site" is a human name for the very specific place you left the Mothbox, lik
 The "Device" is a unique name that the Mothbox calls itself. These are names based off the internal serial number of the Raspberry Pi on the Mothbox meshed with a list we made of Spanish and English verbs, nouns, and adjectives. Like "FuerteFrog"
 
 Then there is a date stamp that marks the first day a mothbox was left out in the field. like 2024-04-30. The format is YYYY-MM-DD.
+
+*Note: You can omit 'Dataset' from the deployment name and leave it as PROJECT_SITE_DEVICE_YYYY-MM-DD; our post-processing scripts will still run correctly.
 
 ## Nightly Folders
 A deployment usually has several nights. Each night is collected in its own folder. The nightly folders are automatically created by the Mothbox and have a basic format:
@@ -127,39 +129,6 @@ The species list is used by the indentification script to narrow down the possib
 
 If you want to go super broad, you could just try to get a list of all arthropods, or you could limit things to a specific family of moths. It's up to you!
 
-# Processing Pipeline
-
-## Detection
-The first thing we need to do when processing mothbox data is to "detect" where all the creatures are in a "raw photo."
-
-In other words, we want to go from a raw photo that might have many insects:
-<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/ec1a50ce-38bf-4bb3-b8b6-752ba1801050" width="48%">
-
-to a collection of many small photos that each only show one insect.
-![gradoVerdín_2024_07_25__21_12_05_HDR0_crop_0](https://github.com/user-attachments/assets/29d89307-5bc3-422a-839a-c67c49860f08)
-
-<img width="746" height="471" alt="image" src="https://github.com/user-attachments/assets/303a6ae0-b80f-44ff-b58a-9dc3582b9e68" />
-
-You can run this stage of the [processing automatically with the Mothbot Detection script](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/).
-
-
-
-## Identification
-Next in the processing steps, we feed all those detections in another pass to a [different script called Mothbox_ID.py, which uses BioCLIP](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/id/) to automatically ID the different creatures detected. 
-
-It will try to give each detection a label based on what type of creature it thinks it is. It will perform and additional filtering step and label any incorrectly detected images as an Error (for instance if a piece of dirt or blurry photo was detected).
-![image](https://github.com/user-attachments/assets/cc728466-d9d8-456d-be97-fef16d56eac0)
-
-You can run this stage of the [processing automatically with the Mothbot ID script.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/id/)
-
-## Editing the Database
-Finally there are some remaining scripts that let a human expert go through this automatically detected and identified data to Identify things to deeper levels or fix incorrect IDs.
-
-![image](https://github.com/user-attachments/assets/b7b0ba22-1786-4239-8de3-3a71ca0ff865)
-
-You can run this stage of the [processing automatically with the Mothbot Create Database script.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/databases/)
-
-
 # Start Processing
 
-Go to the [next steps in this section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/detect/) to start processing your data!
+Go to the [next steps in this section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/ui/) to start processing your data!
