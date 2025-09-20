@@ -1,8 +1,6 @@
 ##################################################
 
-#           P26 ----> Relay_Ch1 Optional UV light
-#			P20 ----> Relay_Ch2 Flash Lights
-#			P21 ----> Relay_Ch3 5V power converter
+
 
 ##################################################
 #!/usr/bin/python
@@ -10,9 +8,10 @@
 import RPi.GPIO as GPIO
 import time
 
-Relay_Ch1 = 26
-Relay_Ch2 = 20
-Relay_Ch3 = 21
+Relay_Ch1 = 9 #UV 
+Relay_Ch2 = 6 # UV 1
+Relay_Ch3 = 5  # UV 2
+# 19 is photo led
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
