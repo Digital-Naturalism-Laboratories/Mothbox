@@ -3,7 +3,7 @@ layout: default
 title: Generate and Edit Datasets
 parent: Processing Data
 has_children: false
-nav_order: 5
+nav_order: 8
 ---
 
 # Make Sure Exiftool is installed
