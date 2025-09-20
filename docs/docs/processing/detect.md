@@ -32,11 +32,16 @@ For now, you don't need to worry about changing what is in the field "Yolo proce
 
 ### Additional Processing Files
 
-By default, The Mothbot UI automatically uploads a species list for Insects in Panama and 
+By default, the Mothbot UI automatically uploads a species list for Insects in Panama and a metadata sheet that we have been using here in Panama. Depending on your needs, you may want to upload your own species list and metadata sheet to be used with your data (See the [Organizing Data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/OrganizeData/#metadata) step for more information on how to organize these files for your project). 
+
+<img width="633" height="538" alt="additionalfilesdetect" src="https://github.com/user-attachments/assets/fb314634-0ee6-4d53-aeaa-9511b276c7c1" /><br>
+
+You do not need to worry about selecting a yolo model path. YOLO is the object detection algorithm that we use in the Detect Script, and is usually something the Mothbox team will update on our end.
 
 ## Run this Script Manually
 
-This script tries to find any creatures in your photos. It takes two inputs:
+The Python Script we use to run detections is called Mothbot_Detect. This script tries to find any creatures in your photos. It takes two inputs:
+
 * a folder pointing to the data you want to analyze
 * a yolo11 AI model trained for detecting creatures
 
@@ -60,7 +65,5 @@ At the end it will produce little "detection" json files for each image in the f
 
 These currently store information about where insects likely are. You can visualize these detections if you wish by looking at them in the program X-anylabelling:
 ![image](https://github.com/user-attachments/assets/985cf7db-9026-40a3-8423-567eef9d5ec7)
-
-
 
 Note how there is no ID information yet. All detections are simply labelled as "creature."
