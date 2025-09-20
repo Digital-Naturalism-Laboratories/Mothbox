@@ -96,7 +96,7 @@ There are files that have the same name as the Raw Image but end with ".json". T
 
 
 # Metadata
-Equally as important as the photographic data you collect is the metadata about your deployments. We need to [create a metadata file](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Auto%20Calculations%20-%20Mothbox%20Main%20Metadata%20field%20sheet%20(Bilingue)%20(Responses)%20-%20Form%20responses%201.csv) for each raw photo. This contains information about the sampling like:
+Equally as important as the photographic data you collect is the metadata about your deployments. We need to [create a metadata file](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv) for each raw photo. This contains information about the sampling like:
 
 * occurrenceID (file name with unique timestamp of the specific individual photo ("gradoVerdín_2024_07_25__21_12_05_HDR0_crop_0.jpg")
 * basisOfRecord (i.e. MACHINE_DETECTED)
@@ -108,7 +108,7 @@ Equally as important as the photographic data you collect is the metadata about 
 * cv_confidence (how confident the AI was in detecting this if machine detected)
 * Taxonomic information: class	order	family	genus	species	commonName	scientificName
 
-You should [fill out a row on that form](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Auto%20Calculations%20-%20Mothbox%20Main%20Metadata%20field%20sheet%20(Bilingue)%20(Responses)%20-%20Form%20responses%201.csv) for each of your deployments.
+You should [fill out a row on that form](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv) for each of your deployments.
 
 We have printable forms that field technicians can take to their sites: 
 
