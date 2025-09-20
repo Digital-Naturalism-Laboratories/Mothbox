@@ -39,7 +39,7 @@ def show_file_dialog(queue):
     try:
         root = tk.Tk()
         root.withdraw()
-        file_path = filedialog.askopenfilename()
+        file_path = filedialog.askopenfilename(initialdir=r"../")
         root.destroy()
         queue.put(file_path)
     except Exception as e:
