@@ -566,7 +566,7 @@ def pick_and_list():
         choices.append(choice)
         mapping[value] = os.path.abspath(p)
 
-    status = f"Selected folder: {folder}\nFound {len(labels)} nightly folders."
+    status = f"Selected folder: {folder}\nFound {len(choices)} nightly folders."
     return status, gr.update(choices=choices, value=[]), mapping, "Select All"
 
 def toggle_select_all(current_values, mapping, button_label):
