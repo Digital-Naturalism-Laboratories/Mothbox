@@ -15,9 +15,9 @@ Begin by first making sure you have the correct metadata file uploaded in the ad
 
 <img width="633" height="216" alt="metadatasheet" src="https://github.com/user-attachments/assets/c828db24-846b-4ba4-a15f-aa546d7b9676" /><br>
 
-Then click the large orange button towards the bottom that says "Insert Metadata."
+Then make sure you've selected the "Insert Metadata" tab towards the borrom, and click the large orange button towards the bottom that says "Insert Metadata."
 
-<img width="1321" height="666" alt="insertmeta1" src="https://github.com/user-attachments/assets/09270dd1-359e-4a09-9009-60f3370dc709" /><br>
+<img width="1321" height="666" alt="insertmeta1" src="https://github.com/user-attachments/assets/f118c05e-faec-4aee-bf8e-d1b8812ccb88" /><br>
 
 The script should run quickly and look like this when it is finished:
 
