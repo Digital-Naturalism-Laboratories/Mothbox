@@ -27,7 +27,7 @@ And now you've perceptually clustered your patches!
 
 ## Next: Generate and Edit your Datasets
 
-Now that you've detected, identified, and perceptually clustered your data, it's time to move to the final step, which is to generate a dataset of organisms you've detected and label them accordingly. You can head over to the [Generate and Edit Dataset] (https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/databases/) step now!
+Now that you've detected, identified, and perceptually clustered your data, it's time to move to the final step, which is to generate a dataset of organisms you've detected and label them accordingly. You can head over to the [Generate and Edit Dataset](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/databases/) step now!
 
 ### Optional: Insert EXIF Data
 Before you work with your dataset, you also have the option to attach EXIF data (in a way that is iNaturalist-friendly) to each patch. Head to the [EXIF optional](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/insertExif/) step to do this.  
