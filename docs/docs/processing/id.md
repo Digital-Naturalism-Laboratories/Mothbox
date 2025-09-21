@@ -22,9 +22,9 @@ Click the big orange box that says "Run Identification" and you will see the scr
 
 <img width="1279" height="700" alt="MothbotID3" src="https://github.com/user-attachments/assets/08e9441c-e4a2-4523-bda5-78deb8bf1370" /><br>
 
-When your done running the ID script, your window should look like this (notice the green checkbox indicating that identifications are complete):
+When your done running the ID script, your window should look like this (notice the green checkbox indicating that identifications are complete and text that says identification process is complete):
 
-
+<img width="1185" height="456" alt="IDfinished" src="https://github.com/user-attachments/assets/18fae682-0574-4881-b1bb-e84bab08a485" /><br>
 
 ## Next: Insert Metadata
 Now that you have detected and identified your organisms, the next step is to make sure the metadata for your deployment is associated to your identified organisms. Head to the next step “[Insert Metadata](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/insertmetadata/)” to continue.
@@ -63,3 +63,4 @@ Now if you open your nightly folder in X-Anylabeling, you will see the labels no
 ![image](https://github.com/user-attachments/assets/10985386-86fe-4bb5-be98-dcba8cd0e2cf)
 
 For editing and organizing these IDs into a dataset, we will go to the next step where we view all our results in an editable database.
+
