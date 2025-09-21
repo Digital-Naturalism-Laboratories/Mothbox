@@ -561,6 +561,7 @@ if __name__ == "__main__":
     ID_BOTDETECTIONS=bool(int(args.ID_Bot))
     ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
     METADATA_PATH= args.metadata
+    INPUT_PATH= args.input_path
 
     # ~~~~~~~~~~~~~~~~ GATHERING DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
