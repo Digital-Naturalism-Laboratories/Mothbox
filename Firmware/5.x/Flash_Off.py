@@ -1,12 +1,11 @@
 #!/usr/bin/python3
-
 #GPIO
 import RPi.GPIO as GPIO
 import time
 import datetime
 from datetime import datetime
 
-print("----------------- Attract On!-------------------")
+print("----------------- attract off!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -15,17 +14,13 @@ print(f"Current time: {formatted_time}")
 global onlyflash
 onlyflash=False
 
-Relay_Ch1 = 5
-Relay_Ch2 = 6
-Relay_Ch3 = 9
+Relay_Ch1 = 19 #Photo lights
+
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(Relay_Ch1,GPIO.OUT)
-GPIO.setup(Relay_Ch2,GPIO.OUT)
-
-GPIO.setup(Relay_Ch3,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
 
@@ -39,21 +34,18 @@ def get_control_values(filename):
     return control_values
 
 
+def AttractOff():
+    GPIO.output(Relay_Ch1,GPIO.LOW)
+    print("Attract Lights Off\n")
+    
 def AttractOn():
-    GPIO.output(Relay_Ch3,GPIO.HIGH)
-    GPIO.output(Relay_Ch2,GPIO.HIGH)
     GPIO.output(Relay_Ch1,GPIO.HIGH)
 
     print("Attract Lights On\n")
-    
-def AttractOff():
-    GPIO.output(Relay_Ch3,GPIO.LOW)
-    GPIO.output(Relay_Ch2,GPIO.LOW)
-    GPIO.output(Relay_Ch1,GPIO.LOW)
-
-    print("Attract Lights Off\n")
 
 
-AttractOn()
-#AttractOff()
+#control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+#AttractOn()
+AttractOff()
+
 

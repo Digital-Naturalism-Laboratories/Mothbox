@@ -1,0 +1,18 @@
+from PIL import Image, ImageDraw, ImageFont
+import numpy as np
+
+# Create a base image with a jungle theme
+width, height = 1920, 1080
+background = Image.new("RGB", (width, height), (0, 100, 0))  # dark green background
+
+# Add some jungle elements (simplified for now)
+draw = ImageDraw.Draw(background)
+
+# Simulating jungle leaves (basic shapes for now)
+for _ in range(50):
+    x1, y1 = np.random.randint(0, width), np.random.randint(0, height)
+    x2, y2 = x1 + np.random.randint(100, 300), y1 + np.random.randint(50, 150)
+    draw.ellipse([x1, y1, x2, y2], fill=(34, 139, 34), outline=(0, 100, 0))
+
+# Display the generated jungle background
+background.show()

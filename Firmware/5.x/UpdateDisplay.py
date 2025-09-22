@@ -154,13 +154,45 @@ softwareversion=control_values.get("softwareversion", "error")
 #Check battery level and power
 voltage= -100
 
-try:
-    i2c = board.I2C()  # uses board.SCL and board.SDA
-    # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
-    ina260 = adafruit_ina260.INA260(i2c)
-    voltage=ina260.voltage
-    print("Current: %.2f mA Voltage: %.2f V Power:%.2f mW " % (ina260.current, ina260.voltage, ina260.power))
 
+import smbus2
+import time
+
+# I2C bus (1 for modern Raspberry Pi boards)
+I2C_BUS = 1
+I2C_ADDR = 0x40  # INA219 default address
+
+# Register addresses for INA219
+REG_BUS_VOLTAGE = 0x02
+
+bus = smbus2.SMBus(I2C_BUS)
+
+def read_voltage():
+    # Read 2 bytes from the bus voltage register
+    raw = bus.read_word_data(I2C_ADDR, REG_BUS_VOLTAGE)
+
+    # Swap byte order (INA219 returns LSB/MSB swapped on Raspberry Pi)
+    raw = ((raw & 0xFF) << 8) | (raw >> 8)
+
+    # Shift to remove CNVR and OVF bits
+    raw >>= 3
+
+    # Each bit = 4 mV
+    voltage = raw * 0.004
+    return voltage
+
+##########################
+
+
+
+
+try:
+    #i2c = board.I2C()  # uses board.SCL and board.SDA
+    # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
+    #ina260 = adafruit_ina260.INA260(i2c)
+    voltage=read_voltage()
+    #print("Current: %.2f mA Voltage: %.2f V Power:%.2f mW " % (ina260.current, ina260.voltage, ina260.power))
+    print("voltage = " +str(voltage))
 except (OSError, ValueError) as e:
     # Handle exceptions like sensor not connected or communication errors
     print("Sensor NOT CONNECTED  ")
