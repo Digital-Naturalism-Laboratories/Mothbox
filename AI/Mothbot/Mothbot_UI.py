@@ -380,7 +380,8 @@ def run_exif(selected_folders ):
             yield output_log
     output_log += f"------  Insert Exif processing finished ------"
     yield output_log
-def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
+
+def run_Dataset(selected_folder, species_list, metadata):
     global dataset_process
 
     if not selected_folder:
@@ -393,12 +394,12 @@ def run_Dataset(selected_folder, species_list, metadata, Utcoffset):
     yield output_log
 
     cmd = [
-        sys.executable,"-u", #try to make it stream better?
+        sys.executable,#"-u", #try to make it stream better?
         "Mothbot_CreateDataset.py",
         "--input_path", folder,
         "--taxa_csv", species_list,
         "--metadata", str(metadata),
-        "--utcoff", str(int(Utcoffset)),
+        #"--utcoff", str(int(Utcoffset)),
     ]
 
     try:
@@ -442,7 +443,7 @@ def kill_Dataset():
         return "ℹ️ No dataset process is currently running."
 
 
-def run_CSV(selected_folders, species_list, Utcoffset):
+def run_CSV(selected_folders, species_list):
     
     if not selected_folders:
         yield "No nightly folders selected.\n"
@@ -471,7 +472,7 @@ def run_CSV(selected_folders, species_list, Utcoffset):
                 "Mothbot_ConvertDatasettoCSV.py",
                 "--input_path", folder,
                 "--taxa_csv", species_list,
-                "--utcoff", str(int(Utcoffset)),
+                #"--utcoff", str(int(Utcoffset)),
             ]
             print(f"Executing command: {cmd}") # Debugging
 
@@ -848,29 +849,30 @@ with gr.Blocks(title="Mothbot",
 
     #~~~~~~~~~~~~ Create Dataset TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Create Dataset"):
-        UTCoff = gr.Number(label="🕙 UTC Offset: (You should have actually put this in your metadata, this will be removed soon)", value=-5)
+        #UTCoff = gr.Number(label="🕙 UTC Offset: (You should have actually put this in your metadata, this will be removed soon)", value=-5)
         selected_from_deployments = gr.JSON(label="Nightly Folders", value=[], visible=False)
 
         # Keep Dataset tab synced with Deployments
         selected_paths.change(lambda val: gr.update(value=val), inputs=selected_paths, outputs=selected_from_deployments)
 
         #Choose which folder to dataset
-        single_folder_choice = gr.Radio(label="Select One Folder", choices=[], interactive=True)
-        
-        datafolder_result = gr.Textbox(label="Chosen Night to Analyze")
-        # Whenever the JSON changes, update the Radio choices
-        selected_from_deployments.change(
-            fn=dataset_update_radio_options,
-            inputs=selected_from_deployments,
-            outputs=single_folder_choice
-        )
+        with gr.Row():
+            single_folder_choice = gr.Radio(label="Select One Folder", choices=[], interactive=True)
+            
+            datafolder_result = gr.Textbox(label="Chosen Night to Analyze")
+            # Whenever the JSON changes, update the Radio choices
+            selected_from_deployments.change(
+                fn=dataset_update_radio_options,
+                inputs=selected_from_deployments,
+                outputs=single_folder_choice
+            )
 
-        # When user selects a folder, pass it to a function
-        single_folder_choice.change(
-            fn=dataset_use_selected_folder,
-            inputs=single_folder_choice,
-            outputs=datafolder_result
-        )
+            # When user selects a folder, pass it to a function
+            single_folder_choice.change(
+                fn=dataset_use_selected_folder,
+                inputs=single_folder_choice,
+                outputs=datafolder_result
+            )
 
         with gr.Row():
             # Run Create Dataset button
@@ -885,7 +887,7 @@ with gr.Blocks(title="Mothbot",
                 datafolder_result,
                 species_path,
                 metadata_csv_file,
-                UTCoff,
+                
             ],
             outputs=Dataset_output_box
         )
@@ -897,7 +899,7 @@ with gr.Blocks(title="Mothbot",
     #~~~~~~~~~~~~ Create CSV TAB ~~~~~~~~~~~~~~~~~~~~~~
     with gr.Tab("Generate CSV"):
 
-        UTCoff = gr.Number(label="🕙 UTC Offset: (This should be in your metadata, this will be removed soon!)", value=-5)
+        #UTCoff = gr.Number(label="🕙 UTC Offset: (This should be in your metadata, this will be removed soon!)", value=-5)
        
         # Run CSV button
         CSV_run_btn = gr.Button("Generate CSV ", variant="primary")
@@ -909,7 +911,7 @@ with gr.Blocks(title="Mothbot",
             inputs=[
                 selected_paths,
                 species_path,
-                UTCoff,
+                #UTCoff,
             ],
             outputs=CSV_output_box
         )

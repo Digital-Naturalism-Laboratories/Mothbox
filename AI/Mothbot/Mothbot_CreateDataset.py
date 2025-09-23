@@ -34,8 +34,8 @@ from Mothbot_ConvertDatasettoCSV import json_to_csv
 
 INPUT_PATH = r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\AzueroSuperD_OriaNursery_Nursery_dobleParina_2025-02-05\2025-02-05"
 METADATA_PATH = r'..\Mothbox_Main_Metadata_Field_Sheet_Example - Form responses 1.csv'
-UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
-
+#UTC_OFFSET= 8 #Panama is -5, Indonesia is 8 change for different locations
+UTC_OFFSET= 0
 TAXA_LIST_PATH = r"../SpeciesList_CountryIndonesia_TaxaInsecta_doi.org10.15468dl.8p8wua.csv" # downloaded from GBIF for example just insects in panama: https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216
 
 
@@ -51,13 +51,13 @@ def parse_args():
         default=INPUT_PATH,
         help="path to images for classification (ex: datasets/test_images/data)",
     )
-
+    '''
     parser.add_argument(
         "--utcoff",
         default=UTC_OFFSET,
         help="rank to which to classify; must be column in --taxa-csv (default: {UTC_OFFSET})", 
     )
-
+    '''
     parser.add_argument(
         "--taxa_csv",
         default=TAXA_LIST_PATH,
@@ -700,7 +700,7 @@ def create_sample(image_path, labels, image_height, image_width, metadata, detec
   sample["habitat"]=metadata.get("habitat","")
   sample["attractor"]=metadata.get("attractor","")
   sample["attractor_location"]=metadata.get("attractor_location","")
-
+  sample["UTC"]=UTC_OFFSET
   sample["detection_By"]=detection_creator
 
 
@@ -897,7 +897,7 @@ def generate_patch_dataset(dataset, output_dir=INPUT_PATH+"/patches", target_siz
                 habitat=sample.habitat,
                 attractor=sample.attractor,
                 attractor_location=sample.attractor_location,
-
+                UTC=sample.UTC,
                 detection_By=sample.detection_By
 
             )
@@ -1097,7 +1097,7 @@ def generate_patch_thumbnails_orig(dataset, output_dir=INPUT_PATH+"/patches", ta
                 habitat=sample.habitat,
                 attractor=sample.attractor,
                 attractor_location=sample.attractor_location,
-
+                UTC=sample.UTC,
                 detection_By=sample.detection_By
 
             )
@@ -1128,7 +1128,7 @@ if __name__ == "__main__":
   INPUT_PATH=args.input_path
   METADATA_PATH=args.metadata
   TAXA_LIST_PATH=args.taxa_csv
-  UTC_OFFSET=int(args.utcoff)
+  #UTC_OFFSET=int(args.utcoff)
 
 
   #pairs = find_image_json_pairs(INPUT_PATH)
@@ -1137,7 +1137,7 @@ if __name__ == "__main__":
   samples=[]
   # Iterate through human pairs and load data
   metadata= find_csv_match(INPUT_PATH, METADATA_PATH)
-
+  UTC_OFFSET = float(metadata.get("UTC",0))
   #skipping exif stuff for now, will break out to separate step
   #tagger = ExifToolSession()
 
@@ -1295,18 +1295,19 @@ if __name__ == "__main__":
 
 
   # Save the updated app config
-  thepatch_dataset.compute_metadata()
+  thepatch_dataset.compute_metadata() # can kill its progress bar like this: progress=False)
   thepatch_dataset.save()
 
   # Export the dataset without saving the image data (It gets saved as "sample.json" and "metadata.json" in the inputpath folder)
   thepatch_dataset.export(
       export_dir=INPUT_PATH,
       dataset_type=fo.types.FiftyOneDataset,
-      export_media=False  # This ensures only labels and metadata are saved
+      export_media=False,  # This ensures only labels and metadata are saved
+      #progress=False
   )
 
   # Let's automatically generate the CSV now too, just to be nice
-  json_to_csv(INPUT_PATH, UTC_OFFSET, TAXA_LIST_PATH)
+  json_to_csv(INPUT_PATH, TAXA_LIST_PATH)
 
   print(thepatch_dataset)
   # Sort the dataset by patch_width in ascending order

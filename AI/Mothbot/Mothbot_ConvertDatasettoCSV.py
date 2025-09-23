@@ -13,7 +13,7 @@ import pandas as pd
 import argparse
 
 INPUT_PATH = r"C:\Users\andre\Desktop\MB_Test_Zone\Indonesia_Les_WilanTopTree_HopeCobo_2025-06-25\2025-06-26"
-UTC_OFFSET=-5 #panama is -5   indonesia is 8
+#UTC_OFFSET=-5 #panama is -5   indonesia is 8
 
 # Specify the path to your taxonomy CSV file
 TAXA_LIST_PATH = r"../SpeciesList_CountryIndonesia_TaxaInsecta.csv"
@@ -29,13 +29,13 @@ def parse_args():
         default=INPUT_PATH,
         help="path to images for classification (ex: datasets/test_images/data)",
     )
-
+    '''
     parser.add_argument(
         "--utcoff",
         default=UTC_OFFSET,
         help="rank to which to classify; must be column in --taxa-csv (default: {UTC_OFFSET})", 
     )
-
+    '''
     parser.add_argument(
         "--taxa_csv",
         default=TAXA_LIST_PATH,
@@ -205,7 +205,7 @@ def create_uniquedatasetID(deployment_name, oid_dict):
   except KeyError:
     return f"{deployment_name}"  # Return original name if 'oid' key is missing
  
-def json_to_csv(input_path, utc_offset,taxa_list_path):
+def json_to_csv(input_path, taxa_list_path):
 
     #preload this stuff for faster lookup
     taxa_lookup = load_taxa_lookup(taxa_list_path)
@@ -257,6 +257,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
             ground_height=""
             attractor=""
             attractor_location=""
+            UTC=""
 
 
 
@@ -274,9 +275,6 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
             else:
                 print("No date and timestamp found in the file path.")
 
-            # Adjust date and timestamp based on the UTC offset
-            #UTC_date, UTC_time = adjust_timestamp_with_utc_offset(date, timestamp, utc_offset)
-            formattedUTC_dateTime = format_datetime_with_utc_offset(date, timestamp, utc_offset)
 
             for tag in sample["tags"]:
                 # Check for prefixes
@@ -323,6 +321,11 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
 
             uniquedatasetID=create_uniquedatasetID(sample["deployment_name"],sample["_dataset_id"])
 
+            
+            # Adjust date and timestamp based on the UTC offset
+            formattedUTC_dateTime = format_datetime_with_utc_offset(date, timestamp, float(sample["UTC"]))
+
+
             row = {
                 "filepath":sample["filepath"],
                 
@@ -334,7 +337,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "verbatimEventDate":date+"__"+timestamp,
                 "eventDate":formattedUTC_dateTime,
                 "eventTime":formattedUTC_dateTime.split("T")[1],
-                "UTCOFFSET":utc_offset,
+                "UTCOFFSET":sample["UTC"],
                 "mothbox":sample["device"],
                 "software":sample["firmware"],
                 "sheet":sample["sheet"],
@@ -346,7 +349,7 @@ def json_to_csv(input_path, utc_offset,taxa_list_path):
                 "ground_height":sample["ground_height"],
                 "attractor":sample["attractor"],
                 "attractor_location":sample["attractor_location"],
-
+                
                 "deployment_name":sample["deployment_name"],
                 "deployment_date":sample["deployment_date"],
                 #"sample_time":formattedUTC_dateTime,
@@ -386,7 +389,7 @@ if __name__ == "__main__":
     args = parse_args()
     INPUT_PATH=args.input_path
     TAXA_LIST_PATH=args.taxa_csv
-    UTC_OFFSET=int(args.utcoff)
+    #UTC_OFFSET=int(args.utcoff)
     
     # Call the function with the input path
-    json_to_csv(INPUT_PATH, UTC_OFFSET, TAXA_LIST_PATH)
+    json_to_csv(INPUT_PATH, TAXA_LIST_PATH)
