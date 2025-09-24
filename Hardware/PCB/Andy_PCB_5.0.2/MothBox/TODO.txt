@@ -23,13 +23,21 @@ it should be fixed, or replaced with something we know works!
 
 - 5v test point is awkwardly under an LED on one side
 
+- Add holes for zip ties of extra battery! 
+
 
 
 Haven't yet tested:
 
 - Leaving lights on for a long time
 
+-GPS
 
+-Regulator enabler mosfet
+
+- Double battery fit with smaller camera case?
+
+- Glare from camera
 
 
 Things I tested that did work!
@@ -38,6 +46,9 @@ Things I tested that did work!
 
 - the i2c muxes work (i can communicate with them, but don't have pull ups so not useful)
 
+- attractors turn on!
+
+-Photo lights turn on!
 
 
 Future Changes
