@@ -6,6 +6,9 @@ it should be fixed, or replaced with something we know works!
 
 -The Muxes should be replaced with the version that has the pull up resistors
 
+- add something that controls the power to the MUXes so they don't just constantly leech power except for when we want to read their state
+
+
 - Attractor 1 and 3 labels are switched i think
 
 - can move attractor labels out from under the foot print?
