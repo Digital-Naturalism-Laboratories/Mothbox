@@ -415,7 +415,7 @@ def temporal_subclusters(
             cluster_to_indices[cl].append(idx)
 
     # Regex to extract timestamp from filename
-    ts_pattern = re.compile(r"(\d{4}_\d{2}_\d{2}__\d{2}_\d{2}_\d{2})")
+    ts_pattern = re.compile(r"(\d{4}_?\d{2}_?\d{2}_?\d{2}_?\d{2}_?\d{2})")
 
     # Loop through each perceptual cluster
     for cluster_id, indices in cluster_to_indices.items():
@@ -426,7 +426,9 @@ def temporal_subclusters(
             if not match:
                 raise ValueError(f"Could not parse timestamp from filename: {fname}")
             ts_str = match.group(1)
-            ts = datetime.strptime(ts_str, "%Y_%m_%d__%H_%M_%S")
+            #ts = datetime.strptime(ts_str, "%Y_%m_%d__%H_%M_%S")
+            ts = datetime.strptime(ts_str, "%Y%m%d%H%M%S")
+
             timestamps.append((i, ts))
 
         # Sort detections in this cluster by time
