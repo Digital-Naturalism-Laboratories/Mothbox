@@ -699,12 +699,12 @@ if __name__ == "__main__":
   """
   print("Starting script to  add metadata to raw iamges")
   args = parse_args()
-
+  INPUT_PATH=args.input_path
   # ~~~~~~~~~~~~~~~~ GATHERING DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
   # Find all the dated folders that our data lives in
-  print("Looking in this folder for MothboxData: " + args.input_path)
-  date_folders = find_date_folders(args.input_path)
+  print("Looking in this folder for MothboxData: " + INPUT_PATH)
+  date_folders = find_date_folders(INPUT_PATH)
   print(
       "Found ",
       str(len(date_folders)) + " dated folders potentially full of mothbox data",

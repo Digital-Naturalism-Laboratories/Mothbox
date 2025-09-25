@@ -50,7 +50,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"G:\Shared drives\Mothbox Management\Testing\ExampleDataset\Les_BeachPalm_hopeCobo_2025-06-20"  # raw string
+   r"E:\MothboxData_Hubert\Projects\Donald's data\Australia\20220111-Australia-Battery-TimeDelay-Subset\2022-27-12"  # raw string
 )
 
 #you probably always want these below as true
@@ -602,7 +602,7 @@ if __name__ == "__main__":
     args = parse_args()
     ID_BOTDETECTIONS=bool(int(args.ID_Bot))
     ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
-
+    INPUT_PATH= args.input_path
 
     # Check if CUDA is available
     if torch.cuda.is_available():
@@ -620,8 +620,8 @@ if __name__ == "__main__":
     # ~~~~~~~~~~~~~~~~ GATHERING DATA ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     # Find all the dated folders that our data lives in
-    print("Looking in this folder for MothboxData: " + args.input_path)
-    date_folders = find_date_folders(args.input_path)
+    print("Looking in this folder for MothboxData: " + INPUT_PATH)
+    date_folders = find_date_folders(INPUT_PATH)
     print(
         "Found ",
         str(len(date_folders)) + " dated folders potentially full of mothbox data",
