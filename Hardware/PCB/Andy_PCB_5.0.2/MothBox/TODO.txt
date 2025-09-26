@@ -25,6 +25,9 @@ it should be fixed, or replaced with something we know works!
 
 - Add holes for zip ties of extra battery! 
 
+- Double check the 5V supply delivers plenty of current
+
+- Make sure the external attractor can deliver plenty of power. Some folks are connecting 48-60watt attractors
 
 
 Haven't yet tested:
