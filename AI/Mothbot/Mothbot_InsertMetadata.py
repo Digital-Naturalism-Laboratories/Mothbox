@@ -495,8 +495,8 @@ def find_csv_match(input_path: str, metadata_path: str) -> dict:
 
     if len(matches) > 1:
         print(f"⚠️ Warning: Multiple matches found for '{parent_folder}', using the first one.")
-
-    print(f"✅ Matched deployment.name = '{matches[0].get('deployment_name')}'")
+    if len(matches)==1:
+        print(f"✅ Matched deployment.name = '{matches[0].get('deployment_name')}'")
     return matches[0] if matches else {}
 
 
