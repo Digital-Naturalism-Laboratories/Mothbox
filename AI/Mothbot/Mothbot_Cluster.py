@@ -50,7 +50,7 @@ sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding="utf-8", errors="repla
 # ~~~~Variables to Change~~~~~~~
 
 INPUT_PATH = (
-   r"E:\MothboxData_Hubert\Projects\Donald's data\Australia\20220111-Australia-Battery-TimeDelay-Subset\2022-27-12"  # raw string
+   r"C:\Users\andre\Desktop\donald\2022-01-11"  # raw string
 )
 
 #you probably always want these below as true
@@ -414,20 +414,35 @@ def temporal_subclusters(
         if cl != -1:  # skip noise
             cluster_to_indices[cl].append(idx)
 
-    # Regex to extract timestamp from filename
-    ts_pattern = re.compile(r"(\d{4}_?\d{2}_?\d{2}_?\d{2}_?\d{2}_?\d{2})")
 
-    # Loop through each perceptual cluster
+    # Regex patterns for both schemes
+    pattern_A = re.compile(r"(\d{4}_\d{2}_\d{2}__\d{2}_\d{2}_\d{2})")   # YYYY_MM_DD__HH_MM_SS
+    pattern_B = re.compile(r"(\d{14})")                                 # YYYYMMDDHHMMSS
+
     for cluster_id, indices in cluster_to_indices.items():
         timestamps = []
+
         for i in indices:
             fname = os.path.basename(patch_paths_hu[i])
-            match = ts_pattern.search(fname)
-            if not match:
+
+            ts_str = None
+            ts = None
+
+            # Try Scheme A
+            match_A = pattern_A.search(fname)
+            if match_A:
+                ts_str = match_A.group(1)
+                ts = datetime.strptime(ts_str, "%Y_%m_%d__%H_%M_%S")
+
+            # Try Scheme B
+            else:
+                match_B = pattern_B.search(fname)
+                if match_B:
+                    ts_str = match_B.group(1)
+                    ts = datetime.strptime(ts_str, "%Y%m%d%H%M%S")
+
+            if ts is None:
                 raise ValueError(f"Could not parse timestamp from filename: {fname}")
-            ts_str = match.group(1)
-            #ts = datetime.strptime(ts_str, "%Y_%m_%d__%H_%M_%S")
-            ts = datetime.strptime(ts_str, "%Y%m%d%H%M%S")
 
             timestamps.append((i, ts))
 
