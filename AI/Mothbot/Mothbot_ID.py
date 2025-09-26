@@ -1034,6 +1034,7 @@ if __name__ == "__main__":
     OVERWRITE_EXISTING_IDs= bool(int(args.overwrite_prev_bot_ID)) #note arg parser can't do booleans, so you need this workaround!
     ID_BOTDETECTIONS=bool(int(args.ID_Bot))
     ID_HUMANDETECTIONS=bool(int(args.ID_Hum))
+    INPUT_PATH= args.input_path
 
 
     # get species list DOI
@@ -1058,8 +1059,8 @@ if __name__ == "__main__":
 
 
     # Find all the dated folders that our data lives in
-    print("Looking in this folder for MothboxData: " + args.input_path)
-    date_folders = find_date_folders(args.input_path)
+    print("Looking in this folder for MothboxData: " + INPUT_PATH)
+    date_folders = find_date_folders(INPUT_PATH)
     print(
         "Found ",
         str(len(date_folders)) + " dated folders potentially full of mothbox data",
