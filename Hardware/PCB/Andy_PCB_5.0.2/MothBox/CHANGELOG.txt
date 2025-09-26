@@ -1,8 +1,33 @@
 Project Name: MothBox Main PCB
 
 
+
 PCB Versions:
 -------------
+
+Version 5.0.2:
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: 2025-09-TBD
+
+
+- Swap out the PCA9535 MUX to the PCA9555PW(UMW) as this has a pullup resistor: C42420607
+
+- add a MOSFET to switch power to the PCA9555 MUXes to minimise quiesent current usage.
+
+- Attractor 1 and 3 labels are switched i think
+
+- can move attractor labels out from under the foot print?
+
+- Silkscreen - we should put the test point labels on both sides of the board
+
+- Add holes for zip ties of extra battery! Will need input ASAP from Andy on where these need to go.  Can we add some generic bolt hoes, and then use a laser cut mounting frame?
+
+Done: Move resistor R22 from under Attractor 3 footprint
+Done: 5v test point is awkwardly under an LED on one side
+Done: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
+Done: change R3 to a lower value so as to raise the voltage to 5.2V for the RPi
+Done: swap out the BH1750FVI-TR LCSC: C78960 to the LTR-303ALS-01 ambient light sensor: C364577, US$0.38/ea, DFN-6(2x2)
+
 
 Version 5.0.1: 
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
@@ -28,3 +53,10 @@ Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm
 Date: 2025-05-??
 
 * designed and laid out by AndyQ
+
+$40/wk wheelchair - no leg lift/support
+
+16" $35/wk
+STD: $25/wk
+
+checkout Git Spec-kit   spec driven develpoment.

@@ -3679,7 +3679,7 @@
 		)
 		(uuid "0ffd49e0-e028-4e0c-a5d3-634e7d5d62cb")
 	)
-	(text "Buck Convertor (Input <9V-36V> PWR to +5V)"
+	(text "Buck Convertor (Input <9V-36V> PWR to +5.2V)"
 		(exclude_from_sim no)
 		(at 71.12 121.158 0)
 		(effects
@@ -3775,7 +3775,7 @@
 		)
 		(uuid "c1c6742d-3176-4d0b-ba22-63f03578cb43")
 	)
-	(text "Up to 4A output at 5V"
+	(text "Up to 4A output at 5.2V"
 		(exclude_from_sim no)
 		(at 135.382 126.492 0)
 		(effects
@@ -3824,12 +3824,6 @@
 		(uuid "fb10b457-a2a2-4801-b5bb-19e52bd03377")
 	)
 	(junction
-		(at 214.63 78.74)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "043df7ba-89e9-46dd-b292-816741c73907")
-	)
-	(junction
 		(at 100.33 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3870,12 +3864,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2978ee9d-03f6-4fa8-b002-0fcb6b95b09e")
-	)
-	(junction
-		(at 214.63 81.28)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "305facbe-d479-4ddf-96eb-ee05ec469bf0")
 	)
 	(junction
 		(at 154.94 138.43)
@@ -3998,6 +3986,12 @@
 		(uuid "86be713a-a120-48ca-a35e-b047aa1cef79")
 	)
 	(junction
+		(at 214.63 78.74)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "8a246369-8cd3-4eb4-be76-9699eebd00a9")
+	)
+	(junction
 		(at 130.81 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4010,10 +4004,22 @@
 		(uuid "8b6a179c-3bc1-4914-b136-3d9449e28da3")
 	)
 	(junction
+		(at 214.63 81.28)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9108874b-1533-4536-961c-79145c5007fb")
+	)
+	(junction
 		(at 210.82 77.47)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "9dcb6c18-6125-425c-bde6-2c54b266d0c4")
+	)
+	(junction
+		(at 214.63 83.82)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ae80c28e-a94d-4e25-975e-47f2c2218ce7")
 	)
 	(junction
 		(at 134.62 152.4)
@@ -4032,12 +4038,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b81d3ff1-8495-4002-b423-17a673338a03")
-	)
-	(junction
-		(at 214.63 83.82)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "bc8e736a-4242-437c-a46a-d2fbb423d6de")
 	)
 	(junction
 		(at 147.32 152.4)
@@ -4213,6 +4213,16 @@
 	)
 	(wire
 		(pts
+			(xy 214.63 78.74) (xy 214.63 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1997a28d-5836-4ef2-a273-94059c2aa861")
+	)
+	(wire
+		(pts
 			(xy 147.32 143.51) (xy 147.32 138.43)
 		)
 		(stroke
@@ -4380,16 +4390,6 @@
 			(type default)
 		)
 		(uuid "4023c9d7-91d9-436c-8b2f-34a5912ce6bb")
-	)
-	(wire
-		(pts
-			(xy 214.63 77.47) (xy 214.63 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "413bd2c5-6c01-4f39-807e-e0f69b58ea5b")
 	)
 	(wire
 		(pts
@@ -4843,7 +4843,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 78.74) (xy 214.63 81.28)
+			(xy 214.63 77.47) (xy 214.63 78.74)
 		)
 		(stroke
 			(width 0)
@@ -9367,7 +9367,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "3.3K"
+		(property "Value" "3.0K"
 			(at 123.19 152.3999 0)
 			(effects
 				(font
@@ -9475,7 +9475,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part" "C22978"
+		(property "LCSC_Part" "C4211"
 			(at 120.65 151.13 0)
 			(effects
 				(font
@@ -11673,7 +11673,8 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:Conn_01x04")
-		(at 219.71 81.28 0)
+		(at 219.71 83.82 0)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -11681,7 +11682,7 @@
 		(dnp no)
 		(uuid "cab5f2af-3272-4b6a-baf2-a313cc191cec")
 		(property "Reference" "J1"
-			(at 218.186 76.2 0)
+			(at 218.186 88.9 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11690,7 +11691,7 @@
 			)
 		)
 		(property "Value" "DB141V-2.54-4P"
-			(at 212.598 89.408 0)
+			(at 215.9 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11699,7 +11700,7 @@
 			)
 		)
 		(property "Footprint" "MothBox_footprints_Library:CONN-TH_4P-P2.54_DIBO_DB141V-2.54-4P"
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11708,7 +11709,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11717,7 +11718,7 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11726,7 +11727,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11735,7 +11736,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11744,7 +11745,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11753,7 +11754,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11762,7 +11763,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11771,7 +11772,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11780,7 +11781,7 @@
 			)
 		)
 		(property "Ali_Express_Link" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11789,7 +11790,7 @@
 			)
 		)
 		(property "LCSC_PN" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11798,7 +11799,7 @@
 			)
 		)
 		(property "LCSC_Part" "C2898746"
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11807,7 +11808,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11816,7 +11817,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11825,7 +11826,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 219.71 81.28 0)
+			(at 219.71 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
