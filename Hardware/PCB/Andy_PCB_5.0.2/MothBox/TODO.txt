@@ -1,10 +1,11 @@
 Things that need fixing:
 
+Note: Items that have been fixed are placed into the CHANGELOG.txt file and then deleted from this file
 
--The ambient light sensor I added in 501 doesn't work (hahahha probably because i didn't connect DVI to ANYTHING) the BH1750FVI-TR LCSC C78960
+- The ambient light sensor I added in 501 doesn't work (hahahha probably because i didn't connect DVI to ANYTHING) the BH1750FVI-TR LCSC C78960
 it should be fixed, or replaced with something we know works!
 
--The Muxes should be replaced with the version that has the pull up resistors
+- The Muxes should be replaced with the version that has the pull up resistors
 
 - add something that controls the power to the MUXes so they don't just constantly leech power except for when we want to read their state
 
@@ -15,9 +16,9 @@ it should be fixed, or replaced with something we know works!
 
 - Silkscreen - we should put the test point labels on both sides of the board
 
--"Attractor 3" has a resistor under its footprint. Should move
+- "Attractor 3" has a resistor under its footprint. Should move
 
--IMPORTANT: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
+- IMPORTANT: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
 
 - IMPORTANT: R3 on andy's BOM was wrong! should also be a little lower ( 3.0kohm) to make the voltage around 5.1 5.2 v for rpi to stop complaining so much about low voltage
 
@@ -37,21 +38,25 @@ it should be fixed, or replaced with something we know works!
 
 - Make sure the external attractor can deliver plenty of power. Some folks are connecting 48-60watt attractors
 
+- Pi Pin numbers are reversed?
+
 
 Haven't yet tested:
+-------------------
 
 - Leaving lights on for a long time
 
--GPS
+- GPS
 
--Regulator enabler mosfet
+- Regulator enabler mosfet
 
 - Double battery fit with smaller camera case?
 
 - Glare from camera
 
 
-Things I tested that did work!
+Things I tested that did work:
+------------------------------
 
 -The i2c voltage meter totally works!
 
@@ -59,9 +64,14 @@ Things I tested that did work!
 
 - attractors turn on!
 
--Photo lights turn on!
+- Photo lights turn on!
 
 
-Future Changes
+Future Changes:
+---------------
 
-- add a MCU with RTC that controls all the on and off times of the whole system for even better power management
+- add a MCU with RTC that controls all the on and off times of the whole system for even better power management. NOTE: this needs prototyping to test comms between the two devices:  MCU <--> RPi
+
+- do people want an external air temperature sensor, like the DS18B20?
+
+- can monitor a rough board temperature via an i2C based IC

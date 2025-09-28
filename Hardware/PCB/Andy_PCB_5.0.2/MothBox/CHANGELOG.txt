@@ -10,18 +10,17 @@ Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm
 Date: 2025-09-TBD
 
 
-- Swap out the PCA9535 MUX to the PCA9555PW(UMW) as this has a pullup resistor: C42420607
+- Add a 60W MOSFET Switch and connector for an external Attractor light. What style of connector?  Due to the extra current draw, the board will need a different 'bolt down' style main 12V connector?
 
-- add a MOSFET to switch power to the PCA9555 MUXes to minimise quiesent current usage.
-
-- Attractor 1 and 3 labels are switched i think
-
-- can move attractor labels out from under the foot print?
+- add a MOSFET to switch power to the PCA9555 MUXes to minimise quiescent current usage.
 
 - Silkscreen - we should put the test point labels on both sides of the board
 
 - Add holes for zip ties of extra battery! Will need input ASAP from Andy on where these need to go.  Can we add some generic bolt hoes, and then use a laser cut mounting frame?
 
+Done: Swap out the PCA9535 MUX to the PCA9555PW(UMW) as this has a pullup resistor: C42420607
+Done: fix the two Attractor 3 labels.  One should to #1
+Done: can move attractor labels out from under the foot print?
 Done: Move resistor R22 from under Attractor 3 footprint
 Done: 5v test point is awkwardly under an LED on one side
 Done: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
