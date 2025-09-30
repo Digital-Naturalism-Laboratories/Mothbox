@@ -1,30 +1,8 @@
-Things that need fixing:
 
 Note: Items that have been fixed are placed into the CHANGELOG.txt file and then deleted from this file
 
-- The ambient light sensor I added in 501 doesn't work (hahahha probably because i didn't connect DVI to ANYTHING) the BH1750FVI-TR LCSC C78960
-it should be fixed, or replaced with something we know works!
-
-- The Muxes should be replaced with the version that has the pull up resistors
-
-- add something that controls the power to the MUXes so they don't just constantly leech power except for when we want to read their state
-
-
-- Attractor 1 and 3 labels are switched i think
-
-- can move attractor labels out from under the foot print?
-
-- Silkscreen - we should put the test point labels on both sides of the board
-
-- "Attractor 3" has a resistor under its footprint. Should move
-
-- IMPORTANT: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
-
-- IMPORTANT: R3 on andy's BOM was wrong! should also be a little lower ( 3.0kohm) to make the voltage around 5.1 5.2 v for rpi to stop complaining so much about low voltage
-
-- 5v test point is awkwardly under an LED on one side
-
-- Add holes for zip ties of extra battery! 
+Things that need fixing:
+------------------------
 
 - Double check the 5V supply delivers plenty of current
 		- See suggestions on rpi forums, note how they say the XL4015 might be slow, so maybe extra good cap near input!:
@@ -54,6 +32,11 @@ Haven't yet tested:
 
 - Glare from camera
 
+- Andy to measure the board current using INA219 and multimeter across R4   I=V/R
+
+- Andy to measure voltage drop across two Photo LED Resistors, for example: R10 and R20 while switched on. Also measure the voltage drop from R10 & R20 to GND.  This will tell us the current being used by a string of LEDs on the Left and Right side. 
+
+
 
 Things I tested that did work:
 ------------------------------
@@ -72,6 +55,4 @@ Future Changes:
 
 - add a MCU with RTC that controls all the on and off times of the whole system for even better power management. NOTE: this needs prototyping to test comms between the two devices:  MCU <--> RPi
 
-- do people want an external air temperature sensor, like the DS18B20?
 
-- can monitor a rough board temperature via an i2C based IC

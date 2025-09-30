@@ -6,8 +6,8 @@
 	(paper "A4")
 	(title_block
 		(title "MothBox")
-		(date "2025-07-12")
-		(rev "5.0.1")
+		(date "2025-09-29")
+		(rev "5.0.2")
 		(company "Digital Naturalism Laboritories")
 	)
 	(lib_symbols

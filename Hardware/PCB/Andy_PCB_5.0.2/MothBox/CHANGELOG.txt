@@ -10,40 +10,52 @@ Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm
 Date: 2025-09-TBD
 
 
-- Add a 60W MOSFET Switch and connector for an external Attractor light. What style of connector?  Due to the extra current draw, the board will need a different 'bolt down' style main 12V connector?
+- Add a 60W MOSFET Switch and connector for an external Attractor light. What style of connector?  Due to the extra current draw, the board will need a different 'bolt down' style main 12V connector? Or, how about just outputting as MOSFET Gate signal?  Then people can use their own MOSFET Board and external power?
 
-- add a MOSFET to switch power to the PCA9555 MUXes to minimise quiescent current usage.
+
 
 - Silkscreen - we should put the test point labels on both sides of the board
 
-- Add holes for zip ties of extra battery! Will need input ASAP from Andy on where these need to go.  Can we add some generic bolt hoes, and then use a laser cut mounting frame?
+- add a user switch
 
-Done: Swap out the PCA9535 MUX to the PCA9555PW(UMW) as this has a pullup resistor: C42420607
-Done: fix the two Attractor 3 labels.  One should to #1
+- add a user LED
+
+Done: MOSFET switch the entire 3V3 line out of the RPi connector to minimise 3.3V quiescent current usage. 
+Done: add a SMD DS18B20 PCB temperature sensor
+Done: add provision for an external DS18B20 temperature sensor. Need a 4.7K ohm resistor and a 1.25mm 3-pin connector
+Done: remove 3V3 input leading to the ePaper hat connector as it has it's own built in 5V to 3V3 regulator
+Done: Swap out the PCA9535 MUX to the PCA9555PW(UMW) as this has pullup resistors: C42420607
+Done: fix the two Attractor 3 labels.  One should be #1
 Done: can move attractor labels out from under the foot print?
-Done: Move resistor R22 from under Attractor 3 footprint
+Done: Move resistor R22 out from underneath Attractor 3 footprint
 Done: 5v test point is awkwardly under an LED on one side
 Done: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
-Done: change R3 to a lower value so as to raise the voltage to 5.2V for the RPi
-Done: swap out the BH1750FVI-TR LCSC: C78960 to the LTR-303ALS-01 ambient light sensor: C364577, US$0.38/ea, DFN-6(2x2)
+Done: change R3 to a lower value (3K Ohm) so as to raise the voltage to 5.2V for the RPi
+Done: add an extra resistor close to R3 (Vf power), so feedback voltage can be easier to fine tune
+Done: swap out the BH1750FVI-TR LCSC: C78960 to the cheaper LTR-303ALS-01 ambient light sensor: C364577, US$0.38/ea, DFN-6(2x2)
+Done: remove: GPIO4/pin8 from RPi-ePaper.  Reroute to DS18B20
+Done: construct a stronger ground plain
+Done: Add an extra 6 (2 x 3) Photo LEDs to PCB
+Done: added Power input/Output direction arrows for each connector
 
 
 Version 5.0.1: 
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: 2025-05-18
 
-* design and laid out by building on the 5.0.0 design and user feedback
-* upgraded white LEDs to be twice as bright (500mW)
-* replaced switch multiplexer IC's with i2C based IC's
-* added an extra switch bank for another 8 hours of config options
-* reversed ePaper screen so it's on the otherside of PCB
-* swapped out the MOSFETs for different and cheaper versions
-* added a reverse polarity protection MOSFET to power intput
-* swapped out the green input connectors from a horizontal to vertical connectors
-* swapped out the 0805 fuse to a larger 1812 6A fuse
-* as there are now more i2C IC's on the bus, the i2C pullup resitor values where dropped to 4.7K ohm
-* added a project URL QR code to the PCB
-* general clean up of the schematic
+Done: design and laid out by building on the 5.0.0 design and user feedback
+Done: upgraded white LEDs to be twice as bright (500mW)
+Done: replaced switch multiplexer IC's with i2C based IC's
+Done: added an extra switch bank for another 8 hours of config options
+Done: reversed ePaper screen so it's on the other side of PCB
+Done: swapped out the MOSFETs for different and cheaper versions
+Done: added a reverse polarity protection MOSFET to power input
+Done: swapped out the green input connectors from a horizontal to vertical connectors
+Done: swapped out the 0805 fuse to a larger 1812 6A fuse
+Done: as there are now more i2C IC's on the bus, the i2C pullup resistor values where dropped to 4.7K ohm
+Done: added a project URL QR code to the PCB
+Done: general clean up of the schematic
+Done: add a BH1750FVI-TR light sensor (second v5.0.1 version)
 
 
 
@@ -53,9 +65,6 @@ Date: 2025-05-??
 
 * designed and laid out by AndyQ
 
-$40/wk wheelchair - no leg lift/support
 
-16" $35/wk
-STD: $25/wk
 
-checkout Git Spec-kit   spec driven develpoment.
+

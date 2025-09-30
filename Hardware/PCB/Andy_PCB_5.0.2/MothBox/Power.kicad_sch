@@ -6,11 +6,178 @@
 	(paper "A4")
 	(title_block
 		(title "MothBox")
-		(date "2025-07-12")
-		(rev "5.0.1")
+		(date "2025-09-29")
+		(rev "5.0.2")
 		(company "Digital Naturalism Laboritories")
 	)
 	(lib_symbols
+		(symbol "0_pauls_symbols:Device_LED_Small"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0.254)
+				(hide yes)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "D"
+				(at -1.27 3.175 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Value" "Device_LED_Small"
+				(at -4.445 -2.54 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "Device_LED_Small_0_1"
+				(polyline
+					(pts
+						(xy -0.762 -1.016) (xy -0.762 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0.762) (xy -0.508 1.27) (xy -0.254 1.27) (xy -0.508 1.27) (xy -0.508 1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.508 1.27) (xy 0 1.778) (xy 0.254 1.778) (xy 0 1.778) (xy 0 1.524)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0.762 -1.016) (xy -0.762 0) (xy 0.762 1.016) (xy 0.762 -1.016)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.016 0) (xy -0.762 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Device_LED_Small_1_1"
+				(pin passive line
+					(at -2.54 0 0)
+					(length 1.778)
+					(name "K"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 0 180)
+					(length 1.778)
+					(name "A"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "FRC0603J103TS_1"
 			(pin_names
 				(hide yes)
@@ -3727,6 +3894,16 @@
 		)
 		(uuid "2c316a88-7fce-46af-a14a-eb8c04c39f0a")
 	)
+	(text "Use for fine\nadjustments"
+		(exclude_from_sim no)
+		(at 113.538 156.972 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "35a094da-8f14-4568-b948-cf2de0c1b7bc")
+	)
 	(text "+"
 		(exclude_from_sim no)
 		(at 177.292 80.518 0)
@@ -3786,6 +3963,18 @@
 			)
 		)
 		(uuid "dca1d91d-7d5c-4cad-8fe0-b1892f6d7a58")
+	)
+	(text "USER LED/Switch"
+		(exclude_from_sim no)
+		(at 249.682 105.918 0)
+		(effects
+			(font
+				(size 1.778 1.778)
+				(thickness 0.3556)
+				(bold yes)
+			)
+		)
+		(uuid "e7603169-83c7-4a6f-a776-29377a9a244f")
 	)
 	(text "Basic Raw Input \nVoltage (9-36)\nAround 3A"
 		(exclude_from_sim no)
@@ -4303,6 +4492,26 @@
 	)
 	(wire
 		(pts
+			(xy 257.81 115.57) (xy 257.81 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2c7cdff5-6e2d-40a8-87cc-780572a9605c")
+	)
+	(wire
+		(pts
+			(xy 45.72 138.43) (xy 49.53 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2db6d38b-0347-4456-85b3-7c52e76d69fa")
+	)
+	(wire
+		(pts
 			(xy 210.82 77.47) (xy 209.55 77.47)
 		)
 		(stroke
@@ -4373,6 +4582,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 153.67) (xy 120.65 154.94)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3ee397e1-8410-4a6a-98bd-4d9a3fba3bce")
+	)
+	(wire
+		(pts
 			(xy 148.59 90.17) (xy 149.86 90.17)
 		)
 		(stroke
@@ -4430,6 +4649,16 @@
 			(type default)
 		)
 		(uuid "4568bcf4-7b86-4968-bbad-f1063eb30142")
+	)
+	(wire
+		(pts
+			(xy 240.03 120.65) (xy 240.03 121.92)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "468fad71-fcfb-4244-9c11-0762537c6fd2")
 	)
 	(wire
 		(pts
@@ -4833,16 +5062,6 @@
 	)
 	(wire
 		(pts
-			(xy 120.65 157.48) (xy 120.65 153.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "837b9250-7cec-43ec-9072-981b5aa0ab40")
-	)
-	(wire
-		(pts
 			(xy 214.63 77.47) (xy 214.63 78.74)
 		)
 		(stroke
@@ -4873,13 +5092,13 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 138.43) (xy 49.53 138.43)
+			(xy 257.81 121.92) (xy 257.81 123.19)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "8b8b6f0f-4296-46d7-883e-00aec9e8b4c4")
+		(uuid "8ae75b3d-d331-41b7-b8ab-27b33e6c82f4")
 	)
 	(wire
 		(pts
@@ -5133,6 +5352,16 @@
 	)
 	(wire
 		(pts
+			(xy 120.65 160.02) (xy 120.65 161.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c128bad2-80de-4289-a1c7-9378ebc567c8")
+	)
+	(wire
+		(pts
 			(xy 96.52 54.61) (xy 100.33 54.61)
 		)
 		(stroke
@@ -5183,6 +5412,16 @@
 	)
 	(wire
 		(pts
+			(xy 240.03 114.3) (xy 241.3 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ce9ff4a6-806e-4590-8f59-72ece0c5ad94")
+	)
+	(wire
+		(pts
 			(xy 209.55 87.63) (xy 210.82 87.63)
 		)
 		(stroke
@@ -5190,6 +5429,16 @@
 			(type default)
 		)
 		(uuid "cf59546e-8d38-48d7-85d1-f1b4950a4c35")
+	)
+	(wire
+		(pts
+			(xy 240.03 127) (xy 240.03 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d0fb9c88-ec41-4035-864b-492a19edb50b")
 	)
 	(wire
 		(pts
@@ -5253,6 +5502,16 @@
 	)
 	(wire
 		(pts
+			(xy 257.81 128.27) (xy 257.81 129.54)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de4cebd4-fb98-44fc-9a5a-c87e9b25cd1c")
+	)
+	(wire
+		(pts
 			(xy 214.63 83.82) (xy 210.82 83.82)
 		)
 		(stroke
@@ -5310,6 +5569,16 @@
 			(type default)
 		)
 		(uuid "e447360f-9b8e-4820-bb6f-33fe7d726d90")
+	)
+	(wire
+		(pts
+			(xy 240.03 115.57) (xy 240.03 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e59d6a4e-c99f-4450-8f65-022a324b9b64")
 	)
 	(wire
 		(pts
@@ -6208,6 +6477,71 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "J3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:GND")
+		(at 257.81 129.54 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "103438a8-5598-4d21-b5a5-249d5784c202")
+		(property "Reference" "#PWR072"
+			(at 257.81 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 258.064 134.112 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 257.81 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 257.81 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 257.81 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "644ee327-d71a-49ee-8336-25f55cb9b74e")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "#PWR072")
 					(unit 1)
 				)
 			)
@@ -7213,6 +7547,76 @@
 		)
 	)
 	(symbol
+		(lib_id "0_pauls_symbols:Device_LED_Small")
+		(at 240.03 124.46 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "2cb9c5b6-8e92-434c-a7e3-17759e027843")
+		(property "Reference" "D3"
+			(at 241.681 123.1208 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Green"
+			(at 241.681 125.5451 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 124.46 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 240.03 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b72f14ca-3e13-4fc8-9d48-5ed2ed240b65")
+		)
+		(pin "2"
+			(uuid "2519d457-dcfd-42c0-88ed-4ca2efa94070")
+		)
+		(instances
+			(project ""
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "D3")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:Conn_01x04")
 		(at 58.42 86.36 180)
 		(unit 1)
@@ -7524,6 +7928,175 @@
 		)
 	)
 	(symbol
+		(lib_id "MothBox_Symbol_Library:R_Small")
+		(at 257.81 119.38 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "338fb812-70c3-4fa5-81b3-f82081df41a6")
+		(property "Reference" "R35"
+			(at 256.794 118.11 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10K"
+			(at 256.794 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C25804"
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "3d36182b-1adf-4305-adaa-374016f00e80")
+		)
+		(pin "1"
+			(uuid "099d73bb-fd45-4b61-9a36-78d654ed931c")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "R35")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:TestPoint")
 		(at 45.72 137.16 0)
 		(unit 1)
@@ -7685,7 +8258,6 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3d6b18ae-aa23-47e9-acb2-698d9ad5f014")
 		(property "Reference" "#PWR031"
 			(at 49.53 142.24 0)
@@ -7697,7 +8269,7 @@
 			)
 		)
 		(property "Value" "+24V"
-			(at 49.53 133.35 0)
+			(at 51.054 134.112 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8095,6 +8667,71 @@
 		)
 	)
 	(symbol
+		(lib_id "MothBox_Symbol_Library:GND")
+		(at 240.03 128.27 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "57dbc009-31e6-4a98-8781-065acc5b4932")
+		(property "Reference" "#PWR071"
+			(at 240.03 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 240.284 132.842 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 240.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 240.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 240.03 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e1282ed1-8dba-43b2-909c-30fa2a599233")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "#PWR071")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:C_Small")
 		(at 147.32 146.05 0)
 		(unit 1)
@@ -8332,6 +8969,184 @@
 			(project "MothBox"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "#U$02")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:R_Small")
+		(at 240.03 118.11 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "5fd277e9-5823-4fb1-89ef-663cc1c629ca")
+		(property "Reference" "R34"
+			(at 242.57 116.8399 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.0K"
+			(at 242.57 119.3799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C4211"
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 240.03 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9e84a7b3-9993-4241-8dd9-0ecac6346810")
+		)
+		(pin "2"
+			(uuid "fb1bcb1a-9bf2-4693-8abf-a67934e9523c")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "R34")
 					(unit 1)
 				)
 			)
@@ -8579,6 +9394,72 @@
 		)
 	)
 	(symbol
+		(lib_id "MothBox_Symbol_Library:+3.3V")
+		(at 257.81 115.57 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "7a795a04-a297-4848-b0be-43115b80749a")
+		(property "Reference" "#PWR073"
+			(at 257.81 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+3.3V"
+			(at 260.858 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 257.81 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 257.81 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
+			(at 257.81 115.57 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "995cc098-5b44-4fd3-95da-0528add918a0")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "#PWR073")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:C_Small")
 		(at 92.71 132.08 0)
 		(mirror y)
@@ -8815,6 +9696,183 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "#PWR04")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:R_Small")
+		(at 120.65 157.48 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "81de736b-2b96-4e10-be44-438308f010ae")
+		(property "Reference" "R32"
+			(at 122.936 156.21 0)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0R"
+			(at 122.936 158.4299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:R_0603_1608Metric"
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C21189"
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 120.65 157.48 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8942a461-c143-4e30-8cc9-da3b6f6e8fb9")
+		)
+		(pin "2"
+			(uuid "1b9e8ebe-243c-43af-83b5-2c46aa44eb1a")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "R32")
 					(unit 1)
 				)
 			)
@@ -10353,15 +11411,15 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:C_Polarized_Small_US")
-		(at 49.53 143.51 0)
+		(at 134.62 146.05 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "a8be7dca-b8e7-4461-b993-bfd2f8624753")
-		(property "Reference" "C1"
-			(at 44.958 141.478 0)
+		(uuid "b74365a3-a27b-449c-bc2a-f383a27eeb12")
+		(property "Reference" "C16"
+			(at 128.778 144.526 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10369,8 +11427,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "470uF 50V"
-			(at 37.846 146.05 0)
+		(property "Value" "1000uF 50V"
+			(at 127 148.336 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10378,8 +11436,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:CP_Elec_10x12.5"
-			(at 49.53 143.51 0)
+		(property "Footprint" "0_easyeda_footprints:CAP-TH_BD16.0-P7.50-D1.2-FD"
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10387,8 +11445,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 49.53 143.51 0)
+		(property "Datasheet" "https://lcsc.com/product-detail/Aluminum-Electrolytic-Capacitors-Leaded_1000uF-20-50V_C106656.html"
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10396,8 +11454,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "470uF 50V 530mA@120Hz ±20% SMD,D12.5xL13.5mm Aluminum Electrolytic Capacitors - SMD ROHS"
-			(at 49.53 143.51 0)
+		(property "Description" ""
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10406,7 +11464,7 @@
 			)
 		)
 		(property "AVAILABILITY" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10415,7 +11473,7 @@
 			)
 		)
 		(property "DESCRIPTION" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10424,7 +11482,7 @@
 			)
 		)
 		(property "Link" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10433,7 +11491,7 @@
 			)
 		)
 		(property "PACKAGE" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10442,7 +11500,7 @@
 			)
 		)
 		(property "PRICE" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10451,7 +11509,7 @@
 			)
 		)
 		(property "LCSC_Part_No" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10460,7 +11518,7 @@
 			)
 		)
 		(property "Ali_Express_Link" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10469,7 +11527,7 @@
 			)
 		)
 		(property "LCSC_PN" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10478,7 +11536,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10487,7 +11545,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10496,7 +11554,7 @@
 			)
 		)
 		(property "Sim.Type" ""
-			(at 49.53 143.51 0)
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10504,8 +11562,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC_Part" "C90272"
-			(at 49.53 143.51 0)
+		(property "LCSC_Part" "C106656"
+			(at 134.62 146.05 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10514,15 +11572,15 @@
 			)
 		)
 		(pin "2"
-			(uuid "fbb47357-216d-4494-8779-8f47f357cd99")
+			(uuid "5c15e6f5-e2d0-4ce6-965a-bbc59c0ade12")
 		)
 		(pin "1"
-			(uuid "1287bf9a-6e9c-4bba-9877-7973f15670b0")
+			(uuid "cea9e969-771d-4fd8-b657-105e5dde63df")
 		)
 		(instances
-			(project "MothBo"
+			(project "MothBox5.0.2"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "C1")
+					(reference "C16")
 					(unit 1)
 				)
 			)
@@ -10879,7 +11937,7 @@
 	)
 	(symbol
 		(lib_id "MothBox_Symbol_Library:GND")
-		(at 120.65 157.48 0)
+		(at 120.65 161.29 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -10888,7 +11946,7 @@
 		(fields_autoplaced yes)
 		(uuid "bb760afc-318a-4982-9476-905053fc7f03")
 		(property "Reference" "#PWR010"
-			(at 120.65 163.83 0)
+			(at 120.65 167.64 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10897,7 +11955,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 120.65 162.56 0)
+			(at 120.65 166.37 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10905,7 +11963,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 120.65 157.48 0)
+			(at 120.65 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10914,7 +11972,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 157.48 0)
+			(at 120.65 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10923,7 +11981,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 120.65 157.48 0)
+			(at 120.65 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11068,183 +12126,6 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "#PWR012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "MothBox_Symbol_Library:C_Polarized_Small_US")
-		(at 134.62 146.05 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "c582ad8d-5037-43e3-987e-d41e1c9356f8")
-		(property "Reference" "C4"
-			(at 134.874 143.764 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "470uF 50V"
-			(at 128.016 148.844 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "MothBox_footprints_Library:CP_Elec_10x12.5"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "470uF 50V 530mA@120Hz ±20% SMD,D12.5xL13.5mm Aluminum Electrolytic Capacitors - SMD ROHS"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "AVAILABILITY" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "DESCRIPTION" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Link" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PACKAGE" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "PRICE" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC_Part_No" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Ali_Express_Link" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC_PN" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Type" ""
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC_Part" "C90272"
-			(at 134.62 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "2"
-			(uuid "4b31b507-ad5b-48f7-98aa-64ff47205276")
-		)
-		(pin "1"
-			(uuid "b254f15e-993a-4886-9dd0-e7591f273c95")
-		)
-		(instances
-			(project "MothBox"
-				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
-					(reference "C4")
 					(unit 1)
 				)
 			)
@@ -12758,6 +13639,193 @@
 		)
 	)
 	(symbol
+		(lib_id "MothBox_Symbol_Library:C_Small")
+		(at 257.81 125.73 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f11ad271-a753-4324-b7da-ea68fef596d7")
+		(property "Reference" "C15"
+			(at 256.54 123.952 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "0.1uF"
+			(at 257.048 128.016 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "MothBox_footprints_Library:C_0603_1608Metric"
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Multilayer-Ceramic-Capacitors-MLCC-SMD-SMT_100nF-104-10-50V_C14663.html"
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C14663"
+			(at 257.81 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "70249b7a-4388-4907-9887-29d5f8f7d0cb")
+		)
+		(pin "1"
+			(uuid "aca94d2a-c29e-4031-8dee-2565f526453d")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "C15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "MothBox_Symbol_Library:GND")
 		(at 201.93 123.19 0)
 		(unit 1)
@@ -13010,7 +14078,7 @@
 			)
 		)
 		(property "Value" "0.1uF 50V"
-			(at 50.038 146.558 0)
+			(at 56.134 145.542 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13163,6 +14231,183 @@
 			(project "MothBo"
 				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "MothBox_Symbol_Library:C_Polarized_Small_US")
+		(at 49.53 143.51 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "fbceab1d-2dc4-4b21-9ddd-c0e7813e6e34")
+		(property "Reference" "C14"
+			(at 43.688 141.986 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "1000uF 50V"
+			(at 41.91 145.796 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "0_easyeda_footprints:CAP-TH_BD16.0-P7.50-D1.2-FD"
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Aluminum-Electrolytic-Capacitors-Leaded_1000uF-20-50V_C106656.html"
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "AVAILABILITY" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "DESCRIPTION" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Link" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PACKAGE" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PRICE" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part_No" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Ali_Express_Link" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_PN" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" ""
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC_Part" "C106656"
+			(at 49.53 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "cdd1c018-2a1e-4aec-8348-f1bfdcfa7e4a")
+		)
+		(pin "1"
+			(uuid "40b3c9bc-8f50-4206-b256-f809a2eab378")
+		)
+		(instances
+			(project "MothBox5.0.2"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc/4a573100-9946-48c2-8ae5-35f893607623"
+					(reference "C14")
 					(unit 1)
 				)
 			)
