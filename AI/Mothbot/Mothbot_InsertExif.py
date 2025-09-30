@@ -130,7 +130,7 @@ def load_anylabeling_data(json_path, image_path, tagger):
   detections = data['shapes']
 
   nightfolder =os.path.dirname(image_path)
-
+  i=0
   for label in detections:
 
 
@@ -157,14 +157,16 @@ def load_anylabeling_data(json_path, image_path, tagger):
 
     full_patch_path=Path(nightfolder+"/"+the_patch_path) #should work on mac or windows
 
+    print(str(i)+"/"+str(len(detections))+" detection being processed")
     print("adding taxonomy with Exiftool...(can take a couple seconds)")
 
     print("adding GPS to "+str(full_patch_path))
     add_gps_exif(full_patch_path, full_patch_path,float(lat), float(long))
 
     tagger.add_taxonomy_with_exiftool(str(full_patch_path), taxonomic_list) 
-    print("✅ exif data written into patch file" +str(full_patch_path))
+    print("exif data written into patch file" +str(full_patch_path))
 
+    i=i+1
 
   
   return
@@ -582,9 +584,10 @@ def add_gps_exif(input_path, output_path, lat, lng, altitude=None):
 
     # Check if GPS data already exists
     gps_existing = exif_dict.get("GPS", {})
-    if gps_existing.get(piexif.GPSIFD.GPSLatitude) and gps_existing.get(piexif.GPSIFD.GPSLongitude):
-        print("GPS data already exists. No changes made.")
-        return
+    # Skipping the Skipping for now!
+    #if gps_existing.get(piexif.GPSIFD.GPSLatitude) and gps_existing.get(piexif.GPSIFD.GPSLongitude):
+    #    print("GPS data already exists. No changes made.")
+    #    return
     
     # Create GPS IFD
     gps_ifd = {
