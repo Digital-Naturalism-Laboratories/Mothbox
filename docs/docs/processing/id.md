@@ -22,7 +22,10 @@ Click the big orange box that says "Run Identification" and you will see the scr
 
 <img width="1279" height="700" alt="MothbotID3" src="https://github.com/user-attachments/assets/08e9441c-e4a2-4523-bda5-78deb8bf1370" /><br>
 
-When your done running the ID script, your window should look like this (notice the green checkbox indicating that identifications are complete and text that says identification process is complete):
+> [!NOTE]
+> When you first run the ID program with a specific species list, it needs to do a thing where it creates "embeddings" of that specific species list. They get saved as a ".pt" file next to your species list. This means the first time you run an ID, it might take a bit longer, but subsequent ID processing with the same species list should go faster! HOWEVER, there can be a time where, if you update that species list, you can get an error when you run the script because the old embeddings don't match that species list. so **if you get an error, delete that ".pt" file, and run it again**
+
+When you are done running the ID script, your window should look like this (notice the green checkbox indicating that identifications are complete and text that says identification process is complete):
 
 <img width="1185" height="456" alt="IDfinished" src="https://github.com/user-attachments/assets/18fae682-0574-4881-b1bb-e84bab08a485" /><br>
 
