@@ -6,7 +6,7 @@
 	(paper "User" 381 254)
 	(title_block
 		(title "MothBox")
-		(date "2025-09-29")
+		(date "2025-10-02")
 		(rev "5.0.2")
 		(company "Digital Naturalism Laboritories")
 	)
@@ -2591,6 +2591,42 @@
 		)
 		(uuid 6d44d45e-59c1-46ec-9560-7a9b2b144120)
 	)
+	(text "13"
+		(exclude_from_sim no)
+		(at 241.554 68.58 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "169d797b-3a23-48ca-83b3-53ab62612bf8")
+	)
+	(text "2"
+		(exclude_from_sim no)
+		(at 260.858 53.086 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "37ba3fd5-2537-4f66-8bd4-e6f9fe6c426f")
+	)
+	(text "1"
+		(exclude_from_sim no)
+		(at 241.808 53.086 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "4049750c-4b4d-4e6c-981a-6a38d72e31fb")
+	)
 	(text "Raspberry Pi 5\nConnector"
 		(exclude_from_sim no)
 		(at 250.444 41.656 0)
@@ -2602,6 +2638,19 @@
 			)
 		)
 		(uuid "4994295f-023c-42ad-917e-44d5287f8142")
+	)
+	(text "NOTE: The connector is in back-to-front.  \nBut it's wired up so it works."
+		(exclude_from_sim no)
+		(at 252.73 117.602 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+				(color 255 19 27 1)
+			)
+		)
+		(uuid "4b910860-e322-45de-8dee-cd6df8ab9bf4")
 	)
 	(text "RPI 5 Module\n"
 		(exclude_from_sim no)
@@ -2615,6 +2664,66 @@
 		)
 		(uuid "55f5bc87-5ca7-4d4f-88a9-328e5ae634f1")
 	)
+	(text "11"
+		(exclude_from_sim no)
+		(at 241.046 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "93594150-31af-470d-b3de-e63a21c23c0a")
+	)
+	(text "8"
+		(exclude_from_sim no)
+		(at 260.858 61.214 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "9a3d2a04-56f7-4203-85d1-f021f4f9e561")
+	)
+	(text "3.3V"
+		(exclude_from_sim no)
+		(at 237.744 75.184 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "aeb0c81d-3ce7-480b-bd84-0886612a35fc")
+	)
+	(text "15"
+		(exclude_from_sim no)
+		(at 241.808 71.374 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "b056c25d-a35a-40cb-a0ca-c57ab7969d22")
+	)
+	(text "12"
+		(exclude_from_sim no)
+		(at 261.112 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "ba959269-16ac-4a28-80a1-c86262320853")
+	)
 	(text "Raspberry Pi 5\nePaper Hat"
 		(exclude_from_sim no)
 		(at 112.014 40.386 0)
@@ -2626,6 +2735,30 @@
 			)
 		)
 		(uuid "c63cb130-4fe6-4d07-9a0c-3e6ba0c81a00")
+	)
+	(text "2"
+		(exclude_from_sim no)
+		(at 241.808 56.134 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "e7e4d0ea-08f1-4067-95d5-ec9c032170b8")
+	)
+	(text "7"
+		(exclude_from_sim no)
+		(at 242.316 61.468 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+		)
+		(uuid "f1bee08f-0a04-41b9-9647-133ced51617d")
 	)
 	(junction
 		(at 135.89 123.19)
@@ -2740,11 +2873,7 @@
 		(uuid "07b93b62-34de-4d6a-842e-02573558968f")
 	)
 	(no_connect
-		(at 261.62 67.31)
-		(uuid "1b0ab84c-30a1-487c-972b-e849637edfb2")
-	)
-	(no_connect
-		(at 241.3 72.39)
+		(at 241.3 74.93)
 		(uuid "23cddb81-6109-49a1-9f55-236d15d3f635")
 	)
 	(no_connect
@@ -2762,6 +2891,10 @@
 	(no_connect
 		(at 83.82 93.98)
 		(uuid "3422eff6-c8a8-4fe1-bbc4-6c3fd4ec6ff4")
+	)
+	(no_connect
+		(at 241.3 72.39)
+		(uuid "393e4b20-1b19-4e34-af1d-616eb0182090")
 	)
 	(no_connect
 		(at 134.62 76.2)
@@ -2782,14 +2915,6 @@
 	(no_connect
 		(at 83.82 101.6)
 		(uuid "57082ff3-e0ff-4438-8e3a-0a4a8ea07fdc")
-	)
-	(no_connect
-		(at 241.3 74.93)
-		(uuid "5f22cf9d-98f5-47e0-93a1-aa88082b147e")
-	)
-	(no_connect
-		(at 261.62 97.79)
-		(uuid "733d0f6c-e7d6-4c67-bbcc-e85c9edf565a")
 	)
 	(no_connect
 		(at 134.62 78.74)
@@ -2824,10 +2949,6 @@
 		(uuid "e05ed1be-869d-412a-965b-7b7745e90f7b")
 	)
 	(no_connect
-		(at 241.3 95.25)
-		(uuid "ede545e0-fcfa-4d4b-ab77-239d0384fe03")
-	)
-	(no_connect
 		(at 241.3 87.63)
 		(uuid "f08ce962-40a9-496e-8d79-45a560aacd06")
 	)
@@ -2838,6 +2959,10 @@
 	(no_connect
 		(at 134.62 83.82)
 		(uuid "f88d8747-1219-48ce-b5f0-f78c06ffe861")
+	)
+	(no_connect
+		(at 261.62 67.31)
+		(uuid "f893f93c-dc0f-43b0-af89-63bd26313426")
 	)
 	(wire
 		(pts
@@ -3825,6 +3950,50 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "User_LED"
+		(shape input)
+		(at 241.3 95.25 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c5c5636c-3dca-404c-a7cb-22a7f0dea65b")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 229.6667 95.25 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "SWITCH"
+		(shape input)
+		(at 261.62 97.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "cc73659b-38bd-4906-9963-8c236969ca0c")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 271.439 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 				(hide yes)
 			)
 		)

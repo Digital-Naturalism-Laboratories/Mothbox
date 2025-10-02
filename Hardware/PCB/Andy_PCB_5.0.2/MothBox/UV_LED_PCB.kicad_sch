@@ -6,7 +6,7 @@
 	(paper "A4")
 	(title_block
 		(title "MothBox")
-		(date "2025-09-29")
+		(date "2025-10-02")
 		(rev "5.0.2")
 		(company "Digital Naturalism Laboritories")
 	)
@@ -3159,6 +3159,18 @@
 		)
 		(uuid ce243bca-0186-4b41-aa21-ca9b837f1495)
 	)
+	(text "-"
+		(exclude_from_sim no)
+		(at 108.966 121.158 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "089eace1-9a4a-4e5c-b959-f198367d583f")
+	)
 	(text "UV External Attractor"
 		(exclude_from_sim no)
 		(at 169.672 99.568 0)
@@ -3180,6 +3192,42 @@
 			)
 		)
 		(uuid "4a3e2528-3816-4cb4-a854-ca3dec0f7afe")
+	)
+	(text "-"
+		(exclude_from_sim no)
+		(at 107.696 56.388 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "4e0e7b98-bf4e-478a-b0d3-c8dc1bf1c5b0")
+	)
+	(text "+"
+		(exclude_from_sim no)
+		(at 233.172 49.53 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "65f52923-bcaa-4e72-8645-24485297323e")
+	)
+	(text "+"
+		(exclude_from_sim no)
+		(at 107.696 51.054 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "6d05e267-85d3-4f61-ae40-fc7e30821e77")
 	)
 	(text "UV PCB1 Control Circuit"
 		(exclude_from_sim no)
@@ -3215,6 +3263,18 @@
 		)
 		(uuid "83a25cc1-2b78-4994-9b0b-83d1730dd219")
 	)
+	(text "-"
+		(exclude_from_sim no)
+		(at 233.172 54.864 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "83b8c614-3861-4c9b-ab08-9d2b4889d184")
+	)
 	(text "UV PCB2 current consumtiom = 500mA"
 		(exclude_from_sim no)
 		(at 50.292 104.648 0)
@@ -3236,6 +3296,18 @@
 			)
 		)
 		(uuid "90720b19-6e99-450c-8d8e-15e59a3497e1")
+	)
+	(text "+"
+		(exclude_from_sim no)
+		(at 108.966 115.824 0)
+		(effects
+			(font
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
+			)
+		)
+		(uuid "9897c7a2-13df-44e2-bb60-5bc8b142187b")
 	)
 	(text "v5.0.0 used the: PZ254R-11-04P single row connector"
 		(exclude_from_sim no)

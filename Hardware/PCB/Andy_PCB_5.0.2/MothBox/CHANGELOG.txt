@@ -9,17 +9,9 @@ Version 5.0.2:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: 2025-09-TBD
 
-
-- Add a 60W MOSFET Switch and connector for an external Attractor light. What style of connector?  Due to the extra current draw, the board will need a different 'bolt down' style main 12V connector? Or, how about just outputting as MOSFET Gate signal?  Then people can use their own MOSFET Board and external power?
-
-
-
-- Silkscreen - we should put the test point labels on both sides of the board
-
-- add a user switch
-
-- add a user LED
-
+Done: Silkscreen - we should put the test point labels on both sides of the board
+Done: add a user switch
+Done: add a user LED
 Done: MOSFET switch the entire 3V3 line out of the RPi connector to minimise 3.3V quiescent current usage. 
 Done: add a SMD DS18B20 PCB temperature sensor
 Done: add provision for an external DS18B20 temperature sensor. Need a 4.7K ohm resistor and a 1.25mm 3-pin connector

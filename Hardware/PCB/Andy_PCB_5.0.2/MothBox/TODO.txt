@@ -12,11 +12,14 @@ Things that need fixing:
 		***** XL4015 can sag on fast spikes — compare with a good 5 A USB-C PD supply.
 		Keep PSU_MAX_CURRENT=5000 and stay on latest EEPROM/firmware; updates have improved brown-out handling.
 		Check vcgencmd get_throttled & journalctl for undervoltage logs.
+		PH: This seems to be handling the power ok?  Need to scope the 5V line to see the quality of the ripple and if there are brownouts etc.
 
 
-- Make sure the external attractor can deliver plenty of power. Some folks are connecting 48-60watt attractors
+- Make sure the external attractor can deliver plenty of power. Some folks are connecting 48-60watt attractors. PH: Yes, the switching MOSFET is rated for 13A, so it can easily handle 5A needed for 60W = 12V * 5A.  Note sure the input connectors will hold up to the extra current though?  Will need to test this out and monitor board wiring and connectors with a thermal camera.
 
-- Pi Pin numbers are reversed?
+- Pi connector is reversed in the schematic. This needs to be swapped around, but wiring kept in place
+
+- the schematic could be re-annotated?  Of course this will change the assignments and all the documentation will need to be updated.
 
 
 Haven't yet tested:
@@ -26,7 +29,7 @@ Haven't yet tested:
 
 - GPS
 
-- Regulator enabler mosfet
+- Regulator enabler MOSFET
 
 - Double battery fit with smaller camera case?
 
