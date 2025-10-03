@@ -52,6 +52,38 @@ Things I tested that did work:
 
 - Photo lights turn on!
 
+GND Measurements on v5.0.1b PCB:
+
+TP10= Bottom
+TP8 = Top
+TP9 = Left (middle)
+
+Everything on:
+TP10-TP9 = 3.8mV
+TP10-TP8 = 3.6mV
+TP9-TP8 = 0.2mV
+
+LEDs off:
+TP10-TP9 = 0.7mV
+TP10-TP8 = 0.6mV
+TP9-TP8 = 0.1mV
+
+Photo LED MOSFETs Drain to GND on v5.0.1b PCB:
+TP4 = 59mV   : Rds ~= 59mV / 1.152 = 51.2 mOhms (why this?)
+TP6 = 12.7mV : Rds ~= 12.7mV / 1.192A = 10.6 mOhms (this is about right)
+
+R4 (0.1 Ohm current shunt):
+16.7mV = 167mA at 26V = 4.34W (only RPi running)
+
+R10 18 Ohm Photo LED Resistor:
+2.69V = I=V/R = 149.4mA
+
+R20 18 Ohm Photo LED Resistor:
+2.60V = I=V/R = 144.4mA
+
+Minimum 5V Voltage measured = 5.09V, Max = 5.37V
+
+
 
 Future Changes:
 ---------------

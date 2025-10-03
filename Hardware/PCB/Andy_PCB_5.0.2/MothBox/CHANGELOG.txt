@@ -29,6 +29,7 @@ Done: remove: GPIO4/pin8 from RPi-ePaper.  Reroute to DS18B20
 Done: construct a stronger ground plain
 Done: Add an extra 6 (2 x 3) Photo LEDs to PCB
 Done: added Power input/Output direction arrows for each connector
+Done: modified Serial Number Box shape
 
 
 Version 5.0.1: 

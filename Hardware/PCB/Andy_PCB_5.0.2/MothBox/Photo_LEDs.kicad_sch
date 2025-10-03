@@ -1950,7 +1950,17 @@
 		)
 		(uuid bba3fbc2-1cbe-403f-9154-2fc4a16986d3)
 	)
-	(text "v5.0.0 used XINGLIGHT XL-2835UWC-02 \n\n60mA 6000K~7500K Yellow lens -20℃~+85℃ Positive Stick White 120° 200mW 3.4V SMD2835 LED Indication - Discrete ROH\n\nFigure out:\nEach string used around 83mA\n\nhow many batches per transistor thing\n\nwhat is the light angle of these LEDS (if any) without lens is cheaper\n\nCurrent per led = 60mA\nTotal current = 8(columns) x 60mA\n			  = 480mA\nTotal Luminous required = ?? lm  \nPer led luminous = ??? lm\n10 led Luminous = ???? lm"
+	(text "(144mA-149mA @ 11.89V measured through two strings: 2025-10-02)"
+		(exclude_from_sim no)
+		(at 205.74 156.21 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "4686df6b-fbe8-4db7-8c3f-7937bc88e5df")
+	)
+	(text "v5.0.0 used XINGLIGHT XL-2835UWC-02 \n\n60mA 6000K~7500K Yellow lens -20℃~+85C Positive Stick White 120° 200mW 3.4V SMD2835 LED Indication - Discrete ROH\n\nFigure out:\nEach string used around 83mA\n\nhow many batches per transistor thing\n\nwhat is the light angle of these LEDS (if any) without lens is cheaper\n\nCurrent per led = 60mA\nTotal current = 8(columns) x 60mA\n			  = 480mA\nTotal Luminous required = ?? lm  \nPer led luminous = ??? lm\n10 led Luminous = ???? lm"
 		(exclude_from_sim no)
 		(at 82.804 174.244 0)
 		(effects
@@ -1971,6 +1981,16 @@
 			)
 		)
 		(uuid "6ffa042b-5fa2-4e1f-b5b0-30335c290a2f")
+	)
+	(text "YJQ10N2A Rds = \n9 mOhms @ 4.5V\n12 mOhms @ 2.5V"
+		(exclude_from_sim no)
+		(at 263.144 125.73 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "9356157e-44e7-41aa-9e32-30dc5ab901d8")
 	)
 	(text "Left Photo LEDs Control"
 		(exclude_from_sim no)
