@@ -9,6 +9,8 @@ Version 5.0.2:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: 2025-09-TBD
 
+Done: AQ - change the user switch to use the ALWAYS on 3v3 power so that a user could always be able to push it, and then it could trigger a script to enable the other 3.3v
+Done: Aq - scoot items out of where batteries might be
 Done: Silkscreen - we should put the test point labels on both sides of the board
 Done: add a user switch
 Done: add a user LED
@@ -29,7 +31,7 @@ Done: remove: GPIO4/pin8 from RPi-ePaper.  Reroute to DS18B20
 Done: construct a stronger ground plain
 Done: Add an extra 6 (2 x 3) Photo LEDs to PCB
 Done: added Power input/Output direction arrows for each connector
-Done: modified Serial Number Box shape
+Done: modified Serial Number Box shape - andy added anothere switched it back because JLCPCB needs certain dimensions to automaticaly put the serial and QR code on
 
 
 Version 5.0.1: 

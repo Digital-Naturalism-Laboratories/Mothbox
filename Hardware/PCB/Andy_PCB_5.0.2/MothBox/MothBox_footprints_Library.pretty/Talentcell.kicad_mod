@@ -133,8 +133,8 @@
 		(uuid "690a126e-dc31-4c7c-a15a-dd857f505f36")
 	)
 	(fp_rect
-		(start -84 -25.5)
-		(end 81.5 26.5)
+		(start -7.75 -6.5)
+		(end 8.75 7.5)
 		(stroke
 			(width 0.05)
 			(type default)
@@ -142,6 +142,19 @@
 		(fill no)
 		(layer "F.CrtYd")
 		(uuid "4df75890-030a-45fb-adb1-4045d918098e")
+	)
+	(fp_text user "Talentcell Battery"
+		(at 7 6 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "90a8ba15-683c-4830-b68f-bebf36469291")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+			(justify left bottom)
+		)
 	)
 	(embedded_fonts no)
 	(model "C:/Users/andre/Documents/GitHub/Mothbox/Hardware/PCB/mothbox_front-main/3d/battery/Talentcell++PB120B1.stp"
