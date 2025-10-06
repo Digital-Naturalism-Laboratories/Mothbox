@@ -9,6 +9,7 @@ Version 5.0.2:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: 2025-09-TBD
 
+Done: AQ- swapped green indicator LED (C72043) which LCSC says is discontinued  for  C2289 which is dirt cheap and plentiful
 Done: AQ - change the user switch to use the ALWAYS on 3v3 power so that a user could always be able to push it, and then it could trigger a script to enable the other 3.3v
 Done: Aq - scoot items out of where batteries might be
 Done: Silkscreen - we should put the test point labels on both sides of the board
