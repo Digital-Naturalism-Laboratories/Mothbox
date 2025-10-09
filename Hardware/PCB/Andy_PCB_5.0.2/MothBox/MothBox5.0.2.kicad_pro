@@ -520,7 +520,7 @@
       "idf": "",
       "netlist": "MothBo.net",
       "plot": "production/",
-      "pos_files": "",
+      "pos_files": "newProduction_test/",
       "specctra_dsn": "",
       "step": "MothBox_nosilk.stl",
       "svg": "",
