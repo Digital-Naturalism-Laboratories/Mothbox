@@ -522,7 +522,7 @@
       "plot": "production/",
       "pos_files": "",
       "specctra_dsn": "",
-      "step": "MothBox.step",
+      "step": "MothBox_nosilk.stl",
       "svg": "",
       "vrml": ""
     },
