@@ -1,6 +1,8 @@
 import smbus2
 import time
 
+# NOTE: you need to turn on the sensor 3V3 power line before running this script!
+
 # I2C bus (1 for modern Raspberry Pi boards)
 I2C_BUS = 1
 I2C_ADDR = 0x40  # INA219 default address
@@ -29,7 +31,7 @@ def read_current():
     raw = bus.read_word_data(I2C_ADDR, REG_CURRENT)
     raw = ((raw & 0xFF) << 8) | (raw >> 8)  # Swap bytes
     # After calibration, each LSB = 1 mA (with calibration_value = 4096 and 0.1Ω shunt)
-    current_mA = raw * 0.001  # convert mA to A
+    current_mA = raw * 0.0001  # convert mA to A
     return current_mA
 
 try:

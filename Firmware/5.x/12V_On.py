@@ -5,7 +5,7 @@ import time
 import datetime
 from datetime import datetime
 
-print("----------------- attract off!-------------------")
+print("----------------- 12V power off!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -45,4 +45,4 @@ def board12vOn():
 
 board12vOn()    # turn on 12V to the MothBox
 
-#board12vOff()  # turn power off to the MothBox
+#board12vOff()  # turn 12V power off to the MothBox

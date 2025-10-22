@@ -5,7 +5,7 @@ import time
 import datetime
 from datetime import datetime
 
-print("----------------- 12V power off!-------------------")
+print("----------------- 3V3 sensors are on!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -14,7 +14,7 @@ print(f"Current time: {formatted_time}")
 global onlyflash
 onlyflash=False
 
-Relay_Ch1 = 23 # 12V MOSET Q8 Enable GPIO
+Relay_Ch1 = 27 # 3V3 MOSET Q11 Enable GPIO. NOTE: Active LOW
 
 
 GPIO.setwarnings(False)
@@ -34,17 +34,15 @@ def get_control_values(filename):
     return control_values
 
 
-def board12vOff():
-    GPIO.output(Relay_Ch1,GPIO.LOW)
+def board3V3Off():
+    GPIO.output(Relay_Ch1,GPIO.HIGH)
     print("12V power to the board is Off\n")
     
-def board12vOn():
-    GPIO.output(Relay_Ch1,GPIO.HIGH)
-    print("12V power to the board is On\n")
+def board3v3On():
+    GPIO.output(Relay_Ch1,GPIO.LOW)
+    print("3V3 power to the sensors are On\n")
 
 
-#board12vOn()    # turn on 12V to the MothBox
+board3v3On()    # turn 3V3 sensor power on
 
-board12vOff()  # turn 12V power off to the MothBox
-
-
+#board3v3Off()   # turn 3V3 sensor power off
