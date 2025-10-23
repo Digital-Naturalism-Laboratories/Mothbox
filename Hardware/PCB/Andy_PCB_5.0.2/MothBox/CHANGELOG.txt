@@ -5,6 +5,13 @@ Project Name: MothBox Main PCB
 PCB Versions:
 -------------
 
+Version 5.0.3:
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: TBD
+
+* add double ++-- to the three side power green/orange connector labels
+
+
 Version 5.0.2:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: 2025-09-TBD
