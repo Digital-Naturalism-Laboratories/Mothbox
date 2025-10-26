@@ -20,6 +20,8 @@ Relay_Ch1 = 19 #Photo lights
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
+# need to test to see if 12V line is on!
+
 GPIO.setup(Relay_Ch1,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
