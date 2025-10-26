@@ -9,7 +9,26 @@ Version 5.0.3:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: TBD
 
-* add double ++-- to the three side power green/orange connector labels
+* add double ++-- to the three side power green/orange connector labels and backside
+* change fuse from 1812 3A to 2920 6A?  Have to move IAN219 over a bit
+* decrease IAN219 sense resistor from 0.1 ohm to 0.033 ohm
+* remove old MB: text label and box from backside
+* do something about the D7, D6, D5, D2 ESD diodes.  Increase from 12V, to 18V or 45V?
+* Move RPi 5V cap to be above (otherside) of RPi, so the RPi can lay flat, or replace with a shorter version?  Tantalum cap?
+* fix R + L Flash LED labels to something like: L/R FLASH LED GND?
+* add Talentcell Battery part numbers? and larger font
+* whats happening to the two S/N boxes?
+* do something about the EXT Temp Sensor label?
+* move C5 and R33 label around the DS18B20 temp sensor box
+* change 1.5V text to 1.5A on the external connector
+* rotate input power connector 90 deg.
+* move the 'Active' label on the U11 switch to the RH side.
+* add --++ label to front side of PCB on the input connector
+* add two solder jumpers accross R4 so we can bypass the current measuments
+* Add Aducam camera P/N text?
+* move and rotate 3V3 line MOSFET labels, + R36, C??
+* rotate H1 + U8 GPS connector labels
+* make GPS box outline a bit smaller
 
 
 Version 5.0.2:
