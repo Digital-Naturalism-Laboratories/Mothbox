@@ -38,16 +38,20 @@ The heatsink just needs to be something big and metal we can connect the PCB to.
 The flexibility of this low cost device means you can put together different types of housings however you need.
 
 You can go super low-cost and just put it in a recycled sports-drink bottle
+
 <img src="https://github.com/user-attachments/assets/bd0e494e-6192-494c-b266-e6fd57c3014c" width="45%">
 
 or you can [laser cut a fancier flat-pack design](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Mothbeam_Housing/Mothbeam_Flatcontainer)
+
 <img src="https://github.com/user-attachments/assets/fd2c6542-056e-49ad-9002-5586bc7ca017" width="45%">
 
 you can even use the basic concepts in this tutorial and make a "Mega Mothbeam" by just using more PCBs and longer heatsink.
+
 ![20250907_185220](https://github.com/user-attachments/assets/5844cd13-9c62-4593-8be2-3c4e1f81b850)
 
 
 For this tutorial, we will show you how to make a very simple mid-range housing we call the "Basic Circular Housing"
+
 ![20250904_162405](https://github.com/user-attachments/assets/2de13c2e-2fab-4b07-9a5b-11a83bbd3336)
 
 
