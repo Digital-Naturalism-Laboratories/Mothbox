@@ -3,7 +3,7 @@ layout: default
 title: Prepare Parts
 parent: Mothbeam
 #has_children: true
-nav_order: 2
+nav_order: 3
 ---
 
 ![20251029_154140](https://github.com/user-attachments/assets/d141bb51-ff91-4392-b30d-54ca9582e910)
