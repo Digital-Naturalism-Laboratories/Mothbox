@@ -13,11 +13,11 @@ Date: TBD
 * change fuse from 1812 3A to 2920 6A?  Have to move IAN219 over a bit
 * decrease IAN219 sense resistor from 0.1 ohm to 0.033 ohm
 * remove old MB: text label and box from backside
-* do something about the D7, D6, D5, D2 ESD diodes.  Increase from 12V, to 18V or 45V?
-* Move RPi 5V cap to be above (otherside) of RPi, so the RPi can lay flat, or replace with a shorter version?  Tantalum cap?
+* do something about the D7, D6, D5, D2 ESD diodes.  Increase from 12V, to 18V or 45V? (AQ - I am still puzzled by this mystery, maybe just remove them? Nothing on this board is too Electro static discharge sensitive anyway right?
+* Move RPi 5V cap to be above (otherside) of RPi, so the RPi can lay flat, or replace with a shorter version?  Tantalum cap? (AQ-  can't fit that big capacitor above the board either, it will block sliding the pi in)
 * fix R + L Flash LED labels to something like: L/R FLASH LED GND?
-* add Talentcell Battery part numbers? and larger font
-* whats happening to the two S/N boxes?
+* add Talentcell Battery part numbers? (e.g. PB120B1) and larger font 
+* whats happening to the two S/N boxes? (AQ - keep the square one, leave space below it (or move it to where it has space below)
 * do something about the EXT Temp Sensor label?
 * move C5 and R33 label around the DS18B20 temp sensor box
 * change 1.5V text to 1.5A on the external connector
@@ -25,7 +25,7 @@ Date: TBD
 * move the 'Active' label on the U11 switch to the RH side.
 * add --++ label to front side of PCB on the input connector
 * add two solder jumpers accross R4 so we can bypass the current measuments
-* Add Aducam camera P/N text?
+* Add Aducam camera P/N text? Arducam 64MP OV64A40 OwlSight
 * move and rotate 3V3 line MOSFET labels, + R36, C??
 * rotate H1 + U8 GPS connector labels
 * make GPS box outline a bit smaller
