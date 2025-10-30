@@ -37,12 +37,11 @@ In this image I set the first three switches. This is probably the reccomended H
 
 The power values selectable are
 
-* 10mA
-* 80mA
-* 150mA
-* 300mA
-* 450mA
-
+* 120mW (12v @10mA)
+* 960mW (12v @80mA
+* 1800mW (12v @150mA) 
+* 3600mW (12v @300mA)
+* 5400mW (12v @450mA)
 
 # Wire PCBs
 
