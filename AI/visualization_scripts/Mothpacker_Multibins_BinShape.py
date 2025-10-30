@@ -33,13 +33,14 @@ BACKGROUND_ALPHA=0
 # Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
 
 ASPECT_RATIO=2
-
-PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
+# pi 4 max
+#PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
 # An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 15px/mm = 3150 for realistic insect sizes if printed full portrait mode
 # Or 297x15 = 4455 for landscape mode
 #  a letter sized sheet is 279.4x15 or 4191pixels wide (landscape)
 
-PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.157 x wider 
+PIX_PER_MM = 25.37 # Pi5 takes photos at width=9248     height=6944 which is 1.157 x wider
+# the width of a standard target is now 291mm which when measured in imagej is 7382 pixels, which gets us a conversion of a pixel width is 25.37 px/mm   
 # An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 17.36px/mm = 3645 for realistic insect sizes if printed full portrait mode
 # Or 297x15 = 5155.92 for landscape mode
 #  a letter sized sheet is 279.4x15 or 4850 pixels wide (landscape)
