@@ -13,10 +13,10 @@ For this tutorial, we will show you how to make a very simple mid-range housing 
 <img src="https://github.com/user-attachments/assets/2de13c2e-2fab-4b07-9a5b-11a83bbd3336" width="25%">
 
 # Parts for Basic Circular Housing
-* PCBs (ideally 2 or 4)
+* [PCBs](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/PCB/AndyMothbeam_forMBv5.0.1) (ideally 2 or 4)
 * 18awg solid core wire (red and black)
 * 20x20 aluminum profile (15cm long)
-* Circular Plexiglass tube, 6.5cm diameter (make sure transparent to UV)
+* Circular Plexiglass tube, 6.5cm diameter (make sure transparent to UV) (10cm long)
 * Laser cut acrylic [Top and Bottom lid](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Mothbeam_Housing/Mothbeam_CircularHousing)
 * Cable Ties (Basic nylon high heat resistant) (Preferably very thin)
 * (optional) Silicone heat transmitting pads
@@ -26,6 +26,7 @@ For this tutorial, we will show you how to make a very simple mid-range housing 
 # Tools Needed
 * Hot Glue Gun (Or epoxy)
 * Wire Strippers
+* Saw (if needing to cut housing tube or metal)
 
 ![20251029_162800](https://github.com/user-attachments/assets/10e8480b-c879-42cd-9360-fe5927351d46)
 
