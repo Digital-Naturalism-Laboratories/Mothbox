@@ -6,11 +6,31 @@ parent: Mothbeam
 nav_order: 1
 ---
 
-#  Origin
-Moritz at [LabLab](https://lablab.eu/) originally designed the [Mothbeams](https://certification.oshwa.org/de000156.html). He created them to be open-source, low cost, high power, modular, adapatable insect attractors! Many other lights available can cost $100-$700 USD, and so we wanted a cheaper option. We have been using pairs with one PCB with a range of UV, and another PCB with an array of useful visible light.
-
 # Parts
 
+For this tutorial, we will show you how to make a very simple mid-range housing we call the "Basic Circular Housing"
+
+<img src="https://github.com/user-attachments/assets/2de13c2e-2fab-4b07-9a5b-11a83bbd3336" width="25%">
+
+# Parts for Basic Circular Housing
+* PCBs (ideally 2 or 4)
+* 18awg solid core wire (red and black)
+* 20x20 aluminum profile (15cm long)
+* Circular Plexiglass tube, 6.5cm diameter (make sure transparent to UV)
+* Laser cut acrylic [Top and Bottom lid](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Mothbeam_Housing/Mothbeam_CircularHousing)
+* Cable Ties (Basic nylon high heat resistant) (Preferably very thin)
+* (optional) Silicone heat transmitting pads
+* (optional) DC barrel jack (socket and plug)
+* (optional) Electronic Snap connectors
+
+# Tools Needed
+* Hot Glue Gun (Or epoxy)
+* Wire Strippers
+
+![20251029_162800](https://github.com/user-attachments/assets/10e8480b-c879-42cd-9360-fe5927351d46)
+
+
+# Core Component Overview
 A mothbeam is easy to put together and has 3 main parts:
 
 * PCB
@@ -50,22 +70,7 @@ you can even use the basic concepts in this tutorial and make a "Mega Mothbeam" 
 ![20250907_185220](https://github.com/user-attachments/assets/5844cd13-9c62-4593-8be2-3c4e1f81b850)
 
 
-For this tutorial, we will show you how to make a very simple mid-range housing we call the "Basic Circular Housing"
 
-![20250904_162405](https://github.com/user-attachments/assets/2de13c2e-2fab-4b07-9a5b-11a83bbd3336)
-
-
-# Rundown of Parts to Gather for Basic Circular Housing
-
-* PCBs (ideally 2 or 4)
-* 18awg solid core wire (red and black)
-* 20x20 aluminum profile (15cm long)
-* Circular Plexiglass tube (make sure transparent to UV)
-* Laser cut [Top and Bottom lid](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Mothbeam_Housing/Mothbeam_CircularHousing)
-* Cable Ties (Basic nylon high heat resistant)
-* (optional) Silicone heat transmitting pads
-* (optional) DC barrel jack (socket and plug)
-* (optional) Electronic Snap connectors
 
 
 
