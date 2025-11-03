@@ -1,8 +1,10 @@
 import time
 from ltr303 import LTR303
 
+
 sensor = LTR303(bus_num=1)
 sensor.begin(gain=96, integration_time=400)
+time.sleep(1) #need to gggggggggggggggive it time to warm up
 
 #while True:
 while False:
