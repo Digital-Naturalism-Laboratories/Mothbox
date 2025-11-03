@@ -103,27 +103,27 @@ class LTR303:
         return ch0, ch1
 
     def calculate_lux(self, ch0, ch1):
-        # This formula comes from https://github.com/automote/LTR303/blob/master/LTR303.cpp
-        # Andy isn't suuuuuuure how much he trusts it
-        ratio = ch1 / float(ch0) if ch0 != 0 else 0
+        # This formula comes from the elusive Appendix A of this device
+        #https://forums.adafruit.com/viewtopic.php?t=216847
+        print(self.gain)
+        print(self.integration_time)
         
-        #normalize for integration time
-        ch0 *= (402.0/self.integration_time);
-        ch1 *= (402.0/self.integration_time);
+        pfactor = 1/1 # lets us adjust for diminishing factor of a window, for now just setting as 1 #pfactor is (ALS count without aperture or window / ALS count with aperture) 
         
-        # Example from Arduino library (may need adapting)
-        if ratio < 0.5:
-            lux = (0.0304 * ch0) - (0.062 * ch1)
-        elif ratio < 0.61:
-            lux = (0.0224 * ch0) - (0.031 * ch1)
-        elif ratio < 0.80:
-            lux = (0.0128 * ch0) - (0.0153 * ch1)
-        elif ratio < 1.30:
-            lux = (0.00146 * ch0) - (0.00112 * ch1)
+        ratio = ch1 / float(ch0+ch1)
+
+        # Example from AppendixA
+        if ratio < 0.45:
+            lux = (1.7743 * ch0 + 1.1059 * ch1)/self.gain/(self.integration_time/100)/pfactor
+        elif ratio < 0.64:
+            lux = (4.2785 * ch0 - 1.9548 * ch1)/self.gain/(self.integration_time/100)/pfactor
+        elif ratio < 0.85:
+            lux = (0.5926 * ch0 + 0.1185 * ch1)/self.gain/(self.integration_time/100)/pfactor
+
         else:
             lux = 0
-        # Adjust for gain 
-        lux = lux / (self.gain) 
+
+        lux = lux
         return lux
 
     def read_lux(self):
