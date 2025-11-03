@@ -105,8 +105,6 @@ class LTR303:
     def calculate_lux(self, ch0, ch1):
         # This formula comes from the elusive Appendix A of this device
         #https://forums.adafruit.com/viewtopic.php?t=216847
-        print(self.gain)
-        print(self.integration_time)
         
         pfactor = 1/1 # lets us adjust for diminishing factor of a window, for now just setting as 1 #pfactor is (ALS count without aperture or window / ALS count with aperture) 
         
