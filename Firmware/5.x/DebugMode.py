@@ -4,7 +4,8 @@
 This is a special script to debug mothboxes with which will
 -Stop cron
 -Stop the internet from going off
--Turning off the bright UV 
+-Turning off the bright UV
+-Turn off the Photo flash lights (if they are on)
 -stop the mothbox from shutting down
 '''
 
@@ -24,7 +25,7 @@ now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
 print(f"Current time: {formatted_time}")
-print("----------------- STOP CRON-------------------")
+print("----------------- Go to Debug Mode STOP CRON!-------------------")
 
 
 def stop_cron():
@@ -39,48 +40,44 @@ stop_cron()
 
 
 
-print("----------------- ATTRACT OFF-------------------")
+print("----------------- all OFF-------------------")
 
 
-Relay_Ch1 = 26
-Relay_Ch2 = 20
-Relay_Ch3 = 21
+GPIO_SW_Ch1 = 5
+GPIO_SW_Ch2 = 6
+GPIO_SW_Ch3 = 9
+GPIO_SW_Flash = 19
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-GPIO.setup(Relay_Ch1,GPIO.OUT)
-GPIO.setup(Relay_Ch2,GPIO.OUT)
+GPIO.setup(GPIO_SW_Ch1,GPIO.OUT)
+GPIO.setup(GPIO_SW_Ch2,GPIO.OUT)
 
-GPIO.setup(Relay_Ch3,GPIO.OUT)
+GPIO.setup(GPIO_SW_Ch3,GPIO.OUT)
+GPIO.setup(GPIO_SW_Flash,GPIO.OUT)
 
-print("Setup The Relay Module is [success]")
+print("Setup The GPIO_SW Module is [success]")
 
+def allOn():
+    GPIO.output(GPIO_SW_Ch3,GPIO.HIGH)
+    GPIO.output(GPIO_SW_Ch2,GPIO.HIGH)
+    GPIO.output(GPIO_SW_Ch1,GPIO.HIGH)
+    GPIO.output(GPIO_SW_Flash,GPIO.HIGH)
 
-
-def AttractOn():
-    GPIO.output(Relay_Ch3,GPIO.LOW)
-    if(onlyflash):
-        GPIO.output(Relay_Ch2,GPIO.LOW)
-        print("Always Flash mode is on")
-    else:
-        GPIO.output(Relay_Ch2,GPIO.HIGH)
-
-    GPIO.output(Relay_Ch1,GPIO.LOW)
-    print("Attract Lights On\n")
+    print("ALL Lights On\n")
     
-def AttractOff():
-    GPIO.output(Relay_Ch1,GPIO.HIGH)
+def allOff():
+    GPIO.output(GPIO_SW_Ch3,GPIO.LOW)
+    GPIO.output(GPIO_SW_Ch2,GPIO.LOW)
+    GPIO.output(GPIO_SW_Ch1,GPIO.LOW)
+    GPIO.output(GPIO_SW_Flash,GPIO.LOW)
 
-    GPIO.output(Relay_Ch2,GPIO.HIGH)
-    GPIO.output(Relay_Ch3,GPIO.HIGH)
-
-    print("Attract Lights Off\n")
+    print("ALL Lights Off\n")
 
 
-
-#AttractOn()
-AttractOff()
+#allOn()
+allOff()
 
 
 ## STOP THE INTERNET FROM STOPPING
@@ -111,3 +108,4 @@ with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
             print("trying to stop shutdown")
         else:
             file.write(line)  # Keep other lines unchanged
+

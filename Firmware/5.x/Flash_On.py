@@ -1,11 +1,12 @@
 #!/usr/bin/python3
+
 #GPIO
 import RPi.GPIO as GPIO
 import time
 import datetime
 from datetime import datetime
 
-print("----------------- attract off!-------------------")
+print("----------------- Flash On!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -14,40 +15,31 @@ print(f"Current time: {formatted_time}")
 global onlyflash
 onlyflash=False
 
-Relay_Ch1 = 19 #Photo lights
+GPIO_SW_Flash = 19
 
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-# need to test to see if 12V line is on!
-
-GPIO.setup(Relay_Ch1,GPIO.OUT)
-
-print("Setup The Relay Module is [success]")
-
-def get_control_values(filename):
-    """Reads key-value pairs from the control file."""
-    control_values = {}
-    with open(filename, "r") as file:
-        for line in file:
-            key, value = line.strip().split("=")
-            control_values[key] = value
-    return control_values
+GPIO.setup(GPIO_SW_Flash,GPIO.OUT)
 
 
-def AttractOff():
-    GPIO.output(Relay_Ch1,GPIO.LOW)
-    print("Attract Lights Off\n")
+print("Setup GPIO is [success]")
+
+
+def flashOn():
+    GPIO.output(GPIO_SW_Flash,GPIO.HIGH)
+
+    print("Flash Lights On\n")
     
-def AttractOn():
-    GPIO.output(Relay_Ch1,GPIO.HIGH)
+def flashOff():
 
-    print("Attract Lights On\n")
+    GPIO.output(GPIO_SW_Flash,GPIO.LOW)
+
+    print("Flash Lights Off\n")
 
 
-#control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
-AttractOn()
-#AttractOff()
+flashOn()
+#FlashOff()
 
 

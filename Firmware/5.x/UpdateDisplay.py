@@ -231,7 +231,7 @@ try:
     #font_robotoslab=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf',15)
     #font_robotosemicon=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Regular.ttf',15)
     font_robotosemicon10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf',11)
-    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',16)
+    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',17)
     font_roboto15=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',15)
 
     font_roboto10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',10)
@@ -241,57 +241,68 @@ try:
     
     #print(epd.width) #h 250px w 122
     # Setup for portrait mode
-    image = Image.new('1', (epd.width, epd.height), 255)  # Portrait: width=122, height=250
+    #image = Image.new('1', (epd.width, epd.height), 255)  # Portrait: width=122, height=250
+    
+    print(epd.width) #h 250px w 122
+    # Setup for landscape mode
+    image = Image.new('1', (epd.height, epd.width), 255)  # Portrait: width=122, height=250
+    
     draw = ImageDraw.Draw(image)
     
     #Start Drawing stuff to the display
     
+    colW = 125
+    rowH=13
+    
+    # Name and State
     # Draw text elements (adjust coordinates to suit portrait layout)
     draw.text((2,7), "NAME: ", font=font7, fill=0)
-    draw.text((0, 0), "      " + computerName, font=font_roboto, fill=0)
+    draw.text((0, -2), "      " + computerName, font=font_roboto, fill=0)
 
-    draw.text((2, 20), "state: "+mode, font=font_roboto, fill=0)
+    draw.text((colW+2,-2), "state: "+mode, font=font_roboto, fill=0)
 
     #Schedule Stuff
-    draw.text((2, 37), 'next wake:', font=font_robotosemicon10, fill=0)
-    draw.text((2, 47),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
+    draw.text((2, rowH), 'next wake:', font=font_robotosemicon10, fill=0)
+    draw.text((2,rowH+10),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
 
 
-    draw.text((2, 65), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
-    draw.text((2, 76), 'DAYS: ' + weekdays, font=font10, fill=0)
-    draw.text((2, 87), 'HOURS: ', font=font_robotosemicon10, fill=0)
-    draw.text((2, 98), hours, font=font_robotosemicon10, fill=0)
-    draw.text((2, 109), 'MINUTES: ' + mins, font=font10, fill=0)
-
-    # Add disk space info
-    draw.text((2, 130), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
-
-    # Starting Y position for external info (after previous lines)
-    y_pos=140
-    if external_info:
-        for line in external_info.strip().split('\n'):
-            draw.text((10, y_pos), line, font=font10, fill=0)
-            y_pos += 12  # line spacing
-    else:
-        draw.text((10, y_pos), "No USB found", font=font10, fill=0)
+    draw.text((2, 3*rowH), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
+    draw.text((2, 4*rowH), 'DAYS: ' + weekdays, font=font10, fill=0)
+    draw.text((2, 5*rowH), 'HOURS: ', font=font_robotosemicon10, fill=0)
+    draw.text((2, 6*rowH), hours, font=font_robotosemicon10, fill=0)
+    draw.text((2, 7*rowH), 'MINUTES: ' + mins, font=font10, fill=0)
 
     #GPS stuff
-    draw.text((2, 180), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
-    draw.text((2, 190), '        '+str(lon), font=font_robotosemicon10, fill=0)
+    draw.text((+2, 8*rowH), 'GPS: '+str(lat) +","+str(lon), font=font_robotosemicon10, fill=0)
+    #draw.text((+2, 9*rowH), '        '+str(lon), font=font_robotosemicon10, fill=0)
+
+    # Add disk space info
+    draw.text((colW+2, 1*rowH), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
+
+    # Starting Y position for external info (after previous lines)
+    y_pos=2*rowH
+    if external_info:
+        for line in external_info.strip().split('\n'):
+            draw.text((colW+2, y_pos), line, font=font10, fill=0)
+            y_pos += 12  # line spacing
+    else:
+        draw.text((colW+2, y_pos), "No USB found", font=font10, fill=0)
+
 
     #Battery Stuff
     if(voltage==-100):
-        draw.text((2, 205), f"BATTERY: UNKNOWN", font=font10, fill=0)
+        draw.text((colW+2, 4*rowH), f"BATTERY: UNKNOWN", font=font10, fill=0)
     else:
-        draw.text((2, 205), f"BATTERY: {percent:.0f}%", font=font10, fill=0)
+        draw.text((colW+2, 4*rowH), f"BATTERY: {percent:.0f}%", font=font10, fill=0)
 
-    draw.text((2, 215), "last update: ", font=font10, fill=0)
-    draw.text((2, 225), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
     
-    draw.text((2, 237), 'MOTHBOX', font=font_bigs, fill=0)
-    draw.text((50, 240), 'version '+softwareversion, font=font10, fill=0)
-    
-    
+    draw.text((colW+2, 5*rowH), 'MOTHBOX', font=font_bigs, fill=0)
+    draw.text((colW+2, 5*rowH), '                   ' 'version '+softwareversion, font=font10, fill=0)
+    draw.text((colW+2, 6*rowH), "last update: ", font=font10, fill=0)
+
+    draw.text((colW+2, 7*rowH), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
+
+    #image = image.rotate(180) # rotate
     # Send to display
     epd.display(epd.getbuffer(image))
     
@@ -325,7 +336,7 @@ except KeyboardInterrupt:
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
     draw.text((120, 60), 'e-Paper demo', font = font15, fill = 0)
-    draw.text((110, 90), u'å¾®éªçµå­', font = font24, fill = 0)
+    draw.text((110, 90), u'微雪电子', font = font24, fill = 0)
     # image = image.rotate(180) # rotate
     epd.display(epd.getbuffer(image))
     time.sleep(2)
