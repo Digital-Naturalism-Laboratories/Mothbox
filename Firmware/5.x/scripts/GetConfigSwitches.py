@@ -1,5 +1,6 @@
 import smbus2
 import time
+import subprocess
 
 # --- Configuration ---
 I2C_BUS = 1
@@ -20,6 +21,8 @@ DESCRIPTIVE_NAMES = {
     "Active":    (0x20, "P1_0"),
     "Debug":   (0x22, "P0_0"),
     "C1":     (0x22, "P0_6"), # Party Mode
+    "U1":     (0x22, "P0_7"), # Switch Setting Mode
+
 
     # Add as many as you want...
 }
@@ -77,7 +80,6 @@ def read_all_switches():
 
     return all_states
 
-# --- New Feature: lookup by descriptive name ---
 
 def get_switch_state(name):
     """
@@ -101,9 +103,45 @@ def get_switch_state(name):
 
     return value
 
+def set_SwitchesinControls(filepath, switch, state):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+    with open(filepath, "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith(switch+"="):
+                file.write(switch+"=" + str(state) + "\n")  
+                print("set next switch "+switch +" state in controls " + str(state))
+            else:
+                file.write(line)  # Keep other lines unchanged
+
+
+def run_script(script_path, show_output=True):
+    """
+    Run a Python script and optionally display its output.
+    """
+    try:
+        result = subprocess.run(
+            ["python3", script_path],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        if show_output:
+            output = result.stdout.strip()
+            if output:
+                print(output)
+    except subprocess.CalledProcessError as e:
+        print(f"⚠️ Error running {script_path}: {e.stderr.strip() if e.stderr else 'Unknown error'}")
+
+
+
 # --- Main Program ---
 
 def main():
+    run_script("scripts/3v3SensorsOn.py", show_output=False)
+    time.sleep(.1)
     all_switch_states = read_all_switches()
 
     print("\n--- Switch States ---")
@@ -117,7 +155,10 @@ def main():
     print("\n--- Descriptive Name Lookups ---")
     for desc_name in DESCRIPTIVE_NAMES:
         value = get_switch_state(desc_name)
-        print(f"{desc_name}: {value}")
+        #print(f"{desc_name}: {value}")
+        set_SwitchesinControls("/home/pi/Desktop/Mothbox/controls.txt",desc_name,value)
+    time.sleep(.1)            
+    run_script("scripts/3v3SensorsOff.py", show_output=False)
 
 if __name__ == "__main__":
     main()
