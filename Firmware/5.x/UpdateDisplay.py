@@ -43,27 +43,7 @@ def get_control_values(filepath):
             control_values[key] = value
     return control_values
 
-# Function to check for connection to ground
-def off_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-    # Read the pin value
-    pin_value = GPIO.input(off_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-def debug_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(debug_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
 
 # -----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
 
@@ -71,27 +51,31 @@ def debug_connected_to_ground():
 # Set pin numbering mode (BCM or BOARD)
 GPIO.setmode(GPIO.BCM)
 
-# Define GPIO pin for checking
-off_pin = 16
-debug_pin = 12
+
 mode = "ACTIVE"  # possible modes are OFF or DEBUG or ARMED
-# Set GPIO pin as input
-GPIO.setup(off_pin, GPIO.IN)
-GPIO.setup(debug_pin, GPIO.IN)
 
-# Check for connection
-if debug_connected_to_ground():
-    print("GPIO pin", debug_pin, "DEBUG connected to ground.")
-    mode = "DEBUG"
-else:
-    print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
 
-# Check for connection
-if off_connected_to_ground():
-    print("GPIO pin", off_pin, "OFF PIN connected to ground.")
-    mode = "OFF"  # this check comes second as the OFF state should override the DEBUG state in case both are attached
-else:
-    print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
+thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+sActive = int(thecontrol_values.get("Active", 1))
+sDebug = int(thecontrol_values.get("Debug", 0))
+sC1 = int(thecontrol_values.get("C1", 0))
+
+if(sActive==0):
+    mode="OFF"
+    print("should go to off!")
+
+
+# Now check for subsets of Active Mode, like Party Mode or Debug
+# TODO
+
+if(sDebug==1):
+    None
+    mode="DEBUG"
+if(sC1==1):
+    None
+    mode="PARTY"
+
+
 
 print("Current Mothbox MODE: ", mode)
 
@@ -153,56 +137,57 @@ softwareversion=control_values.get("softwareversion", "error")
 #Battery State
 #Check battery level and power
 voltage= -100
-
-
-import smbus2
-import time
-
-# I2C bus (1 for modern Raspberry Pi boards)
-I2C_BUS = 1
-I2C_ADDR = 0x40  # INA219 default address
-
-# Register addresses for INA219
-REG_BUS_VOLTAGE = 0x02
-
-bus = smbus2.SMBus(I2C_BUS)
-
-def read_voltage():
-    # Read 2 bytes from the bus voltage register
-    raw = bus.read_word_data(I2C_ADDR, REG_BUS_VOLTAGE)
-
-    # Swap byte order (INA219 returns LSB/MSB swapped on Raspberry Pi)
-    raw = ((raw & 0xFF) << 8) | (raw >> 8)
-
-    # Shift to remove CNVR and OVF bits
-    raw >>= 3
-
-    # Each bit = 4 mV
-    voltage = raw * 0.004
-    return voltage
-
-##########################
-
-
-
-
-try:
-    #i2c = board.I2C()  # uses board.SCL and board.SDA
-    # i2c = board.STEMMA_I2C()  # For using the built-in STEMMA QT connector on a microcontroller
-    #ina260 = adafruit_ina260.INA260(i2c)
-    voltage=read_voltage()
-    #print("Current: %.2f mA Voltage: %.2f V Power:%.2f mW " % (ina260.current, ina260.voltage, ina260.power))
-    print("voltage = " +str(voltage))
-except (OSError, ValueError) as e:
-    # Handle exceptions like sensor not connected or communication errors
-    print("Sensor NOT CONNECTED  ")
     
-maxvoltage=12.4
-minvoltage=9.8
-# Calculate the percentage
-percent = (voltage - minvoltage) / (maxvoltage - minvoltage) * 100
+# Get calibration voltages
+v80 = float(control_values.get("bat_80", -1000))
+v20 = float(control_values.get("bat_20", 1000))
 
-# Constrain the output to be between 0 and 100
+# Read actual voltage
+import subprocess
+import re
+try:
+    result3 = subprocess.run(
+        ["python3", "/home/pi/Desktop/Mothbox/scripts/3v3SensorsOn.py"],
+        capture_output=True, text=True, check=True
+    )
+    output3 = result3.stdout.strip()
+except subprocess.CalledProcessError as e:
+    print("Err turning on sensors:", e)
+    output = ""
+
+
+# --- Run the external voltage reading script ---
+try:
+    result = subprocess.run(
+        ["python3", "/home/pi/Desktop/Mothbox/scripts/read_Vin.py"],
+        capture_output=True, text=True, check=True
+    )
+    output = result.stdout.strip()
+except subprocess.CalledProcessError as e:
+    print("Error reading voltage:", e)
+    output = ""
+
+# --- Parse the voltage from the output ---
+# Example line: "Vin Voltage: 12.124 V, Current: 0.942 A"
+match = re.search(r"Voltage:\s*([\d.]+)", output)
+if match:
+    voltage = float(match.group(1))
+else:
+    print("Could not parse voltage from output:", output)
+    voltage = -100.0  # fallback or default
+
+
+
+
+
+
+# Calculate percentage so that:
+#  - v20 -> 20%
+#  - v80 -> 80%
+# Linearly extrapolate beyond those points
+percent = 20 + (voltage - v20) * (80 - 20) / (v80 - v20)
+
+# Constrain between 0–100%
 percent = max(0, min(percent, 100))
 
 # Print the result
@@ -265,12 +250,14 @@ try:
     draw.text((2, rowH), 'next wake:', font=font_robotosemicon10, fill=0)
     draw.text((2,rowH+10),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
 
+    draw.text((2, 3*rowH), "last update: ", font=font10, fill=0)
+    draw.text((2, 4*rowH), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
 
-    draw.text((2, 3*rowH), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
-    draw.text((2, 4*rowH), 'DAYS: ' + weekdays, font=font10, fill=0)
-    draw.text((2, 5*rowH), 'HOURS: ', font=font_robotosemicon10, fill=0)
-    draw.text((2, 6*rowH), hours, font=font_robotosemicon10, fill=0)
-    draw.text((2, 7*rowH), 'MINUTES: ' + mins, font=font10, fill=0)
+    draw.text((2, 5*rowH), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
+    draw.text((2, 6*rowH), 'DAYS: ' + weekdays, font=font10, fill=0)
+    draw.text((2, 7*rowH), 'HOURS: '+hours, font=font10, fill=0)
+    #draw.text((2, 8*rowH), hours, font=font_robotosemicon10, fill=0)
+    #draw.text((2, 9*rowH), 'MINUTES: ' + mins, font=font10, fill=0)
 
     #GPS stuff
     draw.text((+2, 8*rowH), 'GPS: '+str(lat) +","+str(lon), font=font_robotosemicon10, fill=0)
@@ -298,9 +285,7 @@ try:
     
     draw.text((colW+2, 5*rowH), 'MOTHBOX', font=font_bigs, fill=0)
     draw.text((colW+2, 5*rowH), '                   ' 'version '+softwareversion, font=font10, fill=0)
-    draw.text((colW+2, 6*rowH), "last update: ", font=font10, fill=0)
 
-    draw.text((colW+2, 7*rowH), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
 
     #image = image.rotate(180) # rotate
     # Send to display

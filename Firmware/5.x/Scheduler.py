@@ -468,6 +468,9 @@ def run_shutdown_pi5():
     else:
       print(stdout.decode())
 
+    # Make sure lights are off for some diagnostics at end of session
+    run_script("/home/pi/Desktop/Mothbox/Attract_Off.py", show_output=True) # need full path!
+    run_script("/home/pi/Desktop/Mothbox/Flash_Off.py", show_output=True) # need full path!
 
 
     #Epaper
@@ -489,7 +492,9 @@ def run_shutdown_pi5():
 
     #Give it an extra second in case details need to sink in
     print("shutting down in 3 seconds")
-    time.sleep(3)
+    time.sleep(1)
+    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True) # need full path!
+    time.sleep(1)
 
     # subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])
     os.system("sudo shutdown -h now")
@@ -840,9 +845,27 @@ if(sC1==1):
 print("Mothbox mode is:  "+ mode)
 # ----------END SWITCH CHECK----------------
 
+#------ Log Some Diagnostics with Sensors -----------
+
+run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True) # need full path!
+
+
+
+
 
 # ~~~~~~~~~~~~ Figuring out Scheduling Details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~ Pi 5 specific things to change cron-like commands to the next UTC target
+
+# User Switch Schedule
+sU1 = int(thecontrol_values.get("U1", 1))
+if(sU1==1):
+    None
+    print("Schedule Set by User Switches")
+    #TODO - actually change the code so the user switches determine the schedule
+else:
+    print("Schedule set by Internal Schedule")
+
+
 
 
 utc_off = 0  # this is the offsett from UTC time we use to set the alarm
