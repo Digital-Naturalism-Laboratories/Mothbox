@@ -1,0 +1,618 @@
+(footprint "MODULE_RASPBERRY_PI_4B_4GB_Sideways"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -42.575 -14.635 0)
+		(layer "F.SilkS")
+		(uuid "bd5cbfda-e982-4e96-98d1-512dbaa41fc2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "RASPBERRY_PI_4B_4GB"
+		(at -6 12 0)
+		(layer "F.Fab")
+		(uuid "1e114140-2b40-4d29-8ce6-a75c3f8e7ff9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ecc9b9d9-4682-4879-ae06-abc1b7009f75")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b4ded917-906f-4701-82ff-8a41e5e794b6")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MF" "Raspberry Pi"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ea815979-fbe4-4818-b8d5-a83903e56079")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MAXIMUM_PACKAGE_HEIGHT" "16 mm"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a4894510-69ca-4ccd-9132-4177dc820a9e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Package" "None"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dac17589-a8ed-42ac-87b9-0ba91ddee7f8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Price" "None"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "147e0bdc-f928-4bb0-a2a0-0e729fae53bb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Check_prices" "https://www.snapeda.com/parts/RASPBERRY%20PI%204B/4GB/Raspberry+Pi/view-part/?ref=eda"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "43d46011-5eb6-49d1-a071-aed0e7a6ef75")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "STANDARD" "Manufacturer Recommendations"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "331d86de-1124-4475-a949-e0f4ba34c51b")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PARTREV" "4"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f5cc62d6-2cb4-43d6-8aed-e05b780d9753")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "SnapEDA_Link" "https://www.snapeda.com/parts/RASPBERRY%20PI%204B/4GB/Raspberry+Pi/view-part/?ref=snap"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "623095ac-0444-4d9a-a6c5-1afa53500ec4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MP" "RASPBERRY PI 4B/4GB"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "22338b07-1bba-44b7-95f8-559a030b72d1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description_1" "BCM2711 Raspberry Pi 4 Model B 4GB - ARM® Cortex®-A72 MPU Embedded Evaluation Board"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3ea62a88-7ec7-46c6-8e9c-971ccfe42389")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Digikey Part No" "SC1113"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "911df9ab-22aa-4dde-8d8d-9cd8f2e62a91")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Availability" "Not in stock"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9d721ff6-89a9-415d-a527-69d512465dcb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "SNAPEDA_PN" "RASPBERRY PI 4B/4GB"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "beed5723-ffbf-46e5-98de-236489b9b76f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC PN" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2fa10049-c9ec-487e-ba88-7153aae1c62f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "AVAILABILITY" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fd1e78b8-cfee-4bf3-bb2f-abfefba413d5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "DESCRIPTION" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "140dd434-5a52-41eb-94af-943f0e474c1f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Link" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "51125cc1-6dee-46fc-b12c-1a7ecbcbc20f")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PACKAGE" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5a41dc24-ca2c-4d24-b4d5-58005c1cf645")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PRICE" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5039eaf0-5915-42dd-a32d-6b7d76619f5c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Digikey_Part_No" "SC1113"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a328e49c-569b-4d18-94c2-797266426074")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole exclude_from_bom)
+	(fp_line
+		(start -43 -13)
+		(end -43 8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "21eb7f53-e21f-43c6-a622-a576ed20473b")
+	)
+	(fp_line
+		(start -43 8)
+		(end 43 8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ee2954c9-8be1-4364-b544-0c754a151a2e")
+	)
+	(fp_line
+		(start 42.5 -13)
+		(end -43 -13)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "05bf570b-004f-4dd4-81ec-d76a212e66f9")
+	)
+	(fp_line
+		(start 43 8)
+		(end 43 -13)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "2b720489-029e-4d8b-8990-b58e4792a70c")
+	)
+	(fp_rect
+		(start 23.5 -13)
+		(end 43 7.5)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "09983c8e-b57f-4093-acb2-3f0f5ec2754a")
+	)
+	(fp_circle
+		(center -42.5 -11)
+		(end -42.3 -11)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "bd59bb28-7bcf-4aa9-af74-048d858caaef")
+	)
+	(fp_line
+		(start -42.5 1.5)
+		(end -42.492892 -1.992893)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "92ec3aa8-5723-49c1-894a-17e95cc3a8eb")
+	)
+	(fp_line
+		(start 41.992893 -2.992892)
+		(end -41.492893 -2.992892)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "9b5124e4-970c-46af-9cb4-2fbb76e9f6a6")
+	)
+	(fp_line
+		(start 41.992893 2.492893)
+		(end -41.499915 2.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "fcced6af-e1c6-43d3-ade6-c13d56616338")
+	)
+	(fp_line
+		(start 43 1.4929)
+		(end 42.992893 -1.992893)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "7d521896-1997-45d3-bdcb-74b61b793e8b")
+	)
+	(fp_arc
+		(start -42.492893 -1.992893)
+		(mid -42.2 -2.7)
+		(end -41.492893 -2.992893)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "0d8f9dbe-ed5c-4178-90f8-88d427b23f2e")
+	)
+	(fp_arc
+		(start -41.5 2.5)
+		(mid -42.207107 2.207107)
+		(end -42.5 1.5)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "2e610b65-6baf-410e-8036-2d65c74bcbd4")
+	)
+	(fp_arc
+		(start 41.992893 -2.992893)
+		(mid 42.700002 -2.700002)
+		(end 42.992893 -1.992893)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "97888cb0-15ad-4a4a-b5d2-655a157455ed")
+	)
+	(fp_arc
+		(start 43 1.492893)
+		(mid 42.707109 2.200004)
+		(end 42 2.492893)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "Edge.Cuts")
+		(uuid "05c1c6a6-db93-4fc7-9c99-31236e83b10f")
+	)
+	(fp_line
+		(start -43 -13)
+		(end 43 -13)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "aa0288a7-a669-4b31-b357-e8154b93cfe6")
+	)
+	(fp_line
+		(start -43 8)
+		(end -43 -13)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "28d75a87-231e-42a0-b731-a28c4f8451bd")
+	)
+	(fp_line
+		(start 43 -13)
+		(end 43 8)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "27b920b6-b6b4-4477-be4a-e7a0de0b0e90")
+	)
+	(fp_line
+		(start 43 8.0025)
+		(end -43 7.9975)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(layer "F.CrtYd")
+		(uuid "4c658835-826d-4daf-bd8f-fd9ab381d143")
+	)
+	(fp_line
+		(start -39.5 8)
+		(end 39.5 8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "36107e01-4323-4f06-9bda-509fdb9498c3")
+	)
+	(fp_line
+		(start 20 -13)
+		(end 20 9)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "dcf58ddc-ddf8-45bd-9246-9b156f465d24")
+	)
+	(fp_line
+		(start 23.5 -13)
+		(end 23.5 8)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "59071114-bd67-4c8a-8d83-3170ac665270")
+	)
+	(fp_line
+		(start 36.5 -13)
+		(end -42.5 -13)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "798d54de-5187-4512-be60-ae739da194eb")
+	)
+	(fp_line
+		(start 43 -13)
+		(end 23.5 -13)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "89a44ec9-49ab-4cdc-b5c7-37c88322c959")
+	)
+	(fp_line
+		(start 43 8)
+		(end 43 -13)
+		(stroke
+			(width 0.127)
+			(type solid)
+		)
+		(layer "F.Fab")
+		(uuid "37293027-27ed-49ac-a2ef-8f9a48665fbc")
+	)
+	(fp_circle
+		(center -42.5 -11)
+		(end -42.3 -11)
+		(stroke
+			(width 0.4)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "50083ab0-bf00-4196-862a-866da043b217")
+	)
+	(pad "S1" thru_hole circle
+		(at -38.5 -8.5)
+		(size 4 4)
+		(drill 2.75)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "d1fd23cb-fd3f-4a7d-bd4f-2be789147a00")
+	)
+	(pad "S2" thru_hole circle
+		(at 19 -8.5)
+		(size 4 4)
+		(drill 2.75)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "3b8ddc2b-bd0d-42b6-864e-1f1bb717c167")
+	)
+	(pad "S3" thru_hole circle
+		(at -38.5 6.5)
+		(size 4 4)
+		(drill 2.75)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "2972392c-9840-4cae-b0f5-6d3c8e10fcf5")
+	)
+	(pad "S3" thru_hole circle
+		(at 19 6.5)
+		(size 4 4)
+		(drill 2.75)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(solder_mask_margin 0.102)
+		(uuid "22b12b50-f9c8-43d9-9b01-0a392fde2fee")
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/Library/RASPBERRY_PI_4B_4GB/RASPBERRY_PI_4B_4GB.step"
+		(offset
+			(xyz 0 0 27)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

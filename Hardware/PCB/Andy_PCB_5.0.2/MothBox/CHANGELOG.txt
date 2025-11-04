@@ -24,7 +24,7 @@ Date: TBD
 * rotate input power connector 90 deg.
 * move the 'Active' label on the U11 switch to the RH side.
 * add --++ label to front side of PCB on the input connector
-* add two solder jumpers accross R4 so we can bypass the current measuments
+* add two solder jumpers across R4 so we can bypass the current measurements
 * Add Aducam camera P/N text? Arducam 64MP OV64A40 OwlSight
 * move and rotate 3V3 line MOSFET labels, + R36, C??
 * rotate H1 + U8 GPS connector labels
@@ -37,7 +37,7 @@ Date: 2025-09-TBD
 
 Done: AQ- swapped green indicator LED (C72043) which LCSC says is discontinued  for  C2289 which is dirt cheap and plentiful
 Done: AQ - change the user switch to use the ALWAYS on 3v3 power so that a user could always be able to push it, and then it could trigger a script to enable the other 3.3v
-Done: Aq - scoot items out of where batteries might be
+Done: AQ - scoot items out of where batteries might be
 Done: Silkscreen - we should put the test point labels on both sides of the board
 Done: add a user switch
 Done: add a user LED
