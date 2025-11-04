@@ -91,27 +91,6 @@ def set_eeprom_settings(settings):
     subprocess.run(["sudo", "rpi-eeprom-config", "--apply", "/tmp/eeprom_config.txt"])
 
 
-# Function to check for connection to ground
-def off_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(off_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-def debug_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(debug_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
 
 
 def read_csv_into_lists(filename, encoding="utf-8"):
@@ -489,6 +468,9 @@ def run_shutdown_pi5():
     else:
       print(stdout.decode())
 
+    # Make sure lights are off for some diagnostics at end of session
+    run_script("/home/pi/Desktop/Mothbox/Attract_Off.py", show_output=True) # need full path!
+    run_script("/home/pi/Desktop/Mothbox/Flash_Off.py", show_output=True) # need full path!
 
 
     #Epaper
@@ -510,7 +492,9 @@ def run_shutdown_pi5():
 
     #Give it an extra second in case details need to sink in
     print("shutting down in 3 seconds")
-    time.sleep(3)
+    time.sleep(1)
+    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True) # need full path!
+    time.sleep(1)
 
     # subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])
     os.system("sudo shutdown -h now")
@@ -724,6 +708,29 @@ def set_wakeup_alarm(epoch_time):
     set_nextWakeinControls("/home/pi/Desktop/Mothbox/controls.txt",epoch_time)
     
 
+
+
+def run_script(script_path, show_output=True):
+    """
+    Run a Python script and optionally display its output.
+    """
+    try:
+        result = subprocess.run(
+            ["python3", script_path],
+            capture_output=True,
+            text=True,
+            check=True
+        )
+        if show_output:
+            output = result.stdout.strip()
+            if output:
+                print(output)
+    except subprocess.CalledProcessError as e:
+        print(f"⚠️ Error running {script_path}: {e.stderr.strip() if e.stderr else 'Unknown error'}")
+
+
+# Main Code
+
 print("----------------- STARTING Scheduler!-------------------")
 
 
@@ -770,42 +777,6 @@ if rpiModel == 5:
         set_eeprom_settings(current_settings)
         print("EEPROM settings updated.")
 
-# -----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
-
-
-# Set pin numbering mode (BCM or BOARD)
-GPIO.setmode(GPIO.BCM)
-
-# Define GPIO pin for checking
-off_pin = 16
-debug_pin = 12
-mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE
-# Set GPIO pin as input
-GPIO.setup(off_pin, GPIO.IN)
-GPIO.setup(debug_pin, GPIO.IN)
-
-# Check for connection
-if debug_connected_to_ground():
-    print("GPIO pin", debug_pin, "DEBUG connected to ground.")
-    mode = "DEBUG"
-else:
-    print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
-
-# Check for connection
-if off_connected_to_ground():
-    print("GPIO pin", off_pin, "OFF PIN connected to ground.")
-    mode = "OFF"  # this check comes second as the OFF state should override the DEBUG state in case both are attached
-else:
-    print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
-
-print("Current Mothbox MODE: ", mode)
-
-if(mode=="OFF"):
-    run_shutdown_pi5_FAST()
-    quit()
-
-
-# ----------END SWITCH CHECK----------------
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
 
@@ -837,8 +808,64 @@ print(f"Unique name for device: {unique_name}")
 # Change it in controls
 set_computerName("/home/pi/Desktop/Mothbox/controls.txt", unique_name)
 
+
+
+# -----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
+run_script("/home/pi/Desktop/Mothbox/GetConfigSwitches.py", show_output=True) # need full path!
+
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE or PARTY, active is dddddddddddddefault
+
+thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+sActive = int(thecontrol_values.get("Active", 1))
+sDebug = int(thecontrol_values.get("Debug", 0))
+sC1 = int(thecontrol_values.get("C1", 0))
+
+print(sActive)
+print(sC1)
+
+if(sActive==0):
+    mode="OFF"
+    print("should go to off!")
+
+if(mode=="OFF"):
+    run_shutdown_pi5_FAST()
+    quit()
+
+# Now check for subsets of Active Mode, like Party Mode or Debug
+# TODO
+
+if(sDebug==1):
+    None
+    mode="DEBUG"
+if(sC1==1):
+    None
+    mode="PARTY"
+
+
+print("Mothbox mode is:  "+ mode)
+# ----------END SWITCH CHECK----------------
+
+#------ Log Some Diagnostics with Sensors -----------
+
+run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True) # need full path!
+
+
+
+
+
 # ~~~~~~~~~~~~ Figuring out Scheduling Details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~ Pi 5 specific things to change cron-like commands to the next UTC target
+
+# User Switch Schedule
+sU1 = int(thecontrol_values.get("U1", 1))
+if(sU1==1):
+    None
+    print("Schedule Set by User Switches")
+    #TODO - actually change the code so the user switches determine the schedule
+else:
+    print("Schedule set by Internal Schedule")
+
+
 
 
 utc_off = 0  # this is the offsett from UTC time we use to set the alarm
@@ -931,6 +958,7 @@ print("Wakeup Alarms have been set!")
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
 
+# ~~~~~~~ Display ~~~~~~~~~~~~~~~~~~~~
 
 #Update the Epaper screen if it is available
 GPIO.cleanup()
@@ -944,6 +972,7 @@ if stderr:
 else:
   print(stdout.decode())
 
+# ~~~~~~~ Mode Determine ~~~~~~~~~~~~~~~~~~~~
 
 #Final Step (No other code past this, this is where it sits and waits until shutdown)
 # - prepare shutdown and wait
@@ -961,6 +990,17 @@ elif mode == "DEBUG":
     debug_script_path = "/home/pi/Desktop/Mothbox/DebugMode.py"
     # Call the script using subprocess.run
     subprocess.run([debug_script_path])
+    # stopcron()
+elif mode == "PARTY":
+    print("System is in DEBUG mode - keeping power and wifi on and turning cron off")
+    # Define the path to your script (replace 'path/to/script' with the actual path)
+    debug_script_path = "/home/pi/Desktop/Mothbox/DebugMode.py"
+    # Call the script using subprocess.run
+    subprocess.run([debug_script_path])
+    
+    party_script_path = "/home/pi/Desktop/Mothbox/Party.py"
+    # Call the script using subprocess.run
+    subprocess.run([party_script_path])
     # stopcron()
 elif mode == "ACTIVE":
     print("System is ACTIVE")

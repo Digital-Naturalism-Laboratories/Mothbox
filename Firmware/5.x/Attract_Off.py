@@ -6,7 +6,7 @@ import time
 import datetime
 from datetime import datetime
 
-print("----------------- Attract On!-------------------")
+print("----------------- Attract Off!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -47,5 +47,4 @@ def AttractOff():
 
 #AttractOn()
 AttractOff()
-
 

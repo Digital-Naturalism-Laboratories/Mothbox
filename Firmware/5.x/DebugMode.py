@@ -108,4 +108,3 @@ with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
             print("trying to stop shutdown")
         else:
             file.write(line)  # Keep other lines unchanged
-

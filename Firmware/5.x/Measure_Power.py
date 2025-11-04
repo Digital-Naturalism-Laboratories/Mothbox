@@ -1,15 +1,17 @@
 #!/usr/bin/python
 
+#GPIO
+import RPi.GPIO as GPIO
+import time
 import datetime
 from datetime import datetime
 
-
-
-import time
-import board
-import adafruit_ina260
+print("----------------- Mothbox Diagnostics!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time}")
+
 
 try:
     i2c = board.I2C()  # uses board.SCL and board.SDA

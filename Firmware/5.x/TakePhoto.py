@@ -47,56 +47,31 @@ import time
 import os, platform
 from pathlib import Path
 
+
+def get_control_values(filename):
+    """Reads key-value pairs from the control file.
+    Args:
+    filename:  Name of the control file
+    """
+    control_values = {}
+    with open(filename, "r") as file:
+        for line in file:
+            key, value = line.strip().split("=")
+            control_values[key] = value
+    return control_values
+
+
 #IF the mothbox is supposed to be off, don't take a photo!
-GPIO.setmode(GPIO.BCM)
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE or PARTY, active is dddddddddddddefault
 
-# Function to check for connection to ground
-def off_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+sActive = int(thecontrol_values.get("Active", 1))
 
-    # Read the pin value
-    pin_value = GPIO.input(off_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-def debug_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(debug_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-
-# Define GPIO pin for checking
-off_pin = 16
-debug_pin = 12
-mode = "ACTIVE"  # possible modes are OFF or DEBUG or ARMED
-# Set GPIO pin as input
-GPIO.setup(off_pin, GPIO.IN)
-GPIO.setup(debug_pin, GPIO.IN)
-
-# Check for connection
-if debug_connected_to_ground():
-    print("GPIO pin", debug_pin, "DEBUG connected to ground.")
-    mode = "DEBUG"
-else:
-    print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
-
-# Check for connection
-if off_connected_to_ground():
-    print("GPIO pin", off_pin, "OFF PIN connected to ground.")
-    mode = "OFF"  # this check comes second as the OFF state should override the DEBUG state in case both are attached
-else:
-    print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
-
-print("Current Mothbox MODE: ", mode)
+print(sActive)
+#print(sC1)
+if(sActive==0):
+    mode="OFF"
+    print("should go to off!")
 
 if(mode=="OFF"):
     print("no photo!")
@@ -107,13 +82,9 @@ if(mode=="OFF"):
 
 
 
+GPIO.setmode(GPIO.BCM)
 
-
-
-
-
-
-internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
+internal_storage_minimum = 6 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
 extra_photo_storage_minimum=internal_storage_minimum-1
 # Define paths
 desktop_path = Path(
@@ -156,13 +127,14 @@ def set_last_calibration(filepath):
 
 
 def flashOff():
-    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
     GPIO.output(Relay_Ch2,GPIO.LOW)
     print("Flash Off\n")
     
 def flashOn():
     GPIO.output(Relay_Ch2,GPIO.HIGH)
-    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
+    GPIO.output(Relay_Ch3,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
+    GPIO.output(Relay_Ch1,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
+    GPIO.output(Relay_Ch4,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
 
     print("Flash On\n")
 
@@ -464,7 +436,7 @@ def create_dated_folder(base_path):
   else:
     # Add a day if time is between 12:00 pm and next day's 11:59 am
     date_str = (now - timedelta(days=1)).strftime("%Y-%m-%d")
-  folder_path = os.path.join(base_path, date_str)
+  folder_path = os.path.join(base_path, computerName+"_"+date_str)
   if not os.path.exists(folder_path):
     os.makedirs(folder_path)
   os.chmod(folder_path, 0o777)  # mode=0o777 for read write for all users
@@ -475,6 +447,7 @@ def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
     now = datetime.now()
     timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
+    #TODO MAKE ALL TIME ISO FORMAT
     #timestamp = now.strftime("%y%m%d%H%M%S")
     #serial_number = get_serial_number()
     #lastfivedigits=serial_number[-5:]
@@ -574,7 +547,7 @@ def takePhoto_Manual():
           print(camera_settings.get("LensPosition"))
           #https://github.com/hMatoba/Piexif/blob/3422fbe7a12c3ebcc90532d8e1f4e3be32ece80c/piexif/_exif.py#L406
           #https://piexif.readthedocs.io/en/latest/functions.html#dump
-          zeroth_ifd = {piexif.ImageIFD.Make: u"MothboxV4",
+          zeroth_ifd = {piexif.ImageIFD.Make: u"MothboxV5",
               }
           exif_ifd = {#piexif.ExifIFD.DateTimeOriginal: u"2099:09:29 10:10:10",
             #piexif.ExifIFD.LensMake: u"LensMake",
@@ -701,17 +674,20 @@ middleexposure=500 # 500 #minimum exposure time for Hawkeye camera 64mp arducam
 Relay_Ch1 = 5
 Relay_Ch2 = 19 # Photo flash
 Relay_Ch3 = 9 # 6 UV 
-
+Relay_Ch4 = 6
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 
-#GPIO.setup(Relay_Ch1,GPIO.OUT)
+GPIO.setup(Relay_Ch1,GPIO.OUT)
 GPIO.setup(Relay_Ch2,GPIO.OUT)
 GPIO.setup(Relay_Ch3,GPIO.OUT)
+GPIO.setup(Relay_Ch4,GPIO.OUT)
 
 print("Setup The Relay Module is [success]")
 GPIO.output(Relay_Ch2,GPIO.HIGH)
-GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
+GPIO.output(Relay_Ch3,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
+GPIO.output(Relay_Ch1,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
+GPIO.output(Relay_Ch4,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
 
 global onlyflash
 onlyflash=False
@@ -826,8 +802,9 @@ takePhoto_Manual()
 picam2.stop()
 
 #cannot call GPIO cleanup here because it will kill the relay turning on the attractor
-GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
-
+GPIO.output(Relay_Ch3,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
+GPIO.output(Relay_Ch4,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates that
+GPIO.output(Relay_Ch1,GPIO.HIGH) #might as well ensure attract is on because new wiring dictates 
     
 quit()
 
