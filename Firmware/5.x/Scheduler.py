@@ -493,7 +493,7 @@ def run_shutdown_pi5():
     #Give it an extra second in case details need to sink in
     print("shutting down in 3 seconds")
     time.sleep(1)
-    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True) # need full path!
+    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py 'Shutdown_Check'", show_output=True)
     time.sleep(1)
 
     # subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])
@@ -709,22 +709,36 @@ def set_wakeup_alarm(epoch_time):
     
 
 
-
-def run_script(script_path, show_output=True):
+def run_script(script_path, *args, show_output=True):
     """
     Run a Python script and optionally display its output.
+    Extra arguments (args) are passed to the script.
+    Can run like these examples
+    # No label (shared log)
+    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True)
+
+    # With label (custom log)
+    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", "Battery Test", show_output=True)
+
+    # Or with multiple words
+    run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", "Morning", "Check", "Field", "Site", show_output=True)
     """
     try:
+        # Build the command list safely
+        cmd = ["python3", script_path] + list(args)
+
         result = subprocess.run(
-            ["python3", script_path],
+            cmd,
             capture_output=True,
             text=True,
             check=True
         )
+
         if show_output:
             output = result.stdout.strip()
             if output:
                 print(output)
+
     except subprocess.CalledProcessError as e:
         print(f"⚠️ Error running {script_path}: {e.stderr.strip() if e.stderr else 'Unknown error'}")
 
@@ -847,8 +861,8 @@ print("Mothbox mode is:  "+ mode)
 
 #------ Log Some Diagnostics with Sensors -----------
 
-run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", show_output=True) # need full path!
-
+#run_script("/home/pi/Desktop/Mothbox/Diagnostics.py 'Startup_Check'", show_output=True)
+run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", "Startup_Check", show_output=True)
 
 
 
