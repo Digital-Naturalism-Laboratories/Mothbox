@@ -6,8 +6,8 @@
 	(paper "User" 330.2 228.6)
 	(title_block
 		(title "MothBox")
-		(date "2025-10-02")
-		(rev "5.0.2")
+		(date "2025-11-05")
+		(rev "5.0.3")
 		(company "Digital Naturalism Laboritories")
 		(comment 1 "and Parkview")
 	)
@@ -6645,7 +6645,7 @@
 		(uuid "ffe88395-a9e6-46db-81d2-d47019745b65")
 	)
 	(label "Tue"
-		(at 99.06 36.83 180)
+		(at 99.06 34.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6665,7 +6665,7 @@
 		(uuid "00ff7cc3-17bf-49ea-8c04-d14b301cf6d9")
 	)
 	(label "Fri"
-		(at 73.66 139.7 0)
+		(at 73.66 142.24 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6675,7 +6675,7 @@
 		(uuid "013032c6-92c6-4228-8f3b-9e5900976b5c")
 	)
 	(label "Wed"
-		(at 73.66 144.78 0)
+		(at 73.66 147.32 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6705,7 +6705,7 @@
 		(uuid "173dc9f6-f450-4953-aa55-5090222ec4da")
 	)
 	(label "Mon"
-		(at 99.06 34.29 180)
+		(at 99.06 31.75 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6715,7 +6715,7 @@
 		(uuid "18766455-38e3-417e-9537-e9b9efbb0067")
 	)
 	(label "Thur"
-		(at 73.66 142.24 0)
+		(at 73.66 144.78 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6745,7 +6745,7 @@
 		(uuid "2a3dadcb-7ec1-472f-a6a8-0b8fadc11a6b")
 	)
 	(label "Thur"
-		(at 99.06 41.91 180)
+		(at 99.06 39.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6795,7 +6795,7 @@
 		(uuid "3a7f5466-ce90-4776-9f97-9d7ed3cda978")
 	)
 	(label "Armed{slash}Disarmed"
-		(at 73.66 152.4 0)
+		(at 73.66 134.62 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6855,7 +6855,7 @@
 		(uuid "53c8b095-e310-4137-8185-e1fa7861d61a")
 	)
 	(label "Wed"
-		(at 99.06 39.37 180)
+		(at 99.06 36.83 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6875,7 +6875,7 @@
 		(uuid "54f23bf2-757a-4636-b87b-b8b75d0d72ae")
 	)
 	(label "Tue"
-		(at 73.66 147.32 0)
+		(at 73.66 149.86 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6885,7 +6885,7 @@
 		(uuid "569f8006-37a2-42e0-bf28-de4cbb519973")
 	)
 	(label "Sat"
-		(at 73.66 137.16 0)
+		(at 73.66 139.7 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -6905,7 +6905,7 @@
 		(uuid "5813ca76-7ca0-4890-8a96-f96123e6acce")
 	)
 	(label "Mon"
-		(at 73.66 149.86 0)
+		(at 73.66 152.4 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7065,7 +7065,7 @@
 		(uuid "8db64a86-4554-4bd7-8f70-82577bf7b5a1")
 	)
 	(label "Sun"
-		(at 99.06 49.53 180)
+		(at 99.06 46.99 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7095,7 +7095,7 @@
 		(uuid "94570a89-4681-4225-97d4-a7ad652585b1")
 	)
 	(label "Armed{slash}Disarmed"
-		(at 99.06 31.75 180)
+		(at 99.06 49.53 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7145,7 +7145,7 @@
 		(uuid "a3f0ec61-ba42-4534-9cb0-032f7edd7586")
 	)
 	(label "Sat"
-		(at 99.06 46.99 180)
+		(at 99.06 44.45 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7185,7 +7185,7 @@
 		(uuid "b0d044c1-f05f-4dc1-876a-cbdeece31091")
 	)
 	(label "Sun"
-		(at 73.66 134.62 0)
+		(at 73.66 137.16 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7375,7 +7375,7 @@
 		(uuid "ede18350-5e82-45a4-8aa1-b7b162e46a65")
 	)
 	(label "Fri"
-		(at 99.06 44.45 180)
+		(at 99.06 41.91 180)
 		(effects
 			(font
 				(size 1.27 1.27)

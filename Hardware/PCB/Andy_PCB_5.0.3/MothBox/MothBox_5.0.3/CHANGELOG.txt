@@ -9,26 +9,34 @@ Version 5.0.3:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: TBD
 
-* add double ++-- to the three side power green/orange connector labels and backside
-* change fuse from 1812 3A to 2920 6A?  Have to move IAN219 over a bit
-* decrease IAN219 sense resistor from 0.1 ohm to 0.033 ohm
-* remove old MB: text label and box from backside
-* do something about the D7, D6, D5, D2 ESD diodes.  Increase from 12V, to 18V or 45V? (AQ - I am still puzzled by this mystery, maybe just remove them? Nothing on this board is too Electro static discharge sensitive anyway right?
-* Move RPi 5V cap to be above (otherside) of RPi, so the RPi can lay flat, or replace with a shorter version?  Tantalum cap? (AQ-  can't fit that big capacitor above the board either, it will block sliding the pi in)
-* fix R + L Flash LED labels to something like: L/R FLASH LED GND?
-* add Talentcell Battery part numbers? (e.g. PB120B1) and larger font 
-* whats happening to the two S/N boxes? (AQ - keep the square one, leave space below it (or move it to where it has space below)
-* do something about the EXT Temp Sensor label?
-* move C5 and R33 label around the DS18B20 temp sensor box
-* change 1.5V text to 1.5A on the external connector
-* rotate input power connector 90 deg.
-* move the 'Active' label on the U11 switch to the RH side.
-* add --++ label to front side of PCB on the input connector
-* add two solder jumpers across R4 so we can bypass the current measurements
-* Add Aducam camera P/N text? Arducam 64MP OV64A40 OwlSight
-* move and rotate 3V3 line MOSFET labels, + R36, C??
-* rotate H1 + U8 GPS connector labels
-* make GPS box outline a bit smaller
+Done: add double ++-- to the three side power green/orange connector labels and backside
+Done: change fuse from 1812 3A to 2920 7A?  Have to move IAN219 over a bit
+Done: decrease IAN219 sense resistor from 0.1 ohm to 0.033 ohm
+Done: remove old MB: text label and box from backside
+Done: Remove the D7, D6, D5, D2 ESD diodes.  Increase from 12V, to 18V or 45V? (AQ - I am still puzzled by this mystery, maybe just remove them? Nothing on this board is too Electro static discharge sensitive anyway right?
+Done: replace RPi 1000uF 5V cap with some 10uF caps. Could have used the original 470uF cap?
+Done: fix R + L Flash LED labels to something like: L/R FLASH LED GND?
+Done: add Talentcell Battery part numbers? (e.g. PB120B1) and larger font 
+Done: whats happening to the two S/N boxes? (AQ - keep the square one, leave space below it (or move it to where it has space below)
+Done: cleanup the EXT Temp Sensor label?
+Done: move C5 and R33 label around the DS18B20 temp sensor box
+Done: change 1.5V text to 1.5A on the external connector
+Done: rotate input power connector 90 deg.
+Done: move the 'Active' label on the U11 switch to the RH side.
+Done: add --++ label to front side of PCB on the input connector
+Done: add a closed solder jumper across R4 so we can bypass the current measurements and save on the Voltage drop
+Done: Add Aducam camera P/N text? Arducam 64MP OV64A40 OwlSight
+Done: move and rotate 3V3 line MOSFET labels, + R36, C??
+Done: rotate H1 + U8 GPS connector labels. PH: Note I ungrouped the 4 objects
+No: make GPS box outline a bit smaller. PH: No, it's a footprint and outlines the size of the GPS board
+Done: outline the Battery pack onto the silkscreen layer as a keep out zone
+Done: decrease D1 zener from 10V to 6.8V. We need to be able to take 36V!!  Our zener can take up to 5mA.  We should pass 2.5mA max through 14.7K at 36V.
+Done: add zener to Q8 (12V isolater MOSFET).  Tt should have a 6.8V zener as well as it might have up to 36V across it?
+Done: add reverse power protection to the 12V input after J1
+Done: bold up ambient light sensor text 
+Done: rotate U18 ref label
+Done: re-arange front/back side graphics and text
+
 
 
 Version 5.0.2:
