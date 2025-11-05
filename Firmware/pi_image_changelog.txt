@@ -1,0 +1,22 @@
+5.0.3
+
+This image is the latest and greatest for the new v5 boards.
+
+- UPDATED sudo raspi-update and all that
+- Takephoto stores photos in folders with device name now!
+- Diagnostics.py can record the sensors
+- Diagnostics also allows labels so startup diagnostics are separate than shutdown diagnostics and such
+- does v5 board stuff like
+-- log light (actually made improvements on arduino script that had lux calculation wrong!)
+-- log power
+-- log ALL SWITCH STATES at startup!
+-There's a dedicated party button now
+-Debug switch works
+-Active Switch works
+-flip camera correctly
+- backup remainder changed to 8gb
+- update display to refined landscape mode
+- scripts for turning attractors and flashes on and off refined
+
+
+TODO - Board temperature reading has problems because 1-wire service is weird for pi5 apparently. might be a thing in pi kernel to update
