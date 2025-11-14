@@ -8,20 +8,20 @@
 		(unlocked yes)
 		(layer "F.SilkS")
 		(hide yes)
-		(uuid "5cad846f-5156-419e-a957-34f2207198bc")
+		(uuid "b477bd31-600c-4726-b1c2-35de43364868")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.1)
+				(thickness 0.24)
 			)
 		)
 	)
-	(property "Value" "~"
+	(property "Value" "graphic"
 		(at 0 1 0)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "747bc6e0-afee-47c4-9c61-fd7e4c51227d")
+		(uuid "d4d01075-9d0b-45f9-8075-88734db491d9")
 		(effects
 			(font
 				(size 1 1)
@@ -34,7 +34,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "47ceb142-d89a-4101-8696-c53c019649a0")
+		(uuid "7576e469-fb14-4ab9-87ef-4587c54de5df")
 		(effects
 			(font
 				(size 1 1)
@@ -47,7 +47,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a3867892-dc1d-4956-a843-6d531709451a")
+		(uuid "b82a7e83-03c5-4fd0-994b-0eee4e324c7b")
 		(effects
 			(font
 				(size 1 1)
@@ -60,7 +60,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "a23075af-3be8-487d-9da8-5433b44909a2")
+		(uuid "0cf1abb8-c3b4-4262-86ec-fb36489fbae3")
 		(effects
 			(font
 				(size 1 1)
@@ -73,7 +73,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "04e4194e-2470-4951-af7e-3ac992c98a34")
+		(uuid "721a3e50-bed9-46d3-b369-206a8b0e4951")
 		(effects
 			(font
 				(size 1 1)
@@ -86,7 +86,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "7fa12532-9760-4f10-a693-823e5b8c31e7")
+		(uuid "c40e1486-4b83-4baa-8c11-d86aeeb542fc")
 		(effects
 			(font
 				(size 1 1)
@@ -99,7 +99,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "bf71887b-22a0-491a-9edb-db366eab57fd")
+		(uuid "06bf2afe-e3a6-4b87-840c-a6a39d1f4ff8")
 		(effects
 			(font
 				(size 1 1)
@@ -112,7 +112,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "e2d876c2-ccd5-4520-9059-414e7fa106be")
+		(uuid "263a34d6-e828-4d77-ae24-ce4171bdd288")
 		(effects
 			(font
 				(size 1 1)
@@ -120,7 +120,72 @@
 			)
 		)
 	)
-	(attr through_hole exclude_from_bom dnp)
+	(property "Ali_Express_Link" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "de6fe5b4-ee44-42a4-a82f-c038e601e44a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC_PN" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "9bb1c212-4ac7-413d-b4e9-f8d58b6d778d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Device" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b9cb3314-e790-42ac-bb30-d1dcfcfc5d27")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Pins" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bb0b73c8-5b69-4f3a-8457-36ddd98f399c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Type" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "767d4486-4ce9-4356-a16e-f853729a755a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole exclude_from_pos_files exclude_from_bom dnp)
 	(fp_rect
 		(start -81.25 -22.75)
 		(end 81.25 23.75)
@@ -130,7 +195,7 @@
 		)
 		(fill no)
 		(layer "Dwgs.User")
-		(uuid "690a126e-dc31-4c7c-a15a-dd857f505f36")
+		(uuid "c05a1ad5-e0c8-4545-afd5-999b144bb81b")
 	)
 	(fp_rect
 		(start -7.75 -6.5)
@@ -141,17 +206,18 @@
 		)
 		(fill no)
 		(layer "F.CrtYd")
-		(uuid "4df75890-030a-45fb-adb1-4045d918098e")
+		(uuid "d7f44a20-1799-472f-b14c-a04850d68c91")
 	)
 	(fp_text user "Talentcell Battery"
-		(at 7 6 180)
+		(at -0.415063 20.185259 180)
 		(unlocked yes)
 		(layer "F.SilkS")
-		(uuid "90a8ba15-683c-4830-b68f-bebf36469291")
+		(uuid "020da52c-d712-45fc-a66e-ee8f33bb57eb")
 		(effects
 			(font
-				(size 1 1)
-				(thickness 0.1)
+				(size 2 2)
+				(thickness 0.4)
+				(bold yes)
 			)
 			(justify left bottom)
 		)

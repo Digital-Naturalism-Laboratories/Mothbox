@@ -6,20 +6,20 @@
 	(descr "Inductor, Chilisin, BMRG00131360, 13.8x12.6x6.0mm, (https://www.chilisin.com/upload/media/product/power/file/BMRx_Series.pdf), generated with kicad-footprint-generator gen_inductor.py")
 	(tags "Inductor bmrx mchi")
 	(property "Reference" "REF**"
-		(at 0 -7.3 0)
+		(at 3.961194 8.038806 -90)
 		(layer "F.SilkS")
-		(uuid "ee8b9ee6-c387-4426-af10-09078b7df5bc")
+		(uuid "5c560669-0395-4d5b-b024-f3a08b19e898")
 		(effects
 			(font
 				(size 1 1)
-				(thickness 0.15)
+				(thickness 0.24)
 			)
 		)
 	)
 	(property "Value" "5A 47uH"
 		(at 0 7.3 0)
 		(layer "F.Fab")
-		(uuid "9e4c6307-12d4-47a4-8d3f-1bdfe8832a20")
+		(uuid "6c40f5b7-6cee-4aed-a165-ac0f62c5ea87")
 		(effects
 			(font
 				(size 1 1)
@@ -31,7 +31,7 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "c7b9921d-e110-4caa-a940-b261d2a544a6")
+		(uuid "2bad9690-5248-44cc-9b92-abdb12d04a8f")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -43,36 +43,10 @@
 		(at 0 0 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "271758ad-8c53-49d1-ab97-de2ac995641b")
+		(uuid "38bfbeaa-9418-4034-b9e1-f7e23c98298c")
 		(effects
 			(font
 				(size 1.27 1.27)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "LCSC Part no " "C497913"
-		(at 0 0 180)
-		(unlocked yes)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "3dab55dd-11be-4f54-a0fe-139fa6b64a0c")
-		(effects
-			(font
-				(size 1 1)
-				(thickness 0.15)
-			)
-		)
-	)
-	(property "LCSC PN" ""
-		(at 0 0 180)
-		(unlocked yes)
-		(layer "F.Fab")
-		(hide yes)
-		(uuid "9348ee84-294f-4cf3-814b-2e971b4c5bb0")
-		(effects
-			(font
-				(size 1 1)
 				(thickness 0.15)
 			)
 		)
@@ -82,7 +56,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2e091ddb-d706-4108-bd25-d47be12717cb")
+		(uuid "7e354e65-de4c-40c0-ac45-195090c9e5cd")
 		(effects
 			(font
 				(size 1 1)
@@ -95,7 +69,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "bbcd7229-2019-48ba-a255-faf405b142d8")
+		(uuid "cd7fc16d-e4da-49b9-ab06-52db93104176")
 		(effects
 			(font
 				(size 1 1)
@@ -108,7 +82,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "20b62079-a3d1-4a36-9706-7f41eb404c60")
+		(uuid "ad096699-f7b9-4120-87c3-4b32e45977ad")
 		(effects
 			(font
 				(size 1 1)
@@ -121,7 +95,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "fbaa051c-4ece-48ef-805b-3347770eddc2")
+		(uuid "d52884cb-92ca-4e23-88a0-3407bbb24f48")
 		(effects
 			(font
 				(size 1 1)
@@ -134,7 +108,7 @@
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "8eba7fda-e070-433c-b858-6bf0391205d5")
+		(uuid "af0ed9b3-beb3-4cf5-b98e-7fe9bb3705be")
 		(effects
 			(font
 				(size 1 1)
@@ -142,12 +116,90 @@
 			)
 		)
 	)
-	(property "LCSC_Part_No" "C497913"
+	(property "LCSC_Part_No" ""
 		(at 0 0 180)
 		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2a1e5c22-14f6-437b-b104-b83a4b2993c8")
+		(uuid "421fb643-0d5a-43db-8e3b-3380777c1359")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Ali_Express_Link" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "7914f30c-cd6f-4bbf-8578-f86ab3f8f5b3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC_PN" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1015677e-1718-429e-a3ba-6aad2e7e66e7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Device" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d59ff127-dd79-4a12-af6a-2cdefacabae7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Pins" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ebb8ff08-f49f-4d4a-8901-3789e4469cea")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Sim.Type" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e1d188f9-a224-40fe-8637-5d49813b8f24")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC_Part" "C497913"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d34c3fd0-fefc-4dc5-84c1-858127bffa5b")
 		(effects
 			(font
 				(size 1 1)
@@ -164,7 +216,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "52ecdc2e-0f91-4603-9093-aa38c8fafee8")
+		(uuid "82a1a4be-6ee7-45b5-8ef5-b9f6b5393cb9")
 	)
 	(fp_line
 		(start -7.16 -6.56)
@@ -174,7 +226,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "ebff5e04-5234-4daf-a3a1-0b578bb0f280")
+		(uuid "1f9f989f-9ab5-4ac3-be86-c28219e82f4f")
 	)
 	(fp_line
 		(start -7.16 6.56)
@@ -184,7 +236,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "8c7a81a1-cb8d-4934-aa2b-53ac9cb59827")
+		(uuid "96dbbaaf-094c-4230-890e-592ac1252fec")
 	)
 	(fp_line
 		(start -7.16 6.56)
@@ -194,7 +246,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "d75b22fe-954b-42de-a0fe-0feead86fb6e")
+		(uuid "a2d39307-1eb3-4a47-a24c-97fd87fc966b")
 	)
 	(fp_line
 		(start 7.16 -6.56)
@@ -204,7 +256,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "d511f1af-8ae5-4987-97d1-4a1e4b46330c")
+		(uuid "2a1be49e-afa8-4cce-9ca8-045567d737b3")
 	)
 	(fp_line
 		(start 7.16 6.56)
@@ -214,7 +266,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "4d72acf8-402e-443f-9364-bb91815b5f4f")
+		(uuid "9558d9d0-eef8-4cbe-827b-3d7b30360acd")
 	)
 	(fp_line
 		(start -7.5 -6.55)
@@ -224,7 +276,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "0831c774-c185-4bbb-b12b-96d7a978114c")
+		(uuid "cea6f6e3-7769-4f25-8783-e5cdc59044ba")
 	)
 	(fp_line
 		(start -7.5 6.55)
@@ -234,7 +286,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "4239a354-12cc-4520-ab35-8be3a4d7d6d6")
+		(uuid "002800dc-78e3-47c9-a726-3df1360f4d1d")
 	)
 	(fp_line
 		(start 7.5 -6.55)
@@ -244,7 +296,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "1a68cddb-545a-4c03-ba16-733ae7b14108")
+		(uuid "1464a700-ff48-4093-be92-77fce6e07f7a")
 	)
 	(fp_line
 		(start 7.5 6.55)
@@ -254,7 +306,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "05007eba-5988-4c34-8b74-bf8323ceb332")
+		(uuid "485994d2-cb86-424e-a4c4-25c85704c153")
 	)
 	(fp_line
 		(start -6.9 -6.3)
@@ -264,7 +316,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "0312a4bb-20b7-419a-8f36-92940a81c0b5")
+		(uuid "8aec59bb-48c2-47f6-9f99-2a0fc7c9522d")
 	)
 	(fp_line
 		(start -6.9 6.3)
@@ -274,7 +326,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "65b3b577-58c2-4f07-88a5-a063581cd5c1")
+		(uuid "78696121-ba86-4d77-9ab5-f875597730be")
 	)
 	(fp_line
 		(start 6.9 -6.3)
@@ -284,7 +336,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "ed91a9f2-4848-4c74-a668-319e162413cd")
+		(uuid "3bfed8ac-6587-45bb-8903-5776e24cddd7")
 	)
 	(fp_line
 		(start 6.9 6.3)
@@ -294,12 +346,12 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "614256a3-8a47-4a5c-9722-ac4405a13be3")
+		(uuid "edcffe6c-c2db-4b19-af23-0d4f96a40ce8")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 0 0 0)
 		(layer "F.Fab")
-		(uuid "6e9339ac-8917-486b-9bdd-71eb3eebc932")
+		(uuid "bac36b39-0fb9-43c2-9ec0-29abd4df877a")
 		(effects
 			(font
 				(size 1 1)
@@ -312,14 +364,14 @@
 		(size 4 5.5)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.0625)
-		(uuid "9c53952c-7b3f-413b-81e4-6a5557d70aa0")
+		(uuid "b3af1342-3a96-49b1-8ae7-0045b85b1543")
 	)
 	(pad "2" smd roundrect
 		(at 5.25 0)
 		(size 4 5.5)
 		(layers "F.Cu" "F.Mask" "F.Paste")
 		(roundrect_rratio 0.0625)
-		(uuid "6082e0ee-4844-4aa5-be50-dbee01e58680")
+		(uuid "c15d7d46-083b-4712-8d18-98d79def3498")
 	)
 	(embedded_fonts no)
 	(model "${KICAD9_3DMODEL_DIR}/Inductor_SMD.3dshapes/L_Chilisin_BMRG00131360.step"
