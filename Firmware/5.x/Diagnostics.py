@@ -6,22 +6,37 @@ import time
 import os
 import sys
 import atexit
+import re
 
 # --- Configuration ---
 LOG_DIR = "/home/pi/Desktop/Mothbox/logs"
-LOG_FILE = os.path.join(LOG_DIR, "Diagnostics.log")
+DEFAULT_LOG_FILE = os.path.join(LOG_DIR, "Diagnostics.log")
 MAX_LOG_SIZE_MB = 200
 TRIM_KEEP_MB = 10  # keep last 10 MB of logs
 
 # --- Setup logging directory ---
 os.makedirs(LOG_DIR, exist_ok=True)
 
+# --- Handle optional message argument ---
+custom_message = " ".join(sys.argv[1:]) if len(sys.argv) > 1 else None
+
+def sanitize_label(label):
+    """Sanitize label for safe use in filenames."""
+    safe = re.sub(r'[^a-zA-Z0-9_-]+', '_', label.strip())
+    return safe or "Unnamed"
+
+if custom_message:
+    safe_label = sanitize_label(custom_message)
+    LOG_FILE = os.path.join(LOG_DIR, f"Diagnostics_{safe_label}.log")
+else:
+    LOG_FILE = DEFAULT_LOG_FILE
+
 def check_and_truncate_log():
     """Trim the log file if it exceeds MAX_LOG_SIZE_MB."""
     if os.path.exists(LOG_FILE):
         size_mb = os.path.getsize(LOG_FILE) / (1024 * 1024)
         if size_mb > MAX_LOG_SIZE_MB:
-            print(f"[LOG] Diagnostics.log is {size_mb:.1f} MB — trimming...")
+            print(f"[LOG] {os.path.basename(LOG_FILE)} is {size_mb:.1f} MB — trimming...")
             with open(LOG_FILE, "rb") as f:
                 f.seek(-TRIM_KEEP_MB * 1024 * 1024, os.SEEK_END)
                 data = f.read()
@@ -42,7 +57,7 @@ class Tee:
                 s.write(data)
                 s.flush()
             except Exception:
-                pass  # ignore errors during shutdown
+                pass
     def flush(self):
         for s in self.streams:
             try:
@@ -67,7 +82,12 @@ atexit.register(close_log)
 print("----------------- Mothbox Diagnostics!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")
-print(f"Current time: {formatted_time}\n")
+print(f"Current time: {formatted_time}")
+
+if custom_message:
+    print(f"Run label: {custom_message}")
+
+print()
 
 def run_script(script_path, show_output=True):
     """Run a Python script and optionally display its output."""
@@ -87,7 +107,7 @@ def run_script(script_path, show_output=True):
 
 # --- Run diagnostic modules ---
 run_script("/home/pi/Desktop/Mothbox/scripts/3v3SensorsOn.py", show_output=False)
-time.sleep(0.4)
+time.sleep(0.5)
 run_script("/home/pi/Desktop/Mothbox/scripts/read_Vin.py", show_output=True)
 run_script("/home/pi/Desktop/Mothbox/scripts/read5V.py", show_output=True)
 run_script("/home/pi/Desktop/Mothbox/scripts/readCPUTemperature.py", show_output=True)
@@ -96,3 +116,4 @@ run_script("/home/pi/Desktop/Mothbox/scripts/readLTR303.py", show_output=True)
 run_script("/home/pi/Desktop/Mothbox/scripts/3v3SensorsOff.py", show_output=False)
 
 print("--------------------------------------\n")
+
