@@ -13471,7 +13471,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "0_easyeda_footprints:CAP-TH_BD16.0-P7.50-D1.2-FD"
+		(property "Footprint" "easyeda2kicad:CAP-TH_BD16.0-P7.50-D1.2-FD"
 			(at 134.62 146.05 0)
 			(effects
 				(font
@@ -16441,7 +16441,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "0_easyeda_footprints:CAP-TH_BD16.0-P7.50-D1.2-FD"
+		(property "Footprint" "easyeda2kicad:CAP-TH_BD16.0-P7.50-D1.2-FD"
 			(at 49.53 143.51 0)
 			(effects
 				(font
@@ -16450,7 +16450,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://lcsc.com/product-detail/Aluminum-Electrolytic-Capacitors-Leaded_1000uF-20-50V_C106656.html"
+		(property "Datasheet" "~"
 			(at 49.53 143.51 0)
 			(effects
 				(font
@@ -16459,7 +16459,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" ""
+		(property "Description" "Polarized capacitor, small US symbol"
 			(at 49.53 143.51 0)
 			(effects
 				(font
