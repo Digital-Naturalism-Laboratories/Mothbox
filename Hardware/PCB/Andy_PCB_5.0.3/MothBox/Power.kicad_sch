@@ -2981,232 +2981,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "MothBox_Symbol_Library:KH-6X6X5H-STM"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "SW?"
-				(at 0 7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "KH-6X6X5H-STM"
-				(at 0 -7.62 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" "easyeda2kicad:SW-SMD_4P-L6.0-W6.0-P4.50-LS9.0_H5.0"
-				(at 0 -10.16 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "LCSC Part" "C2837531"
-				(at 0 -12.7 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "KH-6X6X5H-STM_0_1"
-				(polyline
-					(pts
-						(xy -2.54 2.54) (xy 2.54 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.54 -2.54) (xy 2.54 -2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0 1.52)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.52) (xy 0 0.76)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 0.76)
-					(radius 0.25)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(circle
-					(center 0 -0.76)
-					(radius 0.25)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 -2.54) (xy 0 -0.76)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0.25 1.02) (xy 1.27 -1.02) (xy 1.27 -1.02)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 2.54 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at -5.08 -2.54 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 5.08 2.54 180)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin unspecified line
-					(at 5.08 -2.54 180)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "MothBox_Symbol_Library:L_Small"
 			(pin_numbers
 				(hide yes)
@@ -4289,6 +4063,232 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "easyeda2kicad:4-1437565-1"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "SW"
+				(at 0 10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "4-1437565-1"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "easyeda2kicad:KEY-SMD_4P-L6.0-W6.0-P4.50-LS10.0-TL"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C592734"
+				(at 0 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "4-1437565-1_0_1"
+				(polyline
+					(pts
+						(xy -5.08 5.08) (xy 5.08 5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -5.08 -5.08) (xy 5.08 -5.08)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 0) (xy -1.27 0)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.27 2.54) (xy -1.27 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 5.08) (xy 0 2.79)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 2.29)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(circle
+					(center 0 -2.54)
+					(radius 0.38)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 -5.08) (xy 0 -3.05)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -10.16 5.08 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -10.16 -5.08 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 5.08 180)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 10.16 -5.08 180)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 	)
 	(rectangle
 		(start 30.48 114.3)
@@ -4564,6 +4564,12 @@
 		(uuid "0267ef56-fb10-4dd6-b9d6-01a06e7c695f")
 	)
 	(junction
+		(at 257.81 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "03ddf312-e9d3-4c0b-8363-7d3c306cca50")
+	)
+	(junction
 		(at 100.33 54.61)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4580,6 +4586,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "0b3d782f-f901-46d8-a056-4460983faebd")
+	)
+	(junction
+		(at 273.05 134.62)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "170c6af2-a7a6-4125-b8f2-5e38915e6c14")
 	)
 	(junction
 		(at 186.69 87.63)
@@ -4604,12 +4616,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "30d714b6-853f-4e66-b401-9fcbe3eff295")
-	)
-	(junction
-		(at 262.89 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "327fa329-66cc-452c-a6ec-53022305218c")
 	)
 	(junction
 		(at 240.03 83.82)
@@ -4756,12 +4762,6 @@
 		(uuid "9dcb6ab1-7d56-433c-8c2e-6ba098d40116")
 	)
 	(junction
-		(at 262.89 129.54)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a9d41f8d-9c1a-4adc-bc39-7089f8f3bd95")
-	)
-	(junction
 		(at 217.17 83.82)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4828,6 +4828,12 @@
 		(uuid "e7dde4b3-3ad6-48e9-b834-94bca81494a0")
 	)
 	(junction
+		(at 273.05 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e892a9cb-bcd3-4cbb-9b7d-99fd17811ca7")
+	)
+	(junction
 		(at 185.42 81.28)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4864,6 +4870,16 @@
 			(type default)
 		)
 		(uuid "033e4922-c5a3-41b6-9429-ee82cdcb1d78")
+	)
+	(wire
+		(pts
+			(xy 293.37 119.38) (xy 273.05 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0349f269-7f97-4eea-9fb2-a72e0518ee43")
 	)
 	(wire
 		(pts
@@ -5047,6 +5063,16 @@
 	)
 	(wire
 		(pts
+			(xy 273.05 119.38) (xy 273.05 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "24db64cc-2f38-4fef-afde-e2f92f036175")
+	)
+	(wire
+		(pts
 			(xy 104.14 52.07) (xy 96.52 52.07)
 		)
 		(stroke
@@ -5117,13 +5143,13 @@
 	)
 	(wire
 		(pts
-			(xy 262.89 129.54) (xy 273.05 129.54)
+			(xy 257.81 124.46) (xy 257.81 121.92)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "2e8a78ca-42c2-4bd1-a741-84e8731995aa")
+		(uuid "2e7d44fe-6eb7-4bca-85ab-59e0a229de28")
 	)
 	(wire
 		(pts
@@ -5194,16 +5220,6 @@
 			(type default)
 		)
 		(uuid "3cc2d211-99ba-445d-9dd5-984877308224")
-	)
-	(wire
-		(pts
-			(xy 262.89 129.54) (xy 262.89 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d6290bc-38c2-4012-8740-108c53e62ed9")
 	)
 	(wire
 		(pts
@@ -5357,6 +5373,16 @@
 	)
 	(wire
 		(pts
+			(xy 293.37 124.46) (xy 293.37 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4e97f304-259d-4129-b509-06eddd4e48cf")
+	)
+	(wire
+		(pts
 			(xy 149.86 82.55) (xy 149.86 81.28)
 		)
 		(stroke
@@ -5384,6 +5410,16 @@
 			(type default)
 		)
 		(uuid "57c30b30-2d11-42b3-b38e-6417b293b085")
+	)
+	(wire
+		(pts
+			(xy 256.54 132.08) (xy 257.81 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "57d12855-467c-482c-aabc-b131a9f5adfe")
 	)
 	(wire
 		(pts
@@ -5807,6 +5843,16 @@
 	)
 	(wire
 		(pts
+			(xy 273.05 132.08) (xy 273.05 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8918efc5-a27b-49f1-a044-286bf486a659")
+	)
+	(wire
+		(pts
 			(xy 240.03 88.9) (xy 240.03 90.17)
 		)
 		(stroke
@@ -5817,16 +5863,6 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 121.92) (xy 257.81 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8ae75b3d-d331-41b7-b8ab-27b33e6c82f4")
-	)
-	(wire
-		(pts
 			(xy 100.33 138.43) (xy 106.68 138.43)
 		)
 		(stroke
@@ -5834,6 +5870,16 @@
 			(type default)
 		)
 		(uuid "8ca86cd0-088d-411d-9815-155b6fb79357")
+	)
+	(wire
+		(pts
+			(xy 293.37 149.86) (xy 273.05 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90320601-63c2-42a4-9bbb-39b3b8376982")
 	)
 	(wire
 		(pts
@@ -5874,6 +5920,16 @@
 			(type default)
 		)
 		(uuid "929f33f9-4193-4f16-aa55-cfd6c9d1850f")
+	)
+	(wire
+		(pts
+			(xy 273.05 149.86) (xy 273.05 134.62)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9511e110-3c53-4d3b-9929-b57266531bbe")
 	)
 	(wire
 		(pts
@@ -6047,6 +6103,16 @@
 	)
 	(wire
 		(pts
+			(xy 257.81 125.73) (xy 257.81 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6431949-03e6-46fe-aa96-dcbf1bfc6f4b")
+	)
+	(wire
+		(pts
 			(xy 88.9 149.86) (xy 96.52 149.86)
 		)
 		(stroke
@@ -6207,6 +6273,16 @@
 	)
 	(wire
 		(pts
+			(xy 293.37 134.62) (xy 293.37 149.86)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d03f8850-a733-4f65-bfc6-407be10eb830")
+	)
+	(wire
+		(pts
 			(xy 240.03 127) (xy 240.03 128.27)
 		)
 		(stroke
@@ -6257,7 +6333,7 @@
 	)
 	(wire
 		(pts
-			(xy 257.81 132.08) (xy 262.89 132.08)
+			(xy 257.81 132.08) (xy 273.05 132.08)
 		)
 		(stroke
 			(width 0)
@@ -11204,8 +11280,8 @@
 		)
 	)
 	(symbol
-		(lib_id "MothBox_Symbol_Library:KH-6X6X5H-STM")
-		(at 267.97 127 0)
+		(lib_id "easyeda2kicad:4-1437565-1")
+		(at 283.21 129.54 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -11214,7 +11290,7 @@
 		(dnp no)
 		(uuid "6615e57b-7b6b-4744-acd6-98ab16533f71")
 		(property "Reference" "SW2"
-			(at 267.97 133.5575 0)
+			(at 282.956 138.43 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11222,15 +11298,15 @@
 			)
 		)
 		(property "Value" "KH-6X6X5H-STM"
-			(at 272.288 131.318 0)
+			(at 283.972 141.224 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "0_easyeda_footprints:SW-SMD_4P-L6.0-W6.0-P4.50-LS9.0_H5.0"
-			(at 267.97 137.16 0)
+		(property "Footprint" "easyeda2kicad:KEY-SMD_4P-L6.0-W6.0-P4.50-LS10.0-TL"
+			(at 283.21 142.24 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11239,7 +11315,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 267.97 127 0)
+			(at 283.21 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11248,7 +11324,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 267.97 127 0)
+			(at 283.21 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11256,8 +11332,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC Part" "C455095"
-			(at 267.97 139.7 0)
+		(property "LCSC Part" "C592734"
+			(at 283.21 144.78 0)
 			(effects
 				(font
 					(size 1.27 1.27)
