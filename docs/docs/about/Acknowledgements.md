@@ -56,8 +56,8 @@ The Mothbox has been made possibly with help from many individuals and groups li
  * Jessie Tejara-Fabian
  * Jeff Dietrich
  * Mulget Amaru
-* Beetlepalooza (Sponsored by Imageomics Lab at Ohio State University)
-* Bucket of Bugs Beetlepalooza group
+* [BeetlePalooza](https://doi.org/10.5281/zenodo.15272136) (Sponsored by the [Imageomics Institute](https://imageomics.org/) at The Ohio State University)
+* [Bucket of Bugs](https://github.com/Digital-Naturalism-Laboratories/bucket-o-bugs) BeetlePalooza group
   * Elizabeth Campolongo, Ernie Parke, Andy Quitmeyer, Matt Thompson
 * Autodesk Foundation (Software Donation)
 * The McGuire Center for Lepidoptery

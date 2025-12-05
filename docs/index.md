@@ -56,7 +56,7 @@ Next we created some open-source AI scripts that process the insect data for you
 <img src="https://github.com/user-attachments/assets/3d0936ce-e89c-411a-8529-a932acc6e9c8" width="48%">
 
 
-Then we use a special version of BioCLIP with a user interface to help you automatically group and ID the insects to different taxonomic levels!
+Then we use BioCLIP via the [pybioclip](https://github.com/Imageomics/pybioclip) package, with a [FiftyOne](https://github.com/voxel51/fiftyone) user interface, to help you automatically group and ID the insects to different taxonomic levels!
 
 ![image](https://github.com/user-attachments/assets/93728753-8a70-4686-b493-1e3de177627e)
 
