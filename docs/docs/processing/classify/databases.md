@@ -3,7 +3,7 @@ layout: default
 title: Fiftyone Dataset Editing
 parent: Classification
 has_children: false
-nav_order: 8
+nav_order: 1
 ---
 
 # Make Sure Exiftool is installed
