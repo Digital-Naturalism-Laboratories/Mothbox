@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Create Target
-parent: Building Mothbox
+parent: Mothbox DIY
 #has_children: true
 nav_order: 3
 ---

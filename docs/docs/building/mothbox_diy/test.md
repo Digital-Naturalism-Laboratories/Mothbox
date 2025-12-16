@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Test
-parent: Building Mothbox
+parent: Mothbox DIY
 #has_children: true
 nav_order: 8
 ---

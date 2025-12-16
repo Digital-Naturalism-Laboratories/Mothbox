@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Mothbeam
+title: Mothbeam (Insect Attractor)
 nav_order: 9
 has_children: true
-permalink: /docs/mothbeam
+permalink: /docs/building/mothbeam
 ---
 
 # Standalone Mothbeam Assembly

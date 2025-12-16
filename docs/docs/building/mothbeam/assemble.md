@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Assemble
-parent: Mothbeam
+parent: Mothbeam (Insect Attractor)
 #has_children: true
 nav_order: 5
 ---
