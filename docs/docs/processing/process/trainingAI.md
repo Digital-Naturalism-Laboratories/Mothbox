@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bonus: Training AI
-parent: Processing Data
+parent: Process
 has_children: true
 nav_order: 9
 ---

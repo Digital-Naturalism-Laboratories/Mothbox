@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Exif (Optional)
-parent: Processing Data
+parent: Process
 has_children: false
 nav_order: 7
 ---

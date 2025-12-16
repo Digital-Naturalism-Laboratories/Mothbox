@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Processing Software
-parent: Processing Data
+parent: Process
 has_children: false
 nav_order: 0
 ---
