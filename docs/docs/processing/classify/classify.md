@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Classify
-parent: Classifying
+parent: Classification
 has_children: false
 nav_order: 2
 ---

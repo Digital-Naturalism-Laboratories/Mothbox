@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Fiftyone Dataset Editing
-parent: Classifying
+parent: Classification
 has_children: false
 nav_order: 8
 ---
