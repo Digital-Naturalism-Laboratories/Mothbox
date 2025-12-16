@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Mothbeam (Insect Attractor)
+parent: Building
 nav_order: 9
 has_children: true
 permalink: /docs/building/mothbeam
