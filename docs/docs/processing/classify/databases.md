@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Generate and Edit Datasets
-parent: Processing Data
+title: Fiftyone Dataset Editing
+parent: Classifying
 has_children: false
 nav_order: 8
 ---
