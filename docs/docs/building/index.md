@@ -1,10 +1,9 @@
 ---
 layout: default
-title: Mothbox DIY
+title: Building
 nav_order: 2
 has_children: true
-parent: Building
-permalink: /docs/building/mothbox_diy
+permalink: /docs/building
 ---
 
 # Assembly
