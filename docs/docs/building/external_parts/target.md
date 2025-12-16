@@ -1,12 +1,14 @@
 ---
 layout: default
 title: Create Target
-parent: Mothbox DIY
+parent: External Parts
 #has_children: true
-nav_order: 3
+nav_order: 4
 ---
 
-There's many ways to use your Mothbox! The Mothbox's default software will automatically calibrate its focus and exposure to whatever kind of target is positioned in front of it. The main thing is that it should probably be 
+There's many ways point your Mothbox at something! 
+
+The Mothbox's default software will automatically calibrate its focus and exposure to whatever kind of target is positioned in front of it. The main thing is that it should probably be 
 * white
 * flat
 * easy for insects to perch on
@@ -19,6 +21,8 @@ We have found that acrylic felt works quite well for insects to walk around on, 
 We have four main options for your target. We have done most of our testing with the Standard Target, so the other options are still a bit more experimental.
 
 The [Standard Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#standard-target) is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
+
+The [Minimalist Target] was inspired by the Lepisense crew who have been using just a peice of rough-surfaced acrylic. You can just purchase "textured" acrylic sheets in some places, but if that's not available, we have used a rough-grit sander to just roughen one side of a piece of acrylic. Follow the same instructions as the "Standard sheet" but don't worry about the felt part.
 
 The [Dual Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/dual-target) doesn't require any additional materials other than cutting an extra target shape. It can also fold in half so it doesn't take up much more room than the Standard Target! So you can pretty much double your target area with minimal changes.
 
