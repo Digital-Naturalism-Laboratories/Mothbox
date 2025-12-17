@@ -1,1 +1,16 @@
-// custom SCSS (or CSS) goes here
+// Level 1
+.nav-list > .nav-list-item > .nav-list-link {
+  font-weight: 600;
+}
+
+// Level 2
+.nav-list .nav-list > .nav-list-item > .nav-list-link {
+  font-size: 0.95rem;
+  padding-left: 1.25rem;
+}
+
+// Level 3
+.nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}// custom SCSS (or CSS) goes here
