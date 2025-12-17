@@ -1,6 +1,6 @@
 // Level 1
 .nav-list > .nav-list-item > .nav-list-link {
-  font-weight: 600;
+  //font-weight: 600;
 }
 
 // Level 2
@@ -14,3 +14,8 @@
   font-size: 0.9rem;
   opacity: 0.8;
 }// custom SCSS (or CSS) goes here
+
+// Active link background
+.nav-list-link.active {
+  background-color: #fef9c3; /* light yellow */
+}
