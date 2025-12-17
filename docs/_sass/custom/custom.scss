@@ -13,10 +13,10 @@
 .nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link {
   font-size: 0.9rem;
   opacity: 0.8;
-}// custom SCSS (or CSS) goes here
-
+   background-color: transparent; /* light purple */ 
+}
 // Active link background
 .nav-list-link.active {
   background-color: #fef9c3; /* light yellow */
-  background-image: none;
+  background-image: None;
 }
