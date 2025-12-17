@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Processing Data
+title: Refining Data
 nav_order: 4
 has_children: true
 permalink: /docs/processing

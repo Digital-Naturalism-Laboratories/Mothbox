@@ -1,6 +1,6 @@
 ---
 layout: default
-parent: Processing Data
+parent: Refining Data
 title: Classification
 nav_order: 4
 has_children: true

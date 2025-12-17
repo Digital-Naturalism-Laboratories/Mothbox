@@ -6,17 +6,8 @@ has_children: false
 nav_order: 1
 ---
 
-# Make Sure Exiftool is installed
-There is a thing called "ExifTool" that (because exif data on images is super convoluted) needs to be installed to run CreateDataset
-<img width="740" height="285" alt="image" src="https://github.com/user-attachments/assets/b4ecdccf-0567-4ca7-a983-2bd2b6065776" />
-
-if you are using windows, you don't actually have to install it i think. It just points to a relatively positioned folder in the github that has the .exe it runs
-if you are running mac or linux, you need to download exiftool (or the mac package .pkg is actually in in the AI folder of the github already for you as well)
-
-
-
 # Generate Dataset
-The Mothbot_CreateDataset.py script creates a user-friendly, editable dataset for you. It uses a program called Fiftyone to create the User Interface.
+The Mothbot_CreateDataset.py script creates a visual, editable dataset for you. It uses a program called Fiftyone to create the User Interface.
 
 
 ## Inputs

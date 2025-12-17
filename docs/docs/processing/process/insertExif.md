@@ -7,6 +7,15 @@ nav_order: 7
 ---
 # Launch Exif (Optional)
 
+## Make Sure Exiftool is installed
+There is a thing called "ExifTool" that (because exif data on images is super convoluted) needs to be installed to run CreateDataset
+<img width="740" height="285" alt="image" src="https://github.com/user-attachments/assets/b4ecdccf-0567-4ca7-a983-2bd2b6065776" />
+
+if you are using windows, you don't actually have to install it i think. It just points to a relatively positioned folder in the github that has the .exe it runs
+if you are running mac or linux, you need to download exiftool (or the mac package .pkg is actually in in the AI folder of the github already for you as well)
+
+
+
 ## Insert EXIF Data Using Mothbot UI
 
 We've created a script to insert EXIF data into each patch you've made, which is useful when you want to upload individual patches as photos to crowdsourcing platforms like iNaturalist. You can do this by clicking on the "Insert Exif" tab, then clicking the big orange button that says "Insert Exif"

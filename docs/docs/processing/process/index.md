@@ -2,7 +2,7 @@
 layout: default
 title: Process
 nav_order: 4
-parent: Processing Data
+parent: Refining Data
 has_children: true
 permalink: /docs/processing/process
 ---
