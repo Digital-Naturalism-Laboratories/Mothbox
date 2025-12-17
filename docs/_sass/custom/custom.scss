@@ -4,17 +4,13 @@
 }
 
 
-// Level 2
-.nav-list .nav-list > .nav-list-item > .nav-list-link {
-  //font-size: 0.95rem;
-  background-color: transparent; 
-}
-
-// Level 2
+/* Second-level anchor-only background, aligned with text */
 .nav-list .nav-list > .nav-list-item > a.nav-list-link {
-  font-size: 0.95rem;
-  background-color: #f3e8ff; /* light purple */
-  width: fit-content;
+  background-color: #f3e8ff;
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  margin-left: 1rem;   /* ← THIS is the key */
+  border-radius: 4px;
 }
 
 // Level 3
