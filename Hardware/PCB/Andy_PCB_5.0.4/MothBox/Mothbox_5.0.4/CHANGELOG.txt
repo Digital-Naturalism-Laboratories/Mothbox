@@ -5,6 +5,21 @@ Project Name: MothBox Main PCB
 PCB Versions:
 -------------
 
+Version 5.0.4:
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: 2025-12-  (uploaded by Andy)
+
+Major Changes:
+Done: reverse Q8
+Done: update zener diodes: D1+D2+D4 from 6.8V to 18V so they can cope better with 36V input voltages. Add a 100K ohm resistor to help with lower voltages
+
+Minor changes:
+Done: add some extra label to Documentation QR code
+Done: add extra label to 12V testpoint to clarify that it's under software control
+Done: minor Ground layer revamps
+Done: added extra text to Power supply schematic to clarify 5V volt supply/resistor selection
+
+
 Version 5.0.3:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
 Date: 2025-11??  (uploaded by Andy)

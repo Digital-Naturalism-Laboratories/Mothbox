@@ -4,18 +4,20 @@ Project Name: MothBox Main PCB
 
 PCB Versions:
 -------------
-Version 5.0.3:
+
+Version 5.0.4:
 Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
-Date: 2025-11??  (uploaded by Andy)
+Date: 2025-12-  (uploaded by Andy)
 
-* fix Q8 MOSFET D-S swap direction
-* add the zener+resistors back into Q8
-* clean up 3V3 MOSFET switch Q11 symbol
-* swapped out all three 6V zeners for 18V zeners
-* add a 100K pullup resistor to Q1+Q8+Q10 (was previously relying on the 6V zener)
-* add Documentation label to the backside Documentation QR code
+Major Changes:
+Done: reverse Q8
+Done: update zener diodes: D1+D2+D4 from 6.8V to 18V so they can cope better with 36V input voltages. Add a 100K ohm resistor to help with lower voltages
 
-
+Minor changes:
+Done: add some extra label to Documentation QR code
+Done: add extra label to 12V testpoint to clarify that it's under software control
+Done: minor Ground layer revamps
+Done: added extra text to Power supply schematic to clarify 5V volt supply/resistor selection
 
 
 Version 5.0.3:
