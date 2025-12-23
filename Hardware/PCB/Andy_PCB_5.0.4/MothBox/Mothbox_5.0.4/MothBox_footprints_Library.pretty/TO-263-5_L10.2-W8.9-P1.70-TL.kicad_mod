@@ -1,0 +1,463 @@
+(footprint "TO-263-5_L10.2-W8.9-P1.70-TL"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -7.4 0)
+		(layer "F.SilkS")
+		(uuid "4ed2afd7-1e1c-4623-9d53-e0fb02a6d9a5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "XL4015E1"
+		(at 0 7.4 0)
+		(layer "F.Fab")
+		(uuid "afc2c57a-2a5c-4b34-bb93-4aec22500497")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://lcsc.com/product-detail/DC-DC-Converters_XL4015E1_C51661.html"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "841bf65b-d6da-43c3-8fe3-7a83f251f7b5")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "dd952b92-c50a-49ad-b804-d9fecf1cff13")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MF" "XLSEMI"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "32bac541-4828-4a32-8e13-90ab2c4d8e42")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MAXIMUM_PACKAGE_HEIGHT" "4.77mm"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5b992208-d7d4-4524-bea2-796c9d42aef6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Package" "None"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "0741c385-ccfe-4025-ac6e-b27ab8f12ecb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Price" "None"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d725d3cb-4017-42e0-a5e8-fa9781daa901")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Check_prices" "https://www.snapeda.com/parts/XL4015/XLSEMI/view-part/?ref=eda"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6ab9a4b7-5a71-4b94-84d3-e48337a40da8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "STANDARD" "Manufacturer Recommendations"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "212b4886-6683-41d4-81e9-d526c6098a7c")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PARTREV" "1.5"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2241462c-69a1-4404-8a8c-dde42211d23d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "SnapEDA_Link" "https://www.snapeda.com/parts/XL4015/XLSEMI/view-part/?ref=snap"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cf80ba85-0e6b-435b-8ae3-7204be204408")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MP" "XL4015"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "074e9429-b654-4b8f-8c18-7e880ec04302")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description_1" "5A 180KHz 36V Buck DC to DC Converter"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "c146f371-c358-4ff6-b16a-ae220c303a00")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Availability" "Not in stock"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "908abe69-b22d-48fb-a234-f1f95261dbbb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "MANUFACTURER" "XLSEMI"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d941d02d-a5bc-47b5-b300-a138174b30a8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part no " "C51661"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a95f65e8-50a7-42d7-bf24-d263bf56dbc7")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part" "C51661"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "96c93358-4cc9-4407-90bd-f8dacce2a8cb")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "AVAILABILITY" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "acd093ce-9428-4089-9ec1-e27cf8e64177")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "DESCRIPTION" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "cea13463-393c-4638-a6ab-32990b66aa38")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Link" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "894106c0-0a26-437c-909f-fc482fa758c3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PACKAGE" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a39faff1-fe80-4b02-a3fe-1c7de68a6456")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PRICE" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1dde80c9-dac6-4543-abd1-5e17dfd6ac66")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC_Part" "C51661"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a1606136-ff86-4432-8056-281cb45c44b1")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC_Part_No" "C51661"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "79c1af01-c506-4b74-8a32-ef69c07d9bcc")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -1.86 -5.08)
+		(end -0.32 -5.08)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "50703289-7bd5-4885-930d-abb37880aba3")
+	)
+	(fp_line
+		(start -1.86 5.08)
+		(end -1.86 -5.08)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "01b8588f-dfd3-4cea-8a56-eab87c256952")
+	)
+	(fp_line
+		(start -0.32 5.08)
+		(end -1.86 5.08)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "a44033ae-a2e1-4ad0-9b73-6272b2cb885f")
+	)
+	(fp_circle
+		(center -4.64 -4.7)
+		(end -4.51 -4.7)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "74664701-0e9e-487b-bf46-fd6948d0f9ff")
+	)
+	(fp_circle
+		(center -6.02 -3.39)
+		(end -5.87 -3.39)
+		(stroke
+			(width 0.3)
+			(type solid)
+		)
+		(fill no)
+		(layer "Cmts.User")
+		(uuid "a0324638-5e89-4c0b-a74c-9638a888383f")
+	)
+	(fp_circle
+		(center -5.54 -5.21)
+		(end -5.51 -5.21)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "870e8754-7634-4e96-bcd6-68c45066a2cf")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "83fd0a19-2dae-4809-8832-5acb51001f53")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -5.01 -3.4)
+		(size 3.2 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "2ce631a3-32cb-4eef-8bf8-d0c22fdf394b")
+	)
+	(pad "2" smd rect
+		(at -5.01 -1.7)
+		(size 3.2 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f5c577cb-10f1-43a4-88e3-0fb61d2c81e3")
+	)
+	(pad "3" smd rect
+		(at -5.01 0)
+		(size 3.2 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "f9707f44-96ce-47e5-9416-eedfd1c5b257")
+	)
+	(pad "4" smd rect
+		(at -5.01 1.7)
+		(size 3.2 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7f0b33a5-bf6b-498f-ac36-4dba100e745b")
+	)
+	(pad "5" smd rect
+		(at -5.01 3.4)
+		(size 3.2 1.15)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "045f1bb2-666a-4046-8f72-310574360fef")
+	)
+	(pad "6" smd custom
+		(at 5.01 0.32)
+		(size 1 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(thermal_bridge_angle 90)
+		(options
+			(clearance outline)
+			(anchor circle)
+		)
+		(primitives
+			(gr_poly
+				(pts
+					(xy 0.95 -3.68) (xy 7.55 -3.68) (xy 7.55 -5.46) (xy 9.08 -5.46) (xy 9.08 5.46) (xy 7.55 5.46) (xy 7.55 4.32)
+					(xy 0.95 4.32)
+				)
+				(width 0.1)
+				(fill yes)
+			)
+		)
+		(uuid "1d19ac50-a1bf-41b4-8ace-44e69ed5b0e2")
+	)
+	(embedded_fonts no)
+	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/TO-263-5-5P_L10.2-W8.7-H4.5-LS14.4-P1.70.wrl"
+		(offset
+			(xyz 1.58 -0 -0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 90)
+		)
+	)
+)

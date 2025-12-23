@@ -1,0 +1,93 @@
+
+Note: Items that have been fixed are placed into the CHANGELOG.txt file and then deleted from this file
+
+Things that need fixing:
+------------------------
+
+- Double check the 5V supply delivers plenty of current
+		- See suggestions on rpi forums, note how they say the XL4015 might be slow, so maybe extra good cap near input!:
+		Likely a mix of voltage-drop and old firmware.
+		Measure 5 V at the Pi under load (camera/VNC) – must stay ≥ 4.9 V.
+		Use short, thick 5 V / GND paths on the HAT; add 470-2200 µF cap near input.
+		***** XL4015 can sag on fast spikes — compare with a good 5 A USB-C PD supply.
+		Keep PSU_MAX_CURRENT=5000 and stay on latest EEPROM/firmware; updates have improved brown-out handling.
+		Check vcgencmd get_throttled & journalctl for undervoltage logs.
+		PH: This seems to be handling the power ok?  Need to scope the 5V line to see the quality of the ripple and if there are brownouts etc.
+
+
+- Make sure the external attractor can deliver plenty of power. Some folks are connecting 48-60watt attractors. PH: Yes, the switching MOSFET is rated for 13A, so it can easily handle 5A needed for 60W = 12V * 5A.  Note sure the input connectors will hold up to the extra current though?  Will need to test this out and monitor board wiring and connectors with a thermal camera.
+
+- Pi connector is reversed in the schematic. This needs to be swapped around, but wiring kept in place
+
+- the schematic could be re-annotated?  Of course this will change the assignments and all the documentation will need to be updated.
+
+
+Haven't yet tested:
+-------------------
+
+- Leaving lights on for a long time
+
+- GPS
+
+- Regulator enabler MOSFET
+
+- Double battery fit with smaller camera case?
+
+- Glare from camera
+
+- Andy to measure the board current using INA219 and multimeter across R4   I=V/R
+
+- Andy to measure voltage drop across two Photo LED Resistors, for example: R10 and R20 while switched on. Also measure the voltage drop from R10 & R20 to GND.  This will tell us the current being used by a string of LEDs on the Left and Right side. 
+
+
+
+Things I tested that did work:
+------------------------------
+
+-The i2c voltage meter totally works!
+
+- the i2c muxes work (i can communicate with them, but don't have pull ups so not useful)
+
+- attractors turn on!
+
+- Photo lights turn on!
+
+GND Measurements on v5.0.1b PCB:
+
+TP10= Bottom
+TP8 = Top
+TP9 = Left (middle)
+
+Everything on:
+TP10-TP9 = 3.8mV
+TP10-TP8 = 3.6mV
+TP9-TP8 = 0.2mV
+
+LEDs off:
+TP10-TP9 = 0.7mV
+TP10-TP8 = 0.6mV
+TP9-TP8 = 0.1mV
+
+Photo LED MOSFETs Drain to GND on v5.0.1b PCB:
+TP4 = 59mV   : Rds ~= 59mV / 1.152 = 51.2 mOhms (why this?)
+TP6 = 12.7mV : Rds ~= 12.7mV / 1.192A = 10.6 mOhms (this is about right)
+
+R4 (0.1 Ohm current shunt):
+16.7mV = 167mA at 26V = 4.34W (only RPi running)
+
+R10 18 Ohm Photo LED Resistor:
+2.69V = I=V/R = 149.4mA
+
+R20 18 Ohm Photo LED Resistor:
+2.60V = I=V/R = 144.4mA
+
+Minimum 5V Voltage measured = 5.09V, Max = 5.37V
+
+
+
+Future Changes:
+---------------
+
+- add a MCU with RTC that controls all the on and off times of the whole system for even better power management. NOTE: this needs prototyping to test comms between the two devices:  MCU <--> RPi
+
+

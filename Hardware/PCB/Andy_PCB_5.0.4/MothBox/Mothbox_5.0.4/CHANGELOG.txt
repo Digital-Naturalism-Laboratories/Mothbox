@@ -1,0 +1,103 @@
+Project Name: MothBox Main PCB
+
+
+
+PCB Versions:
+-------------
+
+Version 5.0.3:
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: 2025-11??  (uploaded by Andy)
+
+Major Changes:
+Done: swap out the 12V vgs JMTV210P02A P-MOSFETs (Q1, Q8, Q10) for 20V Vgs based AP30P30Q - C471913
+Done: change fuse from 1812 3A to 2920 7A?  Have to move IAN219 over a bit
+Done: decrease IAN219 sense resistor from 0.1 ohm to 0.033 ohm
+Done: Remove the D7, D6, D5, D2 ESD diodes.  Otherwise, increase from 12V, to 18V or 45V? 
+Done: replace RPi 1000uF 5V cap with some 10uF caps. Could have used the original 470uF cap?
+Done: rotate input power connector 90 deg.
+Done: add a closed solder jumper across R4 so we can bypass the current measurements and save on the Voltage drop
+Done: add zener to Q8 (12V isolater MOSFET).  Tt should have a 6.8V zener as well as it might have up to 36V across it?
+Done: add reverse power protection to the 12V input after J1
+
+Minor Changes:
+Done: add double ++-- to the three side power green/orange connector labels and backside
+Done: remove old MB: text label and box from backside
+Done: fix R + L Flash LED labels to something like: L/R FLASH LED GND?
+Done: add Talentcell Battery part numbers? (e.g. PB120B1) and larger font 
+Done: whats happening to the two S/N boxes? (AQ - keep the square one, leave space below it (or move it to where it has space below)
+Done: cleanup the EXT Temp Sensor label?
+Done: move C5 and R33 label around the DS18B20 temp sensor box
+Done: change 1.5V text to 1.5A on the external connector
+Done: move the 'Active' label on the U11 switch to the RH side.
+Done: add --++ label to front side of PCB on the input connector
+Done: Add Aducam camera P/N text? Arducam 64MP OV64A40 OwlSight
+Done: move and rotate 3V3 line MOSFET labels, + R36, C??
+Done: rotate H1 + U8 GPS connector labels. PH: Note I ungrouped the 4 objects
+No: make GPS box outline a bit smaller. PH: No, it's a footprint and outlines the size of the GPS board
+Done: outline the Battery pack onto the silkscreen layer as a keep out zone
+Done: decrease D1 zener from 10V to 6.8V. We need to be able to take 36V!!  Our zener can take up to 5mA.  We should pass 2.5mA max through 14.7K at 36V.
+Done: bold up ambient light sensor text 
+Done: rotate U18 ref label
+Done: re-arrange front/back side graphics and text
+Done: moved some of the traces a bit away from under the sides of the L1 inductor
+
+
+Version 5.0.2:
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: 2025-09-TBD  (uploaded by Andy)
+
+Done: AQ- swapped green indicator LED (C72043) which LCSC says is discontinued  for  C2289 which is dirt cheap and plentiful
+Done: AQ - change the user switch to use the ALWAYS on 3v3 power so that a user could always be able to push it, and then it could trigger a script to enable the other 3.3v
+Done: AQ - scoot items out of where batteries might be
+Done: Silkscreen - we should put the test point labels on both sides of the board
+Done: add a user switch
+Done: add a user LED
+Done: MOSFET switch the entire 3V3 line out of the RPi connector to minimise 3.3V quiescent current usage. 
+Done: add a SMD DS18B20 PCB temperature sensor
+Done: add provision for an external DS18B20 temperature sensor. Need a 4.7K ohm resistor and a 1.25mm 3-pin connector
+Done: remove 3V3 input leading to the ePaper hat connector as it has it's own built in 5V to 3V3 regulator
+Done: Swap out the PCA9535 MUX to the PCA9555PW(UMW) as this has pullup resistors: C42420607
+Done: fix the two Attractor 3 labels.  One should be #1
+Done: can move attractor labels out from under the foot print?
+Done: Move resistor R22 out from underneath Attractor 3 footprint
+Done: 5v test point is awkwardly under an LED on one side
+Done: Silkscreen of regulated 12v is reversed! (Double check other silkscreen labels)
+Done: change R3 to a lower value (3K Ohm) so as to raise the voltage to 5.2V for the RPi
+Done: add an extra resistor close to R3 (Vf power), so feedback voltage can be easier to fine tune
+Done: swap out the BH1750FVI-TR LCSC: C78960 to the cheaper LTR-303ALS-01 ambient light sensor: C364577, US$0.38/ea, DFN-6(2x2)
+Done: remove: GPIO4/pin8 from RPi-ePaper.  Reroute to DS18B20
+Done: construct a stronger ground plain
+Done: Add an extra 6 (2 x 3) Photo LEDs to PCB
+Done: added Power input/Output direction arrows for each connector
+Done: modified Serial Number Box shape - Andy added another switched it back because JLCPCB needs certain dimensions to automatically put the serial and QR code on
+
+
+Version 5.0.1: 
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: 2025-05-18 
+
+Done: design and laid out by building on the 5.0.0 design and user feedback
+Done: upgraded white LEDs to be twice as bright (500mW)
+Done: replaced switch multiplexer IC's with i2C based IC's
+Done: added an extra switch bank for another 8 hours of config options
+Done: reversed ePaper screen so it's on the other side of PCB
+Done: swapped out the MOSFETs for different and cheaper versions
+Done: added a reverse polarity protection MOSFET to power input
+Done: swapped out the green input connectors from a horizontal to vertical connectors
+Done: swapped out the 0805 fuse to a larger 1812 6A fuse
+Done: as there are now more i2C IC's on the bus, the i2C pullup resistor values where dropped to 4.7K ohm
+Done: added a project URL QR code to the PCB
+Done: general clean up of the schematic
+Done: add a BH1750FVI-TR light sensor (second v5.0.1 version)
+
+
+Version 5.0.0: 
+Production:  JLCPCB, 2 Layers, 1.6mm, Green, 238mmx141mm 
+Date: 2025-05-??
+
+* designed and laid out by AndyQ
+
+
+
+

@@ -1,0 +1,221 @@
+(footprint "CONN-SMD_3P-P1.25_DF13C-3P-1.25V"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -6.089226 1.313257 0)
+		(layer "F.SilkS")
+		(uuid "fd682814-dbed-43fd-97a2-6189a868e4a4")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.24)
+			)
+		)
+	)
+	(property "Value" "Conn_1.25mm"
+		(at 0.313823 4.20466 180)
+		(layer "B.Fab")
+		(uuid "acac4d49-deb6-4e5b-977c-e03eb0c44e4d")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+			(justify mirror)
+		)
+	)
+	(property "Datasheet" "~"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "fa973692-5794-4a38-8329-fdca68fd0c90")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" "Generic connector, single row, 01x03, script generated"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6d61bce5-6c06-4d5c-b308-0f118e2e7337")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC" "C88352"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b0773fb6-203e-49e8-93f5-d2c45db92683")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -3.5 -0.38)
+		(end -3.5 -0.08)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "db340ac9-ea7b-4117-b41f-49105bb09593")
+	)
+	(fp_line
+		(start -3.5 -0.38)
+		(end -1.82 -0.38)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "96e4ce26-deb1-493e-974c-06c8ff056ba4")
+	)
+	(fp_line
+		(start -3.5 2.78)
+		(end -3.5 3.02)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "35a259bd-0572-4fc8-94d1-6e7404516965")
+	)
+	(fp_line
+		(start -3.5 3.02)
+		(end 3.5 3.02)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "74588e5f-777b-494d-93b9-ca8d021e5195")
+	)
+	(fp_line
+		(start -0.68 -0.38)
+		(end -0.569999 -0.38)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "3008324f-a9ad-4eca-8cae-da549b7d8eb7")
+	)
+	(fp_line
+		(start 0.569999 -0.38)
+		(end 0.68 -0.38)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ee1fd6b8-8938-43b0-8f61-b6d3ea09ca6b")
+	)
+	(fp_line
+		(start 1.82 -0.38)
+		(end 3.5 -0.38)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "86329401-1d2e-4428-bd32-20c25fdd19a1")
+	)
+	(fp_line
+		(start 3.5 -0.38)
+		(end 3.5 -0.08)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "f2290f5b-3e61-465a-9a70-646d94067cde")
+	)
+	(fp_line
+		(start 3.5 2.78)
+		(end 3.5 3.02)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "5381e608-2065-4d91-81a5-1bba86b0d8cd")
+	)
+	(fp_circle
+		(center -4.2 -1.85)
+		(end -4.17 -1.85)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "88d67fbc-f378-44ce-b196-bfde838759e4")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 180)
+		(layer "F.Fab")
+		(uuid "2c2a4978-e50a-4604-af71-430997589473")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -1.25 -1.35 90)
+		(size 2 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "0ed512e2-91db-49af-b828-455ac4630e8b")
+	)
+	(pad "2" smd rect
+		(at 0 -1.35 90)
+		(size 2 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "8de2e6c6-2ac8-489a-a462-3a36a5d685d8")
+	)
+	(pad "3" smd rect
+		(at 1.25 -1.35 90)
+		(size 2 0.7)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "ea82bb5a-3d0a-476d-8d57-997c729f1c84")
+	)
+	(pad "4" smd rect
+		(at 4 1.35 180)
+		(size 2 2.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "4d7675b2-4731-47d0-9fba-45011e542525")
+	)
+	(pad "5" smd rect
+		(at -4 1.35 180)
+		(size 2 2.4)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "e9116757-1751-4e3d-9e48-2f049c0676e4")
+	)
+	(embedded_fonts no)
+	(model "/home/parkview/Documents/Kicad/easyeda2kicad/easyeda2kicad.3dshapes/CONN-SMD_DF13C-P1.25-LS-3P.wrl"
+		(offset
+			(xyz 1.2 -1.8 -0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

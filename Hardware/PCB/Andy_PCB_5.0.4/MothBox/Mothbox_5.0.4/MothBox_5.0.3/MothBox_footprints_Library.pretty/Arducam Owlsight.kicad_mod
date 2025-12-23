@@ -1,0 +1,351 @@
+(footprint "Arducam Owlsight"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "c6f03752-24a9-4e07-82ea-cae8171aada8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "~"
+		(at 0 1 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "9821a74f-0548-4a34-9dec-4a437d0a484e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "f5f85953-0976-447f-a656-9f06982340e9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6325a84f-7d5f-46b4-b8bb-62e5d62877ac")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "AVAILABILITY" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "a7574c32-b74c-4bd0-aa41-79d1cdd0ee91")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "DESCRIPTION" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "71584d89-1039-462b-b39e-e2c3d1bc3272")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Link" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ea96c680-afcc-474d-9fa7-092125842715")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PACKAGE" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "812fb0d1-a4d5-42eb-a396-224ca4c9c3ac")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "PRICE" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8e4fe4d8-13e5-4c0c-b1e4-3b827505d4ab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr smd exclude_from_pos_files exclude_from_bom)
+	(fp_rect
+		(start -20 -17.25)
+		(end 20 17.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "ef36fdd3-cd6c-496e-a49e-fa360d08d356")
+	)
+	(fp_rect
+		(start -20 -17.25)
+		(end 20 17.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "B.SilkS")
+		(uuid "2e111be3-0261-4385-90f0-cfbc63c03efe")
+	)
+	(fp_line
+		(start -12.133851 12.207107)
+		(end -12.133851 7.707107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "f99347a9-7fef-4073-bfdd-296a8e31da61")
+	)
+	(fp_line
+		(start -11.133851 6.707107)
+		(end 10.766149 6.707107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "c0706946-15e5-496f-a2d9-5c25fbf88d7c")
+	)
+	(fp_line
+		(start 10.766149 13.207107)
+		(end -11.133851 13.207107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "c56435a8-90be-4843-924c-1c11eb2667e7")
+	)
+	(fp_line
+		(start 11.766149 7.707107)
+		(end 11.766149 12.207107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "21fac13f-1c7d-416b-9d95-c80a6fdca383")
+	)
+	(fp_arc
+		(start -12.133851 7.707107)
+		(mid -11.840958 7)
+		(end -11.133851 6.707107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "96ef5ff1-7d30-4dfc-afea-47fe0e1d4b56")
+	)
+	(fp_arc
+		(start -11.133851 13.207107)
+		(mid -11.840958 12.914214)
+		(end -12.133851 12.207107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "94feaea9-4008-4120-bf57-b6107f2c6ae3")
+	)
+	(fp_arc
+		(start 10.766149 6.707107)
+		(mid 11.473257 7)
+		(end 11.766149 7.707107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "bf70ae69-a8dc-4798-a1dc-c2083948ffb4")
+	)
+	(fp_arc
+		(start 11.766149 12.207107)
+		(mid 11.473256 12.914215)
+		(end 10.766149 13.207107)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(layer "Edge.Cuts")
+		(uuid "138e304b-4edf-47a3-862d-a72fe0980121")
+	)
+	(fp_circle
+		(center -17.053143 -15.037549)
+		(end -15.353143 -15.037549)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "91d768db-7acf-493d-adae-ff5b23d63bba")
+	)
+	(fp_circle
+		(center -16.16514 14.85799)
+		(end -14.46514 14.85799)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "5564b10f-0019-4aa1-89f3-2dce9fa9fa76")
+	)
+	(fp_circle
+		(center -10.183851 -13.789422)
+		(end -8.383851 -13.789422)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "d665c74e-5976-41ad-a855-aed96d69334d")
+	)
+	(fp_circle
+		(center -10.183851 -1.739422)
+		(end -8.383851 -1.739422)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "0fd47a7e-5893-4396-a52e-caf36c5ce80c")
+	)
+	(fp_circle
+		(center 10.116149 -13.793192)
+		(end 11.916149 -13.793192)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "0cf8270d-53c3-49e3-9a47-78376b8837c3")
+	)
+	(fp_circle
+		(center 10.116149 -1.739422)
+		(end 12.116149 -1.739422)
+		(stroke
+			(width 0.2)
+			(type solid)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "e694e168-d45b-4695-a3ec-5230f16d8b4f")
+	)
+	(fp_circle
+		(center 16.816149 -14.789422)
+		(end 18.516149 -14.789422)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "15b4b517-212e-411d-ad45-4516d539cdd1")
+	)
+	(fp_circle
+		(center 17.053144 15.03755)
+		(end 18.753144 15.03755)
+		(stroke
+			(width 0.2)
+			(type default)
+		)
+		(fill no)
+		(layer "Edge.Cuts")
+		(uuid "7d7d1f3c-3d52-4def-80b7-8421cfd57ab6")
+	)
+	(fp_rect
+		(start -22 -18.75)
+		(end 22 18.75)
+		(stroke
+			(width 0.05)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "c5037ddf-405e-4790-af0c-0fe6addfd7e8")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "d9c122ef-0872-44e2-b88a-6d556d524e17")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(embedded_fonts no)
+	(model "${KIPRJMOD}/Library/Attractor/Quitmeyer-Arducam+64mp+no+Housing.stp"
+		(offset
+			(xyz 42 -22.5 -64)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 90 -0 -0)
+		)
+	)
+)

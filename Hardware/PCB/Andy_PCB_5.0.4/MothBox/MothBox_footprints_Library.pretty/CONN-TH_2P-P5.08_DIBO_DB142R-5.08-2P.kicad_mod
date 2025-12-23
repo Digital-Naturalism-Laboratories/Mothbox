@@ -1,0 +1,182 @@
+(footprint "CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -7.81 0)
+		(layer "F.SilkS")
+		(uuid "85668d62-86bd-4996-8fd0-f92450c5e58e")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "External Attractor"
+		(at 0 7.81 0)
+		(layer "F.Fab")
+		(uuid "92a98c53-75a5-4652-8553-b5d68a636adf")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" "https://lcsc.com/product-detail/Wire-To-Board-Wire-To-Wire-Connector_DIBO-DB301V-3-5-2P-GN_C695629.html"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "6e250e02-4962-4710-869e-f74526b5fb9d")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1d8de74a-628e-4aaa-8695-13f1ff653e48")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part" "C2898709"
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "bdd864c0-9334-4fb4-8468-2fff49f083ae")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -5.1 -5.6)
+		(end 7.6 -5.6)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b569848d-cceb-407d-b4ab-848ce9bf647b")
+	)
+	(fp_line
+		(start -5.08 -5.56)
+		(end -5.08 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b2aebbcd-ff28-49e1-a7e6-22065e51883e")
+	)
+	(fp_line
+		(start -5.08 8.54)
+		(end 7.62 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "cc0e298f-1e90-4640-a789-f3c3a1bc9da2")
+	)
+	(fp_line
+		(start 5.07 -5.56)
+		(end 5.07 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7339f2fd-98a1-4aa2-9b58-c070975561e6")
+	)
+	(fp_line
+		(start 7.62 -5.56)
+		(end 7.62 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "6789ba7a-a1b9-4d11-95ab-28e1d7b90b84")
+	)
+	(fp_circle
+		(center -5.08 8.54)
+		(end -5.05 8.54)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "ee037a7b-5bc1-4479-8886-ab0550aa0b4e")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "86dfb032-7551-4606-95b2-6371cc3dc9c8")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -2.54 -3.81)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "9d35babe-f1d2-419f-bd95-457ac6766af4")
+	)
+	(pad "1" thru_hole circle
+		(at -2.54 3.81)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "48aa4516-1dab-4038-a19a-2613bf7809e3")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 -3.81)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "fac58475-b8b8-4ee1-a404-6d2091e3dc1a")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 3.81)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "47341225-1e18-4f28-9734-53e3d9295e8d")
+	)
+	(embedded_fonts no)
+	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P.wrl"
+		(offset
+			(xyz 1.27 -1.49 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+)

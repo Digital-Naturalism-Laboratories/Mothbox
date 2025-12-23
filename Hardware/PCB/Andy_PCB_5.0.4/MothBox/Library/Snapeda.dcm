@@ -1,0 +1,16 @@
+EESchema-DOCLIB  Version 2.0
+#
+# ADG706BRUZ
+#
+$CMP ADG706BRUZ
+D
+F
+$ENDCMP
+#
+# BC817_NPN_BJT
+#
+$CMP BC817_NPN_BJT
+D
+F
+$ENDCMP
+#End Doc Library
