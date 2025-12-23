@@ -1,1 +1,26 @@
-// custom SCSS (or CSS) goes here
+// Level 1
+.nav-list > .nav-list-item > .nav-list-link {
+  //font-weight: 600;
+}
+
+
+/* Second-level anchor-only background, aligned with text */
+.nav-list .nav-list > .nav-list-item > a.nav-list-link {
+  background-color: #f3e8ff;
+  //display: inline-block;
+  //padding: 0.25rem 0.5rem;
+  margin-left: 1.8rem;   /* ← THIS is the key */
+  //border-radius: 4px;
+}
+
+// Level 3
+.nav-list .nav-list .nav-list > .nav-list-item > .nav-list-link {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  background-color: transparent; /* light purple */ 
+}
+// Active link background
+.nav-list-link.active {
+  background-color: #fef9c3; /* light yellow */
+  background-image: None;
+}
