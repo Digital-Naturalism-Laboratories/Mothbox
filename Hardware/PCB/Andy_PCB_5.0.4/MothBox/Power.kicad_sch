@@ -10072,7 +10072,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+24V"
+		(property "Value" "+9-36V"
 			(at 147.066 70.866 0)
 			(effects
 				(font

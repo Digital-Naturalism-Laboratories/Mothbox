@@ -16,6 +16,8 @@ Done: swapped out C14+C16 for smaller 470uF 50V SMD Caps.  The 1000uF ones are t
 Done: swapped out R32 0R to 100R so that the RPi voltage is reduced from 5.40V to 5.25V
 
 Minor changes:
+Done: Change Attractor Mounting holes to m3 from m2.5 to make it easier to zip tie (AQ)
+Done: Added 3D models for capacitors (AQ)
 Done: Scootch SN QR code a bit so there's space for text code + QR code (AQ)
 Done: rotate LED 49 to just give it a bit more breathting room away from attractor 2 (AQ)
 Done: Moved Battery attaching zip tie holes around to avoid box conflict, and better battery holding (AQ)

@@ -2877,7 +2877,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M2.5"
+		(property "Value" "M3"
 			(at 229.87 86.3599 0)
 			(effects
 				(font
@@ -2886,7 +2886,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 227.33 85.09 0)
 			(effects
 				(font
@@ -2904,7 +2904,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
+		(property "Description" "attractor Mounting Hole without connection"
 			(at 227.33 85.09 0)
 			(effects
 				(font
@@ -3660,7 +3660,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M2.5"
+		(property "Value" "M3"
 			(at 101.6 153.6699 0)
 			(effects
 				(font
@@ -3669,7 +3669,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 99.06 152.4 0)
 			(effects
 				(font
@@ -3687,7 +3687,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
+		(property "Description" "attractor Mounting Hole without connection"
 			(at 99.06 152.4 0)
 			(effects
 				(font
@@ -4688,7 +4688,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "M2.5"
+		(property "Value" "M3"
 			(at 101.6 86.3599 0)
 			(effects
 				(font
@@ -4697,7 +4697,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MountingHole:MountingHole_2.7mm"
+		(property "Footprint" "MountingHole:MountingHole_3.2mm_M3"
 			(at 99.06 85.09 0)
 			(effects
 				(font
@@ -4715,7 +4715,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Mounting Hole without connection"
+		(property "Description" "attractor Mounting Hole without connection"
 			(at 99.06 85.09 0)
 			(effects
 				(font
