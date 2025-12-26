@@ -9777,15 +9777,15 @@
 		(dnp no)
 		(uuid "34236419-906e-4f05-868a-8f5198638852")
 		(property "Reference" "TP2"
-			(at 42.418 135.382 0)
+			(at 41.91 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "24V_test"
-			(at 40.894 132.842 0)
+		(property "Value" "9-36V_test"
+			(at 42.672 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -10007,7 +10007,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+24V"
+		(property "Value" "+9-36V"
 			(at 51.054 134.112 0)
 			(effects
 				(font
