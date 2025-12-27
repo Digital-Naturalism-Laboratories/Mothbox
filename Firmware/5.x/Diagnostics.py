@@ -36,7 +36,7 @@ def check_and_truncate_log():
     if os.path.exists(LOG_FILE):
         size_mb = os.path.getsize(LOG_FILE) / (1024 * 1024)
         if size_mb > MAX_LOG_SIZE_MB:
-            print(f"[LOG] {os.path.basename(LOG_FILE)} is {size_mb:.1f} MB — trimming...")
+            print(f"[LOG] {os.path.basename(LOG_FILE)} is {size_mb:.1f} MB â trimming...")
             with open(LOG_FILE, "rb") as f:
                 f.seek(-TRIM_KEEP_MB * 1024 * 1024, os.SEEK_END)
                 data = f.read()
@@ -90,20 +90,32 @@ if custom_message:
 print()
 
 def run_script(script_path, show_output=True):
-    """Run a Python script and optionally display its output."""
+    """Run a Python or shell script and optionally display its output."""
     try:
+        if script_path.endswith(".py"):
+            cmd = ["python3", script_path]
+        elif script_path.endswith(".sh"):
+            cmd = ["bash", script_path]
+        else:
+            print(f" Unsupported script type: {script_path}")
+            return
+
         result = subprocess.run(
-            ["python3", script_path],
+            cmd,
             capture_output=True,
             text=True,
             check=True
         )
+
         if show_output:
             output = result.stdout.strip()
             if output:
                 print(output)
+
     except subprocess.CalledProcessError as e:
-        print(f" Error running {script_path}: {e.stderr.strip() if e.stderr else 'Unknown error'}")
+        err = e.stderr.strip() if e.stderr else "Unknown error"
+        print(f" Error running {script_path}: {err}")
+
 
 # --- Run diagnostic modules ---
 run_script("/home/pi/Desktop/Mothbox/scripts/3v3SensorsOn.py", show_output=False)
@@ -111,7 +123,8 @@ time.sleep(0.5)
 run_script("/home/pi/Desktop/Mothbox/scripts/read_Vin.py", show_output=True)
 run_script("/home/pi/Desktop/Mothbox/scripts/read5V.py", show_output=True)
 run_script("/home/pi/Desktop/Mothbox/scripts/readCPUTemperature.py", show_output=True)
-# run_script("/home/pi/Desktop/Mothbox/scripts/readBoardTemperature.py", show_output=True)
+time.sleep(2) # temp sensor needs a lot of time awake to run
+run_script("/home/pi/Desktop/Mothbox/scripts/BoardTemp_ds18b20.py", show_output=True) 
 run_script("/home/pi/Desktop/Mothbox/scripts/readLTR303.py", show_output=True)
 run_script("/home/pi/Desktop/Mothbox/scripts/3v3SensorsOff.py", show_output=False)
 
