@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightBurnProject AppVersion="1.4.03" FormatVersion="1" MaterialHeight="0" MirrorX="True" MirrorY="True">
+    <VariableText>
+        <Start Value="0"/>
+        <End Value="999"/>
+        <Current Value="0"/>
+        <Increment Value="1"/>
+        <AutoAdvance Value="0"/>
+    </VariableText>
+    <UIPrefs>
+        <Optimize_ByLayer Value="0"/>
+        <Optimize_ByGroup Value="-1"/>
+        <Optimize_ByPriority Value="1"/>
+        <Optimize_WhichDirection Value="0"/>
+        <Optimize_InnerToOuter Value="1"/>
+        <Optimize_ByDirection Value="0"/>
+        <Optimize_ReduceTravel Value="1"/>
+        <Optimize_HideBacklash Value="0"/>
+        <Optimize_ReduceDirChanges Value="0"/>
+        <Optimize_ChooseCorners Value="0"/>
+        <Optimize_AllowReverse Value="1"/>
+        <Optimize_RemoveOverlaps Value="0"/>
+        <Optimize_OptimalEntryPoint Value="1"/>
+        <Optimize_OverlapDist Value="0.025"/>
+    </UIPrefs>
+    <CutSetting type="Cut">
+        <index Value="2"/>
+        <name Value="acrylic cut"/>
+        <minPower Value="50"/>
+        <maxPower Value="50"/>
+        <maxPower2 Value="20"/>
+        <speed Value="10"/>
+        <numPasses Value="2"/>
+        <dotTime Value="1"/>
+        <dotSpacing Value="0"/>
+        <priority Value="0"/>
+        <tabCount Value="1"/>
+        <tabCountMax Value="1"/>
+    </CutSetting>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 184 319.25</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 416 319.25</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 419.99945 226.44466</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 346.72122 324.17953</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 253.64163 324.19174</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 180.00056 226.80772</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 210.53278 177.25729</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 300 174.25</XForm>
+    </Shape>
+    <Shape Type="Ellipse" CutIndex="2" Rx="1.675" Ry="1.675">
+        <XForm>-1 0 0 -1 389.10437 177.2451</XForm>
+    </Shape>
+    <Shape Type="Path" CutIndex="2" VertID="0" PrimID="0">
+        <XForm>-1 0 0 -1 300 250.25</XForm>
+        <VertList>V2.7142733e-11 81.128456c0x1c1x1V-118.55873 77.143295c0x-121.10505c0y77.057701c1x1V-123.125 72.420959c0x1c1x-123.125c1y74.968719V-123.125 -71.920959c0x-123.125c0y-74.468719c1x1V-118.55873 -76.643295c0x1c1x-121.10505c1y-76.557701V-9.8374642e-11 -80.628456c0x1c1x1V118.55873 -76.643295c0x121.10505c0y-76.557701c1x1V123.125 -71.920959c0x1c1x123.125c1y-74.468719V123.125 72.420959c0x123.125c0y74.968719c1x1V118.55873 77.143295c0x1c1x121.10505c1y77.057701</VertList>
+        <PrimList>L0 1B1 2L2 3B3 4L4 5L5 6B6 7L7 8B8 9L9 0</PrimList>
+    </Shape>
+    <Notes ShowOnLoad="0" Notes=""/>
+</LightBurnProject>
