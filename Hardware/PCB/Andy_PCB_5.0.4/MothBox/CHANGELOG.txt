@@ -12,6 +12,7 @@ Date: 2025-12-
 Major Changes:
 Done: reverse Q8
 Done: update zener diodes: D1+D2+D4 from 6.8V to 18V so they can cope better with 36V input voltages. Add a 100K ohm resistor to help with lower voltages
+Done: Changed footprints of d1 d2 d4 to SOD 123 for bigger diode (AQ)
 Done: swapped out C14+C16 for smaller 470uF 50V SMD Caps.  The 1000uF ones are too high and easily damaged
 Done: swapped out R32 0R to 100R so that the RPi voltage is reduced from 5.40V to 5.25V
 
