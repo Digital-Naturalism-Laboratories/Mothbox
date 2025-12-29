@@ -1,5 +1,4 @@
-q7 90 r
-q3 90 r
+
 u18 90 r
 
 d1 d2 d4 all look fine - line/cathode/direction arrow >| points/ non-open side of box are all correct
