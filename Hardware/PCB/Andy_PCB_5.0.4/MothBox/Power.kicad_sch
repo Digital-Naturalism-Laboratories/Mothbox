@@ -7639,7 +7639,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 96.52 78.74 90)
 			(effects
 				(font
@@ -9205,7 +9205,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 250.19 80.01 90)
 			(effects
 				(font
@@ -9383,7 +9383,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "MothBox_footprints_Library:D_SOD-323"
+		(property "Footprint" "Diode_SMD:D_SOD-123"
 			(at 148.59 80.01 90)
 			(effects
 				(font
