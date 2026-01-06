@@ -18,7 +18,7 @@ from time import sleep
 import csv
 import time
 import datetime
-from datetime import datetime
+#from datetime import datetime
 import subprocess
 from subprocess import Popen  # For executing external scripts
 import os
@@ -167,7 +167,18 @@ def word_to_seed(word, encoding="utf-8"):
     seed = sum(encoded_word)
     max_seed_value = 2**32 - 1
     return seed
+def set_Mode(filepath, themode):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
 
+    with open(filepath, "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith("mode"):
+                file.write("mode=" + str(themode) + "\n")  # Replace with False
+                print("set mode " + themode)
+            else:
+                file.write(line)  # Keep other lines unchanged
 
 def set_computerName(filepath, compname):
     with open(filepath, "r") as file:
@@ -693,7 +704,7 @@ def calculate_next_event(cron_expression):
     job = cron.new(command="echo hello_world")
     job.setall(cron_expression)
     # Get the next scheduled time as a datetime object
-    schedule = job.schedule(date_from=datetime.now())
+    schedule = job.schedule(date_from=datetime.datetime.now())
     next_scheduled = schedule.get_next()
     # Convert the datetime object to epoch time
     return int(next_scheduled.timestamp())
@@ -722,7 +733,51 @@ def set_wakeup_alarm(epoch_time):
     logging.info("Set the Wakeup Alarm" + str(epoch_time))
     #Write to controls here!
     set_nextWakeinControls("/home/pi/Desktop/Mothbox/controls.txt",epoch_time)
-    
+
+
+# Check if now is in schedule 
+
+def parse_int_list(value):
+    if isinstance(value, int):
+        return [value]
+    if isinstance(value, str):
+        return [int(v.strip()) for v in value.split(",") if v.strip()]
+    return []
+
+def is_now_in_schedule(settings, runtime_minutes):
+    now = datetime.datetime.now()
+
+    minutes = parse_int_list(settings.get("minute", ""))
+    hours = parse_int_list(settings.get("hour", ""))
+    weekdays_raw = parse_int_list(settings.get("weekday", ""))
+
+    # Convert CSV weekday (1–7) → Python weekday (0–6)
+    weekdays = [(d - 1) % 7 for d in weekdays_raw]
+
+    now_weekday = now.weekday()
+
+    # Try all scheduled start times for today *and* yesterday
+    # (needed for cross-midnight runtimes)
+    for day_offset in (0, -1):
+        day = now.date() + datetime.timedelta(days=day_offset)
+        weekday = (now_weekday + day_offset) % 7
+
+        if weekday not in weekdays:
+            continue
+
+        for h in hours:
+            for m in minutes:
+                start = datetime.datetime.combine(
+                    day,
+                    datetime.time(hour=h, minute=m)
+                )
+                end = start + datetime.timedelta(minutes=runtime_minutes)
+
+                if start <= now < end:
+                    return True
+
+    return False
+
 
 print("----------------- STARTING Scheduler!-------------------")
 
@@ -733,7 +788,7 @@ print("----------------- STARTING Scheduler!-------------------")
 rpiModel = None
 rpiModel = determinePiModel()
 
-now = datetime.now()
+now = datetime.datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
 print(f"Current time: {formatted_time} on a RPi model " + str(rpiModel))
@@ -770,8 +825,18 @@ if rpiModel == 5:
         set_eeprom_settings(current_settings)
         print("EEPROM settings updated.")
 
-# -----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
+# -----Set MODE: CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
 
+'''
+There are several possible modes that a Mothbox can be in
+
+Active: it is currently running a session. Automatic routines go. Wifi stops after 5 mins to save energy.
+Standby: the mothbox pi is shut down, but during the next scheduled session it will become active
+Debug: When the mothbox has power, it will wake up and not shut down until manually turned off. Automatic Cron routines will not run. Lights are default off. Wifi stays on.
+Party: Like debug mode, but it runs a routine to just cycle all the lights
+HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited power supply. Wifi stays on, attempts to upload photos to internet servers automatically.
+
+'''
 
 # Set pin numbering mode (BCM or BOARD)
 GPIO.setmode(GPIO.BCM)
@@ -800,12 +865,18 @@ else:
 
 print("Current Mothbox MODE: ", mode)
 
+# Write mode to controls.txt
+set_Mode("/home/pi/Desktop/Mothbox/controls.txt", mode)
+
+
+
 if(mode=="OFF"):
     run_shutdown_pi5_FAST()
     quit()
 
 
 # ----------END SWITCH CHECK----------------
+
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
 
@@ -851,23 +922,12 @@ onlyflash = 0
 #time.sleep(10)
 #Instead of the sleep delay, we will use the GPS 10 second lookup and make use of this time
 
-# GPS check / 10 second delay
-print("Checking GPS (if available) for 10 seconds")
-process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-stdout, stderr = process.communicate()
-if stderr:
-  print(f"Error running script: {stderr.decode()}")
-else:
-  print(stdout.decode())
-
 
 # ~~~~~~~ Do the Scheduling ~~~~~~~~~~~~~~~~~~~~
 settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
 print(settings)
 set_timings("/home/pi/Desktop/Mothbox/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
-
+runtime=int(settings["runtime"])
 
 
 if "runtime" in settings:
@@ -928,6 +988,37 @@ set_wakeup_alarm(next_epoch_time)
 print("Wakeup Alarms have been set!")
 
 # Scheduling complete, now set all the other settings
+
+
+#--------- Check if we should be running now according to schedule, and if not, turn off -------------
+print("before check settings")
+print(settings)
+print(runtime)
+if mode == "ACTIVE":  # ignore this if we are in debug mode
+    if is_now_in_schedule(settings, int(runtime)):
+        schedule = 1
+        print("Active, Within schedule window — staying awake")
+    else:
+        schedule = 0
+        print("Active, but outside schedule window, STANDBY mode — shutting down")
+        mode=="STANDBY"
+        # Write mode to controls.txt
+        set_Mode("/home/pi/Desktop/Mothbox/controls.txt", mode)
+        run_shutdown_pi5_FAST()
+        quit()
+
+# GPS check / 10 second delay
+print("Checking GPS (if available) for 10 seconds")
+process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+stdout, stderr = process.communicate()
+if stderr:
+  print(f"Error running script: {stderr.decode()}")
+else:
+  print(stdout.decode())
+
+
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
 
