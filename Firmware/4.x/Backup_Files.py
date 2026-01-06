@@ -20,6 +20,19 @@ Note:
     This script assumes the user running the script has read and write permissions to the desktop and any external storage devices.
     You might need to adjust the user name in desktop_path depending on your Raspberry Pi setup.
 """
+
+
+
+import os
+import sys
+#######---- Check for Boot lock ------
+BOOT_LOCK = "/run/boot_script_running"
+
+if os.path.exists(BOOT_LOCK):
+    sys.exit(0)
+
+#-----------------------------##
+
 import os
 import subprocess
 import shutil

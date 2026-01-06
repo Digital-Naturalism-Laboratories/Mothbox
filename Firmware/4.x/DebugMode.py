@@ -105,7 +105,7 @@ with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
 
 with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
     for line in lines:
-        print(line)
+        #print(line)
         if line.startswith("shutdown_enabled="):
             file.write("shutdown_enabled=False\n")  # Replace with False
             print("trying to stop shutdown")

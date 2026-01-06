@@ -75,6 +75,10 @@ print("Current Mothbox MODE: ", mode)
 
 # ------------- Gathering Information to Display --------------------#
 
+
+
+### Disk Usage
+
 PHOTO_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".bmp", ".gif", ".heic"}
 def count_photos(folder):
     count = 0
@@ -84,8 +88,9 @@ def count_photos(folder):
                 count += 1
     return count
 
+time.sleep(6) # need to wait for USB drives to mount
 
-### Disk Usage
+
 # Check for external drives
 external_info = ""
 for part in psutil.disk_partitions():
@@ -277,7 +282,7 @@ try:
     # Setup for portrait mode
     #image = Image.new('1', (epd.width, epd.height), 255)  # Portrait: width=122, height=250
     
-    print(epd.width) #h 250px w 122
+    #print(epd.width) #h 250px w 122
     # Setup for landscape mode
     image = Image.new('1', (epd.height, epd.width), 255)  # Portrait: width=122, height=250
     
@@ -312,9 +317,9 @@ try:
 
 
     draw.text((2, 5.5*rowH), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
-    draw.text((2, 6.5*rowH), 'DAYS: ' + weekdays, font=font10, fill=0)
-    draw.text((2, 7.5*rowH), 'HOURS: '+hours, font=font10, fill=0)
-    print(mins)
+    draw.text((2, 6.5*rowH), 'DAYS:' + weekdays, font=font10, fill=0)
+    draw.text((2, 7.5*rowH), 'HOURS:'+hours, font=font10, fill=0)
+    
     if(mins!="0"):
         draw.text((2, 8.5*rowH), 'MINUTES: ' + mins, font=font10, fill=0)
 
@@ -344,8 +349,10 @@ try:
         draw.text((colW+2, y_pos), "No USB found", font=font10, fill=0)
 
     #GPS stuff
-    draw.text((colW+2, 7*rowH), 'GPS: '+str(lat) +","+str(lon), font=font_robotosemicon10, fill=0)
+    draw.text((colW+2, 7.5*rowH), 'GPS: '+str(lat) +","+str(lon), font=font_robotosemicon10, fill=0)
     #draw.text((+2, 9*rowH), '        '+str(lon), font=font_robotosemicon10, fill=0)
+    
+    draw.line([(epd.height/2,6.5*rowH+12),(epd.height,6.5*rowH+12)], fill = 0,width = 1)
 
 
     #Version Stuff

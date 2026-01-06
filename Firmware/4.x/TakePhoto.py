@@ -21,6 +21,16 @@ TODO:
 -Add safety function to detect if disk space left is less than 7GB and refuse to take more photos, and give a debug flash pattern (such as SOS with ring lights)
 """
 
+import os
+import sys
+#######---- Check for Boot lock ------
+BOOT_LOCK = "/run/boot_script_running"
+
+if os.path.exists(BOOT_LOCK):
+    sys.exit(0)
+
+#-----------------------------##
+
 import time
 from picamera2 import Picamera2, Preview
 from libcamera import controls
@@ -33,7 +43,6 @@ computerName = "mothboxNOTSET"
 import cv2
 
 import csv
-import sys
 
 import io
 from PIL import Image
@@ -44,7 +53,7 @@ import subprocess
 import RPi.GPIO as GPIO
 import time
 
-import os, platform
+import platform
 from pathlib import Path
 
 #IF the mothbox is supposed to be off, don't take a photo!
@@ -77,7 +86,7 @@ def debug_connected_to_ground():
 # Define GPIO pin for checking
 off_pin = 16
 debug_pin = 12
-mode = "ARMED"  # possible modes are OFF or DEBUG or ARMED
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ARMED
 # Set GPIO pin as input
 GPIO.setup(off_pin, GPIO.IN)
 GPIO.setup(debug_pin, GPIO.IN)

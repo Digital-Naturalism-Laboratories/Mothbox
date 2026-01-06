@@ -199,7 +199,7 @@ def set_computerName(filepath, compname):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("name"):
                 file.write("name=" + str(compname) + "\n")  # Replace with False
                 print("set name " + compname)
@@ -211,7 +211,7 @@ def set_UTCinControls(filepath, utcoff):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("UTCoff="):
                 file.write("UTCoff=" + str(utcoff) + "\n")  # Replace with False
                 print("set next UTC offset in controls " + str(utcoff))
@@ -225,7 +225,7 @@ def set_nextWakeinControls(filepath, etime):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("nextWake"):
                 file.write("nextWake=" + str(etime) + "\n")  # Replace with False
                 print("set next wake in controls " + str(etime))
@@ -238,7 +238,7 @@ def set_timings(filepath, mins,hours,weekdays,runtimes):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("hours"):
                 file.write("hours=" + str(hours) + "\n")  # Replace with False
                 print("set hours " + hours)
@@ -1017,6 +1017,26 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
         mode="STANDBY"
         # Write mode to controls.txt
         set_Mode("/home/pi/Desktop/Mothbox/controls.txt", mode)
+        
+        # Flashing Sequence to indicate to user we are in Standby mode
+        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+        time.sleep(.25)
+        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_Off.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+        time.sleep(.25)
+        
+        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+        time.sleep(.25)        
+        
+        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_Off.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+        #----- End Flash ----
         run_shutdown_pi5_FAST()
         quit()
 
@@ -1049,15 +1069,6 @@ else:
   print(stdout.decode())
 
 
-###------ Remove the Boot lock ----------#
-# Allow other scripts to be run by cron can be enabled. Run any time-sensitive sensor scripts before this (e.g. measure light)
-
-if os.path.exists(BOOT_LOCK):
-    os.remove(BOOT_LOCK)
-
-###--------------------------------------###
-
-
 
 #------------Final Step------------------------------------------- 
 #-------------(No other code past this, this is where it sits and waits until shutdown)
@@ -1081,6 +1092,18 @@ elif mode == "ACTIVE":
     print("System is ACTIVE")
 else:
     print("Invalid mode")
+
+
+
+###------ Remove the Boot lock ----------#
+# Allow other scripts to be run by cron can be enabled. Run any time-sensitive sensor scripts before this (e.g. measure light)
+
+if os.path.exists(BOOT_LOCK):
+    os.remove(BOOT_LOCK)
+
+###--------------------------------------###
+
+
 
 if runtime > 0 and mode != "DEBUG":
     enable_shutdown()
