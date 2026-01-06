@@ -1,6 +1,16 @@
 import subprocess
 import os
 
+import datetime
+from datetime import datetime
+
+
+
+import time
+
+now = datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
 def get_cpu_temp():
   """
   Executes the command `vcgencmd measure_temp && cat /sys/class/thermal/thermal_zone0/temp`
@@ -14,7 +24,7 @@ def get_cpu_temp():
                            capture_output=True, text=True, check=True)
 
     # Print the output
-    print(result.stdout)
+    print(result.stdout+""+formatted_time+"\n")
 
   except subprocess.CalledProcessError as e:
     print(f"Error executing command: {e}")
