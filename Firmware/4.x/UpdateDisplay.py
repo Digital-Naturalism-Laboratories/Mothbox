@@ -75,6 +75,15 @@ print("Current Mothbox MODE: ", mode)
 
 # ------------- Gathering Information to Display --------------------#
 
+PHOTO_EXTENSIONS = {".jpg", ".jpeg", ".png", ".tif", ".tiff", ".bmp", ".gif", ".heic"}
+def count_photos(folder):
+    count = 0
+    for root, dirs, files in os.walk(folder):
+        for name in files:
+            if os.path.splitext(name)[1].lower() in PHOTO_EXTENSIONS:
+                count += 1
+    return count
+
 
 ### Disk Usage
 # Check for external drives
@@ -86,14 +95,23 @@ for part in psutil.disk_partitions():
             usage = shutil.disk_usage(part.mountpoint)
             total_ext = usage.total // (2**30)
             free_ext = usage.free // (2**30)
+            used_ext= total_ext-free_ext
+            photos_folder = os.path.join(part.mountpoint, "photos_backup")
+            photo_count=0
+            if os.path.isdir(photos_folder):
+                photo_count = count_photos(photos_folder)
             #external_info += f"USB: {part.mountpoint}:\n{free_ext}GB free / {total_ext}GB\n" # who cares about mount point on display
-            external_info += f"USB: {free_ext}GB free / {total_ext}GB\n" 
+            external_info += f"USB: {used_ext}GB/{total_ext}GB used\n          {photo_count} photos" 
 
         except PermissionError:
             continue  # Some mounts may not allow access
+
+#internal disk
 total, used, free = shutil.disk_usage("/")
 total_gb = total // (2**30)
 free_gb = free // (2**30)
+used_gb = total_gb-free_gb
+photo_count_int = count_photos("/home/pi/Desktop/Mothbox/photos_backedup")+ count_photos("/home/pi/Desktop/Mothbox/photos")
 
 
 
@@ -239,7 +257,7 @@ try:
     font10 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 10)
     font7 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 6)
 
-    font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/bigshoulders/BigShoulders-Bold.ttf',12)
+    font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/bigshoulders/BigShoulders-ExtraLight.ttf',11)
     #font_josans= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/josans/JosefinSans-Medium.ttf',15)
     #font_space= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf',15)
     #font_robotomono= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto_Mono/static/RobotoMono-Medium.ttf',15)
@@ -314,10 +332,10 @@ try:
 
 
     # Add disk space info
-    draw.text((colW+2, 3*rowH), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
+    draw.text((colW+2, 3*rowH), f'Internal: {used_gb}GB/{total_gb}GB used\n          {photo_count_int} photos', font=font10, fill=0)
 
     # Starting Y position for external info (after previous lines)
-    y_pos=4*rowH
+    y_pos=5*rowH
     if external_info:
         for line in external_info.strip().split('\n'):
             draw.text((colW+2, y_pos), line, font=font10, fill=0)
@@ -331,8 +349,8 @@ try:
 
 
     #Version Stuff
-    draw.text((colW+2, 8.2*rowH), 'MOTHBOX', font=font_bigs, fill=0)
-    draw.text((colW+2, 8.5*rowH), '                   ' 'version '+softwareversion, font=font10, fill=0)
+    draw.text((colW+2, 8.55*rowH), 'M O T H B O X', font=font_bigs, fill=0)
+    draw.text((colW+2, 8.7*rowH), '                    ' 'version '+softwareversion, font=font10, fill=0)
 
 
     #image = image.rotate(180) # rotate
