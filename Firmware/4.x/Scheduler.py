@@ -13,6 +13,19 @@ It also tries to set the EEPROM correctly too! So you don't have to do anything!
 It should work on a Pi4 if it has a pijuice attached and installed
 
 """
+
+###------Boot Lock-------------###
+#create boot lock. This stops other scripts that might get called by cron from running
+
+BOOT_LOCK = "/run/boot_script_running"
+
+# create lock
+with open(BOOT_LOCK, "w") as f:
+    f.write("booting\n")
+
+#-------------------#
+
+
 import time
 from time import sleep
 import csv
@@ -996,10 +1009,10 @@ print(settings)
 print(runtime)
 if mode == "ACTIVE":  # ignore this if we are in debug mode
     if is_now_in_schedule(settings, int(runtime)):
-        schedule = 1
+        now_is_in_schedule = 1
         print("Active, Within schedule window — staying awake")
     else:
-        schedule = 0
+        now_is_in_schedule = 0
         print("Active, but outside schedule window, STANDBY mode — shutting down")
         mode="STANDBY"
         # Write mode to controls.txt
@@ -1036,7 +1049,18 @@ else:
   print(stdout.decode())
 
 
-#Final Step (No other code past this, this is where it sits and waits until shutdown)
+###------ Remove the Boot lock ----------#
+# Allow other scripts to be run by cron can be enabled. Run any time-sensitive sensor scripts before this (e.g. measure light)
+
+if os.path.exists(BOOT_LOCK):
+    os.remove(BOOT_LOCK)
+
+###--------------------------------------###
+
+
+
+#------------Final Step------------------------------------------- 
+#-------------(No other code past this, this is where it sits and waits until shutdown)
 # - prepare shutdown and wait
 # Toggle System MODE, shut down if in OFF/INACTIVE mode
 if mode == "OFF":
