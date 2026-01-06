@@ -43,27 +43,7 @@ def get_control_values(filepath):
             control_values[key] = value
     return control_values
 
-# Function to check for connection to ground
-def off_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-    # Read the pin value
-    pin_value = GPIO.input(off_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-def debug_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(debug_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
 
 # -----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
 
@@ -71,27 +51,24 @@ def debug_connected_to_ground():
 # Set pin numbering mode (BCM or BOARD)
 GPIO.setmode(GPIO.BCM)
 
-# Define GPIO pin for checking
-off_pin = 16
-debug_pin = 12
-mode = "ACTIVE"  # possible modes are OFF or DEBUG or ARMED
-# Set GPIO pin as input
-GPIO.setup(off_pin, GPIO.IN)
-GPIO.setup(debug_pin, GPIO.IN)
+'''
+There are several possible modes that a Mothbox can be in
 
-# Check for connection
-if debug_connected_to_ground():
-    print("GPIO pin", debug_pin, "DEBUG connected to ground.")
-    mode = "DEBUG"
-else:
-    print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
+Active: it is currently running a session. Automatic routines go. Wifi stops after 5 mins to save energy.
+Standby: the mothbox pi is shut down, but during the next scheduled session it will become active
+Debug: When the mothbox has power, it will wake up and not shut down until manually turned off. Automatic Cron routines will not run. Lights are default off. Wifi stays on.
+Party: Like debug mode, but it runs a routine to just cycle all the lights
+HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited power supply. Wifi stays on, attempts to upload photos to internet servers automatically.
 
-# Check for connection
-if off_connected_to_ground():
-    print("GPIO pin", off_pin, "OFF PIN connected to ground.")
-    mode = "OFF"  # this check comes second as the OFF state should override the DEBUG state in case both are attached
-else:
-    print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
+'''
+mode = "OTHER"  
+
+# We will receive the mode from the control values
+
+thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+mode = thecontrol_values.get("mode", 1)
+
+
 
 print("Current Mothbox MODE: ", mode)
 
@@ -109,7 +86,9 @@ for part in psutil.disk_partitions():
             usage = shutil.disk_usage(part.mountpoint)
             total_ext = usage.total // (2**30)
             free_ext = usage.free // (2**30)
-            external_info += f"USB: {part.mountpoint}:\n{free_ext}GB free / {total_ext}GB\n"
+            #external_info += f"USB: {part.mountpoint}:\n{free_ext}GB free / {total_ext}GB\n" # who cares about mount point on display
+            external_info += f"USB: {free_ext}GB free / {total_ext}GB\n" 
+
         except PermissionError:
             continue  # Some mounts may not allow access
 total, used, free = shutil.disk_usage("/")
@@ -151,6 +130,8 @@ gpstime=control_values.get("gpstime", "error")
 softwareversion=control_values.get("softwareversion", "error")
 
 #Battery State
+
+# Mothbox 4.x version with Adafruit Sensor
 #Check battery level and power
 voltage= -100
 
@@ -165,17 +146,84 @@ except (OSError, ValueError) as e:
     # Handle exceptions like sensor not connected or communication errors
     print("Sensor NOT CONNECTED  ")
     
-maxvoltage=12.4
-minvoltage=9.8
-# Calculate the percentage
-percent = (voltage - minvoltage) / (maxvoltage - minvoltage) * 100
+    
+# Get calibration voltages
+v80 = float(control_values.get("bat_80", -1000))
+v20 = float(control_values.get("bat_20", 1000))
 
-# Constrain the output to be between 0 and 100
+# Calculate percentage so that:
+#  - v20 -> 20%
+#  - v80 -> 80%
+# Linearly extrapolate beyond those points
+percent = 20 + (voltage - v20) * (80 - 20) / (v80 - v20)
+
+# Constrain between 0–100%
 percent = max(0, min(percent, 100))
 
 # Print the result
 print(f"Voltage percentage: {percent:.2f}%")
 
+
+'''
+# MB 5.x versions on PCB
+#Check battery level and power
+voltage= -100
+    
+# Get calibration voltages
+v80 = float(control_values.get("bat_80", -1000))
+v20 = float(control_values.get("bat_20", 1000))
+
+# Read actual voltage
+import subprocess
+import re
+try:
+    result3 = subprocess.run(
+        ["python3", "/home/pi/Desktop/Mothbox/scripts/3v3SensorsOn.py"],
+        capture_output=True, text=True, check=True
+    )
+    output3 = result3.stdout.strip()
+except subprocess.CalledProcessError as e:
+    print("Err turning on sensors:", e)
+    output = ""
+
+
+# --- Run the external voltage reading script ---
+try:
+    result = subprocess.run(
+        ["python3", "/home/pi/Desktop/Mothbox/scripts/read_Vin.py"],
+        capture_output=True, text=True, check=True
+    )
+    output = result.stdout.strip()
+except subprocess.CalledProcessError as e:
+    print("Error reading voltage:", e)
+    output = ""
+
+# --- Parse the voltage from the output ---
+# Example line: "Vin Voltage: 12.124 V, Current: 0.942 A"
+match = re.search(r"Voltage:\s*([\d.]+)", output)
+if match:
+    voltage = float(match.group(1))
+else:
+    print("Could not parse voltage from output:", output)
+    voltage = -100.0  # fallback or default
+
+
+
+
+
+
+# Calculate percentage so that:
+#  - v20 -> 20%
+#  - v80 -> 80%
+# Linearly extrapolate beyond those points
+percent = 20 + (voltage - v20) * (80 - 20) / (v80 - v20)
+
+# Constrain between 0–100%
+percent = max(0, min(percent, 100))
+
+# Print the result
+print(f"Voltage percentage: {percent:.2f}%")
+'''
 
 try:
     logging.info("Mothbox Epaper Display")
@@ -189,7 +237,7 @@ try:
     font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font10 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 10)
-    font7 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 7)
+    font7 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 6)
 
     font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/bigshoulders/BigShoulders-Bold.ttf',12)
     #font_josans= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/josans/JosefinSans-Medium.ttf',15)
@@ -199,7 +247,7 @@ try:
     #font_robotoslab=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf',15)
     #font_robotosemicon=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Regular.ttf',15)
     font_robotosemicon10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf',11)
-    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',16)
+    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',17)
     font_roboto15=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',15)
 
     font_roboto10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',10)
@@ -209,57 +257,85 @@ try:
     
     #print(epd.width) #h 250px w 122
     # Setup for portrait mode
-    image = Image.new('1', (epd.width, epd.height), 255)  # Portrait: width=122, height=250
+    #image = Image.new('1', (epd.width, epd.height), 255)  # Portrait: width=122, height=250
+    
+    print(epd.width) #h 250px w 122
+    # Setup for landscape mode
+    image = Image.new('1', (epd.height, epd.width), 255)  # Portrait: width=122, height=250
+    
     draw = ImageDraw.Draw(image)
     
     #Start Drawing stuff to the display
     
+    colW = 128
+    rowH=13
+    #computerName="canineDorado" #example longest name
+    # Name and State
     # Draw text elements (adjust coordinates to suit portrait layout)
     draw.text((2,7), "NAME: ", font=font7, fill=0)
-    draw.text((0, 0), "      " + computerName, font=font_roboto, fill=0)
+    draw.text((4, -2), "    " + computerName, font=font_roboto, fill=0)
 
-    draw.text((2, 20), "state: "+mode, font=font_roboto, fill=0)
+    draw.text((colW+2,-2), "state: "+mode, font=font_roboto, fill=0)
+
+    #next wake
+    draw.text((2, rowH), 'next wake:', font=font_robotosemicon10, fill=0)
+    draw.text((2,rowH+10),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
+
+    draw.line([(0,2*rowH+12),(epd.height,2*rowH+12)], fill = 0,width = 1)
+    draw.line([(epd.height/2,.5*rowH+12),(epd.height/2,epd.width)], fill = 0,width = 1)
+    
 
     #Schedule Stuff
-    draw.text((2, 37), 'next wake:', font=font_robotosemicon10, fill=0)
-    draw.text((2, 47),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
+
+    draw.text((2, 3*rowH), "last update: ", font=font10, fill=0)
+    draw.text((2, 4*rowH), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
+
+    draw.line([(0,4*rowH+12),(epd.height/2,4*rowH+12)], fill = 0,width = 1)
 
 
-    draw.text((2, 65), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
-    draw.text((2, 76), 'DAYS: ' + weekdays, font=font10, fill=0)
-    draw.text((2, 87), 'HOURS: ', font=font_robotosemicon10, fill=0)
-    draw.text((2, 98), hours, font=font_robotosemicon10, fill=0)
-    draw.text((2, 109), 'MINUTES: ' + mins, font=font10, fill=0)
+    draw.text((2, 5.5*rowH), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
+    draw.text((2, 6.5*rowH), 'DAYS: ' + weekdays, font=font10, fill=0)
+    draw.text((2, 7.5*rowH), 'HOURS: '+hours, font=font10, fill=0)
+    print(mins)
+    if(mins!="0"):
+        draw.text((2, 8.5*rowH), 'MINUTES: ' + mins, font=font10, fill=0)
 
-    # Add disk space info
-    draw.text((2, 130), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
 
-    # Starting Y position for external info (after previous lines)
-    y_pos=140
-    if external_info:
-        for line in external_info.strip().split('\n'):
-            draw.text((10, y_pos), line, font=font10, fill=0)
-            y_pos += 12  # line spacing
-    else:
-        draw.text((10, y_pos), "No USB found", font=font10, fill=0)
-
-    #GPS stuff
-    draw.text((2, 180), 'GPS: '+str(lat), font=font_robotosemicon10, fill=0)
-    draw.text((2, 190), '        '+str(lon), font=font_robotosemicon10, fill=0)
 
     #Battery Stuff
-    if(voltage==-100):
-        draw.text((2, 205), f"BATTERY: UNKNOWN", font=font10, fill=0)
-    else:
-        draw.text((2, 205), f"BATTERY: {percent:.0f}%", font=font10, fill=0)
+    draw.line([(epd.height/2,.5*rowH+12),(epd.height,.5*rowH+12)], fill = 0,width = 1)
 
-    draw.text((2, 215), "last update: ", font=font10, fill=0)
-    draw.text((2, 225), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
+    draw.text((colW+2, 1.8*rowH), f"BATTERY:", font=font10, fill=0)
     
-    draw.text((2, 237), 'MOTHBOX', font=font_bigs, fill=0)
-    draw.text((50, 240), 'version '+softwareversion, font=font10, fill=0)
-    
-    
+    if(voltage==-100):
+        draw.text((colW+2, 2*rowH), f"UNKNOWN", font=font10, fill=0)
+    else:
+        draw.text((colW+2, 1.3*rowH), f"            {percent:.0f}%", font=font_roboto, fill=0)
+
+
+    # Add disk space info
+    draw.text((colW+2, 3*rowH), f'Disk: {free_gb}GB free/ {total_gb}GB', font=font10, fill=0)
+
+    # Starting Y position for external info (after previous lines)
+    y_pos=4*rowH
+    if external_info:
+        for line in external_info.strip().split('\n'):
+            draw.text((colW+2, y_pos), line, font=font10, fill=0)
+            y_pos += 12  # line spacing
+    else:
+        draw.text((colW+2, y_pos), "No USB found", font=font10, fill=0)
+
+    #GPS stuff
+    draw.text((colW+2, 7*rowH), 'GPS: '+str(lat) +","+str(lon), font=font_robotosemicon10, fill=0)
+    #draw.text((+2, 9*rowH), '        '+str(lon), font=font_robotosemicon10, fill=0)
+
+
+    #Version Stuff
+    draw.text((colW+2, 8.2*rowH), 'MOTHBOX', font=font_bigs, fill=0)
+    draw.text((colW+2, 8.5*rowH), '                   ' 'version '+softwareversion, font=font10, fill=0)
+
+
+    #image = image.rotate(180) # rotate
     # Send to display
     epd.display(epd.getbuffer(image))
     
@@ -293,7 +369,7 @@ except KeyboardInterrupt:
     draw.polygon([(110,0),(110,50),(150,25)],outline = 0)
     draw.polygon([(190,0),(190,50),(150,25)],fill = 0)
     draw.text((120, 60), 'e-Paper demo', font = font15, fill = 0)
-    draw.text((110, 90), u'å¾®éªçµå­', font = font24, fill = 0)
+    draw.text((110, 90), u'微雪电子', font = font24, fill = 0)
     # image = image.rotate(180) # rotate
     epd.display(epd.getbuffer(image))
     time.sleep(2)
