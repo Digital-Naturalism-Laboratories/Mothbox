@@ -1001,7 +1001,7 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
     else:
         schedule = 0
         print("Active, but outside schedule window, STANDBY mode — shutting down")
-        mode=="STANDBY"
+        mode="STANDBY"
         # Write mode to controls.txt
         set_Mode("/home/pi/Desktop/Mothbox/controls.txt", mode)
         run_shutdown_pi5_FAST()
