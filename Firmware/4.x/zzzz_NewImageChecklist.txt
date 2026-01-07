@@ -1,5 +1,7 @@
 1) Update background Image
 2) Update controls.txt
+Update versioninfo.txt
+
 3) sudo apt update
 sudo apt update
 sudo apt upgrade
@@ -14,6 +16,6 @@ sudo apt-get remove -purge firefox
 sudo apt-get remove -purge chromium-browser
 sudo truncate -s 0 *.log
 
-5) delete photo and photos backed up and logs
+5) delete photo and photos_backed_up and logs
 6) delete trash
 7) copy scripts to USB to send to github
