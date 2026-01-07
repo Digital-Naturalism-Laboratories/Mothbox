@@ -502,6 +502,7 @@ def run_shutdown_pi5():
     set_wakeup_alarm(next_epoch_time)
     print("Wakeup Alarms have been set!")
 
+    ''' # Cutting out GPS check at shutdown, feels not really needed
     # GPS check / 10 second delay
     print("Checking GPS (if available) for 10 seconds")
     process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
@@ -512,9 +513,13 @@ def run_shutdown_pi5():
       print(f"Error running script: {stderr.decode()}")
     else:
       print(stdout.decode())
+    '''
+    # Change the mode to "STANDBY" (if we got to this point, the board must have been "ACTIVE" and so now we are switching to "STANDBY"
 
-
-
+    # Write mode to controls.txt
+    set_Mode("/home/pi/Desktop/Mothbox/controls.txt", "STANDBY")
+    
+    
     #Epaper
     #Update the Epaper screen if it is available 
     GPIO.cleanup()
@@ -1074,12 +1079,13 @@ else:
 #-------------(No other code past this, this is where it sits and waits until shutdown)
 # - prepare shutdown and wait
 # Toggle System MODE, shut down if in OFF/INACTIVE mode
+# It should never actually go here, it should have detected OFF mode and turned off a while ago
 if mode == "OFF":
     print("System is in OFF MODE")
     if rpiModel == 4:
         run_shutdown_pi4()
     if rpiModel == 5:
-        run_shutdown_pi5()
+        run_shutdown_pi5_FAST()
     # quit()
 elif mode == "DEBUG":
     print("System is in DEBUG mode - keeping power and wifi on and turning cron off")
