@@ -22,6 +22,11 @@ This newest version of the Mothbox is super fast to assemble! You only need
 
 and you are set!
 
+# Attractors
+
+* Mothbeams can plug right in to the PCB
+* External - You can also connect any 12V attractor you want via the "External attractor" port
+
 # Bonus Parts
 You can also add:
 * [Cheap Epaper display](https://www.waveshare.com/2.13inch-e-Paper-HAT.htm) - ($15USD) to know what your Mothbox is up to!
