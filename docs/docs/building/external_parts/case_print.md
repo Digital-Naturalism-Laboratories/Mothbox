@@ -44,8 +44,25 @@ The list of parts is as follows along with what material to make them in.
 * Plexi Front - Laser Cut Clear Acrylic
 
 # Assemble the Case
-
+## Front Lid
 Peel off any protective plastic from your clear acrylic.
 <img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/7e53fec0-cd3f-49b0-92e4-4dec2cb74a51" />
 
-Lay your
+Lay your front rubber gasket on the front section.
+<img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/2b885a02-858c-4376-9865-aac2de77fa0f" />
+
+Put the acrylic on top of that. It make take a little pressure to pop in. Make sure the holes line up correctly.
+<img width="695" height="927" alt="image" src="https://github.com/user-attachments/assets/412cd80c-ae31-42e8-ba77-1aac63f3106c" />
+
+Screw the front plexi to the case. Only screw until the screw is snug. Don't overtighten or you may crack the plexi.
+<img width="695" height="927" alt="image" src="https://github.com/user-attachments/assets/bd0dae42-303e-426c-9796-cc579fe0aa4c" />
+
+Attach all the screws!
+<img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/305bbb63-65b0-49a5-92a5-fdf09eb546eb" />
+
+## More Soon!
+
+
+To be continued
+
+
