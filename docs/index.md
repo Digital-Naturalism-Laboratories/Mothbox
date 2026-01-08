@@ -6,10 +6,16 @@ description: "The Mothbox is a low cost DIY insect monitor"
 permalink: /
 ---
 
-# Mothbox 4.5
+# Mothbox
 The Mothbox is a low-cost, high-performance [insect monitor](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/). It features a power efficient and lightweight design that helps field biologists deploy it in the depths of the jungle. Its low cost means you can build one to study the biodiversity at your home!
 
 All the physical designs, electronics schematics, Pi Scripts, and insect-IDing Artificial Intelligence are **provided free and open source**, so you can build, share, and improve on these designs yourself!
+
+We currently offer designs for two different versions of the Mothbox now:
+* Mothbox Pro - Factory Assembled electronics, easy to put together!
+* Mothbox DIY - Make a Mothbox entirely yourself with off-the-shelf parts!
+
+We beleive studying insect biodiversity is integral to life on earth, and simply want people to be able to study them as well as they can, right now!
 
 {:.note}
 >Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email me at A N D Y [ a t ] dinalab.net** with subject "Mothbox Mail."
@@ -19,7 +25,7 @@ Watch a [video presentation of our talk at the Smithsonian all about the Mothbox
 
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
-<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/docs/assets/images/certification-mark-PA000003-wide.svg">
+<img width="588" height="162" alt="image" src="https://github.com/user-attachments/assets/a9072519-cc16-4c97-b728-b7d464612f06" />
 
 ## Why Study Insects for Conservation?
 Insect populations can be used as an ultra high resolution sensor for changes in environments.
