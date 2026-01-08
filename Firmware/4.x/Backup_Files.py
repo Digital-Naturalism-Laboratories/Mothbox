@@ -41,6 +41,25 @@ from pathlib import Path
 from datetime import datetime
 import sys
 
+
+
+
+
+def get_control_values(filepath):
+    """Reads key-value pairs from the control file."""
+    control_values = {}
+    with open(filepath, "r") as file:
+        for line in file:
+            key, value = line.strip().split("=")
+            control_values[key] = value
+    return control_values
+
+
+
+thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+computerName = thecontrol_values.get("name", "errorname")
+
+
 # Define paths
 desktop_path = Path(
     "/home/pi/Desktop/Mothbox"
@@ -49,7 +68,7 @@ photos_folder = desktop_path / "photos"
 logs_folder = desktop_path / "logs"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
-backup_folder_name = "photos_backup"
+backup_folder_name = "photos_backup_"+computerName
 internal_storage_minimum = 8 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
 
 print("----------------- STARTING BACKUP FILES-------------------")
@@ -524,14 +543,14 @@ if __name__ == "__main__":
         if external_available > total_size_bytes:
             # Create backup folder on external storage
             external_backup_folder = disk_name / backup_folder_name
-            print("doing the backup...")
+            print(f"doing the backup to external: {external_backup_folder}")
             #using the non-rsync way for now because rsync was giving errors
             copy_folders_with_files(photos_folder, external_backup_folder) #don't copy blank folders
             #copy_photos_to_backup(photos_folder, external_backup_folder)
             print(f"Photos successfully copied to external backup folder: {external_backup_folder}")            
 
-
-            external_logs_folder = disk_name / "logs"
+            logfolder="logs_"+computerName
+            external_logs_folder = disk_name / logfolder
             copy_photos_to_backup(logs_folder,external_logs_folder)
             print(f"Logs successfully copied to external backup folder: {external_backup_folder}")            
 
@@ -542,8 +561,8 @@ if __name__ == "__main__":
               for difference in differences:
                 print(difference)
             else:
-              print("Copy verification successful! No differences found.")
-              print("moving original files to backedup_photos_folder")
+              #print("Copy verification successful! No differences found.") #currently a lie
+              #print("moving original files to backedup_photos_folder")
               move_folder_contents(photos_folder, backedup_photos_folder)
               print(f"Photos successfully copied to internal backup folder: {backedup_photos_folder}")
             thingsworkedok=True #just hacking this to skip the verify
