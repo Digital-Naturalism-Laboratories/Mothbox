@@ -63,6 +63,8 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * The McGuire Center for Lepidoptery
 
 * University of Washington (Project Storage Space)
+* Epaper Display Font help:
+  * Logan Williams and Linotype Pilgrim 
 
 * PCB Assistance
   * Paul Parkview 
