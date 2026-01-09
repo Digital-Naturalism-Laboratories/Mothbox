@@ -5,6 +5,68 @@ parent: Using Mothbox
 has_children: true
 nav_order: 1
 ---
+
+# Quick Use Checklist
+
+
+**Preparation**
+
+- [ ] Charge MOTHBOX 
+  - Make sure it is plugged in with the battery on 
+  - Make sure you are charging with the official charger 
+  - Make sure the charger's light has turned from red to green  (this is the only real way that you know the battery is fully charged) 
+
+- [ ] Check that you have a USB drive connected to the Raspberry pi. 
+- [ ] Check you have all parts ready for deployment
+  - 1 Mothbox
+  - 4 Bolts and Nuts
+  - Strap
+  - 4 Legs
+  - 1 Target
+
+---------------------------------------
+**In the Field**
+
+- [ ] Arm the moth box, Check STANDBY Mode 
+  - make sure inhibition cables are disconnected 
+  - turn the battery on
+  - if the moth box is correctly in "STANDBY" mode, The attractor lights will blink twice quickly.  And the screen will display "STANDBY" when it refreshes about 10 seconds later
+
+- [ ] Close Mothbox 
+
+- [ ] Attach legs to bottom 
+
+- [ ] Hang mothbox with strap
+
+- [ ] Remove lens cap
+
+- [ ] Visual Inspection
+  - lens area in front of camera for dirt 
+  - Inspect area in front of target that no leaves will block target view
+
+- [ ] Finally, connect target to arms
+
+- [ ] Log all metadata on field sheet 
+
+---------------------------------------
+**Data collection**
+
+- [ ] Collect mothbox from the field 
+
+- [ ] Unplug USB drive from raspberry pi
+
+- [ ] Copy contents of USB to computer and backup data in at least 2 spots
+
+- [ ] Clear data from USB 
+
+- [ ] Connect usb back to mothbox
+
+- [ ] Charge mothbox for next deployment 
+
+
+
+
+
 # Charge the Battery before 1st use!
 {: .warning }
 >When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
