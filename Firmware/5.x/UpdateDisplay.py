@@ -232,7 +232,7 @@ else:
     voltage = -100.0  # fallback or default
 
 
-
+print(voltage)
 
 
 
@@ -259,7 +259,7 @@ try:
 
     # Drawing on the image
 
-    fontHeaders = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf', 11)
+    fontHeaders = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf', 12)
     font8 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Medium.ttf', 8)
 
     font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Bold.ttf',8)
@@ -293,12 +293,12 @@ try:
     #draw.text((2,7), "NAME: ", font=font8, fill=0)
     draw.text((2, -2), "" + computerName, font=font_scientifica22, fill=0)
 
-    draw.text((colW+2,-2), "state: ", font=fontHeaders, fill=0)
-    draw.text((colW+2,-2), "   "+mode, font=font_scientifica22, fill=0)
+    draw.text((colW+2,5), "state: ", font=fontHeaders, fill=0)
+    draw.text((colW+4,-2), "   "+mode, font=font_scientifica22, fill=0)
 
     #next wake
     draw.text((2, rowH+3), 'next wake:', font=fontHeaders, fill=0)
-    draw.text((1,rowH+7),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_Mediumtext, fill=0)
+    draw.text((1,rowH+8),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_Mediumtext, fill=0)
 
     draw.line([(0,2*rowH+12),(epd.height,2*rowH+12)], fill = 0,width = 1)
     draw.line([(epd.height/2,.5*rowH+12),(epd.height/2,epd.width)], fill = 0,width = 1)
@@ -331,12 +331,12 @@ try:
     else:
         draw.text((colW+2, 1.3*rowH), f"     {percent:.0f}%", font=font_scientifica22, fill=0)
 
-
+    # DISK
     # Add disk space info
-    draw.text((colW+2, 3*rowH), f'Internal:{used_gb}GB/{total_gb}GB used\n          {photo_count_int} photos', font=fontHeaders, fill=0)
+    draw.text((colW+2, 3*rowH+2), f'SD:{used_gb}GB/{total_gb}GB used\n          {photo_count_int} photos', font=fontHeaders, fill=0)
 
     # Starting Y position for external info (after previous lines)
-    y_pos=5*rowH
+    y_pos=5*rowH+2
     if external_info:
         for line in external_info.strip().split('\n'):
             draw.text((colW+2, y_pos), line, font=fontHeaders, fill=0)
@@ -353,7 +353,7 @@ try:
 
     #Version Stuff
     draw.text((colW, 8.7*rowH), 'M O T H B O X', font=font_bigs, fill=0)
-    draw.text((colW+3, 8.7*rowH), '          version:'+softwareversion, font=fontHeaders, fill=0)
+    draw.text((colW+3, 8.7*rowH), '                          version:'+softwareversion, font=font_bigs, fill=0)
 
 
     #image = image.rotate(180) # rotate
