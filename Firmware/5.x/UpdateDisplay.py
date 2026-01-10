@@ -61,16 +61,26 @@ Party: Like debug mode, but it runs a routine to just cycle all the lights
 HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited power supply. Wifi stays on, attempts to upload photos to internet servers automatically.
 
 '''
+
+
+### Mothbox Name
+control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
+control_values = get_control_values(control_values_fpath)
+onlyflash = control_values.get("OnlyFlash", "False").lower() == "true"
+LastCalibration = float(control_values.get("LastCalibration", 0))
+computerName = control_values.get("name", "errorname")
+
+
+
 mode = "OTHER"  
 
 # We will receive the mode from the control values
 
-thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
-mode = thecontrol_values.get("mode", 1)
-
-
+mode = control_values.get("mode", "errormode")
 
 print("Current Mothbox MODE: ", mode)
+
+
 
 
 # ------------- Gathering Information to Display --------------------#
@@ -101,7 +111,7 @@ for part in psutil.disk_partitions():
             total_ext = usage.total // (2**30)
             free_ext = usage.free // (2**30)
             used_ext= total_ext-free_ext
-            photos_folder = os.path.join(part.mountpoint, "photos_backup")
+            photos_folder = os.path.join(part.mountpoint, "photos_backup_"+computerName)
             photo_count=0
             if os.path.isdir(photos_folder):
                 photo_count = count_photos(photos_folder)
@@ -121,14 +131,6 @@ photo_count_int = count_photos("/home/pi/Desktop/Mothbox/photos_backedup")+ coun
 
 
 
-
-
-### Mothbox Name
-control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
-control_values = get_control_values(control_values_fpath)
-onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
-LastCalibration = float(control_values.get("LastCalibration", 0))
-computerName = control_values.get("name", "errorname")
 
 # Wake Time
 nexttime=int(control_values.get("nextWake",0))
@@ -259,7 +261,7 @@ try:
 
     # Drawing on the image
 
-    fontHeaders = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf', 12)
+    fontHeaders = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf', 13)
     font8 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Medium.ttf', 8)
 
     font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Bold.ttf',8)
@@ -293,7 +295,7 @@ try:
     #draw.text((2,7), "NAME: ", font=font8, fill=0)
     draw.text((2, -2), "" + computerName, font=font_scientifica22, fill=0)
 
-    draw.text((colW+2,5), "state: ", font=fontHeaders, fill=0)
+    draw.text((colW,5), "state: ", font=fontHeaders, fill=0)
     draw.text((colW+4,-2), "   "+mode, font=font_scientifica22, fill=0)
 
     #next wake
@@ -307,7 +309,8 @@ try:
     #Schedule Stuff
 
     draw.text((2, 3*rowH), "last update: ", font=fontHeaders, fill=0)
-    draw.text((2, 4*rowH), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=fontHeaders, fill=0)
+    #draw.text((0, 4*rowH), time.strftime('%m-%d %H:%M:%S') + "UTC:"+str(UTCoff), font=fontHeaders, fill=0)
+    draw.text((0, 4*rowH), time.strftime('%m-%d %H:%M') + " UTC:"+str(UTCoff), font=fontHeaders, fill=0)
 
     draw.line([(0,4*rowH+12),(epd.height/2,4*rowH+12)], fill = 0,width = 1)
 
@@ -352,6 +355,8 @@ try:
 
 
     #Version Stuff
+    draw.line([(epd.height/2,8.7*rowH),(epd.height,8.7*rowH)], fill = 0,width = 1)
+
     draw.text((colW, 8.7*rowH), 'M O T H B O X', font=font_bigs, fill=0)
     draw.text((colW+3, 8.7*rowH), '                          version:'+softwareversion, font=font_bigs, fill=0)
 
