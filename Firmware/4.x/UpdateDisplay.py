@@ -61,16 +61,26 @@ Party: Like debug mode, but it runs a routine to just cycle all the lights
 HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited power supply. Wifi stays on, attempts to upload photos to internet servers automatically.
 
 '''
+
+
+### Mothbox Name
+control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
+control_values = get_control_values(control_values_fpath)
+onlyflash = control_values.get("OnlyFlash", "False").lower() == "true"
+LastCalibration = float(control_values.get("LastCalibration", 0))
+computerName = control_values.get("name", "errorname")
+
+
+
 mode = "OTHER"  
 
 # We will receive the mode from the control values
 
-thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
-mode = thecontrol_values.get("mode", 1)
-
-
+mode = control_values.get("mode", "errormode")
 
 print("Current Mothbox MODE: ", mode)
+
+
 
 
 # ------------- Gathering Information to Display --------------------#
@@ -101,7 +111,7 @@ for part in psutil.disk_partitions():
             total_ext = usage.total // (2**30)
             free_ext = usage.free // (2**30)
             used_ext= total_ext-free_ext
-            photos_folder = os.path.join(part.mountpoint, "photos_backup")
+            photos_folder = os.path.join(part.mountpoint, "photos_backup_"+computerName)
             photo_count=0
             if os.path.isdir(photos_folder):
                 photo_count = count_photos(photos_folder)
@@ -121,14 +131,6 @@ photo_count_int = count_photos("/home/pi/Desktop/Mothbox/photos_backedup")+ coun
 
 
 
-
-
-### Mothbox Name
-control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
-control_values = get_control_values(control_values_fpath)
-onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
-LastCalibration = float(control_values.get("LastCalibration", 0))
-computerName = control_values.get("name", "errorname")
 
 # Wake Time
 nexttime=int(control_values.get("nextWake",0))
@@ -153,6 +155,7 @@ gpstime=control_values.get("gpstime", "error")
 softwareversion=control_values.get("softwareversion", "error")
 
 #Battery State
+
 
 # Mothbox 4.x version with Adafruit Sensor
 #Check battery level and power
@@ -231,7 +234,7 @@ else:
     voltage = -100.0  # fallback or default
 
 
-
+print(voltage)
 
 
 
@@ -257,23 +260,16 @@ try:
     epd.Clear(0xFF)
 
     # Drawing on the image
-    font15 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 15)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
-    font10 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 10)
-    font7 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Bold.ttf', 6)
+    fontHeaders = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf', 13)
+    font8 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Medium.ttf', 8)
 
-    font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/bigshoulders/BigShoulders-ExtraLight.ttf',11)
-    #font_josans= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/josans/JosefinSans-Medium.ttf',15)
-    #font_space= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Space_Grotesk/static/SpaceGrotesk-Medium.ttf',15)
-    #font_robotomono= ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto_Mono/static/RobotoMono-Medium.ttf',15)
-    #font_silk=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Silkscreen/Silkscreen-Regular.ttf',15)
-    #font_robotoslab=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto_Slab/static/RobotoSlab-Regular.ttf',15)
-    #font_robotosemicon=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Regular.ttf',15)
-    font_robotosemicon10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto_SemiCondensed-Bold.ttf',11)
-    font_roboto=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',17)
-    font_roboto15=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',15)
+    font_bigs=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Bold.ttf',8)
+    
+    font_robotosemicon10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf',13)
+    font_scientifica22=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf',22)
+    font_Mediumtext=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Medium.ttf',14)
 
-    font_roboto10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/Roboto/static/Roboto-Regular.ttf',10)
+    font_roboto10=ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf',12)
 
     logging.info("E-paper refresh")
     epd.init()
@@ -287,7 +283,7 @@ try:
     image = Image.new('1', (epd.height, epd.width), 255)  # Portrait: width=122, height=250
     
     draw = ImageDraw.Draw(image)
-    
+    draw.fontmode="1"
     #Start Drawing stuff to the display
     
     colW = 128
@@ -295,14 +291,15 @@ try:
     #computerName="canineDorado" #example longest name
     # Name and State
     # Draw text elements (adjust coordinates to suit portrait layout)
-    draw.text((2,7), "NAME: ", font=font7, fill=0)
-    draw.text((4, -2), "    " + computerName, font=font_roboto, fill=0)
+    #draw.text((2,7), "NAME: ", font=font8, fill=0)
+    draw.text((2, -2), "" + computerName, font=font_scientifica22, fill=0)
 
-    draw.text((colW+2,-2), "state: "+mode, font=font_roboto, fill=0)
+    draw.text((colW,5), "state: ", font=fontHeaders, fill=0)
+    draw.text((colW+4,-2), "   "+mode, font=font_scientifica22, fill=0)
 
     #next wake
-    draw.text((2, rowH), 'next wake:', font=font_robotosemicon10, fill=0)
-    draw.text((2,rowH+10),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_roboto15, fill=0)
+    draw.text((2, rowH+3), 'next wake:', font=fontHeaders, fill=0)
+    draw.text((1,rowH+8),  time.strftime('%Y-%m-%d %H:%M', time.localtime(nexttime)), font=font_Mediumtext, fill=0)
 
     draw.line([(0,2*rowH+12),(epd.height,2*rowH+12)], fill = 0,width = 1)
     draw.line([(epd.height/2,.5*rowH+12),(epd.height/2,epd.width)], fill = 0,width = 1)
@@ -310,43 +307,44 @@ try:
 
     #Schedule Stuff
 
-    draw.text((2, 3*rowH), "last update: ", font=font10, fill=0)
-    draw.text((2, 4*rowH), time.strftime('%m-%d %H:%M:%S') + " UTC:"+str(UTCoff), font=font10, fill=0)
+    draw.text((2, 3*rowH), "last update: ", font=fontHeaders, fill=0)
+    #draw.text((0, 4*rowH), time.strftime('%m-%d %H:%M:%S') + "UTC:"+str(UTCoff), font=fontHeaders, fill=0)
+    draw.text((0, 4*rowH), time.strftime('%m-%d %H:%M') + " UTC:"+str(UTCoff), font=fontHeaders, fill=0)
 
     draw.line([(0,4*rowH+12),(epd.height/2,4*rowH+12)], fill = 0,width = 1)
 
 
-    draw.text((2, 5.5*rowH), 'RUNTIME: ' + runtime+ " mins", font=font10, fill=0)
-    draw.text((2, 6.5*rowH), 'DAYS:' + weekdays, font=font10, fill=0)
-    draw.text((2, 7.5*rowH), 'HOURS:'+hours, font=font10, fill=0)
+    draw.text((2, 5.5*rowH), 'RUNTIME: ' + runtime+ " mins", font=fontHeaders, fill=0)
+    draw.text((2, 6.5*rowH), 'DAYS:' + weekdays, font=fontHeaders, fill=0)
+    draw.text((2, 7.5*rowH), 'HOURS:'+hours, font=fontHeaders, fill=0)
     
     if(mins!="0"):
-        draw.text((2, 8.5*rowH), 'MINUTES: ' + mins, font=font10, fill=0)
+        draw.text((2, 8.5*rowH), 'MINUTES: ' + mins, font=fontHeaders, fill=0)
 
 
 
     #Battery Stuff
-    draw.line([(epd.height/2,.5*rowH+12),(epd.height,.5*rowH+12)], fill = 0,width = 1)
+    draw.line([(0,.5*rowH+12),(epd.height,.5*rowH+12)], fill = 0,width = 1)
 
-    draw.text((colW+2, 1.8*rowH), f"BATTERY:", font=font10, fill=0)
+    draw.text((colW+2, 1.8*rowH), f"BATTERY:", font=fontHeaders, fill=0)
     
     if(voltage==-100):
-        draw.text((colW+2, 2*rowH), f"UNKNOWN", font=font10, fill=0)
+        draw.text((colW+2, 2*rowH), f"UNKNOWN", font=fontHeaders, fill=0)
     else:
-        draw.text((colW+2, 1.3*rowH), f"            {percent:.0f}%", font=font_roboto, fill=0)
+        draw.text((colW+2, 1.3*rowH), f"     {percent:.0f}%", font=font_scientifica22, fill=0)
 
-
+    # DISK
     # Add disk space info
-    draw.text((colW+2, 3*rowH), f'Internal: {used_gb}GB/{total_gb}GB used\n          {photo_count_int} photos', font=font10, fill=0)
+    draw.text((colW+2, 3*rowH+2), f'SD:{used_gb}GB/{total_gb}GB used\n          {photo_count_int} photos', font=fontHeaders, fill=0)
 
     # Starting Y position for external info (after previous lines)
-    y_pos=5*rowH
+    y_pos=5*rowH+2
     if external_info:
         for line in external_info.strip().split('\n'):
-            draw.text((colW+2, y_pos), line, font=font10, fill=0)
+            draw.text((colW+2, y_pos), line, font=fontHeaders, fill=0)
             y_pos += 12  # line spacing
     else:
-        draw.text((colW+2, y_pos), "No USB found", font=font10, fill=0)
+        draw.text((colW+2, y_pos), "No USB found", font=fontHeaders, fill=0)
 
     #GPS stuff
     draw.text((colW+2, 7.5*rowH), 'GPS: '+str(lat) +","+str(lon), font=font_robotosemicon10, fill=0)
@@ -356,8 +354,10 @@ try:
 
 
     #Version Stuff
-    draw.text((colW+2, 8.55*rowH), 'M O T H B O X', font=font_bigs, fill=0)
-    draw.text((colW+2, 8.7*rowH), '                    ' 'version '+softwareversion, font=font10, fill=0)
+    draw.line([(epd.height/2,8.7*rowH),(epd.height,8.7*rowH)], fill = 0,width = 1)
+
+    draw.text((colW, 8.7*rowH), 'M O T H B O X', font=font_bigs, fill=0)
+    draw.text((colW+3, 8.7*rowH), '                          version:'+softwareversion, font=font_bigs, fill=0)
 
 
     #image = image.rotate(180) # rotate
@@ -419,7 +419,7 @@ except KeyboardInterrupt:
     image = Image.open(os.path.join(picdir, 'MBlogoBWsmall.bmp')).rotate(90, expand=True)
     draw = ImageDraw.Draw(image)
     draw.text((120, 20), 'version 5.0.0', font = font15, fill = 255)
-    draw.text((60, 0), "Name: "+mbname, font = font10, fill = 255)
+    draw.text((60, 0), "Name: "+mbname, font = fontHeaders, fill = 255)
 
     draw.text((30, 60), "mothbox is ACTIVE", font = font15, fill = 255)
 
