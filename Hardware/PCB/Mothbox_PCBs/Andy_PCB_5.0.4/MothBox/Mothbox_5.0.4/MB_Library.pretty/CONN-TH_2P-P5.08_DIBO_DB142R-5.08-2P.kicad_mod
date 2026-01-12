@@ -1,0 +1,169 @@
+(footprint "CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -7.81 0)
+		(layer "F.SilkS")
+		(uuid "fbc23802-7f13-4121-93f3-8e0f8a9d0b04")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Value" "Input to regulator"
+		(at 0 7.81 0)
+		(layer "F.Fab")
+		(uuid "5e1fb622-a17a-4547-800b-0ba4604211ec")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "91f8b39d-f6c4-4240-83e8-a9f37d3fdf90")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ccfece43-7916-483a-9c52-fa80ef594a05")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start 7.62 -5.56)
+		(end 7.62 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b1313295-9093-4837-840b-fcd7e8d7848d")
+	)
+	(fp_line
+		(start 5.07 -5.56)
+		(end 5.07 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "af362f66-56eb-4a26-bce5-90ad417f7745")
+	)
+	(fp_line
+		(start -5.08 8.54)
+		(end 7.62 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "647585fb-a695-411e-b663-b57bdea2d76c")
+	)
+	(fp_line
+		(start -5.08 -5.56)
+		(end -5.08 8.54)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "35fafc6d-454e-48e5-8940-dc93e5ea037c")
+	)
+	(fp_line
+		(start -5.1 -5.6)
+		(end 7.6 -5.6)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "b5ff322c-23da-41d5-963f-7933254b6e89")
+	)
+	(fp_circle
+		(center -5.08 8.54)
+		(end -5.05 8.54)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "f0c715d6-9dad-45b0-9ea2-74767f0a4eb2")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "cae06519-e79c-4802-9ecb-6c63cdb73d61")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" thru_hole circle
+		(at -2.54 -3.81 180)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "1eae40f1-38d4-4cf5-b64d-0e9bd38564e6")
+	)
+	(pad "1" thru_hole circle
+		(at -2.54 3.81 180)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "5a31ec8e-fe66-4138-bc54-d44fa61625d2")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 -3.81 180)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "8a753616-ff49-43ff-b189-d80462dfbda4")
+	)
+	(pad "2" thru_hole circle
+		(at 2.54 3.81 180)
+		(size 2.3 2.3)
+		(drill 1.500022)
+		(layers "*.Cu" "*.Mask")
+		(remove_unused_layers no)
+		(uuid "dcffa6f1-3b49-4f78-b074-89d9f1c79d0d")
+	)
+	(embedded_fonts no)
+	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/CONN-TH_2P-P5.08_DIBO_DB142R-5.08-2P.wrl"
+		(offset
+			(xyz 0 -1.49 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

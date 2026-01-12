@@ -1,0 +1,93 @@
+(footprint "Talentcell"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at 0 -0.5 180)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "6974a7ae-d811-4a0c-b885-7e887aef01b6")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "~"
+		(at 0 1 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3ba2e98c-cc4f-45ad-939f-2ba6cf2077a5")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "5f0c3d35-1a80-4cdb-9d2f-653102c6f3b0")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 180)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "e388ced5-4f57-4006-b49e-acca8937dfb2")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_rect
+		(start -81.25 -22.75)
+		(end 81.25 23.75)
+		(stroke
+			(width 0.1)
+			(type solid)
+		)
+		(fill no)
+		(layer "Dwgs.User")
+		(uuid "f7a77fe7-bd3f-4a09-aae5-4cee125507a9")
+	)
+	(fp_rect
+		(start -84 -25.5)
+		(end 92.5 26.5)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(fill no)
+		(layer "F.CrtYd")
+		(uuid "40c7297d-b206-4abd-abdc-c22f88d3bc39")
+	)
+	(embedded_fonts no)
+	(model "C:/Users/andre/Documents/GitHub/Mothbox/Hardware/PCB/mothbox_front-main/3d/battery/Talentcell++PB120B1.stp"
+		(offset
+			(xyz -80 25 33)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 -90 -0)
+		)
+	)
+)

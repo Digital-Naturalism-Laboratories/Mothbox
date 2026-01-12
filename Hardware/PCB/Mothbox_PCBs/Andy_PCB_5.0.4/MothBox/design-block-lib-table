@@ -1,0 +1,8 @@
+(design_block_lib_table
+  (version 7)
+  (lib (name "DS04-254-2-03BK-SMT")(type "KiCad")(uri "${KIPRJMOD}/Library/DS04-254-2-03BK-SMT")(options "")(descr ""))
+  (lib (name "DS04-254-2-04BK-SMT")(type "KiCad")(uri "${KIPRJMOD}/Library/DS04-254-2-04BK-SMT")(options "")(descr ""))
+  (lib (name "DS04-254-2-06BK-SMT")(type "KiCad")(uri "${KIPRJMOD}/Library/DS04-254-2-06BK-SMT")(options "")(descr ""))
+  (lib (name "DS04-254-2-07BK-SMT")(type "KiCad")(uri "${KIPRJMOD}/Library/DS04-254-2-07BK-SMT")(options "")(descr ""))
+  (lib (name "RASPBERRY_PI_4B_4GB")(type "KiCad")(uri "${KIPRJMOD}/Library/RASPBERRY_PI_4B_4GB")(options "")(descr ""))
+)

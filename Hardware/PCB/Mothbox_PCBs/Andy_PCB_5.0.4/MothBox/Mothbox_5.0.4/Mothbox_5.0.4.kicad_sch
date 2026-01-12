@@ -1,0 +1,272 @@
+(kicad_sch
+	(version 20250114)
+	(generator "eeschema")
+	(generator_version "9.0")
+	(uuid "9021e528-fc76-4423-a3f3-30f5652071cc")
+	(paper "A4")
+	(title_block
+		(title "MothBox")
+		(date "2025-12-17")
+		(rev "5.0.4")
+		(company "Digital Naturalism Laboritories")
+	)
+	(lib_symbols)
+	(sheet
+		(at 182.88 45.72)
+		(size 41.275 38.735)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "23e8100d-dc92-4d1f-bb27-d65b0331e323")
+		(property "Sheetname" "RPI5"
+			(at 182.88 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "RPI5.kicad_sch"
+			(at 182.88 85.0396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Mothbox_5.0.4"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 182.88 95.25)
+		(size 41.275 38.735)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "25f161be-2136-4f06-bcb6-1cc6303e8ec0")
+		(property "Sheetname" "UV LED PCB"
+			(at 182.88 94.5384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "UV_LED_PCB.kicad_sch"
+			(at 182.88 134.5696 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Mothbox_5.0.4"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "6")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 84.455 45.72)
+		(size 41.275 38.735)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "4a573100-9946-48c2-8ae5-35f893607623")
+		(property "Sheetname" "Power"
+			(at 84.455 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Power.kicad_sch"
+			(at 84.455 85.0396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Mothbox_5.0.4"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "2")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 85.09 95.25)
+		(size 40.64 39.37)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "84c07412-33ce-4c0b-96a0-a76ad52e50ee")
+		(property "Sheetname" "camera battery and mechanical"
+			(at 85.09 94.5384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "camera.kicad_sch"
+			(at 85.09 135.2046 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Mothbox_5.0.4"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "7")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 134.62 45.72)
+		(size 40.005 38.735)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "d22974ea-9095-4b9a-829f-a5d553626ed9")
+		(property "Sheetname" "GPS and Switches and Light Sensor"
+			(at 134.62 45.0084 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "GPS.kicad_sch"
+			(at 134.62 85.0396 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Mothbox_5.0.4"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "4")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 135.89 95.25)
+		(size 39.37 38.735)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(fill
+			(color 0 0 0 0.0000)
+		)
+		(uuid "f4f29d93-7441-4557-92ff-295630596a60")
+		(property "Sheetname" "Photo LED's"
+			(at 135.89 94.5384 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "Photo_LEDs.kicad_sch"
+			(at 135.89 134.5696 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(instances
+			(project "Mothbox_5.0.4"
+				(path "/9021e528-fc76-4423-a3f3-30f5652071cc"
+					(page "5")
+				)
+			)
+		)
+	)
+	(sheet_instances
+		(path "/"
+			(page "1")
+		)
+	)
+	(embedded_fonts no)
+)

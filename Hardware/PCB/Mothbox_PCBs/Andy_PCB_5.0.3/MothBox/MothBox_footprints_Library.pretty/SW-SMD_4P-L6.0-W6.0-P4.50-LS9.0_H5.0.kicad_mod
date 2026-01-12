@@ -1,0 +1,231 @@
+(footprint "SW-SMD_4P-L6.0-W6.0-P4.50-LS9.0_H5.0"
+	(version 20241229)
+	(generator "pcbnew")
+	(generator_version "9.0")
+	(layer "F.Cu")
+	(property "Reference" "REF**"
+		(at -0.380504 -5.514351 0)
+		(layer "F.SilkS")
+		(uuid "59967204-5981-4deb-a21f-41398b63d938")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.24)
+				(bold yes)
+			)
+		)
+	)
+	(property "Value" "KH-6X6X5H-STM"
+		(at 0 6.249999 0)
+		(layer "F.Fab")
+		(uuid "52681c22-32f8-472f-9444-5750c4cce6ab")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1f92f0a6-4a61-4c19-b1b1-404b187154d7")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "3d8ee712-bafa-4bb7-a86a-83c8697d8a2e")
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "LCSC Part" "C455095"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "1382f1d3-f717-403b-8249-a12b33bf96e3")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(attr through_hole)
+	(fp_line
+		(start -3 -3)
+		(end 3 -3)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "7f05550f-725b-4a57-867a-40b2168f7d5f")
+	)
+	(fp_line
+		(start -3 3)
+		(end -3 -3)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "26975d54-44ee-4a06-836e-4ac6f694a1de")
+	)
+	(fp_line
+		(start 3 -3)
+		(end 3 3)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "d0682cfc-fc3b-436b-b6dd-4eb730a85ad0")
+	)
+	(fp_line
+		(start 3 3)
+		(end -3 3)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dd96b119-e9dd-49b0-8894-94e8eeaf396e")
+	)
+	(fp_circle
+		(center -2.03 -2.03)
+		(end -1.52 -2.03)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "7861b2d6-fdb9-4907-8cd0-6aee86cc9afb")
+	)
+	(fp_circle
+		(center -2.03 2.03)
+		(end -1.52 2.03)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "5fde087c-a82c-4d55-9f5f-285804af69da")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 1.529999 0)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "d1eec2a9-93e2-4a80-888f-3f49a632b52b")
+	)
+	(fp_circle
+		(center 2.03 -2.03)
+		(end 2.54 -2.03)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "0aabf322-85c6-443a-8e9b-d8229b102cdf")
+	)
+	(fp_circle
+		(center 2.03 2.03)
+		(end 2.54 2.03)
+		(stroke
+			(width 0.25)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "ccd971f0-f036-4315-a30e-f1d2ee8d17ab")
+	)
+	(fp_circle
+		(center -4.5 -3)
+		(end -4.47 -3)
+		(stroke
+			(width 0.06)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.Fab")
+		(uuid "0d9229ac-a920-4d6c-a381-7034da44c46a")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 0 0)
+		(layer "F.Fab")
+		(uuid "fca65a7e-b8df-4257-b4e5-d3a4979764de")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at -4.55 -2.25)
+		(size 2.3 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "6a108259-9522-408a-be72-e5d662a704c3")
+	)
+	(pad "2" smd rect
+		(at 4.55 -2.25)
+		(size 2.3 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7d9ed434-eddd-4a23-8697-5bf9ddb8d81a")
+	)
+	(pad "3" smd rect
+		(at -4.55 2.25)
+		(size 2.3 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "64e38fb3-d5c6-4fc5-b9ef-a311438e6a8b")
+	)
+	(pad "4" smd rect
+		(at 4.55 2.25)
+		(size 2.3 1.5)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(uuid "7558af6a-98c7-452a-ac6d-7b19bdac6b15")
+	)
+	(embedded_fonts no)
+	(model "${EASYEDA2KICAD}/easyeda2kicad.3dshapes/SW-SMD_4P-L6.0-W6.0-P4.50-LS9.0_H5.0.wrl"
+		(offset
+			(xyz 0 0 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz 0 0 0)
+		)
+	)
+	(model "/home/parkview/Documents/Kicad/parkview_libraries/packages3d/SW_TH_SPST_6x6.5x5mm.step"
+		(offset
+			(xyz -3 2.5 0)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -0 -0 -0)
+		)
+	)
+)

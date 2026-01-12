@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "Adafruit_INA219_CurPowerMonitor-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/Adafruit_INA219_CurPowerMonitor-eagle-import.kicad_sym")(options "")(descr ""))
+)

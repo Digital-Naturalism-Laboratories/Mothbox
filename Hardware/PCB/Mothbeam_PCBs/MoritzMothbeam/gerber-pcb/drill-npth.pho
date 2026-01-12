@@ -1,0 +1,35 @@
+%TF.GenerationSoftware,KiCad,Pcbnew,8.0.2*%
+%TF.CreationDate,2024-07-08T14:58:01+00:00*%
+%TF.ProjectId,mothbeam,6d6f7468-6265-4616-9d2e-6b696361645f,rev?*%
+%TF.SameCoordinates,Original*%
+%TF.FileFunction,NonPlated,1,2,NPTH,Drill*%
+%TF.FilePolarity,Positive*%
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW 8.0.2) date 2024-07-08 14:58:01*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%TA.AperFunction,ComponentDrill*%
+%ADD10C,2.000000*%
+%TD*%
+%TA.AperFunction,ComponentDrill*%
+%ADD11C,2.500000*%
+%TD*%
+G04 APERTURE END LIST*
+D10*
+%TO.C,H6*%
+X107000000Y-51000000D03*
+%TO.C,H5*%
+X113000000Y-51000000D03*
+%TO.C,H7*%
+X116000000Y-51000000D03*
+%TO.C,H4*%
+X122000000Y-51000000D03*
+D11*
+%TO.C,H9*%
+X110000000Y-51000000D03*
+%TO.C,H8*%
+X119000000Y-51000000D03*
+M02*
