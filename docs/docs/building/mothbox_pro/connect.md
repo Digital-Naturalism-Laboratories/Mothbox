@@ -54,6 +54,81 @@ Now all your Mothbeams should be connected!
 
 # Connect Camera to Mainboard
 
-## Prepare camera and Glare Blocker
+## Prepare Camera
+The Arducam comes in a little box with one WHITE cable and one BROWN cable. 
+<img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/253e3acf-e0df-4ffd-853b-f63fcc3c409c" />
+
+The white cable is, unfortunately, usually the one attached, and it is for older computers. We will swap it for the brown one!
+
+First, you can take the little plastic protector off the front of the camera:
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/6f6a0867-3acd-425b-90ff-e06b29cb8aa4" />
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/68f1acbf-2034-43f3-87d9-0d4de5e1ec38" />
+
+Next, use the ends of a small screwdriver or tweezers to slide the camera cable lock. You just need to budge it a little bit.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/4689c06e-72a6-4842-aff8-329edefee6ef" />
+The white cable should slide free easily now!
+
+Now you will connect the brown cable. Make sure the black side of the end is facing the back of the camera like this:
+
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/87f11ef0-5eeb-4e76-8032-b15e9d771ef4" />
+
+Slide the cable in firmly, and then use your tool to snugly lock down the camera connector lock. Sometimes you need to press one side and then the other.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/288f765d-5c3a-45d0-9dde-c3f0f64ffa06" />
+Give the cable a light tug to make sure it is securely connected.
+
+## Camera to Board
+With its brown cable attached, position the camera on the front of the board so the cable lines up with the slot for it.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/56293a69-e106-4a82-88eb-b288b8794b6f" />
+Note how the holes line up:
+<img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/fb0c2e7a-b3f5-48d2-992c-4ff0e2e4652d" />
+
+Position the glare blocker over the camera and again make sure all the holes line up.
+
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/4f8d674d-c95c-4ac8-9df4-894bcb8c6a79" />
+
+Now you will add some thin cable ties to two holes in the glare blocker.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a6fff474-b47d-4aa7-a324-2a9a9326e84a" />
+
+Make them go through the mainboard, out the back, and back to the front of the mainboard.
+<img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/3520c366-43dc-48cc-8b6f-d41c7d5ae36e" />
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/fb78c94d-cabc-4aee-95a8-3e842c53dae1" />
+
+Now get two more cable ties and secure the camera module down.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a2613657-0e5d-44d8-b276-6ff5b81b09d6" />
+
+ Tighten it up, and trim the dangly bits.
+ <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a05ac2ec-f2b9-408c-a63a-fcf760854502" />
 
 
+# Connect the Pi
+
+## SD
+First put your SD card (Flashed with the Mothbox software on it) into your Pi.
+<img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/64788b6e-e86a-4509-bc33-5fd064c36fd8" />
+
+## Connect Camera
+
+Lift the connect flap on CAM port 0 on the Pi
+<img width="567" height="804" alt="image" src="https://github.com/user-attachments/assets/5db33dad-7b9b-4b3e-a54e-b410a75ccf4e" />
+
+I use a fingernail for this.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/f5197f3b-5512-45e2-9f98-dfa2bd9c071f" />
+
+The black side of the brown camera cable needs to face the side of the PI that the SD card is in.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/ee4ae7da-e233-432c-812f-fcc1622b688d" />
+
+Slide the cable in, and firmly press down the camera cable closer to make a snug connection.
+
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a0efcdb4-5145-49a9-8de8-b59d4d165f59" />
+
+## Connect Pi to Mainboard
+We made our own fun connection to hold the raspberry pi. It's a bit novel, but it pops in and holds it securely.
+
+Line up your Pi pins with the socket like this:
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/91cfc6a3-d4b2-4ff1-98b3-cc1920895c13" />
+
+You will need to tilt the Pi at a slight angle as you first press it in. Then it will straighten out and slide right into its slot.
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/2692e3a8-02d7-4044-8096-dfd6f1a1bf52" />
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/2ce986e4-a558-46ca-8d00-4c7caa3a4d31" />
+
+Congratulate Yourself! You got most of your Mothbox's electronics connected!
