@@ -5,6 +5,7 @@ parent: Mothbox Pro
 #has_children: true
 nav_order: 0
 ---
+<img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/9899b837-f6f3-4340-8af8-b668dc74cb62" />
 
 To build a Mothbox Pro, you will need these parts:
 
