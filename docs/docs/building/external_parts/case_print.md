@@ -6,8 +6,6 @@ parent: External Parts
 nav_order: 1
 ---
 
-(Full Section coming soon!)
-
 The lastest version of the Mothbox has a 3D printable case! We have been testing it fiercely in the wettest part of the wet season for months in jungles of Panama, and it's held up wonderfully! Nice and dry, easy to use, minimal manual labor! Plus it's cheaper than buying and hacking your own case!
 
 ![bafyreigxwn7cq5ghlw5eaawb537jzpo2kwqx2pz3c4gti5zpbkwmoganmy](https://github.com/user-attachments/assets/6ffa36f2-7640-4c6a-a232-ff1c20f1e178)
