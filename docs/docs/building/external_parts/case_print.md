@@ -60,9 +60,43 @@ Screw the front plexi to the case. Only screw until the screw is snug. Don't ove
 Attach all the screws!
 <img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/305bbb63-65b0-49a5-92a5-fdf09eb546eb" />
 
-## More Soon!
+## Bottom Ports
+There are 2 holes in the case that let you connect to the outside world. Generally they will get used for 
+* a charging port
+* a port to attach an external attractor
+
+Label your ports to help you keep track! PET-G is quite easy to label with a permanent marker!
+<img width="702" height="743" alt="image" src="https://github.com/user-attachments/assets/5c9961df-d874-4090-aa88-d97cefab2473" />
+
+### Prepare your Sockets
+Slide the little rubber lid thing onto your socket.
+<img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/e6293494-34c5-425a-bdb2-0d6542668899" />
+
+Press the plug into the hole. Depending on your printing tolerances it might slide in, or you might need to even screw it in a bit.
+<img width="675" height="713" alt="image" src="https://github.com/user-attachments/assets/e24ee0bc-665b-4f83-9124-e7abbb0f95fe" />
+<img width="679" height="670" alt="image" src="https://github.com/user-attachments/assets/5895ed32-4986-4867-895c-61aa98ddc4f9" />
+
+- If you are NOT going to use an external attractor, you can simply pop one of the rubber plugs into the other hole.
+<img width="682" height="647" alt="image" src="https://github.com/user-attachments/assets/59b63199-e9f1-4cbc-b505-72c5feda939f" />
+<img width="684" height="633" alt="image" src="https://github.com/user-attachments/assets/2fb183b5-4f9f-44b3-97f5-55a69eb360c0" />
+
+- If you are going to use an external attractor, you can just add another socket to this other hole.
+<img width="1130" height="919" alt="image" src="https://github.com/user-attachments/assets/43a83b62-df3a-491a-a3de-bbecf286bbc3" />
+
+### Connect Sockets Inside
+
+Depending on your specific sockets you order, some are longer than others and can be screwed down.
+<img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/c1bbd81f-677c-4d83-b5f1-74f66b07bb51" />
+Most types of sockets though are going to be held in place with our friend, Mr. Hot Glue.
+<img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/de5da143-92e3-429c-b577-734d2b6375dd" />
+
+Surround the port with a thin layer of hot glue. This should hold everything in place pretty well! You can even go over the rubber plug for extra security if you want!
+<img width="683" height="646" alt="image" src="https://github.com/user-attachments/assets/84a65889-5882-4c94-a0bc-dd51f29f288b" />
 
 
-To be continued
+
+
+
+
 
 
