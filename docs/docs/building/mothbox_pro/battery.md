@@ -23,6 +23,11 @@ The regulators tend to ship with short little wire leads. Trim the ends off.
 
 # Attach Battery and Regulator to Board
 
+
+{: .note }
+> Charge your battery fully before attaching it. It will help troubleshooting later. You don't want to ever start a new mothbox with an uncharged battery.
+> 
+
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/49633019-2572-43ed-b556-8f6d56fa02d1" />
 
 ## Regulator Strap
@@ -81,9 +86,8 @@ Double check your wiring with this image.
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/283ce63d-ffd5-4f94-994d-23bc1731bdaf" />
 
 
-
-
 # Connect Battery Power to Board
+
 {: .note }
 > Make sure the BATTERY IS OFF. While you are connecting wires and electronics keep the battery OFF!
 
@@ -113,5 +117,22 @@ Plug the plug into the "IN" port on the battery.
 # (Optional) Connect the Epaper Display
 If you got an epaper display (Highly reccomended!), it's super duper easy to connect it!
 
+Just line the 40 pin socket on the back of the Epaper hat with the pins sticking out the front of the mothbox!
+Gently press it in, and that's it. Note the pins won't go entirely into the hat, there's supposed to be a little gap there.
+
+# Celebrate, you should have a functional Mothbox!
+
+At this point you should have a fully functional Mothbox brain in your hands!
+
+If your battery was all the way charged, and you have the Pi image flashed to your SD card in your Pi, then you are set to go!
+
+Press the power button on the battery and let it turn on.
+
+The first time a mothbox starts up with a new SD card, it can take 1-10 minutes for the card to boot up (after that it's much quicker).
+
+The LED on the pi should flicker green to show that its processing. 
+If your display is connected, you should see the Pi refresh the Epaper with information about your new Mothbox!
+
+Chances are the Mothbox will immediately shut itself down, which is normal because I didn't tell you to flip the "Active" switch yet, so it should still be in "OFF" mode. If you want to see the mothbox's lights flicker on, you can flip the "Active" switch and depending on the schedule it will either run fully, or give a quick flash before it goes into "Standby" mode.
 
 
