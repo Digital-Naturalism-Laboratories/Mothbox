@@ -3,7 +3,7 @@ layout: default
 title: Assemble in Case
 parent: Mothbox Pro
 #has_children: true
-nav_order: 2
+nav_order: 4
 ---
 # Determine your Case
 
