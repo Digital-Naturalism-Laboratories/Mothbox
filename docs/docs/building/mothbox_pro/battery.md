@@ -50,8 +50,40 @@ There's one more strap to hold this battery firmly in place. Add zip ties from t
 Once, again, lock it in with a zip tie on the other side.
 <img width="518" height="397" alt="image" src="https://github.com/user-attachments/assets/c34425ef-4913-408e-915b-cfa828d70f0d" />
 
-# Trim Straps
+## Trim Straps
 Tighten up all your straps really well. Then snip off all the dangly parts!
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/d38b1480-8e02-4bff-a46a-2ce0a440a098" />
+
+# Connect Regulator to Board
+We are going to connect the regulator to its slots in the board. (Don't worry, it's easy!)
+<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/39cfd585-4ef7-4877-8646-c82362ad2547" />
+
+{: .note }
+> The regulator has 4 wires. 
+> Black is Ground and negative (or the - sign)
+> Red is regulator INPUT and positive (+ sign)
+> Yellow is regulator OUTPUT and positive (+ sign)
+
+First we will connect the yellow.
+Find the socket-box that says "Regulated 12V +)
+Use your finger to press down the spring levers, and slide the yellow wire into one of the holes marked with a "+"
+
+<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/ccdadead-8bcf-4ce9-887c-9c3c4b4fc3db" />
+
+Repeat for the 2 black wires, but put them into sockets marked with "-" sign
+<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/eecd54fa-a442-4b24-b06c-44bbbbfdf4af" />
+
+Finally, put the red wire into the socket with a "+" sign in the "Regulator Input" block.
+Double check your wiring with this image.
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/283ce63d-ffd5-4f94-994d-23bc1731bdaf" />
+
+
+
+
+# Connect Battery Power to Board
+{: .important }
+Make sure the BATTERY IS OFF. While you are connecting wires and electronics keep the battery OFF!
+
+<img width="680" height="713" alt="image" src="https://github.com/user-attachments/assets/60b62083-ea6e-4a4d-a4de-5a32be3776b5" />
 
 
