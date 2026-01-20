@@ -20,6 +20,7 @@ You can follow instructions for [how to build an off-the-shelf case here](https:
 
 Better yet, though, you can now 3D print your own cases even cheaper and easier! Follow the instructions for [making a 3D printed case here](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/case_print/).
 
+**The following instructions will be for the 3D printed case option.**
 
 # Prep Chassis
 First we need to snip this tiny support piece off the chassis. This section is just there to make printing easier, and we need to remove it so it doesn't get blocked by the case's plugs.
