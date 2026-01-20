@@ -20,6 +20,7 @@ The lastest version of the Mothbox has a 3D printable case! We have been testing
 * Clear Acrylic - For the front window
 * #6x3/8in screws - (not super exacting, near equivalents work too!)
 * Cable Ties - Ideally reusable zip ties, or silicone straps, or our [TPU printable ties we made ourselves](https://www.printables.com/model/1530721-reusable-rubber-cable-tie)!
+* DC Barrel sockets -  for the external charging port and/or external attractor port
 
 
 # Filament Suggestions
@@ -40,15 +41,17 @@ The list of parts is as follows along with what material to make them in.
 * Back Lid - PETG-CF
 * Front Lid - PETG-CF (material doesn't really matter- just a cover)
 * Front Gasket - TPU (Optional seal for wet climates)
-* Back Gasket - TPU
+* Back Gasket - TPU (Optional seal for wet climates)
+* Bottom Plugs - TPU (Optional, if you aren't using DC Barrel Sockets)
 * Plexi Front - Laser Cut Clear Acrylic
 
-# Assemble the Case
-## Front Lid
+# Outer Shell Assembly
+## Front Acrylic
 Peel off any protective plastic from your clear acrylic.
 <img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/7e53fec0-cd3f-49b0-92e4-4dec2cb74a51" />
 
-Lay your front rubber gasket on the front section.
+Lay your front rubber gasket on the front section. (If you are not using the rubber gasket, you can just put the acrylic straight onto the box.)
+
 <img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/2b885a02-858c-4376-9865-aac2de77fa0f" />
 
 Put the acrylic on top of that. It make take a little pressure to pop in. Make sure the holes line up correctly.
@@ -93,7 +96,18 @@ Most types of sockets though are going to be held in place with our friend, Mr. 
 Surround the port with a thin layer of hot glue. This should hold everything in place pretty well! You can even go over the rubber plug for extra security if you want!
 <img width="683" height="646" alt="image" src="https://github.com/user-attachments/assets/84a65889-5882-4c94-a0bc-dd51f29f288b" />
 
+## Back Lid + Gasket
+(Skip this step if you are not using the gasket)
 
+Collect the Back lid and the back gasket. Lay the gasket into the lid to make sure it lines up in the correct orientation.
+
+With a hot glue gun, add TINY drops of glue to the corners of the gasket to help hold it in place. Press down firmly to make sure there's no raised areas where you added the glue.
+
+## Front lid
+There's not really anything you need to do for the front lid. Just print it out and pop it on! It's just to protect the front plexiglass when transporting!
+
+# Finish Assembly with the Electronics
+Head over to the [Mothbox Pro electronics section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/assembleincase/) to finish installing the mothbox into your new case!
 
 
 
