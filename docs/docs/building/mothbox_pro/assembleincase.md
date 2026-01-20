@@ -46,5 +46,34 @@ There are 4 holes in the 4 corners of the board. Simply screw them snugly into p
 Everything should feel secure inside this little removable box now!
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/d80de292-2ea1-4f43-addb-8e7e3d1f6180" />
 
+# Load Chassis into Shell
 
+Slide the chassis with the electronics into the back of the case. Make sure the battery area is towards the bottom where the wires from the external sockets are.
 
+## Connect the External Charger
+Remember that wire connected to the lever nut that wasn't connected to anything? Now it's time to connect it! 
+
+Get the two wire ends from the external charger port and put them into that lever nut. Make sure the black is going to the black and red to the red.
+
+You can double check that your wiring is good by plugging the external charger  into the bottom of the box and seeing if the light on the charger changes to red (indicating it's charging).
+
+## Connect the External Attractor Port (Optional)
+You can hook up your external attractor port to the PCB quite easily.
+
+Take the two ends from the external attractor port, and connect them to the socket box on the back left of the PCB labeled "external attractor"
+
+Make sure 
+* the black wire goes to a negative "-" port
+* the red wire goes to a positive "+" port
+
+# Connect Back Lid
+Your Mothbox should be fully functional now!
+
+You can close it up now by putting the back lid on. 
+You can use a variety of closures to attach the lid:
+
+* 1/4 in bolts and nuts
+* Reusuable zip ties
+* or (my favorite) rubbery silicone ties
+
+Congrats on your Mothbox!
