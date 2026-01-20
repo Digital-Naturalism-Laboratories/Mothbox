@@ -59,9 +59,12 @@ We are going to connect the regulator to its slots in the board. (Don't worry, i
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/39cfd585-4ef7-4877-8646-c82362ad2547" />
 
 {: .note }
-> The regulator has 4 wires. 
+> The regulator has 4 wires.
+> 
 > Black is Ground and negative (or the - sign)
+>
 > Red is regulator INPUT and positive (+ sign)
+>
 > Yellow is regulator OUTPUT and positive (+ sign)
 
 First we will connect the yellow.
@@ -81,9 +84,34 @@ Double check your wiring with this image.
 
 
 # Connect Battery Power to Board
-{: .important }
-Make sure the BATTERY IS OFF. While you are connecting wires and electronics keep the battery OFF!
+{: .note }
+> Make sure the BATTERY IS OFF. While you are connecting wires and electronics keep the battery OFF!
 
+You now need to get two barrel jack plugs and one 2 wire lever nut connector.
 <img width="680" height="713" alt="image" src="https://github.com/user-attachments/assets/60b62083-ea6e-4a4d-a4de-5a32be3776b5" />
+
+Prep the barrel jack wires by trimming some of the insulation off their ends like this:
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/a69ff16f-a7cc-4b7f-986c-c4ff13d2fee3" />
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/b618e598-34fc-4ac1-918c-dd64c5d3133b" />
+
+## OUTPUT PLUG
+Next plug the BLACK wire into a "-" port on the "RAW INPUT" socket-box.
+Then plug the RED wire into a "+" port of the "Raw INPUT" socket-box.
+
+With the BATTERY STILL OFF, you can plug the plug into the battery's "OUT" socket.
+
+<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/ec294fdf-f9ae-451e-80a1-3ee314956dbf" />
+
+## INPUT PLUG
+
+With the other barrel jack wire, load its wires into the lever nut:
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/5cedf5a7-cf40-466a-92c0-e6e1bba74280" />
+Leave the other side of the lever nut empty (for now).
+Plug the plug into the "IN" port on the battery.
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/357fe3e0-877b-4457-9b28-8346e9b74ae8" />
+
+# (Optional) Connect the Epaper Display
+If you got an epaper display (Highly reccomended!), it's super duper easy to connect it!
+
 
 
