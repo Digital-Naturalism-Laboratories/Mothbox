@@ -96,13 +96,20 @@ Surround the port with a thin layer of hot glue. This should hold everything in 
 
 ## Back Lid + Gasket
 (Skip this step if you are not using the gasket)
+<img width="608" height="768" alt="image" src="https://github.com/user-attachments/assets/8018775d-ea96-4e75-9e3b-2e86dfab11d0" />
 
 Collect the Back lid and the back gasket. Lay the gasket into the lid to make sure it lines up in the correct orientation.
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/cafc48ef-7933-400a-b98c-c5fdbf6e2040" />
 
-With a hot glue gun, add TINY drops of glue to the corners of the gasket to help hold it in place. Press down firmly to make sure there's no raised areas where you added the glue.
+With a hot glue gun, add TINY drops of glue to the corners of the gasket to help hold it in place. 
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/63575c18-9b2a-4a82-b29c-d666e58b7b1c" />
+Press down firmly to make sure there's no raised areas where you added the glue.
+<img width="699" height="679" alt="image" src="https://github.com/user-attachments/assets/c67ce360-249e-42f1-a416-7c2720eeae1d" />
+
 
 ## Front lid
 There's not really anything you need to do for the front lid. Just print it out and pop it on! It's just to protect the front plexiglass when transporting!
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/53296bab-a2d4-4180-82b2-ae5ac45b0c52" />
 
 # Finish Assembly with the Electronics
 Head over to the [Mothbox Pro electronics section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/assembleincase/) to finish installing the mothbox into your new case!
