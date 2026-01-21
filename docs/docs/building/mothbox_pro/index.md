@@ -22,6 +22,9 @@ This newest version of the Mothbox is super fast to assemble! You only need
 
 and you are set!
 
+<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/b09dd4c4-e156-4a6b-adf3-1a1c20650f9e" />
+
+
 # Attractors
 
 * Mothbeams can plug right in to the PCB
