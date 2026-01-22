@@ -5,6 +5,7 @@ Update versioninfo.txt
 3) sudo apt update
 sudo apt update
 sudo apt upgrade
+(click the little update arrow in the top bar if it is there)
 
 4) Clean
 sudo journalctl --vacuum-size=50M

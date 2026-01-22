@@ -62,7 +62,7 @@ def AttractOff():
     print("Attract Lights Off\n")
 
 
-control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
 onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
 AttractOn()
 #AttractOff()

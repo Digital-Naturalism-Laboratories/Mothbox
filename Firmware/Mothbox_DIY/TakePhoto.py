@@ -191,28 +191,11 @@ def load_camera_settings():
     """
     global middleexposure, calib_lens_position, calib_exposure
     
-    #first look for any updated CSV files on external media, we will prioritize those
-    external_media_paths = ("/media", "/mnt")  # Common external media mount points
-    default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
+
+    default_path = "/boot/firmware/mothbox_custom/camera_settings.csv"
     file_path=default_path
 
     found = 0
-    for path in external_media_paths:
-        if(found==0):
-            files=os.listdir(path) #don't look for files recursively, only if new settings in top level
-            if "camera_settings.csv" in files:
-                file_path = os.path.join(root, "camera_settings.csv")
-                print(f"Found settings on external media: {file_path}")
-                found=1
-                break
-            else:
-                print("No external settings here...")
-                file_path=default_path
-
-    if(found==0):
-        #redundant but being extra safe
-        print("No external settings, using internal csv")
-        file_path=default_path
     
     #set the global path to the one we chose
     chosen_settings_path = file_path
@@ -727,7 +710,7 @@ onlyflash=False
 
 
 
-control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
+control_values_fpath = "/boot/firmware/mothbox_custom/controls.txt"
 control_values = get_control_values(control_values_fpath)
 onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
 LastCalibration = float(control_values.get("LastCalibration", 0))
@@ -747,7 +730,7 @@ min_gain, max_gain, default_gain = picam2.camera_controls["AnalogueGain"]
 '''
 #This will be the path to the CSV holding the settings whether it is the one on the disk or the external CSV
 global chosen_settings_path
-default_path = "/home/pi/Desktop/Mothbox/camera_settings.csv"
+default_path = "/boot/firmware/mothbox_custom/camera_settings.csv"
 chosen_settings_path=default_path
 
 #camera_settings = load_camera_settings("camera_settings.csv")#CRONTAB CAN'T TAKE RELATIVE LINKS! 

@@ -1,0 +1,23 @@
+{
+  "name": "croppedlogonotext_4000px_Transparent_Square_Colored",
+  "short_name": "croppedlogon",
+  "description": "croppedlogonotext_4000px_Transparent_Square_Colored - A Progressive Web App",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ]
+}

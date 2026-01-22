@@ -64,15 +64,13 @@ HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited 
 
 
 ### Mothbox Name
-control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
+control_values_fpath = "/boot/firmware/mothbox_custom/controls.txt"
 control_values = get_control_values(control_values_fpath)
 onlyflash = control_values.get("OnlyFlash", "False").lower() == "true"
 LastCalibration = float(control_values.get("LastCalibration", 0))
 computerName = control_values.get("name", "errorname")
+print(f"Mothbox Name: {computerName}")
 
-
-
-mode = "OTHER"  
 
 # We will receive the mode from the control values
 

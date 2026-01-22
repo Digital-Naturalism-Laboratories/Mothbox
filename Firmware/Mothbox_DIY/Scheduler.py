@@ -342,21 +342,11 @@ def load_settings(filename):
     Raises:
         ValueError: If an invalid value is encountered in the CSV file.
     """
-    # first look for any updated CSV files on external media, we will prioritize those
+    #update: not checking for files on external media anymore, because we can edit the boot disk!
+    # old: first look for any updated CSV files on external media, we will prioritize those
 
-    external_media_paths = ("/media", "/mnt")  # Common external media mount points
-    default_path = "/home/pi/Desktop/Mothbox/schedule_settings.csv"
-    search_depth = 2  # only want to look in the top directory of an external drive, two levels gets us there while still looking through any media
-    found = 0
-    for path in external_media_paths:
-        file_path = find_file(path, "schedule_settings.csv", depth=search_depth)
-        if file_path:
-            print(f"Found settings on external media: {file_path}")
-            break
-        else:
-            print("No external settings, using internal csv")
-            file_path = default_path
-
+    default_path = "/boot/firmware/mothbox_custom/schedule_settings.csv"
+    file_path=filename
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
     utc_off = 0  # this is the offsett from UTC time we use to set the alarm
     runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
@@ -424,15 +414,16 @@ def get_control_values(filename):
 
 
 def schedule_shutdown(minutes):
-    """Schedules the execution of '/home/pi/Desktop/Mothbox/TurnEverythingOff.py' after the specified delay in minutes."""
+    """Schedules the execution of shutdown after the specified delay in minutes."""
     if rpiModel == 4:
-        schedule.every(minutes).minutes.do(run_shutdown_pi4)
+        "pi4 no longer suppored"
+        schedule.every(minutes).minutes.do(run_shutdown_pi5)
     if rpiModel == 5:
         schedule.every(minutes).minutes.do(run_shutdown_pi5)
 
     try:
         while True:
-            control_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+            control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
             shutdown_enabled = (
                 control_values.get("shutdown_enabled", "True").lower() == "true"
             )
@@ -446,10 +437,7 @@ def schedule_shutdown(minutes):
         print("Shutdown scheduling stopped.")
 
 
-def run_shutdown_pi4():
-    """Executes the '/home/pi/Desktop/Mothbox/TurnEverythingOff.py' script."""
-    print("about to launch the shutdown")
-    subprocess.run(["python", "/home/pi/Desktop/Mothbox/TurnEverythingOff.py"])
+
 
 
 def run_shutdown_pi5():
@@ -460,7 +448,7 @@ def run_shutdown_pi5():
     print("but we are running ONE LAST WAKEUP SCHEDULER")
 
     # SCHEDULE WAKEUP AGAIN FOR SECURITY
-    settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
+    settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
     if "utc_off" in settings:
@@ -517,7 +505,7 @@ def run_shutdown_pi5():
     # Change the mode to "STANDBY" (if we got to this point, the board must have been "ACTIVE" and so now we are switching to "STANDBY"
 
     # Write mode to controls.txt
-    set_Mode("/home/pi/Desktop/Mothbox/controls.txt", "STANDBY")
+    set_Mode("/boot/firmware/mothbox_custom/controls.txt", "STANDBY")
     
     
     #Epaper
@@ -559,7 +547,7 @@ def run_shutdown_pi5_FAST():
     
     
     # SCHEDULE WAKEUP AGAIN FOR SECURITY
-    settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
+    settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
     if "utc_off" in settings:
@@ -626,10 +614,10 @@ def run_shutdown_pi5_FAST():
 
 def enable_shutdown():
     """Enable Shutdown"""
-    with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
+    with open("/boot/firmware/mothbox_custom/controls.txt", "r") as file:
         lines = file.readlines()
 
-    with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
+    with open("/boot/firmware/mothbox_custom/controls.txt", "w") as file:
         for line in lines:
             # print(line)
             if line.startswith("shutdown_enabled="):
@@ -641,10 +629,10 @@ def enable_shutdown():
 
 def enable_onlyflash():
     """Enable Flash"""
-    with open("/home/pi/Desktop/Mothbox/controls.txt", "r") as file:
+    with open("/boot/firmware/mothbox_custom/controls.txt", "r") as file:
         lines = file.readlines()
 
-    with open("/home/pi/Desktop/Mothbox/controls.txt", "w") as file:
+    with open("/boot/firmware/mothbox_custom/controls.txt", "w") as file:
         for line in lines:
             # print(line)
             if line.startswith("OnlyFlash="):
@@ -750,7 +738,7 @@ def set_wakeup_alarm(epoch_time):
         f.write(str(epoch_time))
     logging.info("Set the Wakeup Alarm" + str(epoch_time))
     #Write to controls here!
-    set_nextWakeinControls("/home/pi/Desktop/Mothbox/controls.txt",epoch_time)
+    set_nextWakeinControls("/boot/firmware/mothbox_custom/controls.txt",epoch_time)
 
 
 # Check if now is in schedule 
@@ -806,24 +794,29 @@ print("----------------- STARTING Scheduler!-------------------")
 rpiModel = None
 rpiModel = determinePiModel()
 
+# Check the timezone
+
+# run timezone updater
+print("|><| running the timezone updater to make sure our timezone is correct |><| ")
+process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/TimezoneUpdater.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+stdout, stderr = process.communicate()
+if stderr:
+  print(f"Error running script: {stderr.decode()}")
+else:
+  print(stdout.decode())
+
+
+
+
 now = datetime.datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
 print(f"Current time: {formatted_time} on a RPi model " + str(rpiModel))
 
 if rpiModel == 4:
-    from pijuice import PiJuice
-
-    # Set up the pijuice
-    pj = PiJuice(1, 0x14)
-    pjOK = False
-    while pjOK == False:
-        stat = pj.status.GetStatus()
-        if stat["error"] == "NO_ERROR":
-            pjOK = True
-        else:
-            sleep(0.1)
-
+    print("The Pi4 is not fully supported anymore. It will be unable to wake itself back up. If you really need to use this with a pi4, there are old images you can try, but without a pijuice it won't be able to wake itself up.")
 
 if rpiModel == 5:
     print("Sync hwclock to main clock for security")
@@ -884,7 +877,7 @@ else:
 print("Current Mothbox MODE: ", mode)
 
 # Write mode to controls.txt
-set_Mode("/home/pi/Desktop/Mothbox/controls.txt", mode)
+set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
 
 
 
@@ -897,35 +890,45 @@ if(mode=="OFF"):
 
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
+autoname=True
+control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
+autoname = (
+    control_values.get("autoname", "True").lower() == "true"
+)
+# Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 
-filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
-data = read_csv_into_lists(filename)
+if(autoname==True):
 
-# Access data by category (column name)
-animals = data["Animal2"]
-adjectives = data["Adjectives"]
-colors = data["Colors"]
-verbs = data["Verbs"]
-animales = data["Animales"]
-# print(animales)
-adjectivos = data["Adjectivos"]
-# print(adjectivos)
-verbos = data["Verbos"]
-# print(verbos)
-colores = data["Colores"]
-# print(colores)
-sustantivos = data["Sustantivos"]
-# print(sustantivos)
+  filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
+  data = read_csv_into_lists(filename)
 
-# SetRaspberrypiName
-serial_number = get_serial_number()
-# 0 is english 1 is spanish 2 is either spanish or enlgish 3 is spanglish
-unique_name = generate_unique_name(serial_number, 3)
-print(f"Unique name for device: {unique_name}")
+  # Access data by category (column name)
+  animals = data["Animal2"]
+  adjectives = data["Adjectives"]
+  colors = data["Colors"]
+  verbs = data["Verbs"]
+  animales = data["Animales"]
+  # print(animales)
+  adjectivos = data["Adjectivos"]
+  # print(adjectivos)
+  verbos = data["Verbos"]
+  # print(verbos)
+  colores = data["Colores"]
+  # print(colores)
+  sustantivos = data["Sustantivos"]
+  # print(sustantivos)
 
-# Change it in controls
-set_computerName("/home/pi/Desktop/Mothbox/controls.txt", unique_name)
+  # SetRaspberrypiName
+  serial_number = get_serial_number()
+  # 0 is english 1 is spanish 2 is either spanish or enlgish 3 is spanglish
+  unique_name = generate_unique_name(serial_number, 3)
+  print(f"Unique name for device: {unique_name}")
 
+  # Change it in controls
+  set_computerName("/boot/firmware/mothbox_custom/controls.txt", unique_name)
+else:
+  computerName=control_values.get("name", "ManualName")
+  print(f"manual name for Mothbox: {computerName}")
 # ~~~~~~~~~~~~ Figuring out Scheduling Details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~ Pi 5 specific things to change cron-like commands to the next UTC target
 
@@ -942,9 +945,9 @@ onlyflash = 0
 
 
 # ~~~~~~~ Do the Scheduling ~~~~~~~~~~~~~~~~~~~~
-settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
+settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
 print(settings)
-set_timings("/home/pi/Desktop/Mothbox/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
+set_timings("/boot/firmware/mothbox_custom/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
 runtime=int(settings["runtime"])
 
 
@@ -952,23 +955,13 @@ if "runtime" in settings:
     del settings["runtime"]
 if "utc_off" in settings:
     utc_off=settings["utc_off"]
-    set_UTCinControls("/home/pi/Desktop/Mothbox/controls.txt",utc_off)
+    set_UTCinControls("/boot/firmware/mothbox_custom/controls.txt",utc_off)
     del settings["utc_off"]
 
 print("printing settings")
 
 if rpiModel == 4:
-    modified_dict = modify_hours(
-        settings.copy(), utc_off
-    )  # Modify a copy to avoid unintended modification
-    print(modified_dict)
-    settings = modified_dict
-    if settings:
-        pj.rtcAlarm.SetAlarm(settings)
-
-    pj.rtcAlarm.SetWakeupEnabled(
-        True
-    )  # just re-doing this in case this flag gets shut off due to a full power-outage
+    print("pi4 not supported anymore, it won't be able to wake itself")
 
 if rpiModel == 5:
     # don't need to modify the hours to UTC like we do for pijuice
@@ -1021,7 +1014,7 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
         print("Active, but outside schedule window, STANDBY mode — shutting down")
         mode="STANDBY"
         # Write mode to controls.txt
-        set_Mode("/home/pi/Desktop/Mothbox/controls.txt", mode)
+        set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
         
         # Flashing Sequence to indicate to user we are in Standby mode
         process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
@@ -1083,7 +1076,9 @@ else:
 if mode == "OFF":
     print("System is in OFF MODE")
     if rpiModel == 4:
-        run_shutdown_pi4()
+        print("rpi4 no longer supported")
+        run_shutdown_pi5_FAST()
+        
     if rpiModel == 5:
         run_shutdown_pi5_FAST()
     # quit()

@@ -56,7 +56,7 @@ def get_control_values(filepath):
 
 
 
-thecontrol_values = get_control_values("/home/pi/Desktop/Mothbox/controls.txt")
+thecontrol_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
 computerName = thecontrol_values.get("name", "errorname")
 
 
