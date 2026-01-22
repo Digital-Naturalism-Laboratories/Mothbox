@@ -64,15 +64,13 @@ HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited 
 
 
 ### Mothbox Name
-control_values_fpath = "/home/pi/Desktop/Mothbox/controls.txt"
+control_values_fpath = "/boot/firmware/mothbox_custom/controls.txt"
 control_values = get_control_values(control_values_fpath)
 onlyflash = control_values.get("OnlyFlash", "False").lower() == "true"
 LastCalibration = float(control_values.get("LastCalibration", 0))
 computerName = control_values.get("name", "errorname")
+print(f"Mothbox Name: {computerName}")
 
-
-
-mode = "OTHER"  
 
 # We will receive the mode from the control values
 
@@ -260,7 +258,6 @@ try:
     epd.Clear(0xFF)
 
     # Drawing on the image
-
     fontHeaders = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/scientifica/ttf/scientificaBold.ttf', 13)
     font8 = ImageFont.truetype('/home/pi/Desktop/Mothbox/graphics/fonts/clear-sans/TTF/ClearSans-Medium.ttf', 8)
 
