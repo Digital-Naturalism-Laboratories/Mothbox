@@ -3,7 +3,7 @@ u18 90 r
 
 d1 d2 d4 all look fine - line/cathode/direction arrow >| points/ non-open side of box are all correct
 
-E1 - 180
+E1 - 180 - note E1 is different than the logic of d1 d2 d4, its line/negative sign, and >| point to the OPEN side of the box
 
 u3 - 180
 
