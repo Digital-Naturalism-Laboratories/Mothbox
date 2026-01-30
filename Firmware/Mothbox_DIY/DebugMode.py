@@ -19,6 +19,7 @@ import datetime
 from datetime import datetime
 
 
+print("----------------- Activate DEBUG for DIY-------------------")
 
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
@@ -111,3 +112,5 @@ with open("/boot/firmware/mothbox_custom/controls.txt", "w") as file:
             print("trying to stop shutdown")
         else:
             file.write(line)  # Keep other lines unchanged
+
+quit()

@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 from pathlib import Path
 
-CONTROL_FILE = Path("/boot/firmware/mothbox_custom/controls.txt")
+CONTROL_FILE = Path("/boot/firmware/mothbox_custom/system/controls.txt")
 
 def read_controls(filepath):
     controls = {}

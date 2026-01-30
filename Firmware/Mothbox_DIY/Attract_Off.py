@@ -5,7 +5,7 @@ import time
 import datetime
 from datetime import datetime
 
-print("----------------- STARTING Scheduler!-------------------")
+print("----------------- Attract OFF DIY-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -61,9 +61,9 @@ def AttractOff():
     print("Attract Lights Off\n")
 
 
-control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
+control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
 onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
 #AttractOn()
 AttractOff()
 
-
+quit()

@@ -20,7 +20,6 @@ Its order of operations is like this
 TODO:
 -Add safety function to detect if disk space left is less than 7GB and refuse to take more photos, and give a debug flash pattern (such as SOS with ring lights)
 """
-
 import os
 import sys
 #######---- Check for Boot lock ------
@@ -30,7 +29,6 @@ if os.path.exists(BOOT_LOCK):
     sys.exit(0)
 
 #-----------------------------##
-
 import time
 from picamera2 import Picamera2, Preview
 from libcamera import controls
@@ -43,87 +41,41 @@ computerName = "mothboxNOTSET"
 import cv2
 
 import csv
+import sys
 
 import io
 from PIL import Image
 import piexif
 import subprocess
 
-#GPIO
-import RPi.GPIO as GPIO
+
 import time
 
-import platform
+import os, platform
 from pathlib import Path
 
+
+def get_control_values(filename):
+    """Reads key-value pairs from the control file.
+    Args:
+    filename:  Name of the control file
+    """
+    control_values = {}
+    with open(filename, "r") as file:
+        for line in file:
+            key, value = line.strip().split("=")
+            control_values[key] = value
+    return control_values
+
+
 #IF the mothbox is supposed to be off, don't take a photo!
-GPIO.setmode(GPIO.BCM)
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE or PARTY, active is dddddddddddddefault
 
-# Function to check for connection to ground
-def off_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(off_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(off_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-def debug_connected_to_ground():
-    # Set an internal pull-up resistor (optional, some circuits might have one already)
-    GPIO.setup(debug_pin, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
-    # Read the pin value
-    pin_value = GPIO.input(debug_pin)
-
-    # If pin value is LOW (0), then it's connected to ground
-    return pin_value == 0
-
-
-
-# Define GPIO pin for checking
-off_pin = 16
-debug_pin = 12
-mode = "ACTIVE"  # possible modes are OFF or DEBUG or ARMED
-# Set GPIO pin as input
-GPIO.setup(off_pin, GPIO.IN)
-GPIO.setup(debug_pin, GPIO.IN)
-
-# Check for connection
-if debug_connected_to_ground():
-    print("GPIO pin", debug_pin, "DEBUG connected to ground.")
-    mode = "DEBUG"
-else:
-    print("GPIO pin", debug_pin, "DEBUG NOT connected to ground.")
-
-# Check for connection
-if off_connected_to_ground():
-    print("GPIO pin", off_pin, "OFF PIN connected to ground.")
-    mode = "OFF"  # this check comes second as the OFF state should override the DEBUG state in case both are attached
-else:
-    print("GPIO pin", off_pin, "OFF PIN NOT connected to ground.")
-
-print("Current Mothbox MODE: ", mode)
-
-if(mode=="OFF"):
-    print("no photo!")
-    #GPIO.cleanup()
-    quit()
-
-
-
-
-
-
-
-
-
-
-
-internal_storage_minimum = 5 # This is Gigabytes, below 4 on a raspberry pi 4, can make weird OS problems
-extra_photo_storage_minimum=internal_storage_minimum-1
+thecontrol_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
+sActive = int(thecontrol_values.get("Active", 1))
+internal_storage_minimum = int(thecontrol_values.get("safetyGB",9)) # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
+internal_storage_minimum=internal_storage_minimum-1 # Important, this must be lower than the backup files minimum, or else the whole thing will just stall potential
+extra_photo_storage_minimum=internal_storage_minimum
 # Define paths
 desktop_path = Path(
     "/home/pi/Desktop/Mothbox"
@@ -163,17 +115,20 @@ def set_last_calibration(filepath):
             else:
                 file.write(line)  # Keep other lines unchanged
 
+def run_cmd(cmd):
+    """Run a shell command safely"""
+    subprocess.run(cmd, shell=True, check=False)
+
+def flashOff():
+    run_cmd("python /home/pi/Desktop/Mothbox/Flash_Off.py")
+    print("Flash Off\n")
+    run_cmd("python /home/pi/Desktop/Mothbox/Attract_On.py") # keep regulator on
 
 def flashOn():
-    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
-    GPIO.output(Relay_Ch2,GPIO.LOW)
-    print("Flash On\n")
-    
-def flashOff():
-    GPIO.output(Relay_Ch2,GPIO.HIGH)
-    GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
+    run_cmd("python /home/pi/Desktop/Mothbox/Attract_On.py")
+    run_cmd("python /home/pi/Desktop/Mothbox/Flash_On.py")
 
-    print("Flash Off\n")
+    print("Flash On\n")
 
   
 def load_camera_settings():
@@ -191,11 +146,12 @@ def load_camera_settings():
     """
     global middleexposure, calib_lens_position, calib_exposure
     
-
+    #OLD ---> we don't look for external settings anymore since controls are on boot -first look for any updated CSV files on external media, we will prioritize those
+    external_media_paths = ("/media", "/mnt")  # Common external media mount points
     default_path = "/boot/firmware/mothbox_custom/camera_settings.csv"
     file_path=default_path
 
-    found = 0
+
     
     #set the global path to the one we chose
     chosen_settings_path = file_path
@@ -456,7 +412,7 @@ def create_dated_folder(base_path):
   else:
     # Add a day if time is between 12:00 pm and next day's 11:59 am
     date_str = (now - timedelta(days=1)).strftime("%Y-%m-%d")
-  folder_path = os.path.join(base_path, date_str)
+  folder_path = os.path.join(base_path, computerName+"_"+date_str)
   if not os.path.exists(folder_path):
     os.makedirs(folder_path)
   os.chmod(folder_path, 0o777)  # mode=0o777 for read write for all users
@@ -467,6 +423,7 @@ def takePhoto_Manual():
     # LensPosition: Manual focus, Set the lens position.
     now = datetime.now()
     timestamp = now.strftime("%Y_%m_%d__%H_%M_%S")  # Adjust the format as needed
+    #TODO MAKE ALL TIME ISO FORMAT
     #timestamp = now.strftime("%y%m%d%H%M%S")
     #serial_number = get_serial_number()
     #lastfivedigits=serial_number[-5:]
@@ -566,7 +523,7 @@ def takePhoto_Manual():
           print(camera_settings.get("LensPosition"))
           #https://github.com/hMatoba/Piexif/blob/3422fbe7a12c3ebcc90532d8e1f4e3be32ece80c/piexif/_exif.py#L406
           #https://piexif.readthedocs.io/en/latest/functions.html#dump
-          zeroth_ifd = {piexif.ImageIFD.Make: u"MothboxV4",
+          zeroth_ifd = {piexif.ImageIFD.Make: u"MothboxV5",
               }
           exif_ifd = {#piexif.ExifIFD.DateTimeOriginal: u"2099:09:29 10:10:10",
             #piexif.ExifIFD.LensMake: u"LensMake",
@@ -651,9 +608,11 @@ print(f"Current time: {formatted_time}")
 # Get total and available space on desktop and external storage
 desktop_total, desktop_available = get_storage_info(desktop_path)
 print("Desktop Total    Storage: \t" + str(desktop_total))
-print("Desktop Available Storage: \t" + str(desktop_available))
 
+print("Desktop Available Storage: \t" + str(desktop_available))
 x=extra_photo_storage_minimum
+
+print("Minimum storage needed: \t" +str(x * 1024**3))
 
 if desktop_available < x * 1024**3:  # x GB in bytes
     print("not enough space to take more photos")
@@ -690,27 +649,17 @@ exposuretime_width = 18000
 middleexposure=500 # 500 #minimum exposure time for Hawkeye camera 64mp arducam
 
 
-Relay_Ch1 = 26
-Relay_Ch2 = 20
-Relay_Ch3 = 21
-
-GPIO.setwarnings(False)
-GPIO.setmode(GPIO.BCM)
-
-#GPIO.setup(Relay_Ch1,GPIO.OUT)
-GPIO.setup(Relay_Ch2,GPIO.OUT)
-GPIO.setup(Relay_Ch3,GPIO.OUT)
-
-print("Setup The Relay Module is [success]")
-GPIO.output(Relay_Ch2,GPIO.HIGH)
-GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
+Relay_Ch1 = 5
+Relay_Ch2 = 19 # Photo flash
+Relay_Ch3 = 9 # 6 UV 
+Relay_Ch4 = 6
 
 global onlyflash
 onlyflash=False
 
 
 
-control_values_fpath = "/boot/firmware/mothbox_custom/controls.txt"
+control_values_fpath = "/boot/firmware/mothbox_custom/system/controls.txt"
 control_values = get_control_values(control_values_fpath)
 onlyflash = control_values.get("OnlyFlash", "True").lower() == "true"
 LastCalibration = float(control_values.get("LastCalibration", 0))
@@ -783,6 +732,7 @@ calib_exposure = camera_settings["ExposureTime"]
 oldsettingsnames = camera_settings.pop("Name",computerName) #defaults to what is set above if not in the files being read
 ImageFileType = int(camera_settings.pop("ImageFileType",0))
 VerticalFlip = int(camera_settings.pop("VerticalFlip",0))
+onlyflash =int(camera_settings.pop("onlyflash",0))
 
 #HDR settings
 num_photos = int(camera_settings.pop("HDR",num_photos)) #defaults to what is set above if not in the files being read
@@ -817,9 +767,5 @@ takePhoto_Manual()
 
 picam2.stop()
 
-#cannot call GPIO cleanup here because it will kill the relay turning on the attractor
-GPIO.output(Relay_Ch3,GPIO.LOW) #might as well ensure attract is on because new wiring dictates that
-
-    
 quit()
 

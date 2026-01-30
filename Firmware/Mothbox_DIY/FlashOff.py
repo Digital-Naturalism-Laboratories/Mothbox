@@ -7,7 +7,7 @@ import time
 import datetime
 from datetime import datetime
 
-print("----------------- Flash On DIY-------------------")
+print("----------------- Flash OFF DIY-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -43,8 +43,8 @@ def FlashOff():
     print("Flash Lights Off\n")
 
 
-FlashOn()
-#FlashOff()
+#FlashOn()
+FlashOff()
 
 quit()
 

@@ -56,7 +56,7 @@ def get_control_values(filepath):
 
 
 
-thecontrol_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
+thecontrol_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
 computerName = thecontrol_values.get("name", "errorname")
 
 
@@ -69,7 +69,7 @@ logs_folder = desktop_path / "logs"
 backedup_photos_folder = desktop_path / "photos_backedup"
 
 backup_folder_name = "photos_backup_"+computerName
-internal_storage_minimum = 8 # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
+internal_storage_minimum = int(thecontrol_values.get("safetyGB",9)) # This is Gigabytes, below 6 on a raspberry pi 5 can make weird OS problems
 
 print("----------------- STARTING BACKUP FILES-------------------")
 now = datetime.now()

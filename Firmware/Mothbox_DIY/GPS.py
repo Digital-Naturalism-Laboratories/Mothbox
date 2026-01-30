@@ -54,7 +54,7 @@ def get_control_values(filepath):
             control_values[key] = value
     return control_values
 
-control_values_fpath = "/boot/firmware/mothbox_custom/controls.txt"
+control_values_fpath = "/boot/firmware/mothbox_custom/system/controls.txt"
 control_values = get_control_values(control_values_fpath)
 
 def set_GPStime(filepath, gpstime):
@@ -88,7 +88,7 @@ def set_GPS(filepath, lat,lon):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("lat"):
                 file.write("lat=" + str(lat) + "\n")  # Replace with False
                 #print("set lat" + str(lat))
@@ -137,7 +137,7 @@ try:
         print("sync HW clock with system clock")
         os.system("sudo hwclock -w")
         print("System UTC time set.")
-        set_GPStime("/boot/firmware/mothbox_custom/controls.txt", epoch_time)
+        set_GPStime("/home/pi/Desktop/Mothbox/controls.txt", epoch_time)
 
         # Use offline timezone lookup
         if latitude is not None and longitude is not None:
@@ -151,15 +151,15 @@ try:
                 local_time = datetime.now(ZoneInfo(timezone))
                 utc_offset_hours = int(local_time.utcoffset().total_seconds() // 3600)
                 print("UTC Offset (hours):", utc_offset_hours)
-                set_GPS("/boot/firmware/mothbox_custom/controls.txt", latitude, longitude)
-                set_UTCoff("/boot/firmware/mothbox_custom/controls.txt",utc_offset_hours)
+                set_GPS("/boot/firmware/mothbox_custom/system/controls.txt", latitude, longitude)
+                set_UTCoff("/boot/firmware/mothbox_custom/system/controls.txt",utc_offset_hours)
             else:
                 print("Could not determine timezone from coordinates.")
-                set_GPS("/boot/firmware/mothbox_custom/controls.txt", "n/a", "n/a")
+                set_GPS("/boot/firmware/mothbox_custom/system/controls.txt", "n/a", "n/a")
 
     else:
         print("No UTC time received before timeout")
-        set_GPS("/boot/firmware/mothbox_custom/controls.txt", "n/a", "n/a")
+        set_GPS("/boot/firmware/mothbox_custom/system/controls.txt", "n/a", "n/a")
 
 
 
