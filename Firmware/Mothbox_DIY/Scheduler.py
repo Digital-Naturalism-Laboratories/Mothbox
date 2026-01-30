@@ -1005,6 +1005,9 @@ There are several possible modes that a Mothbox can be in
 Active: it is currently running a session. Automatic routines go. Wifi stops after 5 mins to save energy.
 Standby: the mothbox pi is shut down, but during the next scheduled session it will become active
 Debug: When the mothbox has power, it will wake up and not shut down until manually turned off. Automatic Cron routines will not run. Lights are default off. Wifi stays on.
+
+-MB DIY only has Active, Debug, or Standby mode for now
+
 Party: Like debug mode, but it runs a routine to just cycle all the lights
 HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited power supply. Wifi stays on, attempts to upload photos to internet servers automatically.
 
@@ -1038,7 +1041,7 @@ else:
 print("Current Mothbox MODE: ", mode)
 
 # Write mode to controls.txt
-set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
+set_Mode("/boot/firmware/mothbox_custom/system/controls.txt", mode)
 
 
 
@@ -1048,16 +1051,15 @@ if(mode=="OFF"):
 
 
 # ----------END SWITCH CHECK----------------
+# ------------- End Set Mode Initially  ---------------
 
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
-autoname=True
-control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
-autoname = (
-    control_values.get("autoname", "True").lower() == "true"
-)
-# Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 
+control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
+
+# Add option for people to manually set a name, but default to autoname made by pi5 serial number 
+print("autoname: ",autoname)
 if(autoname==True):
 
   filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
@@ -1086,10 +1088,15 @@ if(autoname==True):
   print(f"Unique name for device: {unique_name}")
 
   # Change it in controls
-  set_computerName("/boot/firmware/mothbox_custom/controls.txt", unique_name)
+  set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", unique_name)
 else:
-  computerName=control_values.get("name", "ManualName")
+  computerName=manName
+  set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", computerName)
+
   print(f"manual name for Mothbox: {computerName}")
+# ---- End figure out name -----
+
+
 # ~~~~~~~~~~~~ Figuring out Scheduling Details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # ~~~~ Pi 5 specific things to change cron-like commands to the next UTC target
 
@@ -1106,14 +1113,15 @@ onlyflash = 0
 
 
 # ~~~~~~~ Do the Scheduling ~~~~~~~~~~~~~~~~~~~~
-settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
-print(settings)
+
 set_timings("/boot/firmware/mothbox_custom/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
-runtime=int(settings["runtime"])
 
 
 if "runtime" in settings:
+    runtime=int(settings["runtime"])
+    set_runtimeinControls("/boot/firmware/mothbox_custom/system/controls.txt",runtime)
     del settings["runtime"]
+    
 if "utc_off" in settings:
     utc_off=settings["utc_off"]
     set_UTCinControls("/boot/firmware/mothbox_custom/controls.txt",utc_off)
@@ -1161,11 +1169,10 @@ print("Wakeup Alarms have been set!")
 
 # Scheduling complete, now set all the other settings
 
+#---------Standby Check - - Check if we should be running now according to schedule, and if not, turn off -------------
 
 #--------- Check if we should be running now according to schedule, and if not, turn off -------------
-print("before check settings")
-print(settings)
-print(runtime)
+
 if mode == "ACTIVE":  # ignore this if we are in debug mode
     if is_now_in_schedule(settings, int(runtime)):
         now_is_in_schedule = 1
@@ -1175,30 +1182,17 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
         print("Active, but outside schedule window, STANDBY mode — shutting down")
         mode="STANDBY"
         # Write mode to controls.txt
-        set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
+        set_Mode(controlsFpath, mode)
         
         # Flashing Sequence to indicate to user we are in Standby mode
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-        time.sleep(.25)
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_Off.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-        time.sleep(.25)
-        
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-        time.sleep(.25)        
-        
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_Off.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
+        # Have to use non boot locked versions
+        run_cmd("python /home/pi/Desktop/Mothbox/scripts/blink_standby.py")
+        #input("wait debug")
         #----- End Flash ----
         run_shutdown_pi5_FAST()
         quit()
 
+#----------- GPS -----------------
 # GPS check / 10 second delay
 print("Checking GPS (if available) for 10 seconds")
 process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
@@ -1209,12 +1203,14 @@ if stderr:
   print(f"Error running script: {stderr.decode()}")
 else:
   print(stdout.decode())
+  
+# ----- End GPS -------------
 
 
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
 
-
+# ~~~~~~~ Display ~~~~~~~~~~~~~~~~~~~~
 #Update the Epaper screen if it is available
 GPIO.cleanup()
 print("Updating Epaper display (if available)")
@@ -1229,19 +1225,20 @@ else:
 
 
 
-#------------Final Step------------------------------------------- 
-#-------------(No other code past this, this is where it sits and waits until shutdown)
+
+# ~~~~~~~ Final Mode Determine ~~~~~~~~~~~~~~~~~~~~
+
+#Final Step (No other code past this, this is where it sits and waits until shutdown)
 # - prepare shutdown and wait
 # Toggle System MODE, shut down if in OFF/INACTIVE mode
-# It should never actually go here, it should have detected OFF mode and turned off a while ago
-if mode == "OFF":
+if mode == "OFF": #it shouldn't have gotten here if in OFF mode, but just extra check
     print("System is in OFF MODE")
     if rpiModel == 4:
         print("rpi4 no longer supported")
         run_shutdown_pi5_FAST()
         
     if rpiModel == 5:
-        run_shutdown_pi5_FAST()
+        run_shutdown_pi5()
     # quit()
 elif mode == "DEBUG":
     print("System is in DEBUG mode - keeping power and wifi on and turning cron off")
@@ -1249,6 +1246,17 @@ elif mode == "DEBUG":
     debug_script_path = "/home/pi/Desktop/Mothbox/DebugMode.py"
     # Call the script using subprocess.run
     subprocess.run([debug_script_path])
+    # stopcron()
+elif mode == "PARTY": 
+    print("System is in DEBUG mode - keeping power and wifi on and turning cron off")
+    # Define the path to your script (replace 'path/to/script' with the actual path)
+    debug_script_path = "/home/pi/Desktop/Mothbox/DebugMode.py"
+    # Call the script using subprocess.run
+    subprocess.run([debug_script_path])
+    
+    party_script_path = "/home/pi/Desktop/Mothbox/Party.py"
+    # Call the script using subprocess.run
+    subprocess.run([party_script_path])
     # stopcron()
 elif mode == "ACTIVE":
     print("System is ACTIVE")

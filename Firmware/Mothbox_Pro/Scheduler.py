@@ -1047,14 +1047,14 @@ print("Mothbox mode is:  "+ mode)
 set_Mode(controlsFpath, mode)
 
 # ----------END SWITCH CHECK----------------
-
+# ------------- End Set Mode Initially  ---------------
 
 
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
 
 control_values = get_control_values(controlsFpath) # We might not need this call here
-print(autoname)
+print("autoname: ",autoname)
 # Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 if(autoname=="true"):
     filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
@@ -1086,6 +1086,8 @@ if(autoname=="true"):
     set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", unique_name)
 else:
   computerName=manName
+  set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", computerName)
+
   print(f"manual name for Mothbox: {computerName}")
 # ---- End figure out name -----
 
@@ -1202,7 +1204,7 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
         run_shutdown_pi5_FAST()
         quit()
 
-
+#----------- GPS -----------------
 # GPS check / 10 second delay
 print("Checking GPS (if available) for 10 seconds")
 process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
@@ -1214,6 +1216,8 @@ if stderr:
 else:
   print(stdout.decode())
   
+# ----- End GPS -------------
+
 
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
