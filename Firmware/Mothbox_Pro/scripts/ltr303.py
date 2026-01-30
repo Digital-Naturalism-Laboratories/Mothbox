@@ -108,7 +108,10 @@ class LTR303:
         
         pfactor = 1/1 # lets us adjust for diminishing factor of a window, for now just setting as 1 #pfactor is (ALS count without aperture or window / ALS count with aperture) 
         
-        ratio = ch1 / float(ch0+ch1)
+        if(ch0+ch1==0):
+                ratio=0
+        else:
+                ratio = ch1 / float(ch0+ch1)
 
         # Example from AppendixA
         if ratio < 0.45:

@@ -40,4 +40,3 @@ if temp is not None:
     print(f"Temperature: {temp:.3f} °C")
 else:
     print("Temperature: unavailable")
-

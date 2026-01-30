@@ -5,12 +5,21 @@ import RPi.GPIO as GPIO
 import time
 import datetime
 from datetime import datetime
+import subprocess
 
-print("----------------- Flash On!-------------------")
+def run_cmd(cmd):
+    """Run a shell command safely"""
+    subprocess.run(cmd, shell=True, check=False)
+
+
+
+
+#print("----------------- Flash ON!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
-print(f"Current time: {formatted_time}")
+#print(f"Current time: {formatted_time}")
+
 
 global onlyflash
 onlyflash=False
@@ -24,21 +33,25 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(GPIO_SW_Flash,GPIO.OUT)
 
 
-print("Setup GPIO is [success]")
+#print("Setup GPIO is [success]")
 
 
 def flashOn():
     GPIO.output(GPIO_SW_Flash,GPIO.HIGH)
+    run_cmd("python /home/pi/Desktop/Mothbox/scripts/12vOn.py")
 
-    print("Flash Lights On\n")
+    #print("Flash Lights On\n")
     
 def flashOff():
+    #run_cmd("python /home/pi/Desktop/Mothbox/scripts/12vOff.py")
 
     GPIO.output(GPIO_SW_Flash,GPIO.LOW)
 
-    print("Flash Lights Off\n")
+    #print("Flash Lights Off\n")
 
 
 flashOn()
-#FlashOff()
+#flashOff()
+quit()
+
 

@@ -5,7 +5,7 @@ import time
 import datetime
 from datetime import datetime
 
-print("----------------- 12V power off!-------------------")
+print("----------------- 12V power on!-------------------")
 now = datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 

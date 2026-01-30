@@ -33,7 +33,7 @@ from time import sleep
 import csv
 import time
 import datetime
-from datetime import datetime
+#from datetime import datetime
 import subprocess
 from subprocess import Popen  # For executing external scripts
 import os
@@ -161,6 +161,19 @@ def word_to_seed(word, encoding="utf-8"):
     seed = sum(encoded_word)
     max_seed_value = 2**32 - 1
     return seed
+
+def set_setTime(filepath):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+    with open(filepath, "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith("setTime"):
+                file.write("setTime=" + "False" + "\n")  # Replace with False
+                print("set setTime" + "False")
+            else:
+                file.write(line)  # Keep other lines unchanged
     
 def set_Mode(filepath, themode):
     with open(filepath, "r") as file:
@@ -182,7 +195,7 @@ def set_computerName(filepath, compname):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("name"):
                 file.write("name=" + str(compname) + "\n")  # Replace with False
                 print("set name " + compname)
@@ -194,13 +207,25 @@ def set_UTCinControls(filepath, utcoff):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("UTCoff="):
                 file.write("UTCoff=" + str(utcoff) + "\n")  # Replace with False
                 print("set next UTC offset in controls " + str(utcoff))
             else:
                 file.write(line)  # Keep other lines unchanged
 
+def set_runtimeinControls(filepath, rt):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+    with open(filepath, "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith("runtime="):
+                file.write("runtime=" + str(rt) + "\n")  # Replace with False
+                print("set runtimes in cttttttrls " + str(rt))
+            else:
+                file.write(line)  # Keep other lines unchanged
 
 def set_nextWakeinControls(filepath, etime):
     with open(filepath, "r") as file:
@@ -208,7 +233,7 @@ def set_nextWakeinControls(filepath, etime):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("nextWake"):
                 file.write("nextWake=" + str(etime) + "\n")  # Replace with False
                 print("set next wake in controls " + str(etime))
@@ -221,7 +246,7 @@ def set_timings(filepath, mins,hours,weekdays,runtimes):
 
     with open(filepath, "w") as file:
         for line in lines:
-            print(line)
+            #print(line)
             if line.startswith("hours"):
                 file.write("hours=" + str(hours) + "\n")  # Replace with False
                 print("set hours " + hours)
@@ -330,9 +355,9 @@ def load_settings(filename):
     #update: not checking for files on external media anymore, because we can edit the boot disk!
     # old: first look for any updated CSV files on external media, we will prioritize those
 
-    default_path = "/boot/firmware/mothbox_custom/schedule_settings.csv"
+    default_path = "/boot/firmware/mothbox_custom/mothbox_settings.csv"
     file_path=filename
-    global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
+    global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash,autoname, manName, manTimezone, autoTime, manTime, bat80, bat20
     utc_off = 0  # this is the offset from UTC time we use to set the alarm
     runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
     # newwifidetected=False
@@ -371,8 +396,22 @@ def load_settings(filename):
                 elif setting == "wifipass":
                     newwifidetected = True
                     wifipass = value
+                elif setting == "manualTime":
+                    manTime = value
+                elif setting == "autoSystemTime":
+                    autoTime = value.strip().lower()
+                elif setting == "timezone":
+                    manTimezone = value
+                elif setting == "autoname":
+                    autoname = value.strip().lower()
+                elif setting == "name":
+                    manName = value
                 elif setting == "onlyflash":
                     onlyflash = int(value)
+                elif setting == "bat_80perVolts":
+                    bat80 =float(value)
+                elif setting == "bat_20perVolts":
+                    bat20 =float(value)
                 else:
                     print(f"Warning: Unknown setting: {setting}. Ignoring.")
 
@@ -383,6 +422,9 @@ def load_settings(filename):
     except FileNotFoundError as e:
         print(f"Error: CSV file not found: {filename}")
         return None
+def run_cmd(cmd):
+    """Run a shell command safely"""
+    subprocess.run(cmd, shell=True, check=False)
 
 
 def get_control_values(filename):
@@ -407,7 +449,7 @@ def schedule_shutdown(minutes):
 
     try:
         while True:
-            control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
+            control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
             shutdown_enabled = (
                 control_values.get("shutdown_enabled", "True").lower() == "true"
             )
@@ -429,7 +471,7 @@ def run_shutdown_pi5():
     print("but we are running ONE LAST WAKEUP SCHEDULER")
 
     # SCHEDULE WAKEUP AGAIN FOR SECURITY
-    settings = load_settings("/home/pi/Desktop/Mothbox/schedule_settings.csv")
+    settings = load_settings("/boot/firmware/mothbox_custom/mothbox_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
     if "utc_off" in settings:
@@ -486,7 +528,7 @@ def run_shutdown_pi5():
     # Change the mode to "STANDBY" (if we got to this point, the board must have been "ACTIVE" and so now we are switching to "STANDBY"
 
     # Write mode to controls.txt
-    set_Mode("/boot/firmware/mothbox_custom/controls.txt", "STANDBY")
+    set_Mode("/boot/firmware/mothbox_custom/system/controls.txt", "STANDBY")
     
 
     #Epaper
@@ -530,7 +572,7 @@ def run_shutdown_pi5_FAST():
     
     
     # SCHEDULE WAKEUP AGAIN FOR SECURITY
-    settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
+    settings = load_settings("/boot/firmware/mothbox_custom/mothbox_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
     if "utc_off" in settings:
@@ -597,10 +639,10 @@ def run_shutdown_pi5_FAST():
 
 def enable_shutdown():
     """Enable Shutdown"""
-    with open("/boot/firmware/mothbox_custom/controls.txt", "r") as file:
+    with open("/boot/firmware/mothbox_custom/system/controls.txt", "r") as file:
         lines = file.readlines()
 
-    with open("/boot/firmware/mothbox_custom/controls.txt", "w") as file:
+    with open("/boot/firmware/mothbox_custom/system/controls.txt", "w") as file:
         for line in lines:
             # print(line)
             if line.startswith("shutdown_enabled="):
@@ -612,10 +654,10 @@ def enable_shutdown():
 
 def enable_onlyflash():
     """Enable Flash"""
-    with open("/boot/firmware/mothbox_custom/controls.txt", "r") as file:
+    with open("/boot/firmware/mothbox_custom/system/controls.txt", "r") as file:
         lines = file.readlines()
 
-    with open("/boot/firmware/mothbox_custom/controls.txt", "w") as file:
+    with open("/boot/firmware/mothbox_custom/system/controls.txt", "w") as file:
         for line in lines:
             # print(line)
             if line.startswith("OnlyFlash="):
@@ -693,7 +735,7 @@ def calculate_next_event(cron_expression):
     job = cron.new(command="echo hello_world")
     job.setall(cron_expression)
     # Get the next scheduled time as a datetime object
-    schedule = job.schedule(date_from=datetime.now())
+    schedule = job.schedule(date_from=datetime.datetime.now())
     next_scheduled = schedule.get_next()
     # Convert the datetime object to epoch time
     return int(next_scheduled.timestamp())
@@ -721,7 +763,7 @@ def set_wakeup_alarm(epoch_time):
         f.write(str(epoch_time))
     logging.info("Set the Wakeup Alarm" + str(epoch_time))
     #Write to controls here!
-    set_nextWakeinControls("/boot/firmware/mothbox_custom/controls.txt",epoch_time)
+    set_nextWakeinControls("/boot/firmware/mothbox_custom/system/controls.txt",epoch_time)
     
 
 
@@ -787,6 +829,7 @@ def is_now_in_schedule(settings, runtime_minutes):
         weekday = (now_weekday + day_offset) % 7
 
         if weekday not in weekdays:
+            print("not active day")
             continue
 
         for h in hours:
@@ -797,49 +840,75 @@ def is_now_in_schedule(settings, runtime_minutes):
                 )
                 end = start + datetime.timedelta(minutes=runtime_minutes)
 
+                #print(start)
+                #print(now)
+                #print(end)
                 if start <= now < end:
                     return True
 
     return False
+
+
+def set_timezone(filepath, tz):
+    with open(filepath, "r") as file:
+        lines = file.readlines()
+
+    with open(filepath, "w") as file:
+        for line in lines:
+            #print(line)
+            if line.startswith("timezone"):
+                file.write("timezone=" + str(tz) + "\n")  # Replace with False
+                print("set name " + tz)
+            else:
+                file.write(line)  # Keep other lines unchanged
+
+def update_csv_setting(filename, setting_name, new_value):
+    rows = []
+    fieldnames = []
+    updated = False
+
+    # 1. Read the existing data
+    try:
+        with open(filename, 'r', newline='') as csv_file:
+            reader = csv.DictReader(csv_file)
+            fieldnames = reader.fieldnames
+            for row in reader:
+                # Check if this is the row we want to update
+                if row["SETTING"] == setting_name:
+                    row["VALUE"] = str(new_value)
+                    updated = True
+                rows.append(row)
+    except FileNotFoundError:
+        print(f"Error: Could not find {filename} to update.")
+        return
+
+    # 2. Write the data back if we found the setting
+    if updated:
+        with open(filename, 'w', newline='') as csv_file:
+            writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(rows)
+        print(f"Successfully updated {setting_name} to {new_value}.")
+    else:
+        print(f"Warning: Setting '{setting_name}' not found in CSV.")
+
+
 
 # Main Code
 
 print("----------------- STARTING Scheduler!-------------------")
 
 
+# EEPROM STUFFFFFFFFFF
 # First figure out if this is a Pi4 or a Pi5
-
-
 rpiModel = None
 rpiModel = determinePiModel()
-
-# Check the timezone
-
-# run timezone updater
-print("|><| running the timezone updater to make sure our timezone is correct |><| ")
-process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/TimezoneUpdater.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-stdout, stderr = process.communicate()
-if stderr:
-  print(f"Error running script: {stderr.decode()}")
-else:
-  print(stdout.decode())
-
-
-
-now = datetime.now()
-formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
-
-print(f"Current time: {formatted_time} on a RPi model " + str(rpiModel))
 
 if rpiModel == 4:
     print("The Pi4 is not fully supported anymore. It will be unable to wake itself back up. If you really need to use this with a pi4, there are old images you can try, but without a pijuice it won't be able to wake itself up.")
 
-
 if rpiModel == 5:
-    print("Sync hwclock to main clock for security")
-    os.system("sudo hwclock -w")
+
 
     desired_settings = {"POWER_OFF_ON_HALT": "1", "WAKE_ON_GPIO": "0"}
     current_settings = check_eeprom_settings()
@@ -854,6 +923,74 @@ if rpiModel == 5:
                 current_settings[key] = value
         set_eeprom_settings(current_settings)
         print("EEPROM settings updated.")
+### ---------- End EEPROM stuff
+
+# Figuring out the controls and settings
+controlsFpath="/boot/firmware/mothbox_custom/system/controls.txt"
+usersettingsFpath="/boot/firmware/mothbox_custom/mothbox_settings.csv"
+
+# Set up some global variables
+autoname="True"
+manName="ErrorName"
+manTimezone="Africa/Timbuktu"
+autoTime="True"
+manTime="1986-04-06 11:11:11"
+bat80=12.0
+bat20=11.0
+
+# Load custom settings
+settings = load_settings(usersettingsFpath)
+print(settings)
+
+# Change battery settings in controls
+
+
+
+
+# Change the timezone in controls
+set_timezone(controlsFpath, manTimezone)
+thecontrol_values = get_control_values(controlsFpath)
+
+
+# Check the timezone
+
+# run timezone updater
+print("|><| running the timezone updater to make sure our timezone is correct |><| ")
+process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/TimezoneUpdater.py'],
+                          stdout=subprocess.PIPE,
+                          stderr=subprocess.PIPE)
+stdout, stderr = process.communicate()
+if stderr:
+  print(f"Error running script: {stderr.decode()}")
+else:
+  print(stdout.decode())
+
+# See if we should manually set the time
+
+# Set the time manually!
+if(autoTime=="false"):
+    print("We are going to set time manually!")
+    manTime = (thecontrol_values.get("manualTime", "1986-04-06 16:35:00"))
+    subprocess.run(["timedatectl", "set-ntp", "false"], check=True) # Try to disable auto time
+    subprocess.run([
+    "python3",
+    "/home/pi/Desktop/Mothbox/SetTimeandDate.py",
+    manTime
+    ], check=True)
+    #Turn the manTime off to prevent Groundhog Days
+    update_csv_setting(usersettingsFpath, "autoSystemTime", "True")
+
+    
+else:
+    print("Time is using autotime")
+    subprocess.run(["timedatectl", "set-ntp", "true"], check=True)    
+    print("Sync hwclock to main clock for security")
+    os.system("sudo hwclock -w")
+
+now = datetime.datetime.now()
+formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
+
+print(f"Current time: {formatted_time} on a RPi model " + str(rpiModel))
 
 
 # -----Set MODE: CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
@@ -872,9 +1009,9 @@ HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited 
 
 run_script("/home/pi/Desktop/Mothbox/GetConfigSwitches.py", show_output=True) # need full path!
 
-mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE or PARTY, active is dddddddddddddefault
-
-thecontrol_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
+mode = "ACTIVE"  # possible modes are OFF or DEBUG or ACTIVE or PARTY, active is default
+#yeah load it again, cuz switches maybe changed
+thecontrol_values = get_control_values(controlsFpath)
 sActive = int(thecontrol_values.get("Active", 1))
 sDebug = int(thecontrol_values.get("Debug", 0))
 sC1 = int(thecontrol_values.get("C1", 0))
@@ -888,7 +1025,7 @@ if(sActive==0):
 
 if(mode=="OFF"):
     # Write mode to controls.txt
-    set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
+    set_Mode(controlsFpath, mode)
 
     run_shutdown_pi5_FAST()
     quit()
@@ -899,6 +1036,7 @@ if(mode=="OFF"):
 if(sDebug==1):
     None
     mode="DEBUG"
+
 if(sC1==1):
     None
     mode="PARTY"
@@ -906,8 +1044,7 @@ if(sC1==1):
 
 print("Mothbox mode is:  "+ mode)
 # Write mode to controls.txt
-set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
-
+set_Mode(controlsFpath, mode)
 
 # ----------END SWITCH CHECK----------------
 
@@ -915,13 +1052,11 @@ set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
 
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
-autoname=True
-control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
-autoname = (
-    control_values.get("autoname", "True").lower() == "true"
-)
+
+control_values = get_control_values(controlsFpath) # We might not need this call here
+print(autoname)
 # Add option for people to manually set a name, but default to autoname made by pi5 serial number 
-if(autoname==True):
+if(autoname=="true"):
     filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
     data = read_csv_into_lists(filename)
 
@@ -948,17 +1083,23 @@ if(autoname==True):
     print(f"Unique name for device: {unique_name}")
 
     # Change it in controls
-    set_computerName("/boot/firmware/mothbox_custom/controls.txt", unique_name)
+    set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", unique_name)
 else:
-  computerName=control_values.get("name", "ManualName")
+  computerName=manName
   print(f"manual name for Mothbox: {computerName}")
 # ---- End figure out name -----
+
+
+
 
 
 
 #------ Log Some Diagnostics with Sensors -----------
 
 run_script("/home/pi/Desktop/Mothbox/Diagnostics.py", "Startup_Check", show_output=True)
+
+
+
 
 
 # ~~~~~~~~~~~~ Figuring out Scheduling Details ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -976,26 +1117,27 @@ else:
 
 utc_off = 0  # this is the offsett from UTC time we use to set the alarm
 runtime = (
-    0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
+    0  # this is how long to run the mothbox in minutes for once we wakeup 
 )
 onlyflash = 0
 
 
 # ~~~~~~~ Do the Scheduling ~~~~~~~~~~~~~~~~~~~~
-settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
-print(settings)
-set_timings("/boot/firmware/mothbox_custom/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
+
+set_timings("/boot/firmware/mothbox_custom/system/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
 
 
 
 if "runtime" in settings:
+    runtime= int(settings["runtime"])
+    set_runtimeinControls("/boot/firmware/mothbox_custom/system/controls.txt",runtime)
     del settings["runtime"]
 if "utc_off" in settings:
     utc_off=settings["utc_off"]
-    set_UTCinControls("/boot/firmware/mothbox_custom/controls.txt",utc_off)
+    set_UTCinControls("/boot/firmware/mothbox_custom/system/controls.txt",utc_off)
     del settings["utc_off"]
 
-print("printing settings")
+print("printing schedule settings")
 
 if rpiModel == 4:
     print("pi4 not supported anymore, it won't be able to wake itself")
@@ -1035,17 +1177,12 @@ print(
 set_wakeup_alarm(next_epoch_time)
 print("Wakeup Alarms have been set!")
 
+#-- End Scheduling complete, now set all the other settings
 
 
 
+#---------Standby Check - - Check if we should be running now according to schedule, and if not, turn off -------------
 
-# Scheduling complete, now set all the other settings
-
-
-#--------- Check if we should be running now according to schedule, and if not, turn off -------------
-print("before check settings")
-print(settings)
-print(runtime)
 if mode == "ACTIVE":  # ignore this if we are in debug mode
     if is_now_in_schedule(settings, int(runtime)):
         now_is_in_schedule = 1
@@ -1055,26 +1192,12 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
         print("Active, but outside schedule window, STANDBY mode — shutting down")
         mode="STANDBY"
         # Write mode to controls.txt
-        set_Mode("/boot/firmware/mothbox_custom/controls.txt", mode)
+        set_Mode(controlsFpath, mode)
         
         # Flashing Sequence to indicate to user we are in Standby mode
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-        time.sleep(.25)
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_Off.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-        time.sleep(.25)
-        
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_On.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
-        time.sleep(.25)        
-        
-        process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/Attract_Off.py'],
-                          stdout=subprocess.PIPE,
-                          stderr=subprocess.PIPE)
+        # Have to use non boot locked versions
+        run_cmd("python /home/pi/Desktop/Mothbox/scripts/blink_standby.py")
+        #input("wait debug")
         #----- End Flash ----
         run_shutdown_pi5_FAST()
         quit()
@@ -1095,6 +1218,8 @@ else:
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
 
+
+
 # ~~~~~~~ Display ~~~~~~~~~~~~~~~~~~~~
 
 #Update the Epaper screen if it is available
@@ -1109,12 +1234,16 @@ if stderr:
 else:
   print(stdout.decode())
 
-# ~~~~~~~ Mode Determine ~~~~~~~~~~~~~~~~~~~~
+
+
+
+
+# ~~~~~~~ Final Mode Determine ~~~~~~~~~~~~~~~~~~~~
 
 #Final Step (No other code past this, this is where it sits and waits until shutdown)
 # - prepare shutdown and wait
 # Toggle System MODE, shut down if in OFF/INACTIVE mode
-if mode == "OFF":
+if mode == "OFF": #it shouldn't have gotten here if in OFF mode, but just extra check
     print("System is in OFF MODE")
     if rpiModel == 4:
         print("rpi4 no longer supported")
@@ -1147,6 +1276,7 @@ else:
     print("Invalid mode")
 
 
+
 ###------ Remove the Boot lock ----------#
 # Allow other scripts to be run by cron can be enabled. Run any time-sensitive sensor scripts before this (e.g. measure light)
 
@@ -1154,10 +1284,6 @@ if os.path.exists(BOOT_LOCK):
     os.remove(BOOT_LOCK)
 
 ###--------------------------------------###
-
-
-
-
 
 
 if runtime > 0 and mode != "DEBUG":

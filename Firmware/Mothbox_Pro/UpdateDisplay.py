@@ -11,6 +11,8 @@ leaving a 0 power high contrast display to view in the field.
 """
 import sys
 import os
+import csv
+
 picdir = "/home/pi/Desktop/Mothbox/scripts/RaspberryPi_JetsonNano_Epaper/pic"
 #picdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'pic')
 libdir = os.path.join(os.path.dirname(os.path.dirname(os.path.realpath(__file__))), 'lib')
@@ -33,7 +35,93 @@ import adafruit_ina260
 
 #logging.basicConfig(level=logging.DEBUG)
 
+# load in the schedule CSV
+def load_settings(filename):
+    """
+    Reads schedule settings from a CSV file and converts them to appropriate data types.
+    Args:
+        filename (str): Path to the CSV file containing settings.
 
+    Returns:
+        dict: Dictionary containing settings with converted data types.
+
+    Raises:
+        ValueError: If an invalid value is encountered in the CSV file.
+    """
+    # first look for any updated CSV files on external media, we will prioritize those
+
+    #update: not checking for files on external media anymore, because we can edit the boot disk!
+    # old: first look for any updated CSV files on external media, we will prioritize those
+
+    default_path = "/boot/firmware/mothbox_custom/mothbox_settings.csv"
+    file_path=filename
+    global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash,autoname, manName, manTimezone, autoTime, manTime, bat80, bat20
+    utc_off = 0  # this is the offset from UTC time we use to set the alarm
+    runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
+    # newwifidetected=False
+    onlyflash = 0
+    try:
+        # with open(filename) as csv_file:
+        with open(file_path) as csv_file:
+            reader = csv.DictReader(csv_file)
+            settings = {}
+            for row in reader:
+                setting, value, details = row["SETTING"], row["VALUE"], row["DETAILS"]
+
+                # Convert data types based on setting name (adjust as needed)
+                if (
+                    setting == "day"
+                    or setting == "weekday"
+                    or setting == "hour"
+                    or setting == "minute"
+                    or setting == "minutes_period"
+                    or setting == "second"
+                ):
+                    # value=int(value)
+                    value = value
+                    print(setting + value)
+                    # value = getattr(controls.AwbModeEnum, value)  # Access enum value
+                    # Assuming AwbMode is a string representing an enum value
+                    # pass  # No conversion needed for string
+                elif setting == "runtime":
+                    runtime = int(value)
+                    print(runtime)
+                elif setting == "utc_off":
+                    utc_off = int(value)
+                elif setting == "ssid":
+                    newwifidetected = True
+                    ssid = value
+                elif setting == "wifipass":
+                    newwifidetected = True
+                    wifipass = value
+                elif setting == "manualTime":
+                    manTime = value
+                elif setting == "autoSystemTime":
+                    autoTime = value.strip().lower()
+                elif setting == "timezone":
+                    manTimezone = value
+                elif setting == "autoname":
+                    autoname = value.strip().lower()
+                elif setting == "name":
+                    manName = value
+                elif setting == "onlyflash":
+                    onlyflash = int(value)
+                elif setting == "bat_80perVolts":
+                    bat80 =float(value)
+                elif setting == "bat_20perVolts":
+                    bat20 =float(value)
+                else:
+                    print(f"Warning: Unknown setting: {setting}. Ignoring.")
+
+                settings[setting] = value
+
+        return settings
+
+    except FileNotFoundError as e:
+        print(f"Error: CSV file not found: {filename}")
+        return None
+        
+        
 def get_control_values(filepath):
     """Reads key-value pairs from the control file."""
     control_values = {}
@@ -44,6 +132,20 @@ def get_control_values(filepath):
     return control_values
 
 
+
+
+controlsFpath="/boot/firmware/mothbox_custom/system/controls.txt"
+usersettingsFpath="/boot/firmware/mothbox_custom/mothbox_settings.csv"
+
+
+
+
+
+bat80=12.0
+bat20=11.0
+# Load custom settings
+settings = load_settings(usersettingsFpath)
+control_values = get_control_values(controlsFpath)
 
 # -----CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
 
@@ -64,8 +166,6 @@ HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited 
 
 
 ### Mothbox Name
-control_values_fpath = "/boot/firmware/mothbox_custom/controls.txt"
-control_values = get_control_values(control_values_fpath)
 onlyflash = control_values.get("OnlyFlash", "False").lower() == "true"
 LastCalibration = float(control_values.get("LastCalibration", 0))
 computerName = control_values.get("name", "errorname")
@@ -114,7 +214,7 @@ for part in psutil.disk_partitions():
             if os.path.isdir(photos_folder):
                 photo_count = count_photos(photos_folder)
             #external_info += f"USB: {part.mountpoint}:\n{free_ext}GB free / {total_ext}GB\n" # who cares about mount point on display
-            external_info += f"USB: {used_ext}GB/{total_ext}GB used\n          {photo_count} photos" 
+            external_info += f"USB: {used_ext} GB/{total_ext}GB used\n          {photo_count} photos" 
 
         except PermissionError:
             continue  # Some mounts may not allow access
@@ -154,6 +254,9 @@ softwareversion=control_values.get("softwareversion", "error")
 
 #Battery State
 
+v80= bat80
+v20= bat20
+
 '''
 # Mothbox 4.x version with Adafruit Sensor
 #Check battery level and power
@@ -171,9 +274,7 @@ except (OSError, ValueError) as e:
     print("Sensor NOT CONNECTED  ")
     
     
-# Get calibration voltages
-v80 = float(control_values.get("bat_80", -1000))
-v20 = float(control_values.get("bat_20", 1000))
+
 
 # Calculate percentage so that:
 #  - v20 -> 20%
@@ -193,9 +294,6 @@ print(f"Voltage percentage: {percent:.2f}%")
 #Check battery level and power
 voltage= -100
     
-# Get calibration voltages
-v80 = float(control_values.get("bat_80", -1000))
-v20 = float(control_values.get("bat_20", 1000))
 
 # Read actual voltage
 import subprocess
@@ -333,7 +431,7 @@ try:
 
     # DISK
     # Add disk space info
-    draw.text((colW+2, 3*rowH+2), f'SD:{used_gb}GB/{total_gb}GB used\n          {photo_count_int} photos', font=fontHeaders, fill=0)
+    draw.text((colW+2, 3*rowH+2), f'SD:{used_gb} GB/{total_gb}GB used\n          {photo_count_int} photos', font=fontHeaders, fill=0)
 
     # Starting Y position for external info (after previous lines)
     y_pos=5*rowH+2
