@@ -368,13 +368,15 @@ def load_settings(filename):
     Raises:
         ValueError: If an invalid value is encountered in the CSV file.
     """
+    # first look for any updated CSV files on external media, we will prioritize those
+
     #update: not checking for files on external media anymore, because we can edit the boot disk!
     # old: first look for any updated CSV files on external media, we will prioritize those
 
-    default_path = "/boot/firmware/mothbox_custom/schedule_settings.csv"
+    default_path = "/boot/firmware/mothbox_custom/mothbox_settings.csv"
     file_path=filename
-    global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash
-    utc_off = 0  # this is the offsett from UTC time we use to set the alarm
+    global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash,autoname, manName, manTimezone, autoTime, manTime, bat80, bat20
+    utc_off = 0  # this is the offset from UTC time we use to set the alarm
     runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
     # newwifidetected=False
     onlyflash = 0
@@ -412,8 +414,22 @@ def load_settings(filename):
                 elif setting == "wifipass":
                     newwifidetected = True
                     wifipass = value
+                elif setting == "manualTime":
+                    manTime = value
+                elif setting == "autoSystemTime":
+                    autoTime = value.strip().lower()
+                elif setting == "timezone":
+                    manTimezone = value
+                elif setting == "autoname":
+                    autoname = value.strip().lower()
+                elif setting == "name":
+                    manName = value
                 elif setting == "onlyflash":
                     onlyflash = int(value)
+                elif setting == "bat_80perVolts":
+                    bat80 =float(value)
+                elif setting == "bat_20perVolts":
+                    bat20 =float(value)
                 else:
                     print(f"Warning: Unknown setting: {setting}. Ignoring.")
 
@@ -424,7 +440,6 @@ def load_settings(filename):
     except FileNotFoundError as e:
         print(f"Error: CSV file not found: {filename}")
         return None
-
 def run_cmd(cmd):
     """Run a shell command safely"""
     subprocess.run(cmd, shell=True, check=False)
@@ -451,7 +466,7 @@ def schedule_shutdown(minutes):
 
     try:
         while True:
-            control_values = get_control_values("/boot/firmware/mothbox_custom/controls.txt")
+            control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
             shutdown_enabled = (
                 control_values.get("shutdown_enabled", "True").lower() == "true"
             )
@@ -476,7 +491,7 @@ def run_shutdown_pi5():
     print("but we are running ONE LAST WAKEUP SCHEDULER")
 
     # SCHEDULE WAKEUP AGAIN FOR SECURITY
-    settings = load_settings("/boot/firmware/mothbox_custom/schedule_settings.csv")
+    settings = load_settings("/boot/firmware/mothbox_custom/mothbox_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
     if "utc_off" in settings:
@@ -1060,7 +1075,7 @@ control_values = get_control_values("/boot/firmware/mothbox_custom/system/contro
 
 # Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 print("autoname: ",autoname)
-if(autoname==True):
+if(autoname=="true"):
 
   filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
   data = read_csv_into_lists(filename)
@@ -1114,7 +1129,7 @@ onlyflash = 0
 
 # ~~~~~~~ Do the Scheduling ~~~~~~~~~~~~~~~~~~~~
 
-set_timings("/boot/firmware/mothbox_custom/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
+set_timings("/boot/firmware/mothbox_custom/system/controls.txt", settings["minute"], settings["hour"],settings["weekday"],settings["runtime"])
 
 
 if "runtime" in settings:
@@ -1124,7 +1139,7 @@ if "runtime" in settings:
     
 if "utc_off" in settings:
     utc_off=settings["utc_off"]
-    set_UTCinControls("/boot/firmware/mothbox_custom/controls.txt",utc_off)
+    set_UTCinControls("/boot/firmware/mothbox_custom/system/controls.txt",utc_off)
     del settings["utc_off"]
 
 print("printing settings")
@@ -1281,5 +1296,4 @@ if runtime > 0 and mode != "DEBUG":
     schedule_shutdown(runtime)
 else:
     print("no shutdown scheduled, will run indefinitely")
-
 

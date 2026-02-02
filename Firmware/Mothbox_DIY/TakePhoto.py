@@ -768,4 +768,3 @@ takePhoto_Manual()
 picam2.stop()
 
 quit()
-

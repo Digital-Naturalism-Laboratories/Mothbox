@@ -20,3 +20,4 @@ sudo truncate -s 0 *.log
 5) delete photo and photos_backed_up and logs
 6) delete trash
 7) copy scripts to USB to send to github
+8) Check default schedule
