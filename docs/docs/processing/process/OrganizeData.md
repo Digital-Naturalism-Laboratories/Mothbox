@@ -131,4 +131,4 @@ If you want to go super broad, you could just try to get a list of all arthropod
 
 # Start Processing
 
-Go to the [next steps in this section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/ui/) to start processing your data!
+Go to the [next steps in this section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/ui/) to start processing your data!
