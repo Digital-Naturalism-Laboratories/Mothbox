@@ -30,4 +30,4 @@ And when it's finished, your window at the bottom should look like this:
 
 <img width="835" height="451" alt="exif3" src="https://github.com/user-attachments/assets/e6ab5ec7-1f64-4a89-a056-f92b1cbace9c" />
 
-You can now head to the next step, [Generating and Editing Datasets](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/databases/)!
+You can now head to the next step, [Generating and Editing Datasets](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/classify/databases/)!
