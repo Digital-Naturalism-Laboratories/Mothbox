@@ -176,4 +176,4 @@ You can open scripts in your folder and then just hit the big "|>" run button
 
 # Go to the Next Steps
 
-Next follow the other instructions on this site for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information! I would personally start with the next link about how to [organize your data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/OrganizeData/) since some parts of the scripts rely on your data to be arranged in a certain way. But hey! you do you!
+Next follow the other instructions on this site for each part of the post-processing steps to turn your data from photos to rich documents full of taxonomical and metadata information! I would personally start with the next link about how to [organize your data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/OrganizeData/) since some parts of the scripts rely on your data to be arranged in a certain way. But hey! you do you!
