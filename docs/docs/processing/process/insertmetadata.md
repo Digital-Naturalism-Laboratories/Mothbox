@@ -9,7 +9,7 @@ nav_order: 5
 
 ## Using the Mothbot UI to Insert Metadata
 
-Now that our organisms have been identified, it's important to ensure that the correct metadata is associated with the correct data point (i.e. image of the organism identified). For more information on how to organize your metadata, and how to include it in your deployment folder, see the [Organizing Data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/OrganizeData/) step. 
+Now that our organisms have been identified, it's important to ensure that the correct metadata is associated with the correct data point (i.e. image of the organism identified). For more information on how to organize your metadata, and how to include it in your deployment folder, see the [Organizing Data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/OrganizeData/) step. 
 
 Begin by first making sure you have the correct metadata file uploaded in the additional files processing section.
 
@@ -27,4 +27,4 @@ You've now got the appropriate metadata associated with each organism you've ide
 
 ## Next Step: Perceptual Clustering
 
-You can now move on to the next step, which is running a script that will help cluster the different pictures of organisms you have based on visual similarities. Head to the [Perceptual Clustering](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/cluster/) step now!
+You can now move on to the next step, which is running a script that will help cluster the different pictures of organisms you have based on visual similarities. Head to the [Perceptual Clustering](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/cluster/) step now!
