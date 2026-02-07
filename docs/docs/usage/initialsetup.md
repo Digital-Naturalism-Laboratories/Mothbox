@@ -128,9 +128,9 @@ The mothbox will hop on this wifi automatically when it starts up and set the ti
 
 
 
-
-
 ## Change Camera Settings (Optional)
+Most people will never change these settings.
+
 By default, the cameras in the mothbox are set to:
 * Automatically calibrate focus every 10 minutes
 * Automatically calibrate exposure every 10 minutes
@@ -138,12 +138,11 @@ By default, the cameras in the mothbox are set to:
 
 Maybe you want your mothbox camera to do something else? I have just the file you can mess around with!
 
-Most people will never ever touch this file, but if you want to change stuff, open the file called "camera_settings.csv"
+Most people will never ever touch this file, but if you want to change stuff, **open the file called "camera_settings.csv"**
 
-<img width="2004" height="924" alt="image" src="https://github.com/user-attachments/assets/315c70a7-7f46-4b22-a713-b6834c25d684" />
+<img width="1232" height="383" alt="image" src="https://github.com/user-attachments/assets/7c367144-456f-41a0-b4af-5e85965ee218" />
 
-This is an easy to edit file that will control as many camera settings as we have available!
-
+There you can change some settings about how the mothbox takes photos.
 Some of the main ones folks might want to mess with are:
 
 AutoCalibration - can make it fully manual (not really reccomended, things like focus can drop off with slight shifts)
