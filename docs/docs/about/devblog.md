@@ -5,6 +5,15 @@ parent: About the Mothbox
 has_children: false
 nav_order: 7
 ---
+
+# 2026 - Feb - 07
+Prepping mothboxes (both DIY and Pro) to bring to the ICTC in lima peru.
+There's a ton of little fixes, and better organization, but we are really solidifying the firmware and hardware for these things.
+
+For instance just today I caught a really secretive bug, where if there were fractional timezones (like if you were in kathmandu, UTC+5.75) the scheduler would be incorrect.
+
+
+
 # 2026 - Jan - 13
 <img width="1200" height="675" alt="image" src="https://github.com/user-attachments/assets/b79163e4-574f-4483-b210-6e9b90386df0" />
 
