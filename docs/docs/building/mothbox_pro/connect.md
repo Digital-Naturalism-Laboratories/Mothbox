@@ -103,7 +103,7 @@ Now get two more cable ties and secure the camera module down.
 # Connect the Pi
 
 ## SD
-First put your SD card (Flashed with the Mothbox software on it) into your Pi.
+First put your SD card [(Flashed with the Mothbox software on it)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware) into your Pi.
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/64788b6e-e86a-4509-bc33-5fd064c36fd8" />
 
 ## Connect Camera
