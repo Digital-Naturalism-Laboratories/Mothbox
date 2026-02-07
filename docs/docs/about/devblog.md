@@ -11,7 +11,9 @@ Prepping mothboxes (both DIY and Pro) to bring to the ICTC in lima peru.
 There's a ton of little fixes, and better organization, but we are really solidifying the firmware and hardware for these things.
 
 For instance just today I caught a really secretive bug, where if there were fractional timezones (like if you were in kathmandu, UTC+5.75) the scheduler would be incorrect.
-
+fixing this for 
+5.1.1
+and 4.17.1
 
 
 # 2026 - Jan - 13
