@@ -30,9 +30,15 @@ Download this, and we will be able to look at what's going on inside your comput
 user: pi
 pazz: luna
 
-wifi: mothboxwifi
+self-hosted wifi
+SSID: mothboxwifi
 pazz: lunaluna
 
+external wifi: 
+SSID: DINALAB
+pazz: iloveyardpigs
+
+
 # Latest Mothbox Software Images
-* [Mothbox Pi Images](https://drive.google.com/drive/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF?usp=sharing)
+* [Mothbox Pi Images](https://drive.google.com/drive/u/0/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF)
 
