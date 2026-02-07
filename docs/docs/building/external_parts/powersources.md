@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Solar and Extra Batteries
-parent: Mothbox DIY
+parent: External Parts
 #has_children: true
 nav_order: 9
 ---
