@@ -27,7 +27,6 @@ with open(BOOT_LOCK, "w") as f:
 #-------------------#
 
 
-
 import time
 from time import sleep
 import csv
@@ -358,7 +357,7 @@ def load_settings(filename):
     default_path = "/boot/firmware/mothbox_custom/mothbox_settings.csv"
     file_path=filename
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash,autoname, manName, manTimezone, autoTime, manTime, bat80, bat20
-    utc_off = 0  # this is the offset from UTC time we use to set the alarm
+    utc_off = 0.00  # this is the offset from UTC time we use to set the alarm
     runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
     # newwifidetected=False
     onlyflash = 0
@@ -389,7 +388,7 @@ def load_settings(filename):
                     runtime = int(value)
                     print(runtime)
                 elif setting == "utc_off":
-                    utc_off = int(value)
+                    utc_off = float(value)
                 elif setting == "ssid":
                     newwifidetected = True
                     ssid = value
@@ -721,25 +720,21 @@ def modify_hours(data, offsett_value, key="hour"):
 
     return data  # Return the modified dictionary (or original if no modification)
 
-
-def calculate_next_event(cron_expression):
-    """
-    Calculates the next scheduled time based on the cron expression.
-    Args:
-        cron_expression: A string representing the cron expression.
-    Returns:
-        A unix timestamp (epoch time) of the next scheduled event.
-    """
-    # Create a cron object from the expression
+def calculate_next_event(cron_expression, utcOff):
     cron = CronTab(user="root")
     job = cron.new(command="echo hello_world")
     job.setall(cron_expression)
-    # Get the next scheduled time as a datetime object
-    schedule = job.schedule(date_from=datetime.datetime.now())
-    next_scheduled = schedule.get_next()
-    # Convert the datetime object to epoch time
-    return int(next_scheduled.timestamp())
 
+    # Local system time (cron operates in local time)
+    now_local = datetime.datetime.now()
+
+    schedule = job.schedule(date_from=now_local)
+    next_local = schedule.get_next()
+
+    # Convert LOCAL → UTC using known offset
+    next_utc = next_local - datetime.timedelta(hours=float(utcOff))
+
+    return int(next_utc.timestamp())
 
 def clear_wakeup_alarm():
     """
@@ -1047,14 +1042,14 @@ print("Mothbox mode is:  "+ mode)
 set_Mode(controlsFpath, mode)
 
 # ----------END SWITCH CHECK----------------
-# ------------- End Set Mode Initially  ---------------
+
 
 
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
 
 control_values = get_control_values(controlsFpath) # We might not need this call here
-print("autoname: ",autoname)
+print(autoname)
 # Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 if(autoname=="true"):
     filename = "/home/pi/Desktop/Mothbox/wordlist.csv"  # Replace with your actual filename
@@ -1086,8 +1081,6 @@ if(autoname=="true"):
     set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", unique_name)
 else:
   computerName=manName
-  set_computerName("/boot/firmware/mothbox_custom/system/controls.txt", computerName)
-
   print(f"manual name for Mothbox: {computerName}")
 # ---- End figure out name -----
 
@@ -1117,7 +1110,7 @@ else:
     print("Schedule set by Internal Schedule")
 
 
-utc_off = 0  # this is the offsett from UTC time we use to set the alarm
+utc_off = 0.00  # this is the offsett from UTC time we use to set the alarm
 runtime = (
     0  # this is how long to run the mothbox in minutes for once we wakeup 
 )
@@ -1168,7 +1161,7 @@ if rpiModel == 5:
         + str(settings["weekday"])
     )
     print(cron_expression)
-    next_epoch_time = calculate_next_event(cron_expression)
+    next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
     # Clear existing wakeup alarm (assuming sudo access)
     clear_wakeup_alarm()
@@ -1204,7 +1197,7 @@ if mode == "ACTIVE":  # ignore this if we are in debug mode
         run_shutdown_pi5_FAST()
         quit()
 
-#----------- GPS -----------------
+
 # GPS check / 10 second delay
 print("Checking GPS (if available) for 10 seconds")
 process = subprocess.Popen(['python', '/home/pi/Desktop/Mothbox/GPS.py'],
@@ -1216,8 +1209,6 @@ if stderr:
 else:
   print(stdout.decode())
   
-# ----- End GPS -------------
-
 
 # Toggle a mode where the flash lights are always on
 enable_onlyflash()
