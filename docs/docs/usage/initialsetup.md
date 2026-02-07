@@ -126,7 +126,13 @@ Create a hotspot with your phone with the following username
 (the password is a name for our beloved agoutis outside)
 The mothbox will hop on this wifi automatically when it starts up and set the time automatically for you!
 
+### Set Custom Mothbox Name (Optional)
+This is a very optional thing to do. The mothbox, by default will create a random unqiue name for your device.
 
+<img width="459" height="100" alt="image" src="https://github.com/user-attachments/assets/09c81903-0acc-48aa-9f9b-7909be512ce4" />
+
+If, for some reason, you really want your mothbox to have a specific name (that might run the risk of having a similar name as another one). You can just set the autoName to "False"
+and then it will change your mothbox's name to whatever you include after the "name" setting.
 
 ## Change Camera Settings (Optional)
 Most people will never change these settings.
