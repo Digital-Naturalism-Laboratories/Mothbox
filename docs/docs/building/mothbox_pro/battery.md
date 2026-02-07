@@ -129,6 +129,13 @@ Gently press it in, and that's it. Note the pins won't go entirely into the hat,
 
 At this point you should have a fully functional Mothbox brain in your hands!
 
+{: .note }
+> There is still some assembly left, but if you want to double check your electronics, you can follow the steps below!
+> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/assembleincase/)
+> - Make sure your battery is FULLY CHARGED!
+> - Make sure to [flash the firmware onto your SD card](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware)
+> - Then proceed!
+
 If your battery was all the way charged, and you have the Pi image flashed to your SD card in your Pi, then you are set to go!
 
 Press the power button on the battery and let it turn on.
