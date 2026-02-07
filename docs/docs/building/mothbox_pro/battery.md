@@ -127,7 +127,7 @@ Gently press it in, and that's it. Note the pins won't go entirely into the hat,
 
 # Celebrate! you should have a functional Mothbox!
 
-At this point you should have a fully functional Mothbox brain in your hands!
+At this point, you should have fully functional Mothbox electronics in your hands!
 
 {: .note }
 > There is still some assembly left, but if you want to double check your electronics, you can follow the steps below!
