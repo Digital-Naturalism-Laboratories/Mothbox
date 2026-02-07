@@ -86,23 +86,51 @@ The first thing you will want to do is set the timezone. You need to copy and pa
 
 The file of all the possible timezones is included, so you can browse for what timezone works for you!
 Just paste the timezone you need into the VALUE section
+
 <img width="480" height="243" alt="image" src="https://github.com/user-attachments/assets/608dca3a-48a4-47ac-b5c8-bf40392bd83f" />
 
 
-# Set the Time
-TODO Finish this section
-
-Setting the time on a Raspberry Pi weirdly isn't very straightforward. So we made you a special script!
-
+### Set the Time
 {: .important-title }
 > Using Internet Time
 >
-> If your mothbox is connected to the internet, and you already changed the timezone, it SHOULD automatically set the correct time for you. But if that doesn't happen the above approach works fine!
+> If your mothbox is connected to the internet, and you already changed the timezone, it SHOULD automatically set the correct time for you!
+> You can use a phone set up for WIFI tethering with
+> SSID: DINALAB
+> wifipass: iloveyardpigs
+
+There are two ways to set the time for your mothbox:
+
+* Manual Time: change it once in settings
+* Automatic (internet) time: Connect it to the internet
+ 
+Using automatic time from the internet is recommended and easy.
+
+
+#### Set Time Manually
+**If you have no access to the internet**, you can also change the time manually! It's also quite easy!
+
+<img width="1041" height="183" alt="image" src="https://github.com/user-attachments/assets/c8391547-eee3-4fec-adef-c302f41e90b1" />
+
+you need to change the "autoSystemTime" setting to "False," and then set the time you want for your mothbox after the "manualTime" setting.
+
+Your mothbox will read this time, and set that as the system time. 
+
+
+
+#### Set Internet time
+Create a hotspot with your phone with the following username
+> SSID: DINALAB
+> wifipass: iloveyardpigs
+
+(the password is a name for our beloved agoutis outside)
+The mothbox will hop on this wifi automatically when it starts up and set the time automatically for you!
 
 
 
 
-# Change Camera Settings (Optional)
+
+## Change Camera Settings (Optional)
 By default, the cameras in the mothbox are set to:
 * Automatically calibrate focus every 10 minutes
 * Automatically calibrate exposure every 10 minutes
