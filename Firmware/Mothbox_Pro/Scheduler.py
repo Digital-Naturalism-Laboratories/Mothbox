@@ -501,7 +501,7 @@ def run_shutdown_pi5():
         + str(settings["weekday"])
     )
     print(cron_expression)
-    next_epoch_time = calculate_next_event(cron_expression)
+    next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
     # Clear existing wakeup alarm (assuming sudo access)
     clear_wakeup_alarm()
@@ -602,7 +602,7 @@ def run_shutdown_pi5_FAST():
         + str(settings["weekday"])
     )
     #print(cron_expression)
-    next_epoch_time = calculate_next_event(cron_expression)
+    next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
     # Clear existing wakeup alarm (assuming sudo access)
     clear_wakeup_alarm()
