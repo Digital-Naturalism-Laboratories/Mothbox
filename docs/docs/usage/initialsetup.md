@@ -12,23 +12,82 @@ This used to be a complicated task and we had an [entire webpage dedicated to ex
 
 You will just need to 
 
-1) Flash the Firmware onto an SD Card
-2) Customize some files on the SD Card
+* Flash the Firmware onto an SD Card
+* Customize some files on the SD Card
 
 # Flash Firmware
 
+## Flash the Raspberry Pi Image onto an SD Card
+
+### Get the Image
+Download the [latest Mothbox Image](https://drive.google.com/drive/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF?usp=drive_link) to your computer. You may need an [unzipping software like 7zip](https://7-zip.org/download.html) to unzip the image after you download it.
+
+Make sure to choose firmware from either the Pro or DIY version based on what type of mothbox you have!
+<img width="655" height="253" alt="image" src="https://github.com/user-attachments/assets/691309aa-4e06-4c34-9ad0-3fdd358e0f14" />
 
 
-Unless you are using your Mothbox in Panama, you probably need to configure a couple things before you use it!
+### Get the Imager
+Download Image Flashing Software. You can use the traditional 
+* [Raspberry Pi Imager](https://www.raspberrypi.com/software/),
+* or I often use [Win32DiskImager](https://win32diskimager.org/).
 
-This used to be a more difficult task  However, since the latest firmware update, the customization process has gotten WAY EASIER!
+Get an SD card (at least 16GB). Connect it to your computer.
 
-# Change the Timezone
-This is probably one of the only things one needs to change with their Mothbox after they first flash the SD card. This guide will show you how to easily get into your Mothbox's brain, however, and customize anything you want!
+## Start the Imaging software. 
+![image](https://github.com/user-attachments/assets/520fc1cd-9f31-4f2e-8cb3-610de16be118)
 
-# Update the UTC settings
+If you are using Raspberry Pi Imager, click "Choose OS." Then scroll all the way down to choose "Use Custom."
+Click "Choose Storage" and choose the SD card you have connected.
+Click "Next."
 
-...
+If it asks you to apply customization options, just click no. 
+
+Now it will start flashing your SD card. This should take about 5-10 mins.
+
+![PXL_20240909_004008143 MP](https://github.com/user-attachments/assets/fc2c9574-9feb-4faa-b8c2-8186f039e98c)
+
+Hooray! You have an SD card with the brains of a Mothbox on it! Next we will configure it!
+
+
+# Configure Mothbox
+
+Unless you are using your Mothbox in Panama, you probably need to configure a couple things before you use it! 
+
+The main thing you want to do is make sure the timezone and time is correct!
+
+## Put (Or Keep) the SD Card in Your Computer
+The way we configure the Mothbox settings is now by modifying files on the Raspberry Pi SD Card. Put it in your computer and make sure it shows up as "bootfs".
+
+<img width="960" height="353" alt="image" src="https://github.com/user-attachments/assets/cec70cfe-1d0a-4aed-becf-b5070648b3e1" />
+
+Go into "bootfs" and then into the folder called "mothbox_custom"
+
+<img width="778" height="205" alt="image" src="https://github.com/user-attachments/assets/4098b3bb-121a-4e87-af5c-27c562362e06" />
+
+You will find 3 files there that can let you customize everything!
+
+## Mothbox Settings
+Open the file "mothbox_settings.csv" with a text editor
+<img width="1154" height="329" alt="image" src="https://github.com/user-attachments/assets/1df7534f-0458-4f7a-a0e2-fd031b1f8166" />
+
+This settings file is a "CSV" or "comman separated value" file, meaning that data is organized in different lines, and each line is structured like
+
+> SETTING,VALUE,DETAILS
+
+so the 
+* first value before a comma shows what type of setting you are changing (e.g. timezone)
+* second value is the value of that setting (e.g. America/Bogota)
+* third value is simply a description of this setting (e.g. "put a linux timezone here")
+
+### Change the Timezone
+The first thing you will want to do is set the timezone. You need to copy and paste a timezone from the official list of Linux timezones. 
+
+<img width="1826" height="663" alt="image" src="https://github.com/user-attachments/assets/efa9f50f-2703-47c6-82b2-15955ca5dc7c" />
+
+The file of all the possible timezones is included, so you can browse for what timezone works for you!
+Just paste the timezone you need into the VALUE section
+<img width="480" height="243" alt="image" src="https://github.com/user-attachments/assets/608dca3a-48a4-47ac-b5c8-bf40392bd83f" />
+
 
 # Set the Time
 TODO Finish this section
@@ -42,14 +101,6 @@ Setting the time on a Raspberry Pi weirdly isn't very straightforward. So we mad
 
 
 
-# Set the Configuration for a LOT of mothboxes
-Maybe you have 20 or 50 mothboxes you want to configure to be the same timezone. Well that's easy to do, just follow this guide 50 times with each mothbox. (lol)
-
-An even easier approach though is that you can CLONE the SD card of your current mothbox once you have. 
-
-* After you have made all the changes you want, shut down the Mothbox.
-* Pull out its SD card
-* Follow [this guide to clone this SD card to other SD cards and put them in the other Mothboxes](https://quitmeyer.github.io/Mothboxv4.0/docs/programming/clone/)
 
 # Change Camera Settings (Optional)
 By default, the cameras in the mothbox are set to:
@@ -70,3 +121,21 @@ Some of the main ones folks might want to mess with are:
 AutoCalibration - can make it fully manual (not really reccomended, things like focus can drop off with slight shifts)
 AutoCalibrationPeriod - can change how long the camera waits before recalibrating all its settings. Default is 10 minutes, but you can make it more or less.
 VerticalFlip - This is important if you are building your mothbox a little differently and need to install the camera upside down.
+
+
+# Insert SD Card into Pi
+When you have completed your configuration, it's time to put it in the Pi!
+Find the SD card into the bottom of your Pi and push it all the way in.
+![PXL_20240909_000146089 MP](https://github.com/user-attachments/assets/bd77b567-ce00-4ab9-afe6-6e14f0ccf1ef)
+
+
+
+# Set the Configuration for a LOT of mothboxes
+Maybe you have 20 or 50 mothboxes you want to configure to be the same timezone. Well that's easy to do, just follow this guide 50 times with each mothbox. (lol)
+
+An even easier approach though is that you can CLONE the SD card of your current mothbox once you have. 
+
+* After you have made all the changes you want, shut down the Mothbox.
+* Pull out its SD card
+* Follow [this guide to clone this SD card to other SD cards and put them in the other Mothboxes](https://quitmeyer.github.io/Mothboxv4.0/docs/programming/clone/)
+
