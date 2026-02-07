@@ -5,6 +5,18 @@ parent: Mothbox DIY
 #has_children: true
 nav_order: 8
 ---
+If you want, you are now at a stage where you can test if all of your electronics are set up correctly! You need to make sure about a couple of things before you test the Mothbox though.
+{: .note }
+> Before you test, make sure:
+> - Make sure your battery is FULLY CHARGED!
+> - Make sure to [flash the firmware onto your SD card](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware)
+> - Then proceed!
+
+If your battery is all the way charged, and you have the Pi image flashed to your SD card in your Pi, then you are set to go!
+
+
+# Connect to Battery
+
 {: .important-title }
 > Important: Charge the Battery Before First Use!
 >
@@ -21,7 +33,8 @@ The battery is only 100% charged when the LED on the charger goes from red to gr
 >Ignore the green lights on the battery. They are not good indicators of if the battery is charged or not. The battery can show 2 green bars but still be 90% dead.
 
 
-# Connect to Battery
+
+
 Now is the big moment to see if everything works! You can connect the plug to the OUT port of the battery.
 
 ![PXL_20240620_150405167](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/d7341c03-60b4-4ac5-95bc-074fe199cf7a)
