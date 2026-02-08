@@ -357,7 +357,6 @@ def load_settings(filename):
     default_path = "/boot/firmware/mothbox_custom/mothbox_settings.csv"
     file_path=filename
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash,autoname, manName, manTimezone, autoTime, manTime, bat80, bat20
-    utc_off = 0.00  # this is the offset from UTC time we use to set the alarm
     runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
     # newwifidetected=False
     onlyflash = 0
@@ -387,8 +386,6 @@ def load_settings(filename):
                 elif setting == "runtime":
                     runtime = int(value)
                     print(runtime)
-                elif setting == "utc_off":
-                    utc_off = float(value)
                 elif setting == "ssid":
                     newwifidetected = True
                     ssid = value
@@ -473,8 +470,6 @@ def run_shutdown_pi5():
     settings = load_settings("/boot/firmware/mothbox_custom/mothbox_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
-    if "utc_off" in settings:
-        del settings["utc_off"]
 
     print(settings)
 
@@ -601,6 +596,7 @@ def run_shutdown_pi5_FAST():
         + " "
         + str(settings["weekday"])
     )
+    print("utc_off ",utc_off)
     #print(cron_expression)
     next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
@@ -612,7 +608,6 @@ def run_shutdown_pi5_FAST():
     )
     set_wakeup_alarm(next_epoch_time)
     print("Wakeup Alarms have been set!")
-
 
 
     #Epaper
@@ -725,13 +720,16 @@ def calculate_next_event(cron_expression, utcOff):
     job = cron.new(command="echo hello_world")
     job.setall(cron_expression)
 
-    # Local system time (cron operates in local time)
-    now_local = datetime.datetime.now()
+    # Work entirely in UTC
+    now_utc = datetime.datetime.now(datetime.timezone.utc)
+
+    # Convert UTC → LOCAL using known offset
+    now_local = now_utc + datetime.timedelta(hours=float(utcOff))
 
     schedule = job.schedule(date_from=now_local)
     next_local = schedule.get_next()
 
-    # Convert LOCAL → UTC using known offset
+    # Convert back LOCAL → UTC
     next_utc = next_local - datetime.timedelta(hours=float(utcOff))
 
     return int(next_utc.timestamp())
@@ -982,6 +980,9 @@ else:
     print("Sync hwclock to main clock for security")
     os.system("sudo hwclock -w")
 
+#Reset python's cached version of the time
+time.tzset()
+
 now = datetime.datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
@@ -1013,6 +1014,10 @@ sC1 = int(thecontrol_values.get("C1", 0))
 
 print(sActive)
 print(sC1)
+
+# Get control values again, because they maybe updated in timezone updater
+control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
+utc_off=control_values.get("UTCoff", 0.5)
 
 if(sActive==0):
     mode="OFF"
@@ -1048,7 +1053,6 @@ set_Mode(controlsFpath, mode)
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
 
-control_values = get_control_values(controlsFpath) # We might not need this call here
 print(autoname)
 # Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 if(autoname=="true"):
@@ -1110,7 +1114,6 @@ else:
     print("Schedule set by Internal Schedule")
 
 
-utc_off = 0.00  # this is the offsett from UTC time we use to set the alarm
 runtime = (
     0  # this is how long to run the mothbox in minutes for once we wakeup 
 )
@@ -1127,10 +1130,7 @@ if "runtime" in settings:
     runtime= int(settings["runtime"])
     set_runtimeinControls("/boot/firmware/mothbox_custom/system/controls.txt",runtime)
     del settings["runtime"]
-if "utc_off" in settings:
-    utc_off=settings["utc_off"]
-    set_UTCinControls("/boot/firmware/mothbox_custom/system/controls.txt",utc_off)
-    del settings["utc_off"]
+
 
 print("printing schedule settings")
 
@@ -1161,6 +1161,8 @@ if rpiModel == 5:
         + str(settings["weekday"])
     )
     print(cron_expression)
+    print("utc_off ", utc_off)
+
     next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
     # Clear existing wakeup alarm (assuming sudo access)

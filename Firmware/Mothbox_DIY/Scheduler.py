@@ -376,7 +376,6 @@ def load_settings(filename):
     default_path = "/boot/firmware/mothbox_custom/mothbox_settings.csv"
     file_path=filename
     global runtime, utc_off, ssid, wifipass, newwifidetected, onlyflash,autoname, manName, manTimezone, autoTime, manTime, bat80, bat20
-    utc_off = 0.00  # this is the offset from UTC time we use to set the alarm
     runtime = 0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
     # newwifidetected=False
     onlyflash = 0
@@ -406,8 +405,6 @@ def load_settings(filename):
                 elif setting == "runtime":
                     runtime = int(value)
                     print(runtime)
-                elif setting == "utc_off":
-                    utc_off = float(value)
                 elif setting == "ssid":
                     newwifidetected = True
                     ssid = value
@@ -494,8 +491,7 @@ def run_shutdown_pi5():
     settings = load_settings("/boot/firmware/mothbox_custom/mothbox_settings.csv")
     if "runtime" in settings:
         del settings["runtime"]
-    if "utc_off" in settings:
-        del settings["utc_off"]
+
 
     print(settings)
 
@@ -532,7 +528,6 @@ def run_shutdown_pi5():
     )
     set_wakeup_alarm(next_epoch_time)
     print("Wakeup Alarms have been set!")
-
     ''' # Cutting out GPS check at shutdown, feels not really needed
     # GPS check / 10 second delay
     print("Checking GPS (if available) for 10 seconds")
@@ -597,13 +592,6 @@ def run_shutdown_pi5_FAST():
     if "utc_off" in settings:
         del settings["utc_off"]
 
-    #print(settings)
-
-    # don't need to modify the hours to UTC like we do for pijuice
-    # Build Cron expression
-    # The cron expression is made of five fields. Each field can have the following values.
-    # minute (0-59) |	hour (0 - 23)	|day of the month (1 - 31)	| month (1 - 12)	| day of the week (0 - 6)
-
     # Loop through each key-value pair in the dictionary
     for key, value in settings.items():
         # Check if the value is a string and contains semicolons
@@ -621,6 +609,8 @@ def run_shutdown_pi5_FAST():
         + " "
         + str(settings["weekday"])
     )
+    print("utc_off ", utc_off)
+
     #print(cron_expression)
     next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
@@ -632,7 +622,6 @@ def run_shutdown_pi5_FAST():
     )
     set_wakeup_alarm(next_epoch_time)
     print("Wakeup Alarms have been set!")
-
 
 
     #Epaper
@@ -740,23 +729,24 @@ def modify_hours(data, offsett_value, key="hour"):
 
     return data  # Return the modified dictionary (or original if no modification)
 
-
 def calculate_next_event(cron_expression, utcOff):
     cron = CronTab(user="root")
     job = cron.new(command="echo hello_world")
     job.setall(cron_expression)
 
-    # Local system time (cron operates in local time)
-    now_local = datetime.datetime.now()
+    # Work entirely in UTC
+    now_utc = datetime.datetime.now(datetime.timezone.utc)
+
+    # Convert UTC → LOCAL using known offset
+    now_local = now_utc + datetime.timedelta(hours=float(utcOff))
 
     schedule = job.schedule(date_from=now_local)
     next_local = schedule.get_next()
 
-    # Convert LOCAL → UTC using known offset
+    # Convert back LOCAL → UTC
     next_utc = next_local - datetime.timedelta(hours=float(utcOff))
 
     return int(next_utc.timestamp())
-
 
 def clear_wakeup_alarm():
     """
@@ -1003,10 +993,15 @@ else:
     print("Sync hwclock to main clock for security")
     os.system("sudo hwclock -w")
 
+
+#Reset python's cached version of the time
+time.tzset()
+
 now = datetime.datetime.now()
 formatted_time = now.strftime("%Y-%m-%d %H:%M:%S")  # Adjust the format as needed
 
 print(f"Current time: {formatted_time} on a RPi model " + str(rpiModel))
+
 
 
 # -----Set MODE: CHECK THE PHYSICAL SWITCH on the GPIO PINS--------------------
@@ -1057,6 +1052,9 @@ print("Current Mothbox MODE: ", mode)
 set_Mode("/boot/firmware/mothbox_custom/system/controls.txt", mode)
 
 
+# Get control values again, because they maybe updated in timezone updater
+control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
+utc_off=control_values.get("UTCoff", 0.5)
 
 if(mode=="OFF"):
     run_shutdown_pi5_FAST()
@@ -1068,8 +1066,6 @@ if(mode=="OFF"):
 
 
 # ~~~~~~ Setting the Mothbox's unique name ~~~~~~~~~~~~~~~~~~
-
-control_values = get_control_values("/boot/firmware/mothbox_custom/system/controls.txt")
 
 # Add option for people to manually set a name, but default to autoname made by pi5 serial number 
 print("autoname: ",autoname)
@@ -1114,7 +1110,6 @@ else:
 # ~~~~ Pi 5 specific things to change cron-like commands to the next UTC target
 
 
-utc_off = 0.00  # this is the offsett from UTC time we use to set the alarm
 runtime = (
     0  # this is how long to run the mothbox in minutes for once we wakeup 0 is forever
 )
@@ -1135,10 +1130,6 @@ if "runtime" in settings:
     set_runtimeinControls("/boot/firmware/mothbox_custom/system/controls.txt",runtime)
     del settings["runtime"]
     
-if "utc_off" in settings:
-    utc_off=settings["utc_off"]
-    set_UTCinControls("/boot/firmware/mothbox_custom/system/controls.txt",utc_off)
-    del settings["utc_off"]
 
 print("printing settings")
 
@@ -1169,13 +1160,14 @@ if rpiModel == 5:
         + str(settings["weekday"])
     )
     print(cron_expression)
+    print("utc_off ", utc_off)
     next_epoch_time = calculate_next_event(cron_expression, utc_off)
 
     # Clear existing wakeup alarm (assuming sudo access)
     clear_wakeup_alarm()
 
 print(
-    f"Next wakeup event scheduled for: {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(next_epoch_time))}"
+    f"Next wakeup event scheduled for (this may look incorrect after a sudden time change): {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(next_epoch_time))}"
 )
 set_wakeup_alarm(next_epoch_time)
 print("Wakeup Alarms have been set!")
