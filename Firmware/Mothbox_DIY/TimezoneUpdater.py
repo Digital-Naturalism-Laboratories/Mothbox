@@ -36,8 +36,8 @@ def get_utc_offset_hours(tz_name):
     tz = ZoneInfo(tz_name)
     now = datetime.now(tz)
     offset_seconds = now.utcoffset().total_seconds()
-    return int(offset_seconds // 3600)
-
+    #return float(offset_seconds / 3600) # Cannot be INT because there are fractional timezones
+    return round(offset_seconds / 3600, 3)
 def main():
     if not CONTROL_FILE.exists():
         print("Couldn't find control file in Timezoneupdater")
