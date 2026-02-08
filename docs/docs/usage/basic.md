@@ -20,7 +20,7 @@ The Following Modes are only available right now for the Mothbox Pro
 * HI Power: like ACTIVE but Assumption is connected not to battery, but unlimited power supply. Wifi stays on, attempts to upload photos to internet servers automatically. (Pro - switch "Hi")
 
 ## Setting Modes
-For the Mothbox DIY, you can set what Mode your device is in by using Jumper wires on some select pins:
+For the **Mothbox DIY**, you can set what Mode your device is in by using Jumper wires on some select pins:
 
 Basically connect one wire to GND.
 
@@ -37,8 +37,8 @@ Just don't connect any wires to GND!
 
 
 
-For the Mothbox Pro, you can set the Modes just by flipping the Switches!
-<img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/e40ffce8-2d45-426c-b6f8-03134012c83c" />
+For the **Mothbox Pro,** you can set the Modes just by flipping the Switches!
+<img height="400" alt="image" src="https://github.com/user-attachments/assets/e40ffce8-2d45-426c-b6f8-03134012c83c" />
 
 
 
