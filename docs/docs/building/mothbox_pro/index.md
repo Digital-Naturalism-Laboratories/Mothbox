@@ -8,6 +8,8 @@ permalink: /docs/building/mothbox_pro
 ---
 
 # Parts
+<img width="1280" height="885" alt="image" src="https://github.com/user-attachments/assets/d481fca4-a9af-4b98-8300-a66957607ad8" />
+
 This newest version of the Mothbox is super fast to assemble! You only need
 
 * Mothbox PCB
