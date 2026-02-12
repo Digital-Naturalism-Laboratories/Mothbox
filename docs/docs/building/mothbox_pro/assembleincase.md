@@ -48,17 +48,36 @@ Everything should feel secure inside this little removable box now!
 
 # Load Chassis into Shell
 
-Slide the chassis with the electronics into the back of the case. 
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/574529b7-2ba3-47dd-a9f5-05de5176a4ee" />
+{: .note }
+> Important! Make sure you have [completed putting together the Outershell of your mothbox](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/case_print/) before proceeding!
+
+## Connect the Charge Port to a DC Plug
+Use a lever nut and connect a DC Barrel Plug to the wires coming from the charging port of the box. It's useful to do this now, as it will make the cable easier to slide through the chassis.
+
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/922ed22c-93ff-4617-9ecb-e9b1b026899c" />
+
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/f57ea438-90e3-4b93-a0fb-95ba3cf39034" />
+
+## Feed Cable Through Notch in PCB
+
+Now send that cable through the little notch in the PCB.
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/be684eec-cbc2-4896-91cd-b975095100d1" />
+
+
+Pull this cable through and slide the chassis with the electronics into the back of the case. 
+
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/28430f2d-d685-4cd5-bd7a-5536e1e99ab6" />
+
+
+
 
 Make sure the battery area is towards the bottom where the wires from the external sockets are.
 
-## Connect the External Charger
-Remember that wire connected to the lever nut that wasn't connected to anything? Now it's time to connect it! 
-<img width="683" height="811" alt="image" src="https://github.com/user-attachments/assets/a4e3cd99-9ee0-45d6-a275-9c18e7854bb1" />
+## Connect to the Battery's In port
+Plug this wire into the "In" port on your battery
 
-Get the two wire ends from the external charger port and put them into that lever nut. Make sure the black is going to the black and red to the red.
-<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/9c5b368c-79b9-4e1c-84fb-6026f40346b2" />
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/a043874f-e999-49af-a087-0d97e2e9f01f" />
+
 
 You can double check that your wiring is good by plugging the external charger into the bottom of the box and seeing if the light on the charger changes to red (indicating it's charging).
 <img width="678" height="750" alt="image" src="https://github.com/user-attachments/assets/6bdad7f5-3956-4194-9be2-cc4197b4f5c9" />
