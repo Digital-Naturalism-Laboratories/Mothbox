@@ -61,7 +61,11 @@ For really wet places
   * Front Acrylic Window
   * Arms
 
-
+## Connectors
+To hold the lid on and the legs on you have 3 options:
+* Re-usable zip ties
+* Rubbery Silicone Ties
+* 3D printable TPU ties
 
 # Tools
 Here's some tools you need:
