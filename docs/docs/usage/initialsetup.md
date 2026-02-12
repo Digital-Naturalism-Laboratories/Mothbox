@@ -70,7 +70,7 @@ You will find 3 files there that can let you customize everything!
 Open the file "mothbox_settings.csv" with a text editor
 <img width="1154" height="329" alt="image" src="https://github.com/user-attachments/assets/1df7534f-0458-4f7a-a0e2-fd031b1f8166" />
 
-This settings file is a "CSV" or "comman separated value" file, meaning that data is organized in different lines, and each line is structured like
+This settings file is a "CSV" or "comma separated value" file, meaning that data is organized in different lines, and each line is structured like
 
 > SETTING,VALUE,DETAILS
 

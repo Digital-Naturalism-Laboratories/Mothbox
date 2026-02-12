@@ -8,7 +8,7 @@ permalink: /docs/building/mothbox_pro
 ---
 
 # Parts
-<img width="1280" height="885" alt="image" src="https://github.com/user-attachments/assets/d481fca4-a9af-4b98-8300-a66957607ad8" />
+![MB pro all parts 20260209_160744](https://github.com/user-attachments/assets/bfa5d727-1157-49fb-806c-330d84815679)
 
 This newest version of the Mothbox is super fast to assemble! You only need
 
