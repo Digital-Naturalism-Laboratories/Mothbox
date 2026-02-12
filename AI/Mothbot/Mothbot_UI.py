@@ -9,8 +9,7 @@ import tkinter as tk
 from tkinter import filedialog
 from multiprocessing import Process, Queue
 import glob
-NIGHTLY_REGEX = re.compile(r"^20\d{2}-\d{2}-\d{2}$")
-
+NIGHTLY_REGEX = re.compile(r"^(?:\d{4}-\d{2}-\d{2}|[A-Za-z0-9]+_\d{4}-\d{2}-\d{2})$")
 
 TAXA_COLS = ["kingdom", "phylum", "class", "order", "family", "genus", "species"]
 
