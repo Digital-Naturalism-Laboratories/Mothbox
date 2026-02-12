@@ -7,38 +7,5 @@ parent: Building
 permalink: /docs/building/mothbox_pro
 ---
 
-# Parts
-![MB pro all parts 20260209_160744](https://github.com/user-attachments/assets/bfa5d727-1157-49fb-806c-330d84815679)
-
-This newest version of the Mothbox is super fast to assemble! You only need
-
-* Mothbox PCB
-* Arducam 64mp camera (owlsight)
-* Raspberry Pi 5
-* 32 MB A1 SD card (and better, more GB, A2 speed)
-* Battery
-
-<img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/a3c0ce78-1de5-47b3-bf2b-acac23be1208" />
-
+The Mothbox Pro is our Mothbox designed for manufacturing scalability. The key difference is that we designed an Open Source PCB that can be industrially manufactured for cheaper than buying all the parts needed for a Mothbox DIY. The PCB also has some bonus features like physical switches, light sensors, and more!
 <img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/c2d6c644-5929-4df4-a60e-e0a217cfb4e7" />
-
-and you are set!
-
-<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/b09dd4c4-e156-4a6b-adf3-1a1c20650f9e" />
-
-
-# Attractors
-
-* Mothbeams can plug right in to the PCB
-* External - You can also connect any 12V attractor you want via the "External attractor" port
-
-# Bonus Parts
-You can also add:
-* [Cheap Epaper display](https://www.waveshare.com/2.13inch-e-Paper-HAT.htm) - ($15USD) to know what your Mothbox is up to!
-* External temperature sensor - Connects to a port on the PCB
-* Cheap GPS - gives super accurate timestamps and can automatically locate your mothbox - plugs in to ports on PCB - 5 pin or 4 pin
-
-# Cases
-It can fit in the Mothbox DIY case, or even better, you can now 3D print your own case!
-
-Follow these instructions to put it all together!
