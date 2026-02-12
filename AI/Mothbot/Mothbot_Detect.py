@@ -301,7 +301,7 @@ def find_date_folders(directory):
         A list of paths to the found folders.
     """
 
-    date_regex = r"^\d{4}-\d{2}-\d{2}$"
+    date_regex = re.compile(r"^(?:\d{4}-\d{2}-\d{2}|[A-Za-z0-9]+_\d{4}-\d{2}-\d{2})$")
     folders = []
 
     # Check if the input directory itself is a "date folder"
