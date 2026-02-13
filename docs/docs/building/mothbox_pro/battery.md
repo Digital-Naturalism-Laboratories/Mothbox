@@ -34,7 +34,13 @@ The regulators tend to ship with short little wire leads. Trim the ends off.
 First take one long cable tie, and pass it through this hole (so the head of that tie is stopped by the hole on the other side).
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/408e66d2-091c-427c-9bfb-2c072aa7b3ba" />
 
-Now set the battery with the text facing up and the heatsink on top it like this. You will pass that cable tie over the regulator and through the hole at the bottom of the board.
+Now set the battery with the text facing up and the heatsink on top it like this. It can be useful to put a little peice of tape here on the board to keep the battery from wiggling while you are attaching.
+
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/3b023c0c-ae60-4e04-9a34-27ad08b35649" />
+
+You will pass that cable tie over the regulator and through the hole at the bottom of the board. You might need a second zip tie to extend the length of your tie.
+
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/241bbc46-a702-4443-be1b-27c9ded44f4d" />
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/b6dea226-1ab0-4157-8026-eef4cac856c7" />
 
@@ -42,8 +48,10 @@ Then lock that tie down with another tie on the outside.
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/73ebdc4a-877e-4083-bcf5-177509061672" />
 
 ## Horizontal Strap
-Now you will take a new zip tie up through the hole at the bottom near the cutout. It will pass in front of the battery and between the wires coming out the regulator. it will go up and over the regulator.
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/8c9f935d-4e56-4f8a-bc98-049673532467" />
+Now you will take a new zip tie up through the hole at the bottom near the cutout. It will pass in front of the battery and between the wires coming out the regulator. It will go up and over the regulator.
+
+<img width="680" height="915" alt="image" src="https://github.com/user-attachments/assets/796b8845-3543-4c26-82b9-280a25e0939c" />
+
 Your cable tie will probably not be long enough to go over the whole length of the battery, so just attach another one to it and pass it through the hole at the battery's butt end.
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/002a0c04-ddd6-4e5e-96fb-681f1a2b3e83" />
 Then secure this strap from the other side with another tie locking it on.
@@ -78,18 +86,20 @@ Use your finger to press down the spring levers, and slide the yellow wire into 
 
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/ccdadead-8bcf-4ce9-887c-9c3c4b4fc3db" />
 
-Repeat for the 2 black wires, but put them into sockets marked with "-" sign
+Repeat for the 2 black wires, but put them into sockets marked with "-" sign. Note that the black "-" wires are interchangeable and can go in any "-" port, but the ports shown here are reccomended.
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/eecd54fa-a442-4b24-b06c-44bbbbfdf4af" />
 
 Finally, put the red wire into the socket with a "+" sign in the "Regulator Input" block.
 Double check your wiring with this image.
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/283ce63d-ffd5-4f94-994d-23bc1731bdaf" />
 
+Give a gentle tug to make sure your wires are firmly connected.
 
 # Connect Battery Power to Board
 
 {: .note }
 > Make sure the BATTERY IS OFF. While you are connecting wires and electronics keep the battery OFF!
+> (For batteries and most electronics the "0" symbol means "OFF" and the "1" symbol means "ON"
 
 You now need to get two barrel jack plugs and one 2 wire lever nut connector.
 <img width="680" height="713" alt="image" src="https://github.com/user-attachments/assets/60b62083-ea6e-4a4d-a4de-5a32be3776b5" />
@@ -110,20 +120,20 @@ With the BATTERY STILL OFF, you can plug the plug into the battery's "OUT" socke
 
 With the other barrel jack wire, load its wires into the lever nut:
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/5cedf5a7-cf40-466a-92c0-e6e1bba74280" />
-Leave the other side of the lever nut empty (for now).
-Plug the plug into the "IN" port on the battery.
+Leave the other side of the lever nut empty (for now). You can plug it into your battery for now, or just set it aside (you will pull it back out of the battery in a later step)
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/357fe3e0-877b-4457-9b28-8346e9b74ae8" />
 
 # (Optional) Connect the Epaper Display
-If you got an epaper display (Highly reccomended!), it's super duper easy to connect it!
+If you got an epaper display (Highly recommended!), it's super duper easy to connect it!
 
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/b9e25eb6-7b06-49cd-ac9c-5fb1fbae9845" />
 
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/d602e1cf-e143-465f-a180-5ca951633f78" />
+<img width="653" height="465" alt="image" src="https://github.com/user-attachments/assets/ff0f0d14-bf39-4e43-b1e3-05da7debec14" />
 
 Just line the 40 pin socket on the back of the Epaper hat with the pins sticking out the front of the mothbox!
 Gently press it in, and that's it. Note the pins won't go entirely into the hat, there's supposed to be a little gap there.
-<img width="1" height="1" alt="image" src="https://github.com/user-attachments/assets/3e4b50d0-4047-4255-b0cc-e16628a5aadd" />
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/b9e25eb6-7b06-49cd-ac9c-5fb1fbae9845" />
+
 
 # Celebrate! you should have a functional Mothbox!
 
