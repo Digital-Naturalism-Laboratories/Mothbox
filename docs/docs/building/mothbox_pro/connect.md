@@ -52,7 +52,12 @@ Now that your Mothbeam is setup, you can just pop them on! Connect it to the top
 ### Lock in with a Zip Nut
 Now for each mothbeam, you will need two thin cable ties. 
 <img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/314c267f-5d4e-4766-920e-370134ae93c4" />
+
 Push one through the hole on the mothbeam and pull it all the way through.
+
+<img width="1234" height="792" alt="image" src="https://github.com/user-attachments/assets/fb971235-58ab-4fcc-a387-e58578db3302" />
+
+
 <img width="519" height="399" alt="image" src="https://github.com/user-attachments/assets/64358cf0-661d-4a1f-ab2c-3ddc400ca6b8" />
 
 now add the second zip tie to the back that will lock it in place!
@@ -87,7 +92,10 @@ Now you will connect the brown cable. Make sure the black side of the end is fac
 
 Slide the cable in firmly, and then use your tool to snugly lock down the camera connector lock. Sometimes you need to press one side and then the other.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/288f765d-5c3a-45d0-9dde-c3f0f64ffa06" />
+
 Give the cable a light tug to make sure it is securely connected.
+
+Make sure to tuck the brown cable through the hole in the red board (as shown in the photos below).
 
 ## Camera to Board
 With its brown cable attached, position the camera on the front of the board so the cable lines up with the slot for it.
@@ -102,6 +110,10 @@ Position the glare blocker over the camera and again make sure all the holes lin
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/4f8d674d-c95c-4ac8-9df4-894bcb8c6a79" />
 
 Now you will add some thin cable ties to two holes in the glare blocker.
+
+{: .note }
+> The red thing on the camera has really small holes, so you want to use really skinny zip ties for this!
+
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a6fff474-b47d-4aa7-a324-2a9a9326e84a" />
 
 Make them go through the mainboard, out the back, and back to the front of the mainboard.
@@ -111,15 +123,30 @@ Make them go through the mainboard, out the back, and back to the front of the m
 Now get two more cable ties and secure the camera module down.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a2613657-0e5d-44d8-b276-6ff5b81b09d6" />
 
- Tighten it up, and trim the dangly bits.
- <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a05ac2ec-f2b9-408c-a63a-fcf760854502" />
+Tighten it up, and trim the dangly bits.
+
+<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a05ac2ec-f2b9-408c-a63a-fcf760854502" />
 
 
 # Connect the Pi
 
+The Pi is a little computer that controls all the functions of the mothbox!
+
 ## SD
 First put your SD card [(Flashed with the Mothbox software on it)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware) into your Pi.
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/64788b6e-e86a-4509-bc33-5fd064c36fd8" />
+
+## Real Time Clock Battery (RTC)
+The pi needs a tiny battery of its own to keep track of the passage of time even when it is fully off! 
+Plug the battery cable into the tiny port labeled "bat" on the Pi. 
+
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/df112d8c-a455-43bd-9c14-23674210b50d" />
+
+The batteries usually come with a little piece of double sided tape. Use that to stick it to the side of the ethernet port on the pi.
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/13462748-5d02-4564-a097-6ab46013d4f9" />
+
+
 
 ## Connect Camera
 
@@ -136,14 +163,21 @@ Slide the cable in, and firmly press down the camera cable closer to make a snug
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a0efcdb4-5145-49a9-8de8-b59d4d165f59" />
 
+You might want to give a VERY GENTLE tug on the cable to make sure it's fully connected.
+
 ## Connect Pi to Mainboard
 We made our own fun connection to hold the raspberry pi. It's a bit novel, but it pops in and holds it securely.
 
 Line up your Pi pins with the socket like this:
-<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/91cfc6a3-d4b2-4ff1-98b3-cc1920895c13" />
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/54aa0980-02b1-4a8b-9c0f-1cb4eea2a069" />
+
 
 You will need to tilt the Pi at a slight angle as you first press it in. Then it will straighten out and slide right into its slot.
-<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/2692e3a8-02d7-4044-8096-dfd6f1a1bf52" />
-<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/2ce986e4-a558-46ca-8d00-4c7caa3a4d31" />
+
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/9e5c7a98-b26c-4714-8a75-86e29c911589" />
+
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/82287176-6c09-4ccf-b798-f611ba753bc0" />
+
 
 Congratulate Yourself! You got most of your Mothbox's electronics connected!
