@@ -5,6 +5,14 @@ parent: Mothbox Pro
 #has_children: true
 nav_order: 1
 ---
+# Pull Fiberglass thingys off the PCB
+When the PCBs get made at the factory, they have to add little "rails" to hold the boards in place while they install everything with robots!
+You can just pull these off!
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/0c61cd4b-a4ec-4f65-a04c-d6c86ff24252" />
+
+
+
 # Connect Mothbeams to Mainboard
 
 The Mothbeams are made to pop right onto the mainboard of the Mothbox! There's some things you can adjust first though!
@@ -14,23 +22,28 @@ The Mothbeams are made to pop right onto the mainboard of the Mothbox! There's s
 ## Configure Mothbeams
 
 ### Power
-The mothbeams allow you to set how powerful they are with little switches. The more switches you turn on, the brighter they will be, but they will also run through your battery faster! The first two switches add 70mA for each switch. The second two switches add 150mA for each switch.
+The mothbeams allow you to set how powerful they are with little switches. **The more switches you turn on, the brighter they will be, but they will also run through your battery faster!** The first two switches add 70mA for each switch. The second two switches add 150mA for each switch.
 
 Remove the protective sticker over the switches.
 <img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/82bbf2ca-c2b5-4776-8c27-e89448a05f75" />
 
-Switch your desired switches (I usually use a tool or bit of wire to flip the tiny switches)
-<img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/75f07c83-0185-41bb-a192-561d7b1f6ee1" />
+Switch your desired switches (I usually use a tool or bit of wire to flip the tiny switches). Note that sometimes (like in the image below) the factory installs the switch bank upside down. That's not really a problem, just refer to the markings printed on the board (70ma or 150ma)
+
+<img width="656" height="391" alt="image" src="https://github.com/user-attachments/assets/8aad7a46-eedc-4320-976d-d62405b88052" />
 
 
-I usually switch the first two switches (+140mA), and this is QUITE BRIGHT. You probably want to switch at least the first 70mA switch on, but I wouldn't reccomend 3+ switches unless you really really need it to be exceptionally bright! (Or power and heat are not a problem for your setup).
+Here's my unscientific breakdown of the switch modes
+* 0 Switches (~10ma): Minimal Power
+* 1 Switch: Standard Bright
+* 2 Switches: Very Bright
+* 3 Switches: EXTRA BRIGHT
+* 4 SWITCHES: VERY VERY VERY BRIGHT AND HOT
+
+I usually switch just the first switch (+70mA), and this is QUITE BRIGHT. You probably want to switch at least the first 70mA switch on, but I wouldn't reccomend 3+ switches unless you really really need it to be exceptionally bright! (Or power and heat are not a problem for your setup).
 
 ### UV and Visible
-You can also decide which mothbeams to connect. The board can support up to 3. These can all be UV, all Visible, or a mixture. You can control each of the 3 Attractors individually too, so this can be used for experiments between different wavelengths of light!
+You can also decide which mothbeams to connect. The board can support up to 3. These can all be UV, all Visible, or a mixture. You can control each of the 3 Attractors individually too, so this can be used for experiments between different wavelengths of light! ** More mothbeams does mean it will use more power!**
 
-### (Optional) Reinforce Connector
-Because of how metal PCBs are designed, the connectors cannot go all the way through the board. Instead you can see that the connector part is just soldered to the surface. This means it can be a bit weaker mechanically. If you are just connecting your mothbeam to your mainboard, you are probably fine as these parts will not move around much. But if you are using them for something else (like a standalone mothbeam), you might want to reinforce the connector with just a little hot glue.
-<img width="661" height="722" alt="image" src="https://github.com/user-attachments/assets/26572b8f-f014-40c6-8ed7-43542fdc69b6" />
 
 ## Connect Mothbeams
 Now that your Mothbeam is setup, you can just pop them on! Connect it to the top layer of the right angle pins sticking out (the bottom pins are just for spacing and aren't connected to anything).
@@ -79,7 +92,9 @@ Give the cable a light tug to make sure it is securely connected.
 ## Camera to Board
 With its brown cable attached, position the camera on the front of the board so the cable lines up with the slot for it.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/56293a69-e106-4a82-88eb-b288b8794b6f" />
+
 Note how the holes line up:
+
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/fb0c2e7a-b3f5-48d2-992c-4ff0e2e4652d" />
 
 Position the glare blocker over the camera and again make sure all the holes line up.
