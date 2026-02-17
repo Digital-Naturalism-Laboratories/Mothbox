@@ -323,7 +323,7 @@ def process_files_in_directory(data_path, classifier, taxon_rank="order"):
         if os.path.isfile(file_path):
             print(f"File: {file_path}")
 
-    img_list = [f for f in os.listdir(data_path) if f.endswith(".jpg")]
+    img_list = [f for f in os.listdir(data_path) if f.endswith(".jpg") or f.endswith(".JPG") or f.endswith(".PNG") or f.endswith(".png")]
 
     if not img_list:
         # No imgs were found in base level

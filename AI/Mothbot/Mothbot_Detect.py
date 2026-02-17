@@ -70,7 +70,7 @@ def scan_for_images(date_folder_path):
   """Scans subfolders for JPEG files and returns a list of file paths."""
   jpeg_files = []
   for filename in os.listdir(date_folder_path):
-      if filename.endswith(".jpg"):
+      if filename.endswith(".jpg") or filename.endswith(".JPG") or filename.endswith(".png") or filename.endswith(".PNG"):
           jpeg_files.append(os.path.join(date_folder_path, filename))
   return jpeg_files
 
