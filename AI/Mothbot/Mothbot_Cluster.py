@@ -123,7 +123,7 @@ def process_files_in_directory(data_path, classifier, taxon_rank="order"):
         if os.path.isfile(file_path):
             print(f"File: {file_path}")
 
-    img_list = [f for f in os.listdir(data_path) if f.endswith(".jpg")]
+    img_list = [f for f in os.listdir(data_path) if f.endswith(".jpg") or f.endswith(".png") or f.endswith(".JPG") f.endswith(".PNG")]
 
     if not img_list:
         # No imgs were found in base level
@@ -205,7 +205,8 @@ def find_detection_matches(folder_path):
     jpg_files = [
         os.path.join(folder_path, f)
         for f in os.listdir(folder_path)
-        if f.endswith(".jpg")
+        if f.endswith(".jpg") or f.endswith(".png") or f.endswith(".JPG") f.endswith(".PNG")
+
     ]
     # List of ALL json files in the folder
     json_files = [
