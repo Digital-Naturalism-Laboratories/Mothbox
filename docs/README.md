@@ -1,12 +1,14 @@
-# Updates: The project has grown so much that we are in the process of re-organizing the github. This main github repo will continue to host the
+# Updates: 
+The project has grown so much that we are in the process of re-organizing the github. This main github repo will continue to host the
 * Documentation / Website
 * History of the project up to February 2026
 
 Other parts of the repo will be split out into separate repositories such as:
-* Post-Processing (Mothbot)
-* Hardware
-* Electronics Development (PCB)
-* Data Visualization
+* Post-Processing (Mothbot) (Moving soon!)
+* [Firmware (Rpi Scripts)](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Firmware)
+* [Hardware](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware)
+* [Electronics Development (PCB)](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics)
+* [Data Visualization](https://github.com/Digital-Naturalism-Laboratories/Mothbox_DataVisualization)
 
 To make it easier to access specific files or scripts.
 
