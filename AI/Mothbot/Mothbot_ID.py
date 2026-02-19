@@ -106,7 +106,7 @@ def parse_args():
     parser.add_argument(
         "--rank",
         default=TAXONOMIC_RANK_FILTER_num,
-        help="rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK})", 
+        help=f"rank to which to classify; must be column in --taxa-csv (default: {TAXONOMIC_RANK_FILTER_num})", 
     )
     parser.add_argument(
         "--flag-det-errors",
@@ -117,7 +117,7 @@ def parse_args():
     parser.add_argument(
         "--taxa_csv",
         default=SPECIES_LIST,
-        help="CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})",
+        help=f"CSV with taxonomic labels to use for CustomClassifier (default: {SPECIES_LIST})",
     )
     parser.add_argument(
         "--taxa_cols",
