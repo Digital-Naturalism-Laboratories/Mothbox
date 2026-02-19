@@ -10,7 +10,7 @@ import numpy as np
 import argparse
 from pathlib import Path
 
-IMAGE_FOLDER = r"F:\Panama\Hoya_1534m_wingedHapuku_2025-01-27\2025-01-27\patches\rembg"
+IMAGE_FOLDER = r"C:\Users\andre\Desktop\ICTC\rembg"
 # Get the directory names safely
 IMGFOLDER_PATH=Path(IMAGE_FOLDER)
 dir_2_up = IMGFOLDER_PATH.parents[2].name if len(IMGFOLDER_PATH.parents) > 1 else ""
@@ -23,8 +23,8 @@ print(deployment_name)
 
 
 #IMAGE_FOLDER = r"F:\Panama\Hoya_1204m_lightPotoro_2025-01-26\2025-01-27\patches"
-#BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
-BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
+BACKGROUND_COLOR = (28, 242, 167) #nice pastel green
+#BACKGROUND_COLOR = (242, 168, 28) #nice pastel orange
 #BACKGROUND_COLOR = (211, 28, 242) #nice pastel fucsia
 #BACKGROUND_COLOR =(230, 242, 28) #nice pastel yellow
 #BACKGROUND_COLOR =(242, 43, 29) #nice pastel red
@@ -37,7 +37,7 @@ BACKGROUND_ALPHA=0
 #ASPECT_RATIO=0.707  #A4 paper ratio 1.414 in portrait or  0.707 in landscape   # Letter paper is 215.9 x 279.4mm 1.29:1 ratio or 0.775 landscape
 # Mothbox board is about 4370 pixels wide and 290mm wide. Which means we tend to shoot images that are 15px per mm
 
-ASPECT_RATIO=2
+ASPECT_RATIO=1.5
 
 PIX_PER_MM=15 # This is just what the mothbox shoots when taking photos at 9000x6000
 # An A4 sheet is 210mm W x 297mm H, so an output width for a A4 sheet would be 210mm x 15px/mm = 3150 for realistic insect sizes if printed full portrait mode
@@ -54,7 +54,7 @@ PIX_PER_MM = 17.36 # Pi5 takes photos at width=9248     height=6944 which is 1.1
 OUTPUT_WIDTH=2000
 
 
-IMAGE_SCALE_PERCENT=20
+IMAGE_SCALE_PERCENT=99
 SORT_ALGO = 1
 MIN_IMAGE_DIM=4 #minimum width of an image to work with
 MAX_NUM_PAGES =100  # Replace with your desired max number of bins

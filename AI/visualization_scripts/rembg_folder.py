@@ -4,7 +4,7 @@ from rembg import new_session, remove
 from PIL import Image
 import argparse
 
-INPUT_PATH=r"/Users/brianna/Desktop/mothpatches"
+INPUT_PATH=r"C:\Users\andre\Desktop\ICTC"
 
 
 #command line arguments

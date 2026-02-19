@@ -11,9 +11,9 @@ from collections import defaultdict
 # ----------------------------
 # CONFIG
 # ----------------------------
-folder = r"D:\x-anylabeling-matting\onlybig\*.png"
+folder = r"C:\Users\andre\Desktop\ICTC\rembg\*.png"
 
-scale_factor = 0.2         # global scale factor (applied to all images first)
+scale_factor = 0.9         # global scale factor (applied to all images first)
 
 # 🔀 NEW: random scaling options
 random_scale = False       # enable per-image random scale
