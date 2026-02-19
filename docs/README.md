@@ -1,3 +1,15 @@
+# Updates: The project has grown so much that we are in the process of re-organizing the github. This main github repo will continue to host the
+* Documentation / Website
+* History of the project up to February 2026
+
+Other parts of the repo will be split out into separate repositories such as:
+* Post-Processing (Mothbot)
+* Hardware
+* Electronics Development (PCB)
+* Data Visualization
+
+To make it easier to access specific files or scripts.
+
 # Mothbox Pro and DIY
 The Mothbox is a low-cost, [high-performance insect monitor](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/). It features a power efficient and lightweight design meant to help field biologists deploy it in the depths of the jungles, and its low-cost nature means you can build one to study the biodiversity at your home!
 
