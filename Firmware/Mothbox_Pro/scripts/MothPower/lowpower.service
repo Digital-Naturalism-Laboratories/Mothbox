@@ -1,5 +1,0 @@
-[Unit]
-Description="Powers Down some services after 10 minutes"
-
-[Service]
-ExecStart=/usr/bin/lowpower.sh

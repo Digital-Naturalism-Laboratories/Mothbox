@@ -1,8 +1,0 @@
-[Unit]
-Description="for low power mode after 10 minutes"
-
-[Timer]
-OnBootSec=10min
-
-[Install]
-WantedBy=multi-user.target
