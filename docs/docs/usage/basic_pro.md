@@ -79,11 +79,13 @@ Here's what you need to do to make sure your Mothbox is ready for deployment!
 
 - Make sure the **battery is ON**. The switch to the battery should ALWAYS BE IN THE ON POSITION. Open the Mothbox make sure the battery switch is ON (if it's not already on). 
 
-![image](https://github.com/user-attachments/assets/1fa99c2d-2f04-4c1a-99c8-b2f886d633de)
+<img width="1203" height="888" alt="image" src="https://github.com/user-attachments/assets/432c9f9b-1b2f-4d41-81d0-1e13591d5386" />
+
 
 - Charge your Mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
 
-![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
+<img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/e69c277b-6307-4610-b9fa-30587b3bcec1" />
+
 
 If the plug's indicator is red, the Mothbox is charging. When charger light turns green, the Mothbox is fully charged!
 
@@ -91,7 +93,11 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 
 - [ ]  (Optional) De-Activate Mothbox. Sometimes if you are charging the devices overnight (or during times they are scheduled to take photos), it can be useful to disable the Mothbox from running. There is a switch labeled "Active" which can keep the Mothbox in an OFF mode if it is switched off. You can switch this to the OFF position while it is charging.
 
+<img width="1148" height="780" alt="image" src="https://github.com/user-attachments/assets/1e3fd093-79c2-479c-9cc8-8c40408beb15" />
+
 - [ ] USB Storage. Make sure there is external storage with free space plugged in to the Pi's USB to record your photos.
+
+<img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/c28f9bbf-ec5e-4501-be52-c4747b305b82" />
 
 - [X] Item Checklist. Make sure to have all these parts with you **BEFORE you go into the field.**
   - [ ] Mothbox
@@ -101,15 +107,19 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
   - [ ] Strap
   - [ ] Security chain and lock (if deploying in places where theft may be an issue)
 
-
 - [ ] Pack Mothbox for travel to the field. 
   - [ ] (Optional) If you are travelling far, you can turn the battery switch OFF. 
   - [ ] Connect Lids. Attach the front and back lids to protect it during travel.
+
+
      
 ## Deployment in the Field
 
 - [ ] Check device is ready to Activate.
   - [ ]  Make sure the "Active" switch is in the ON position.
+
+<img width="1210" height="837" alt="image" src="https://github.com/user-attachments/assets/ac3ea5bb-c053-4ee1-8e1d-a47077ea1839" />
+
   - [ ]  You can turn the battery power off and then on again, and the mothbox should boot up
   - If the Mothbox is ready for deploment, the attractor lights will blink twice rapidly, and the display will show "STANDBY" mode.
   - In STANDBY mode, the Mothbox will activate itself during its next scheduled session (no further action is required by you to turn itself on).
