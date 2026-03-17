@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Step-by-Step Usage
+title: Usage Guide (DIY)
 parent: Using Mothbox
 has_children: true
 nav_order: 3
