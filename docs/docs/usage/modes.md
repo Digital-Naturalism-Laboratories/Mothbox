@@ -3,7 +3,7 @@ layout: default
 title: Modes
 parent: Using Mothbox
 has_children: true
-nav_order: 3
+nav_order: 4
 ---
 
 # Mothbox Modes
