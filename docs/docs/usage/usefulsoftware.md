@@ -3,7 +3,7 @@ layout: default
 title: Useful Software
 parent: Using Mothbox
 has_children: true
-nav_order: 2
+nav_order: 8
 ---
 This is a list of useful software to download for working with the Mothbox.
 
