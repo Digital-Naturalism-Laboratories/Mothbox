@@ -90,6 +90,10 @@ Now you will connect the brown cable. Make sure the black side of the end is fac
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/87f11ef0-5eeb-4e76-8032-b15e9d771ef4" />
 
+
+{: .note }
+> When connecting the brown cable make sure that A) The black side is facing the back of the camera as shown B) The WIDE side of the cable is connected to the camera
+
 Slide the cable in firmly, and then use your tool to snugly lock down the camera connector lock. Sometimes you need to press one side and then the other.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/288f765d-5c3a-45d0-9dde-c3f0f64ffa06" />
 
