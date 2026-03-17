@@ -122,7 +122,11 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 
   - [ ]  You can turn the battery power off and then on again, and the mothbox should boot up
   - If the Mothbox is ready for deploment, the attractor lights will blink twice rapidly, and the display will show "STANDBY" mode.
+
+ <img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/f917bdf6-24e9-4d31-b718-5f02c360915e" />
+
   - In STANDBY mode, the Mothbox will activate itself during its next scheduled session (no further action is required by you to turn itself on).
+
 
 - [ ] Close Box. Make sure box is fully closed at all four corners.
 
