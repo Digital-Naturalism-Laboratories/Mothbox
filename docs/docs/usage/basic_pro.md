@@ -102,6 +102,10 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
   - [ ] Security chain and lock (if deploying in places where theft may be an issue)
 
 
+- [ ] Pack Mothbox for travel to the field. 
+  - [ ] (Optional) If you are travelling far, you can turn the battery switch OFF. 
+  - [ ] Connect Lids. Attach the front and back lids to protect it during travel.
+     
 ## Deployment in the Field
 
 - [ ] Check device is ready to Activate.
