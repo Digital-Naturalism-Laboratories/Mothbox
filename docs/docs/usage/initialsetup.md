@@ -1,12 +1,12 @@
 ---
 layout: default
-title: Initial Setup
+title: Firmware Schedule Configuration
 parent: Using Mothbox
 has_children: true
 nav_order: 0
 ---
 
-You already have a mothbox built, but now you need to give it life! There is special software that lives on the computer inside your mothbox to make it run. It controls things like the timezone, photo taking schedule, and power usage. 
+You already have a mothbox built, but now you need to give it life! There is special software that lives on the computer inside your mothbox to make it run. It controls things like the timezone, photo taking schedule, and power usage. This software is called "Firmware."
 
 This used to be a complicated task and we had an [entire webpage dedicated to explaining how to get special software to log in to your mothbox, and change the configuration](https://digital-naturalism-laboratories.github.io/Mothbox4.5/docs/usage/configure/), but now since firmware DIY_4.16.5 and Pro_5.1.0, we were able to make the process MUCH EASIER!
 
