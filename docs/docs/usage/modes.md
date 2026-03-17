@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Basic Use
+title: Modes
 parent: Using Mothbox
 has_children: true
 nav_order: 3
