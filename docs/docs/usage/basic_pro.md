@@ -7,41 +7,42 @@ nav_order: 2
 ---
 
 # Quick Use Checklist
-
+-----------------------------------------------------
 **Preparation**
 
 - [ ] Charge MOTHBOX 
-  - Make sure it is plugged in with the battery on 
-  - Make sure you are charging with the official charger 
-  - Make sure the charger's light has turned from red to green  (this is the only real way that you know the battery is fully charged) 
-
-- [ ] Check that you have a USB drive connected to the Raspberry pi. 
-- [ ] Check you have all parts ready for deployment
+  - Make sure it is plugged in
+  - Make sure **battery switch is ON** 
+  - Charge only with **the official charger** 
+  - When light on charger has turned from red to **green**, the battery is fully charged. (this is the only real way that you know the battery is fully charged) 
+- [ ] Check that you have a USB drive plugged in to the Raspberry Pi. 
+- [ ] Check all parts are ready for deployment
   - 1 Mothbox
-  - 4 Bolts and Nuts
+  - 1 Target
   - Strap
   - 4 Legs
-  - 1 Target
+  - 4 leg connectors (Zips or Bolts+Nuts)
 
 ---------------------------------------
 **In the Field**
 
-- [ ] Arm the moth box, Check STANDBY Mode 
-  - make sure inhibition cables are disconnected 
+- [ ] Activate Mothbox / Check STANDBY Mode 
+  - Make sure **"ACTIVE"** switch is **ON**
   - turn the battery on
-  - if the moth box is correctly in "STANDBY" mode, The attractor lights will blink twice quickly.  And the screen will display "STANDBY" when it refreshes about 10 seconds later
+  - If the Mothbox is ready for deploment, the attractor lights will blink twice rapidly, and the display will show "STANDBY" mode.
+  - In STANDBY mode, the Mothbox will activate itself during its next scheduled session (no further action is required by you to turn itself on).
 
 - [ ] Close Mothbox 
 
 - [ ] Attach legs to bottom 
 
-- [ ] Hang mothbox with strap
+- [ ] Hang Mothbox with strap
 
-- [ ] Remove lens cap
+- [ ] Remove Front Lid
 
 - [ ] Visual Inspection
-  - lens area in front of camera for dirt 
-  - Inspect area in front of target that no leaves will block target view
+  - Check area in front of camera for dirt 
+  - Inspect area in front of target so that no leaves will block camera's view of target
 
 - [ ] Finally, connect target to arms
 
@@ -50,29 +51,29 @@ nav_order: 2
 ---------------------------------------
 **Data collection**
 
-- [ ] Collect mothbox from the field 
+- [ ] Collect Mothbox from the field 
 
-- [ ] Unplug USB drive from raspberry pi
+- [ ] Unplug USB drive from Raspberry Pi
 
 - [ ] Copy contents of USB to computer and backup data in at least 2 spots
 
 - [ ] Clear data from USB 
 
-- [ ] Connect usb back to mothbox
+- [ ] Connect USB back to Mothbox
 
-- [ ] Charge mothbox for next deployment 
+- [ ] Charge Mothbox for next deployment 
 
+------------------------------------------------------------------------
 
+# Detailed Instructions
 
-
-
-# Charge the Battery before 1st use!
+## Charge the Battery before 1st use!
 {: .warning }
 >When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
 
 Save yourself a headache, and charge your battery before you connect it the first time!
 
-# Metadata Sheet
+## Metadata Sheet
 Your data isn't useful unless you know where it came from! Always log your metadata with a field sheet.
 
 You can [fill out a form online](https://docs.google.com/forms/d/e/1FAIpQLSdtyvTUa9q-wIMjUjjW5S2-CFNQKzcaZLGq95XJG2XJVAWLLg/viewform?usp=header) or print a [sheet to take to the field](https://drive.google.com/file/d/1Qup4S7lnafGi4H0VY2vz-h7c9UYbge10/view?usp=drive_link).
