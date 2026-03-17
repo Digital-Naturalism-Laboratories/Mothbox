@@ -15,13 +15,14 @@ nav_order: 2
   - Make sure **battery switch is ON** 
   - Charge only with **the official charger** 
   - When light on charger has turned from red to **green**, the battery is fully charged. (this is the only real way that you know the battery is fully charged) 
-- [ ] Check that you have a USB drive plugged in to the Raspberry Pi. 
-- [ ] Check all parts are ready for deployment
-  - 1 Mothbox
-  - 1 Target
-  - Strap
-  - 4 Legs
-  - 4 leg connectors (Zips or Bolts+Nuts)
+- [ ] Check that you have a USB drive plugged in to the Raspberry Pi.
+- [X] Item Checklist. Make sure to have all these parts with you **BEFORE you go into the field.**
+  - [ ] Mothbox
+  - [ ] Target
+  - [ ] 4 Arms
+  - [ ] 4 leg connectors (Zips or Bolts+Nuts)
+  - [ ] Strap
+  - [ ] Security chain and lock (if deploying in places where theft may be an issue)
 
 ---------------------------------------
 **In the Field**
@@ -68,88 +69,63 @@ nav_order: 2
 # Detailed Instructions
 
 ## Charge the Battery before 1st use!
-{: .note }
->When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
+{: .warning }
+> When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
 
 Save yourself a headache, and charge your battery before you connect it the first time!
 
 ## Preparation
-Before you go to the field, here's a checklist to make sure it is ready for deployment!
+Here's what you need to do to make sure your Mothbox is ready for deployment!
 
-- [ ] The battery should always be ON. The switch to the battery should ALWAYS BE IN THE ON POSITION. Open the Mothbox make sure the battery switch is ON (if it's not already on). 
+- Make sure the **battery is ON**. The switch to the battery should ALWAYS BE IN THE ON POSITION. Open the Mothbox make sure the battery switch is ON (if it's not already on). 
 
 ![image](https://github.com/user-attachments/assets/1fa99c2d-2f04-4c1a-99c8-b2f886d633de)
 
-- [ ] Charge your Mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
+- Charge your Mothbox. This usually takes several hours. Plug it in. Only use the Mothbox charger to charge. You may have other chargers that look similar for other devices, but they are not interchangeable and will not charge the Mothbox correctly. 
 
 ![PXL_20240620_193441383](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/a425a922-1475-46c4-ae93-56fd8cc75313)
-![Mothbox_Quick_ReferenceGuide_v3BigText_English](https://github.com/user-attachments/assets/b9693401-9ce9-467b-92d7-a0a45c6b56d0)
 
 If the plug's indicator is red, the Mothbox is charging. When charger light turns green, the Mothbox is fully charged!
 
 ![image](https://github.com/user-attachments/assets/89c8d0fb-9d72-4c14-9f52-55b8ca5f633e)
-![Mothbox_Quick_ReferenceGuide_v3BigText_ESP](https://github.com/user-attachments/assets/f5c4c3f6-5f19-406b-9c81-42b4e518ca08)
 
+- [ ]  (Optional) De-Activate Mothbox. Sometimes if you are charging the devices overnight (or during times they are scheduled to take photos), it can be useful to disable the Mothbox from running. There is a switch labeled "Active" which can keep the Mothbox in an OFF mode if it is switched off. You can switch this to the OFF position while it is charging.
 
 - [ ] USB Storage. Make sure there is external storage with free space plugged in to the Pi's USB to record your photos.
 
-![image](https://github.com/user-attachments/assets/442de393-0870-4e53-ab26-6a7ca1f7446e)
-      
-- [ ]  Arm Mothbox. The Mothbox has two jumper wires that keep it from turning itself on until it is deployed. Arm your Mothbox by disconnecting the wires from each other, putting them in the "armed" position.
-
-![PXL_20240909_044023484 MP](https://github.com/user-attachments/assets/22f20af3-9713-4184-bbbf-eb7d25555b91)
-
-
-- [ ] Check Lights. The RED STANDYBY LEDs should always be on. The Mothbox is set to run automatically according to a schedule, so it probably won't be running when you are setting it up. However, you can visually check that things are ok, because there should be a RED LED light on the Pi (the Pi's off light), and the battery's GREEN lights should always be on. Older models with a Pijuice may also have a BLUE light on as well in standby mode.
-
-![image](https://github.com/user-attachments/assets/49285678-3d55-47af-8a4d-be6af8c566aa)
-
-  
-- [ ] Add Silica. Add packet of silica drying gel inside box.
-
-![image](https://github.com/user-attachments/assets/283e14c9-1908-43c5-a036-ab7a771751cf)
-
-![PXL_20240902_191451479 MP](https://github.com/user-attachments/assets/43e72e61-5635-4adb-af17-6f3f6c60c568)
-
-
-- [ ] Close Box. Make sure box is fully closed with all three clips and no wires are caught in the door.
-
-![PXL_20240901_112119774 NIGHT](https://github.com/user-attachments/assets/504fa0ed-6ae1-4d51-bca0-1a6bb7000d89)
-
 - [X] Item Checklist. Make sure to have all these parts with you **BEFORE you go into the field.**
   - [ ] Mothbox
-  - [ ] USB Storage
-  - [ ] 4 Arms
-  - [ ] 4 Bolts
-  - [ ] 4 Nuts
   - [ ] Target
+  - [ ] 4 Arms
+  - [ ] 4 leg connectors (Zips or Bolts+Nuts)
   - [ ] Strap
   - [ ] Security chain and lock (if deploying in places where theft may be an issue)
 
 
 ## Deployment in the Field
 
-- [ ] Attach arms to bottom of case with 1/4" screws and nuts. Place target on the end of arms. Ideally, the screws go from the middle of the box out toward the outside edge of the box so that they don't block anything.
+- [ ] Check device is ready to Activate.
+  - [ ]  Make sure the "Active" switch is in the ON position.
+  - [ ]  You can turn the battery power off and then on again, and the mothbox should boot up
+  - If the Mothbox is ready for deploment, the attractor lights will blink twice rapidly, and the display will show "STANDBY" mode.
+  - In STANDBY mode, the Mothbox will activate itself during its next scheduled session (no further action is required by you to turn itself on).
 
-![PXL_20240902_193651155 MP](https://github.com/user-attachments/assets/2052454f-9bc5-4f7f-b6ca-ba1a5494c5fb)
+- [ ] Close Box. Make sure box is fully closed at all four corners.
+
+
+- [ ] Attach arms. You can connect arms to the bottom of the case using several options
+  - [ ] 1/4" bolts and nuts
+  - [ ] re-usable zip ties
+  - [ ] or Rubber ties
+  
 
 - [ ] Hang Mothbox. Using the handle, strap Mothbox to a tree or tripod. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target and obstruct photos. In general, the Mothbox should be at least 0.5 meters above the ground.
 
-![PXL_20240902_191549638 MP](https://github.com/user-attachments/assets/aed25711-c6c8-450f-bb45-c1efcd3cef86)
+- [ ] Remove Front Lid.
 
-Adding a little wrap of the strap around the handle (The Margaret Technique) adds stability to the Mothbox.
-
-![PXL_20240902_155747765 MP](https://github.com/user-attachments/assets/172b3386-7b98-475f-a8a2-4ea301a5ae27)
-
-- [ ] Inspect Lens. Check lens for dirt and clean with a lens wipe if necessary. **Make sure lens cap is off.**
+- [ ] Inspect Camera area. Check lens for dirt and clean with a lens wipe if necessary.
   
-![image](https://github.com/user-attachments/assets/ebaf0cf4-2b6d-4601-a917-665a5ed22d58)
-
 - [ ] Connect Target. Attaching the target should be one of the last things you do, because you want to protect it from getting dirty. If you have it connected earlier, it could easily bump into wet or dirty plants and get muddy.
-
-![PXL_20240902_194008047 MP](https://github.com/user-attachments/assets/1e865c0a-829d-42a7-a484-5b36da4a4b80)
-
-![PXL_20240902_191925903 MP](https://github.com/user-attachments/assets/068a13cb-1bf7-4cda-a30d-ad4f98f4ffbd)
 
 - [ ] Log Data. Write down all the metadata about this deployment on your [field sheet](https://docs.google.com/forms/d/e/1FAIpQLSeVtBKB8oCWIPIFcEjxCgvnIAEBkRQts0hqxMX58y2VXKmb4A/viewform?usp=sf_link).
 
@@ -181,33 +157,34 @@ You can even use a [pre-filled form for use in Panama](https://docs.google.com/f
 
 
 
-# Inventory of Mothboxes
+## Inventory of Mothboxes
 If you are running a project with many Mothboxes (more than about 4), you probably want to start keeping an inventory. Field equipment can get lost, forgotten, or busted up, so it's handy to know what you have available if a new opportunity strikes!
 Here's an [example of how we organize our inventory of mothboxes](https://docs.google.com/spreadsheets/d/1W60RJSNnirpbALVyalLmYodYBUhqQkD_vb8ZOFOarns/edit?usp=sharing). (If you have suggestions for better organizational schema, please let us know!)
 
 
 ## Manually Turning the Mothbox On and Off
-The Mothbox has an internal schedule that lets it stay in a low-power state until it is ready to turn itself on. Sometimes you may wish to **manually trigger** the Mothbox to start running a photo session. Or you may wish to manually turn off a mothbox that has started running.
+There are a couple different power states that the Mothbox can be in:
 
-### Turn It On
-You can turn the Mothbox ON by just pressing the "On" button located next to the LED on the Raspberry Pi. Just tap it once, and it will start up.
+- Battery Off: When the battery is off, everything is off
+- Battery On / Raspberry Pi Off: When the raspberry pi has a RED light on it, it means it is in low-power mode and not on
+- Battery on / Raspberry Pi On: When the pi has a GREEN light, it means it is on (and either probably in Debug mode or Active mode)
 
-![image](https://github.com/user-attachments/assets/cfb924aa-4b81-4974-ad15-0be8980b2365)
+The Mothbox has an internal schedule that lets it stay in a low-power state until it is ready to turn itself on. Sometimes you may wish to **manually trigger** the Mothbox to wake up, you can do this just by clicking the little white button next to the SD card on the Raspberry Pi. Just tap it once, and it will start up.
 
+<img width="681" height="634" alt="image" src="https://github.com/user-attachments/assets/62c6aacc-0cbf-4a50-8f81-31f8c3600ca8" />
 
-### Turn It Off
-You can turn the Mothbox OFF by pressing **and holding** the "On" button for 10 seconds. Just press the button and hold it until the mothbox has shut off.
+If you want to gently turn it back off with your finger, you can do this by pressing **and holding** the white button for 10 seconds. Just press the button and hold it until the mothbox has shut off and the light on the Raspberry pi has gone from GREEN to RED.
 
-![image](https://github.com/user-attachments/assets/93419e20-5a9d-4207-8cc8-2a4d9b5046cf)
+<img width="674" height="608" alt="image" src="https://github.com/user-attachments/assets/473d935e-35dd-459f-8a58-6a6238ff8519" />
 
 
 
 ## Mothbox Name
 The Mothboxes all have a unique, persistent name (based on the Pi's serial number). The names are in the format of (descriptiveword+animal) and are made from the thousand most common descriptive words and animals in both English and Spanish.
 
-This is why you will have names like "CoolJirafa" or "PrizeCrab."
-The name should be written on a sticker on the Mothbox. Like "FondoGorila."
-![PXL_20240909_045245636 MP](https://github.com/user-attachments/assets/691bfe74-70c5-4f82-8cdb-def6d7871c8d)
+This is why you will have names like "DotingBruja" or "PrizeCrab." This unique name will be applied to all the photos it takes to give them a unqiue stamp.
+
 Updated mothboxes will also show the name prominently on the epaper display!
 
+<img width="2048" height="1536" alt="image" src="https://github.com/user-attachments/assets/f3639e35-1bf5-45e3-84e6-99a30eb996c6" />
 
