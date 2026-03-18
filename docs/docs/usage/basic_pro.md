@@ -164,6 +164,7 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 
 
   - [ ] Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target and obstruct photos.
+
 <img width="500"  alt="image" src="https://github.com/user-attachments/assets/08951969-1e13-4a1c-9a98-ebb22cf233c8" />
   
   - [ ] In general, the Mothbox should be at least 0.5 meters above the ground.
@@ -175,8 +176,13 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 
 
 - [ ] Inspect Camera area. Check lens for dirt and clean with a lens wipe if necessary.
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/d259a7ab-cee7-4045-a5bb-a467d8e17e51" />
+
   
 - [ ] Connect Target. Attaching the target should be one of the last things you do, because you want to protect it from getting dirty. If you have it connected earlier, it could easily bump into wet or dirty plants and get muddy.
+
+<img width="998" height="869" alt="image" src="https://github.com/user-attachments/assets/6fe5ae7e-4270-45d4-b4c7-fd30384b01f4" />
 
 - [ ] Log Data. Write down all the metadata about this deployment on your [field sheet](https://docs.google.com/forms/d/e/1FAIpQLSeVtBKB8oCWIPIFcEjxCgvnIAEBkRQts0hqxMX58y2VXKmb4A/viewform?usp=sf_link).
 
@@ -195,7 +201,8 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 - [ ] Backup and organize all the photos from the external storage, and then clean this storage device, deleting all the old folders so it is ready for the next deployment.
 - [ ] Charge for the next deployment.
 
-
+## Process Data
+You might want to process the data you collected from your Mothbox. Go to the next section, [Refining Data](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing) to turn all your photos into organized data.
 
 # Additional Information
 
