@@ -68,9 +68,11 @@ nav_order: 2
 
 # Detailed Instructions
 
+
 ## Charge the Battery before 1st use!
+
 {: .warning }
-> When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
+> warning:  When you purchase the batteries, they are often not fully charged! This can be a problem because several people have connected their pi's to a barely charged battery and the low-power causes them to "brown out" and have eeprom errors (where you then have to use the raspberry pi imager to reset the bootloader to get your pi working!)
 
 Save yourself a headache, and charge your battery before you connect it the first time!
 
@@ -107,13 +109,29 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
   - [ ] Strap
   - [ ] Security chain and lock (if deploying in places where theft may be an issue)
 
+<img width="1023" height="795" alt="image" src="https://github.com/user-attachments/assets/b8afeb19-82d1-416e-8d16-596de11c22c9" />
+
+
 - [ ] Pack Mothbox for travel to the field. 
-  - [ ] (Optional) If you are travelling far, you can turn the battery switch OFF. 
+  - [ ] (Optional) If you are travelling far, you can turn the battery switch OFF.
+<img width="1098" height="758" alt="image" src="https://github.com/user-attachments/assets/6e35cf27-bf26-44cf-8494-f585ae5a3800" />
+     
+
   - [ ] Connect Lids. Attach the front and back lids to protect it during travel.
 
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/cfd55cb9-fc28-42e4-a2fd-a72884074ca2" />
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/c1d88b1e-cdf5-4555-8c78-2d9b487b0a28" />
+
+
+## Video Deployment Tutorial
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4CIvh947Z08?si=dJNL0WZCyLDUA3Sx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
      
 ## Deployment in the Field
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/24bb9b9d-3e42-483d-a759-74850e14ee8e" />
+
 
 - [ ] Check device is ready to Activate.
   - [ ]  Make sure the "Active" switch is in the ON position.
@@ -130,16 +148,31 @@ If the plug's indicator is red, the Mothbox is charging. When charger light turn
 
 - [ ] Close Box. Make sure box is fully closed at all four corners.
 
+<img width="701" height="680" alt="image" src="https://github.com/user-attachments/assets/0bed8800-6852-4480-869f-f9aaca4d8d7f" />
+
 
 - [ ] Attach arms. You can connect arms to the bottom of the case using several options
   - [ ] 1/4" bolts and nuts
   - [ ] re-usable zip ties
   - [ ] or Rubber ties
   
+<img width="701" height="736" alt="image" src="https://github.com/user-attachments/assets/a3931995-0e85-4d3e-bd61-1565de0cdfb1" />
 
-- [ ] Hang Mothbox. Using the handle, strap Mothbox to a tree or tripod. Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target and obstruct photos. In general, the Mothbox should be at least 0.5 meters above the ground.
+- [ ] Hang Mothbox. Using the handle, strap Mothbox to a tree or tripod.
+
+<img width="500"  alt="image" src="https://github.com/user-attachments/assets/1ec05ccf-b905-480b-97af-09df16ad91c4" />
+
+
+  - [ ] Make sure there are no obstacles (like leaves or tall grasses) that may blow between the box and the target and obstruct photos.
+<img width="500"  alt="image" src="https://github.com/user-attachments/assets/08951969-1e13-4a1c-9a98-ebb22cf233c8" />
+  
+  - [ ] In general, the Mothbox should be at least 0.5 meters above the ground.
+
 
 - [ ] Remove Front Lid.
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/f39f2b19-dbcf-40ff-8454-4cfc47de52ec" />
+
 
 - [ ] Inspect Camera area. Check lens for dirt and clean with a lens wipe if necessary.
   
