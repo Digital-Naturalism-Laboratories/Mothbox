@@ -6,6 +6,9 @@ has_children: false
 nav_order: 1
 ---
 
+> [!IMPORTANT]
+> This section will be gone soon as we are shifting all the classification and validation to our new homegrown open software called [Classify](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/classify/classify/)
+
 # Generate Dataset
 The Mothbot_CreateDataset.py script creates a visual, editable dataset for you. It uses a program called Fiftyone to create the User Interface.
 
