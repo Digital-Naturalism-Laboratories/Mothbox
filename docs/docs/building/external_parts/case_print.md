@@ -24,7 +24,7 @@ The lastest version of the Mothbox has a 3D printable case! We have been testing
 # Filament Suggestions
 
 **PETG-CF**
-We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Eryone brand), drying it for 12 hours, and then printing. 
+We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Eryone brand), drying it for 12 hours, and then printing. (Regular PETG will probably be fine!). Never use PLA for outdoor equipment, especially in the tropics as it will degrade rapidly.
 
 **TPU**
 For the 3D printed TPU rubber, we have been using Bambu lab 85a
