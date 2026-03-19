@@ -29,6 +29,11 @@ We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Er
 **TPU**
 For the 3D printed TPU rubber, we have been using Bambu lab 85a
 
+{: .note-title }
+> Shrink TPU
+>
+> For the TPU gaskets it can be useful to print them slightly smaller. I usually shrink X and Y at 99% to make them fit nice and tight (and offset the stretching that tends to happend when you pull it off the build plate).
+
 # Print all the Parts
 All the parts are located in the [Github Repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Case/Mothbox_Pro). Download them all and print them out. There is even a 3MF file that has all the parts laid out for you to print in a slicer like Bambu Studio.
 The list of parts is as follows along with what material to make them in.
