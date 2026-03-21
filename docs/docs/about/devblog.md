@@ -5,6 +5,29 @@ parent: About the Mothbox
 has_children: false
 nav_order: 7
 ---
+# 2026 - Mar - 21
+Firmware release 5.2.0!
+In between Mothbox workshops, we managed to tackle some long standing features that we have wanted to implement for the Mothbox Firmware (and even [close 2 year old issues](https://github.com/Digital-Naturalism-Laboratories/Mothbox/issues/12) ).
+
+
+power and memory saving features like
+- Wifi only turns on in DEBUG or PARTY modes, otherwise off
+- GUI only loads for DEBUG mode
+ ---  !!! This means a RPI 5 2GB can work with this! (image was tested on 2GB) !!!
+
+UI features
+-Can program the pro with SWITCHES: flip switch "U1" and the device will use "Switch Priority" and physical switches will override internal schedule!
+-Photo interval - you can set how often photos get taken (default every 1 min). Min 1 minute, in 1 min intervals. This is in mothbox_settings.csv
+
+
+Lots of major reliability fixes
+- separating user-editable controls and ones set by the system
+- doing atomic writes in safer ways when writing controls for the firmware
+- Checks against some race conditions
+- minor bug and scope fixes
+
+
+
 
 # 2026 - Feb - 07
 Prepping mothboxes (both DIY and Pro) to bring to the ICTC in lima peru.
