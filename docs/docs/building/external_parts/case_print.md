@@ -24,7 +24,7 @@ The lastest version of the Mothbox has a [3D printable case](https://github.com/
 # Filament Suggestions
 
 **PETG-CF**
-We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Eryone brand), drying it for 12 hours, and then printing. (Regular PETG will probably be fine!). Never use PLA for outdoor equipment, especially in the tropics as it will degrade rapidly.
+We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Eryone brand), drying it for 12 hours, and then printing. (Regular PETG will probably be fine!).** Never use PLA for outdoor equipment**, especially in the tropics as it will degrade rapidly.
 
 **TPU**
 For the 3D printed TPU rubber, we have been using Bambu lab 85a
@@ -46,7 +46,7 @@ The list of parts is as follows along with what material to make them in.
 * Front Gasket - TPU (Optional seal for wet climates)
 * Back Gasket - TPU (Optional seal for wet climates)
 * Bottom Plugs - TPU (Optional, if you aren't using DC Barrel Sockets)
-* Plexi Front - Laser Cut Clear Acrylic
+* Plexi Front - Laser Cut Clear Acrylic (Arms and Target are also Laser cut acrylic)
 
 # Outer Shell Assembly
 ## Front Acrylic
