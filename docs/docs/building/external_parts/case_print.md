@@ -15,7 +15,7 @@ The lastest version of the Mothbox has a [3D printable case](https://github.com/
 
 * Main Filament - 850 grams
 * TPU Rubber Filament - (Optional for better waterproofing, not really needed in dry places) - 100 grams
-* Clear Acrylic - For the front window
+* Clear Acrylic - For the front window and arms and target
 * #6x3/8in screws - (not super exacting, near equivalents work too!)
 * Cable Ties - Ideally reusable zip ties, or silicone straps, or our [TPU printable ties we made ourselves](https://www.printables.com/model/1530721-reusable-rubber-cable-tie)!
 * DC Barrel sockets -  for the external charging port and/or external attractor port
