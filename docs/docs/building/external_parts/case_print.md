@@ -6,7 +6,7 @@ parent: External Parts
 nav_order: 1
 ---
 
-The lastest version of the Mothbox has a 3D printable case! We have been testing it fiercely in the wettest part of the wet season for months in jungles of Panama, and it's held up wonderfully! Nice and dry, easy to use, minimal manual labor! Plus it's cheaper than buying and hacking your own case!
+The lastest version of the Mothbox has a [3D printable case](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro)! We have been testing it fiercely in the wettest part of the wet season for months in jungles of Panama, and it's held up wonderfully! Nice and dry, easy to use, minimal manual labor! Plus it's cheaper than buying and hacking your own case!
 
 ![bafyreigxwn7cq5ghlw5eaawb537jzpo2kwqx2pz3c4gti5zpbkwmoganmy](https://github.com/user-attachments/assets/6ffa36f2-7640-4c6a-a232-ff1c20f1e178)
 
@@ -35,7 +35,7 @@ For the 3D printed TPU rubber, we have been using Bambu lab 85a
 > For the TPU gaskets it can be useful to print them slightly smaller. I usually shrink X and Y at 99% to make them fit nice and tight (and offset the stretching that tends to happend when you pull it off the build plate).
 
 # Print all the Parts
-All the parts are located in the [Github Repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Case/Mothbox_Pro). Download them all and print them out. There is even a 3MF file that has all the parts laid out for you to print in a slicer like Bambu Studio.
+All the parts are located in the [Github Repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro). Download them all and print them out. There is even a 3MF file that has all the parts laid out for you to print in a slicer like Bambu Studio.
 The list of parts is as follows along with what material to make them in.
 
 * Outer Shell - PETG-CF
