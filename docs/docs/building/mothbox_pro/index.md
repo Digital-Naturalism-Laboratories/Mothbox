@@ -11,3 +11,6 @@ The Mothbox Pro is our Mothbox designed for manufacturing scalability. The key d
 
 
 <img width="1308" height="805" alt="image" src="https://github.com/user-attachments/assets/4e077bcc-7d75-4968-a1e7-d3673b10d28a" />
+
+<img width="1309" height="807" alt="image" src="https://github.com/user-attachments/assets/7cf62b10-23c9-4bef-82c8-a5e22378d761" />
+
