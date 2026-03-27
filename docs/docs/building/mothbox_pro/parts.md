@@ -67,6 +67,7 @@ For really wet places
   * Front Acrylic Window
   * Arms
   * Target
+  * (Includes alternative files for if you want to laser cut your front and bask gaskets instead of printing in TPU)
 
 ## Connectors
 To hold the lid on and the legs on you have 3 options:
