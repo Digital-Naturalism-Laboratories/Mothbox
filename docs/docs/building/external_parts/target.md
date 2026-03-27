@@ -6,7 +6,7 @@ parent: External Parts
 nav_order: 4
 ---
 
-There's many ways point your Mothbox at something! 
+There's many ways point your Mothbox at something! Here are the [laser cutting design files for your target!](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Targets)
 
 The Mothbox's default software will automatically calibrate its focus and exposure to whatever kind of target is positioned in front of it. The main thing is that it should probably be 
 * white
@@ -20,15 +20,15 @@ We have found that acrylic felt works quite well for insects to walk around on, 
 # Target Options
 We have four main options for your target. We have done most of our testing with the Standard Target, so the other options are still a bit more experimental.
 
-The [Standard Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#standard-target) is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
+The [Standard Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/target/#standard-target) is the most compact surface for the Mothbox. It also can be lit up quite easily from lights inside the mothbox.
 
-The [Minimalist Target] was inspired by the Lepisense crew who have been using just a peice of rough-surfaced acrylic. You can just purchase "textured" acrylic sheets in some places, but if that's not available, we have used a rough-grit sander to just roughen one side of a piece of acrylic. Follow the same instructions as the "Standard sheet" but don't worry about the felt part.
+The [Minimalist Target] was inspired by the Lepisense crew who have been using just a peice of rough-surfaced acrylic. You can just purchase "textured" acrylic sheets in some places, but if that's not available, we have used a rough-grit sander to just roughen one side of a piece of acrylic. Follow the same instructions as the "Standard sheet" but don't worry about the felt part. Just sand it to rough it up after.
 
-The [Dual Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/dual-target) doesn't require any additional materials other than cutting an extra target shape. It can also fold in half so it doesn't take up much more room than the Standard Target! So you can pretty much double your target area with minimal changes.
+The [Dual Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/target/#dual-target) doesn't require any additional materials other than cutting an extra target shape. It can also fold in half so it doesn't take up much more room than the Standard Target! So you can pretty much double your target area with minimal changes.
 
-The [Quad Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#quad-target) is 4X bigger than the standard target. Because of its size, it is not as easy to travel with. This large target also needs to be positioned further away from the Mothbox, which means the amount of pixels per insect will be reduced. It can work great for areas where you are looking for larger and abundant moths.
+The [Quad Target](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/target/#quad-target) is 4X bigger than the standard target. Because of its size, it is not as easy to travel with. This large target also needs to be positioned further away from the Mothbox, which means the amount of pixels per insect will be reduced. It can work great for areas where you are looking for larger and abundant moths.
 
-The ["Just Point it at Something"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/target/#just-point-it-at-something) option works if you have some other surface you are using as a moth target. You can use the arms to measure a distance if you want, but you can just point the Mothbox at a wall or sheet. 
+The ["Just Point it at Something"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/target/#just-point-it-at-something) option works if you have some other surface you are using as a moth target. You can use the arms to measure a distance if you want, but you can just point the Mothbox at a wall or sheet. 
 
 # Standard Target
 Building the targets is straightforward. You just glue the target material to the target. Using a spray adhesive tends to work well.
