@@ -227,3 +227,44 @@ For option 1, you can just hit next. In our example with the Mothbox board, this
 #### Finding replacement parts
 
 For thoroughness though, we should figure out if we can find a suitable replacement. 
+
+First, let's look at the missing part. We know its LCSC number is C72043.
+
+We can go to [jlcpcb.com/parts/](jlcpcb.com/parts/) and paste this special number in.
+
+This will bring us to the information page for this particular part. This page will [look like this](https://jlcpcb.com/partdetail/EverlightElec-19_217_GHC_YR1S23T/C72043).
+
+<img width="1424" height="920" alt="image" src="https://github.com/user-attachments/assets/d4454334-f751-4b1d-9896-edea5ae25752" />
+
+This shows us that, yes this part is out of stock.  But importantly it shows us the other information about this part.  
+
+There's two key things we are looking for in replacement parts, Package, and All-the-other-details (Description).
+
+**Package**
+
+There are a set of standard sizes that electronic parts are made, and these can sometimes be called the "Package" or "Footprint." Importantly, any replacement part we want to swap in at this stage needs to have this same package.
+For this LED, package is "0603" (this is a common LED size which means it is 0.06 INCHES long by 0.03 INCHES wide)
+
+<img width="685" height="82" alt="image" src="https://github.com/user-attachments/assets/c99de8d4-88a1-4433-9595-e6656071ab8d" />
+
+
+**All-the-other-details (Description)**
+Next we need to make sure all the important details of the thing we swap. These details are often listed under the "description." We can copy the details we think are important along with the package size and search for a new part. 
+
+
+##### Search for a new part
+Go up one category from the part you are looking at. (In this case go to the category "LED Indication - Discrete" )
+
+<img width="980" height="795" alt="image" src="https://github.com/user-attachments/assets/b43812e4-4388-493e-9bc5-f7c4e4dca523" />
+
+Filter by the "Package" size. Note sometimes the package size may be written in multiple ways like "0603" or "LED0603"
+
+Hit APPLY
+
+<img width="1111" height="570" alt="image" src="https://github.com/user-attachments/assets/67528ea8-02aa-40ce-afdf-b8ba9e54f618" />
+
+
+
+Copy and paste the important features and the package into the search bar and look for a new part.
+
+
