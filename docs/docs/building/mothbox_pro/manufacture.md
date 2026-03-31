@@ -75,7 +75,72 @@ This button creates a folder of all the files the manufacturer needs to make you
 
 
 ## Load files to JLCPCB
+Now we are going over to the manufacturer's website to send them the files to have them start making this tool for you! This walkthrough will show you how to do it with JLC's interface, but many other manufacturers have very similar interfaces!
 
+First go to [JLCPCB](https://jlcpcb.com/) and sign in.
+
+click the big "Get Instant Quote" button in the middle of the webpage (don't worry about the settings, we will change them).
+
+This gives you the big page we can set everything up!
+
+<img width="1525" height="992" alt="image" src="https://github.com/user-attachments/assets/6e52b052-2547-43bd-9668-9766fecf8827" />
+
+Click the "add gerber file" button, and navigate to the production files folder we generated and find the GERBER-Mothbox file (should be a zip file)
+
+<img width="788" height="168" alt="image" src="https://github.com/user-attachments/assets/5fc3e62f-997f-42d4-9325-8c6f68eab591" />
+
+It will process those files and show you a preview of your cool new board.
+
+Now we will set up all the parameters.
+
+### Change the Quantity? 
+Most of these options we will leave as the default. It's a 2 layer board, made with FR-4
+
+The main thing you might want to change is the PCB Qty. It defaults to 5, but you can make thousands!
+<img width="1481" height="909" alt="image" src="https://github.com/user-attachments/assets/2df86d32-6a6a-4f9a-a499-0414ad14024c" />
+
+### Specifications: Get rid of lead! (yes!) Change the Color? (probably no)
+
+Most of these options you will leave as the default. I will reccomend paying the extra dollar or so to make your board with lead free solder.
+
+<img width="1002" height="406" alt="image" src="https://github.com/user-attachments/assets/aa880f95-6535-4eed-869c-5b6a2dd434aa" />
+
+You can also change the color of the board from the default green, but unless you are really particular about the color of your board, leaving it as a default green will help it get manufactured quicker (and in some manufactueres the green color is MORE PRECISE!?).
+
+### High Spec options
+You can leave everything as the default here if you want.
+<img width="1003" height="676" alt="image" src="https://github.com/user-attachments/assets/758d6842-f9c9-4c31-92fc-2013b998799f" />
+
+The only thing I tend to change is adding an serial number as a 2D barcode. 
+
+<img width="974" height="651" alt="image" src="https://github.com/user-attachments/assets/286276f0-1e65-4970-8678-c5fb64b84c7b" />
+
+We already included a 10mmx10mm spot on the back of the PCB that lets JLC know to put a barcode there. You just need to click the 2D barcode option and choose 10x10
+
+### PCB Assembly Options
+
+The only thing I change is 
+- make sure Assembly side is BOTH SIDES
+- Set the quantity you want created
+
+- (optional) you can pay a small fee to store the stencil and fixtures if you are going to make more of this exact thing in the future. otherwise don't worry about it. 
+
+<img width="1004" height="773" alt="image" src="https://github.com/user-attachments/assets/8e30be2e-9362-4439-b343-08a6db7a8fb0" />
+
+
+### Advanced Options PCBA
+
+I don't change anything here:
+<img width="1000" height="446" alt="image" src="https://github.com/user-attachments/assets/554da0ea-e7af-4285-b5fa-cf8fbab9b6a0" />
+
+
+### Hit the big NEXT Button
+Do it! We are ready to get to the trickier parts! It's still not that tricky, but this is where the friction can lie!
+
+<img width="300" alt="image" src="https://github.com/user-attachments/assets/c0190de4-ed0c-4164-8b8b-d42c2a6c6300" />
+
+
+## Configuring Parts
 
 
 
