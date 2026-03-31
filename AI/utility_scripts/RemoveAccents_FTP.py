@@ -6,9 +6,9 @@ from ftplib import FTP
 import unicodedata
 import time
 # FTP server details
-FTP_HOST = "u407120.your-storagebox.de"
-FTP_USER = "u407120"
-FTP_PASS = "zvanyULwMmgZicLN"
+FTP_HOST = ""
+FTP_USER = ""
+FTP_PASS = ""
 FTP_START_DIR = "/moths/Panama/Gamboa_RadioHill_AccionSauro_2024-08-06"  # Path on the server to start the process
 
 def remove_accents(input_str):
