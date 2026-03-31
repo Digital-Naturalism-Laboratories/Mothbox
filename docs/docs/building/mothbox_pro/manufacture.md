@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Connect Electronics
+title: Manufacture PCB
 parent: Mothbox Pro
 #has_children: true
-nav_order: 2
+nav_order: 1
 ---
 # Pull Fiberglass thingys off the PCB
 When the PCBs get made at the factory, they have to add little "rails" to hold the boards in place while they install everything with robots!
