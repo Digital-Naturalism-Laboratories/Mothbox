@@ -57,6 +57,26 @@ In the KiCAD project viewer, double click the .kicad_pcb file
 
 <img width="948" height="640" alt="image" src="https://github.com/user-attachments/assets/81a7f4e2-4801-4a51-a4a5-d2ca8075594a" />
 
+You will then see a new window open showing your PCB layout. Now click the JLC Tools button up in the top bar.
+
+<img width="1280" height="1040" alt="image" src="https://github.com/user-attachments/assets/bf6af2a5-efb7-4f74-89f7-9d4c13177b47" />
+
+This opens another window that lets you look at all the parts that go into creating your PCB. It will even let you know what parts are available at the manufacturer and you can rotate parts around if needed.
+
+**You don't actualy have to do anything here except hit the big GENERATE button **in the top left.
+
+<img width="1002" height="766" alt="image" src="https://github.com/user-attachments/assets/86aefc72-98b4-4516-92e9-33524b3c6345" />
+
+This button creates a folder of all the files the manufacturer needs to make your board!
+
+`Mothbox_Electronics\Mothbox_PCBs\Andy_PCB_5.0.5\MothBox\jlcpcb`
+
+<img width="1026" height="289" alt="image" src="https://github.com/user-attachments/assets/8b5c781a-568c-459f-8d9e-05f9dfb8f0da" />
+
+
+## Load files to JLCPCB
+
+
 
 
 
