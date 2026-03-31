@@ -19,6 +19,7 @@ Here's how to take our open-source designs from KiCAD to a fully manufactured bo
 
 ## Open the Design Files
 
+(If you don't want to edit the file in KiCad you can skip ahead to the [manufacturing part](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/manufacture/#load-files-to-jlcpcb) by just using [these files we already produced](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbox_PCBs/Andy_PCB_5.0.5/MothBox/jlcpcb/production_files)!
 First clone the [github repository of all our design files](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics).
 
 Open it up in Github and make sure you have the latest version
@@ -142,7 +143,87 @@ Do it! We are ready to get to the trickier parts! It's still not that tricky, bu
 
 ## Configuring Parts
 
+The next screen will show you a preview of your PCB without parts on it.
 
+<img width="1447" height="879" alt="image" src="https://github.com/user-attachments/assets/964d14d1-3921-4f78-a9c1-c9415f0f53f4" />
 
+Just hit the big Next button.
 
+Now it wants you to add two more files. Luckily those two files (BOM and CPL) are in that same production folder we generated earlier! Upload the BOM and then upload the CPL.
 
+<img width="1466" height="442" alt="image" src="https://github.com/user-attachments/assets/8ab01ef6-c289-41f7-a0a0-521bd82025fe" />
+
+Then click "Process BOM and CPL"
+
+# Processing Bill of Materials
+
+This can be the trickiest part of the entire operation. This is where you have to sometimes deal with real world items which may be unavailble or have fluctuating prices.
+
+Luckily there shouldn't be too many serious difficulties with the Mothbox BOM as we tried to design for common popular parts that are easy to find.
+
+**Nevertheless, (let's say we did this for pedagogical reasons ;) ), we left a couple tricky parts to show you how to overcome common obstacles.**
+
+{: .note-title }
+> How to Handle BOM Errors
+>
+> In the future we might streamline our PCB files even more so there are fewer errors that will pop up on this step. But we will show you how to deal with common errors regardless so that if you are doing a different type of PCB, you will now better how to deal with these errors.
+
+## First Check out your BOM
+
+The Bill-of-Materials (BOM), lists all the parts that will get assembled to your board.  Ideally all the items will have a nice blue check mark to the right of them. If that is the case you are all set to go to the next step!
+
+But there will likely be a couple error marks that need your attention:
+
+<img width="1463" height="868" alt="image" src="https://github.com/user-attachments/assets/291c596b-cebc-44c2-893e-775431c38fae" />
+
+### Common Problem 1: LCSC number is in wrong spot.
+
+In our above example, the parts labeled like C2 or C13 have an error and we know that because there is **no blue checkmark next to those items**.
+
+To fix this error, first click on the magnifying glass.
+
+Then you will go to this new window where it tries to find parts for you. It does an automatic search for you to try to guess the part you want, but in this case we already know the part we want!
+
+Every item in JLC's sister company LCSC, has a special number called an LCSC number. Sometimes (because maybe the people making the PCB didn't know EXACTLY what they were doing), this number gets put in a weird spot! 
+
+<img width="1293" height="711" alt="image" src="https://github.com/user-attachments/assets/c2994e0f-c903-4a4c-b9e0-bc32519810d6" />
+
+Luckily our LCSC number was included for this part, it was just in the wrong spot. You can just copy it and paste it into the search bar. Hooray the part showed right up. You can hit "Select" 
+
+<img width="1296" height="506" alt="image" src="https://github.com/user-attachments/assets/da7bd1f8-ed3e-46b4-a62a-6efa602368c9" />
+
+Then hit "Replace all"
+
+<img width="619" height="220" alt="image" src="https://github.com/user-attachments/assets/19633391-4a8c-4dc5-ac0a-6a18b808f1da" />
+
+Now there is still a warning
+
+It says
+` Multiple lines in the BOM have been matched to the same part. Please check if the matching is correct.`
+
+but that's fine. Some of the parts just had slightly different labels, but they should be the same. Importantly we have that nice blue check mark and those lines are happy!
+
+If you scroll down on the BOM, you will find the same kind of error for parts like U10 and U11
+
+<img width="1421" height="578" alt="image" src="https://github.com/user-attachments/assets/a152fde7-bca8-4ff0-8206-8d4c6716ff53" />
+
+You can do the same thing, just copy that LCSC number and paste it after you hit the searching magnifying glass.
+
+### Common Problem 2: Part out of Stock.
+
+The next common problem you can have is that a part might just be completely out of stock! This is what happens when you see a "shortfall" error. This step will require you to have a little bit of knowledge about what the electronic parts do.
+
+<img width="1419" height="130" alt="image" src="https://github.com/user-attachments/assets/f47131f1-d82b-489d-88bf-cee2dfc67572" />
+
+Luckily there are often many brands making very similar parts! 
+
+With parts that are out of stock you have two options:
+
+1. Ignore it, and leave this part off
+2. Find a new part that will fit
+
+For option 1, you can just hit next. In our example with the Mothbox board, this missing part is a green indicator LED that is just used for debugging purposes. You can actually just leave it off and it should not affect the device at all. 
+
+#### Finding replacement parts
+
+For thoroughness though, we should figure out if we can find a suitable replacement. 
