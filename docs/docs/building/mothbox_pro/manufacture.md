@@ -249,7 +249,9 @@ For this LED, package is "0603" (this is a common LED size which means it is 0.0
 
 
 **All-the-other-details (Description)**
-Next we need to make sure all the important details of the thing we swap. These details are often listed under the "description." We can copy the details we think are important along with the package size and search for a new part. 
+Next we need to make sure all the important details of the thing we swap. These details are often listed under the "description." We can copy the details we think are important along with the package size and search for a new part.  The important details we are looking at for this led are 
+1) its color (green)
+2) its voltage (3.3v)
 
 
 ##### Search for a new part
@@ -263,8 +265,58 @@ Hit APPLY
 
 <img width="1111" height="570" alt="image" src="https://github.com/user-attachments/assets/67528ea8-02aa-40ce-afdf-b8ba9e54f618" />
 
+Next, look at filters for the other details you want. for instance we will filter by color (anything green-ish should be fine for this part!)
+Hit APPLY
 
+<img width="665" height="458" alt="image" src="https://github.com/user-attachments/assets/1ef99c30-8991-4ab4-8f6d-ce61491a3447" />
 
-Copy and paste the important features and the package into the search bar and look for a new part.
+After this filtering, we can see the top result is LCSC number C497926 a green led that is 3.3V and has 19 THOUSAND parts in stock.
 
+<img width="1503" height="887" alt="image" src="https://github.com/user-attachments/assets/3bd6bb5f-aa13-4079-9f0e-138680e675f7" />
 
+### Replace the part
+Copy its number and go back to your BOM page. After hitting the search bar on the part, past the LCSC number and go!
+<img width="1436" height="883" alt="image" src="https://github.com/user-attachments/assets/7b9d8673-1cb1-4bc2-b8a2-c7036582fe42" />
+
+## Set Rotations
+
+After all the parts have been chosen, the next step is just making sure all the parts are going to be put onto the board correctly!
+
+You will be at a screen that looks like this:
+<img width="1452" height="827" alt="image" src="https://github.com/user-attachments/assets/bcee2717-7adf-43c0-89a8-5f1e3e53c386" />
+
+I like to click the "2D" button at the top because i find it easier to navigate. 
+
+I have included reference images so you know how all the parts should look like.
+This is the [front of the board](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/blob/main/Mothbox_PCBs/reference%20rotations%20f.png) and [this is the back](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/blob/main/Mothbox_PCBs/reference%20rotations%20b.png). Just make the parts look like each other!
+
+I have also included some handy notes from when I went through this process, and that notes file is available here:
+https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/blob/main/Mothbox_PCBs/Andy_PCB_5.0.5/MothBox/RottationsInJLCPCB.txt
+
+it tell us that the only thing we need to rotate is
+U15/16 U9 which need to get rotated 180 degrees.
+
+Click on U9, and it will zoom to the part, and we can see that, yes, indeed, U9 is flipped 180 degrees! (notice how the pink indicator dot isn't lining up with the white dot on the silkscreen?)
+
+<img width="1461" height="842" alt="image" src="https://github.com/user-attachments/assets/640f3b36-fb7e-4bc3-be98-2370ab5273a4" />
+
+Click the rotate button at the top to fix this one, and then make sure to fix U15 and U16 too!
+
+Look at how nice this looks when it is in the fixed, correct orientation :)
+
+<img width="1469" height="821" alt="image" src="https://github.com/user-attachments/assets/71415340-3853-48e6-b235-9775f86e9da0" />
+
+## Get ready to order the board!
+When you have finished the part rotations, all the hard parts are over!
+
+It will generate a quote for you. It will also make you give it a description. I usually choose "other" and write "light for insect camera."
+
+<img width="1486" height="858" alt="image" src="https://github.com/user-attachments/assets/67a7f75e-5f2b-4d89-a2d7-d25c7fa8b9aa" />
+
+Then hit "Save to cart"
+
+## Pay for the board, and Wait for any comments from the Engineers
+Finally, you are at the checkout page. Select the PCB and PCBA, pay for them.
+<img width="1456" height="758" alt="image" src="https://github.com/user-attachments/assets/9022f2c8-9f1b-45b3-8cca-a7f78afea368" />
+
+You will receive emails as they process the devices and give you updates or may need your feedback on things. But mostly you are done!
