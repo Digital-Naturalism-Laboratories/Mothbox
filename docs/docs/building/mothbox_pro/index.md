@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Mothbox Pro
-nav_order: 2
+nav_order: 0
 has_children: true
 parent: Building
 permalink: /docs/building/mothbox_pro
