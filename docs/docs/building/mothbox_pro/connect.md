@@ -19,9 +19,15 @@ The Mothbeams are made to pop right onto the mainboard of the Mothbox! There's s
 <img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/cd8126db-6fe0-436c-a5c1-163dd90c5fd7" />
 
 
-## Configure Mothbeams
+## (Optional) Configure Mothbeams
 
 ### Power
+
+{: .important-title }
+> Default Power
+>
+> We usually just leave all the switches in the default "OFF" position. This will give a mothbox about 18 hours of runtime. 
+
 The mothbeams allow you to set how powerful they are with little switches. **The more switches you turn on, the brighter they will be, but they will also run through your battery faster!** The first two switches add 70mA for each switch. The second two switches add 150mA for each switch.
 
 Remove the protective sticker over the switches.
