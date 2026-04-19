@@ -18,7 +18,12 @@ We currently offer designs for two different versions of the Mothbox now:
 We believe **studying insect biodiversity is integral to life on earth**, and simply want this technology in the hands of as many people as possible.
 
 {:.note}
->Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email me at A N D Y [ a t ] dinalab.net** with subject "Mothbox Mail."
+> Mailing List
+>
+> Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email me at A N D Y [ a t ] dinalab.net** with subject "Mothbox Mail."
+>
+>  Order Form  
+> If you are wanting to get your hands on some new Mothboxes ASAP, [fill out our interest form](https://forms.gle/BnBhjBC4csW4BwTE7), and we will get back to you as soon as we can about how to get them to you!
 
 See the [full specifications of what it can do here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/)
 Watch a [video presentation of our talk at the Smithsonian all about the Mothbox and its design.](https://www.youtube.com/watch?v=lZhh7ecnAgk)
