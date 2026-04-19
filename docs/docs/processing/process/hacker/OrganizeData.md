@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Organizing Data
-parent: Process
+parent: Hacker Mode
 has_children: false
 nav_order: 1
 ---

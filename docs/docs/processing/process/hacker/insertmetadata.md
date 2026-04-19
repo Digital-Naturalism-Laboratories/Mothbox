@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Insert Metadata
-parent: Process
+parent: Hacker Mode
 has_children: false
 nav_order: 5
 ---

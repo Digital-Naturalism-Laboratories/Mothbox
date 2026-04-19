@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Exif (Optional)
-parent: Process
+parent: Hacker Mode
 has_children: false
 nav_order: 7
 ---

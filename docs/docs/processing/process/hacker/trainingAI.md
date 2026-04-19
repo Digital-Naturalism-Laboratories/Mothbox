@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Bonus: Training AI
-parent: Process
+parent: Hacker Mode
 has_children: true
 nav_order: 9
 ---

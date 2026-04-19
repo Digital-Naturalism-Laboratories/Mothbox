@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Detect Creatures
-parent: Process
+parent: Hacker Mode
 has_children: false
 nav_order: 3
 ---
