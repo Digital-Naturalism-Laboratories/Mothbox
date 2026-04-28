@@ -37,7 +37,7 @@ This newest version of the Mothbox has easy to assemble electronics! You only ne
 
 ## Attractors
 
-* Mothbeams can plug right in to the PCB
+* [Mothbeams](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbeam_PCBs/AndyMothbeam_forMBv5.0.1) can plug right in to the PCB
 * External - You can also connect any 12V attractor you want via the "External attractor" port
 
 
