@@ -13,7 +13,7 @@ For this tutorial, we will show you how to make a very simple mid-range housing 
 <img src="https://github.com/user-attachments/assets/2de13c2e-2fab-4b07-9a5b-11a83bbd3336" width="25%">
 
 # Parts for Basic Circular Housing
-* [PCBs](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/PCB/AndyMothbeam_forMBv5.0.1) (ideally 2 or 4)
+* [PCBs](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbeam_PCBs/AndyMothbeam_forMBv5.0.1) (ideally 2 or 4)
 * 18awg solid core wire (red and black)
 * 20x20 aluminum profile (15cm long)
 * Circular Plexiglass tube, 6.5cm diameter (make sure transparent to UV) (10cm long)
