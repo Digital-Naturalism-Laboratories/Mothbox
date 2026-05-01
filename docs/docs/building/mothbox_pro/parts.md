@@ -29,8 +29,9 @@ This newest version of the Mothbox has easy to assemble electronics! You only ne
 * [Talentcell PB120B1](https://www.walmart.com/ip/Millertech-PB120B1-12V-Lithium-ion-Talentcell-Battery-Pack/5119418367) - You can actually use any battery between 9-36 V to power the mothbox (it's more efficient around 12V), but for these tutorials we will use the main battery we use for all our devices, this one by Talentcell - $80
 * [9-36V to 12V voltage Regulator](https://www.amazon.com/dp/B0B6VK8BPN?ref=ppx_yo2ov_dt_b_fed_asin_title) - $15
 * [Arducam 64 MP Owlsight camera](https://www.amazon.com/dp/B0CQJPKFVF?ref=ppx_yo2ov_dt_b_fed_asin_title) - $55 (Don't get the "Hawkeye" older version of this camera if you can avoid it!)
-* (Optional) [Epaper Display (Waveshare 2.13in E-ink hat)](https://www.amazon.com/dp/B0D22JJ18B?ref=ppx_yo2ov_dt_b_fed_asin_title) - $15
 * [Barrel Jack Sockets and Plugs](https://www.amazon.com/dp/B0D9B7WR23?ref=ppx_yo2ov_dt_b_fed_asin_title) (x2) - $2
+* [Lever Nut](https://www.amazon.com/dp/B0CBP7WWML?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_1&th=1) - 2 wire connector - $0.40
+* (Optional, but VERY USEFUL) [Epaper Display (Waveshare 2.13in E-ink hat)](https://www.amazon.com/dp/B0D22JJ18B?ref=ppx_yo2ov_dt_b_fed_asin_title) - $15
 
 <img width="1236" height="927" alt="image" src="https://github.com/user-attachments/assets/c2d6c644-5929-4df4-a60e-e0a217cfb4e7" />
 
