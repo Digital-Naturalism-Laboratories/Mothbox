@@ -67,7 +67,7 @@ Go into "bootfs" and then into the folder called "mothbox_custom"
 You will find 3 files there that can let you customize everything!
 
 ## Mothbox Settings
-Open the file "mothbox_settings.csv" with a text editor
+Open the file **"mothbox_settings.csv"** with a text editor
 <img width="1154" height="329" alt="image" src="https://github.com/user-attachments/assets/1df7534f-0458-4f7a-a0e2-fd031b1f8166" />
 
 This settings file is a "CSV" or "comma separated value" file, meaning that data is organized in different lines, and each line is structured like
@@ -118,7 +118,17 @@ Your mothbox will read this time, and set that as the system time.
 
 
 
+{: .important }
+> Connecting to the Internet (Coming Soon!)
+>
+> You might notice in the "mothbox_settings.csv" that there are settings for a wifi SSID and password! They currently don't do anything! They are just placeholders for us implementing a way to easily connect to whatever wifi you want. Meanwhile, if the mothbox cannot find an internet it knows, it will create a [hotspot](https://www.raspberryconnect.com/projects/65-raspberrypi-hotspot-accesspoints/203-automated-switching-accesspoint-wifi-network) called "mothboxwifi" with the password:"lunaluna"
+
+
+
 #### Set Internet time
+
+First, **make sure your device is in DEBUG MODE.** If it is in an Active or Standby mode, it will turn off its wifi to save power! 
+
 Create a hotspot with your phone with the following username
 > SSID: DINALAB
 > wifipass: iloveyardpigs
