@@ -1,7 +1,7 @@
 # Updates: 
 The project has grown so much that we are in the process of re-organizing the github. 
 Other parts of the repo will be split out into separate repositories such as:
-* Post-Processing (Mothbot) (Moving soon!)
+* Post-Processing [(Mothbot Process)](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process) and [Classify](https://github.com/Digital-Naturalism-Laboratories/mothbot-classify)
 * [Firmware (Rpi Scripts)](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Firmware)
 * [Hardware](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware)
 * [Electronics Development (PCB)](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics)
