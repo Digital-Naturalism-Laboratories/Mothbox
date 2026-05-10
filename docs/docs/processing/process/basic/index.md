@@ -13,11 +13,24 @@ First just download the [latest release](https://github.com/Digital-Naturalism-L
 
 Make sure to get the files for your MacOS, Windows, or Windows with CUDA corresponding to your machine.
 
+# Windows
 Unzip the file, and double click on the executable:
 
 <img width="767" height="147" alt="image" src="https://github.com/user-attachments/assets/c5e4805c-a42f-4746-8647-d3841fcc896f" />
 
+# MacOS
 
+Download the DMG, double click it, it will mount the DMG, and you will see "Mothbot.app"
+Double click the app, it will fail!
+
+<img width="922" height="441" alt="image" src="https://github.com/user-attachments/assets/aa225223-7871-4e00-8c2d-7628380ac381" />
+
+Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyway" button. Click it!
+
+<img width="737" height="657" alt="image" src="https://github.com/user-attachments/assets/849f9a4f-83e0-40e0-b6fb-4111ef445c8d" />
+
+
+# Running the Program
 In a couple of seconds, the program will open in your web browser.
 
 <img width="1794" height="818" alt="Mothbot SetupCapture" src="https://github.com/user-attachments/assets/e1e37675-7f66-483f-a395-fa2f23758929" />
