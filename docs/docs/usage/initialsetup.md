@@ -49,6 +49,32 @@ Now it will start flashing your SD card. This should take about 5-10 mins.
 Hooray! You have an SD card with the brains of a Mothbox on it! Next we will configure it!
 
 
+# Flashing a Special Bootloader SD Card
+
+{: .important-title }
+> Reset Your Pi's Bootloader
+>
+> A common problem with a new Mothbox is that it won't start with a fresh SD card. Some Raspberry Pi's have a strange bootloader installed at the factory. You can reset it easily and fix most problems by flashing a bootloader on your SD card!
+
+Recently when we have been ordering Raspberry Pi's about half the ones we have received from the factories seemed to have arrived without their bootloaders installed (a bootloader is special tiny software on the raspberry pi that tells the device it is in a fact a Raspberry Pi 5). This may create problems when you first use the Pi like it won't turn on with a new SD card, and instead will flash a series of repeating patterns on its LED.
+
+The solution to this problem is simple! You just need to install the proper bootloader on your Raspberry Pi. Instead of choosing "custom img" in your Pi Imager, you just choose "Misc Utility Images > Bootloader > SD card boot" and flash that to an SD card.
+
+<img width="792" height="594" alt="image" src="https://github.com/user-attachments/assets/efb745df-a0e1-4d3c-8140-4ab83d22f651" />
+
+<img width="792" height="594" alt="image" src="https://github.com/user-attachments/assets/58530e68-9e36-42f6-8680-278d5754b06d" />
+
+<img width="792" height="594" alt="image" src="https://github.com/user-attachments/assets/1e9b36d7-123f-414b-806a-cf5af916eab4" />
+
+Put that SD card into your Pi. Wait 20 seconds until the LED on your Pi starts flashing green quickly. Turn your pi off. Insert the Mothbox SD card, and voila, your device should run great!
+
+{: .important-title }
+> Remember to Switch to ACTIVE mode!
+>
+> Rememeber to switch your Mothbox to ACTIVE mode if you want to see it blink at you and check it is working properly (or else it will turn itself on, and turn off quickly)
+
+
+
 # Configure Mothbox
 
 Unless you are using your Mothbox in Panama, you probably need to configure a couple things before you use it! 
