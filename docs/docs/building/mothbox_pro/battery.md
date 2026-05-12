@@ -58,10 +58,32 @@ Then secure this strap from the other side with another tie locking it on.
 <img width="687" height="542" alt="image" src="https://github.com/user-attachments/assets/09ecd689-6454-4491-969f-f15906de5910" />
 
 ## Back Strap
-There's one more strap to hold this battery firmly in place. Add zip ties from these bottom holes.
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/62c654fd-6a50-4a5e-b61f-acab301600f5" />
-Once, again, lock it in with a zip tie on the other side.
-<img width="518" height="397" alt="image" src="https://github.com/user-attachments/assets/c34425ef-4913-408e-915b-cfa828d70f0d" />
+Now we will attach another strap to the rear of the battery to hold it firmly in place. Add a zip tie from these bottom holes at the bottom of the PCB.
+
+<img width="417" height="686" alt="image" src="https://github.com/user-attachments/assets/177af172-308b-40c1-a28c-cdb264c03033" />
+
+Send that zip tie across the front of the PCB (we made sure no LEDs will be in the line of this strap). 
+
+<img width="417" height="558" alt="image" src="https://github.com/user-attachments/assets/d8de79fb-2342-45a8-842e-b09547de794d" />
+
+It is important to send this cable tie in this direction so that the head of the cable tie will not interfere with the E paper display on the front.
+
+Now connect the zip tie across the back of the battery. You may need an additional zip tie.
+
+<img width="540" height="555" alt="image" src="https://github.com/user-attachments/assets/7ccab68d-4973-4e5d-b77f-a2f1865ba236" />
+
+<img width="712" height="454" alt="image" src="https://github.com/user-attachments/assets/f65fc072-a9a1-4b88-b1b8-8d497e3aff19" />
+
+
+
+## Middle Strap
+Starting with **PCBs version 5.0.5 ** we added **extra holes for extra battery security**! This gives you a MIDDLE strap option that you can also strap down your battery with!
+Put a cable tie through this middle hole, put it around the battery, and lock it in with another strap on the other side.
+
+<img width="593" height="634" alt="image" src="https://github.com/user-attachments/assets/810258cb-46f8-490b-aa00-77c35d094a21" />
+
+<img width="1037" height="673" alt="image" src="https://github.com/user-attachments/assets/487fd6b4-2392-4dcd-818e-e463a181d0c4" />
+
 
 ## Trim Straps
 Tighten up all your straps really well. Then snip off all the dangly parts!
