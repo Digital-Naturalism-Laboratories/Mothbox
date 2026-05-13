@@ -140,6 +140,12 @@ With the BATTERY STILL OFF, you can plug the plug into the battery's "OUT" socke
 
 ## INPUT PLUG
 
+
+> Note, if you can find them, you can replace the Socket-Levernut-Plug we are building below with just one simple cable like this female-male barrel jack cable. Make sure to find one decently long 
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/abebf3be-5e89-4c8e-8881-f078c092d649" />
+
+
 With the other barrel jack wire, load its wires into the lever nut:
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/5cedf5a7-cf40-466a-92c0-e6e1bba74280" />
 Leave the other side of the lever nut empty (for now). You can plug it into your battery for now, or just set it aside (you will pull it back out of the battery in a later step)
