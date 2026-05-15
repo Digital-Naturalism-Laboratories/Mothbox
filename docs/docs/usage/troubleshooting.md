@@ -12,7 +12,7 @@ One of the best ways to find answers to problems is to check out the [Github Iss
 
 ### Git rid of the red thing on your camera
 
-<img width="1920" height="2372" alt="image" src="https://github.com/user-attachments/assets/2329cabd-5038-436e-8e9b-b97a66972d66" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/2329cabd-5038-436e-8e9b-b97a66972d66" />
 
 These red things come on the camera and protect it in shipping, but also stop it from focusing properly! get rid of them!
 
