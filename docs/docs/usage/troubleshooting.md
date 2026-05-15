@@ -5,7 +5,17 @@ parent: Using Mothbox
 has_children: true
 nav_order: 9
 ---
-Here's a guide to basic troubleshooting if you encounter a problem using your Mothbox.
+Here's a guide to some basic troubleshooting if you encounter a problem using your Mothbox.
+
+# Github Issues
+One of the best ways to find answers to problems is to check out the [Github Issues page](https://github.com/Digital-Naturalism-Laboratories/Mothbox/issues). You can see common problems others may have had there, and you can post your own problem and we will help you address it!
+
+### Git rid of the red thing on your camera
+
+<img width="1920" height="2372" alt="image" src="https://github.com/user-attachments/assets/2329cabd-5038-436e-8e9b-b97a66972d66" />
+
+These red things come on the camera and protect it in shipping, but also stop it from focusing properly! get rid of them!
+
 
 ### How can I tell the difference between a 12V and a 24V battery?
 
