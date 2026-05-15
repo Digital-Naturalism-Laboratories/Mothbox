@@ -8,6 +8,13 @@ permalink: /docs/about
 
 This is an open source science hardware and software project started by Andy Quitmeyer and Hubert Szczygiel in 2023. The goal is to provide people a low cost tool for insect biomonitoring they can build themselves from off the shelf parts. It aims to be low cost, high resolution, durable, and portable.
 
+# Publications
+
+You can read papers published about the Mothbox here:
+
+[Methods in Ecology and Evolution](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210x.70327) preprint [here](https://www.biorxiv.org/content/10.64898/2025.12.03.692171v2)
+
+
 # Video Presentations
 Here are some video presentations that discuss the motivations behind the Mothbox and its design:
 
