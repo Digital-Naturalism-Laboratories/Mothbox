@@ -18,6 +18,11 @@ You can read papers published about the Mothbox here:
 # Video Presentations
 Here are some video presentations that discuss the motivations behind the Mothbox and its design:
 
+Documentary about the Mothbox made for the Wildlabs Award:
+
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=1LGz3aWpeVE&t=102s" title="Mothbox Wildlabs Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
 Mothbox Invited Talk at the Smithsonian Tropical Research Institute (September 2024):
 <iframe width="560" height="315" src="https://www.youtube.com/embed/lZhh7ecnAgk?si=vdF98dbD3mXoOiNE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
