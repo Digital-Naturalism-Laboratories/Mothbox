@@ -20,7 +20,7 @@ The exact specifications of the mothbox may change depending on factors like whi
 ## Cost
 
 * Approximate cost: $375
-* Off-the-shelf parts.
+
 
 ## Power
 
@@ -32,7 +32,7 @@ The exact specifications of the mothbox may change depending on factors like whi
     * or connect other DC batteries (like a car battery)
   * continuous DC power (can plug into a wall if near a power grid)
 * Sleep time: 6 months
-* Runtime: 21 hours continuous (1 minute photography intervals with internal mothbeam)
+* Runtime: 18 hours continuous (1 minute photography intervals with 2 internal mothbeams at standard power setting)
   * About 85% of the power goes to the UV attractor connected. Lower power UV lights can last longer, higher power lights will reduce its runtime
   * Our standard schedule has 5 hours of runtime per night, which means a normal Mothbox can run for 4 nights before recharging.
 
@@ -47,9 +47,10 @@ The exact specifications of the mothbox may change depending on factors like whi
 * Probably not submergable (don't use mothbox underwater, yet)
 
 ## Microcontroller  
-* Microcontroller: Raspberry Pi5 (or Pi4 with Pijuice)
+* Microcontroller: Raspberry Pi5 (2GB or 4GB)
 
 ## License
 * MIT License
+* CERN OHL-W
 
 The Mothbox is an open source hardware and software tool for science. All the aspects of the Mothbox are freely licensed so that you can make it yourself, remix, customize, and build upon. The only things you cannot do are stop others from using this, claiming these designs or ideas as your own, or holding us liable for any aspect of this device. It is a build and use at your own risk tool.
