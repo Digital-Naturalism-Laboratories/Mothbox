@@ -35,6 +35,7 @@ We believe **studying insect biodiversity is integral to life on earth**, and si
 
 See the [full specifications of what it can do here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/)
 Watch a [video presentation of our talk at the Smithsonian all about the Mothbox and its design.](https://www.youtube.com/watch?v=lZhh7ecnAgk)
+or [read a scientific paper](besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210x.70327) about using a Mothbox!
 
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
