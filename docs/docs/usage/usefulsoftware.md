@@ -15,6 +15,16 @@ This is a list of useful software to download for working with the Mothbox.
 
 * [SD Card Formatter](https://www.sdcard.org/downloads/formatter/sd-memory-card-formatter-for-windows-download/)
 
+# Access files on a Linux Formatted SD card (Like on your raspberry pi)
+
+The raspberry pi's sd card has 2 partitions. 1 kinda normal partition you can read on a Mac or PC that you can adjust settings on, but there is also one extra SECRET partition that you need special software to see on a mac or PC. This is where the backup images are stored!
+
+[For PC](https://www.paragon-software.com/home/linuxfs-windows/) (just use the free version)
+
+[For Mac](https://github.com/fenio/anylinuxfs-gui)
+
+
+
 # Pi Debugging Software
 
 You may have noticed that even though the Raspberry Pi is a computer, it doesn't have a mouse or screen. But that's ok! There's special ways you can see what's going on with your Raspberry Pi by using special software called a "VNC" software.
