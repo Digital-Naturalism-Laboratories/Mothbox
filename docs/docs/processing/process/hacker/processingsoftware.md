@@ -65,6 +65,7 @@ for instance on my computer, I type:
 cd C:\Users\andre\Documents\GitHub\Mothbox\AI\Mothbot
 ```
 
+## Windows and uv
 next run each of these lines, and press enter after each line. (After the first line, it might ask you if you want to replace an existing environment, you can say yes!)
 
 ```
@@ -86,10 +87,7 @@ Press the windows-button on your keyboard.
 5. Run the following command and confirm with ‘Y’
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 ```
-NOTE: If you are using a Mac, you will have to add the word 'source' at the front of this line of code. 
-```
-source .venv\Scripts\activate
-```
+
 
 Now run this again
 ```
@@ -98,6 +96,12 @@ Now run this again
 and it should work!
 <img width="628" height="39" alt="image" src="https://github.com/user-attachments/assets/058d04fa-d265-400a-9199-b2b5a3648914" />
 
+## Mac and uv
+
+NOTE: If you are using a Mac, you will have to add the word 'source' at the front of this line of code. 
+```
+source .venv/bin/activate 
+```
 
 now your terminal should have a little marking on the left side that shows you are inside a custom "environment." It probably says "Mothbot" 
 <img width="732" height="94" alt="image" src="https://github.com/user-attachments/assets/760f9c77-8f66-4213-a2e3-cb52bed5477d" />
@@ -153,6 +157,12 @@ Your environment should be set up, and now after this, you can run scripts!
 python Mothbot_Detect.py
 ```
 Or replace that script name with any script you want to run (like Mothbot_ID.py)
+
+If you want to run the main UI for Mothbot, you can run it like this:
+
+```
+(Mothbot_Process) automeris@Nos-MacBook-Air Mothbot_Process % python -m ui.gradio_app 
+```
 
 
 ## Or Run scripts in Visual Studio with a Big Button
