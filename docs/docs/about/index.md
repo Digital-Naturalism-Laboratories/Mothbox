@@ -10,9 +10,12 @@ This is an open source science hardware and software project started by Andy Qui
 
 # Publications
 
-You can read papers published about the Mothbox here:
+You can read papers we published about the Mothbox here:
 
-[Methods in Ecology and Evolution](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210x.70327) preprint [here](https://www.biorxiv.org/content/10.64898/2025.12.03.692171v2)
+* [Methods in Ecology and Evolution](https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210x.70327) preprint [here](https://www.biorxiv.org/content/10.64898/2025.12.03.692171v2)
+* [Integrative and Comparative Biology](https://academic.oup.com/icb/advance-article/doi/10.1093/icb/icag072/8700641?guestAccessKey=)
+
+Here are some other papers published that talk about the Mothbox:
 
 
 # Video Presentations
