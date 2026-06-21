@@ -46,6 +46,23 @@ There are 4 holes in the 4 corners of the board. Simply screw them snugly into p
 Everything should feel secure inside this little removable box now!
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/d80de292-2ea1-4f43-addb-8e7e3d1f6180" />
 
+
+
+{: .note }
+> Zip tie hack!
+> Did you accidentally cover a screw hole? Couldn't find the right size screws in berlin? Use zip ties! We will add better holes for just zipping everything in future PCBs but for now, you can use these hacks:
+
+
+<img width="1312" height="1748" alt="image" src="https://github.com/user-attachments/assets/f7aaf91e-fa64-47a5-8fce-d7de7354c2e3" />
+
+<img width="672" height="584" alt="image" src="https://github.com/user-attachments/assets/2b4e9bb3-ecca-4127-9321-58ce77200a1a" />
+
+<img width="1312" height="1748" alt="image" src="https://github.com/user-attachments/assets/a4af10f5-d069-4bc0-ae32-3039904ed792" />
+
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/14555365-0ee9-4961-8b03-99a9b0818be3" />
+
+
+
 # Load Chassis into Shell
 
 {: .note }
