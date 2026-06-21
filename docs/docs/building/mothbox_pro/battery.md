@@ -74,6 +74,12 @@ Now connect the zip tie across the back of the battery. You may need an addition
 
 <img width="712" height="454" alt="image" src="https://github.com/user-attachments/assets/f65fc072-a9a1-4b88-b1b8-8d497e3aff19" />
 
+**(Extra bonus strap for 5.0.4 boards)
+**
+On the 5.0.4 model, that backstrap can kinda slip off a bit. You can fight against that with an extra zip tie connecting the front and back strap together like this:
+
+<img width="1312" height="1748" alt="image" src="https://github.com/user-attachments/assets/18b3a455-55a6-489b-bfd4-01f8b8e22109" />
+
 
 
 ## Middle Strap
