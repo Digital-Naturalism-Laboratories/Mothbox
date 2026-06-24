@@ -196,8 +196,21 @@ def collect_class_names_from_json(pairs):
 
 def shape_to_yolo_line(shape, img_width, img_height, class_map):
     """
-    Convert one x-anylabeling shape dict to a YOLO label line string.
-    Supports rectangle and polygon (polygon → bounding box).
+    Convert one x-anylabeling shape to a YOLO OBB label line.
+
+    YOLO OBB format:  class_id x1 y1 x2 y2 x3 y3 x4 y4  (all normalized 0-1)
+
+    x-anylabeling "rotation" shapes already provide 4 corner points in order,
+    so we normalize each point directly — no bounding-box collapsing needed.
+
+    For "rectangle" shapes (axis-aligned, 4 points) we do the same: the 4
+    corners are already correct OBB corners with 0° rotation.
+
+    Any shape with exactly 4 points is handled this way.
+    Shapes with != 4 points (rare polygons, etc.) fall back to computing
+    the 4 corners of their axis-aligned bounding box, which gives a valid
+    but unrotated OBB — still better than discarding the annotation.
+
     Returns None if the shape is invalid or label is not in class_map.
     """
     label = shape.get("label", "").strip()
@@ -209,26 +222,33 @@ def shape_to_yolo_line(shape, img_width, img_height, class_map):
         return None
 
     try:
-        xs = [p[0] for p in points]
-        ys = [p[1] for p in points]
-        x1, x2 = min(xs), max(xs)
-        y1, y2 = min(ys), max(ys)
+        if len(points) == 4:
+            # Direct OBB: normalize the 4 corners as-is
+            coords = []
+            for px, py in points:
+                nx = max(0.0, min(1.0, px / img_width))
+                ny = max(0.0, min(1.0, py / img_height))
+                coords.extend([nx, ny])
 
-        cx = ((x1 + x2) / 2) / img_width
-        cy = ((y1 + y2) / 2) / img_height
-        w  = (x2 - x1) / img_width
-        h  = (y2 - y1) / img_height
+        else:
+            # Fallback: compute axis-aligned bounding box corners
+            xs = [p[0] for p in points]
+            ys = [p[1] for p in points]
+            x1, x2 = min(xs), max(xs)
+            y1, y2 = min(ys), max(ys)
+            if (x2 - x1) <= 0 or (y2 - y1) <= 0:
+                return None
+            # 4 corners in order: top-left, top-right, bottom-right, bottom-left
+            corners = [(x1, y1), (x2, y1), (x2, y2), (x1, y2)]
+            coords = []
+            for px, py in corners:
+                coords.extend([
+                    max(0.0, min(1.0, px / img_width)),
+                    max(0.0, min(1.0, py / img_height)),
+                ])
 
-        # Clamp to [0, 1]
-        cx = max(0.0, min(1.0, cx))
-        cy = max(0.0, min(1.0, cy))
-        w  = max(0.0, min(1.0, w))
-        h  = max(0.0, min(1.0, h))
-
-        if w <= 0 or h <= 0:
-            return None
-
-        return f"{class_map[label]} {cx:.6f} {cy:.6f} {w:.6f} {h:.6f}"
+        coord_str = " ".join(f"{v:.6f}" for v in coords)
+        return f"{class_map[label]} {coord_str}"
 
     except (IndexError, TypeError, ZeroDivisionError):
         return None
