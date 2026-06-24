@@ -23,7 +23,7 @@ Requirements:
 Usage examples:
     # Auto-detect best device, use defaults
     python3 train_yolo_obb.py --data /path/to/yolo_dataset/data.yaml
-
+python3 train_yolo_obb.py --data /Users/automeris/Desktop/2026_MOTHBOTYOLO/data.yaml
     # Specify model size (n=nano, s=small, m=medium, l=large, x=xlarge)
     python3 train_yolo_obb.py --data /path/to/data.yaml --model m
 
