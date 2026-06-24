@@ -41,7 +41,6 @@ import json
 import shutil
 import random
 import argparse
-import yaml
 from pathlib import Path
 from collections import defaultdict
 
@@ -380,20 +379,36 @@ def populate_split(split_name, anylabeling_pairs, yolo_pairs, output_dir, class_
 # ---------------------------------------------------------------------------
 
 def write_data_yaml(output_dir, class_names, has_test):
+    """
+    Write data.yaml manually to guarantee correct formatting for YOLO OBB.
+    pyyaml with integer-keyed dicts produces malformed output (wrong indentation,
+    wrong key ordering), so we build the file as a plain string instead.
+
+    Correct format:
+        path: /abs/path
+        train: images/train
+        val: images/val
+        test: images/test   # only if has_test
+        nc: 1
+        names:
+          0: creature
+    """
     output_dir = Path(output_dir)
-    yaml_data = {
-        "path":  str(output_dir.resolve()),
-        "train": "images/train",
-        "val":   "images/val",
-        "nc":    len(class_names),
-        "names": class_names,
-    }
+    lines = [
+        f"path: {output_dir.resolve()}",
+        "train: images/train",
+        "val: images/val",
+    ]
     if has_test:
-        yaml_data["test"] = "images/test"
+        lines.append("test: images/test")
+    lines.append(f"nc: {len(class_names)}")
+    lines.append("names:")
+    for i, name in enumerate(class_names):
+        lines.append(f"  {i}: {name}")
 
     yaml_path = output_dir / "data.yaml"
     with open(yaml_path, "w") as f:
-        yaml.dump(yaml_data, f, default_flow_style=False, sort_keys=False)
+        f.write("\n".join(lines) + "\n")
     print(f"\nWrote data.yaml → {yaml_path}")
 
 
