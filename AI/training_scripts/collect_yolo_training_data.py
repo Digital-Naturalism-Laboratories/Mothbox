@@ -2,39 +2,34 @@
 collect_yolo_training_data.py
 
 Recursively searches a source directory for:
-  1. Images with matching x-anylabeling JSON ground truth files  → converted to YOLO format
+  1. Images with matching x-anylabeling JSON ground truth files  → converted to YOLO OBB format
   2. Folders already in YOLO format (images/ + labels/ structure) → copied directly
+     (detection-format labels with 5 values are auto-converted to OBB 9-value format)
 
 All data is merged and organized into a single YOLO-compatible dataset folder,
 then split into train/val/test with a data.yaml generated automatically.
 
+Optionally exports a patch crop of every OBB annotation to a patches/ folder
+for quick visual false-positive auditing before training.
+
 Usage:
-    python collect_yolo_training_data.py \
+    python3 collect_yolo_training_data.py \
         --source /path/to/your/data \
         --output /path/to/yolo_dataset
 
+    python3 collect_yolo_training_data.py \
+    --source /Users/automeris/Desktop/TrainingMac \
+    --output /Users/automeris/Desktop/2026_MOTHBOTYOLO \
+    --patches
+    
+    # With patch export for visual audit
+    python3 collect_yolo_training_data.py -s /data -o /out --patches
+
     # Custom split
-    python collect_yolo_training_data.py -s /data -o /out --split 0.8 0.1 0.1
+    python3 collect_yolo_training_data.py -s /data -o /out --split 0.8 0.1 0.1
 
     # Override class list (default is just "creature")
-    python collect_yolo_training_data.py -s /data -o /out --classes creature moth beetle
-
-X-AnyLabeling JSON format expected:
-    {
-        "shapes": [
-            {
-                "label": "creature",
-                "shape_type": "rectangle",   # or "polygon"
-                "points": [[x1, y1], [x2, y2]]
-            },
-            ...
-        ],
-        "imageWidth": 1920,
-        "imageHeight": 1080
-    }
-
-Existing YOLO folders are detected by the presence of sibling
-"images/" and "labels/" subdirectories (standard YOLO layout).
+    python3 collect_yolo_training_data.py -s /data -o /out --classes creature moth beetle
 """
 
 import json
@@ -44,13 +39,18 @@ import argparse
 from pathlib import Path
 from collections import defaultdict
 
+try:
+    from PIL import Image
+    PIL_AVAILABLE = True
+except ImportError:
+    PIL_AVAILABLE = False
+
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp"}
-
-DEFAULT_CLASSES = ["creature"]
+DEFAULT_CLASSES  = ["creature"]
 
 
 # ---------------------------------------------------------------------------
@@ -63,11 +63,8 @@ def find_yolo_dataset_roots(source_dir):
     formatted data, i.e. they have both an 'images' and a 'labels' child
     directory with matching files.
 
-    Returns a list of Path objects, each being a YOLO dataset root
-    (the parent of images/ and labels/).
-
-    We deliberately avoid descending *into* detected YOLO roots so their
-    internal train/val/test sub-splits don't get double-counted.
+    Returns a list of Path objects (the parent of images/ and labels/).
+    We avoid descending into detected roots so sub-splits aren't double-counted.
     """
     source_dir = Path(source_dir)
     yolo_roots = []
@@ -80,14 +77,12 @@ def find_yolo_dataset_roots(source_dir):
         if not labels_dir.is_dir():
             continue
 
-        # Make sure there are actually matching image+label pairs
         img_stems = {p.stem for p in candidate.rglob("*") if p.suffix.lower() in IMAGE_EXTENSIONS}
         lbl_stems = {p.stem for p in labels_dir.rglob("*.txt")}
         if not (img_stems & lbl_stems):
             continue
 
         root = candidate.parent
-        # Avoid nested roots (keep outermost)
         if any(str(root).startswith(str(r)) for r in yolo_root_set):
             continue
         yolo_roots.append(root)
@@ -98,10 +93,8 @@ def find_yolo_dataset_roots(source_dir):
 
 def collect_yolo_pairs_from_root(yolo_root):
     """
-    From a YOLO dataset root (contains images/ and labels/ dirs, possibly
-    with train/val/test sub-splits), collect all (image_path, label_path) pairs.
-
-    Returns list of (image_path, label_path) tuples.
+    From a YOLO dataset root collect all (image_path, label_path) pairs,
+    flattening any train/val/test sub-splits.
     """
     images_dir = yolo_root / "images"
     labels_dir = yolo_root / "labels"
@@ -110,7 +103,6 @@ def collect_yolo_pairs_from_root(yolo_root):
     for img_path in images_dir.rglob("*"):
         if img_path.suffix.lower() not in IMAGE_EXTENSIONS:
             continue
-        # Mirror the sub-path structure to find the label file
         rel = img_path.relative_to(images_dir)
         label_path = labels_dir / rel.with_suffix(".txt")
         if label_path.exists():
@@ -126,27 +118,25 @@ def collect_yolo_pairs_from_root(yolo_root):
 def find_anylabeling_pairs(source_dir, skip_dirs):
     """
     Recursively walk source_dir (excluding skip_dirs) for images that have
-    a sibling x-anylabeling .json file with at least one shape annotation.
-
-    skip_dirs: set of Path objects to exclude (i.e. detected YOLO roots).
-
-    Returns list of (image_path, json_path) tuples.
+    a sibling x-anylabeling .json file.
+    Empty-annotation JSONs are included as intentional background images.
+    _botdetection.json files are ignored.
     """
     source_dir = Path(source_dir)
     pairs = []
-    skipped_no_json = 0
-    skipped_in_yolo = 0
+    skipped_no_json  = 0
+    skipped_in_yolo  = 0
 
     for img_path in source_dir.rglob("*"):
         if img_path.suffix.lower() not in IMAGE_EXTENSIONS:
             continue
 
-        # Skip files that live inside an already-detected YOLO root
+        # Skip files inside already-detected YOLO roots
         if any(str(img_path).startswith(str(d)) for d in skip_dirs):
             skipped_in_yolo += 1
             continue
 
-        # Skip inference output files
+        # Skip inference output images
         if "_botdetection" in img_path.stem:
             continue
 
@@ -157,8 +147,7 @@ def find_anylabeling_pairs(source_dir, skip_dirs):
 
         try:
             with open(json_path, "r") as f:
-                data = json.load(f)
-            # Empty shapes = intentional background image, still include it
+                json.load(f)   # validate it parses; empty shapes is fine
         except (json.JSONDecodeError, KeyError):
             print(f"  [WARN] Could not parse JSON: {json_path}")
             continue
@@ -190,27 +179,20 @@ def collect_class_names_from_json(pairs):
 
 
 # ---------------------------------------------------------------------------
-# Conversion: x-anylabeling → YOLO
+# Conversion: x-anylabeling → YOLO OBB
 # ---------------------------------------------------------------------------
 
 def shape_to_yolo_line(shape, img_width, img_height, class_map):
     """
     Convert one x-anylabeling shape to a YOLO OBB label line.
 
-    YOLO OBB format:  class_id x1 y1 x2 y2 x3 y3 x4 y4  (all normalized 0-1)
+    YOLO OBB format: class_id x1 y1 x2 y2 x3 y3 x4 y4  (normalized 0-1)
 
-    x-anylabeling "rotation" shapes already provide 4 corner points in order,
-    so we normalize each point directly — no bounding-box collapsing needed.
+    x-anylabeling "rotation" shapes provide 4 corner points directly —
+    we normalize each point and write all 8 coordinates.
 
-    For "rectangle" shapes (axis-aligned, 4 points) we do the same: the 4
-    corners are already correct OBB corners with 0° rotation.
-
-    Any shape with exactly 4 points is handled this way.
-    Shapes with != 4 points (rare polygons, etc.) fall back to computing
-    the 4 corners of their axis-aligned bounding box, which gives a valid
-    but unrotated OBB — still better than discarding the annotation.
-
-    Returns None if the shape is invalid or label is not in class_map.
+    Shapes with != 4 points fall back to their axis-aligned bounding box
+    corners (valid 0°-rotation OBB).
     """
     label = shape.get("label", "").strip()
     if label not in class_map:
@@ -222,22 +204,19 @@ def shape_to_yolo_line(shape, img_width, img_height, class_map):
 
     try:
         if len(points) == 4:
-            # Direct OBB: normalize the 4 corners as-is
             coords = []
             for px, py in points:
-                nx = max(0.0, min(1.0, px / img_width))
-                ny = max(0.0, min(1.0, py / img_height))
-                coords.extend([nx, ny])
-
+                coords.extend([
+                    max(0.0, min(1.0, px / img_width)),
+                    max(0.0, min(1.0, py / img_height)),
+                ])
         else:
-            # Fallback: compute axis-aligned bounding box corners
             xs = [p[0] for p in points]
             ys = [p[1] for p in points]
             x1, x2 = min(xs), max(xs)
             y1, y2 = min(ys), max(ys)
             if (x2 - x1) <= 0 or (y2 - y1) <= 0:
                 return None
-            # 4 corners in order: top-left, top-right, bottom-right, bottom-left
             corners = [(x1, y1), (x2, y1), (x2, y2), (x1, y2)]
             coords = []
             for px, py in corners:
@@ -254,7 +233,7 @@ def shape_to_yolo_line(shape, img_width, img_height, class_map):
 
 
 def json_to_yolo_lines(json_path, class_map):
-    """Convert an x-anylabeling JSON to a list of YOLO label strings."""
+    """Convert an x-anylabeling JSON to a list of YOLO OBB label strings."""
     with open(json_path, "r") as f:
         data = json.load(f)
 
@@ -269,6 +248,31 @@ def json_to_yolo_lines(json_path, class_map):
         line for shape in data.get("shapes", [])
         if (line := shape_to_yolo_line(shape, img_width, img_height, class_map))
     ]
+
+
+# ---------------------------------------------------------------------------
+# Conversion: detection format → OBB format
+# ---------------------------------------------------------------------------
+
+def detect_label_to_obb(line):
+    """
+    Convert a 5-value regular YOLO detection line (class cx cy w h)
+    to a 9-value YOLO OBB line (class x1 y1 x2 y2 x3 y3 x4 y4)
+    by expanding the box into 4 axis-aligned corners.
+    No rotation information is lost because detection format has none.
+    """
+    parts = line.split()
+    cls = parts[0]
+    cx, cy, w, h = float(parts[1]), float(parts[2]), float(parts[3]), float(parts[4])
+    hw, hh = w / 2, h / 2
+    corners = [
+        cx - hw, cy - hh,  # top-left
+        cx + hw, cy - hh,  # top-right
+        cx + hw, cy + hh,  # bottom-right
+        cx - hw, cy + hh,  # bottom-left
+    ]
+    coords = [max(0.0, min(1.0, v)) for v in corners]
+    return f"{cls} " + " ".join(f"{v:.6f}" for v in coords)
 
 
 # ---------------------------------------------------------------------------
@@ -297,10 +301,7 @@ def split_items(items, train_ratio, val_ratio, test_ratio, seed):
 # ---------------------------------------------------------------------------
 
 def safe_dest_name(filename, dest_dir, parent_name):
-    """
-    Return a destination Path that doesn't collide with existing files.
-    If filename already exists, prefix with parent folder name.
-    """
+    """Return a destination Path that doesn't collide with existing files."""
     dest = dest_dir / filename
     if dest.exists():
         dest = dest_dir / f"{parent_name}__{filename}"
@@ -308,8 +309,7 @@ def safe_dest_name(filename, dest_dir, parent_name):
 
 
 def copy_anylabeling_pair(img_path, json_path, img_out_dir, label_out_dir, class_map, counts, bg_counts):
-    """Copy one x-anylabeling pair: convert JSON → YOLO txt, copy image.
-    Empty label files (background images) are counted separately in bg_counts."""
+    """Convert x-anylabeling JSON → YOLO OBB txt and copy image."""
     dest_img = safe_dest_name(img_path.name, img_out_dir, img_path.parent.name)
     shutil.copy2(img_path, dest_img)
 
@@ -324,38 +324,130 @@ def copy_anylabeling_pair(img_path, json_path, img_out_dir, label_out_dir, class
         for line in lines:
             counts[int(line.split()[0])] += 1
 
+    return dest_img, label_path
+
 
 def copy_yolo_pair(img_path, label_path, img_out_dir, label_out_dir, counts, bg_counts):
-    """Copy one existing YOLO (image, label) pair directly.
-    Empty label files (background images) are counted separately in bg_counts."""
+    """
+    Copy one existing YOLO pair, auto-converting any detection-format
+    (5-value) lines to OBB format (9-value).
+    """
     dest_img = safe_dest_name(img_path.name, img_out_dir, img_path.parent.name)
     shutil.copy2(img_path, dest_img)
 
     dest_lbl = label_out_dir / (dest_img.stem + ".txt")
-    shutil.copy2(label_path, dest_lbl)
+    converted_count = 0
+    out_lines = []
 
-    # Count annotations from the existing label file
-    has_annotations = False
     try:
         with open(label_path, "r") as f:
-            for line in f:
-                line = line.strip()
-                if line:
-                    counts[int(line.split()[0])] += 1
-                    has_annotations = True
-    except (ValueError, IndexError):
-        pass
+            raw_lines = f.readlines()
 
-    if not has_annotations:
+        for raw in raw_lines:
+            line = raw.strip()
+            if not line:
+                continue
+            parts = line.split()
+            if len(parts) == 5:
+                line = detect_label_to_obb(line)
+                converted_count += 1
+            elif len(parts) == 9:
+                pass  # already OBB
+            else:
+                print(f"  [WARN] Skipping unexpected label ({len(parts)} values): {label_path.name}")
+                continue
+            out_lines.append(line)
+            counts[int(line.split()[0])] += 1
+
+        if converted_count:
+            print(f"  [CONV] {label_path.name}: converted {converted_count} detection→OBB labels")
+
+    except (ValueError, IndexError) as e:
+        print(f"  [WARN] Could not read label file {label_path}: {e}")
+
+    with open(dest_lbl, "w") as f:
+        f.write("\n".join(out_lines))
+
+    if not out_lines:
         bg_counts["background"] += 1
 
+    return dest_img, dest_lbl
 
-def populate_split(split_name, anylabeling_pairs, yolo_pairs, output_dir, class_map, stats):
+
+# ---------------------------------------------------------------------------
+# OBB patch extraction for visual audit
+# ---------------------------------------------------------------------------
+
+def extract_obb_patches(img_path, label_path, patches_dir, class_names, padding=6):
+    """
+    Crop a patch for every OBB annotation in label_path and save to patches_dir.
+
+    Patch filenames are prefixed with the source image stem so any suspicious
+    crop can be traced straight back to its origin file:
+        <source_stem>__<index>_<classname>.jpg
+
+    The crop is an axis-aligned bounding box around the rotated corners
+    with a small padding so nothing is clipped at the edges.
+
+    Requires Pillow (pip install Pillow).
+    """
+    if not PIL_AVAILABLE:
+        return
+
+    try:
+        with open(label_path, "r") as f:
+            lines = [l.strip() for l in f if l.strip()]
+    except Exception:
+        return
+
+    if not lines:
+        return  # background image, nothing to crop
+
+    try:
+        img = Image.open(img_path).convert("RGB")
+    except Exception as e:
+        print(f"  [WARN] Could not open image for patching: {img_path.name}: {e}")
+        return
+
+    img_w, img_h = img.size
+    stem = img_path.stem
+
+    for idx, line in enumerate(lines):
+        parts = line.split()
+        if len(parts) != 9:
+            continue
+
+        class_id   = int(parts[0])
+        class_name = class_names[class_id] if class_id < len(class_names) else f"class{class_id}"
+
+        # Denormalize the 4 corner points
+        coords = [float(v) for v in parts[1:]]
+        xs = [coords[i]     * img_w for i in range(0, 8, 2)]
+        ys = [coords[i + 1] * img_h for i in range(0, 8, 2)]
+
+        # Axis-aligned bounding box around the rotated corners + padding
+        x1 = max(0,     int(min(xs)) - padding)
+        y1 = max(0,     int(min(ys)) - padding)
+        x2 = min(img_w, int(max(xs)) + padding)
+        y2 = min(img_h, int(max(ys)) + padding)
+
+        if x2 <= x1 or y2 <= y1:
+            continue
+
+        patch = img.crop((x1, y1, x2, y2))
+        patch_name = f"{stem}__{idx:04d}_{class_name}.jpg"
+        patch.save(patches_dir / patch_name, "JPEG", quality=90)
+
+
+# ---------------------------------------------------------------------------
+# Populate one split
+# ---------------------------------------------------------------------------
+
+def populate_split(split_name, anylabeling_pairs, yolo_pairs, output_dir,
+                   class_map, stats, patches_dir=None, class_names=None):
     """
     Write all pairs for one split (train/val/test) to the output directory.
-    anylabeling_pairs: list of (img_path, json_path)
-    yolo_pairs:        list of (img_path, label_path)
-    stats stores both annotation counts and background image counts per split.
+    If patches_dir is given, OBB crops are saved there for visual audit.
     """
     img_out_dir   = Path(output_dir) / "images" / split_name
     label_out_dir = Path(output_dir) / "labels" / split_name
@@ -366,10 +458,18 @@ def populate_split(split_name, anylabeling_pairs, yolo_pairs, output_dir, class_
     bg_counts = defaultdict(int)
 
     for img_path, json_path in anylabeling_pairs:
-        copy_anylabeling_pair(img_path, json_path, img_out_dir, label_out_dir, class_map, counts, bg_counts)
+        dest_img, dest_lbl = copy_anylabeling_pair(
+            img_path, json_path, img_out_dir, label_out_dir, class_map, counts, bg_counts
+        )
+        if patches_dir is not None:
+            extract_obb_patches(dest_img, dest_lbl, patches_dir, class_names or [])
 
     for img_path, label_path in yolo_pairs:
-        copy_yolo_pair(img_path, label_path, img_out_dir, label_out_dir, counts, bg_counts)
+        dest_img, dest_lbl = copy_yolo_pair(
+            img_path, label_path, img_out_dir, label_out_dir, counts, bg_counts
+        )
+        if patches_dir is not None:
+            extract_obb_patches(dest_img, dest_lbl, patches_dir, class_names or [])
 
     stats[split_name] = {"annotations": dict(counts), "background": bg_counts["background"]}
 
@@ -380,18 +480,9 @@ def populate_split(split_name, anylabeling_pairs, yolo_pairs, output_dir, class_
 
 def write_data_yaml(output_dir, class_names, has_test):
     """
-    Write data.yaml manually to guarantee correct formatting for YOLO OBB.
-    pyyaml with integer-keyed dicts produces malformed output (wrong indentation,
-    wrong key ordering), so we build the file as a plain string instead.
-
-    Correct format:
-        path: /abs/path
-        train: images/train
-        val: images/val
-        test: images/test   # only if has_test
-        nc: 1
-        names:
-          0: creature
+    Write data.yaml manually to guarantee correct YOLO OBB formatting.
+    pyyaml with integer-keyed dicts produces malformed indentation, so we
+    build the file as a plain string.
     """
     output_dir = Path(output_dir)
     lines = [
@@ -416,7 +507,7 @@ def write_data_yaml(output_dir, class_names, has_test):
 # Summary
 # ---------------------------------------------------------------------------
 
-def print_summary(output_dir, class_names, stats, yolo_roots, n_anylabeling):
+def print_summary(output_dir, class_names, stats, yolo_roots, n_anylabeling, patches_dir):
     print("\n" + "=" * 55)
     print("DATASET COLLECTION SUMMARY")
     print("=" * 55)
@@ -443,6 +534,10 @@ def print_summary(output_dir, class_names, stats, yolo_roots, n_anylabeling):
             print(f"  background (no annotations): {n_bg}")
 
     print(f"\nOutput: {output_dir}")
+    if patches_dir and Path(patches_dir).exists():
+        n_patches = len(list(Path(patches_dir).glob("*.jpg")))
+        print(f"Patches: {patches_dir}")
+        print(f"         {n_patches} crops saved — review before training to spot false positives!")
     print("=" * 55)
 
 
@@ -454,7 +549,7 @@ def main():
     parser = argparse.ArgumentParser(
         description=(
             "Collect x-anylabeling ground truth data AND existing YOLO datasets "
-            "from a source directory, merge them, and output a single YOLO dataset."
+            "from a source directory, merge them, and output a single YOLO OBB dataset."
         )
     )
     parser.add_argument("--source", "-s", required=True,
@@ -468,10 +563,16 @@ def main():
         help="Random seed for reproducible splits (default: 42)")
     parser.add_argument("--classes", nargs="+", default=None,
         help=(
-            "Class names in order (determines class IDs). "
-            f"Default: {DEFAULT_CLASSES}. "
-            "Labels not in this list are skipped. "
+            f"Class names in order. Default: {DEFAULT_CLASSES}. "
             "Example: --classes creature moth beetle"
+        ))
+    parser.add_argument("--patches", action="store_true", default=False,
+        help=(
+            "Export a cropped patch image for every OBB annotation to "
+            "<output>/patches/ for visual false-positive auditing. "
+            "Patches are named <source_stem>__<index>_<class>.jpg so any "
+            "suspicious crop can be traced back to its source image. "
+            "Requires Pillow (pip install Pillow)."
         ))
     args = parser.parse_args()
 
@@ -502,7 +603,7 @@ def main():
     # 2. Find x-anylabeling pairs (excluding YOLO roots)
     # ------------------------------------------------------------------
     print(f"\n[2/5] Scanning for x-anylabeling JSON pairs...")
-    skip_dirs = {r for r in yolo_roots}
+    skip_dirs = set(yolo_roots)
     anylabeling_pairs = find_anylabeling_pairs(source_dir, skip_dirs)
 
     # ------------------------------------------------------------------
@@ -529,7 +630,7 @@ def main():
         print(f"    {cid}: {name}")
 
     # ------------------------------------------------------------------
-    # 4. Split both pools and populate output
+    # 4. Split, copy, and optionally extract patches
     # ------------------------------------------------------------------
     print(f"\n[4/5] Splitting and copying files...")
 
@@ -542,11 +643,21 @@ def main():
     print(f"    val:   {len(al_val)   + len(yl_val)}")
     print(f"    test:  {len(al_test)  + len(yl_test)}")
 
+    patches_dir = None
+    if args.patches:
+        if not PIL_AVAILABLE:
+            print("\n  [WARN] --patches requested but Pillow is not installed.")
+            print("         Run: pip3 install Pillow")
+        else:
+            patches_dir = output_dir / "patches"
+            patches_dir.mkdir(parents=True, exist_ok=True)
+            print(f"\n  Patch crops will be saved to: {patches_dir}")
+
     stats = {}
-    populate_split("train", al_train, yl_train, output_dir, class_map, stats)
-    populate_split("val",   al_val,   yl_val,   output_dir, class_map, stats)
+    populate_split("train", al_train, yl_train, output_dir, class_map, stats, patches_dir, class_names)
+    populate_split("val",   al_val,   yl_val,   output_dir, class_map, stats, patches_dir, class_names)
     if al_test or yl_test:
-        populate_split("test", al_test, yl_test, output_dir, class_map, stats)
+        populate_split("test", al_test, yl_test, output_dir, class_map, stats, patches_dir, class_names)
 
     # ------------------------------------------------------------------
     # 5. Write data.yaml
@@ -557,7 +668,7 @@ def main():
     # ------------------------------------------------------------------
     # Summary
     # ------------------------------------------------------------------
-    print_summary(output_dir, class_names, stats, yolo_roots, len(anylabeling_pairs))
+    print_summary(output_dir, class_names, stats, yolo_roots, len(anylabeling_pairs), patches_dir)
 
 
 if __name__ == "__main__":
