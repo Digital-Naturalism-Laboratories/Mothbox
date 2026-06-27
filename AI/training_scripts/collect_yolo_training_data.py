@@ -433,9 +433,10 @@ def extract_obb_patches(img_path, label_path, patches_dir, class_names, padding=
 
         if x2 <= x1 or y2 <= y1:
             continue
-
+        
+        patch_w=abs(x1-x2)
         patch = img.crop((x1, y1, x2, y2))
-        patch_name = f"{stem}__{idx:04d}_{class_name}.jpg"
+        patch_name = f"{patch_w}_{stem}__{idx:04d}_{class_name}.jpg"
         patch.save(patches_dir / patch_name, "JPEG", quality=90)
 
 
