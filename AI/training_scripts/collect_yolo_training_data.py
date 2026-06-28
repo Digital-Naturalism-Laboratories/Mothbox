@@ -1,7 +1,7 @@
 """
 collect_yolo_training_data.py
 
-Recursively searches a source directory for:
+Recursively searches one or more source directories for:
   1. Images with matching x-anylabeling JSON ground truth files  → converted to YOLO OBB format
   2. Folders already in YOLO format (images/ + labels/ structure) → copied directly
      (detection-format labels with 5 values are auto-converted to OBB 9-value format)
@@ -13,15 +13,19 @@ Optionally exports a patch crop of every OBB annotation to a patches/ folder
 for quick visual false-positive auditing before training.
 
 Usage:
+    # Single source (original behaviour)
     python3 collect_yolo_training_data.py \
         --source /path/to/your/data \
         --output /path/to/yolo_dataset
 
+    # Multiple sources — just repeat --source (or -s) for each folder
     python3 collect_yolo_training_data.py \
-    --source /Users/automeris/Desktop/TrainingMac \
-    --output /Users/automeris/Desktop/2026_MOTHBOTYOLO \
-    --patches
-    
+        --source /Users/automeris/Desktop/TrainingMac \
+        --source /Volumes/ExtDrive/MoreTrainingData \
+        --source /home/user/extra_moths \
+        --output /Users/automeris/Desktop/2026_MOTHBOTYOLO \
+        --patches
+
     # With patch export for visual audit
     python3 collect_yolo_training_data.py -s /data -o /out --patches
 
@@ -508,10 +512,15 @@ def write_data_yaml(output_dir, class_names, has_test):
 # Summary
 # ---------------------------------------------------------------------------
 
-def print_summary(output_dir, class_names, stats, yolo_roots, n_anylabeling, patches_dir):
+def print_summary(output_dir, class_names, stats, yolo_roots, n_anylabeling,
+                  patches_dir, source_dirs):
     print("\n" + "=" * 55)
     print("DATASET COLLECTION SUMMARY")
     print("=" * 55)
+
+    print(f"\nSource directories searched ({len(source_dirs)}):")
+    for sd in source_dirs:
+        print(f"  {sd}")
 
     print(f"\nSources:")
     print(f"  x-anylabeling pairs converted : {n_anylabeling}")
@@ -550,11 +559,22 @@ def main():
     parser = argparse.ArgumentParser(
         description=(
             "Collect x-anylabeling ground truth data AND existing YOLO datasets "
-            "from a source directory, merge them, and output a single YOLO OBB dataset."
+            "from one or more source directories, merge them, and output a single "
+            "YOLO OBB dataset."
         )
     )
-    parser.add_argument("--source", "-s", required=True,
-        help="Root directory to search (searched recursively)")
+    parser.add_argument(
+        "--source", "-s",
+        required=True,
+        action="append",       # ← each -s/--source adds to a list
+        dest="sources",
+        metavar="DIR",
+        help=(
+            "Directory to search (searched recursively). "
+            "Repeat this flag for multiple source folders: "
+            "-s /path/one -s /path/two -s /path/three"
+        ),
+    )
     parser.add_argument("--output", "-o", required=True,
         help="Output directory for the merged YOLO dataset")
     parser.add_argument("--split", nargs=3, type=float, default=[0.8, 0.1, 0.1],
@@ -581,31 +601,57 @@ def main():
     if abs(train_r + val_r + test_r - 1.0) > 1e-6:
         raise ValueError(f"Split ratios must sum to 1.0, got {train_r + val_r + test_r:.4f}")
 
-    source_dir = Path(args.source)
+    # Resolve and validate all source directories
+    source_dirs = []
+    for raw in args.sources:
+        p = Path(raw)
+        if not p.is_dir():
+            raise ValueError(f"Source directory does not exist or is not a directory: {p}")
+        source_dirs.append(p.resolve())
+
+    # Deduplicate in case the user accidentally repeats a path
+    seen = set()
+    unique_source_dirs = []
+    for p in source_dirs:
+        if p not in seen:
+            seen.add(p)
+            unique_source_dirs.append(p)
+    source_dirs = unique_source_dirs
+
     output_dir = Path(args.output)
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # ------------------------------------------------------------------
-    # 1. Detect existing YOLO dataset roots
+    # 1. Detect existing YOLO dataset roots across ALL source directories
     # ------------------------------------------------------------------
-    print(f"\n[1/5] Scanning for existing YOLO-format folders in: {source_dir}")
-    yolo_roots = find_yolo_dataset_roots(source_dir)
-    print(f"  Found {len(yolo_roots)} YOLO dataset root(s):")
-    for r in yolo_roots:
-        print(f"    {r}")
+    print(f"\n[1/5] Scanning for existing YOLO-format folders across {len(source_dirs)} source(s)...")
+    all_yolo_roots = []
+    for sd in source_dirs:
+        print(f"  Searching: {sd}")
+        roots = find_yolo_dataset_roots(sd)
+        print(f"    Found {len(roots)} YOLO dataset root(s)")
+        for r in roots:
+            print(f"      {r}")
+        all_yolo_roots.extend(roots)
 
     all_yolo_pairs = []
-    for root in yolo_roots:
+    for root in all_yolo_roots:
         pairs = collect_yolo_pairs_from_root(root)
         print(f"  → {len(pairs)} labeled pairs from {root.name}/")
         all_yolo_pairs.extend(pairs)
 
     # ------------------------------------------------------------------
-    # 2. Find x-anylabeling pairs (excluding YOLO roots)
+    # 2. Find x-anylabeling pairs across ALL source directories
     # ------------------------------------------------------------------
-    print(f"\n[2/5] Scanning for x-anylabeling JSON pairs...")
-    skip_dirs = set(yolo_roots)
-    anylabeling_pairs = find_anylabeling_pairs(source_dir, skip_dirs)
+    print(f"\n[2/5] Scanning for x-anylabeling JSON pairs across {len(source_dirs)} source(s)...")
+    skip_dirs = set(all_yolo_roots)
+    all_anylabeling_pairs = []
+    for sd in source_dirs:
+        print(f"  Searching: {sd}")
+        pairs = find_anylabeling_pairs(sd, skip_dirs)
+        all_anylabeling_pairs.extend(pairs)
+
+    print(f"  Total x-anylabeling pairs across all sources: {len(all_anylabeling_pairs)}")
 
     # ------------------------------------------------------------------
     # 3. Resolve class names
@@ -614,8 +660,8 @@ def main():
     if args.classes:
         class_names = args.classes
         print(f"  Using manually specified classes: {class_names}")
-    elif anylabeling_pairs:
-        class_names = collect_class_names_from_json(anylabeling_pairs)
+    elif all_anylabeling_pairs:
+        class_names = collect_class_names_from_json(all_anylabeling_pairs)
         if not class_names:
             class_names = DEFAULT_CLASSES
             print(f"  No labels found in JSONs, defaulting to: {class_names}")
@@ -635,10 +681,10 @@ def main():
     # ------------------------------------------------------------------
     print(f"\n[4/5] Splitting and copying files...")
 
-    al_train, al_val, al_test = split_items(anylabeling_pairs, train_r, val_r, test_r, args.seed)
-    yl_train, yl_val, yl_test = split_items(all_yolo_pairs,    train_r, val_r, test_r, args.seed)
+    al_train, al_val, al_test = split_items(all_anylabeling_pairs, train_r, val_r, test_r, args.seed)
+    yl_train, yl_val, yl_test = split_items(all_yolo_pairs,        train_r, val_r, test_r, args.seed)
 
-    total = len(anylabeling_pairs) + len(all_yolo_pairs)
+    total = len(all_anylabeling_pairs) + len(all_yolo_pairs)
     print(f"  Total images: {total}")
     print(f"    train: {len(al_train) + len(yl_train)}")
     print(f"    val:   {len(al_val)   + len(yl_val)}")
@@ -669,7 +715,8 @@ def main():
     # ------------------------------------------------------------------
     # Summary
     # ------------------------------------------------------------------
-    print_summary(output_dir, class_names, stats, yolo_roots, len(anylabeling_pairs), patches_dir)
+    print_summary(output_dir, class_names, stats, all_yolo_roots,
+                  len(all_anylabeling_pairs), patches_dir, source_dirs)
 
 
 if __name__ == "__main__":
