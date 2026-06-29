@@ -21,7 +21,7 @@ Usage:
     # Multiple sources — just repeat --source (or -s) for each folder
     python3 collect_yolo_training_data.py \
         --source /Users/automeris/Desktop/TrainingMac \
-        --source /Volumes/ExtDrive/MoreTrainingData \
+        --source '/Users/automeris/Desktop/MB Projects' \
         --source /home/user/extra_moths \
         --output /Users/automeris/Desktop/2026_MOTHBOTYOLO \
         --patches
