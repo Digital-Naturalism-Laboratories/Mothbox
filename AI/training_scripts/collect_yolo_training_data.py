@@ -43,6 +43,7 @@ import json
 import shutil
 import random
 import argparse
+import time
 from pathlib import Path
 from collections import defaultdict
 
@@ -53,12 +54,88 @@ try:
 except ImportError:
     CV2_AVAILABLE = False
 
+try:
+    from PIL import Image
+    PIL_AVAILABLE = True
+except ImportError:
+    PIL_AVAILABLE = False
+
 # ---------------------------------------------------------------------------
 # Constants
 # ---------------------------------------------------------------------------
 
 IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".tiff", ".tif", ".webp"}
 DEFAULT_CLASSES  = ["creature"]
+
+
+# ---------------------------------------------------------------------------
+# Image validity check
+# ---------------------------------------------------------------------------
+
+def is_valid_image(img_path):
+    """
+    Check whether an image file is readable and not corrupt/truncated.
+
+    Uses PIL's im.load() (full pixel decode), NOT just im.verify() or
+    cv2.imread(). Both of those are unreliable for this: verify() only
+    checks file structure without decoding pixels, and cv2.imread() will
+    silently "succeed" on a truncated JPEG — filling missing data with
+    zeros and only printing a libjpeg warning rather than failing — which
+    is exactly the false-negative case that slipped through originally.
+    load() is the only check that reliably catches mid-scan truncation
+    ("premature end of data segment").
+
+    Falls back to a basic cv2.imread check if PIL is unavailable (less
+    reliable, but better than no check at all).
+
+    Returns True if the image is valid, False if corrupt/unreadable/empty.
+    """
+    p = Path(img_path)
+    if not p.is_file() or p.stat().st_size == 0:
+        return False
+
+    if PIL_AVAILABLE:
+        try:
+            with Image.open(img_path) as im:
+                im.load()
+            return True
+        except Exception:
+            return False
+
+    if CV2_AVAILABLE:
+        try:
+            img = cv2.imread(str(img_path))
+            return img is not None and img.size > 0
+        except Exception:
+            return False
+
+    # Neither PIL nor cv2 available — can't check, assume valid
+    return True
+
+
+def filter_valid_images(img_paths, max_workers=8):
+    """
+    Check a list of image paths for validity in parallel using a thread pool.
+    PIL's im.load() releases the GIL during JPEG decoding, so threading gives
+    a real speedup here despite Python's GIL (this is the same reason
+    threading works well for other C-extension-heavy decode/IO workloads).
+
+    Returns (valid_paths_set, corrupt_count).
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    valid = set()
+    corrupt_count = 0
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        results = executor.map(is_valid_image, img_paths)
+        for img_path, ok in zip(img_paths, results):
+            if ok:
+                valid.add(img_path)
+            else:
+                corrupt_count += 1
+
+    return valid, corrupt_count
 
 
 # ---------------------------------------------------------------------------
@@ -103,18 +180,29 @@ def collect_yolo_pairs_from_root(yolo_root):
     """
     From a YOLO dataset root collect all (image_path, label_path) pairs,
     flattening any train/val/test sub-splits.
+
+    Corrupt/unreadable images are detected (in parallel) and excluded.
     """
     images_dir = yolo_root / "images"
     labels_dir = yolo_root / "labels"
-    pairs = []
 
+    candidates = []
     for img_path in images_dir.rglob("*"):
         if img_path.suffix.lower() not in IMAGE_EXTENSIONS:
             continue
         rel = img_path.relative_to(images_dir)
         label_path = labels_dir / rel.with_suffix(".txt")
         if label_path.exists():
-            pairs.append((img_path, label_path))
+            candidates.append((img_path, label_path))
+
+    if not candidates:
+        return []
+
+    valid_imgs, skipped_corrupt = filter_valid_images([c[0] for c in candidates])
+    pairs = [(img, lbl) for img, lbl in candidates if img in valid_imgs]
+
+    if skipped_corrupt:
+        print(f"  [WARN] Skipped {skipped_corrupt} corrupt/unreadable image(s) in {yolo_root.name}/")
 
     return pairs
 
@@ -129,9 +217,10 @@ def find_anylabeling_pairs(source_dir, skip_dirs):
     a sibling x-anylabeling .json file.
     Empty-annotation JSONs are included as intentional background images.
     _botdetection.json files are ignored.
+    Corrupt/unreadable images are detected (in parallel) and excluded.
     """
     source_dir = Path(source_dir)
-    pairs = []
+    candidates = []
     skipped_no_json  = 0
     skipped_in_yolo  = 0
 
@@ -160,12 +249,20 @@ def find_anylabeling_pairs(source_dir, skip_dirs):
             print(f"  [WARN] Could not parse JSON: {json_path}")
             continue
 
-        pairs.append((img_path, json_path))
+        candidates.append((img_path, json_path))
+
+    skipped_corrupt = 0
+    pairs = candidates
+    if candidates:
+        valid_imgs, skipped_corrupt = filter_valid_images([c[0] for c in candidates])
+        pairs = [(img, j) for img, j in candidates if img in valid_imgs]
 
     print(f"  Found {len(pairs)} x-anylabeling labeled pairs (includes background images)")
     print(f"  Skipped {skipped_no_json} images with no JSON")
     if skipped_in_yolo:
         print(f"  Skipped {skipped_in_yolo} images already inside YOLO folders")
+    if skipped_corrupt:
+        print(f"  [WARN] Skipped {skipped_corrupt} corrupt/unreadable image(s)")
     return pairs
 
 
@@ -302,6 +399,187 @@ def split_items(items, train_ratio, val_ratio, test_ratio, seed):
         shuffled[n_train:n_train + n_val],
         shuffled[n_train + n_val:],
     )
+
+
+# ---------------------------------------------------------------------------
+# Near-duplicate detection (perceptual hashing)
+# ---------------------------------------------------------------------------
+
+def get_image_path_from_pair(pair):
+    """
+    Pairs come in two shapes depending on source:
+      x-anylabeling pairs: (img_path, json_path)
+      existing YOLO pairs: (img_path, label_path)
+    In both cases the image is element 0.
+    """
+    return pair[0]
+
+
+def compute_phash(img_path, hash_size=8):
+    """
+    Compute a perceptual hash (pHash) for an image using OpenCV + numpy,
+    avoiding a dependency on the `imagehash` package.
+
+    Algorithm (standard pHash):
+      1. Resize to (hash_size*4) x (hash_size*4), grayscale
+      2. Compute 2D DCT
+      3. Keep the top-left hash_size x hash_size low-frequency coefficients
+      4. Threshold against the median to get a binary hash
+
+    Returns a numpy boolean array of shape (hash_size*hash_size,), or None
+    if the image can't be read, is corrupt/truncated, or any other error
+    occurs while processing it. Corrupt images are never fatal — the caller
+    treats a None hash as "always keep this image" so a bad JPEG just gets
+    skipped from dedup rather than crashing the run.
+    """
+    try:
+        img = cv2.imread(str(img_path), cv2.IMREAD_GRAYSCALE)
+        if img is None or img.size == 0:
+            return None
+
+        size = hash_size * 4
+        img = cv2.resize(img, (size, size), interpolation=cv2.INTER_AREA).astype(np.float32)
+
+        dct = cv2.dct(img)
+        dct_low = dct[:hash_size, :hash_size]
+
+        median = np.median(dct_low)
+        return (dct_low > median).flatten()
+
+    except Exception:
+        # Any decode error (truncated/corrupt JPEG, unreadable file, etc.)
+        # — treat as un-hashable rather than letting it kill the whole run.
+        return None
+
+
+def hamming_distance(hash_a, hash_b):
+    """Number of differing bits between two boolean hash arrays."""
+    return int(np.count_nonzero(hash_a != hash_b))
+
+
+def _format_eta(seconds):
+    """Human-readable ETA string, e.g. '2h 4m', '3m 12s', '45s'."""
+    seconds = int(seconds)
+    h, rem = divmod(seconds, 3600)
+    m, s = divmod(rem, 60)
+    if h:
+        return f"{h}h {m}m"
+    if m:
+        return f"{m}m {s}s"
+    return f"{s}s"
+
+
+def compute_phashes_parallel(img_paths, hash_size=8, max_workers=8, report_every=200):
+    """
+    Compute perceptual hashes for a list of images in parallel, printing
+    periodic progress (count, rate, ETA) since hashing thousands of
+    full-resolution field photos can take several minutes.
+
+    Like filter_valid_images, this uses a thread pool — cv2's image decode
+    releases the GIL, so threading gives a real speedup despite Python's GIL.
+
+    Returns a list of hashes (or None for unhashable images) in the same
+    order as img_paths.
+    """
+    from concurrent.futures import ThreadPoolExecutor
+
+    n = len(img_paths)
+    hashes = [None] * n
+    start = time.monotonic()
+    done = 0
+
+    with ThreadPoolExecutor(max_workers=max_workers) as executor:
+        from concurrent.futures import as_completed
+        futures = {executor.submit(compute_phash, p, hash_size): i for i, p in enumerate(img_paths)}
+        for future in as_completed(futures):
+            idx = futures[future]
+            try:
+                hashes[idx] = future.result()
+            except Exception:
+                hashes[idx] = None
+            done += 1
+            if done % report_every == 0 or done == n:
+                elapsed = time.monotonic() - start
+                rate = done / elapsed if elapsed > 0 else 0
+                remaining = n - done
+                eta = remaining / rate if rate > 0 else 0
+                print(f"    Hashed {done}/{n} ({rate:.0f} img/s, ETA {_format_eta(eta)})")
+
+    return hashes
+
+
+def deduplicate_pairs(pairs, source_label, threshold=5, hash_size=8, max_workers=8):
+    """
+    Cluster near-identical images using perceptual hashing and keep only one
+    representative per cluster.
+
+    threshold: max Hamming distance (out of hash_size^2 bits) for two images
+               to be considered near-duplicates. Lower = stricter (only near-
+               exact matches merge). 5 is a reasonable starting point for an
+               8x8 hash (64 bits total) — catches near-identical frames from
+               burst/sequence shots while leaving genuinely different scenes
+               untouched.
+
+    Clustering approach: images are compared against cluster representatives
+    only (not all-pairs), so this runs in O(n * num_clusters) rather than
+    O(n^2). Within a folder of mostly-similar sequential shots this stays fast.
+
+    The single image with the LOWEST index (i.e. encountered first — typically
+    alphabetical/timestamp order) is kept as the cluster representative, since
+    the first image in a burst is usually as representative as any other.
+
+    Hashing runs in parallel with periodic progress output, since this step
+    can take several minutes on large datasets.
+
+    Returns (kept_pairs, num_removed).
+    """
+    if not CV2_AVAILABLE:
+        print(f"  [WARN] --dedupe requested but opencv-python is not installed; skipping dedup for {source_label}.")
+        return pairs, 0
+
+    if not pairs:
+        return pairs, 0
+
+    print(f"  Hashing {len(pairs)} images for dedup ({source_label})...")
+
+    img_paths = [get_image_path_from_pair(pair) for pair in pairs]
+    hashes = compute_phashes_parallel(img_paths, hash_size=hash_size, max_workers=max_workers)
+    valid_pairs = pairs
+
+    corrupt_count = sum(1 for h in hashes if h is None)
+    if corrupt_count:
+        print(f"  [WARN] {corrupt_count} image(s) could not be hashed (corrupt/unreadable) "
+              f"and were kept unconditionally (no dedup applied to them).")
+
+    # Cluster: compare each image against existing cluster representatives only
+    cluster_reps = []       # list of (hash, kept_pair_index_in_kept_list)
+    kept_pairs = []
+    removed = 0
+
+    for pair, h in zip(valid_pairs, hashes):
+        if h is None:
+            # Could not hash — always keep
+            kept_pairs.append(pair)
+            continue
+
+        matched = False
+        for rep_hash in cluster_reps:
+            if hamming_distance(h, rep_hash) <= threshold:
+                matched = True
+                break
+
+        if matched:
+            removed += 1
+        else:
+            cluster_reps.append(h)
+            kept_pairs.append(pair)
+
+    if removed:
+        print(f"  [DEDUPE] {source_label}: removed {removed} near-duplicate image(s), kept {len(kept_pairs)}")
+    else:
+        print(f"  [DEDUPE] {source_label}: no near-duplicates found ({len(kept_pairs)} images kept)")
+
+    return kept_pairs, removed
 
 
 # ---------------------------------------------------------------------------
@@ -632,6 +910,25 @@ def main():
             "warpAffine technique as detect.py. "
             "Requires opencv-python and numpy (pip install opencv-python numpy)."
         ))
+    parser.add_argument("--dedupe", action="store_true", default=False,
+        help=(
+            "Remove near-duplicate images using perceptual hashing before "
+            "splitting into train/val/test. Useful when a source folder "
+            "contains burst/sequence shots of the same creature in nearly "
+            "the same position — keeping all of them both wastes training "
+            "time and risks leaking near-identical images across the "
+            "train/val split, which inflates validation metrics. "
+            "Deduplication runs separately per source-and-type group (each "
+            "x-anylabeling source folder, each YOLO root) so unrelated "
+            "folders are never compared against each other. "
+            "Requires opencv-python and numpy."
+        ))
+    parser.add_argument("--dedupe-threshold", type=int, default=5,
+        help=(
+            "Max perceptual-hash Hamming distance (0-64) for two images to "
+            "be considered near-duplicates when --dedupe is set. Lower = "
+            "stricter (only near-exact frames merge). Default: 5."
+        ))
     args = parser.parse_args()
 
     train_r, val_r, test_r = args.split
@@ -712,6 +1009,48 @@ def main():
     class_map = {name: i for i, name in enumerate(class_names)}
     for name, cid in class_map.items():
         print(f"    {cid}: {name}")
+
+    # ------------------------------------------------------------------
+    # 3.5. Optional deduplication (per source group, BEFORE splitting)
+    # ------------------------------------------------------------------
+    if args.dedupe:
+        print(f"\n[3.5/5] Deduplicating near-identical images (threshold={args.dedupe_threshold})...")
+        print("  Note: dedup runs separately per source group so unrelated")
+        print("        folders/datasets are never compared against each other.")
+
+        total_removed = 0
+
+        # Dedup YOLO pairs per-root (each pre-existing YOLO dataset is its own group)
+        deduped_yolo_pairs = []
+        pairs_by_root = defaultdict(list)
+        for img_path, label_path in all_yolo_pairs:
+            # Find which root this pair came from by matching the label_path prefix
+            for root in all_yolo_roots:
+                if str(label_path).startswith(str(root)):
+                    pairs_by_root[root].append((img_path, label_path))
+                    break
+        for root, pairs in pairs_by_root.items():
+            kept, removed = deduplicate_pairs(pairs, f"YOLO root: {root.name}", threshold=args.dedupe_threshold)
+            deduped_yolo_pairs.extend(kept)
+            total_removed += removed
+        all_yolo_pairs = deduped_yolo_pairs
+
+        # Dedup x-anylabeling pairs per top-level source directory
+        deduped_anylabeling_pairs = []
+        pairs_by_source = defaultdict(list)
+        for img_path, json_path in all_anylabeling_pairs:
+            for sd in source_dirs:
+                if str(img_path).startswith(str(sd)):
+                    pairs_by_source[sd].append((img_path, json_path))
+                    break
+        for sd, pairs in pairs_by_source.items():
+            kept, removed = deduplicate_pairs(pairs, f"source: {sd.name}", threshold=args.dedupe_threshold)
+            deduped_anylabeling_pairs.extend(kept)
+            total_removed += removed
+        all_anylabeling_pairs = deduped_anylabeling_pairs
+
+        print(f"\n  Total removed across all groups: {total_removed}")
+        print(f"  Remaining: {len(all_anylabeling_pairs) + len(all_yolo_pairs)} images")
 
     # ------------------------------------------------------------------
     # 4. Split, copy, and optionally extract patches
