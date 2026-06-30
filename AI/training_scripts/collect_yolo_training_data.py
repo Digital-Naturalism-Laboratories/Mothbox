@@ -9,8 +9,11 @@ Recursively searches one or more source directories for:
 All data is merged and organized into a single YOLO-compatible dataset folder,
 then split into train/val/test with a data.yaml generated automatically.
 
-Optionally exports a patch crop of every OBB annotation to a patches/ folder
-for quick visual false-positive auditing before training.
+Optionally exports a TIGHTLY-ROTATED patch crop of every OBB annotation to a
+patches/ folder for quick visual false-positive auditing before training.
+This uses the same cv2.minAreaRect + warpAffine technique as detect.py's
+crop_rect(), so patches look consistent with the bot-detection thumbnails
+reviewers already use.
 
 Usage:
     # Single source (original behaviour)
@@ -44,10 +47,11 @@ from pathlib import Path
 from collections import defaultdict
 
 try:
-    from PIL import Image
-    PIL_AVAILABLE = True
+    import cv2
+    import numpy as np
+    CV2_AVAILABLE = True
 except ImportError:
-    PIL_AVAILABLE = False
+    CV2_AVAILABLE = False
 
 # ---------------------------------------------------------------------------
 # Constants
@@ -379,23 +383,47 @@ def copy_yolo_pair(img_path, label_path, img_out_dir, label_out_dir, counts, bg_
 
 
 # ---------------------------------------------------------------------------
-# OBB patch extraction for visual audit
+# OBB patch extraction for visual audit (TIGHTLY ROTATED crops)
 # ---------------------------------------------------------------------------
 
-def extract_obb_patches(img_path, label_path, patches_dir, class_names, padding=6):
+def crop_rotated_rect(img, rect, interpolation=cv2.INTER_LINEAR):
     """
-    Crop a patch for every OBB annotation in label_path and save to patches_dir.
+    Crop a tightly-rotated patch from img given an OpenCV minAreaRect.
 
-    Patch filenames are prefixed with the source image stem so any suspicious
-    crop can be traced straight back to its origin file:
-        <source_stem>__<index>_<classname>.jpg
+    Matches the exact technique used in detect.py's crop_rect():
+      1. Rotate the WHOLE image so the box becomes axis-aligned
+         (cv2.getRotationMatrix2D + cv2.warpAffine)
+      2. Crop precisely to the box size, no padding
+         (cv2.getRectSubPix)
 
-    The crop is an axis-aligned bounding box around the rotated corners
-    with a small padding so nothing is clipped at the edges.
-
-    Requires Pillow (pip install Pillow).
+    This produces a tight rotated crop — the creature fills the patch
+    with no extra background corners, matching what detect.py generates
+    for bot-detection thumbnails.
     """
-    if not PIL_AVAILABLE:
+    center, size, angle = rect[0], rect[1], rect[2]
+    center, size = tuple(map(int, center)), tuple(map(int, size))
+    height, width = img.shape[0], img.shape[1]
+    M = cv2.getRotationMatrix2D(center, angle, 1)
+    img_rot = cv2.warpAffine(img, M, (width, height), flags=interpolation)
+    img_crop = cv2.getRectSubPix(img_rot, size, center)
+    return img_crop
+
+
+def extract_obb_patches(img_path, label_path, patches_dir, class_names):
+    """
+    Crop a tightly-ROTATED patch for every OBB annotation in label_path and
+    save to patches_dir, using the same cv2.minAreaRect + warpAffine technique
+    as detect.py's crop_rect(), so training-data patches look consistent with
+    the bot-detection thumbnails reviewers already use.
+
+    Patch filenames are prefixed with the patch width and the source image
+    stem so any suspicious crop can be traced straight back to its origin
+    file, and patches can be sorted/filtered by size:
+        <patch_width>_<source_stem>__<index>_<classname>.jpg
+
+    Requires opencv-python and numpy (pip install opencv-python numpy).
+    """
+    if not CV2_AVAILABLE:
         return
 
     try:
@@ -407,13 +435,12 @@ def extract_obb_patches(img_path, label_path, patches_dir, class_names, padding=
     if not lines:
         return  # background image, nothing to crop
 
-    try:
-        img = Image.open(img_path).convert("RGB")
-    except Exception as e:
-        print(f"  [WARN] Could not open image for patching: {img_path.name}: {e}")
+    img = cv2.imread(str(img_path))
+    if img is None:
+        print(f"  [WARN] Could not open image for patching: {img_path.name}")
         return
 
-    img_w, img_h = img.size
+    img_h, img_w = img.shape[0], img.shape[1]
     stem = img_path.stem
 
     for idx, line in enumerate(lines):
@@ -424,24 +451,31 @@ def extract_obb_patches(img_path, label_path, patches_dir, class_names, padding=
         class_id   = int(parts[0])
         class_name = class_names[class_id] if class_id < len(class_names) else f"class{class_id}"
 
-        # Denormalize the 4 corner points
+        # Denormalize the 4 corner points into pixel coordinates
         coords = [float(v) for v in parts[1:]]
-        xs = [coords[i]     * img_w for i in range(0, 8, 2)]
-        ys = [coords[i + 1] * img_h for i in range(0, 8, 2)]
+        pts = np.array(
+            [[coords[i] * img_w, coords[i + 1] * img_h] for i in range(0, 8, 2)],
+            dtype=np.float32,
+        ).reshape((-1, 1, 2))
 
-        # Axis-aligned bounding box around the rotated corners + padding
-        x1 = max(0,     int(min(xs)) - padding)
-        y1 = max(0,     int(min(ys)) - padding)
-        x2 = min(img_w, int(max(xs)) + padding)
-        y2 = min(img_h, int(max(ys)) + padding)
-
-        if x2 <= x1 or y2 <= y1:
+        # Same approach as detect.py: minAreaRect -> rotate -> crop
+        rect = cv2.minAreaRect(pts)
+        size = rect[1]
+        if size[0] <= 0 or size[1] <= 0:
             continue
-        
-        patch_w=abs(x1-x2)
-        patch = img.crop((x1, y1, x2, y2))
+
+        try:
+            patch = crop_rotated_rect(img, rect)
+        except Exception as e:
+            print(f"  [WARN] Could not crop patch {idx} from {img_path.name}: {e}")
+            continue
+
+        if patch is None or patch.size == 0:
+            continue
+
+        patch_w = patch.shape[1]
         patch_name = f"{patch_w}_{stem}__{idx:04d}_{class_name}.jpg"
-        patch.save(patches_dir / patch_name, "JPEG", quality=90)
+        cv2.imwrite(str(patches_dir / patch_name), patch, [cv2.IMWRITE_JPEG_QUALITY, 90])
 
 
 # ---------------------------------------------------------------------------
@@ -589,11 +623,14 @@ def main():
         ))
     parser.add_argument("--patches", action="store_true", default=False,
         help=(
-            "Export a cropped patch image for every OBB annotation to "
-            "<output>/patches/ for visual false-positive auditing. "
-            "Patches are named <source_stem>__<index>_<class>.jpg so any "
-            "suspicious crop can be traced back to its source image. "
-            "Requires Pillow (pip install Pillow)."
+            "Export a tightly-ROTATED cropped patch image for every OBB "
+            "annotation to <output>/patches/ for visual false-positive "
+            "auditing. Patches are named "
+            "<patch_width>_<source_stem>__<index>_<class>.jpg so any "
+            "suspicious crop can be traced back to its source image and "
+            "sorted/filtered by size. Uses the same cv2.minAreaRect + "
+            "warpAffine technique as detect.py. "
+            "Requires opencv-python and numpy (pip install opencv-python numpy)."
         ))
     args = parser.parse_args()
 
@@ -692,9 +729,9 @@ def main():
 
     patches_dir = None
     if args.patches:
-        if not PIL_AVAILABLE:
-            print("\n  [WARN] --patches requested but Pillow is not installed.")
-            print("         Run: pip3 install Pillow")
+        if not CV2_AVAILABLE:
+            print("\n  [WARN] --patches requested but opencv-python is not installed.")
+            print("         Run: pip3 install opencv-python numpy")
         else:
             patches_dir = output_dir / "patches"
             patches_dir.mkdir(parents=True, exist_ok=True)
