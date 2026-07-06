@@ -9,7 +9,7 @@ nav_order: 2
 
 To run Mothbot Classify, you just need to go to this special link
 
-[https://mothbot-classify.vercel.app](https://mothbot-classify.vercel.app)
+[https://dev-classify.mothbox.org/](https://dev-classify.mothbox.org/)
 
 The app will still run locally on your computer (nothing gets uploaded to the internet), but it runs in your browser window!
 
