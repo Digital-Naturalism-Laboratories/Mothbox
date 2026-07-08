@@ -38,6 +38,7 @@ python3 train_yolo_obb.py --data /Users/automeris/Desktop/2026_MOTHBOTYOLO/data.
 """
 
 import argparse
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -73,6 +74,116 @@ def detect_device():
     print("[INFO] No GPU detected — using CPU (training will be slow)")
     print("       Consider reducing --imgsz and --batch for faster iteration")
     return "cpu"
+
+
+# ---------------------------------------------------------------------------
+# Dataset integrity scan
+# ---------------------------------------------------------------------------
+
+def scan_dataset_for_corrupt_images(data_yaml: Path) -> int:
+    """
+    Decode every image using cv2 (the same loader YOLO uses internally).
+    Libjpeg writes "Corrupt JPEG data" warnings directly to C-level stderr,
+    not Python exceptions — so we redirect fd 2 to a temp file per image to
+    catch them. PIL misses these because it tolerates truncated scans that
+    libjpeg only warns about.
+    Corrupt images and their paired label files are moved to a quarantine
+    folder. Returns the number moved.
+    """
+    import os
+    import tempfile
+    import yaml
+
+    try:
+        import cv2
+    except ImportError:
+        print("[WARN] opencv-python (cv2) not found — skipping corruption scan.")
+        return 0
+
+    with open(data_yaml) as f:
+        cfg = yaml.safe_load(f)
+
+    dataset_root = data_yaml.parent
+    if "path" in cfg:
+        dataset_root = Path(cfg["path"])
+
+    splits = {k: cfg[k] for k in ("train", "val", "test") if k in cfg}
+    if not splits:
+        print("[WARN] No train/val/test splits found in data.yaml — skipping scan.")
+        return 0
+
+    image_paths = []
+    for split_path in splits.values():
+        img_dir = dataset_root / split_path
+        if img_dir.is_dir():
+            for ext in ("*.jpg", "*.jpeg", "*.png", "*.JPG", "*.JPEG", "*.PNG"):
+                image_paths.extend(img_dir.glob(ext))
+        else:
+            print(f"[WARN] Image directory not found: {img_dir}")
+
+    if not image_paths:
+        print("[INFO] No images found to scan.")
+        return 0
+
+    print(f"\n[INFO] Pre-scanning {len(image_paths)} images for corruption "
+          f"(using cv2 + libjpeg stderr capture)...")
+
+    # Reuse a single temp file; redirect C-level stderr into it per image
+    tmp_fd, tmp_path = tempfile.mkstemp(suffix=".txt")
+    os.close(tmp_fd)
+
+    corrupt = []
+    try:
+        for i, path in enumerate(image_paths, 1):
+            if i % 200 == 0 or i == len(image_paths):
+                print(f"  Scanned {i}/{len(image_paths)}...{' ' * 10}", end="\r")
+
+            # Truncate the capture file
+            cap_fd = os.open(tmp_path, os.O_WRONLY | os.O_TRUNC)
+            old_stderr = os.dup(2)
+            os.dup2(cap_fd, 2)
+            os.close(cap_fd)
+
+            try:
+                img = cv2.imread(str(path))
+            finally:
+                sys.stdout.flush()
+                os.dup2(old_stderr, 2)
+                os.close(old_stderr)
+
+            with open(tmp_path) as f:
+                stderr_out = f.read().strip()
+
+            if img is None:
+                corrupt.append((path, "cv2 failed to decode (returned None)"))
+            elif stderr_out:
+                corrupt.append((path, stderr_out[:120]))
+    finally:
+        os.unlink(tmp_path)
+
+    print(f"  Scanned {len(image_paths)} images.{' ' * 30}")
+
+    if not corrupt:
+        print("[INFO] All images OK — dataset looks clean.")
+        return 0
+
+    quarantine_dir = dataset_root / "quarantine"
+    quarantine_dir.mkdir(exist_ok=True)
+    print(f"\n[WARN] Found {len(corrupt)} corrupt image(s). Moving to: {quarantine_dir}")
+
+    for img_path, reason in corrupt:
+        shutil.move(str(img_path), str(quarantine_dir / img_path.name))
+
+        # Labels mirror the images/ directory structure
+        label_path = Path(str(img_path).replace("/images/", "/labels/")).with_suffix(".txt")
+        if label_path.exists():
+            shutil.move(str(label_path), str(quarantine_dir / label_path.name))
+
+        print(f"  Quarantined: {img_path.name}  — {reason[:100]}")
+
+    print(f"\n[INFO] {len(corrupt)} file(s) quarantined. Training will skip them.")
+    print(f"       To restore, move files back from: {quarantine_dir}")
+    return len(corrupt)
 
 
 # ---------------------------------------------------------------------------
@@ -124,6 +235,12 @@ def run_training(args):
         print(f"\n[ERROR] data.yaml not found: {data_yaml}")
         print("        Run collect_yolo_training_data.py first to build your dataset.")
         sys.exit(1)
+
+    # Corruption scan
+    if not args.skip_scan:
+        scan_dataset_for_corrupt_images(data_yaml)
+    else:
+        print("[INFO] Skipping image corruption scan (--skip-scan).")
 
     # Device
     device = args.device if args.device else detect_device()
@@ -346,6 +463,15 @@ def main():
             "Resume training. Without a path, resumes from "
             "runs/obb/train/weights/last.pt. "
             "Pass an explicit .pt path to resume from a specific checkpoint."
+        )
+    )
+
+    # Scan
+    parser.add_argument(
+        "--skip-scan", action="store_true", dest="skip_scan",
+        help=(
+            "Skip the pre-training corruption scan. "
+            "Use if your dataset is known-clean and you want to start immediately."
         )
     )
 
