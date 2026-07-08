@@ -25,8 +25,9 @@ Usage:
     python3 collect_yolo_training_data.py \
         --source /Users/automeris/Desktop/TrainingMac \
         --source '/Users/automeris/Desktop/MB Projects' \
-        --source /home/user/extra_moths \
-        --output /Users/automeris/Desktop/2026_MOTHBOTYOLO \
+        --source /Users/automeris/Desktop/Training2  \
+        --source /Users/automeris/Desktop/2026_MOTHBOTYOLO_T_FullImageHash  \
+        --output /Users/automeris/Desktop/2026_MOTHBOTYOLO_FULL \
         --patches
 
     # With patch export for visual audit
