@@ -6,10 +6,11 @@ nav_order: 8
 has_children: true
 permalink: /docs/processing/classify
 ---
-During the classification step, we want to take automatically organized insect data and validate them with humans as quickly and accuratley as possible.
-We have built two methods to do this so far. The Fiftyone is our older basic functionality method for going through the data, but the newest software "Classify" has a refined, speedy UI.
+During the classification step, we want to take automatically organized insect data and validate them with humans as quickly and accuratley as possible. We built our own program to let you do this in a quick and speedy way called "Classify"
 
-* Fiftyone - Tried and tested for the past year. A bit clunky in the UI.
-* Classify - New UI that is still in development, but provides a great experience.
+* [Classify](https://mothbox.org/docs/processing/classify/classify/)
+
+
+Note: we used to have an older version of this that used a fiftyone UI interface, but switched to this new homebrewed one we call "Classify" as it is much speedier and easier to use.
 
 
