@@ -279,6 +279,8 @@ def run_training(args):
     print(f"  batch size : {batch}")
     print(f"  workers    : {workers}")
     print(f"  patience   : {args.patience} epochs (early stopping)")
+    print(f"  lr0        : {args.lr0}")
+    print(f"  AMP (FP16) : {'disabled (--no-amp)' if args.no_amp else 'enabled'}")
     print(f"  project    : {args.project}")
     print(f"  run name   : {args.name}")
     print(f"\n  Scale range note: YOLO26's STAL label assignment helps ensure")
@@ -302,6 +304,14 @@ def run_training(args):
         save_period = args.save_period,
         plots       = True,
         verbose     = True,
+
+        # AMP (FP16 mixed precision). Disable if you see repeating NaN/Inf loss
+        # warnings — FP16 overflow is the most common cause on YOLO26.
+        amp         = not args.no_amp,
+
+        # Learning rate. Default YOLO lr0=0.01 can spike into NaN with aggressive
+        # augmentation; 0.005 is more stable without sacrificing final accuracy.
+        lr0         = args.lr0,
 
         # --- Augmentation tuned for Mothbox field photography ---
         # Full rotation: moths appear at any angle on the sheet
@@ -429,6 +439,21 @@ def main():
     parser.add_argument(
         "--save-period", type=int, default=10, dest="save_period",
         help="Save a checkpoint every N epochs (in addition to best and last)."
+    )
+    parser.add_argument(
+        "--lr0", type=float, default=0.005,
+        help=(
+            "Initial learning rate. Default: 0.005 (half the YOLO default of 0.01). "
+            "Lower values reduce NaN/Inf loss spikes with aggressive augmentation."
+        )
+    )
+    parser.add_argument(
+        "--no-amp", action="store_true", dest="no_amp",
+        help=(
+            "Disable FP16 automatic mixed precision and train in FP32. "
+            "Use this if you see repeating 'Loss NaN/Inf detected' warnings — "
+            "FP16 overflow is the most common cause on YOLO26 with large images."
+        )
     )
 
     # Device
