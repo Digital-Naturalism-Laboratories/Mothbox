@@ -62,7 +62,7 @@ You can go super low-cost and just put it in a recycled sports-drink bottle
 
 <img src="https://github.com/user-attachments/assets/bd0e494e-6192-494c-b266-e6fd57c3014c" width="45%">
 
-or you can [laser cut a fancier flat-pack design](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Mothbeam_Housing/Mothbeam_Flatcontainer)
+or you can [laser cut a fancier flat-pack design](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbeam_Case/Mothbeam_Flatcontainer)
 
 <img src="https://github.com/user-attachments/assets/fd2c6542-056e-49ad-9002-5586bc7ca017" width="45%">
 
