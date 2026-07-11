@@ -297,7 +297,7 @@ def run_training(args):
         batch       = batch,
         device      = device,
         workers     = workers,
-        project     = args.project,
+        project     = str(Path(args.project).resolve()),
         name        = args.name,
         patience    = args.patience,
         save        = True,
