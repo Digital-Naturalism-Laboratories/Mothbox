@@ -13,7 +13,7 @@ For this tutorial, we will show you how to make a very simple mid-range housing 
 <img src="https://github.com/user-attachments/assets/2de13c2e-2fab-4b07-9a5b-11a83bbd3336" width="25%">
 
 # Parts for Basic Circular Housing
-* [PCBs](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbeam_PCBs/AndyMothbeam_forMBv5.0.1) (ideally 2 or 4)
+* [PCBs](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbeam_PCBs/AndyMothbeam_forMBv5.0.3) (ideally 2 or 4)
 * 18awg solid core wire (red and black)
 * 20x20 aluminum profile (15cm long)
 * Circular Plexiglass tube, 6.5cm diameter (make sure transparent to UV) (10cm long)
@@ -44,11 +44,11 @@ A mothbeam is easy to put together and has 3 main parts:
 
 ## PCB
 
-The PCB's are a [certified open source hardware design originally by Moritz](https://certification.oshwa.org/de000156.html). We have [remixed them to easily connect to our Mothbox PCB](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/PCB/AndyMothbeam_forMBv5.0.1).
+The PCB's are a [certified open source hardware design originally by Moritz](https://certification.oshwa.org/de000156.html). We have [remixed them to easily connect to our Mothbox PCB](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbeam_PCBs/AndyMothbeam_forMBv5.0.3).
 
 To get one, you can:
 * order a Mothbeam directly from Moritz in Germany emailing him (moritz@lablab.eu)
-* use the [open source files](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/PCB/AndyMothbeam_forMBv5.0.1) to create your own PCBs yourself (or via something like JLCPCB) (remember they need to be aluminum PCBs)
+* use the [open source files](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbeam_PCBs/AndyMothbeam_forMBv5.0.3) to create your own PCBs yourself (or via something like JLCPCB) (remember they need to be aluminum PCBs)
 * [order them from something like circuithub](https://circuithub.com/projects/Moritz/Mothbeam/revisions/57895/parts) (the most expensive way)
 
 
@@ -62,7 +62,7 @@ You can go super low-cost and just put it in a recycled sports-drink bottle
 
 <img src="https://github.com/user-attachments/assets/bd0e494e-6192-494c-b266-e6fd57c3014c" width="45%">
 
-or you can [laser cut a fancier flat-pack design](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/Hardware/Mothbeam_Housing/Mothbeam_Flatcontainer)
+or you can [laser cut a fancier flat-pack design](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbeam_Case/Mothbeam_Flatcontainer)
 
 <img src="https://github.com/user-attachments/assets/fd2c6542-056e-49ad-9002-5586bc7ca017" width="45%">
 
