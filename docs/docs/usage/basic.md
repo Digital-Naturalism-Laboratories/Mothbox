@@ -6,6 +6,9 @@ has_children: true
 nav_order: 3
 ---
 
+{: .warning }
+> Test your tools BEFORE taking them to the field! Learn how to use, configure, and test your devices BEFORE you travel somewhere more remote! Especially for first time users, there are certain ways of customizing and setting up your device that you may not have much experience in. Test at home!
+
 # Quick Use Checklist
 
 **Preparation**
