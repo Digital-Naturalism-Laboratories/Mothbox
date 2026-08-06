@@ -14,7 +14,8 @@ You now have two options for how to use this processing
     * Windows
     * Windows with Cuda speedup
     * Mac OS
-* or "Hacker Mode"
+    * Linux (experimental)
+* or "Hacker Mode" (very advanced only)
     * use the [following detailed steps](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/processingsoftware/) for setting up your computer to run scripts.
 
 
