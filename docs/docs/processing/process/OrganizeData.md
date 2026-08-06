@@ -13,9 +13,14 @@ There are three key types of data you need to collect to process information fro
 ## Basic Organization
 
 We organize our photographic data we get from "Deployments" of the Mothboxes like [shown below](https://tree.nathanfriend.com/?s=(%27optiUs!(%27fancy!true~fullPath!false~trailingSlash!true~rootDot!true)~8e!(%278e!%27CollectiUVf%20KsOO*KAF%20Thes7ar7th7ZWXth7original%2C%20full%20siz787EeWfrom%20a%20d65D615LFnightly%20ZW%7Bor%20however%20you%20mightVrganize%7Dq*8eEeA987E7Xdevic7nam7and%20ANSI%20timestampq*8eEeB9secUd%2087Ee5D625SiteAF%20CanVptiUallyVrganiz7data%20by%20additiUal%20layer%20lik7a%20specific%20sit7Xmany%20d6sqD6A-1O*KB%2Fq*O*%22Fdirectory%20structur7iWmirrored%20in%20th7%22%20Z5KAqD61qLRA.jsUF%20JsU%20cUtainWdata%20cUnecting%20detectiU%20G%20E7to%2087E7andVther%20metadata4A_G1Q4A_G2Q4A_G3QRB.jsU4B_G1Q4B_G2QOqD62qSiteAq*D6A-15KB%27)~versiU!%271%27)*%20%204q**Gfrom8eEe5O**6eployment7e%208sourc9xTHHMMSS%2B00-00Q.FEimagF%20%23GpatchKDatasetL*devicenamexO%5CnQ.jpgRq**jsUfrom8eEeUonV%20oWs%20Xwith%20Zfolderq5*x_YYYY-MM-DD%22_processed%01%22xqZXWVURQOLKGFE987654*): 
+
+<img width="1586" height="807" alt="image" src="https://github.com/user-attachments/assets/d68c9146-bdbb-45c1-86d4-0dcde6a6913f" />
+
+
+
 ```
 .
-└── Collection of Datasets/
+└── Collection of Datasets/. # We call a collection of datasets a "Project"
     ├── DatasetA # These are the folders with the original, full size source images from a deployment/
     │   ├── Deployment1/
     │   │   └── devicename_YYYY-MM-DD #nightly folders (or however you might organize)/
@@ -25,7 +30,7 @@ We organize our photographic data we get from "Deployments" of the Mothboxes lik
     │   └── SiteA # Can optionally organize data by additional layer like a specific site with many deployments/
     │       └── DeploymentA-1
     ├── DatasetB/
-    └── _processed #directory structure is mirrored in the _processed folder/
+    └── _processed #everything in this processed folder is created automatically by the software. Its directory structure is mirrored of the original datasets, but includes only lightweight processed data.
         ├── DatasetA/
         │   ├── Deployment1/
         │   │   └── devicename_YYYY-MM-DD/
@@ -42,32 +47,37 @@ We organize our photographic data we get from "Deployments" of the Mothboxes lik
         └── DatasetB
 
 ```
+
+# Optional Processing Files
+
 In addition to the Deployment photo data, there are two other files you will need to completely process your data.
 * [Metadata CSV](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv)
+    * You can manually input this metadata in the software, but keeping a CSV of ALL your metadata can be useful for large scale deployments
     * This ties the photos and IDs to metadata like location and date
     * the column headings of the CSV should be
     * Timestamp,device,firmware,sheet,schedule,dataset,project,site,latitude,longitude,height_above_ground,habitat,deployment_date,collect_date,data_storage_location,crew,notes,attractor,attractor_location,UTC,deployment_name
 * [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.15468dl.epzeza.csv)
-    * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)    
+    * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)
+    * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so not big worry.    
 
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
-You can also organize them into each Deployment if you want like we show above.
-{: .important-title }
-> Please Organize Your Data like this!
->
-> There might be better ways to organize this stuff, and we are open to suggestions! But for now, it's important to try to organize your data like this because the scripts we are whipping together to process your images rely on an organization and naming structure like this to tie together the different types of data!
 
-Below, we will discuss more particulars about good ways to organize the Deployment, Metadata, and Species List.
+
+# Data Terminology Descriptions
+
+It's a weird new field of automated insect detection, and it can be useful to clarify our language. We are even [working on a detailed description of these terms more broadly](https://github.com/Digital-Naturalism-Laboratories/Automated-Insect-Monitoring-Ontology).
+
+Below, we will discuss more particulars about how organize the Deployment, Metadata, and Species List.
 
 # Deployment
-Each "deployment" is a data from device left out in the field somewhere.
+Each "deployment" is a data from device left out in the field somewhere and then recollected.
 
 ## Deployment Name
 The deployment has a unique name like this:
 ```
-Dataset_PROJECT_SITE_DEVICE_YYYY-MM-DD
+PROJECT_SITE_DEVICE_YYYY-MM-DD
 ```
-The "Project" is a broad project that you are collecting this data for. You couldname it something like "BatSurvey" or "MtTotumasDrySeason" (No spaces)
+The "Project" is a broad project that you are collecting this data for. You could name it something like "BatSurvey" or "MtTotumasDrySeason" (No spaces)
 
 The "Site" is a human name for the very specific place you left the Mothbox, like "TreeNearLodge" (No Spaces)
 
@@ -75,38 +85,60 @@ The "Device" is a unique name that the Mothbox calls itself. These are names bas
 
 Then there is a date stamp that marks the first day a mothbox was left out in the field. like 2024-04-30. The format is YYYY-MM-DD.
 
-*Note: You can omit 'Dataset' from the deployment name and leave it as PROJECT_SITE_DEVICE_YYYY-MM-DD; our post-processing scripts will still run correctly.
-
 ## Nightly Folders
-A deployment usually has several nights. Each night is collected in its own folder. The nightly folders are automatically created by the Mothbox and have a basic format:
+A deployment usually has several nights. Each night is collected in its own folder. 
+
+The nightly folders are automatically created by the Mothbox and have a basic format:
 ```
 YYYY-MM-DD
 ```
-{: .note }
-> A special note about Mothbox "nights." Since most of our data collection happens at night, each night for these folders runs from **12:00 pm of the first day** it is left out until **11:59am of the next day.** In this way, images captured at, for instance, 3AM are considered part of the same night that started 10 hours earlier at 7 PM the preceding day.
 
-## Samples
-Each data "sample" consists of a set of grouped files.
-```
-DEVICE_YYYY-MM-DD-HH-MM-SS.jpg  (Raw Image collected)
-DEVICE_YYYY-MM-DD-HH-MM-SS_botdetection.json (Bot created labels)
-DEVICE_YYYY-MM-DD-HH-MM-SS.json (Human created labels)
-```
-* Raw Image
+{: .note-title }
+> Mothbox "Nights"
+>
+>A special note about Mothbox "nights." Since most of our data collection happens at night, each night for these folders runs from **12:00 pm of the first day** it is left out until **11:59am of the next day.** In this way, images captured at, for instance, 3AM are considered part of the same night that started 10 hours earlier at 7 PM the preceding day.
+>
+
+
+
+## Source Image
 
 The "raw" photos we capture look like this. They are insects on a white background. 
 
 ![image](https://github.com/user-attachments/assets/b7c24479-4508-4823-b978-6c5e3e1918b9)
 
+They have a name consisting of the device name and then a timestamp in ISO format
+```
+superDorada_2026-08-05T04-29-21-04-00.jpg  
+└devicename┘└YYYY-MM-DD┘└HH-MM-SS┘└±HH-MM┘ (UTC -4:00)
+
+```
+
+## Data Labels
+
+Source images can be associated with json labels that hold data about them.
 
 * Bot created labels
 
-Each sample photo might also have a similarly named file next to it, but the file type is ".json" and the file name ends with "botdetection." These are files generated by automated means to detect where the insects are in the photo. Generally these files are made by the Mothbot_Detect.py script.
+These are files generated by automated means to detect where the insects are in the photo. Generally these files are made by the Mothbot_Detect.py script. Each sample photo might also have a similarly named file next to it, but the file type is ".json" and the file name ends with "botdetection." 
+
+## Samples
+Each data "sample" consists of a set of grouped files.
+```
+superDorada_2026-08-05T04-29-21-04-00_botdetection.json 
+└devicename┘└YYYY-MM-DD┘└HH-MM-SS┘└±HH-MM┘└specifies it came from a robot┘
+
+```
 
 * Human created labels
 
-There are files that have the same name as the Raw Image but end with ".json". These are human-created "Ground-Truth" datasets. They don't have "botdetection" on the ends their file names.
+There are files that have the same name as the Raw Image but end with ".json". These are human-created "Ground-Truth" datasets. They don't have "botdetection" on the ends their file names. They are made by programs like x-anylabeling.
 
+```
+superDorada_2026-08-05T04-29-21-04-00.json 
+└devicename┘└YYYY-MM-DD┘└HH-MM-SS┘└±HH-MM┘└same name as source file but ends in .json┘
+
+```
 
 # Metadata
 Equally as important as the photographic data you collect is the metadata about your deployments. We need to [create a metadata file](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv) for each raw photo. This contains information about the sampling like:
@@ -120,6 +152,7 @@ Equally as important as the photographic data you collect is the metadata about 
 * identifier (Who did the most up to date ID? i.e. "Mothbot" or "Hubert Szczygiel"
 * cv_confidence (how confident the AI was in detecting this if machine detected)
 * Taxonomic information: class	order	family	genus	species	commonName	scientificName
+
 
 You should [fill out a row on that form](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv) for each of your deployments.
 
@@ -138,7 +171,7 @@ Alternatively, fill out
 > All photos from a single deployment should be in a folder named with the convention: "PROJECT_SITE_MOTHBOXID_YYYY-MM-DD" (the COUNTRY_ prefix is optional)
 
 # Species List
-The species list is used by the indentification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216). 
+The species list is used by the identification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216). 
 
 If you want to go super broad, you could just try to get a list of all arthropods, or you could limit things to a specific family of moths. It's up to you!
 
