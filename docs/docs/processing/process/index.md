@@ -10,7 +10,7 @@ During the process step, you will use a simple UI to churn through the data most
 
 You now have two options for how to use this processing 
 
-* [Just Download and Run Software](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/releases/latest) (recommended)
+* [Just Download](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/releases/latest) and then [run the software](https://mothbox.org/docs/processing/process/basic) (recommended)
     * Windows
     * Windows with Cuda speedup
     * Mac OS
