@@ -157,7 +157,6 @@ Then you can hit "Run Pixel Mass" and it will start removing background and calc
 
 This is done through some open source background removing models that you can select between to change quality vs speed.
 
-<img width="1222" height="688" alt="image" src="https://github.com/user-attachments/assets/131eace7-bbe8-426a-8d23-6cf7cc0cf885" />
 
 <img height="665" alt="image" src="https://github.com/user-attachments/assets/b469ecd8-efac-4ad8-8a85-569850e70bf0" />
 
