@@ -56,6 +56,8 @@ Search for KiCAD JLCPCB tools and JLC fabrication toolkit
 
 If you cannot find JLCPCB Tools (The main plugin we are using) you can install it easily [with instructions here.](https://github.com/bouni/kicad-jlcpcb-tools?tab=readme-ov-file#kicad-pcm)
 
+This [plugin is also handy](https://github.com/rasmushauschild/easyeda2kicad_plugin) to have (but not needed in this tutorial)
+
 ## Open PCB Editor
 In the KiCAD project viewer, double click the .kicad_pcb file
 
@@ -67,7 +69,7 @@ You will then see a new window open showing your PCB layout. Now click the JLC T
 
 This opens another window that lets you look at all the parts that go into creating your PCB. It will even let you know what parts are available at the manufacturer and you can rotate parts around if needed.
 
-**You don't actualy have to do anything here except hit the big GENERATE button **in the top left.
+**You don't actually have to do anything here except hit the big GENERATE button **in the top left.
 
 <img width="1002" height="766" alt="image" src="https://github.com/user-attachments/assets/86aefc72-98b4-4516-92e9-33524b3c6345" />
 
