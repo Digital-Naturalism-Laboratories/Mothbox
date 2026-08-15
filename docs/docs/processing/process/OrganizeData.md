@@ -56,7 +56,7 @@ In addition to the Deployment photo data, there are two other files you will nee
     * This ties the photos and IDs to metadata like location and date
     * the column headings of the CSV should be
     * Timestamp,device,firmware,sheet,schedule,dataset,project,site,latitude,longitude,height_above_ground,habitat,deployment_date,collect_date,data_storage_location,crew,notes,attractor,attractor_location,UTC,deployment_name
-* [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/SpeciesList_CountryPanamaCostaRica_TaxaInsecta_doi.org10.15468dl.epzeza.csv)
+* [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/tree/main/specieslists)
     * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)
     * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so not big worry.    
 
