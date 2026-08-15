@@ -10,8 +10,18 @@ There are three key types of data you need to collect to process information fro
 *    Metadata
 *    Species List
 
-## Basic Organization
+## Organization
 
+### Basic Organization
+Just getting started? Wanna see them bugs? 
+
+1) Make yourself a folder called something like "Mothbox_Data"
+2) Then dump all your folders you collect from the field of image data in there. (Like all the dated folders that have a bunch of images in them)
+3) Choose this folder when you use Mothbot Process and Mothbot Classify
+
+
+### Advanced Organization
+Once you start having tons of data from all over the world, you might want to get serious about your organization! Here's how we do it!
 We organize our photographic data we get from "Deployments" of the Mothboxes like [shown below](https://tree.nathanfriend.com/?s=(%27optiUs!(%27fancy!true~fullPath!false~trailingSlash!true~rootDot!true)~8e!(%278e!%27CollectiUVf%20KsOO*KAF%20Thes7ar7th7ZWXth7original%2C%20full%20siz787EeWfrom%20a%20d65D615LFnightly%20ZW%7Bor%20however%20you%20mightVrganize%7Dq*8eEeA987E7Xdevic7nam7and%20ANSI%20timestampq*8eEeB9secUd%2087Ee5D625SiteAF%20CanVptiUallyVrganiz7data%20by%20additiUal%20layer%20lik7a%20specific%20sit7Xmany%20d6sqD6A-1O*KB%2Fq*O*%22Fdirectory%20structur7iWmirrored%20in%20th7%22%20Z5KAqD61qLRA.jsUF%20JsU%20cUtainWdata%20cUnecting%20detectiU%20G%20E7to%2087E7andVther%20metadata4A_G1Q4A_G2Q4A_G3QRB.jsU4B_G1Q4B_G2QOqD62qSiteAq*D6A-15KB%27)~versiU!%271%27)*%20%204q**Gfrom8eEe5O**6eployment7e%208sourc9xTHHMMSS%2B00-00Q.FEimagF%20%23GpatchKDatasetL*devicenamexO%5CnQ.jpgRq**jsUfrom8eEeUonV%20oWs%20Xwith%20Zfolderq5*x_YYYY-MM-DD%22_processed%01%22xqZXWVURQOLKGFE987654*): 
 
 <img width="1586" height="807" alt="image" src="https://github.com/user-attachments/assets/d68c9146-bdbb-45c1-86d4-0dcde6a6913f" />
