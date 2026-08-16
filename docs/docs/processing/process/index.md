@@ -16,7 +16,7 @@ You now have two options for how to use this processing
     * Mac OS
     * Linux (experimental)
 * or "Hacker Mode" (very advanced only)
-    * use the [following detailed steps](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/processingsoftware/) for setting up your computer to run scripts.
+    * use the [following detailed steps](https://mothbox.org/docs/processing/process/hacker) for setting up your computer to run scripts.
 
 
 
