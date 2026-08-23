@@ -10,6 +10,27 @@ Here's a guide to some basic troubleshooting if you encounter a problem using yo
 # Github Issues
 One of the best ways to find answers to problems is to check out the [Github Issues page](https://github.com/Digital-Naturalism-Laboratories/Mothbox/issues). You can see common problems others may have had there, and you can post your own problem and we will help you address it!
 
+# Firmware Troubleshooting (Mothbox's Functions being funny)
+*coming soon*
+
+
+# Hardware Troubleshooting
+
+### How to Fix something I broke?
+
+#### Baking Soda and Super Glue Hack
+It can be helpful to keep a bit of baking soda and super glue around. The baking soda can be applied to an area, and then when touched with super glue dries almost INSTANTLY to form a hard, rock-like paste. This can be easier for field repairs as you don't need to hold it in place while it dries. 
+
+<img width="688" height="918" alt="image" src="https://github.com/user-attachments/assets/a2fc7603-b2a2-42ce-9165-465758e0370b" />
+
+You can also layer up layers of baking soda and super glue to build structures that connect or replace missing structures.
+<img width="688" height="516" alt="image" src="https://github.com/user-attachments/assets/0a5bd5fa-c67c-47e4-9a55-1be387e1a401" />
+
+
+
+
+
+
 ### Git rid of the red thing on your camera
 
 <img height="300" alt="image" src="https://github.com/user-attachments/assets/2329cabd-5038-436e-8e9b-b97a66972d66" />
