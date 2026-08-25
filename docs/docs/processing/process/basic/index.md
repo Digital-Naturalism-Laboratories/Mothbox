@@ -60,7 +60,7 @@ That was the bare minimum processing you need to start looking at your bugs!
 Now you can jump to the ["Classification" step](https://mothbox.org/docs/processing/classify)
 
 ## View the photos by order (scientific classification)
-Go to https://classify.mothbox.org/ **in chrome (not firefox)** or some other chromium-based browser
+Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in chrome (not firefox)** or some other chromium-based browser
 
 * Add your name (should only include letters and numbers, no special characters)
 
