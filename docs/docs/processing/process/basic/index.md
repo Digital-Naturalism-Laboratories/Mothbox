@@ -9,6 +9,9 @@ permalink: /docs/processing/process/basic
 
 The easiest way to process your Mothbox data is just to download the executable software we have ready! No coding needed!
 
+1. TOC
+{:toc}
+
 # Install Software
 First just download the [latest release](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/releases/latest).
 
