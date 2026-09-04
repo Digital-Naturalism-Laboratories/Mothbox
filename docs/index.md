@@ -21,7 +21,7 @@ We believe **studying insect biodiversity is integral to life on earth**, and si
 {: .important-title }
 > Mailing List
 >
-> Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email me at A N D Y [ a t ] dinalab.net** with subject "Mothbox Mail."
+> Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email our rag-tag crew at INFO [ a t ] mothbox.org** with subject "Mothbox Mail."
 >
 
 
