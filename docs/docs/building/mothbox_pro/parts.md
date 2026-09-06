@@ -78,7 +78,7 @@ To hold the lid on and the legs on you have 3 options:
 * 3D printable TPU ties
 
 ## Screws
-* #6 x 3/8" screws
+* #6 x 3/8" screws (or 6g x 9mm)
 
 # Tools
 Here's some tools you need:
