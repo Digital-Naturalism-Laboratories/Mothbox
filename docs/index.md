@@ -24,6 +24,15 @@ We believe **studying insect biodiversity is integral to life on earth**, and si
 > Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email our rag-tag crew at INFO [ a t ] mothbox.org** with subject "Mothbox Mail."
 >
 
+{: .highlight }
+Join our free [Mothbox CHAT GROUP](https://app.element.io/#/room/#mothbox:matrix.org)
+
+{: .important-title }
+> Mailing List
+>
+> Are you interested in Mothboxing? Using it in the field? Building it? Please sign up for our mailing list to stay up to date with the latest features! **Email our rag-tag crew at INFO [ a t ] mothbox.org** with subject "Mothbox Mail."
+>
+https://app.element.io/#/room/#mothbox:matrix.org
 
 
 {: .important-title }
