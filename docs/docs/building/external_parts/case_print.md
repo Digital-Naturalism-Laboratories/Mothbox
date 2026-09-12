@@ -52,7 +52,10 @@ We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Er
 
 
 # Print all the Parts
-All the parts are located in the [Github Repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro). Download them all and print them out. There is even a 3MF file that has all the parts laid out for you to print in a slicer like Bambu Studio.
+All the parts are located in the [Github Repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro). Download them all and print them out. There is even a 3MF file that has all the parts laid out for you to print in a slicer like Orca Slicer.
+
+<img height="500" alt="image" src="https://github.com/user-attachments/assets/5d4d97c8-9f8b-4487-af86-ba3df18e2319" />
+
 The list of parts is as follows along with what material to make them in.
 
 * Outer Shell - PETG or ASA
@@ -62,7 +65,7 @@ The list of parts is as follows along with what material to make them in.
 * Front Lid - PETG or ASA
 * Front Gasket - TPU (Optional seal for wet climates)
 * Back Gasket - TPU (Optional seal for wet climates)
-* Bottom Plugs - TPU (Optional, if you aren't using DC Barrel Sockets)
+* Bottom Plugs - TPU (Optional, if you aren't using DC Barrel Sockets to fill all the holes)
 
 These parts are usually laser cut
 * Arms (These are usually laser cut for more viewability of the insects)
@@ -79,6 +82,11 @@ This part MUST be laser cut
  * there are more, molle-like, connectors for cable ties
  * the back lid's top connects with a cleat and cable ties
  * There is an optional top shield which can be set on top and held with zip ties for more weatherproofing.
+ * There is a THIRD hole for an extra port or button on the bottom
+
+<img height="250" alt="image" src="https://github.com/user-attachments/assets/378f67b6-17f1-4672-91d9-4993fff00020" />
+
+In this tutorial we will show how to assemble the different versions
 
 
 # Outer Shell Assembly
