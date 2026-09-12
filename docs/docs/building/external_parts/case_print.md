@@ -15,16 +15,29 @@ The lastest version of the Mothbox has a [3D printable case](https://github.com/
 
 * Main Filament - 850 grams
 * TPU Rubber Filament - (Optional for better waterproofing, not really needed in dry places) - 100 grams
-* Clear Acrylic - For the front window and arms and target
+* Clear Acrylic - For the front window and arms and target (arms are ideally 3mm, and front window can be 1-3mm (we use 2mm))
 * #6x3/8in screws - (not super exacting, near equivalents work too!)
 * Cable Ties - Ideally reusable zip ties, or silicone straps, or our [TPU printable ties we made ourselves](https://www.printables.com/model/1530721-reusable-rubber-cable-tie)!
 * DC Barrel sockets -  for the external charging port and/or external attractor port
 
 
-# Filament Suggestions
+# Printing and Filament Suggestions
+## Bed size
+Everything should be able to be printed on a medium size 3D printer (256mm minimum bed size)
 
-**PETG-CF**
-We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Eryone brand), drying it for 12 hours, and then printing. (Regular PETG will probably be fine!).** Never use PLA for outdoor equipment**, especially in the tropics as it will degrade rapidly.
+## Nozzle
+Printing: everything can be printed on standard .4mm nozzles BUT we also made it so if you want to speed up your prints you can also **print all the designs with .8mm (.4mm layer height)** nozzles!
+
+## Filament
+
+**Never use PLA for outdoor equipment**, especially in the tropics as it will degrade rapidly.
+
+
+**PETG or PETG-HF**
+Regular PETG prints nicely and is super durable in the field. Also if you have a high flow nozzle and can use the high flow version of PETG it can print extra quick!
+
+**ASA**
+We have also tested out ASA filament which is supposed to be the filament of choice for outdoor equipment. It prints super smooth, but needs higher temps and a chamber.
 
 **TPU**
 For the 3D printed TPU rubber, we have been using Bambu lab 85a
@@ -34,19 +47,39 @@ For the 3D printed TPU rubber, we have been using Bambu lab 85a
 >
 > For the TPU gaskets it can be useful to print them slightly smaller. I usually shrink X and Y at 99% to make them fit nice and tight (and offset the stretching that tends to happend when you pull it off the build plate).
 
+**PETG-CF**
+We have been using inexpensive PETG-Carbon Fiber filament ($~16 USD for 1kg - Eryone brand), drying it for 12 hours, and then printing. It worked totally fine, and in theory should have advanced heat-dissipation abilities and strength, but honestly regular PETG seems just as good but is cheaper and easier
+
+
 # Print all the Parts
 All the parts are located in the [Github Repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro). Download them all and print them out. There is even a 3MF file that has all the parts laid out for you to print in a slicer like Bambu Studio.
 The list of parts is as follows along with what material to make them in.
 
-* Outer Shell - PETG-CF
-* Inner Chassis - PETG-CF
-* Glare Blocker - PETG-CF
-* Back Lid - PETG-CF
-* Front Lid - PETG-CF (material doesn't really matter- just a cover)
+* Outer Shell - PETG or ASA
+* Inner Chassis - PETG or ASA
+* Glare Blocker - PETG or ASA
+* Back Lid - PETG or ASA
+* Front Lid - PETG or ASA
 * Front Gasket - TPU (Optional seal for wet climates)
 * Back Gasket - TPU (Optional seal for wet climates)
 * Bottom Plugs - TPU (Optional, if you aren't using DC Barrel Sockets)
-* Plexi Front - Laser Cut Clear Acrylic (Arms and Target are also Laser cut acrylic)
+
+These parts are usually laser cut
+* Arms (These are usually laser cut for more viewability of the insects)
+* Top Shield (Laser cut because cheaper and faster, but could be printed)
+* Target (Laser cut because cheaper and faster, but could be printed)
+
+This part MUST be laser cut
+* Front Plexi - This needs to be optically clear for the camera to see out of. If needed you could employ the hack from the DIY - off-the-shelf enclosure and 3d print a front plate you cut a hole and glue a glass lens filter in, but in general you want just simple laser cut plexi.
+
+# Box Versions
+ in 2025-2026 we primarily used the v5.0.3 version of the hardware. This is a simple to print box with a back lid that can be connected with bolts or ties
+
+ In mid 2026 we made a new version, 5.1.0, that has a couple changes
+ * there are more, molle-like, connectors for cable ties
+ * the back lid's top connects with a cleat and cable ties
+ * There is an optional top shield which can be set on top and held with zip ties for more weatherproofing.
+
 
 # Outer Shell Assembly
 ## Front Acrylic

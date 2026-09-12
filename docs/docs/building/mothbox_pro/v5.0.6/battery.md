@@ -1,15 +1,15 @@
 ---
 layout: default
 title: Hook up Battery
-parent: v5.1.0
+parent: v5.0.6
 grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 3
 ---
 
 {: .warning }
-> # ⚠️ 5.1.0 documentation coming soon!
-> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.1.0 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
+> # ⚠️ 5.0.6 documentation coming soon!
+> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.0.6 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
 
 # Battery - Talentcell PB1202b 12v
 The Mothbox is set up to run off 9-36V DC batteries of any sort! So you can hook up car batteries, old motorcycle batteries, solar panel boat batteries, generally whatever you need! The DC regulators we use tend to be most efficient around 12V, and so we tend to use a 12V one, but the circuits should be flexible!
@@ -181,7 +181,7 @@ At this point, you should have fully functional Mothbox electronics in your hand
 
 {: .note }
 > There is still some assembly left, but if you want to double check your electronics, you can follow the steps below!
-> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.1.0/assembleincase/)
+> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.6/assembleincase/)
 > - Make sure your battery is FULLY CHARGED!
 > - Make sure to [flash the firmware onto your SD card](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware)
 > - Then proceed!

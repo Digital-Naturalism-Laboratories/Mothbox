@@ -20,4 +20,4 @@ The Mothbox Pro is our Mothbox designed for manufacturing scalability. The key d
 There are now multiple versions of the Mothbox Pro mainboard. Pick the instructions that match the board you have:
 
 * [**v5.0.3**](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3) - the previous version of the Mothbox Pro. Complete, tested build instructions.
-* [**v5.1.0**](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.1.0) - the upcoming version of the Mothbox Pro. *Documentation coming soon!*
+* [**v5.0.6**](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.6) - the upcoming version of the Mothbox Pro. *Documentation coming soon!*

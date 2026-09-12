@@ -1,15 +1,15 @@
 ---
 layout: default
 title: Connect Electronics
-parent: v5.1.0
+parent: v5.0.6
 grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 2
 ---
 
 {: .warning }
-> # ⚠️ 5.1.0 documentation coming soon!
-> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.1.0 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
+> # ⚠️ 5.0.6 documentation coming soon!
+> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.0.6 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
 
 # Pull Fiberglass thingys off the PCB
 When the PCBs get made at the factory, they have to add little "rails" to hold the boards in place while they install everything with robots!

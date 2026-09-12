@@ -10,6 +10,6 @@ permalink: /docs/building/mothbox_pro/v5.0.3/
 
 # Mothbox Pro v5.0.3
 
-These are the build instructions for the **Mothbox Pro v5.0.3** mainboard, the previous version of the Mothbox Pro hardware. If you have a v5.1.0 board, head over to the [v5.1.0 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.1.0) instead.
+These are the build instructions for the **Mothbox Pro v5.0.3** mainboard, the previous version of the Mothbox Pro hardware. If you have a v5.0.6 board, head over to the [v5.0.6 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.6) instead.
 
 Work through the steps below in order:
