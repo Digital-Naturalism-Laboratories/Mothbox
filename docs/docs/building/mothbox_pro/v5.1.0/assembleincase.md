@@ -1,10 +1,16 @@
 ---
 layout: default
 title: Assemble in Case
-parent: Mothbox Pro
+parent: v5.1.0
+grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 4
 ---
+
+{: .warning }
+> # ⚠️ 5.1.0 documentation coming soon!
+> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.1.0 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
+
 Our Mothbox electronics are together, but now we probably need to give it a housing to protect it!
 <img width="1" height="1" alt="image" src="https://github.com/user-attachments/assets/ce8f1acf-071e-4453-87ea-333803783909" />
 

@@ -5,3 +5,9 @@ gem "jekyll", "~> 4.3.3" # installed by `gem jekyll`
 
 # gem "just-the-docs", "0.8.2" # pinned to the current release
 gem "just-the-docs"        # always download the latest release
+
+# Standard-library gems that Ruby >= 3.4 no longer bundles but Jekyll 4.3 still requires
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"

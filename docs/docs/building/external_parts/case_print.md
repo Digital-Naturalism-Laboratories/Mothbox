@@ -117,7 +117,7 @@ There's not really anything you need to do for the front lid. Just print it out 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/53296bab-a2d4-4180-82b2-ae5ac45b0c52" />
 
 # Finish Assembly with the Electronics
-Head over to the [Mothbox Pro electronics section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/assembleincase/) to finish installing the mothbox into your new case!
+Head over to the [Mothbox Pro electronics section](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3/assembleincase/) to finish installing the mothbox into your new case!
 
 
 

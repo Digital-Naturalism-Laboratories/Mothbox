@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Manufacture PCB
-parent: Mothbox Pro
+parent: v5.0.3
+grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 1
 ---
@@ -19,7 +20,7 @@ Here's how to take our open-source designs from KiCAD to a fully manufactured bo
 
 ## Open the Design Files
 
-(If you don't want to edit the file in KiCad you can skip ahead to the [manufacturing part](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/manufacture/#load-files-to-jlcpcb) by just using [these files we already produced](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbox_PCBs/Andy_PCB_5.0.5/MothBox/jlcpcb/production_files)!
+(If you don't want to edit the file in KiCad you can skip ahead to the [manufacturing part](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3/manufacture/#load-files-to-jlcpcb) by just using [these files we already produced](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbox_PCBs/Andy_PCB_5.0.5/MothBox/jlcpcb/production_files)!
 First clone the [github repository of all our design files](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics).
 
 * [Mothbox PCB](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Electronics/tree/main/Mothbox_PCBs)

@@ -14,3 +14,10 @@ The Mothbox Pro is our Mothbox designed for manufacturing scalability. The key d
 
 <img width="1309" height="807" alt="image" src="https://github.com/user-attachments/assets/7cf62b10-23c9-4bef-82c8-a5e22378d761" />
 
+
+# Choose your hardware version
+
+There are now multiple versions of the Mothbox Pro mainboard. Pick the instructions that match the board you have:
+
+* [**v5.0.3**](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3) - the previous version of the Mothbox Pro. Complete, tested build instructions.
+* [**v5.1.0**](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.1.0) - the upcoming version of the Mothbox Pro. *Documentation coming soon!*

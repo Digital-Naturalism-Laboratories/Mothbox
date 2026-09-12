@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Hook up Battery
-parent: Mothbox Pro
+parent: v5.0.3
+grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 3
 ---
@@ -175,7 +176,7 @@ At this point, you should have fully functional Mothbox electronics in your hand
 
 {: .note }
 > There is still some assembly left, but if you want to double check your electronics, you can follow the steps below!
-> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/assembleincase/)
+> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3/assembleincase/)
 > - Make sure your battery is FULLY CHARGED!
 > - Make sure to [flash the firmware onto your SD card](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware)
 > - Then proceed!
