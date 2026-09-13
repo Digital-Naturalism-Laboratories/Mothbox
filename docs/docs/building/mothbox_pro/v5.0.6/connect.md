@@ -7,15 +7,23 @@ grand_parent: Mothbox Pro
 nav_order: 2
 ---
 
-{: .warning }
-> # ⚠️ 5.0.6 documentation coming soon!
-> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.0.6 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
-
 # Pull Fiberglass thingys off the PCB
 When the PCBs get made at the factory, they have to add little "rails" to hold the boards in place while they install everything with robots!
 You can just pull these off!
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/0c61cd4b-a4ec-4f65-a04c-d6c86ff24252" />
+
+# Obtain the Mystical "Switch Flipper"
+
+It had been foretold for ages that one day a PCB would be designed with a secret extra tool built in allowing those with even the stubbiest of fingers to flip switches. The time is here! On the bottom of your PCB, attached to those Fiberglass thingys is a tiny tool that can help you flip tiny switches when needed!
+
+
+
+<img  height="300" alt="image" src="https://github.com/user-attachments/assets/eb76197f-7c34-42d9-9942-736c658ca894" />
+
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/430e91e5-d8bc-404f-89b9-bfef7a294cd9" />
+
+<img  height="300" alt="image" src="https://github.com/user-attachments/assets/08b0e454-5ec2-452a-aa76-c47250eef4b0" />
 
 
 
@@ -38,7 +46,7 @@ The mothbeams allow you to set how powerful they are with little switches. **The
 
 Note: there is a discrepancy in wiring in the Mothbeams **labeled v5.0.1 ** and the **current going out in them is a bit different ** than what is printed on the boards
 
-| Configuration | Visible 5.0.1 (mA / Watts@12V) | UV 5.0.1 (mA / Watts@12V) |
+| Configuration | Visible 5.0.3 (mA / Watts@12V) | UV 5.0.3 (mA / Watts@12V) |
 | :--- | :--- | :--- |
 | 0 | 46 mA / 0.55 W | 34 mA / 0.41 W |
 | 1 | 240 mA / 2.88 W | 220 mA / 2.64 W |
@@ -71,27 +79,21 @@ You can also decide which mothbeams to connect. The board can support up to 3. T
 
 ## Connect Mothbeams
 Now that your Mothbeam is setup, you can just pop them on! Connect it to the top layer of the right angle pins sticking out (the bottom pins are just for spacing and aren't connected to anything).
-<img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/6a123834-9e3a-4120-bf49-deac2175c570" />
 
-### Lock in with a Zip Nut
-Now for each mothbeam, you will need two thin cable ties. 
-<img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/314c267f-5d4e-4766-920e-370134ae93c4" />
-
-Push one through the hole on the mothbeam and pull it all the way through.
-
-<img width="1234" height="792" alt="image" src="https://github.com/user-attachments/assets/fb971235-58ab-4fcc-a387-e58578db3302" />
+<img height="300" alt="image" src="https://github.com/user-attachments/assets/6f0ee824-6dc0-467f-ac35-21bd1c2395d9" /> <img height="300" alt="image" src="https://github.com/user-attachments/assets/f8482ee6-46ff-4e3a-8952-a43a3bbf9411" />
 
 
-<img width="519" height="399" alt="image" src="https://github.com/user-attachments/assets/64358cf0-661d-4a1f-ab2c-3ddc400ca6b8" />
+### Hold in place with Zip Tie 
+In this latest version, you can use a single zip tie, threaded through 2 holes to hole each Mothbeam secured in place.
 
-now add the second zip tie to the back that will lock it in place!
-This will keep it from going anywhere.
-<img width="682" height="382" alt="image" src="https://github.com/user-attachments/assets/12908937-b14b-4299-b106-57f868e5416d" />
-Trim the dangly ends off the ties, and repeat for the other mothbeams!
-<img width="666" height="498" alt="image" src="https://github.com/user-attachments/assets/22a289c2-cbcc-48a0-8b89-8aab1bcc1fc6" />
+<img  height="1742" alt="image" src="https://github.com/user-attachments/assets/9df79378-44b2-4713-8ffa-52c9aebbefce" />
 
-Now all your Mothbeams should be connected!
-<img width="604" height="737" alt="image" src="https://github.com/user-attachments/assets/30b895cb-ef28-41c6-9481-3d9ce8578ce4" />
+<img  height="1742" alt="image" src="https://github.com/user-attachments/assets/b2907ee7-bf4e-4881-8503-1c791bc29301" />
+
+Trim the tail of the zip tie when you are done!
+
+<img  height="1742" alt="image" src="https://github.com/user-attachments/assets/d0e6094d-0fae-4177-b6ca-06302eabf689" />
+
 
 
 # Connect Camera to Mainboard
