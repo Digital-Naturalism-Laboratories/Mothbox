@@ -172,36 +172,32 @@ Tighten it up, and trim the dangly bits.
 
 The Pi is a little computer that controls all the functions of the mothbox!
 
-## SD
-First put your SD card [(Flashed with the Mothbox software on it)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware) into your Pi.
-<img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/64788b6e-e86a-4509-bc33-5fd064c36fd8" />
-
 ## Real Time Clock Battery (RTC)
 The pi needs a tiny battery of its own to keep track of the passage of time even when it is fully off! 
-Plug the battery cable into the tiny port labeled "bat" on the Pi. 
+Plug the battery cable into the tiny port labeled "bat" on the Pi. Notice that if the HDMI port is facing up, the RED wire on the battery is on the right side!
 
-<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/df112d8c-a455-43bd-9c14-23674210b50d" />
+<img height="535" alt="image" src="https://github.com/user-attachments/assets/df112d8c-a455-43bd-9c14-23674210b50d" />
 
 The batteries usually come with a little piece of double sided tape. Use that to stick it to the side of the ethernet port on the pi.
 
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/13462748-5d02-4564-a097-6ab46013d4f9" />
+<img height="535" alt="image" src="https://github.com/user-attachments/assets/13462748-5d02-4564-a097-6ab46013d4f9" />
 
 
 
-## Connect Camera
+## Connect Camera Cable
 
 Lift the connect flap on CAM port 0 on the Pi
 <img width="567" height="804" alt="image" src="https://github.com/user-attachments/assets/5db33dad-7b9b-4b3e-a54e-b410a75ccf4e" />
 
 I use a fingernail for this.
-<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/f5197f3b-5512-45e2-9f98-dfa2bd9c071f" />
+<img height="726" alt="image" src="https://github.com/user-attachments/assets/f5197f3b-5512-45e2-9f98-dfa2bd9c071f" />
 
 The black side of the brown camera cable needs to face the side of the PI that the SD card is in.
-<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/ee4ae7da-e233-432c-812f-fcc1622b688d" />
+<img height="726" alt="image" src="https://github.com/user-attachments/assets/ee4ae7da-e233-432c-812f-fcc1622b688d" />
 
 Slide the cable in, and firmly press down the camera cable closer to make a snug connection.
 
-<img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a0efcdb4-5145-49a9-8de8-b59d4d165f59" />
+<img  height="726" alt="image" src="https://github.com/user-attachments/assets/a0efcdb4-5145-49a9-8de8-b59d4d165f59" />
 
 You might want to give a VERY GENTLE tug on the cable to make sure it's fully connected.
 
@@ -210,7 +206,7 @@ We made our own fun connection to hold the raspberry pi. It's a bit novel, but i
 
 Line up your Pi pins with the socket like this:
 
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/54aa0980-02b1-4a8b-9c0f-1cb4eea2a069" />
+<img height="735" alt="image" src="https://github.com/user-attachments/assets/54aa0980-02b1-4a8b-9c0f-1cb4eea2a069" />
 
 
 You will need to tilt the Pi at a slight angle as you first press it in. Then it will straighten out and slide right into its slot.
