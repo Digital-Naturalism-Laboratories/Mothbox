@@ -86,13 +86,23 @@ Now that your Mothbeam is setup, you can just pop them on! Connect it to the top
 ### Hold in place with Zip Tie 
 In this latest version, you can use a single zip tie, threaded through 2 holes to hole each Mothbeam secured in place.
 
-<img  height="1742" alt="image" src="https://github.com/user-attachments/assets/9df79378-44b2-4713-8ffa-52c9aebbefce" />
+<img  height="442" alt="image" src="https://github.com/user-attachments/assets/9df79378-44b2-4713-8ffa-52c9aebbefce" />
 
-<img  height="1742" alt="image" src="https://github.com/user-attachments/assets/b2907ee7-bf4e-4881-8503-1c791bc29301" />
+<img  height="442" alt="image" src="https://github.com/user-attachments/assets/b2907ee7-bf4e-4881-8503-1c791bc29301" />
 
 Trim the tail of the zip tie when you are done!
 
-<img  height="1742" alt="image" src="https://github.com/user-attachments/assets/d0e6094d-0fae-4177-b6ca-06302eabf689" />
+<img  height="442" alt="image" src="https://github.com/user-attachments/assets/d0e6094d-0fae-4177-b6ca-06302eabf689" />
+
+You can connect up to 3 Mothbeams to your board on the front:
+
+<img  height="442" alt="image" src="https://github.com/user-attachments/assets/79bdfdcf-6666-41a3-850e-8f85aa80e415" />
+
+but we generally just have 2 (one UV one Visible) in our standard arrangement
+
+Also you can attach a 4th attractor to this "External Attractor" connector in any kind of arrangement you want:
+
+<img height="342" alt="image" src="https://github.com/user-attachments/assets/f8f77b3c-4824-410f-b1e7-d971ff045760" />
 
 
 
