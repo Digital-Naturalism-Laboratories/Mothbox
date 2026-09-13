@@ -46,15 +46,16 @@ The mothbeams allow you to set how powerful they are with little switches. **The
 
 Note: there is a discrepancy in wiring in the Mothbeams **labeled v5.0.1 ** and the **current going out in them is a bit different ** than what is printed on the boards
 
-| Configuration | Visible 5.0.3 (mA / Watts@12V) | UV 5.0.3 (mA / Watts@12V) |
-| :--- | :--- | :--- |
-| 0 | 46 mA / 0.55 W | 34 mA / 0.41 W |
-| 1 | 240 mA / 2.88 W | 220 mA / 2.64 W |
-| 1 and 2 | 420 mA / 5.04 W | 413 mA / 4.96 W |
-| 1, 2 and 3 | 630 mA / 7.56 W | 535 mA / 6.42 W |
-| 3 and 4 | 520 mA / 6.24 W | 348 mA / 4.18 W |
-| 1, 3 and 4 | 650 mA / 7.80 W | 496 mA / 5.95 W |
-| All 4 | 770 mA / 9.24 W | 633 mA / 7.60 W |
+| Configuration | 5.0.3 (Vis) (mA / Watts@12V) |
+| :--- | :--- |
+| 0 | 17 mA / 0.20 W |
+| 1 | 165 mA / 1.98 W |
+| 1 and 2 | 303 mA / 3.64 W |
+| 1, 2 and 3 | 463 mA / 5.56 W |
+| 3 and 4 | 379 mA / 4.55 W |
+| 1, 3 and 4 | 478 mA / 5.74 W |
+| All 4 | 570 mA / 6.84 W |
+
 
 Remove the protective sticker over the switches.
 <img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/82bbf2ca-c2b5-4776-8c27-e89448a05f75" />
