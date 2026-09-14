@@ -34,74 +34,6 @@ Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyw
 <img height="357" alt="image" src="https://github.com/user-attachments/assets/849f9a4f-83e0-40e0-b6fb-4111ef445c8d" />
 
 
-# Quick and Easy: Tutorial on How to Process (From the "CIID Bugs <3" crew in Italy )
-
-{: .note-title }
-> Quick Tutorial
->
-> The "CIID Bugs <3" crew in Italy put together a quick tutorial for how to process your insects. If this is your first time, you might just want to do this to get a feel for processing your data, and then you can go more advanced through our tutorial later!
-
-Info on how to process photos:
-1. https://mothbox.org/docs/processing/process/basic: take the raw photos and extract individual photos
-of bugs (draws rectangles around bugs and saves them)
-  a.Take the USB out of the mothbox and plug it in to your computer
-
-  b. Create a folder called Mothbox_Data. Move the photos_backup_bowedBarbo from the USB drive
-into this folder.
-  c. Download the processing software from here https://mothbox.org/docs/processing/process/basic
-and run it. You should get a screen like this, where you can 1. load the photos_backup_bowedBarbo,
-2. check the image collections you want to process, and then 3. process the photos.
-
-<img width="1448" height="1044" alt="image" src="https://github.com/user-attachments/assets/79d16060-217d-4415-a507-8722d0f9fa5b" />
-
-a. It takes a while for the processing to finish. You will then see something like this.
-
-<img width="1448" height="1044" alt="image" src="https://github.com/user-attachments/assets/ea9d4ee8-8445-40b1-ab65-20c4da58f2a2" />
-
-That was the bare minimum processing you need to start looking at your bugs!
-
-Now you can jump to the ["Classification" step](https://mothbox.org/docs/processing/classify)
-
-## View the photos by order (scientific classification)
-Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in chrome (not firefox)** or some other chromium-based browser
-
-* Add your name (should only include letters and numbers, no special characters)
-
-<img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/f282b462-69f3-4874-9484-5a43804ffa07" />
-
-
-* Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps
-
-<img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/31d6ac3e-9719-4716-9cc2-9d19225db4b9" />
-
-* click on the folder in the sidebar.
-* click on the date when it loads.
-
-<img width="1448" height="1040" alt="image" src="https://github.com/user-attachments/assets/4d38aab8-5957-4b65-950a-bf78a5bfeb1c" />
-
-**BAM! LOOK AT ALL YOUR BUGS**
-
-The left hand side shows the class and order of the bugs. E.g.
-
-Major Insect Orders (ordered by worldwide species)
-
-* Coleoptera ["sheath-wings"]: Beetles
-* Lepidoptera ["scaly-wings"]: Butterflies and moths
-* Diptera ["two-wings"]: True flies (mosquitoes, houseflies, etc.)
-* Hymenoptera ["membrane-wings"]: Bees, wasps, and ants
-* Hemiptera ["half-wings"]: True bugs (aphids, cicadas, stink bugs, etc.)
-* Orthoptera ["straight-wings"]: Grasshoppers, crickets, and katydids
-* Trichoptera ["hair-wings"]: Caddisflies
-* Psocodea ["gnawing-forms"]: Bark lice and booklice (and their parasitic-louse relatives)
-* Blattodea ["cockroach-forms"]: Cockroaches and termites
-* Odonata ["toothed-ones"]: Dragonflies and damselflies
-* Neuroptera ["vein-wings"]: Lacewings (and relatives like antlions)
-* Dermaptera ["skin-wings"]: Earwigs
-
-<img width="1448" height="1042" alt="image" src="https://github.com/user-attachments/assets/041599d6-122b-40cc-b0f1-4220eb201272" />
-
-
-
 # Full Tutorial
 
 ## Running the Program
@@ -232,5 +164,72 @@ This is done through some open source background removing models that you can se
 
 
 <img height="665" alt="image" src="https://github.com/user-attachments/assets/b469ecd8-efac-4ad8-8a85-569850e70bf0" />
+
+
+# Quick and Basic: Tutorial on How to Process (From the "CIID Bugs <3" crew in Italy )
+
+{: .note-title }
+> Quick Tutorial
+>
+> The "CIID Bugs <3" crew in Italy put together a quick tutorial for how to process your insects. If this is your first time, you might just want to do this to get a feel for processing your data, and then you can go more advanced through our tutorial later!
+
+Info on how to process photos:
+1. https://mothbox.org/docs/processing/process/basic: take the raw photos and extract individual photos
+of bugs (draws rectangles around bugs and saves them)
+  a.Take the USB out of the mothbox and plug it in to your computer
+
+  b. Create a folder called Mothbox_Data. Move the photos_backup_bowedBarbo from the USB drive
+into this folder.
+  c. Download the processing software from here https://mothbox.org/docs/processing/process/basic
+and run it. You should get a screen like this, where you can 1. load the photos_backup_bowedBarbo,
+2. check the image collections you want to process, and then 3. process the photos.
+
+<img width="1448" height="1044" alt="image" src="https://github.com/user-attachments/assets/79d16060-217d-4415-a507-8722d0f9fa5b" />
+
+a. It takes a while for the processing to finish. You will then see something like this.
+
+<img width="1448" height="1044" alt="image" src="https://github.com/user-attachments/assets/ea9d4ee8-8445-40b1-ab65-20c4da58f2a2" />
+
+That was the bare minimum processing you need to start looking at your bugs!
+
+Now you can jump to the ["Classification" step](https://mothbox.org/docs/processing/classify)
+
+## View the photos by order (scientific classification)
+Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in chrome (not firefox)** or some other chromium-based browser
+
+* Add your name (should only include letters and numbers, no special characters)
+
+<img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/f282b462-69f3-4874-9484-5a43804ffa07" />
+
+
+* Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps
+
+<img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/31d6ac3e-9719-4716-9cc2-9d19225db4b9" />
+
+* click on the folder in the sidebar.
+* click on the date when it loads.
+
+<img width="1448" height="1040" alt="image" src="https://github.com/user-attachments/assets/4d38aab8-5957-4b65-950a-bf78a5bfeb1c" />
+
+**BAM! LOOK AT ALL YOUR BUGS**
+
+The left hand side shows the class and order of the bugs. E.g.
+
+Major Insect Orders (ordered by worldwide species)
+
+* Coleoptera ["sheath-wings"]: Beetles
+* Lepidoptera ["scaly-wings"]: Butterflies and moths
+* Diptera ["two-wings"]: True flies (mosquitoes, houseflies, etc.)
+* Hymenoptera ["membrane-wings"]: Bees, wasps, and ants
+* Hemiptera ["half-wings"]: True bugs (aphids, cicadas, stink bugs, etc.)
+* Orthoptera ["straight-wings"]: Grasshoppers, crickets, and katydids
+* Trichoptera ["hair-wings"]: Caddisflies
+* Psocodea ["gnawing-forms"]: Bark lice and booklice (and their parasitic-louse relatives)
+* Blattodea ["cockroach-forms"]: Cockroaches and termites
+* Odonata ["toothed-ones"]: Dragonflies and damselflies
+* Neuroptera ["vein-wings"]: Lacewings (and relatives like antlions)
+* Dermaptera ["skin-wings"]: Earwigs
+
+<img width="1448" height="1042" alt="image" src="https://github.com/user-attachments/assets/041599d6-122b-40cc-b0f1-4220eb201272" />
 
 
