@@ -146,7 +146,8 @@ Note how the holes line up:
 
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/fb0c2e7a-b3f5-48d2-992c-4ff0e2e4652d" />
 
-Position the glare blocker over the camera and again make sure all the holes line up.
+Position the glare blocker over the camera and again make sure all the holes line up. Note the **orientation** of the glare blocker. In the latest 3D print, there are arrows on each side that point UP and a horizontal bar indicating the top side:
+<img width="489" height="644" alt="image" src="https://github.com/user-attachments/assets/669a285f-0ada-4a7b-b008-30ed433adc46" />
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/4f8d674d-c95c-4ac8-9df4-894bcb8c6a79" />
 
