@@ -24,7 +24,7 @@ Thus, you can be a little creative with this part of the guide. There are basica
 # Battery - Talentcell PB1202b 12v
 
 For the purpose of this tutorial, we will show you how to use the cheapest, most power dense battery we have found that you can still take on commercial planes around the world. That's the 12V talentcell batteries.
-These batteries can also be daisy chained together (if they are both fully charged already) so you can double the life of your device easily! (They have to charge separately, and there's instructions at the bottom for how to set up a system like this)
+These batteries can also be daisy chained together (if they are both fully charged already) so you can double the life of your device easily! (They have to charge separately, and [there's instructions at the bottom for how to set up a system](https://mothbox.org/docs/building/mothbox_pro/v5.0.6/battery/#experimental-dual-battery) like this)
 
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/88ad60d7-d866-4870-a01b-787766be60cc" />
 
@@ -212,7 +212,41 @@ Gently press it in, and that's it. Note the pins won't go entirely into the hat,
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/b9e25eb6-7b06-49cd-ac9c-5fb1fbae9845" />
 
-# Experimental Dual Battery
+
+# Celebrate! you should have a functional Mothbox!
+
+At this point, you should have fully functional Mothbox electronics in your hands!
+
+{: .note }
+> There is still some assembly left, but if you want to double check your electronics, you can follow the steps below!
+> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.6/assembleincase/)
+> - Make sure your battery is FULLY CHARGED!
+> - Make sure to [flash the firmware onto your SD card](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware)
+> - Then proceed!
+
+If your battery was all the way charged, and you have the Pi image flashed to your SD card in your Pi, then you are set to go!
+
+Press the power button on the battery and let it turn on.
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/5dd5405d-e278-4e5a-8ad9-0955b4ec10ca" />
+
+The first time a mothbox starts up with a new SD card, it can take 1-10 minutes for the card to boot up (after that it's much quicker).
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/7ae43b24-d0a0-483c-a529-4954c1f3784b" />
+
+The LED on the pi should flicker green to show that its processing. 
+If your display is connected, you should see the Pi refresh the Epaper with information about your new Mothbox!
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/0397edfa-60e5-43f3-987d-b8c2e71c673d" />
+
+Chances are the Mothbox will immediately shut itself down, which is normal because I didn't tell you to flip the "Active" switch yet, so it should still be in "OFF" mode. If you want to see the mothbox's lights flicker on, you can flip the "Active" switch and depending on the schedule it will either run fully, or give a quick flash before it goes into "Standby" mode. 
+<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/6c5944f3-1dde-4f9a-8e5e-3fb65d67a5ff" />
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/6e633824-d504-4048-a21d-d3e280487933" />
+
+
+You could also flip the "Debug" switch and go into Debug mode if you have an advanced desire to deeply configure your mothbox.
+
+<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/c296017e-cf65-45c0-8652-191e7b9ac189" />
+
+# Experimental Dual Battery Setup
 
 We will present another option here for hooking up your mothbox in a slightly different way.
 
@@ -294,40 +328,5 @@ These batteries come with a socket to dual-wire adapter:
 Plug the wires from two of this adapters into the input section of the board. Then, once the ends of those wires are securely in place, you can connect the sockets to the batteries' plugs.
 
 Lastly you will need to connect your charging ports to two of the ports at the bottom of the box. Remember you need to charge both of these batteries together, so they stay charged up together or discharge together.
-
-
-# Celebrate! you should have a functional Mothbox!
-
-At this point, you should have fully functional Mothbox electronics in your hands!
-
-{: .note }
-> There is still some assembly left, but if you want to double check your electronics, you can follow the steps below!
-> If you just want to finish the assembly, please [just jump straight to the next step](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.6/assembleincase/)
-> - Make sure your battery is FULLY CHARGED!
-> - Make sure to [flash the firmware onto your SD card](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware)
-> - Then proceed!
-
-If your battery was all the way charged, and you have the Pi image flashed to your SD card in your Pi, then you are set to go!
-
-Press the power button on the battery and let it turn on.
-<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/5dd5405d-e278-4e5a-8ad9-0955b4ec10ca" />
-
-The first time a mothbox starts up with a new SD card, it can take 1-10 minutes for the card to boot up (after that it's much quicker).
-<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/7ae43b24-d0a0-483c-a529-4954c1f3784b" />
-
-The LED on the pi should flicker green to show that its processing. 
-If your display is connected, you should see the Pi refresh the Epaper with information about your new Mothbox!
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/0397edfa-60e5-43f3-987d-b8c2e71c673d" />
-
-Chances are the Mothbox will immediately shut itself down, which is normal because I didn't tell you to flip the "Active" switch yet, so it should still be in "OFF" mode. If you want to see the mothbox's lights flicker on, you can flip the "Active" switch and depending on the schedule it will either run fully, or give a quick flash before it goes into "Standby" mode. 
-<img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/6c5944f3-1dde-4f9a-8e5e-3fb65d67a5ff" />
-
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/6e633824-d504-4048-a21d-d3e280487933" />
-
-
-You could also flip the "Debug" switch and go into Debug mode if you have an advanced desire to deeply configure your mothbox.
-
-<img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/c296017e-cf65-45c0-8652-191e7b9ac189" />
-
 
 
