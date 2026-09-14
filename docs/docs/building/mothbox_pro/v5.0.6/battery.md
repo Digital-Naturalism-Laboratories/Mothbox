@@ -7,30 +7,35 @@ grand_parent: Mothbox Pro
 nav_order: 3
 ---
 # Concept: You are Making a Harness for Whatever Battery You Have
+The Mothbox is set up to run off 9-36V DC batteries of any sort! So you can hook up car batteries, old motorcycle batteries, solar panel boat batteries, generally whatever you need! The DC regulators we use tend to be most efficient around 12V, and so we tend to use a 12V one, but the circuits should be flexible!
+
 Because batteries can be so difficult to get to many places, the design stays pretty open so you can try to fit whatever battery you can in there. The main limits for the battery come from the voltage regulator which takes 9-36v and outputs regulated 12V.
 
 If you have a battery like that, than the main thing you need to do is use the holes to strap it in.
 
 {: .note }
-> # Use Your Own Battery
+> **Use Your Own Battery**
 > The Mothbox PCB basically just wants regulated 12V. This can come from the regulator + a battery, or if you have a battery with REGULATED 12V you can use that too (note that most "12V" batteries are not actually regulated and actually vary between 14-10 (like a car battery).
 
 
+Thus, you can be a little creative with this part of the guide. There are basically holes in a board that you can weave zip ties through in a way that holds things in place securely.
+
+
 # Battery - Talentcell PB1202b 12v
-The Mothbox is set up to run off 9-36V DC batteries of any sort! So you can hook up car batteries, old motorcycle batteries, solar panel boat batteries, generally whatever you need! The DC regulators we use tend to be most efficient around 12V, and so we tend to use a 12V one, but the circuits should be flexible!
 
 For the purpose of this tutorial, we will show you how to use the cheapest, most power dense battery we have found that you can still take on commercial planes around the world. That's the 12V talentcell batteries.
-These batteries can also be daisy chained together (if they are both fully charged already) so you can double the life of your device easily! (They have to charge separately)
+These batteries can also be daisy chained together (if they are both fully charged already) so you can double the life of your device easily! (They have to charge separately, and there's instructions at the bottom for how to set up a system like this)
+
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/88ad60d7-d866-4870-a01b-787766be60cc" />
 
 You will also be using as 9-36V 5a 12V regulator. This ensures constant brightness of the lights over the discharge rate of different batteries. We could have built this circuitry directly into the Mothbox PCB, but after years of field trials we found that if electronics due fail after many months of use, it's almost always the voltage regulator that fails (Also we haven't had any failures since we started using this version that has a big metal heatsink!). So we made the design decision to have this cheap ($15) ubiquitous part be replaceable, so if it does fail, you don't have to replace the entire board!
 
 # Prep the Regulator
-The regulators tend to ship with short little wire leads. Trim the ends off.
+The regulators tend to ship with short little wire leads. Trim the ends off. You want about 1cm exposed.
 
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/58ac3a2f-9224-4798-9d74-98c864ccbb47" />
+<img height="518" alt="image" src="https://github.com/user-attachments/assets/58ac3a2f-9224-4798-9d74-98c864ccbb47" />
 
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/25a223c8-2692-477d-b7cf-a827e611fc1d" />
+<img height="518" alt="image" src="https://github.com/user-attachments/assets/25a223c8-2692-477d-b7cf-a827e611fc1d" />
 
 # Attach Battery and Regulator to Board
 
@@ -41,73 +46,101 @@ The regulators tend to ship with short little wire leads. Trim the ends off.
 
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/49633019-2572-43ed-b556-8f6d56fa02d1" />
 
-## Regulator Strap
-First take one long cable tie, and pass it through this hole (so the head of that tie is stopped by the hole on the other side).
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/408e66d2-091c-427c-9bfb-2c072aa7b3ba" />
+# Positioning the Battery
 
-Now set the battery with the text facing up and the heatsink on top it like this. It can be useful to put a little peice of tape here on the board to keep the battery from wiggling while you are attaching.
-
+Seet the battery with the text facing up and the heatsink on top it like this. It can be useful to put a little piece of tape here on the board to keep the battery from wiggling while you are attaching.
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/3b023c0c-ae60-4e04-9a34-27ad08b35649" />
 
-You will pass that cable tie over the regulator and through the hole at the bottom of the board. You might need a second zip tie to extend the length of your tie.
+I have also used sticky tack to hold batteries in place, and that works great too! The cable ties will be what actually secures the device, you just want to add something here to add a bit of friction to keep your parts from sliding around while you are assembling.
 
-<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/241bbc46-a702-4443-be1b-27c9ded44f4d" />
-<img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/b6dea226-1ab0-4157-8026-eef4cac856c7" />
+<img height="522" alt="image" src="https://github.com/user-attachments/assets/90123777-9c3b-46b6-b061-b6b29a05fdf0" />
 
-Then lock that tie down with another tie on the outside.
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/73ebdc4a-877e-4083-bcf5-177509061672" />
+Position: The battery needs to be oriented so that
+- Text on the battery is facing up (so it can be easily inspected)
+- The "front" of the battery with the ports is facing the electronics ports on the left side of the PCB
+- The holes surrounding the battery are not fully blocked. These holes have a white circle around them
+
+holes along bottom of battery are clear
+<img height="444" alt="image" src="https://github.com/user-attachments/assets/befef336-5b88-4d6f-a8bd-30c4296a7022" />
+
+holes between Pi and Battery are not blocked
+<img width="482" height="636" alt="image" src="https://github.com/user-attachments/assets/ca5e4e2c-ede1-4b36-a767-6774b7e08663" />
+
+
+holes on the back of the battery are clear:
+
+<img height="522" alt="image" src="https://github.com/user-attachments/assets/57f32f32-294e-41f3-ad61-40b96f208940" />
+
+holes on front are looking ok:
+<img height="444" alt="image" src="https://github.com/user-attachments/assets/972413fc-f5c7-4a59-bbd5-0fd6ebbefe5b" />
 
 ## Horizontal Strap
-Now you will take a new zip tie up through the hole at the bottom near the cutout. It will pass in front of the battery and between the wires coming out the regulator. It will go up and over the regulator.
+Take a zip tie up through the hole in front of the ports of the battery. It will pass in front of the battery and between the wires coming out the regulator. It will go up and over the regulator and in between the two ports of the battery and split the wires of the regulator.
 
-<img width="680" height="915" alt="image" src="https://github.com/user-attachments/assets/796b8845-3543-4c26-82b9-280a25e0939c" />
-
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/acc8bed4-e791-4f66-b765-57a7f72d3943" />
 Your cable tie will probably not be long enough to go over the whole length of the battery, so just attach another one to it and pass it through the hole at the battery's butt end.
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/002a0c04-ddd6-4e5e-96fb-681f1a2b3e83" />
-Then secure this strap from the other side with another tie locking it on.
-<img width="687" height="542" alt="image" src="https://github.com/user-attachments/assets/09ecd689-6454-4491-969f-f15906de5910" />
 
-## Back Strap
-Now we will attach another strap to the rear of the battery to hold it firmly in place. Add a zip tie from these bottom holes at the bottom of the PCB.
-
-<img width="417" height="686" alt="image" src="https://github.com/user-attachments/assets/177af172-308b-40c1-a28c-cdb264c03033" />
-
-Send that zip tie across the front of the PCB (we made sure no LEDs will be in the line of this strap). 
-
-<img width="417" height="558" alt="image" src="https://github.com/user-attachments/assets/d8de79fb-2342-45a8-842e-b09547de794d" />
-
-It is important to send this cable tie in this direction so that the head of the cable tie will not interfere with the E paper display on the front.
-
-Now connect the zip tie across the back of the battery. You may need an additional zip tie.
-
-<img width="540" height="555" alt="image" src="https://github.com/user-attachments/assets/7ccab68d-4973-4e5d-b77f-a2f1865ba236" />
-
-<img width="712" height="454" alt="image" src="https://github.com/user-attachments/assets/f65fc072-a9a1-4b88-b1b8-8d497e3aff19" />
-
-**(Extra bonus strap for 5.0.4 boards)
-**
-On the 5.0.4 model, that backstrap can kinda slip off a bit. You can fight against that with an extra zip tie connecting the front and back strap together like this:
-
-<img width="1312" height="1748" alt="image" src="https://github.com/user-attachments/assets/18b3a455-55a6-489b-bfd4-01f8b8e22109" />
-
+Lock down the far side of the strap with the head of another zip tie.
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/223feaae-f778-4758-b361-a49bc97ce813" />
 
 
 ## Middle Strap
-Starting with **PCBs version 5.0.5 ** we added **extra holes for extra battery security**! This gives you a MIDDLE strap option that you can also strap down your battery with!
 Put a cable tie through this middle hole, put it around the battery, and lock it in with another strap on the other side.
 
-<img width="593" height="634" alt="image" src="https://github.com/user-attachments/assets/810258cb-46f8-490b-aa00-77c35d094a21" />
+Try to have the strap hold down the camera cable which will help keep it out of the way.
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/cd0fc2eb-4fef-43bc-95c6-03e80af8f193" />
 
-<img width="1037" height="673" alt="image" src="https://github.com/user-attachments/assets/487fd6b4-2392-4dcd-818e-e463a181d0c4" />
+Pass it through the other hole on the other side of the board
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/49dda9fd-9fc0-4651-b028-55e081c579e6" />
+
+and then lock it into place:
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/5e534e05-e8c9-4882-a907-452786eef1ce" />
+
+
+
+## Regulator Strap
+You will pass that cable tie over the regulator and through the hole at the bottom of the board. You might need a second zip tie to extend the length of your tie.
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/5601f305-4ff7-42de-8029-d1f6210fd8bb" />
+
+
+Then lock that tie down with another tie on the outside.
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/7c847e26-699e-4fc0-bca7-de784ba4cdc6" />
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/bc6f7088-ce41-4ad4-b555-ad44c1839825" />
+
+
+## Back Strap
+Now we will attach another strap to the rear of the battery to hold it firmly in place. Add a zip tie from these bottom holes at the bottom of the PCB.
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/9d8b04e8-a7e7-420d-84be-5860b5450307" />
+
+<img width="992" height="744" alt="image" src="https://github.com/user-attachments/assets/50e50006-f178-4dc9-ac60-18c3e88b2b00" />
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/53cecf8d-da17-44ef-a435-7db716521022" />
+
+
+## Bonus Horizontal Strap
+For extra security, we can now pass one more big long strap along the battery.
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/daaf4fe2-48e1-4211-bc17-ea02c2fcc080" />
+
+You can kind of weave it under your other straps to help hold it in place.
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/15a53656-32e9-4c76-b903-6335888b7afb" />
+
+Lock it off on the other side, and don't block any LEDs.
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/e83a8896-0f74-4fb6-84dc-b6598113e5a3" />
 
 
 ## Trim Straps
 Tighten up all your straps really well. Then snip off all the dangly parts!
-<img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/d38b1480-8e02-4bff-a46a-2ce0a440a098" />
 
-# Connect Regulator to Board
-We are going to connect the regulator to its slots in the board. (Don't worry, it's easy!)
+<img width="489" height="644" alt="image" src="https://github.com/user-attachments/assets/351dadca-d1a8-45a1-93aa-2cdcc2f2512e" />
+
+
+# Wires: Connect Regulator to Board
+We are going to connect the regulator wires to their slots in the board. (Don't worry, it's easy!)
 <img width="689" height="918" alt="image" src="https://github.com/user-attachments/assets/39cfd585-4ef7-4877-8646-c82362ad2547" />
 
 {: .note }
@@ -255,7 +288,13 @@ Add two last straps to try to keep everything in place. You could just go vertic
 
 ## Connect Your Two Batteries
 
-** COMING SOON **
+These batteries come with a socket to dual-wire adapter:
+<img width="147" height="272" alt="image" src="https://github.com/user-attachments/assets/cbd3d2ee-1830-43d9-96d5-ff6252630105" />
+
+Plug the wires from two of this adapters into the input section of the board. Then, once the ends of those wires are securely in place, you can connect the sockets to the batteries' plugs.
+
+Lastly you will need to connect your charging ports to two of the ports at the bottom of the box. Remember you need to charge both of these batteries together, so they stay charged up together or discharge together.
+
 
 # Celebrate! you should have a functional Mothbox!
 
