@@ -6,10 +6,15 @@ grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 3
 ---
+# Concept: You are Making a Harness for Whatever Battery You Have
+Because batteries can be so difficult to get to many places, the design stays pretty open so you can try to fit whatever battery you can in there. The main limits for the battery come from the voltage regulator which takes 9-36v and outputs regulated 12V.
 
-{: .warning }
-> # ⚠️ 5.0.6 documentation coming soon!
-> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.0.6 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
+If you have a battery like that, than the main thing you need to do is use the holes to strap it in.
+
+{: .note }
+> # Use Your Own Battery
+> The Mothbox PCB basically just wants regulated 12V. This can come from the regulator + a battery, or if you have a battery with REGULATED 12V you can use that too (note that most "12V" batteries are not actually regulated and actually vary between 14-10 (like a car battery).
+
 
 # Battery - Talentcell PB1202b 12v
 The Mothbox is set up to run off 9-36V DC batteries of any sort! So you can hook up car batteries, old motorcycle batteries, solar panel boat batteries, generally whatever you need! The DC regulators we use tend to be most efficient around 12V, and so we tend to use a 12V one, but the circuits should be flexible!
@@ -174,6 +179,83 @@ Gently press it in, and that's it. Note the pins won't go entirely into the hat,
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/b9e25eb6-7b06-49cd-ac9c-5fb1fbae9845" />
 
+# Experimental Dual Battery
+
+We will present another option here for hooking up your mothbox in a slightly different way.
+
+{: .warning }
+> # This is an experimental Setup!
+> We haven't thoroughly tested this dual battery setup, and it needs a bit more mindfulness when using.
+
+
+**Why a different setup?** 
+More airlines and mail are cracking down on how to send Lithium-Ion Batteries that are over 100watt-hours of capacity. 
+
+So the idea is that we could get TWO of [these batteries](https://www.amazon.com/TalentCell-LiFePO4-Battery-Rechargeable-Phosphate/dp/B0DSW2S7YH/ref=sr_1_3?crid=1DM4KK9RAR17W&dib=eyJ2IjoiMSJ9.LDaTcZUpNI6cnDS-tORynEDD-SAgfYzt6VyamLtXw6yKkLXw7uQlP3qmqK5aqbfBfHxnMuHGox6jufcyPH64G1C-1GhQC0X5GoZXc50KBcBcXsa2_oSOfxBPyu6tYBnq-cGVuqHQGTJp8L-MNECzerDDCkVCwGwnDV-dgqLCOEXb80P-3GtYrd3vdKJp5i51YnY44_IEuW_AQNx8YWImZYB_PabTJp-kX96NLou81ig.4Rs9W5Iqqin144L3jXW86qaNWMWgAx0gqSWCYl7hgXM&dib_tag=se&keywords=talentcell+12v&qid=1789343859&sprefix=talentcell%2Caps%2C281&sr=8-3) that are only 77 watt-hours
+<img width="679" height="684" alt="image" src="https://github.com/user-attachments/assets/0208d57b-d796-4085-a9da-e5f4e994b4ee" />
+
+<img height="344" alt="image" src="https://github.com/user-attachments/assets/3864c933-ff22-4719-9357-720093e813c4" />
+
+
+This has some advantages:
+- easier to transport around the world
+- Different battery chemistry (LiFePO4 - safer! longer battery age!)
+- redundant!
+
+The disadvantages are:
+- It's kinda weird to hook up two batteries like this
+
+In theory we should be able to connect two batteries like this, but **we need to be a little bit careful.** Both batteries need to be fully charged before they are connected in parallel to the board. If the batteries are at significantly different levels, they could potentially start trying to charge each other. This is much less risky with LiFePO4, but it won't be good for the batteries.
+
+## Pre-Charge both batteries all the way
+
+Charge up both batteries until they are full.
+
+## Put the Two Batteries in Place
+
+Keep some space open in front of the batteries for the regulator later. 
+Put the first battery down with some sticky-tack under to hold it in place a bit. Then add some more sticky tack on top and add the second one.
+
+<img  height="522" alt="image" src="https://github.com/user-attachments/assets/6dbe6a59-216e-4c47-8cd4-d81b3db2de03" />
+
+Add the regulator in front (since it might not fit on the top of the stack. Add some more sticky-tack or tape between them to hold them in place a bit.
+
+## Zip the Horizontal Strap
+Like the single battery, first put a big single strap across the length of the battery situation.
+<img height="522" alt="image" src="https://github.com/user-attachments/assets/0169169f-9c80-4e8b-9a3c-4b8d6eaf0661" />
+
+
+Finish the other side of the zip on the right side of the board:
+<img height="522" alt="image" src="https://github.com/user-attachments/assets/bb03232d-4393-47fd-a439-c088a4c2bdcb" />
+
+## Add Middle Vertical Strap
+
+It is useful to use the middle strap to hold the camera cable out of the way. 
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/3f983795-15b6-4695-b078-82f41b637857" />
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/43d90127-80b7-4bc4-b601-6a01402dd9d2" />
+
+<img width="445" height="406" alt="image" src="https://github.com/user-attachments/assets/ce036200-9201-4136-b185-387bae413235" />
+
+
+## Add Secondary horizontal strap
+
+Just like before but with the additional holes for more support
+
+<img width="445" height="406" alt="image" src="https://github.com/user-attachments/assets/40684ef6-9ef6-4197-b38b-a2e4259a16d7" />
+
+<img width="992" height="744" alt="image" src="https://github.com/user-attachments/assets/370c5a63-f65a-46a2-a9b0-452410cc7e68" />
+
+## Add Diagonal Straps
+Add two last straps to try to keep everything in place. You could just go vertically again, but i felt like experimenting and made two criss-crossing diagonal straps.
+
+<img width="445" height="406" alt="image" src="https://github.com/user-attachments/assets/e9dfa8cc-5a26-4553-b09e-cf97e053815d" />
+
+<img width="992" height="1322" alt="image" src="https://github.com/user-attachments/assets/079c28ac-309b-4e12-abf5-f2658ff3d8f9" />
+
+## Connect Your Two Batteries
+
+** COMING SOON **
 
 # Celebrate! you should have a functional Mothbox!
 
