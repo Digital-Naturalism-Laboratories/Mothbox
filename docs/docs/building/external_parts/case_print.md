@@ -37,7 +37,7 @@ Printing: everything can be printed on standard .4mm nozzles BUT we also made it
 Regular PETG prints nicely and is super durable in the field. Also if you have a high flow nozzle and can use the high flow version of PETG it can print extra quick!
 
 **ASA**
-We have also tested out ASA filament which is supposed to be the filament of choice for outdoor equipment. It prints super smooth, but needs higher temps and a chamber.
+We have also tested out ASA filament which is supposed to be the filament of choice for outdoor equipment. It prints super smooth, but needs higher temps and a chamber. Note that ASA shrinks a little bit, our design tolerances SHOULD accommodate this for your setup, but if things are tight, that's why!
 
 **TPU**
 For the 3D printed TPU rubber, we have been using Bambu lab 85a
