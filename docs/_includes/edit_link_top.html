@@ -1,0 +1,17 @@
+{%- comment -%}
+  "Edit this page on GitHub" link shown at the TOP of every page.
+  The theme (just-the-docs) only renders this link in components/footer.html;
+  this include reuses the exact same URL formula so both links stay in sync
+  with the gh_edit_* settings in _config.yml.
+{%- endcomment -%}
+{% if
+  site.gh_edit_link and
+  site.gh_edit_link_text and
+  site.gh_edit_repository and
+  site.gh_edit_branch and
+  site.gh_edit_view_mode
+%}
+  <p class="text-small text-right mb-2">
+    <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}{% if page.collection and site.collections_dir %}/{{ site.collections_dir }}{% endif %}/{{ page.path }}" id="edit-this-page-top">{{ site.gh_edit_link_text }}</a>
+  </p>
+{% endif %}
