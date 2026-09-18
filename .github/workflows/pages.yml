@@ -12,6 +12,11 @@ on:
     paths:
       - "docs/**"
 
+  # Rebuild daily so the vendor list on "Get a Mothbox" picks up changes from
+  # the Open Science Shop's Airtable (and refreshes expiring image URLs).
+  schedule:
+    - cron: "17 4 * * *"
+
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
@@ -43,6 +48,24 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
           cache-version: 0 # Increment this number if you need to re-download cached gems
           working-directory: '${{ github.workspace }}/docs'
+      # Vendor list for docs/get_a_mothbox, generated from the Open Science
+      # Shop's Airtable (same approach as openflexure.org/about/vendors).
+      # Needs three repository secrets provided by the Open Science Shop:
+      #   OSS_BASE_ID, OSS_TABLE_ID, OSS_ACCESS_TOKEN
+      # Until they're set this step is skipped and the page falls back to
+      # fetching the shop's public vendor directory in the browser.
+      - name: Generate vendor list from Open Science Shop
+        env:
+          OSS_BASE_ID: ${{ secrets.OSS_BASE_ID }}
+          OSS_TABLE_ID: ${{ secrets.OSS_TABLE_ID }}
+          OSS_ACCESS_TOKEN: ${{ secrets.OSS_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$OSS_ACCESS_TOKEN" ]; then
+            echo "::warning::OSS_* secrets not set; skipping Airtable vendor list (page will use live fallback)"
+            exit 0
+          fi
+          python3 -m pip install --quiet pyyaml requests
+          ./generate_vendors.py "$OSS_BASE_ID" "$OSS_TABLE_ID" "$OSS_ACCESS_TOKEN"
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3

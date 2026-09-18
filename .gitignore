@@ -31,3 +31,6 @@ AI/training_scripts/yolo26s-obb.pt
 docs/_site/
 docs/.jekyll-cache/
 docs/.sass-cache/
+
+# Generated in CI by docs/generate_vendors.py
+docs/_data/vendors.yml

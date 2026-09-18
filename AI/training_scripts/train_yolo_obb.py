@@ -313,6 +313,8 @@ def run_training(args):
         # augmentation; 0.005 is more stable without sacrificing final accuracy.
         lr0         = args.lr0,
 
+        max_det     = args.max_det,
+
         # --- Augmentation tuned for Mothbox field photography ---
         # Full rotation: moths appear at any angle on the sheet
         degrees     = 180,
@@ -355,8 +357,9 @@ def run_training(args):
         try:
             export_model = YOLO(str(best_weights))
             onnx_path = export_model.export(
-                format = "onnx",
-                imgsz  = args.imgsz,
+                format  = "onnx",
+                imgsz   = args.imgsz,
+                max_det = args.max_det,
                 # half=True would give FP16 ONNX (smaller/faster) but requires CUDA;
                 # keeping FP32 here for maximum compatibility across platforms.
             )
@@ -365,7 +368,8 @@ def run_training(args):
             print(f"  [WARN] ONNX export failed: {e}")
             print("         You can export manually later with:")
             print(f"         from ultralytics import YOLO")
-            print(f"         YOLO('{best_weights}').export(format='onnx', imgsz={args.imgsz})")
+            print(f"         YOLO('{best_weights}').export(format='onnx', imgsz={args.imgsz}, max_det={args.max_det})")
+            #print(f"         YOLO('{best_weights}').export(format='onnx', imgsz={args.imgsz})")
     else:
         print("\n[INFO] Skipping ONNX export (--no-export flag set).")
 
@@ -392,7 +396,15 @@ def main():
         ),
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-
+    parser.add_argument(
+        "--max-det", type=int, default=3000, dest="max_det",
+        help=(
+            "Maximum detections per image. Baked into the ONNX export, so set "
+            "this high enough for your densest images — YOLO's default of 300 "
+            "will permanently cap the exported model. Mothbox images can "
+            "contain 1500+ creatures."
+        )
+    )
     # Required
     parser.add_argument(
         "--data", "-d", required=True,
