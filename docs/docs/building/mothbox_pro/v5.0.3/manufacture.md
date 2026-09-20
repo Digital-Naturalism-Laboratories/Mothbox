@@ -11,6 +11,18 @@ The cool thing about a Mothbox Pro is that we have integrated most of the electr
 
 If you don't want to manufacture one yourself, we are working with the [Open Science Shop](www.openscienceshop.org) to make a network of people selling these PCBs. So if you want to try to just buy a pre-made pcb, just [fill out this interest form](https://docs.google.com/forms/d/e/1FAIpQLSfi9uZ_ZCyryR8PCAIEaGi_4bSr2cWwznUFDQ-H5Bb0zSpnWg/viewform?usp=header) and we will try to get back to you ASAP! 
 
+# PCB Specifications
+
+**Mothbox Pro**
+The Mothbox Pro PCB is a wider-than normal PCB mostly because it spreads the light of its LEDs out to get a nice even photographic illumination.
+- Use with Standard FR4 PCB material
+
+**Mothbeam**
+The Mothbeams are HIGH INTENSITY LIGHTS that SHOULD BE MADE ON ALUMINUM PCBs. This is because, like most powerful LED boards, you need a metal substrate to help keep the LEDs cool and extend their life.
+- Use with **Aluminum** or Copper PCB Material
+
+
+
 
 # Manufacture Your Own PCB Example (via JLCPCB)
 
