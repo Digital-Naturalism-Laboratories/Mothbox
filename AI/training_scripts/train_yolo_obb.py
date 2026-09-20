@@ -584,12 +584,12 @@ def run_training(args):
                     pass
 
                 print(f"       imgsz={exp_imgsz}, max_det={exp_max_det}")
+
                 onnx_path = export_model.export(
                     format  = "onnx",
                     imgsz   = exp_imgsz,
                     max_det = exp_max_det,
-                    # half=True gives a smaller/faster FP16 ONNX but requires
-                    # CUDA; FP32 keeps maximum cross-platform compatibility.
+                    nms     = False,   # YOLO26 NMS-free head; None (the default) emits the raw head
                 )
                 print(f"  ONNX model  : {onnx_path}")
             except Exception as e:
