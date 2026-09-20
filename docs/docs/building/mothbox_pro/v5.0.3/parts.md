@@ -22,7 +22,7 @@ This newest version of the Mothbox has easy to assemble electronics! You only ne
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/9899b837-f6f3-4340-8af8-b668dc74cb62" />
 
 * [Mothbox Mainboard](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3/manufacture/) - a Printed Circuit Board (PCB) with most electronics already connected up for you! - $50
-* [Mothbeam Boards](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3/manufacture/) - Little, super bright, metal LEDs that plug in to your Mainboard (up to 3) - $5 each
+* [Mothbeam Boards](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3/manufacture/) - Little, super bright, metal-PCBs with LEDs that plug in to your Mainboard (up to 3) - $5 each
 * [Raspberry Pi 5 4GB](https://www.sparkfun.com/raspberry-pi-5-4gb.html) (or higher) - $75  (Our latest firmware LOOKS like it works with a [Pi 5 2GB](https://www.sparkfun.com/raspberry-pi-5-2gb.html), but we have not thoroughly tested)
 * [SD Card](https://www.amazon.com/dp/B0CQX2B25W?ref=ppx_yo2ov_dt_b_fed_asin_title) - 32GB or bigger, Class A1 or faster (A2 is nice) - $15
 * [USB Storage](https://www.amazon.com/dp/B0BN3Q1M96?ref=ppx_yo2ov_dt_b_fed_asin_title) - 32 GB or bigger
