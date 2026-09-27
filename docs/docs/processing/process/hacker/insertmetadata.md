@@ -27,4 +27,4 @@ You've now got the appropriate metadata associated with each organism you've ide
 
 ## Next Step: Perceptual Clustering
 
-You can now move on to the next step, which is running a script that will help cluster the different pictures of organisms you have based on visual similarities. Head to the [Perceptual Clustering](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/cluster/) step now!
+You can now move on to the next step, which is running a script that will help cluster the different pictures of organisms you have based on visual similarities. Head to the [Perceptual Clustering](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/hacker/cluster/) step now!

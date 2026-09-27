@@ -24,7 +24,7 @@ Thus, you can be a little creative with this part of the guide. There are basica
 # Battery - Talentcell PB1202b 12v
 
 For the purpose of this tutorial, we will show you how to use the cheapest, most power dense battery we have found that you can still take on commercial planes around the world. That's the 12V talentcell batteries.
-These batteries can also be daisy chained together (if they are both fully charged already) so you can double the life of your device easily! (They have to charge separately, and [there's instructions at the bottom for how to set up a system](https://mothbox.org/docs/building/mothbox_pro/v5.0.6/battery/#experimental-dual-battery) like this)
+These batteries can also be daisy chained together (if they are both fully charged already) so you can double the life of your device easily! (They have to charge separately, and [there's instructions at the bottom for how to set up a system](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.6/battery/#experimental-dual-battery-setup) like this)
 
 <img width="958" height="719" alt="image" src="https://github.com/user-attachments/assets/88ad60d7-d866-4870-a01b-787766be60cc" />
 

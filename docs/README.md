@@ -76,7 +76,7 @@ Having an insect sensor (like a Mothbox), however, that could compare the activi
 Humans have long ago discovered that many nocturnal insects like Moths seem to be attracted to lights. We now know this is because [bright lights disorient their natural steering mechanism](https://www.nature.com/articles/s41467-024-44785-3). Scientists have used bright artificial lights for over a century now to take censuses of insect populations. The problem with this type of "Mothlighting" is that it can be incredibly time consuming (a scientist has to hang out all night and note which insects are visiting). Instead we have an automated device that does all this work for you!
 
 # Mothbeam
-We are also building an open-source, portable low cost light for mothlighting, the Mothbeam! Some early documentation for [making your own Mothbeam is here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/#internal-mothbeam)
+We are also building an open-source, portable low cost light for mothlighting, the Mothbeam! Some early documentation for [making your own Mothbeam is here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/attractor/#internal-mothbeam)
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/fab3c9ac-f879-4768-abee-1e61d8d63172)
 
 ![PXL_20240718_190826331 MP](https://github.com/user-attachments/assets/5201d9bb-20fc-43ae-8e99-69f6ac24126e)

@@ -44,7 +44,7 @@ https://app.element.io/#/room/#mothbox:matrix.org
 
 See the [full specifications of what it can do here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/about/specs/)
 Watch a [video presentation of our talk at the Smithsonian all about the Mothbox and its design.](https://www.youtube.com/watch?v=lZhh7ecnAgk)
-or [read a scientific paper](besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210x.70327) about using a Mothbox!
+or [read a scientific paper](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210x.70327) about using a Mothbox!
 
 ![PXL_20240720_054408351 MP-EDIT](https://github.com/user-attachments/assets/cf7da6c8-2a7d-40a8-8872-6f9987c43082)
 
@@ -106,7 +106,7 @@ After following these guides, you should be able to make your own set of Mothbox
 
 
 # Mothbeam
-We are also building an open-source, portable, low-cost light for mothlighting, the Mothbeam! Some early documentation for [making your own Mothbeam is here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/#internal-mothbeam)
+We are also building an open-source, portable, low-cost light for mothlighting, the Mothbeam! Some early documentation for [making your own Mothbeam is here.](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/attractor/#internal-mothbeam)
 ![Untitled](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/fab3c9ac-f879-4768-abee-1e61d8d63172)
 
 ![PXL_20240718_190826331 MP](https://github.com/user-attachments/assets/5201d9bb-20fc-43ae-8e99-69f6ac24126e)

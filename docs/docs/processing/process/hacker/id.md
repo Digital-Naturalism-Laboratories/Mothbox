@@ -30,7 +30,7 @@ When you are done running the ID script, your window should look like this (noti
 <img width="1185" height="456" alt="IDfinished" src="https://github.com/user-attachments/assets/18fae682-0574-4881-b1bb-e84bab08a485" /><br>
 
 ## Next: Insert Metadata
-Now that you have detected and identified your organisms, the next step is to make sure the metadata for your deployment is associated to your identified organisms. Head to the next step “[Insert Metadata](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/insertmetadata/)” to continue.
+Now that you have detected and identified your organisms, the next step is to make sure the metadata for your deployment is associated to your identified organisms. Head to the next step “[Insert Metadata](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process/hacker/insertmetadata/)” to continue.
 
 
 ## Run this Script Manually

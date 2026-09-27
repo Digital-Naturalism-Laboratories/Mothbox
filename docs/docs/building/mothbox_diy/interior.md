@@ -125,7 +125,7 @@ Add zipties through these two holes.
 
 ![PXL_20240528_221243294](https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/b241f36d-b417-4dda-8d66-3a8db11dbfd6)
 
-After your ringlights have been physically connected in place, just let their wires dangle out the backside. We will connect them in the next step, [wiring](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
+After your ringlights have been physically connected in place, just let their wires dangle out the backside. We will connect them in the next step, [wiring](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/wiring/)
 
 # Connect the Raspberry Pi
 It sits in the corner of the mainboard. The connection points for the Raspberry Pi all have a tiny extra hole right next to them. This helps you locate the exact holes for the Raspberry Pi.
@@ -238,5 +238,5 @@ BLUE arrows point to SMALL clips.
 
 
 # Internals Constructed!
-Next you just need to [wire all your electronics together!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/)
+Next you just need to [wire all your electronics together!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/wiring/)
 

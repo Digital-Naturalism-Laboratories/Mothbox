@@ -108,7 +108,7 @@ Both wires can fit in this port together. Just tighten down the screw and make s
 
 
 ## Connect the UV Attractor Light
-There's a couple different options for [what kind of UV attractor light you want (Internal, External,etc...)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/) No matter which option you go with, your attractor light will have a RED/PURPLE (Postive) and BLACK (negative) wire coming out of them. I used a purple wire for my UV attractor light so I would remember it is for a UV light, and it shows up easier in the documentation photos below to let you understand what I am talking about. You can use a red wire if you want. 
+There's a couple different options for [what kind of UV attractor light you want (Internal, External,etc...)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/attractor/) No matter which option you go with, your attractor light will have a RED/PURPLE (Postive) and BLACK (negative) wire coming out of them. I used a purple wire for my UV attractor light so I would remember it is for a UV light, and it shows up easier in the documentation photos below to let you understand what I am talking about. You can use a red wire if you want. 
 
 Take the positive (red or purple) wire from the UV attractor light, and connect it to the left most slot in the left most relay. (Shown as the purple wire in the photo below).
 
@@ -202,7 +202,7 @@ If you CONNECT these two wires together (grounding pin P27), then the Mothbox wi
 
 ![image](https://github.com/user-attachments/assets/26756b7a-420e-4777-8e77-7c83ecd224b0)
 
-Next you can decide if you want to add a voltage monitor (below), or a [Solar Panel or Extra Battery](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/powersources/), or if you haven't yet made your [UV attractor, it's time to do that!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/)
+Next you can decide if you want to add a voltage monitor (below), or a [Solar Panel or Extra Battery](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/external_parts/powersources/), or if you haven't yet made your [UV attractor, it's time to do that!](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/attractor/)
 
 # (Optional) Connect an Eink display
 If you purchased a [little E-eink display](https://www.waveshare.com/wiki/2.13inch_e-Paper_HAT_Manual#Working_With_Raspberry_Pi) to get a better idea of what's happening inside your mothbox's brain, then you can easily connected it!

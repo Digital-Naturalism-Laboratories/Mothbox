@@ -22,7 +22,7 @@ To get one, you can:
 * [order them from circuithub](https://circuithub.com/projects/Moritz/Mothbeam/revisions/57895/parts) (the most expensive way)
 * or because it's open source, you can get the files from circuithub and make the PCBs yourself! The tricky part is that because they are high power LEDs, they are made on a heat-dissipating aluminum substrate. Keep that in mind!
 
-What's nice is you can arrange them in different ways. You can put them together in a container and use it just like a Lepiled or other portable insect attractors. You could then connect these assembled "Mothbeams" as an ["External Attractor"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/attractor/#external-12v-uv-light)
+What's nice is you can arrange them in different ways. You can put them together in a container and use it just like a Lepiled or other portable insect attractors. You could then connect these assembled "Mothbeams" as an ["External Attractor"](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/attractor/#external-12v-uv-light)
 
 <img src="https://github.com/user-attachments/assets/fd2c6542-056e-49ad-9002-5586bc7ca017" width="45%">
 <img src="https://github.com/user-attachments/assets/bd0e494e-6192-494c-b266-e6fd57c3014c" width="45%">
@@ -63,7 +63,7 @@ You can take these apart, and using thermal silicone double sided tape (and mayb
 
 # External 12V UV Light
 
-Using the [same method for adding an additional charging port](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/wiring/#add-charging-port-optional-but-nice) we described earlier, you can add an additional OUTPUT port to the bottom of your Mothbox. This new external port should be connected to the same relay as you would hook up any of the attractor options. Then you can simply use a DC cable to connect whatever 12 V light you wish to use outside of the Mothbox.
+Using the [same method for adding an additional charging port](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_diy/wiring/#add-charging-port) we described earlier, you can add an additional OUTPUT port to the bottom of your Mothbox. This new external port should be connected to the same relay as you would hook up any of the attractor options. Then you can simply use a DC cable to connect whatever 12 V light you wish to use outside of the Mothbox.
 
 Here's a step-by-step guide for how to add an External 12V UV Light.
 
