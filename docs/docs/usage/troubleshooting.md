@@ -1,3 +1,4 @@
+
 ---
 layout: default
 title: Troubleshooting
@@ -12,6 +13,15 @@ One of the best ways to find answers to problems is to check out the [Github Iss
 
 # Firmware Troubleshooting (Mothbox's Functions being funny)
 *coming soon*
+
+# Software Troubleshooting
+
+## It's taking my computer FOREVER to copy thousands of small files
+
+I ran into this problem on Windows, where i was copying a 20gb dataset to an external drive, but it said it was going to take 9 days. found out a way to fix this!
+Windows disables write caching on USB drives by default, which hurts small-file writes a lot. To enable it, open Device Manager → Disk drives → your destination drive → Policies → Better performance. And uncheck "Write Caching." After that, always use "Safely Remove" before unplugging.
+
+<img width="807" height="574" alt="image" src="https://github.com/user-attachments/assets/a8a85711-bdcc-4c14-9192-eca5a31378f6" />
 
 
 # Hardware Troubleshooting
