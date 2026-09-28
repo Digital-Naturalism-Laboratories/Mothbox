@@ -1,32 +1,32 @@
 {%- comment -%}
   Renders the vendor cards from _data/vendors.yml (written by generate_vendors.py
-  in CI from the Open Science Shop's Airtable). Included by docs/get_a_mothbox/index.md.
+  in CI from the Open Science Shop's "Mothbox Vendor Directory" Airtable table). Included by docs/get_a_mothbox/index.md.
   Field names come from the EXPECTED_FIELDS table in generate_vendors.py.
 {%- endcomment -%}
 <div class="oss-vendors-grid">
 {% for vendor in site.data.vendors %}
   <div class="oss-vendor-card">
     {% if vendor.image != "" %}
-    <img class="oss-vendor-card-image" src="{{ vendor.image }}" alt="{{ vendor.name | escape }} image" loading="lazy">
+    <img class="oss-vendor-card-image" src="{{ vendor.image | escape }}" alt="{{ vendor.name | escape }} image" loading="lazy">
     {% endif %}
     <div class="oss-vendor-card-body">
       <p class="oss-vendor-card-name">
-        {% if vendor.logo != "" %}<img class="oss-vendor-card-logo" src="{{ vendor.logo }}" alt="">{% endif %}
-        {{ vendor.name }}
+        {% if vendor.logo != "" %}<img class="oss-vendor-card-logo" src="{{ vendor.logo | escape }}" alt="">{% endif %}
+        {{ vendor.name | escape }}
       </p>
-      {% if vendor.location != "" %}<p class="oss-vendor-card-location">{{ vendor.location }}</p>{% endif %}
-      {% if vendor.about != "" %}<p class="oss-vendor-card-about">{{ vendor.about }}</p>{% endif %}
+      {% if vendor.location != "" %}<p class="oss-vendor-card-location">{{ vendor.location | escape }}</p>{% endif %}
+      {% if vendor.about != "" %}<p class="oss-vendor-card-about">{{ vendor.about | escape | newline_to_br }}</p>{% endif %}
       {% if vendor.products.size > 0 %}
       <p class="oss-vendor-card-label">Mothbox products</p>
       <ul class="oss-vendor-card-list">
-        {% for p in vendor.products %}<li>{{ p }}</li>{% endfor %}
+        {% for p in vendor.products %}<li>{{ p | escape }}</li>{% endfor %}
       </ul>
       {% endif %}
-      {% if vendor.shipping_terms != "" %}<p class="oss-vendor-card-label">Shipping</p><p class="oss-vendor-card-about">{{ vendor.shipping_terms }}</p>{% endif %}
+      {% if vendor.shipping_terms != "" %}<p class="oss-vendor-card-label">Shipping</p><p class="oss-vendor-card-about">{{ vendor.shipping_terms | escape | newline_to_br }}</p>{% endif %}
       <p class="oss-vendor-card-links">
         {% assign shop_link = vendor.product_page | default: vendor.website %}
-        {% if shop_link != "" %}<a class="btn btn-outline oss-vendor-card-link" href="{{ shop_link }}" target="_blank" rel="noopener noreferrer">Visit website</a>{% endif %}
-        {% if vendor.email != "" %}<a class="btn btn-outline oss-vendor-card-link" href="mailto:{{ vendor.email }}">Email</a>{% endif %}
+        {% if shop_link != "" %}<a class="btn btn-outline oss-vendor-card-link" href="{{ shop_link | escape }}" target="_blank" rel="noopener noreferrer">Visit website</a>{% endif %}
+        {% if vendor.email != "" %}<a class="btn btn-outline oss-vendor-card-link" href="mailto:{{ vendor.email | escape }}">Email</a>{% endif %}
       </p>
     </div>
   </div>

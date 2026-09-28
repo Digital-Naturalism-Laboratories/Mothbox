@@ -4,8 +4,7 @@ Generate the Mothbox vendor list from the Open Science Shop's Airtable.
 
 Ported from the OpenFlexure project's generate_vendors.py
 (https://gitlab.com/openflexure/openflexure.gitlab.io/-/blob/main/generate_vendors.py),
-adapted so the Airtable field names that are project-specific can be set via
-environment variables instead of being hard-coded.
+adapted to the Open Science Shop's dedicated "Mothbox Vendor Directory" table.
 
 Writes docs/_data/vendors.yml, which _includes/vendors-list.html renders on
 the "Get a Mothbox" page. Run from the docs/ directory:
@@ -27,91 +26,91 @@ import requests
 import yaml
 
 # ---------------------------------------------------------------------------
-# Airtable field names. The generic ones match the Open Science Shop table
-# that OpenFlexure reads. The project-specific ones can be overridden with
-# environment variables so we don't have to edit code if OSS names the
-# Mothbox columns differently.
+# Airtable columns -> variables used by _includes/vendors-list.html.
+# Each variable lists the column names it may appear under (first match wins),
+# so a renamed column only needs its new name added here.
+# The Open Science Shop keeps a dedicated "Mothbox Vendor Directory" table, so
+# every approved row is a Mothbox vendor -- no product filtering needed.
+#
+# Deliberately NOT published: "Contact Name" and "Contact Email" (a person's
+# private contact details). The public "Business Email Address" is used instead.
 # ---------------------------------------------------------------------------
-PRODUCT_FIELD = os.environ.get("OSS_PRODUCT_FIELD", "Mothbox Products")
-CONTRIB_FIELD = os.environ.get("OSS_CONTRIB_FIELD", "Mothbox contribution")
-
-# (name in Airtable, variable name in the YAML / Liquid include, required?)
-# Required fields must exist in the table schema or the script aborts --
-# that way a renamed column fails the build loudly instead of silently
-# publishing an empty vendor list.
-EXPECTED_FIELDS = [
-    ("Business Name", "name", True),
-    ("Website", "website", True),
-    ("Approved", "approved", True),
-    ("Contact Email", "email", False),
-    ("Location Group", "location_group", False),
-    ("Manufacturer Location", "location", False),
-    (PRODUCT_FIELD, "products", False),
-    ("Other Products", "other_products", False),
-    ("Shipping Terms", "shipping_terms", False),
-    ("About", "about", False),
-    ("Image", "image", False),
-    ("Logo", "logo", False),
-    ("Notes", "notes", False),
-    ("Product Page Link", "product_page", False),
-    (CONTRIB_FIELD, "contributions", False),
-]
+FIELDS = {
+    # var name:      ([possible Airtable column names], required?)
+    "name":          (["Business Name"], True),
+    "website":       (["Business Website", "Website"], True),
+    "email":         (["Business Email Address", "Business Email"], False),
+    "location":      (["Location", "Manufacturer Location"], False),
+    "products":      (["Mothbox Products"], False),
+    "about":         (["About"], False),
+    "shipping_terms": (["Shipping Terms", "Shipping"], False),
+    "image":         (["Image", "Company Image", "Photo"], False),
+    "logo":          (["Logo"], False),
+    "product_page":  (["Product Page Link", "Product Page"], False),
+    # If the table has no "Approved" checkbox, every row is published.
+    "approved":      (["Approved"], False),
+}
 
 
-def get_field_schema(field_name, schema):
-    """Return the field schema for the named field, or None if absent."""
-    return next((s for s in schema["fields"] if s["name"] == field_name), None)
-
-
-def check_schema(schema):
-    """Abort if a required field is missing; warn about missing optional ones."""
-    field_names = [f["name"] for f in schema["fields"]]
-    for field_name, _, required in EXPECTED_FIELDS:
-        if field_name in field_names:
-            continue
-        if required:
-            sys.exit(f"ERROR: required Airtable field '{field_name}' not found. "
-                     f"Fields present: {field_names}")
-        print(f"WARNING: optional Airtable field '{field_name}' not found; "
-              f"it will be empty for every vendor.")
-
-
-def first_attachment_url(value):
+def map_columns(schema):
     """
-    Airtable attachment fields come back as a list of dicts with a 'url'.
-    Text/URL fields come back as a plain string. Normalise both to a string.
+    Work out which Airtable column feeds each variable. Aborts if a required
+    column is missing, so a renamed column fails the build loudly instead of
+    silently publishing an empty vendor list.
+    """
+    present = {f["name"]: f["type"] for f in schema["fields"]}
+    print(f"Airtable columns found: {list(present)}")
+    columns = {}
+    for var, (candidates, required) in FIELDS.items():
+        column = next((c for c in candidates if c in present), None)
+        if column is None:
+            if required:
+                sys.exit(f"ERROR: none of the columns {candidates} exist in the table.")
+            if var == "approved":
+                print("NOTE: no 'Approved' column; publishing every row that has a name and website.")
+            else:
+                print(f"NOTE: no column for '{var}' (looked for {candidates}); it will be left empty.")
+        columns[var] = (column, present.get(column))
+    return columns
+
+
+def to_text(value):
+    """
+    Normalise an Airtable value to a string. Attachment fields come back as a
+    list of {'url': ...} dicts; lookups/selects can come back as lists.
     NOTE: attachment URLs from Airtable expire after a few hours, so the site
     is rebuilt daily to keep them fresh (see the schedule in pages.yml).
     """
     if isinstance(value, list):
-        return value[0].get("url", "") if value and isinstance(value[0], dict) else ""
-    return value or ""
+        if not value:
+            return ""
+        first = value[0]
+        return first.get("url", "") if isinstance(first, dict) else str(first)
+    return "" if value is None else str(value)
 
 
-def clean_data(vendors, schema):
+def clean_data(records, columns):
     """
-    Fill in defaults for every expected field. Airtable omits empty fields
-    from its response entirely, so without this the Liquid template would
-    have to nil-check everything.
+    Build one flat dict per vendor with every variable present. Airtable omits
+    empty fields from its response entirely, so without this the Liquid
+    template would have to nil-check everything.
     """
-    clean_vendor_list = []
-    for vendor in vendors:
-        cleaned = {}
-        for field_name, var_name, _ in EXPECTED_FIELDS:
-            f_schema = get_field_schema(field_name, schema)
-            field_type = f_schema["type"] if f_schema else "singleLineText"
-            if field_type == "checkbox":
-                default = False
-            elif field_type in ("multipleSelects", "multipleAttachments", "multipleRecordLinks"):
-                default = []
+    vendors = []
+    for record in records:
+        vendor = {}
+        for var, (column, field_type) in columns.items():
+            value = record.get(column) if column else None
+            if var == "approved":
+                vendor[var] = bool(value) if column else True
+            elif var == "products":
+                if isinstance(value, list):
+                    vendor[var] = [str(v) for v in value]
+                else:
+                    vendor[var] = [value] if value else []
             else:
-                default = ""
-            value = vendor.get(field_name, default)
-            if var_name in ("image", "logo"):
-                value = first_attachment_url(value)
-            cleaned[var_name] = value
-        clean_vendor_list.append(cleaned)
-    return clean_vendor_list
+                vendor[var] = to_text(value).strip()
+        vendors.append(vendor)
+    return vendors
 
 
 def get_request(url, headers):
@@ -129,8 +128,13 @@ def get_data_from_server(base_id, table_id, access_token):
     headers = {"Authorization": f"Bearer {access_token}"}
 
     result = get_request(f"https://api.airtable.com/v0/meta/bases/{base_id}/tables", headers)
+    if result.status_code in (401, 403, 404):
+        sys.exit(f"ERROR: Airtable refused access ({result.status_code}). Check the base id, and that the "
+                 f"token has the data.records:read + schema.bases:read scopes and access to this base.")
     assert result.status_code == 200, f"Couldn't access schema ({result.status_code}): {result.text}"
-    schema = next(t for t in result.json()["tables"] if t["id"] == table_id)
+    schema = next((t for t in result.json()["tables"] if t["id"] == table_id), None)
+    if schema is None:
+        sys.exit(f"ERROR: table {table_id} not found in base {base_id}. Check the table id.")
 
     records, offset = [], None
     while True:
@@ -151,30 +155,25 @@ def get_data_from_server(base_id, table_id, access_token):
 def main():
     parser = argparse.ArgumentParser(
         prog="Mothbox Vendor Page Generator",
-        description="Generates _data/vendors.yml from the Open Science Shop Airtable",
+        description="Generates _data/vendors.yml from the Open Science Shop's Mothbox vendor table",
     )
     parser.add_argument("--show-unapproved", "-u", action="store_true",
                         help="Include unapproved vendors (for testing)")
-    parser.add_argument("--all-vendors", "-a", action="store_true",
-                        help=f"Don't filter to vendors with a non-empty '{PRODUCT_FIELD}' field")
     parser.add_argument("--out", default="_data/vendors.yml", help="Output path")
-    parser.add_argument("base_id")
-    parser.add_argument("table_id")
-    parser.add_argument("token")
+    parser.add_argument("base_id", help="Airtable base id (starts with 'app')")
+    parser.add_argument("table_id", help="Airtable table id (starts with 'tbl')")
+    parser.add_argument("token", help="Airtable personal access token (starts with 'pat')")
     args = parser.parse_args()
 
-    schema, vendors = get_data_from_server(args.base_id, args.table_id, args.token)
-    check_schema(schema)
-    vendors = clean_data(vendors, schema)
+    schema, records = get_data_from_server(args.base_id, args.table_id, args.token)
+    columns = map_columns(schema)
+    vendors = clean_data(records, columns)
     total = len(vendors)
 
     if not args.show_unapproved:
         vendors = [v for v in vendors if v["approved"]]
     # A vendor needs at least a name and a website to be useful on the page.
     vendors = [v for v in vendors if v["name"] and v["website"]]
-    # Only list vendors that actually sell Mothbox products, if that column exists.
-    if not args.all_vendors and get_field_schema(PRODUCT_FIELD, schema):
-        vendors = [v for v in vendors if v["products"]]
 
     # Shuffle so no vendor is permanently first; the site rebuilds daily.
     random.shuffle(vendors)

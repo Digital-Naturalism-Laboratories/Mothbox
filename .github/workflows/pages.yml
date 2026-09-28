@@ -49,19 +49,20 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
           working-directory: '${{ github.workspace }}/docs'
       # Vendor list for docs/get_a_mothbox, generated from the Open Science
-      # Shop's Airtable (same approach as openflexure.org/about/vendors).
-      # Needs three repository secrets provided by the Open Science Shop:
+      # Shop's "Mothbox Vendor Directory" Airtable table (same approach as
+      # openflexure.org/about/vendors). Needs three repository secrets:
       #   OSS_BASE_ID, OSS_TABLE_ID, OSS_ACCESS_TOKEN
-      # Until they're set this step is skipped and the page falls back to
-      # fetching the shop's public vendor directory in the browser.
+      # If they're missing or the fetch fails, the rest of the site still
+      # deploys and the page shows a link to the shop's directory instead.
       - name: Generate vendor list from Open Science Shop
+        continue-on-error: true
         env:
           OSS_BASE_ID: ${{ secrets.OSS_BASE_ID }}
           OSS_TABLE_ID: ${{ secrets.OSS_TABLE_ID }}
           OSS_ACCESS_TOKEN: ${{ secrets.OSS_ACCESS_TOKEN }}
         run: |
           if [ -z "$OSS_ACCESS_TOKEN" ]; then
-            echo "::warning::OSS_* secrets not set; skipping Airtable vendor list (page will use live fallback)"
+            echo "::warning::OSS_* secrets not set; skipping Airtable vendor list"
             exit 0
           fi
           python3 -m pip install --quiet pyyaml requests
