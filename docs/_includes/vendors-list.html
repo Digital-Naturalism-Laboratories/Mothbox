@@ -7,13 +7,11 @@
 {% for vendor in site.data.vendors %}
   <div class="oss-vendor-card">
     {% if vendor.image != "" %}
-    <img class="oss-vendor-card-image" src="{{ vendor.image | escape }}" alt="{{ vendor.name | escape }} image" loading="lazy">
+    <img class="oss-vendor-card-image" src="{{ vendor.image | escape }}" alt="{{ vendor.name | escape }} product" loading="lazy" onerror="this.remove()">
     {% endif %}
     <div class="oss-vendor-card-body">
-      <p class="oss-vendor-card-name">
-        {% if vendor.logo != "" %}<img class="oss-vendor-card-logo" src="{{ vendor.logo | escape }}" alt="">{% endif %}
-        {{ vendor.name | escape }}
-      </p>
+      {% if vendor.logo != "" %}<img class="oss-vendor-card-logo" src="{{ vendor.logo | escape }}" alt="{{ vendor.name | escape }} logo" loading="lazy" onerror="this.remove()">{% endif %}
+      <p class="oss-vendor-card-name">{{ vendor.name | escape }}</p>
       {% if vendor.location != "" %}<p class="oss-vendor-card-location">{{ vendor.location | escape }}</p>{% endif %}
       {% if vendor.about != "" %}<p class="oss-vendor-card-about">{{ vendor.about | escape | newline_to_br }}</p>{% endif %}
       {% if vendor.products.size > 0 %}

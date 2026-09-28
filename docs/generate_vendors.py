@@ -43,13 +43,16 @@ FIELDS = {
     "location":      (["Location", "Manufacturer Location"], False),
     "products":      (["Mothbox Products"], False),
     "about":         (["About"], False),
-    "shipping_terms": (["Shipping Terms", "Shipping"], False),
-    "image":         (["Image", "Company Image", "Photo"], False),
-    "logo":          (["Logo"], False),
+    "shipping_terms": (["Your Shipping Terms", "Shipping Terms", "Shipping"], False),
+    "image":         (["Product Image", "Image", "Company Image", "Photo"], False),
+    "logo":          (["Business Logo", "Logo"], False),
     "product_page":  (["Product Page Link", "Product Page"], False),
     # If the table has no "Approved" checkbox, every row is published.
     "approved":      (["Approved"], False),
 }
+
+
+URL_VARS = {"website", "image", "logo", "product_page"}
 
 
 def map_columns(schema):
@@ -109,6 +112,10 @@ def clean_data(records, columns):
                     vendor[var] = [value] if value else []
             else:
                 vendor[var] = to_text(value).strip()
+                # Link/picture columns sometimes hold placeholder text like
+                # "no links yet, sorry!" -- only keep real URLs.
+                if var in URL_VARS and not vendor[var].startswith(("http://", "https://")):
+                    vendor[var] = ""
         vendors.append(vendor)
     return vendors
 

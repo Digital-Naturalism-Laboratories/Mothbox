@@ -83,10 +83,12 @@ The list of Mothbox vendors below is maintained by the [Open Science Shop](https
     align-self: flex-start;
   }
   .oss-vendor-card-logo {
-    height: 1.4rem;
+    display: block;
+    max-height: 3rem;
+    max-width: 60%;
     width: auto;
-    vertical-align: middle;
-    margin-right: 0.35rem;
+    object-fit: contain;
+    margin: 0 0 0.5rem;
   }
   .oss-vendor-card-about {
     font-size: 0.85rem;
