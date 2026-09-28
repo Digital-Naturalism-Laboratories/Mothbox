@@ -184,6 +184,9 @@ def main():
 
     # Shuffle so no vendor is permanently first; the site rebuilds daily.
     random.shuffle(vendors)
+    # Vendors with a product image go first (stable sort keeps the shuffle
+    # within each group).
+    vendors.sort(key=lambda v: not v["image"])
 
     os.makedirs(os.path.dirname(args.out) or ".", exist_ok=True)
     with open(args.out, "w", encoding="utf-8") as f:
