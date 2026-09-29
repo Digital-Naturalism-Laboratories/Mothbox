@@ -8,7 +8,7 @@ nav_order: 7
 # 2026 - Sep - 09
 **Unified firmware! New case! New PCB! September \[Mothbox\] Updates!** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/0053f122-e7b8-131c-e42c-d4b7261b5d1f.jpg" width="612" alt="" /></a>
+<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="/assets/images/devblog/2026-09-09-01.jpg" width="612" alt="" /></a>
 
 The Mothbox world tour has finished (though we are going to Montreal in 2 weeks to do more Mothbox work, so maybe the tour is still happening? ¯\\\_(ツ)\_/¯ )
 
@@ -20,7 +20,7 @@ As this project has grown, we have had a growing need for an online space where 
 
 **Mothbox Chat** [**https://matrix.to/#/#mothbox:matrix.org**](https://matrix.to/#/#mothbox:matrix.org)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/43fdbc13-10e2-09f7-a746-4b4fc48e6013.png" width="319" alt="" />
+<img src="/assets/images/devblog/2026-09-09-02.png" width="319" alt="" />
 
 You can use it in a web browser,  or download the app "element X" to use it on a phone. It will ask you to sign up for a free matrix.org account and that's it! No fees, all open, nothing gets deleted!
 
@@ -40,7 +40,7 @@ Took us oddly long to make an email you can shoot mothbox questions to as well: 
 
 Since we created the newest version of the Mothbox, it became a bit annoying to have to keep track of which software and images we needed to keep each device up to date. But now I went back through our scripts and made it automatically try to detect which device you are using (you can also set it manually with the customizer!)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/578574fb-2647-72e8-2453-542db63fa2d6.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-09-09-03.png" width="612" alt="" />
 
 Try out the [latest firmware here.](https://drive.google.com/drive/u/0/folders/1o3aGB1MZUrNxRoGycFVw_ofUQehrjuqF)
 
@@ -50,7 +50,7 @@ Setting up a Mothbox to do what you want it to do is even easier now! We made a 
 
 You can [get the file here](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Firmware/blob/main/mothbox_custom_Unified/mothbox_settings_editor.html). (in the latest version of the firmware it also just sits in the “mothbox_custom” folder on your Pi’s SD card).
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/ff35d996-1be0-8308-b80f-256fe05c21c6.png" width="398" alt="" />
+<img src="/assets/images/devblog/2026-09-09-04.png" width="398" alt="" />
 
 It gives you a friendly interface that will spit out a nice new mothbox_settings.csv file you can replace the current one with on your SD card. It can also help prevent weirdnesses that may happen when you edit the csv with something like excel.
 
@@ -58,7 +58,7 @@ It gives you a friendly interface that will spit out a nice new mothbox_settings
 
 Smeary bugs (caused by rolling shutter inherent to most digital camera sensors we use), can be fun (like this one from logan)! but ideally we want as fast of photos as possible. That's why we have super bright flash leds on the front to reduce exposure time. but that can take us only so far. I found a way to up the bus speed of the camera to have a 30% shorter exposure time, so hopefully that can make less smeary bugs! (can go from 1119 µs to 868 µs shortest possible exposure time)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/c6c76593-aa92-8488-0b71-ce0a86375241.png" width="304" alt="" />
+<img src="/assets/images/devblog/2026-09-09-05.jpg" width="304" alt="" />
 
 the higher speed does come with a caveat from Arducam that the camera can act less stably, but i think this moreso applies to people doing high bandwidth video recording, and we just simply take one little photo a minute, so it should be fine!
 
@@ -92,9 +92,9 @@ Andy has a philosophy that Zip ties (cable ties), seem to be the most ubiquitous
 
 Some people love our very manual switches to control your device without programming! Some people hate how tiny those switches are and suggested including a flipping tool! We built one! The PCBs now come with an integrated switch flipper made from part of the PCB that normally gets tossed!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/0ced0a07-6f6d-e89a-059c-bb53f425131e.jpg" width="320" alt="" />
+<img src="/assets/images/devblog/2026-09-09-06.jpg" width="320" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/b934c7fa-795c-0ce6-3510-c65c4503247a.jpg" width="180" alt="" />
+<img src="/assets/images/devblog/2026-09-09-07.jpg" width="180" alt="" />
 
 **Other Upgrades**
 
@@ -116,16 +116,16 @@ latest and greatest hardware here: <https://github.com/Digital-Naturalism-Labora
 
 I actually upgraded the old case from 5.0.3 to 5.0.4 with some tweaks, but then just went hogwild and made an even bigger overhaul. This also was the result of feedback and thinking over the past 6 months about ways to tweak the case to make it a) easier to use, b) easier to print, c) more weatherproof, and d) give more attachment options.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/85f09548-7732-da26-e897-77ed57e40b9d.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-09-09-08.jpg" width="300" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/a7963fbf-7ff0-f80c-6e89-22fbe8be0370.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-09-09-09.jpg" width="300" alt="" />
 
 - Added strong criss-crossing molle-like attachment points for weaving zip ties through adding lots of of ways of attaching or connecting accessories.
 - trimmed ~120 grams lighter shell!
 - Zips distribute weight around the box + zips can connect legs straight on too!
 - Integrated hinge!: Realized my "zip-tie's are the ubiquitous world-wide connector"-philosophy could be used for hinges! Easier to open and close with fewer hands! and importantly keeps our design unreliant on fancy printer tolerances or exotic materials. Instead cheap vinyl ties do the hard work!
 - cleat for lid: There's also a cleat near the top to keep water and debris from flowing in near the top lid even if it is accidentally a bit loose. bigger news though is, you may have noticed the top looks a bit different though, and a bit flat, and there's a reason for that...
-- <img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/4f1ae72c-3e3c-1fd1-bb37-c875b5c68ac5.jpg" width="612" alt="" />
+- <img src="/assets/images/devblog/2026-09-09-10.jpg" width="612" alt="" />
 
   **Extra Waterproofing!**
 - Solid, yet breathable Rain deflector! it lets you add a simple solid plastic sheet on top for extra waterproofing if desired! (a slightly modified acrylic target works great! You could even use a solar panel and most could be plugged straight into the box!)
@@ -139,7 +139,7 @@ I actually upgraded the old case from 5.0.3 to 5.0.4 with some tweaks, but then 
 
 - All loaded and organised in Orcaslicer (so you can easily print with any device!)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/2a0000dd-b521-0268-e905-4f8a009d05fe.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-09-09-11.png" width="612" alt="" />
 
 ## Mothbox Interest? We got your message!
 
@@ -149,7 +149,7 @@ If you filled out our [Mothbox interest form](https://docs.google.com/forms/d/e/
 # 2026 - Aug - 30
 **End of \[mothbox\] world tour, Montreal, RIP Jimmy, and other\[dinacon\] updates** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<img src="https://dim.mcusercontent.com/cs/4c29b4f7a39e89dd012b35960/images/7db6045e-e1fc-04dd-9601-15bb12050456.png?dpr=2&rect=0%2C60%2C1646%2C1131&w=628&h=431" width="628" alt="" />
+<img src="/assets/images/devblog/2026-08-30-01.jpg" width="628" alt="" />
 
 *(above: Pom’s Dubious Tiger Moth Illustration)*
 
@@ -157,7 +157,7 @@ Andy and Kit are finally back in Panama after 4.5 months of continuous traveling
 
 Though spotted at times with heartbreak and funding despair, it has been an amazing trip getting to connect with hundreds of incredible people. Now we are prepping the latest Mothboxes while working on the next big move. (We have already made several tweaks on Mothbox designs based on feedback from the world tour!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/a468288d-8b75-ba53-9f1e-336f99316495.jpg" width="298" alt="" />
+<img src="/assets/images/devblog/2026-08-30-02.jpg" width="298" alt="" />
 
 ## Upcoming Events!
 
@@ -165,7 +165,7 @@ Though spotted at times with heartbreak and funding despair, it has been an amaz
 
 We Every year, Sid and Lee from OSHWA run a fantastic all day live stream talk show. You can see creators around the world showing their super cool projects ranging across zillions of fields (with plenty of zaniness in between)!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/b84cdc79-efae-869d-59e6-7e8a3df32615.png" width="298" alt="" />
+<img src="/assets/images/devblog/2026-08-30-03.jpg" width="298" alt="" />
 
 Want to show off something cool? [Sign up here!](https://docs.google.com/forms/d/e/1FAIpQLSc1tTqm2WY5aWRQi6wfXTsakWNbRJYoNpkqe5jvRB4ov9PqgQ/viewform)
 
@@ -181,7 +181,7 @@ He was passionate about music, computers, and social justice. Sadly, at times, s
 
 Despite all these deep problems our bud was dealing with, he was always nice and empathetic to hang around and chat with (and a happy concert buddy!).
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/5a5010f1-a750-d51b-2a99-baecec7661c6.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-04.jpg" width="612" alt="" />
 
 I know most folks on this mailing list never met him, but you can get a taste of hanging out with our bud in this segment of our 20-year-[old documentary we made about “Piles.”](https://www.youtube.com/watch?v=MaD9LLCJJcg&list=PLE2551E721632498F&index=2)
 
@@ -193,31 +193,31 @@ Also please remember that the entire world is in an incredibly tumultuous time, 
 
 July was Jam packed with Moth events! Mothapalooza was an incredible event. Hundreds of folks, both expert Moth-ers and complete novices joined together to celebrate these amazing creatures!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/a954f873-4227-fd21-0e85-e58618085442.jpg" width="400" alt="" />
+<img src="/assets/images/devblog/2026-08-30-05.jpg" width="400" alt="" />
 
 Please we finally got to meet the crew from the [Caterpillar Lab](https://www.thecaterpillarlab.org/)! (Who gave the best digitally augmented live demos I’ve ever seen!)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/8d2acf30-54f4-afb1-8c80-1b08375e6c78.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-08-30-06.jpg" width="300" alt="" />
 
 We also did a completely improvised workshop showing some folks how to build their mothboxes while upgrading Alissa Doucet (a researcher from the field museum)’s mothboxes.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/3419fc58-63b9-15ed-d894-7e29996f3ba7.jpg" width="400" alt="" />
+<img src="/assets/images/devblog/2026-08-30-07.jpg" width="400" alt="" />
 
 **AMNH - NYC**
 
 After our Keynote at Mothapalooza, Bri met up with us and we helped run Mothweek celebrations with Jesse Barber and his lab at the American Museum of Natural History in New York City!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/c9996ae0-1bce-ce95-04ee-04a42c1e4dbf.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-08.jpg" width="612" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/49057525-2b68-3844-e458-3663024fcfc5.jpeg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-09.jpg" width="612" alt="" />
 
 There we had several days of workshops, check out amazing behind the scenes tours, do talks, and public demonstrations! Including the dream come true: giving a big panel talk about moths under the giant whale in the hall of biodiversity!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/47af6cb6-a34f-eb96-2320-4faa32b70c68.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-10.jpg" width="612" alt="" />
 
 We even did an impromptu mothing trip across the street into central park after the museum closed!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/067e69be-bbba-2867-2927-047b6aebe76f.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-11.jpg" width="612" alt="" />
 
 We also swung by the biohacker space, Biotech without Borders, and gave a talk to the great community there!
 
@@ -227,21 +227,21 @@ After NYC, I popped up to MIT for the FAB 26 conference (thanks to tickets and s
 
 Then I met with Sydne Record for a tour of the Harvard Forest and to hopefully get Mothboxes integrated at NEON sites like this in the future. BTW the site has these AMAZING dioramas detailing the stages of historical forest management there!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/5c6cc12b-940f-e77e-c61c-ef6ce4d92378.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-12.jpg" width="612" alt="" />
 
 **Maine**
 
 Then our incredibly talented friends Lee and Alex were doing a fancy residency at Haystack Mountain School of Crafts in Maine, and were kind enough to invite me to visit.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/eb5cbc7c-0e61-f0ec-1902-f15637765a0f.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-13.jpg" width="612" alt="" />
 
 Obviously I rented a cheap bike, and rode my Mothbox 100km down there to hang with them (and their Moths).
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/ab7d7fe4-bd71-f91b-01c1-a5c379d3e7ef.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-08-30-14.jpg" width="300" alt="" />
 
 By chance the amazing artist, Eli Nixon, author/creature of the book/holiday called [“Bloodtide,”](https://the3rdthing.press/product/bloodtide-2nd-edition/) was the resident next to Lee and Alex, and we got to make them a kind of wearable projector that put them in the center of a horseshoe crab swarm!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/4a3618d8-ac1a-5dd8-c104-78795cac0141.jpg" width="400" alt="" />
+<img src="/assets/images/devblog/2026-08-30-15.jpg" width="400" alt="" />
 
 After this quick visit I had to bike back across Maine and head to St. Louis and Tucson, but those details can be shared in the **NEXT UPDATE!**
 
@@ -255,7 +255,7 @@ We set up a slack-like chat room (using Element and Matrix) for people who want 
 
 Mothbox Chat <https://matrix.to/#/#mothbox:matrix.org>
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/43fdbc13-10e2-09f7-a746-4b4fc48e6013.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-16.png" width="612" alt="" />
 
 ## Get your own Mothbox?
 
@@ -267,11 +267,11 @@ Since January we have been running a challenge for making Moth art every week! P
 
 And we got to celebrate their art on the big screen at the American Museum of Natural History! Make sure to check out all [Pom’s illustrations she’s been posting on her Instagram!](https://www.instagram.com/ecoartistpom/) and Weng’s on bluesky with the hashtag!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/cbdb717e-439e-fa86-620d-3b914fa5a9db.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-17.jpg" width="612" alt="" />
 
 Here was the list of challenges and you can find many on social media via hashtag, "#YearOfTheMoth”
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/ee250965-65c2-bed8-2b89-d742459d5c42.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-30-18.jpg" width="612" alt="" />
 
 ## Mothbox World Tour IS OVER!
 
@@ -335,7 +335,7 @@ Montreal!
 # 2026 - Aug - 11
 **Join Mothbox Chat, Loads of Software Improvements, Integrated Visualizations, Customize Settings easier! August \[Mothbox\] Updates!** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="https://dim.mcusercontent.com/cs/4c29b4f7a39e89dd012b35960/images/241d36a0-c29a-7ccb-b0f1-9cc0bd5f1d30.jpg?dpr=2&rect=1379%2C836%2C2620%2C816&w=401&h=125" width="612" alt="" /></a>
+<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="/assets/images/devblog/2026-08-11-01.jpg" width="612" alt="" /></a>
 
 We just finished up the Northeast with the Natural History Museum, Boston and Fab 26 conference, and a bonus Mothbox bikepacking ride across Maine. Now there is just one stop left in the Mothbox World Tour! I am now heading to **Tucson to give the Keynote talk** for the [Invertebrates in Education Conference](https://titag.org/iecc-conference/).
 
@@ -345,7 +345,7 @@ As this project has grown, we have had a growing need for an online space where 
 
 Mothbox Chat <https://matrix.to/#/#mothbox:matrix.org>
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/43fdbc13-10e2-09f7-a746-4b4fc48e6013.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-11-02.png" width="612" alt="" />
 
 You can use it in a web browser,  or download the app "element X" to use it on a phone. It will ask you to sign up for a free matrix.org account and that's it! No fees, all open, nothing gets deleted!
 
@@ -363,7 +363,7 @@ On the nice advice of our friend, Lee, I made a super simple html file that lets
 
 You can [get the file here](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Firmware/blob/main/mothbox_custom_Pro/mothbox_settings_editor.html). (in future versions of the firmware it will just sit in the “mothbox_custom” folder on your Pi’s SD card).
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/ff35d996-1be0-8308-b80f-256fe05c21c6.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-11-03.png" width="612" alt="" />
 
 It gives you a friendly interface that will spit out a nice new mothbox_settings.csv file you can replace the current one with on your SD card. It can also help prevent weirdnesses that may happen when you edit the csv with something like excel.
 
@@ -380,9 +380,9 @@ I have been editing it a bunch to make it faster and more usuable:
 - Gets past built in yolo limit of 300 bugs per image
 - Changes boundary conditions for detections that go off-image. Because we have oriented bounding boxes, there are sometimes insects detected where part of the detection box goes off screen. The default way that opencv handles this to make the cropped image repeats the edge pixels in a kinda weird way. I was worried this could mess with the Identification and visual clustering algorithms, so i tweaked it so that it doesn’t do that anymore! Check the examples below of before and after detections.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/cd75aef8-e68b-1922-a58d-3219acf6c5dc.png" width="300" alt="" />
+<img src="/assets/images/devblog/2026-08-11-04.png" width="300" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/be9b4f14-3ecf-f543-beab-75a8619cd01c.png" width="300" alt="" />
+<img src="/assets/images/devblog/2026-08-11-05.png" width="300" alt="" />
 
 **Mothbox Classify**
 
@@ -391,7 +391,7 @@ Classify is our post-post-processing data validation software. You can use it by
 - Integrated Visualization software: You can now turn your datasets of bugs into cool radial visualizations or bar charts (like those we made for our latest paper). It is very easy to use and customizable (and much speedier to process thousands of bugs than previously!)
 - Improvements are folded back into the main branch on github
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/9dd541ee-e1d7-030a-fe3a-3a9d433f81b1.jpeg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-08-11-06.jpg" width="612" alt="" />
 
 **Support for MASSIVE image collections**
 
@@ -405,7 +405,7 @@ If you filled out our [Mothbox interest form](https://docs.google.com/forms/d/e/
 # 2026 - Jun - 25
 **Pixel Mass Estimation, Convert Legacy dataset, Mothbeam Tweak \[Mothbox\]!** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="https://dim.mcusercontent.com/cs/4c29b4f7a39e89dd012b35960/images/999173bb-329e-7c1f-c34f-aac97d4d305b.jpg?dpr=2&rect=0%2C941%2C4000%2C1745&w=612&h=267" width="612" alt="" /></a>
+<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="/assets/images/devblog/2026-06-25-01.jpg" width="612" alt="" /></a>
 
 Bonus updates for you all!
 
@@ -417,7 +417,7 @@ I got an itch over the weekend and worked to add a new feature in our post proce
 
 There is an extra tab in the Mothbot Process software where you can input how many pixels/mm your image target is, and then the program will start removing the backgrounds from each detection image, and then calculate how many “insect pixels” are in this image, which can then be converted to mm2
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/848c5b5a-74bf-31a5-fff1-05d4889d9ba9.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-06-25-02.jpg" width="612" alt="" />
 
 and a helpful extra feature: pixel/mm estimation tool!
 
@@ -425,13 +425,13 @@ Maybe you don’t know off-hand the pixel to mm conversion of your images, well 
 
 The tab will auto-load one of the source images from your data, and if you click two points of a known distance (e.g. these two dots re 45mm apart), then it will compute your pix/mm for you!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/0c038630-9f02-28b6-491c-eb3e077699d4.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-06-25-03.jpg" width="612" alt="" />
 
 Try out both tools today!
 
 Classify can show these changes and estimates now too!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/3be597df-5ac1-1985-24e8-77173e09894f.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-06-25-04.jpg" width="612" alt="" />
 
 Download the latest release of Mothbot [Process](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/releases) and [Classify](https://dev-classify.mothbox.org/)
 
@@ -453,7 +453,7 @@ I had a hunch and didn’t have time to verify, but the amazing Gerrit validated
 
 Gerrit actually measured them and found they use more current than estimated. So not much of a problem, but we just logged the real-world current of the mothbeam versions 5.0.1-5.0.2
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/b24c7faa-5972-22c5-4131-864d4f9005a2.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-06-25-05.png" width="612" alt="" />
 
 And then Gerrit, being a superhero, even discovered this discrepancy was because i accidently connected a part of the circuit that should not have been connected, and released a new version, **5.0.3,** which fixes this error.
 
@@ -461,7 +461,7 @@ Overall it’s not the biggest deal, but this fix should help the mothbeams be e
 
 Gerrit also found out a simple way to convert your old mothbeams, you just need to cut this trace between these two legs of this IC circled in the pic below
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/cc53e2e4-d31b-4fb1-0651-105028c259fe.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-06-25-06.jpg" width="612" alt="" />
 
 Mothbeam connector!
 
@@ -475,7 +475,7 @@ https://jlcpcb.com/parts/componentSearch?searchTxt=C46061768
 # 2026 - Jun - 20
 **Software and firmware overhaul for \[Mothbox\]!** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="https://dim.mcusercontent.com/cs/4c29b4f7a39e89dd012b35960/images/68b5dff5-780f-ce80-8d94-d20085b8752b.jpg?dpr=2&rect=0%2C1098%2C4000%2C1901&w=612&h=291" width="612" alt="" /></a>
+<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="/assets/images/devblog/2026-06-20-01.jpg" width="612" alt="" /></a>
 
 ## Big Changes in Post Processing!
 
@@ -489,12 +489,12 @@ Lack of funding isn’t holding us back from rapid developments! During our meet
 - More flexible matching of Metadata sheets
 - exif data saves faster
 - Live previews of the detection process
-- <img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/4aa587a7-cd7a-8312-d889-a72f74a89c13.jpeg" width="400" alt="" />
+- <img src="/assets/images/devblog/2026-06-20-02.jpg" width="400" alt="" />
 - Batch processing of detections for computers with larger amounts of RAM
 
 - Process indicators (showing what stages of processing each image collection has gone through
 
-  <img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/02a3dc42-74fd-3631-86ed-af8b70cd52f5.png" width="400" alt="" />
+  <img src="/assets/images/devblog/2026-06-20-03.png" width="400" alt="" />
 - More flexible image collection detection
 - [Support for ISO 8601 timestamps (and several other types of timestamp)](https://github.com/Digital-Naturalism-Laboratories/mothbot-classify)
 
@@ -504,10 +504,10 @@ Lack of funding isn’t holding us back from rapid developments! During our meet
 
 - Species lists don’t need to be in a special “species” folder anymore
 - Old-style datasets and new-style datasets with a separate “processed” folder are accepted
-- <img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/6bbb06e5-51b7-968d-4505-216b47a770d5.jpeg" width="400" alt="" />
+- <img src="/assets/images/devblog/2026-06-20-04.jpg" width="400" alt="" />
 - Can selectively choose which datasets in a dataset folder to set up
 - can reset or refresh datasets
-- <img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/86cbe752-b28f-b52c-329d-6cf2fb2cbf1e.jpeg" width="400" alt="" />
+- <img src="/assets/images/devblog/2026-06-20-05.jpg" width="400" alt="" />
 
 ## Firmware Updates!
 
@@ -528,7 +528,7 @@ We have made the newest firmware more reliable and even easier to use with some 
 
 <https://academic.oup.com/icb/advance-article/doi/10.1093/icb/icag072/8700641>
 
-<a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210x.70327"><img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/fb36f4ea-6c67-139a-4b09-516dd6cbfe35.png" width="612" alt="" /></a>
+<a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210x.70327"><img src="/assets/images/devblog/2026-06-20-06.jpg" width="612" alt="" /></a>
 
 [If you are into papers, you should check out our seminal publication too!](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210x.70327)
 
@@ -538,15 +538,15 @@ We have made the newest firmware more reliable and even easier to use with some 
 
 The mothing has been nonstop! Our workshop in berlin culminated with the MOTHRAVE, and then we brought the devices made there to Aarhus and to use in the Bionic Blitz in Marburg. Then we carried these tools along a bike tour of the Lahn, Rhine, and Main rivers.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/2a15858a-e369-ea8f-638c-c13693510df4.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-06-20-07.jpg" width="300" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/738c09db-560a-1db0-1741-0e4b711a8ee4.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-06-20-08.jpg" width="300" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/fee90e2c-aeea-ec83-f94d-ff9fb6544e4e.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-06-20-09.jpg" width="612" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/0953a8b6-d612-c7cb-b768-6ad6d0af5de2.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-06-20-10.jpg" width="300" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/f92e5b88-c063-7b31-56c3-4d9b0c3887be.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-06-20-11.jpg" width="300" alt="" />
 
 Where can you catch us next!? At KRKreate in Croatia headed up by Kalindi Fonda.
 
@@ -630,7 +630,7 @@ Fill out our interest form and we will start trying to contact folks individuall
 # 2026 - May - 17
 **Mothbox's First Paper! 📰🦋 + Updates from the \[mothbox\] World Tour! \[dinacon\]** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/40c4980e-e26b-00a2-5f75-309ef889f8d1.jpg" width="628" alt="" />
+<img src="/assets/images/devblog/2026-05-17-01.jpg" width="628" alt="" />
 
 *(above: Kit leading a Mothbox workshop and seminar while visiting Juli Carillo’s lab at the University of British Colombia)*
 
@@ -638,7 +638,7 @@ Fill out our interest form and we will start trying to contact folks individuall
 
 Hubert led our first academic paper describing the Mothbox and it just got accepted!
 
-<a href="https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210x.70327"><img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/9e959bb1-b7cc-7c07-cc52-90bc75d46b96.png" width="396" alt="" /></a>
+<a href="https://besjournals.onlinelibrary.wiley.com/doi/epdf/10.1111/2041-210x.70327"><img src="/assets/images/devblog/2026-05-17-02.jpg" width="396" alt="" /></a>
 
 We targeted the journal “Methods in Ecology and Evolution” and based our paper’s structure off the seminal “Audiomoth” paper because their journey helping use open technology to open a new field in field biology has been inspirational to our work. So we are delighted that it just got accepted!
 
@@ -654,19 +654,19 @@ Andy and Kit made their way up the Pacific Northwest Coast to visit lovely Vanco
 
 The bumblebees make really neat nests reminiscent of the stingless bee colonies we have down in the tropics.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/471eb858-3edd-6bac-df25-9b7be8bfed13.jpg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-05-17-03.jpg" width="300" alt="" />
 
 ## Express Yourself Online with Moth Stickers!
 
 In celebration of [#YearOfTheMoth](https://bsky.app/hashtag/YearOfTheMoth), the Mothbox team hired an artist in Panama, David Francesco, to create a fun sticker pack so you can more adequately express yourself online via Moths! We have sticker packs available for [Signal](https://signal.art/addstickers/#pack_id=9c35299a635ffc99ea00112c8771d227&pack_key=e5296f25a3d1693809ea4280020df844d6fe5dfc6fc3c9941618cb5ce5b29720), [Telegram](https://t.me/addstickers/Mothfun2), and Whatsapp (but whatsapp is weird and we don’t know how to share them outside of the app, so you can ping my whatsapp contact +507 6116 9300, and i will send you the stickers!)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/4d2830e0-ceb2-d8af-4ed4-feb62c0a775a.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-05-17-04.jpg" width="612" alt="" />
 
 ## The Replicators are Recreating Mothbox!
 
 With Nadya Peek’s awesome Pathways to Open Source Ecosystems NSF grant, we have hired two researchers, Ali and Chris who have the really cool job of recreating and taking notes on open source science tools! Their first task was to try to recreate a mothbox without help from us! and they are doing great! (and importantly they are finding lots of little ways we can improve the build process in the future.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/61e58975-350b-dae7-1743-34a8d0e1615d.jpeg" width="263" alt="" />
+<img src="/assets/images/devblog/2026-05-17-05.jpg" width="263" alt="" />
 
 They are documenting their build processes all in public too! Just go to the GOSH forums and look for the “REPLICATOR” posts.
 
@@ -678,7 +678,7 @@ Soon they will be working on recreating other science tools like the Openflexure
 
 We will probably send a dedicated email about this later, but we are looking for jobs to be able to keep Mothboxing! Oftentimes people see us doing all this different stuff and assume we are doing great. Well let us clear that up for you! We were super lucky to get the $160k in funding we stretched for the past two years to pay for ALL aspects of the Mothbox (hardware prototyping, field techs, travel for deployments), but ourselves have been living off only about $15k a year, which is starting to get trickier. Especially because we are planning on moving to somewhere that isn’t the USA or Panama.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/7fb99451-b043-6ba7-40de-5e8046cdc357.jpg" width="400" alt="" />
+<img src="/assets/images/devblog/2026-05-17-06.jpg" width="400" alt="" />
 
 We are applying for more funding all the time, but none are working out :/
 
@@ -712,7 +712,7 @@ I don’t have a specific link, but the people putting out this job shared this 
 
 “The university group I am affiliated with (in beautiful Trondheim) is looking for someone with a biology and coding (which includes use of AI) background to help showcase their data and models to decision makers. "Shiny colorful maps" as the director calls it. It's a long term, non-research position, start up asap (as a ~1 year temporary position which will later be advertised as a position for the years after). I think this will be a job with a lot of freedom, and the showcase focus means that it will be little software maintenance and mostly the cool part of making new stuff
 
-<img src="https://a.slack-edge.com/production-standard-emoji-assets/16.0/apple-medium/1f642@2x.png" alt=":slightly_smiling_face:" />
+<img src="/assets/images/devblog/2026-05-17-07.png" alt=":slightly_smiling_face:" />
 
  It does require being in Trondheim and is not insect- or other taxon specific. See <https://www.ntnu.edu/gjaerevoll> for general info on the Centre for Biodiversity Foresight Analysis.”
 
@@ -778,13 +778,13 @@ Keep creating moth art from now until moth week in July! We might even have a li
 
 Need moth inspiration? Here’s a list of weekly challenges! Just share it online with hashtag, "#YearOfTheMoth”
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/ee250965-65c2-bed8-2b89-d742459d5c42.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-05-17-08.jpg" width="612" alt="" />
 
 
 # 2026 - Apr - 19
 **\[Mothbox\] New firmware! Updated Post Processing! World Tour Phase 2!** *(from our [email newsletter](https://us20.campaign-archive.com/home/?u=4c29b4f7a39e89dd012b35960&id=6caba8d984))*
 
-<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="https://dim.mcusercontent.com/cs/4c29b4f7a39e89dd012b35960/images/4b046cc3-8cd3-ee46-67f1-73e2673dd47b.jpg?dpr=2&rect=0%2C151%2C4000%2C2697&w=612&h=412" width="612" alt="" /></a>
+<a href="https://photos.fife.usercontent.google.com/pw/AP1GczN3lsQ_qFFHIrCfviufxc8EyobuPJYFlYmIae8638NDEyS2h4ke9cNVSg=w1235-h926-s-no?authuser=0"><img src="/assets/images/devblog/2026-04-19-01.jpg" width="612" alt="" /></a>
 
 ## Important Mothbox Unique Name Change with latest firmware!
 
@@ -802,7 +802,7 @@ You can download the latest firmware now (for free, of course!)!
 
 Our post-processing software is so much easier to use now! Instead of setting up a whole programming environment on your computer (“hacker mode”), we now have pre-compiled programs you can just [download and double click to run](https://digital-naturalism-laboratories.github.io/Mothbox/docs/processing/process)! There are currently software downloads for windows, windows with CUDA, and MacOS. (The github actions is having problems with a linux version because it’s comes out about the 2GB limit, but we can bump this in priority if it is necessary for someone)
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/5c1aa693-fbbf-4b24-e40f-5f83cb2a6f82.png" width="612" alt="" />
+<img src="/assets/images/devblog/2026-04-19-02.png" width="612" alt="" />
 
 We also worked with the cool Pybioclip team this past week, and got the bioclip updated properly to the latest version to give much speedier AND accurate performance with Bioclip 2!
 
@@ -814,13 +814,13 @@ At the InsectAI meeting in Serbia this week, Hubert will be there to show folks 
 
 Stemming from our workshop at the ICTC conference in Peru, Matt and Alejandro and the team down at Manu Biostation having been working hard to build out new features for mothboxes that will have constant power and internet access. We anticipated this need and the Mothbox Pro’s even have a dedicated switch to activate this “Hi Power mode”, we just haven’t fully built out this feature yet. But these awesome folks have been doing great work towards this!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/db19c921-03e3-a70f-28b9-8a5e0890bae6.jpeg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-04-19-03.jpg" width="612" alt="" />
 
 Check it out, they are even putting the Mothboxes up in the rainforest canopy!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/22e1e257-0400-577f-3114-40226df3a3e3.jpeg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-04-19-04.jpg" width="300" alt="" />
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/8c8b9bdf-d0d6-3582-6711-1c2b4cfbcd3f.jpeg" width="300" alt="" />
+<img src="/assets/images/devblog/2026-04-19-05.jpg" width="300" alt="" />
 
 ## Mothbox making with Imageomics!
 
@@ -828,7 +828,7 @@ Last week we got to go to the [Imageomics conference](https://imageomics.osu.edu
 
 They also made the most stylish mothboxes to date with gorgeous malibu pink PETG!
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/3cbcd122-4b1d-07bd-a3e2-8adf8e4ddcfa.jpg" width="450" alt="" />
+<img src="/assets/images/devblog/2026-04-19-06.jpg" width="450" alt="" />
 
 ## Have you used a mothbox? Send us some data and we will train the new model to work better for you!
 
@@ -850,7 +850,7 @@ We just made it to Seattle and are spreading more Mothbox love as we travel arou
 
 This week will be be helping run the Pathways to [“Open-Source Hardware for Laboratory Automation”](https://depts.washington.edu/machines/scienceautomation/)  workshop, and I’ll be meeting with our Open Science Replicators in person who are auditing the Mothbox builds.
 
-<img src="https://mcusercontent.com/4c29b4f7a39e89dd012b35960/images/b54667a8-df86-7aac-5f9a-3b6ca729741b.jpg" width="612" alt="" />
+<img src="/assets/images/devblog/2026-04-19-07.jpg" width="612" alt="" />
 
 Then we will be visiting Eugene, OR, then Vancouver! (We have never been to Vancouver before, so if you are there, please get in touch!)
 
