@@ -74,6 +74,8 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * [TroubleMaker Shenzhen](https://troublemaker.site/)
   * Henk, Terry, and Ming
 
+* [IVADO Institute](https://ivado.ca/)
+  * Sponsored a collaboration with us and [Antenna](https://antenna.insectai.org) software for processing bugs
 
 
 
