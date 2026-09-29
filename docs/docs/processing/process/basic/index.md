@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Standard Processing
-nav_order: 1
+nav_order: 0
 parent: Process
 has_children: true
 permalink: /docs/processing/process/basic
