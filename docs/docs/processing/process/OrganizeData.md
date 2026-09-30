@@ -64,11 +64,11 @@ In addition to the Deployment photo data, there are two other files you will nee
 * [Metadata CSV](https://github.com/Digital-Naturalism-Laboratories/Mothbox/blob/main/AI/Mothbox_Main_Metadata_Field_Sheet_Example%20-%20Form%20responses%201.csv)
     * You can manually input this metadata in the software, but keeping a CSV of ALL your metadata can be useful for large scale deployments
     * This ties the photos and IDs to metadata like location and date
-    * the column headings of the CSV should be
+    * The column headings of the CSV should be:
     * Timestamp,device,firmware,sheet,schedule,dataset,project,site,latitude,longitude,height_above_ground,habitat,deployment_date,collect_date,data_storage_location,crew,notes,attractor,attractor_location,UTC,deployment_name
 * [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/tree/main/specieslists)
-    * This improves the automatic Identification process by limiting the guess to only creatures that might be in your desired location and type of creature (e.g. Insecta or more broadly like Arthropoda)
-    * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so not big worry.    
+    * This improves the automatic Identification process by limiting the guesses to only creatures that might be in your desired location and type of creature (e.g. Insecta or, more broadly, like Arthropoda. This ensures that you won't accidentally ID insects in Canada as a bird that only lives in Indonesia)
+    * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so don't worry too much.    
 
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
 
