@@ -3,7 +3,7 @@ layout: default
 title: Case (3D Print)
 parent: External Parts
 #has_children: true
-nav_order: 1
+nav_order: 0
 ---
 
 The lastest version of the Mothbox has a [3D printable case](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro)! We have been testing it fiercely in the wettest part of the wet season for months in jungles of Panama, and it's held up wonderfully! Nice and dry, easy to use, minimal manual labor! Plus it's cheaper than buying and hacking your own case!
