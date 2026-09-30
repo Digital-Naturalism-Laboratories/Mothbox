@@ -16,7 +16,7 @@ There are three key types of data you need to collect to process information fro
 Just getting started? Wanna see them bugs? 
 
 1) Make yourself a folder called something like "Mothbox_Data"
-2) Then dump all your folders you collect from the field of image data in there. (Like all the dated folders that have a bunch of images in them)
+2) Dump all your folders you collect of image data from the field in there (Like all the dated folders that have a bunch of images in them)
 3) Choose this folder when you use Mothbot Process and Mothbot Classify
 
 
