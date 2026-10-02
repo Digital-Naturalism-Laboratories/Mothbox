@@ -18,7 +18,7 @@ First just download the [latest release](https://github.com/Digital-Naturalism-L
 Make sure to get the files for your MacOS, Windows, or Windows with CUDA corresponding to your machine.
 
 ## Windows
-Unzip the file, and double click on the executable:
+Unzip the file, and double click on the executable. Sometimes when you install the CUDA file, it takes few minutes for the executable file to run on your first time.
 
 <img  height="140" alt="image" src="https://github.com/user-attachments/assets/c5e4805c-a42f-4746-8647-d3841fcc896f" />
 
