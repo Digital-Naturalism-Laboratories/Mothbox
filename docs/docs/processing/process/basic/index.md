@@ -36,7 +36,7 @@ Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyw
 
 <img height="357" alt="image" src="https://github.com/user-attachments/assets/849f9a4f-83e0-40e0-b6fb-4111ef445c8d" />
 
-[comment]: <> (update screenshosts throughout tutorital, then delete this comment)
+[comment]: <> (update screenshots throughout tutorial, then delete this comment)
 
 # Full Tutorial
 
@@ -101,12 +101,12 @@ By default, it will use our latest open source trained Yolo model for detecting 
 
 After we have collected all the individual insects from each source image, this is a neat step where we try to accomplish a couple things with the data:
 
-1) group insects by visual similarity
-2) try to group insects that may be multiple instances of the same creature
+1. Group insects by visual similarity
+2. Try to group detections that may be multiple instances of the same creature
 
 It uses the open source Dinov2 model to create high dimensional embeddings representing the visual features of each insect. It then uses a statistics function in HDBscan to try to find "clusters" of similarly appearing creatures. 
 
-After grouping images based on visual characteristics
+After grouping images based on visual characteristics, go to step 3. 
 
 
 ## Step 3: ID
