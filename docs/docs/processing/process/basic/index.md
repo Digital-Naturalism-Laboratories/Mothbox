@@ -7,6 +7,9 @@ has_children: true
 permalink: /docs/processing/process/basic
 ---
 
+[comment]: <> (This is a comment, it will not be included)
+
+
 The easiest way to process your Mothbox data is just to download the executable software we have ready! No coding needed!
 
 1. TOC
