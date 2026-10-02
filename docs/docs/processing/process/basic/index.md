@@ -36,6 +36,7 @@ Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyw
 
 <img height="357" alt="image" src="https://github.com/user-attachments/assets/849f9a4f-83e0-40e0-b6fb-4111ef445c8d" />
 
+[comment]: <> (update screenshosts throughout tutorital, then delete this comment)
 
 # Full Tutorial
 
@@ -52,12 +53,12 @@ The primary thing you need to do here is **choose a datasets folder**.
 
 <img width="968" height="1095" alt="image" src="https://github.com/user-attachments/assets/f78b4f71-5a05-4aba-8fbb-22cee9aac52c" />
 
-In this example i chose my "Maine" dataset that just has one site in it called "haystack" with a couple nights of mothboxing located inside that.
+In this example, I chose my "Maine" dataset that just has one site in it called "haystack" with a couple nights of mothbox data located inside that.
 
 {: .note-title }
 > The _processed folder
 >
-> Notice how there is a new "_processed" folder that gets created when you start running Mothbot. This separates the very large file-size original images and creates a mirrored data structure that can be easily shared with colleagues (albeit without the source images).
+> Notice how there is a new "_processed" folder that gets created in your dataset file when you start running Mothbot. This separates the very large file-size original images and creates a mirrored data structure that can be easily shared with colleagues (albeit without the source images).
 
 <img width="1586" height="807" alt="image" src="https://github.com/user-attachments/assets/9819870b-c57f-49ca-bb54-49f64b2f76f2" />
 
