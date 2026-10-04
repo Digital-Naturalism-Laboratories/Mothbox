@@ -15,9 +15,9 @@ Dr. Andy Quitmeyer designs new ways to interact with the natural world. Quitmeye
 
 He spends most of his time volunteering with smaller organizations and communities, and co-founded the field-station/makerspace, [Digital Naturalism Laboratories](https://www.dinalab.net/). In the rainforest of Gamboa, Panama, Dinalab blends biological fieldwork and technological crafting with a community of local and international scientists, artists and engineers. 
 
-* Hubert Szczgiel
+* Hubert Szczygiel
 
-Hubert Szczgiel is a tropical ecologist specializing in scalable biodiversity monitoring. Hubert has worked with the Smithsonian Tropical Research Institute since 2016. His current research pairs broad-spectrum biodiversity monitoring with new financial tools to enable reforestation. His research inspired the development of the original Mothbox.
+Hubert Szczygiel is a tropical ecologist specializing in scalable biodiversity monitoring. Hubert has worked with the Smithsonian Tropical Research Institute since 2016. His current research pairs broad-spectrum biodiversity monitoring with new financial tools to enable reforestation. His research inspired the development of the original Mothbox.
 
 * Kit Quitmeyer
 
