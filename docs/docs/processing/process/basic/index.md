@@ -43,7 +43,14 @@ Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyw
 ## Running the Program
 Double click your icon, and in a couple of seconds, the program will open in your web browser.
 
-<img width="968" height="1095" alt="image" src="https://github.com/user-attachments/assets/e1f0bf4e-0b59-4a0f-a3fd-5482b3424707" />
+On the first run, it can take up to a couple minutes to initially load all the libraries
+
+<img width="1263" height="986" alt="image" src="https://github.com/user-attachments/assets/d507023d-8982-4ae7-b8be-2ae387881804" />
+
+
+Then you will be presented with the initial start screen automatically:
+
+<img width="1006" height="663" alt="image" src="https://github.com/user-attachments/assets/c1a248db-700b-449e-a55d-9fcbd008bb02" />
 
 
 ## Setup

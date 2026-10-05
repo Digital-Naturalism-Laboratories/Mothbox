@@ -15,9 +15,9 @@ Dr. Andy Quitmeyer designs new ways to interact with the natural world. Quitmeye
 
 He spends most of his time volunteering with smaller organizations and communities, and co-founded the field-station/makerspace, [Digital Naturalism Laboratories](https://www.dinalab.net/). In the rainforest of Gamboa, Panama, Dinalab blends biological fieldwork and technological crafting with a community of local and international scientists, artists and engineers. 
 
-* Hubert Szczgiel
+* Hubert Szczygiel
 
-Hubert Szczgiel is a tropical ecologist specializing in scalable biodiversity monitoring. Hubert has worked with the Smithsonian Tropical Research Institute since 2016. His current research pairs broad-spectrum biodiversity monitoring with new financial tools to enable reforestation. His research inspired the development of the original Mothbox.
+Hubert Szczygiel is a tropical ecologist specializing in scalable biodiversity monitoring. Hubert has worked with the Smithsonian Tropical Research Institute since 2016. His current research pairs broad-spectrum biodiversity monitoring with new financial tools to enable reforestation. His research inspired the development of the original Mothbox.
 
 * Kit Quitmeyer
 
@@ -28,29 +28,43 @@ Kit Quitmeyer is the Co-founder of [Dinalab](https://www.dinalab.net/), and lead
 Bri Johns is an open science hardware researcher. After her role steering the Gathering for Open Science Hardware group as the community manager, she joined the Mothbox team as a research fellow working on the construction, deployment, and community access for the tool.
 
 # Acknowledgements
-
 The Mothbox has been made possibly with help from many individuals and groups like 
+
+## Funding
 * Wildlabs.net
 * ARM
 * The American Museum of Natural History
+* Experiment.com
+* Phoebe Zarnetske and the Michigan X-prize group
+
+
+## Institutional Support
+
+* [IVADO Institute](https://ivado.ca/)
+  * Sponsored a collaboration with us and [Antenna](https://antenna.insectai.org) software for processing bugs
+* Autodesk Foundation (Software Donation)
+* University of Washington (Project Storage Space)
+
+## Additional Support
+
+* Pro-Eco Azuero
+* Ponterra
 
 * Daisy Dent
 * Yash Sondhi
 * Owen Mcmillan
 * Sol Parra Santos
-* Experiment.com
 
 * [Craig Durkin](https://wandrer.earth/) set up this documentation site backend for us
 
 * Christopher Lawrence
-* Phoebe Zarnetske and the Michigan X-prize group
 * GOSH community openhardware.science
 * Lee Wilkins
 * Julian Stirling
 * Wildlives Rhode Island group
 * Matt Flagg
-* Pro-Eco Azuero
-* Ponterra
+
+* David Rolnick's lab and the [Antenna](https://antenna.insectai.org) crew
 
 * Totumas Crew
  * Jessie Tejara-Fabian
@@ -59,10 +73,8 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * [BeetlePalooza](https://doi.org/10.5281/zenodo.15272136) (Sponsored by the [Imageomics Institute](https://imageomics.org/) at The Ohio State University)
 * [Bucket of Bugs](https://github.com/Digital-Naturalism-Laboratories/bucket-o-bugs) BeetlePalooza group
   * Elizabeth Campolongo, Ernie Parke, Andy Quitmeyer, Matt Thompson
-* Autodesk Foundation (Software Donation)
 * The McGuire Center for Lepidoptery
 
-* University of Washington (Project Storage Space)
 * Epaper Display Font help:
   * Logan Williams and Linotype Pilgrim 
 
@@ -74,8 +86,7 @@ The Mothbox has been made possibly with help from many individuals and groups li
 * [TroubleMaker Shenzhen](https://troublemaker.site/)
   * Henk, Terry, and Ming
 
-* [IVADO Institute](https://ivado.ca/)
-  * Sponsored a collaboration with us and [Antenna](https://antenna.insectai.org) software for processing bugs
+
 
 
 
