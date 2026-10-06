@@ -60,7 +60,8 @@ The first tab you will see is the "Setup" tab. It lets you choose everything you
 
 The primary thing you need to do here is **choose a datasets folder**. 
 
-<img width="968" height="1095" alt="image" src="https://github.com/user-attachments/assets/f78b4f71-5a05-4aba-8fbb-22cee9aac52c" />
+<img width="899" height="925" alt="image" src="https://github.com/user-attachments/assets/900d6f4e-9232-4e94-9623-87005407efd9" />
+
 
 In this example, I chose my "Maine" dataset that just has one site in it called "haystack" with a couple nights of mothbox data located inside that.
 
