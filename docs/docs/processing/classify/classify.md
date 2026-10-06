@@ -20,6 +20,11 @@ bun dev
 ```
 and you can run it from the scripts too!
 
+Before choosing your data, you can see which folders have data that has already been classified. In the red circle in the below image, you can see that the folder "superDorada 2026-08-13" has 0/13,124 of its detections classified. Once you've human-validated all the data, it will read 13,124/13,124.
+
+<img width="1261" height="431" alt="image" src="https://github.com/user-attachments/assets/c118c100-4a36-4ce7-8167-3e0a5448e260" />
+
+
 You choose your data that has been processed and a species list, and you are set to go!
 <img width="944" height="893" alt="image(4)" src="https://github.com/user-attachments/assets/d452188d-5c52-42e4-a600-35abc2a4a6b6" />
 
@@ -33,7 +38,7 @@ You choose your data that has been processed and a species list, and you are set
 
 > We haven't had time to make full documention for this cool new software yet, but the open hardware replicator, Chris Gould, did over on the GOSH forums! They are copied here to help you get started!
 
-After processing my images using the Mothbot program, my original folder named “keyTitira_2026-05-26” **now had an additiona folder called "_processed" that contains all the json and image files created by the Mothbot Process program**
+After processing my images using the Mothbot program, my original folder named “keyTitira_2026-05-26” **now had an additiona folder called "_processed" that contains all the json and image files created by the Mothbot Process program.**
 
 
 The next step was to use the Mothbot classify program that runs in your browser.
