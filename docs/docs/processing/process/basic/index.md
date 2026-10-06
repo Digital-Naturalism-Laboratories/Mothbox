@@ -45,7 +45,7 @@ If you're using a laptop, plug it in! The program runs much faster if you plug y
 
 Double click your icon, and in a couple of seconds, the program will open in your web browser.
 
-On the first run, it can take up to a couple minutes to initially load all the libraries
+On the first run, it can take up to a couple minutes to initially load all the libraries.
 
 <img width="1263" height="986" alt="image" src="https://github.com/user-attachments/assets/d507023d-8982-4ae7-b8be-2ae387881804" />
 
@@ -74,16 +74,17 @@ In this example, I chose my "Maine" dataset that just has one site in it called 
 
 It will automatically detect your photo collections, and you can choose the nights you want to process (or click select all).
 
-Mothbot will run with its own most up to date models, but on this page you can optionally also customize which
+Mothbot will run with its own most up to date models, but on this page you can also optionally customize:
 
-- The Yolo Model (For Detect)
-- The Species list (for ID)
+- Your Yolo Model (For Detect)
+- The Species list of the area where you're collecting data (for ID)
 - and your metadata field sheet (for Exif and Metadata steps)
-(you can also specify all these during each individual stage too!)
+- (you can also specify all these during each individual stage too!)
+
 
 # Easy Processing
 
-Now you can just select "Process" and it will start going through all the steps for you.
+Now you can just select "Process," and it will start going through all the steps for you.
 
 <img width="904" height="876" alt="Mothbot_screenshot" src="https://github.com/user-attachments/assets/3f91e759-9368-4753-a289-ceb03a208bd4" />
 
