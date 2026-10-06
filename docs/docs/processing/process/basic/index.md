@@ -41,6 +41,8 @@ Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyw
 # Full Tutorial
 
 ## Running the Program
+If you're using a laptop, plug it in! The program runs much faster if you plug your computer into power instead of running it off the battery. 
+
 Double click your icon, and in a couple of seconds, the program will open in your web browser.
 
 On the first run, it can take up to a couple minutes to initially load all the libraries
