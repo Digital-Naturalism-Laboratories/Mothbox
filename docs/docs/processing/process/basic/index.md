@@ -21,14 +21,14 @@ First just download the [latest release](https://github.com/Digital-Naturalism-L
 Make sure to get the files for your MacOS, Windows, or Windows with CUDA corresponding to your machine.
 
 ## Windows
-Unzip the file, and double click on the executable. Sometimes when you install the CUDA file, it takes few minutes for the executable file to run on your first time.
+Unzip the file and double click on the executable. Sometimes when you install the CUDA file, it takes a few minutes for the executable file to run for the first time.
 
 <img  height="140" alt="image" src="https://github.com/user-attachments/assets/c5e4805c-a42f-4746-8647-d3841fcc896f" />
 
 ## MacOS
 
-Download the DMG, double click it, it will mount the DMG, and you will see "Mothbot.app"
-Double click the app, it will fail!
+Download the DMG, double click it, it will mount the DMG, and you will see "Mothbot.app".
+Double click the app. It will fail!
 
 <img height="241" alt="image" src="https://github.com/user-attachments/assets/aa225223-7871-4e00-8c2d-7628380ac381" />
 
@@ -41,7 +41,7 @@ Now go to "Settings>Privacy and Security" and scroll down to find the "Open Anyw
 # Full Tutorial
 
 ## Running the Program
-If you're using a laptop, plug it in! The program runs much faster if you plug your computer into power instead of running it off the battery. 
+If you're using a laptop, plug it in! The program runs much faster if you plug your computer into power instead of running it off the laptop's battery. 
 
 Double click your icon, and in a couple of seconds, the program will open in your web browser.
 
@@ -51,33 +51,33 @@ On the first run, it can take up to a couple minutes to initially load all the l
 
 
 Then you will be presented with the initial start screen automatically:
-
-<img width="1006" height="663" alt="image" src="https://github.com/user-attachments/assets/c1a248db-700b-449e-a55d-9fcbd008bb02" />
+<img width="779" height="688" alt="image" src="https://github.com/user-attachments/assets/f97bee5a-e62a-4a8a-9865-dd02ad553f1a" />
 
 
 ## Setup
 The first tab you will see is the "Setup" tab. It lets you choose everything you need for processing your data.
 
-The primary thing you need to do here is **choose a datasets folder**. 
+The primary thing you need to do here is **pick a datasets folder**. 
+<img width="835" height="915" alt="image" src="https://github.com/user-attachments/assets/0229354b-3c04-4b8b-a328-c2c82de04044" />
 
-<img width="899" height="925" alt="image" src="https://github.com/user-attachments/assets/900d6f4e-9232-4e94-9623-87005407efd9" />
 
 
-In this example, I chose my "Maine" dataset that just has one site in it called "haystack" with a couple nights of mothbox data located inside that.
+In this example, I chose my "Kit to Process" dataset that has data from a few different sites with a couple night each located in the main folder. Then I selected one of the unprocessed deployment nights, Ditch\superDorada_2026-08-14.
 
 {: .note-title }
 > The _processed folder
 >
 > Notice how there is a new "_processed" folder that gets created in your dataset file when you start running Mothbot. This separates the very large file-size original images and creates a mirrored data structure that can be easily shared with colleagues (albeit without the source images).
 
-<img width="1586" height="807" alt="image" src="https://github.com/user-attachments/assets/9819870b-c57f-49ca-bb54-49f64b2f76f2" />
+<img width="1601" height="840" alt="image" src="https://github.com/user-attachments/assets/2b972ed4-550e-423f-902a-35eea086d334" />
 
-It will automatically detect your photo collections, and you can choose the nights you want to process (or click select all).
 
-Mothbot will run with its own most up to date models, but on this page you can also optionally customize:
+It will automatically detect your photo collections, and you can choose which nights you want to process (or click select all).
+
+Mothbot will run with its own most up-to-date models, but on this page you can also optionally customize:
 
 - Your Yolo Model (For Detect)
-- The Species list of the area where you're collecting data (for ID)
+- The species list of the area where you're collecting data (for ID)
 - and your metadata field sheet (for Exif and Metadata steps)
 - (you can also specify all these during each individual stage too!)
 
@@ -85,6 +85,9 @@ Mothbot will run with its own most up to date models, but on this page you can a
 # Easy Processing
 
 Now you can just select "Process," and it will start going through all the steps for you.
+
+<img width="846" height="921" alt="image" src="https://github.com/user-attachments/assets/c5415e64-6753-49ff-a6da-35d01f1ec51d" />
+
 
 <img width="904" height="876" alt="Mothbot_screenshot" src="https://github.com/user-attachments/assets/3f91e759-9368-4753-a289-ceb03a208bd4" />
 
