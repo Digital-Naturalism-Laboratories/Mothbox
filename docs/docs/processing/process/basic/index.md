@@ -84,9 +84,20 @@ Mothbot will run with its own most up-to-date models, but on this page you can a
 
 # Easy Processing
 
-Now you can just select "Process," and it will start going through all the steps for you.
+Now you can just select "Process," and it will start going through the steps of detecting, clustering, IDing, and metadata (if you have included a metadata CSV in your process folder). 
+
+If the estimated processing time displayed seems longer than expected, restart your computer to make sure no other program is sapping your computer's resources. The estimated processing time will vary according to how many photos are in your file and how many detections of creatures are in the photos. The more photos and creatures, the longer processing will take. 
 
 <img width="846" height="921" alt="image" src="https://github.com/user-attachments/assets/c5415e64-6753-49ff-a6da-35d01f1ec51d" />
+
+At the top of the screen, next to the "stop current run" button, the circled area shows how far through the procedure the Mothbot has gone. In the picture below, Mothbot is on step 3 out of 5: ID.
+
+<img width="844" height="911" alt="image" src="https://github.com/user-attachments/assets/6e744d1d-fb1f-4614-8785-c4192f406813" />
+
+Mothbot will prompt you to insert metadata if a metadata CSV file was not in your original folder to process. Please look at [step 4: Metadata](https://mothbox.org/docs/processing/process/basic#step-4-insert-metadata) of the Advanced Mode tutorial below for more information. 
+
+
+<img width="834" height="649" alt="image" src="https://github.com/user-attachments/assets/005a1b9f-c290-4612-9782-72f8a1d579cf" />
 
 
 <img width="904" height="876" alt="Mothbot_screenshot" src="https://github.com/user-attachments/assets/3f91e759-9368-4753-a289-ceb03a208bd4" />
