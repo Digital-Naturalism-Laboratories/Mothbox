@@ -12,7 +12,28 @@ Here's a guide to some basic troubleshooting if you encounter a problem using yo
 One of the best ways to find answers to problems is to check out the [Github Issues page](https://github.com/Digital-Naturalism-Laboratories/Mothbox/issues). You can see common problems others may have had there, and you can post your own problem and we will help you address it!
 
 # Firmware Troubleshooting (Mothbox's Functions being funny)
-*coming soon*
+
+## My device blinks twice quickly before going into standby mode
+
+That's great! That's the "O K" everything is good sign to let you know all its internal tests have passed!
+
+## My device blinks EIGHT TIMES SLOWLY before going into standby mode
+
+Uh oh! That's trouble! This means your camera is not properly connected! Check its connections and power cycle!
+
+# My display went from looking all nice with nice fonts to looking all funky
+
+Nice catch, this likely means your SD CARD IS BEING WEIRD. SD cards are funny little things that don't seem to have the best quality control in the world. If you can, replace this SD card, or at least format and reflash after you salvaged any data). This is a kind of failsafe/catch we built in to the firmware, so it keeps running as good as it can even if things get corrupted, but it's not good news!
+
+Examples of pre-funkiness
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/0da85575-127e-4488-8c98-f64933e970d8" />
+
+and post-funkiness
+<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/f84f26d5-69f3-4e8d-a986-1a1af44d4ae5" />
+
+
+
+
 
 # Software Troubleshooting
 
