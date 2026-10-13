@@ -90,6 +90,9 @@ In addition to the Deployment photo data, there are two other files you will nee
 
         <img  height="595" alt="image" src="https://github.com/user-attachments/assets/71ccaa86-451a-4ce0-af66-35838ab478c8" />
 
+        <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/a64f27ee-c80a-4262-83f1-829db077f2ac" />
+
+
 
 
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
@@ -203,7 +206,7 @@ Alternatively, fill out
 > All photos from a single deployment should be in a folder named with the convention: "PROJECT_SITE_MOTHBOXID_YYYY-MM-DD" (the COUNTRY_ prefix is optional)
 
 # Species List
-The species list is used by the identification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. For example, you could download this list of [only the insects that are in Panama](https://www.gbif.org/occurrence/taxonomy?country=PA&taxon_key=216). 
+The species list is used by the identification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. See [above for a guide on how to get a GBIF](https://mothbox.org/docs/processing/process/OrganizeData/#optional-processing-files) list.
 
 If you want to go super broad, you could just try to get a list of all arthropods, or you could limit things to a specific family of moths. It's up to you!
 
