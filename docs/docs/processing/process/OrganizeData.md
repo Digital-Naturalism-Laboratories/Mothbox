@@ -79,7 +79,7 @@ In addition to the Deployment photo data, there are two other files you will nee
         7. Choose the default, Catalogue of Life
         8. Click the agreements, and download
         9. Wait until you get a message the download is ready, and then download it!
-        10. Note the DOI string you get with the dataset (e.g. https://doi.org/10.15468/dl.x3qf72) and try to add it to its filename.
+        10. Note the DOI string you get with the dataset (e.g. https://doi.org/10.15468/dl.x3qf72) and try to add it to its filename. If you don't add the DOI to the file name like "PanamaCostaRicaInsect_10.15468.dl.x3qf72.csv" everything will still work fine, but the programs will have to connect to the internet to find the DOI.
 
         <img height="595" alt="image" src="https://github.com/user-attachments/assets/059ec6b2-9dcc-4ae8-9743-7027f472fd0f" />
 
