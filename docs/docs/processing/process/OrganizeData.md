@@ -68,7 +68,29 @@ In addition to the Deployment photo data, there are two other files you will nee
     * Timestamp,device,firmware,sheet,schedule,dataset,project,site,latitude,longitude,height_above_ground,habitat,deployment_date,collect_date,data_storage_location,crew,notes,attractor,attractor_location,UTC,deployment_name
 * [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/tree/main/specieslists)
     * This improves the automatic Identification process by limiting the guesses to only creatures that might be in your desired location and type of creature (e.g. Insecta or, more broadly, like Arthropoda. This ensures that you won't accidentally ID insects in Canada as a bird that only lives in Indonesia)
-    * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so don't worry too much.    
+    * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so don't worry too much.
+    * If you want to **make your own custom species list** you can 
+        1. [go here on gbif's occurrence search](https://www.gbif.org/occurrence/search)
+        2. Change your filters to what you desire (for instance in the screenshot I chose Class "Insecta" and countries Panama and Costa Rica)
+        3. After your filters are how you want them, go to "Download"
+        4. It will make you sign in to download them
+        5. on the Download page go to "Species List"
+        6. Click Configure
+        7. Choose the default, Catalogue of Life
+        8. Click the agreements, and download
+        9. Wait until you get a message the download is ready, and then download it!
+
+        <img height="595" alt="image" src="https://github.com/user-attachments/assets/059ec6b2-9dcc-4ae8-9743-7027f472fd0f" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/5d3a2cb6-b0cf-44a4-a62e-2a5c0f68411f" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/ccb0a353-c014-43a8-bfd1-c3caa36d8e1e" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/db8bc834-49c0-4538-b2de-2664693df07c" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/71ccaa86-451a-4ce0-af66-35838ab478c8" />
+
+
 
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
 
