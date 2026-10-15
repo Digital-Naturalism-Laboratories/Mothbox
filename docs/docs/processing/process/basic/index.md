@@ -94,10 +94,12 @@ At the top of the screen, next to the "stop current run" button, the circled are
 
 <img width="844" height="911" alt="image" src="https://github.com/user-attachments/assets/6e744d1d-fb1f-4614-8785-c4192f406813" />
 
-Mothbot will prompt you to insert metadata if a metadata CSV file was not in your original folder to process. Please look at [step 4: Metadata](https://mothbox.org/docs/processing/process/basic#step-4-insert-metadata) of the Advanced Mode tutorial below for more information. 
+Mothbot will prompt you to insert metadata if a metadata CSV file was not in your original folder to process. Please look at [step 4: Metadata](https://mothbox.org/docs/processing/process/basic#step-4-insert-metadata) of the Advanced Mode tutorial below for more information. Similarly, you can optionally include [Exif data](https://mothbox.org/docs/processing/process/basic#step-5-insert-exif) and calculate the [pixel mass](https://mothbox.org/docs/processing/process/basic#step-6-optional-pixel-mass-calculations), both of which are covered below. 
 
 
 <img width="834" height="649" alt="image" src="https://github.com/user-attachments/assets/005a1b9f-c290-4612-9782-72f8a1d579cf" />
+
+Here's what it looks like when processing is finished.
 
 
 <img width="904" height="876" alt="Mothbot_screenshot" src="https://github.com/user-attachments/assets/3f91e759-9368-4753-a289-ceb03a208bd4" />
@@ -105,9 +107,10 @@ Mothbot will prompt you to insert metadata if a metadata CSV file was not in you
 
 # Advanced Mode
 
-If you want to take your processing step by step, or just run a single processing step on your data, you can click "Advanced mode" and choose specific steps like "Cluster" to run on your data.
+If you want to take your processing step by step, or just run a single processing step on your data, you can pick any step of the process from the tabs at the top of your browser.
 
-<img width="968" height="1095" alt="image" src="https://github.com/user-attachments/assets/73a5417f-36eb-40d9-9998-4638e857a1e5" />
+<img width="781" height="655" alt="image" src="https://github.com/user-attachments/assets/27e64225-42c0-41a4-a04e-e2cb9c6c21c8" />
+
 
 
 Detect, Cluster, and ID, need to be run in that order.
@@ -117,12 +120,13 @@ Detect, Cluster, and ID, need to be run in that order.
 
 Detect takes your source images and searches for all the insects. 
 
-<img width="968" height="1095" alt="image" src="https://github.com/user-attachments/assets/9900862b-6372-4745-bddc-b1ce961f1ee7" />
-
-By default, it will use our latest open source trained Yolo model for detecting where the bugs are. But you can load other models that you want by clicking the "browse" button.
+<img width="785" height="868" alt="image" src="https://github.com/user-attachments/assets/7160afd7-7d6d-4a8e-b2dc-a990d3e34bd7" />
 
 
-## Step 2: Cluster
+By default, it will use our latest open source trained Yolo model for detecting where the bugs are. You can load other models by clicking the "browse" button.
+
+
+## Step 2: Cluster Perceptually
 
 After we have collected all the individual insects from each source image, this is a neat step where we try to accomplish a couple things with the data:
 
@@ -175,15 +179,15 @@ just hit the button after you connected metadata, and that's it!
 
 ## Step 6: (optional) Pixel Mass calculations
 
-We added an extra step if you want to try to calculate how much your insects weigh. Some researchers use the amount of pixels sighted on an insect as a proxy for their weight (which is a historically important measurement). 
+We added an extra step if you want to try to calculate how much your insects weigh. Some researchers use the amount of pixels sighted on an insect as a proxy for their weight (which is a historically important measurement for some scientific studies). 
 
-Before it can make such calculations though we need to
+Before it can make such calculations, we need to:
 * Calibrate the physical size of each pixel
-* remove the backgrounds from each detected insect image
+* Remove the backgrounds from each detected insect image
 
-To calibrate your pixels, you can click on two spots on a source image of a known distance, and then hit "Apply" and it will auto calculate the conversion for you. 
+To calibrate your pixels, you can click on two spots on a source image of a known distance, and then hit "Apply," and it will auto calculate the conversion for you. For example, we know that the distance on the target between the two Mothbox "arms" is 16 cm, so we can click on the points where the arms are, write "160" in the field that says "real world distance (mm)," and then hit "apply."
 
-or if you already know the conversion (for instance the standard distance target on a mothbox pro has a pixel density of 26 px/mm) you can just input that directly. 
+If you already know the conversion (for instance the standard distance target on a mothbox pro has a pixel density of 26 px/mm), you can just input that directly. 
 
 <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/ab5ea69a-bfcb-411b-9d21-39d24820387c" />
 
