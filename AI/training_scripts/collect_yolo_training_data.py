@@ -41,6 +41,7 @@ Usage:
 """
 
 import json
+import re
 import shutil
 import random
 import argparse
@@ -385,20 +386,37 @@ def detect_label_to_obb(line):
 # Splitting
 # ---------------------------------------------------------------------------
 
+TILE_SUFFIX = re.compile(r"_x\d+_y\d+$")
+
+
+def source_photo_key(pair):
+    """Tiles cut from one photo (named <photo>_x<X>_y<Y>, e.g. by
+    megabug/flatbug_to_yolo_obb.py) share a key, so they land in the same split
+    instead of leaking near-identical overlap regions between train and val."""
+    img = Path(get_image_path_from_pair(pair))
+    return (str(img.parent), TILE_SUFFIX.sub("", img.stem))
+
+
 def split_items(items, train_ratio, val_ratio, test_ratio, seed):
-    """Shuffle and split a list into (train, val, test)."""
+    """Shuffle and split a list into (train, val, test), keeping tiles of the
+    same photo together. Untiled images are groups of one, so the split is
+    identical to a plain per-image shuffle with the same seed."""
+    groups = defaultdict(list)
+    for item in items:
+        groups[source_photo_key(item)].append(item)
     random.seed(seed)
-    shuffled = items[:]
+    shuffled = list(groups.values())
     random.shuffle(shuffled)
 
     n = len(shuffled)
     n_train = int(n * train_ratio)
     n_val   = int(n * val_ratio)
 
+    flat = lambda gs: [item for g in gs for item in g]
     return (
-        shuffled[:n_train],
-        shuffled[n_train:n_train + n_val],
-        shuffled[n_train + n_val:],
+        flat(shuffled[:n_train]),
+        flat(shuffled[n_train:n_train + n_val]),
+        flat(shuffled[n_train + n_val:]),
     )
 
 
@@ -804,7 +822,10 @@ def write_data_yaml(output_dir, class_names, has_test):
     """
     output_dir = Path(output_dir)
     lines = [
-        f"path: {output_dir.resolve()}",
+        # No 'path:' line: Ultralytics (and train_yolo_obb.py) then use the folder
+        # this file is in, so the dataset still works after being copied to
+        # another machine (e.g. a cluster).
+        f"# built at {output_dir.resolve()}",
         "train: images/train",
         "val: images/val",
     ]
