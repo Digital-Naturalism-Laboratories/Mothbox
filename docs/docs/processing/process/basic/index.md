@@ -262,7 +262,7 @@ This is done through some open source background removing models that you can se
 <img height="665" alt="image" src="https://github.com/user-attachments/assets/b469ecd8-efac-4ad8-8a85-569850e70bf0" />
 
 
-# Quick and Basic: Tutorial on How to Process (From the "CIID Bugs <3" crew in Italy )
+# Quick and Basic: Tutorial on How to Process and Classify (From the "CIID Bugs <3" crew in Italy )
 
 {: .note-title }
 > Quick Tutorial
@@ -291,14 +291,9 @@ That was the bare minimum processing you need to start looking at your bugs!
 Now you can jump to the ["Classification" step](https://mothbox.org/docs/processing/classify)
 
 ## View the photos by order (scientific classification)
-Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in chrome (not firefox)** or some other chromium-based browser
+Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in Chrome (not Firefox)** or some other chromium-based browser. 
 
-* Add your name (should only include letters and numbers, no special characters)
-
-<img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/f282b462-69f3-4874-9484-5a43804ffa07" />
-
-
-* Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps
+* Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps, not a subfolder for a particular deployment you may have been focusing on. 
 
 <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/31d6ac3e-9719-4716-9cc2-9d19225db4b9" />
 
@@ -309,7 +304,7 @@ Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in chrome
 
 **BAM! LOOK AT ALL YOUR BUGS**
 
-The left hand side shows the class and order of the bugs. E.g.
+The left hand side shows the class and order of the bugs. 
 
 Major Insect Orders (ordered by worldwide species)
 
@@ -327,5 +322,13 @@ Major Insect Orders (ordered by worldwide species)
 * Dermaptera ["skin-wings"]: Earwigs
 
 <img width="1448" height="1042" alt="image" src="https://github.com/user-attachments/assets/041599d6-122b-40cc-b0f1-4220eb201272" />
+
+You can alter a lot of things about your view here. 
+
+**Layout Options** 
+1. Grid columns: you can change the number of columns displayed, which will change how big the images appear.
+2. Size threshold: we always want to see all the bugs, but if you only want to see larger bugs, you can set a minimum pixel display size.
+3. We like to organize them by taxonomic group, but you can discard that to organize by other properties first, like blurriness or size.
+4. Clustered items first and clusters: clustering groups together instances of bugs that the Mothbot perceives as similar enough that they are probably pictures of the same individual. You can turn this on or off, determine whether you want to show the clustered images first, and even collapse the clusters (option below blurriness limit) if you don't want to see more than one instance of the same individual bug. 
 
 
