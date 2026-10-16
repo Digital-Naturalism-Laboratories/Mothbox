@@ -291,7 +291,7 @@ That was the bare minimum processing you need to start looking at your bugs!
 Now you can jump to the ["Classification" step](https://mothbox.org/docs/processing/classify)
 
 ## View the photos by order (scientific classification)
-Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in Chrome (not Firefox)** or some other chromium-based browser. 
+Go to [https://classify.mothbox.org/](https://classify.mothbox.org/) **in Chrome (not Firefox)** or some other Chromium-based browser. 
 
 * Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps, not a subfolder for a particular deployment you may have been focusing on. 
 
