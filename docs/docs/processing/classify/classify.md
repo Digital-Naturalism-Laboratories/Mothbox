@@ -8,7 +8,8 @@ nav_order: 2
 <img width="1910" height="769" alt="bugs Capture" src="https://github.com/user-attachments/assets/6fe49b45-e94f-4e07-9fbc-6800c53d2e7d" />
 
 # Running Classify
-To run Mothbot Classify, you just need to go to this special link
+Run Mothbot Classify **in Chrome (not Firefox)** or some other Chromium-based browser. 
+you just need to use  to this special link
 
 [https://classify.mothbox.org/](https://classify.mothbox.org/)
 
@@ -19,6 +20,10 @@ Hackers [can get the repo](https://github.com/Digital-Naturalism-Laboratories/mo
 bun dev
 ```
 and you can run it from the scripts too!
+
+Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps, not a subfolder for a particular deployment you may have been focusing on.
+
+ <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/31d6ac3e-9719-4716-9cc2-9d19225db4b9" />
 
 Before choosing your data, you can see which folders have data that has already been classified. In the red circle in the below image, you can see that the folder "superDorada 2026-08-13" has 0/13,124 of its detections classified. Once you've human-validated all the data, it will read 13,124/13,124.
 
@@ -38,7 +43,7 @@ You choose your data that has been processed and a species list, and you are set
 
 > We haven't had time to make full documention for this cool new software yet, but the open hardware replicator, Chris Gould, did over on the GOSH forums! They are copied here to help you get started!
 
-After processing my images using the Mothbot program, my original folder named “keyTitira_2026-05-26” **now had an additiona folder called "_processed" that contains all the json and image files created by the Mothbot Process program.**
+After processing my images using the Mothbot program, my original folder named “keyTitira_2026-05-26” **now had an additional folder called "_processed" that contains all the json and image files created by the Mothbot Process program.**
 
 
 The next step was to use the Mothbot classify program that runs in your browser.
