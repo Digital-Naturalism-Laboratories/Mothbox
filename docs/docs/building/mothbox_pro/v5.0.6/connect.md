@@ -42,9 +42,7 @@ The Mothbeams are made to pop right onto the mainboard of the Mothbox! There's s
 >
 > We usually just leave all the switches in the default "OFF" position. This will give a mothbox about 18 hours of runtime when using 1 Visible and 1 UV Mothbeam and taking a photo every minute with a recalibration every 10 mins. 
 
-The mothbeams allow you to set how powerful they are with little switches. **The more switches you turn on, the brighter they will be, but they will also run through your battery faster!** 
-
-Note: there is a discrepancy in wiring in the Mothbeams **labeled v5.0.1 ** and the **current going out in them is a bit different ** than what is printed on the boards
+The Mothbeams allow you to set how powerful they are with little switches. **The more switches you turn on, the brighter they will be, but they will also run through your battery faster!** 
 
 | Configuration | 5.0.3 (Vis) (mA / Watts@12V) |
 | :--- | :--- |
@@ -67,15 +65,15 @@ Switch your desired switches (I usually use a tool or bit of wire to flip the ti
 
 Here's my unscientific breakdown of the switch modes
 * 0 Switches: Minimal Power - Pretty bright!
-* 1 Switch: Extra Bright
-* 2 Switches: Very Bright
+* 1 Switch: Very Bright
+* 2 Switches: SUPER Bright
 * 3 Switches: EXTRA BRIGHT
 * 4 SWITCHES: VERY VERY VERY BRIGHT AND HOT (I don't ever use this)
 
-I usually switch just the first switch (+70mA), and this is QUITE BRIGHT. You probably want to switch at least the first 70mA switch on, but I wouldn't reccomend 3+ switches unless you really really need it to be exceptionally bright! (Or power and heat are not a problem for your setup).
+I usually switch just the first switch (+70mA), and this is QUITE BRIGHT. You probably want to switch at least the first 70mA switch on, but I wouldn't recommend 3+ switches unless you really really need it to be exceptionally bright! (Or power and heat are not a problem for your setup).
 
 ### UV and Visible
-You can also decide which mothbeams to connect. The board can support up to 3. These can all be UV, all Visible, or a mixture. You can control each of the 3 Attractors individually too, so this can be used for experiments between different wavelengths of light! ** More mothbeams does mean it will use more power!**
+You can also decide which Mothbeams to connect. The board can support up to 3. These can all be UV, all Visible, or a mixture. You can control each of the 3 Attractors individually too, so this can be used for experiments between different wavelengths of light! ** More Mothbeams does mean it will use more power!**
 
 
 ## Connect Mothbeams
