@@ -3,7 +3,7 @@ layout: default
 title: v5.0.3
 parent: Mothbox Pro
 grand_parent: Building
-nav_order: 1
+nav_order: 2
 has_children: true
 permalink: /docs/building/mothbox_pro/v5.0.3/
 ---
