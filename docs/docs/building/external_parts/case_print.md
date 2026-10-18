@@ -10,15 +10,31 @@ The lastest version of the Mothbox has a [3D printable case](https://github.com/
 
 ![bafyreigxwn7cq5ghlw5eaawb537jzpo2kwqx2pz3c4gti5zpbkwmoganmy](https://github.com/user-attachments/assets/6ffa36f2-7640-4c6a-a232-ff1c20f1e178)
 
+There are currently TWO versions of the Mothbox Case we provide. Both cases are pretty much compatible with each other's electronics and legs.
 
-# Parts
+v 5.1 series (starting since September 2026)
+* uses zip ties on the sides to create handles to support hanging
+* uses zip ties on the top to hold the back lid on
+* has been strengthened, lightened, and overall refined since testing the 5.0 series
+<img width="599" height="539" alt="image" src="https://github.com/user-attachments/assets/e46eab6f-ffdf-4b55-b535-de536928223a" />
+
+v 5.0 series (we used between November 2025 and August 2026)
+* has flat sides
+*  has holes on top to support hanging
+
+<img width="312" height="298" alt="image" src="https://github.com/user-attachments/assets/0dc30910-8434-4f52-8a92-1090599d83a5" />
+
+
+# Materials
 
 * Main Filament - 850 grams
 * TPU Rubber Filament - (Optional for better waterproofing, not really needed in dry places) - 100 grams
-* Clear Acrylic - For the front window and arms and target (arms are ideally 3mm, and front window can be 1-3mm (we use 2mm))
+* Clear Acrylic - For the **front window** and **arms** and **target** (arms are ideally 3mm, and front window can be 1-3mm (we use 2mm))
 * #6x3/8in screws - (not super exacting, near equivalents work too!)
-* Cable Ties - Ideally reusable zip ties, or silicone straps, or our [TPU printable ties we made ourselves](https://www.printables.com/model/1530721-reusable-rubber-cable-tie)!
-* DC Barrel sockets -  for the external charging port and/or external attractor port
+* Ties (for closing lids and attaching arms) - Ideally reusable zip ties, or silicone straps, or our [TPU printable ties we made ourselves](https://www.printables.com/model/1530721-reusable-rubber-cable-tie)!
+* Ties (For 5.1 Lids and Side Handles) - Wide, sturdy Cable Ties
+* Ties (For connecting internal electronics) - Thin ties
+* DC Barrel sockets -  for the external charging port, (optional) external attractor port, or (optional) external on/off button
 
 
 # Printing and Filament Suggestions
@@ -31,7 +47,6 @@ Printing: everything can be printed on standard .4mm nozzles BUT we also made it
 ## Filament
 
 **Never use PLA for outdoor equipment**, especially in the tropics as it will degrade rapidly.
-
 
 **PETG or PETG-HF**
 Regular PETG prints nicely and is super durable in the field. Also if you have a high flow nozzle and can use the high flow version of PETG it can print extra quick!
