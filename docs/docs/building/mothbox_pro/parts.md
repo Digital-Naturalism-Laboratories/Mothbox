@@ -84,6 +84,9 @@ To hold the lid on and the legs on you have 3 options:
 ## Screws
 * #6 x 3/8" screws (or 6g x 9mm)
 
+## Strap
+* (Tree Straps)[https://www.amazon.com/Mounting-Portable-Resistant-Foldable-Accessory/dp/B0DM8MXLJS/ref=ex_alt_wg_d?_encoding=UTF8&pf_rd_r=ZNPDDBKVP9NYYM63WQVX&pf_rd_p=3c4097f6-cf4c-450f-a9d8-69ca1f441a93&pd_rd_i=B0DM8MXLJS&psc=1&pd_rd_w=C1J5w&pd_rd_wg=9VQKQ&pd_rd_r=4b94d96c-9bc8-459c-83c3-3ef2393f48b8&content-id=amzn1.sym.3c4097f6-cf4c-450f-a9d8-69ca1f441a93] ($3)
+
 # Tools
 Here's some tools you need:
 
