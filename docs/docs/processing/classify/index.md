@@ -8,17 +8,17 @@ permalink: /docs/processing/classify
 ---
 During the classification step, we want to take automatically organized insect data and validate them with humans as quickly and accurately as possible. We built our own program to let you do this in a quick and speedy way called "Classify."
 
-Note: we used to have an older version of this that used a fiftyone UI interface, but switched to this new homebrewed one we call "Classify" as it is much speedier and easier to use.
+Note: we used to have an older version of this that used a fiftyone UI interface, but switched to this new homebrewed one we call "Classify," as it is much speedier and easier to use.
 
 <img width="1910" height="769" alt="bugs Capture" src="https://github.com/user-attachments/assets/6fe49b45-e94f-4e07-9fbc-6800c53d2e7d" />
 
 # Running Classify
 Run Mothbot Classify **in Chrome (not Firefox)** or some other Chromium-based browser. 
-you just need to use  to this special link
+You just need to use this link: 
 
 [https://classify.mothbox.org/](https://classify.mothbox.org/)
 
-The app will still run locally on your computer (nothing gets uploaded to the internet), but it runs in your browser window!
+The app will still run locally on your computer (nothing gets uploaded to the internet, and the energy for classification comes entirely from your computer), but it runs in your browser window!
 
 Hackers [can get the repo](https://github.com/Digital-Naturalism-Laboratories/mothbot-classify) and run the command
 ```
@@ -42,6 +42,23 @@ You choose your data that has been processed and a species list, and you are set
 # Choose a Species List
 
 <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/8c998694-bbbc-44d7-bfbc-8d57402f69b8" />
+
+#Notes on Your Layout Options
+
+<img width="1126" height="783" alt="image" src="https://github.com/user-attachments/assets/6f081f9f-3630-48da-be08-91e85eb6dcfd" />
+
+**Taxonomic groups**
+You can choose whether or not to have your creatures grouped by which taxonomic groups Mothbot thinks the creatures belong to, before human verification.
+
+**Clustered items first and Clusters**
+One of the steps in Processing is Clustering, which is when the Mothbot clusters together multiple instances of what it suspects to be the same individual creature. You have the option to see those clustered items first, turn clustering on or off, or even collapse the clusters, so you don't have to look through each picture of what may be the same individual animal.
+
+**Size**
+If selected, Mothbot will display the largest animals at the top. You can also choose "reverse order" if you want to see the smallest detections first.
+
+**Blurriness limit** Here you have another opportunity to control which creature sightings you want to see according to blurriness. Just like in the Processing step, if you’re interested in seeing all of the creature detections, no matter how blurry the image may be, set the threshold high - 100 displays every identification. If you’re only interested in seeing clearer images, set the threshold lower. As noted, around 70-80 skips most too-blurry patches and almost no sharp ones.
+
+
 
 
 # Preliminary Instructions (by Chris Gould)
@@ -80,6 +97,9 @@ By selecting the cluster ID in the top left of a photo, you can highlight all of
 There is an option to label a cluster as “ERROR” in the case that the photo contains strange artifacts or in my case photos of the box’s arms.
 
 <img width="1920" height="897" alt="image" src="https://github.com/user-attachments/assets/ae3b0d1c-3a2d-43de-9ee7-101ff0a15af1" />
+
+Special thanks to Chris Gould, Paula Te, and Paula's students at CIID for contributing to this how-to guide!
+
 
 
 
