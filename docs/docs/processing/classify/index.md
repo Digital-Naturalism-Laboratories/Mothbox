@@ -55,6 +55,17 @@ When you have selected your species list, it will be automatically placed in the
 
 <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/8c998694-bbbc-44d7-bfbc-8d57402f69b8" />
 
+# Manually Review the Classifications for Human Verification
+
+By selecting the cluster ID in the top left of a photo, you can highlight all of the photos that are clustered together. Once highlighted, you can accept the classification the program provided (hotkey A) or manually identify the cluster (hotkey D).
+
+<img width="1883" height="908" alt="image" src="https://github.com/user-attachments/assets/f63eb2e8-6d4f-4011-9aa0-51adba591826" />
+
+If you want to look at your worst/blurriest images and label them as "Error" instead of whatever taxonomic group they've been sorted into, you can unclick all the options in "Layout Options" except "Blurriness (blurriest first)". Then select any images you want to identify as "Error" and hit hotkey E.
+
+<img width="1899" height="901" alt="image" src="https://github.com/user-attachments/assets/0420a78a-f5d8-46dd-80a4-4c05b1a5705c" />
+
+
 # Notes on Your Layout Options
 
 <img width="1126" height="783" alt="image" src="https://github.com/user-attachments/assets/6f081f9f-3630-48da-be08-91e85eb6dcfd" />
