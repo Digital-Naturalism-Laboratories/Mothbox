@@ -9,9 +9,12 @@ nav_order: 2
 
 # Running Classify
 Run Mothbot Classify **in Chrome (not Firefox)** or some other Chromium-based browser. 
-you just need to use  to this special link
+you just need to use to this special link. 
 
 [https://classify.mothbox.org/](https://classify.mothbox.org/)
+
+## Updating Software
+Every now and then when you're working, press CTRL+SHIFT+R to reload the latest version of Classify.
 
 The app will still run locally on your computer (nothing gets uploaded to the internet), but it runs in your browser window!
 
