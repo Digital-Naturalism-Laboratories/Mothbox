@@ -43,13 +43,14 @@ You choose your data that has been processed and a species list, and you are set
 
 A species list helps classify build a taxonomic tree that you can identify your creatures into. First you will want to find a species list or create your own species list for your sampling area. A [tutorial for how to create your own sampling list is here](https://mothbox.org/docs/processing/process/OrganizeData/#species-list).
 
-Once you have a species list, put the .csv file into the "_processed" folder that was created in your overarching data folder when you ran the Process step of the Mothbot. In the below example, I have the species list for USA insects in a folder called "_specieslists" within the "_processed" folder. 
 
-<img width="567" height="194" alt="image" src="https://github.com/user-attachments/assets/2fe6db6a-9639-4613-a385-33eddbc1208b" />
-
-When you organize your species list within your "_processed" folder, the species list will automatically come up when you click the "Choose" button next to "No species list specified."
+Once you have a species list, you click the "Choose" button next to "No species list specified." If you don't see your species list automatically pop up, search for where you have it on your computer. 
 
 <img width="946" height="369" alt="image" src="https://github.com/user-attachments/assets/2e409c94-c95c-404f-82b5-0602367d0343" />
+
+When you have selected your species list, it will be automatically placed in the "_processed" folder of your overarching data folder. 
+
+<img width="567" height="194" alt="image" src="https://github.com/user-attachments/assets/2fe6db6a-9639-4613-a385-33eddbc1208b" />
 
 
 <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/8c998694-bbbc-44d7-bfbc-8d57402f69b8" />
