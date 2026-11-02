@@ -60,15 +60,10 @@ When you have selected your species list, it will be automatically placed in the
 
 # Manually Review the Classifications for Human Verification
 
-By selecting the cluster ID in the top left of a photo, you can highlight all of the photos that are clustered together. Once highlighted, you can accept the classification the program provided (hotkey A) or manually identify the cluster (hotkey D).
+By selecting the cluster ID in the top left of a photo, you can highlight all of the photos that are clustered together. Once highlighted, you can accept the classification the program provided (hotkey A) or manually identify the cluster if you disagree with the automatic ID (hotkey D). You can also use hotkey E to classify the detection as an "error" if it does not meet your criteria for any other category. 
 
 <img width="1883" height="908" alt="image" src="https://github.com/user-attachments/assets/f63eb2e8-6d4f-4011-9aa0-51adba591826" />
 
-When you manually identify a detection, make sure to either type in the full name of the taxa you're choosing or select it from the drop-down list. If you just hit "enter" before typing in the full name, a new morphospecies will be erroneously created with the incomplete typed name. 
-
-For example, say that I wanted to reclassify the highlighted detection in the image below. Maybe I think that it's unclear if this is a hymenopteron, but I'm pretty sure it's an insect. I start typing in "inse" and the classication "Insecta" pops up. If I just hit enter, a new morphospecies called "inse" will be created, which isn't what I want. Instead, I should choose "Insecta" from the drop-down menu or finish typing it.
-
-<img width="1070" height="548" alt="image" src="https://github.com/user-attachments/assets/71d97385-7859-4198-9d84-4bd350ed569e" />
 
 
 If you want to look at your worst/blurriest images and label them as "Error" instead of whatever taxonomic group they've been sorted into, you can unclick all the options in "Layout Options" except "Blurriness (blurriest first)". Then select any images you want to identify as "Error" and hit hotkey E. Also included are the options "Error: Frass" and "Error: Blur," if you find those distinctions useful.
