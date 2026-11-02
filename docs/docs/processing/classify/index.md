@@ -26,6 +26,9 @@ bun dev
 ```
 and you can run it from the scripts too!
 
+## Updating Software
+Every now and then when you're working, press CTRL+SHIFT+R to reload the latest version of Classify.
+
 Add your dataset folder. Choose the same big folder that you dumped all your data in for processing in earlier steps, not a subfolder for a particular deployment you may have been focusing on.
 
  <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/31d6ac3e-9719-4716-9cc2-9d19225db4b9" />
@@ -61,9 +64,18 @@ By selecting the cluster ID in the top left of a photo, you can highlight all of
 
 <img width="1883" height="908" alt="image" src="https://github.com/user-attachments/assets/f63eb2e8-6d4f-4011-9aa0-51adba591826" />
 
-If you want to look at your worst/blurriest images and label them as "Error" instead of whatever taxonomic group they've been sorted into, you can unclick all the options in "Layout Options" except "Blurriness (blurriest first)". Then select any images you want to identify as "Error" and hit hotkey E.
+When you manually identify a detection, make sure to either type in the full name of the taxa you're choosing or select it from the drop-down list. If you just hit "enter" before typing in the full name, a new morphospecies will be erroneously created with the incomplete typed name. 
+
+For example, say that I wanted to reclassify the highlighted detection in the image below. Maybe I think that it's unclear if this is a hymenopteron, but I'm pretty sure it's an insect. I start typing in "inse" and the classication "Insecta" pops up. If I just hit enter, a new morphospecies called "inse" will be created, which isn't what I want. Instead, I should choose "Insecta" from the drop-down menu or finish typing it.
+
+<img width="1070" height="548" alt="image" src="https://github.com/user-attachments/assets/71d97385-7859-4198-9d84-4bd350ed569e" />
+
+
+If you want to look at your worst/blurriest images and label them as "Error" instead of whatever taxonomic group they've been sorted into, you can unclick all the options in "Layout Options" except "Blurriness (blurriest first)". Then select any images you want to identify as "Error" and hit hotkey E. Also included are the options "Error: Frass" and "Error: Blur," if you find those distinctions useful.
 
 <img width="1899" height="901" alt="image" src="https://github.com/user-attachments/assets/0420a78a-f5d8-46dd-80a4-4c05b1a5705c" />
+
+
 
 
 # Notes on Your Layout Options
@@ -133,8 +145,6 @@ you just need to use to this special link.
 
 [https://classify.mothbox.org/](https://classify.mothbox.org/)
 
-## Updating Software
-Every now and then when you're working, press CTRL+SHIFT+R to reload the latest version of Classify.
 
 The app will still run locally on your computer (nothing gets uploaded to the internet), but it runs in your browser window!
 
