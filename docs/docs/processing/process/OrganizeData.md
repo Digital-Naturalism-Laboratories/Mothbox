@@ -69,33 +69,8 @@ In addition to the Deployment photo data, there are two other files you will nee
 * [Species List](https://github.com/Digital-Naturalism-Laboratories/Mothbot_Process/tree/main/specieslists)
     * This improves the automatic Identification process by limiting the guesses to only creatures that might be in your desired location and type of creature (e.g. Insecta or, more broadly, like Arthropoda. This ensures that you won't accidentally ID insects in Canada as a bird that only lives in Indonesia)
     * If you aren't using a specific species list, our processing software will default to using a global list of all insects, so don't worry too much.
-    * If you want to **make your own custom species list** you can 
-        1. [go here on gbif's occurrence search](https://www.gbif.org/occurrence/search)
-        2. Change your filters to what you desire (for instance in the screenshot I chose Class "Insecta" and countries Panama and Costa Rica)
-        3. After your filters are how you want them, go to "Download"
-        4. It will make you sign in to download them
-        5. on the Download page go to "Species List"
-        6. Click Configure
-        7. Choose the default, Catalogue of Life
-        8. Click the agreements, and download
-        9. Wait until you get a message the download is ready, and then download it!
-        10. Note the DOI string you get with the dataset (e.g. https://doi.org/10.15468/dl.x3qf72) and try to add it to its filename. If you don't add the DOI to the file name like "PanamaCostaRicaInsect_10.15468.dl.x3qf72.csv" everything will still work fine, but the programs will have to connect to the internet to find the DOI.
-
-        <img height="595" alt="image" src="https://github.com/user-attachments/assets/059ec6b2-9dcc-4ae8-9743-7027f472fd0f" />
-
-        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/5d3a2cb6-b0cf-44a4-a62e-2a5c0f68411f" />
-
-        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/ccb0a353-c014-43a8-bfd1-c3caa36d8e1e" />
-
-        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/db8bc834-49c0-4538-b2de-2664693df07c" />
-
-        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/71ccaa86-451a-4ce0-af66-35838ab478c8" />
-
-        <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/a64f27ee-c80a-4262-83f1-829db077f2ac" />
-
-
-
-
+    * See [below for a guide on how to get a GBIF](https://mothbox.org/docs/processing/process/OrganizeData/#species-list) list.
+    
 These two files don't have to be organized in any special way, but we keep [examples of these files in the AI folder of the github repo](https://github.com/Digital-Naturalism-Laboratories/Mothbox/tree/main/AI)
 
 
@@ -207,7 +182,35 @@ Alternatively, fill out
 > All photos from a single deployment should be in a folder named with the convention: "PROJECT_SITE_MOTHBOXID_YYYY-MM-DD" (the COUNTRY_ prefix is optional)
 
 # Species List
-The species list is used by the identification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. See [above for a guide on how to get a GBIF](https://mothbox.org/docs/processing/process/OrganizeData/#optional-processing-files) list.
+The species list is used by the identification script to narrow down the possibilities of what it is trying to guess. Using GBIF's species list generator, you can narrow down the possibilities by taxa or location. 
+
+* If you want to **make your own custom species list** you can 
+        1. [go here on gbif's occurrence search](https://www.gbif.org/occurrence/search)
+        2. Change your filters to what you desire (for instance in the screenshot I chose Class "Insecta" and countries Panama and Costa Rica)
+        3. After your filters are how you want them, go to "Download"
+        4. It will make you sign in to download them
+        5. on the Download page go to "Species List"
+        6. Click Configure
+        7. Choose the default, Catalogue of Life
+        8. Click the agreements, and download
+        9. Wait until you get a message the download is ready, and then download it!
+        10. Note the DOI string you get with the dataset (e.g. https://doi.org/10.15468/dl.x3qf72) and try to add it to its filename. If you don't add the DOI to the file name like "PanamaCostaRicaInsect_10.15468.dl.x3qf72.csv" everything will still work fine, but the programs will have to connect to the internet to find the DOI.
+
+        <img height="595" alt="image" src="https://github.com/user-attachments/assets/059ec6b2-9dcc-4ae8-9743-7027f472fd0f" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/5d3a2cb6-b0cf-44a4-a62e-2a5c0f68411f" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/ccb0a353-c014-43a8-bfd1-c3caa36d8e1e" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/db8bc834-49c0-4538-b2de-2664693df07c" />
+
+        <img  height="595" alt="image" src="https://github.com/user-attachments/assets/71ccaa86-451a-4ce0-af66-35838ab478c8" />
+
+        <img width="1822" height="1095" alt="image" src="https://github.com/user-attachments/assets/a64f27ee-c80a-4262-83f1-829db077f2ac" />
+
+
+
+
 
 If you want to go super broad, you could just try to get a list of all arthropods, or you could limit things to a specific family of moths. It's up to you!
 
