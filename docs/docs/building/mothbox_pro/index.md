@@ -28,5 +28,9 @@ There are now multiple versions of the Mothbox Pro mainboard. Pick the instructi
 
 The version is printed on the front of the board below the camera:
 
+<img width="986" height="600" alt="image" src="https://github.com/user-attachments/assets/fd8e6a57-bd56-47ae-8dba-bd2d03c2b404" />
+
+The above example PCB is v5.0.6, as seen in the red circle. 
+
 
 
