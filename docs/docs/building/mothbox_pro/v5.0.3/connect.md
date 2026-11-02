@@ -46,7 +46,7 @@ Note: there is a discrepancy in wiring in the Mothbeams **labeled v5.0.1** and t
 Remove the protective sticker over the switches.
 <img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/82bbf2ca-c2b5-4776-8c27-e89448a05f75" />
 
-Switch your desired switches (I usually use a tool or bit of wire to flip the tiny switches). Note that sometimes (like in the image below) the factory installs the switch bank upside down. That's not really a problem, just refer to the markings printed on the board (70ma or 150ma)
+Switch your desired switches (I usually use a tool or bit of wire to flip the tiny switches). Note that sometimes (like in the image below) the factory installs the switch bank upside down. That's not really a problem, just refer to the markings printed on the board (70ma or 150ma). You usually start with the switches that are furthest from the power connector.
 
 <img width="656" height="391" alt="image" src="https://github.com/user-attachments/assets/8aad7a46-eedc-4320-976d-d62405b88052" />
 
@@ -58,17 +58,17 @@ Here's my unscientific breakdown of the switch modes
 * 3 Switches: EXTRA BRIGHT
 * 4 SWITCHES: VERY VERY VERY BRIGHT AND HOT (I don't ever use this)
 
-I usually switch just the first switch (+70mA), and this is QUITE BRIGHT. You probably want to switch at least the first 70mA switch on, but I wouldn't reccomend 3+ switches unless you really really need it to be exceptionally bright! (Or power and heat are not a problem for your setup).
+I usually switch just the first switch (+70mA), and this is QUITE BRIGHT. You probably want to switch at least the first 70mA switch on, but I wouldn't recommend 3+ switches unless you really really need it to be exceptionally bright! (Or power usage and heat are not a problem for your setup)
 
 ### UV and Visible
-You can also decide which mothbeams to connect. The board can support up to 3. These can all be UV, all Visible, or a mixture. You can control each of the 3 Attractors individually too, so this can be used for experiments between different wavelengths of light! ** More mothbeams does mean it will use more power!**
+You can also decide which Mothbeams to connect. The board can support up to 3. These can all be UV light, all Visible light, or a mixture. You can control each of the 3 attractors individually too, so this can be used for experiments between different wavelengths of light! **More mothbeams does mean it will use more power!**
 
 
 ## Connect Mothbeams
-Now that your Mothbeam is setup, you can just pop them on! Connect it to the top layer of the right angle pins sticking out (the bottom pins are just for spacing and aren't connected to anything).
+Now that your Mothbeam is set up, you can just pop them on! Connect it to the top layer of the right angle pins sticking out (the bottom pins are just for spacing and aren't connected to anything).
 <img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/6a123834-9e3a-4120-bf49-deac2175c570" />
 
-### Lock in with a Zip Nut
+### Lock in with two zip ties
 Now for each mothbeam, you will need two thin cable ties. 
 <img width="689" height="919" alt="image" src="https://github.com/user-attachments/assets/314c267f-5d4e-4766-920e-370134ae93c4" />
 
@@ -79,10 +79,11 @@ Push one through the hole on the mothbeam and pull it all the way through.
 
 <img width="519" height="399" alt="image" src="https://github.com/user-attachments/assets/64358cf0-661d-4a1f-ab2c-3ddc400ca6b8" />
 
-now add the second zip tie to the back that will lock it in place!
-This will keep it from going anywhere.
+Now add the second zip tie to the back that will lock it in place!
+This will keep it firmly attached to the PCB.
 <img width="682" height="382" alt="image" src="https://github.com/user-attachments/assets/12908937-b14b-4299-b106-57f868e5416d" />
-Trim the dangly ends off the ties, and repeat for the other mothbeams!
+
+Trim the dangly ends off the ties, and repeat for the other Mothbeams!
 <img width="666" height="498" alt="image" src="https://github.com/user-attachments/assets/22a289c2-cbcc-48a0-8b89-8aab1bcc1fc6" />
 
 Now all your Mothbeams should be connected!
@@ -101,19 +102,22 @@ First, you can take the little plastic protector off the front of the camera:
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/6f6a0867-3acd-425b-90ff-e06b29cb8aa4" />
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/68f1acbf-2034-43f3-87d9-0d4de5e1ec38" />
 
-Next, use the ends of a small screwdriver or tweezers to slide the camera cable lock. You just need to budge it a little bit.
+Next, use the ends of a small screwdriver or tweezers to slide the camera cable lock, the thin black "hat" that keeps the cable in place. You just need to lift it up a little bit.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/4689c06e-72a6-4842-aff8-329edefee6ef" />
-The white cable should slide free easily now!
 
-Now you will connect the brown cable. Make sure the black side of the end is facing the back of the camera like this:
+The white cable should slide free easily now! You can discard the white cable.
+
+Now you will connect the brown cable. Make sure the black side (not the gold side) of the end of the cable is facing the back of the camera like this:
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/87f11ef0-5eeb-4e76-8032-b15e9d771ef4" />
 
 
 {: .note }
-> When connecting the brown cable make sure that A) The black side is facing the back of the camera as shown B) The WIDE side of the cable is connected to the camera
+> When connecting the brown cable make sure that:
+>  A) The black side is facing the back of the camera as shown
+>  B) One side of the cable is narrower than the other side. Make sure to connect the WIDE side of the cable to the camera. 
 
-Slide the cable in firmly, and then use your tool to snugly lock down the camera connector lock. Sometimes you need to press one side and then the other.
+Slide the cable in firmly, and then use your tool to snugly lock down the camera connector lock. Sometimes you need to press one side and then the other. The camera cable lock that you lifted earlier should now be flush with no gap, securing the brown cable in place. 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/288f765d-5c3a-45d0-9dde-c3f0f64ffa06" />
 
 Give the cable a light tug to make sure it is securely connected.
@@ -124,11 +128,11 @@ Make sure to tuck the brown cable through the hole in the red board (as shown in
 With its brown cable attached, position the camera on the front of the board so the cable lines up with the slot for it.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/56293a69-e106-4a82-88eb-b288b8794b6f" />
 
-Note how the holes line up:
+Note how the holes in the red board line up with the holes in the PCB:
 
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/fb0c2e7a-b3f5-48d2-992c-4ff0e2e4652d" />
 
-Position the glare blocker over the camera and again make sure all the holes line up.
+Position the glare blocker over the camera and again make sure all the holes line up. The glare blocker is not symmetric, so make sure you have the correct orientation (it won't fit on the wrong way). 
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/4f8d674d-c95c-4ac8-9df4-894bcb8c6a79" />
 
@@ -146,26 +150,26 @@ Make them go through the mainboard, out the back, and back to the front of the m
 Now get two more cable ties and secure the camera module down.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a2613657-0e5d-44d8-b276-6ff5b81b09d6" />
 
-Tighten it up, and trim the dangly bits.
+Tighten it up so the camera can't move around. You might want to try to wiggle the glare blocker to see if there is any extra give, and then tighten the zip ties more. Once you're satisfied that it can't wiggle too much, trim the dangly ends. We suggest not trimming the zip ties too closely in case you decide to need to tighten it a bit more, so leave about a centimeter/half inch of zip tie on there that you could grab with pliers later if you needed to. 
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a05ac2ec-f2b9-408c-a63a-fcf760854502" />
 
 
 # Connect the Pi
 
-The Pi is a little computer that controls all the functions of the mothbox!
+The Pi is a little computer that controls all the functions of the Mothbox!
 
 ## SD
 First put your SD card [(Flashed with the Mothbox software on it)](https://digital-naturalism-laboratories.github.io/Mothbox/docs/usage/initialsetup/#flash-firmware) into your Pi.
 <img width="918" height="689" alt="image" src="https://github.com/user-attachments/assets/64788b6e-e86a-4509-bc33-5fd064c36fd8" />
 
 ## Real Time Clock Battery (RTC)
-The pi needs a tiny battery of its own to keep track of the passage of time even when it is fully off! 
-Plug the battery cable into the tiny port labeled "bat" on the Pi. 
+The Pi needs a tiny battery of its own to keep track of the passage of time even when it is fully off! 
+Plug the battery cable into the tiny port labeled "bat" on the Pi. It can only enter in one orientation, and you can look at the shape of the plug if you have any trouble inserting it. 
 
 <img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/df112d8c-a455-43bd-9c14-23674210b50d" />
 
-The batteries usually come with a little piece of double sided tape. Use that to stick it to the side of the ethernet port on the pi.
+The batteries usually come with a little piece of double sided tape. Use that to stick it to the side of the ethernet port on the Pi.
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/13462748-5d02-4564-a097-6ab46013d4f9" />
 
@@ -173,34 +177,37 @@ The batteries usually come with a little piece of double sided tape. Use that to
 
 ## Connect Camera
 
-Lift the connect flap on CAM port 0 on the Pi
+Lift the connect flap on CAM port 0 on the Pi. This is the camera port that is closer to the ethernet and USB ports, pictured at the top of the below photo.
 <img width="567" height="804" alt="image" src="https://github.com/user-attachments/assets/5db33dad-7b9b-4b3e-a54e-b410a75ccf4e" />
 
-I use a fingernail for this.
+I use a fingernail for this. You could also use tweezers or a flush cutter. 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/f5197f3b-5512-45e2-9f98-dfa2bd9c071f" />
 
-The black side of the brown camera cable needs to face the side of the PI that the SD card is in.
+The black side of the brown camera cable needs to face the side of the PI that the SD card is in. Another way to say this is that the black side should face away from the ethernet and USB ports.
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/ee4ae7da-e233-432c-812f-fcc1622b688d" />
 
-Slide the cable in, and firmly press down the camera cable closer to make a snug connection.
+Slide the cable in, and firmly press down the camera cable lock to make a snug connection.
 
 <img width="695" height="926" alt="image" src="https://github.com/user-attachments/assets/a0efcdb4-5145-49a9-8de8-b59d4d165f59" />
 
 You might want to give a VERY GENTLE tug on the cable to make sure it's fully connected.
 
 ## Connect Pi to Mainboard
-We made our own fun connection to hold the raspberry pi. It's a bit novel, but it pops in and holds it securely.
+We made our own fun connection to hold the Raspberry Pi. It's a bit novel, but it pops in and holds it securely.
+
+It is helpful to stand your PCB up on a table for this step. This helps give you something firm to press again & makes sure gravity is working with you.
 
 Line up your Pi pins with the socket like this:
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/54aa0980-02b1-4a8b-9c0f-1cb4eea2a069" />
 
 
-You will need to tilt the Pi at a slight angle as you first press it in. Then it will straighten out and slide right into its slot.
+You will need to tilt the Pi at a slight angle as you first press it in. Then it will straighten out and slide right into its slot. If you have any difficulty, make sure that you have the PCB standing up on a firm surface, and press down on the little circles on the Pi.
 
 <img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/9e5c7a98-b26c-4714-8a75-86e29c911589" />
 
 <img width="701" height="935" alt="image" src="https://github.com/user-attachments/assets/82287176-6c09-4ccf-b798-f611ba753bc0" />
 
 
-Congratulate Yourself! You got most of your Mothbox's electronics connected!
+
+Congratulate yourself! You got most of your Mothbox's electronics connected!
