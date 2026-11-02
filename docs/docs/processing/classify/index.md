@@ -92,7 +92,5 @@ If selected, Mothbot will display the largest animals at the top. You can also c
 
 Thanks to Chris Gould, Paula Te, and Paula's students at CIID for help with this documentation!
 
-# Full details Coming Soon
-
 
 
