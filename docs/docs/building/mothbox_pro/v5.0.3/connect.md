@@ -6,9 +6,9 @@ grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 2
 ---
-# Pull Fiberglass thingys off the PCB
+# Pull Fiberglass thingies off the PCB
 When the PCBs get made at the factory, they have to add little "rails" to hold the boards in place while they install everything with robots!
-You can just pull these off!
+You can just pull these off with your fingers, or you might like to use pliers.
 
 <img width="1247" height="935" alt="image" src="https://github.com/user-attachments/assets/0c61cd4b-a4ec-4f65-a04c-d6c86ff24252" />
 
@@ -16,22 +16,22 @@ You can just pull these off!
 
 # Connect Mothbeams to Mainboard
 
-The Mothbeams are made to pop right onto the mainboard of the Mothbox! There's some things you can adjust first though!
+The Mothbeams are made to pop right onto the mainboard of the Mothbox! There's some things you can adjust first though.
 <img width="1225" height="919" alt="image" src="https://github.com/user-attachments/assets/cd8126db-6fe0-436c-a5c1-163dd90c5fd7" />
 
 
-## (Optional) Configure Mothbeams
+## (Optional) Configure Mothbeams (Attractor Lights)
 
 ### Power
 
 {: .important-title }
 > Default Power
 >
-> We usually just leave all the switches in the default "OFF" position. This will give a mothbox about 18 hours of runtime when using 1 Visible and 1 UV Mothbeam and taking a photo every minute with a recalibration every 10 mins. 
+> We usually flick one switch, the furthest from the power connector (where the Mothbeam plugs in to the PCB). This will give a Mothbox about 12 hours of runtime when using 1 Visible and 1 UV Mothbeam and taking a photo every minute with a recalibration every 10 mins. 
 
 The mothbeams allow you to set how powerful they are with little switches. **The more switches you turn on, the brighter they will be, but they will also run through your battery faster!** 
 
-Note: there is a discrepancy in wiring in the Mothbeams **labeled v5.0.1 ** and the **current going out in them is a bit different ** than what is printed on the boards
+Note: there is a discrepancy in wiring in the Mothbeams **labeled v5.0.1** and the **current going out in them is a bit different** than what is printed on the boards
 
 | Configuration | Visible 5.0.1 (mA / Watts@12V) | UV 5.0.1 (mA / Watts@12V) |
 | :--- | :--- | :--- |
