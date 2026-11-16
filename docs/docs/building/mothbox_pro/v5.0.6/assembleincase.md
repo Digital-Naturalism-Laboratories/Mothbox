@@ -7,9 +7,6 @@ grand_parent: Mothbox Pro
 nav_order: 4
 ---
 
-{: .warning }
-> # ⚠️ 5.0.6 documentation coming soon!
-> These pages are copied from the **v5.0.3** instructions and have not yet been updated for the v5.0.6 hardware. Some parts and steps may differ. For a complete, tested guide, use the [v5.0.3 instructions](https://digital-naturalism-laboratories.github.io/Mothbox/docs/building/mothbox_pro/v5.0.3).
 
 Our Mothbox electronics are together, but now we probably need to give it a housing to protect it!
 <img width="1" height="1" alt="image" src="https://github.com/user-attachments/assets/ce8f1acf-071e-4453-87ea-333803783909" />
