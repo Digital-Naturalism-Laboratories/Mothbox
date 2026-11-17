@@ -23,7 +23,7 @@ Here are some video presentations that discuss the motivations behind the Mothbo
 
 Documentary about the Mothbox made for the Wildlabs Award:
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=1LGz3aWpeVE&t=102s" title="Mothbox Wildlabs Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=1LGz3aWpeVE" title="Mothbox Wildlabs Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 Mothbox Invited Talk at the Smithsonian Tropical Research Institute (September 2024):
