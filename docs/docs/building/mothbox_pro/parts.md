@@ -16,6 +16,7 @@ To build a Mothbox Pro, you will need these parts (prices are estimates and fluc
 - [Download Laser cut parts](https://github.com/Digital-Naturalism-Laboratories/Mothbox_Hardware/tree/main/Mothbox_Pro/Laser%20Cutting)
 
 Parts for v5.0.6
+
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/1c8e6312-ac39-45dc-afc9-345cc887fc19" />
 
 
