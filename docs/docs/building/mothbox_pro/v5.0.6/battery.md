@@ -6,7 +6,13 @@ grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 3
 ---
-# Concept: You are Making a Harness for Whatever Battery You Have
+
+# Video Walkthrough
+
+https://www.youtube.com/watch?v=-blMbzQVVB4
+
+
+# Concept: Make a Harness Customized to Your Battery
 The Mothbox is set up to run off 9-36V DC batteries of any sort! So you can hook up car batteries, old motorcycle batteries, solar panel boat batteries, generally whatever you need! The DC regulators we use tend to be most efficient around 12V, and so we tend to use a 12V one, but the circuits should be flexible!
 
 Because batteries can be so difficult to get to many places, the design stays pretty open so you can try to fit whatever battery you can in there. The main limits for the battery come from the voltage regulator which takes 9-36v and outputs regulated 12V.
