@@ -6,6 +6,11 @@ grand_parent: Mothbox Pro
 #has_children: true
 nav_order: 2
 ---
+# Video Walkthrough
+Here's a quick video showing this first set of steps:
+
+https://youtu.be/qnkHCiQjB2w?si=iWaTJzIYzgCWHkFa
+
 
 # Pull Fiberglass thingys off the PCB
 When the PCBs get made at the factory, they have to add little "rails" to hold the boards in place while they install everything with robots!
