@@ -9,7 +9,7 @@ nav_order: 2
 # Video Walkthrough
 Here's a quick video showing this first set of steps:
 
-https://youtu.be/qnkHCiQjB2w?si=iWaTJzIYzgCWHkFa
+<iframe width="560" height="315" src="https://youtu.be/qnkHCiQjB2w?si=iWaTJzIYzgCWHkFa" title="Mothbox Wildlabs Documentary" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 # Pull Fiberglass thingys off the PCB
