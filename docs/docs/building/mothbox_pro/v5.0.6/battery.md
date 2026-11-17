@@ -9,7 +9,7 @@ nav_order: 3
 
 # Video Walkthrough
 
-https://www.youtube.com/watch?v=-blMbzQVVB4
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-blMbzQVVB4?si=lqumu85nnMGMjzSq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 # Concept: Make a Harness Customized to Your Battery
