@@ -93,9 +93,14 @@ This Mothbox documentation will provide you with information on how to source, b
 
 After following these guides, you should be able to make your own set of Mothboxes to conduct your own biodiversity studies!
 
-<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2e1cacf2-35dd-48b0-83c7-29b5320fa36c" width="45%">
+
+
+<img src="https://github.com/Digital-Naturalism-Laboratories/Mothbox/assets/742627/2e1cacf2-35dd-48b0-83c7-29b5320fa36c" width="45%"> 
 <img src="https://github.com/user-attachments/assets/2416c098-b080-4014-b972-3acb9e366aa6" width="45%">
 
+<img width="1095" height="778" alt="image" src="https://github.com/user-attachments/assets/28872a2a-cfc1-4c45-ab1d-dce5e52cc332" />
+
+(Photo by Alex Dehgan)
 
 # Mothbeam
 We are also building an open-source, portable, low-cost light for mothlighting, the Mothbeam! Some early documentation for [making your own Mothbeam is here.](https://mothbox.org/docs/building/mothbeam)
