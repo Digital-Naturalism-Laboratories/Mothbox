@@ -8,8 +8,6 @@ permalink: /docs/processing/classify
 ---
 During the classification step, we want to take automatically organized insect data and validate them with humans as quickly and accurately as possible. We built our own program to let you do this in a quick and speedy way called "Classify."
 
-Note: we used to have an older version of this that used a fiftyone UI interface, but switched to this new homebrewed one we call "Classify," as it is much speedier and easier to use.
-
 <img width="1910" height="769" alt="bugs Capture" src="https://github.com/user-attachments/assets/6fe49b45-e94f-4e07-9fbc-6800c53d2e7d" />
 
 # Running Classify
@@ -90,7 +88,34 @@ If selected, Mothbot will display the largest animals at the top. You can also c
 
 
 
-Thanks to Chris Gould, Paula Te, and Paula's students at CIID for help with this documentation!
+# Exporting Data
 
+## Darwin Core Exports
+
+In the lower left hand side of the screen at the bottom of the toolbar, there is a button to Export a DarwinCORE CSV
+
+<img width="1114" height="887" alt="image" src="https://github.com/user-attachments/assets/b1cd2d8a-c6ab-409d-a588-dccd7fa23082" />
+
+Click it, and it will export your data into a csv with all the decisions you have currently made as darwincore format
+
+<img width="458" height="222" alt="image" src="https://github.com/user-attachments/assets/6c2aeee6-98b0-43b6-b8b4-87c0ce088db4" />
+
+your exports will be in the "_processed/exports" folder for your project
+
+<img width="1467" height="322" alt="image" src="https://github.com/user-attachments/assets/b88c32e4-fa86-476c-bf17-18ab764890ab" />
+
+
+## Visualizations
+
+You can also click on the visualization button to launch the visualization editor.
+
+Here you will be able to change options about what data you will visualize (such as a manual selection or a range of sessions/nights). You can also choose HOW this will be visualized. Do you want your insects arranged in a radial pattern? as a stacked bar? or even a black and white image you want to use as the masked shape. 
+
+### Mothball Game Exports
+In the visualizer, you can not only just export your visualization as a PNG image, but also as a level pack to create a custom level in the videogame, ["Mothball"](https://digital-naturalism-laboratories.github.io/mothball/)
+
+
+
+_Thanks to Chris Gould, Paula Te, and Paula's students at CIID for help with this documentation!_
 
 
