@@ -33,14 +33,16 @@ The Mothbox has been made possibly with help from many individuals and groups li
 ## Funding
 * Wildlabs.net
 * ARM
-* The American Museum of Natural History
+* The American Museum of Natural History under Jesse Barber
 * Experiment.com
+* Open Science Hardware Foundation
 * Phoebe Zarnetske and the Michigan X-prize group
 
 
 ## Institutional Support
 
-* [IVADO Institute](https://ivado.ca/)
+* Seeedstudio and the [Interspecies Opendatalogger Project](https://opendatalogger.tech/)
+*  [IVADO Institute](https://ivado.ca/)
   * Sponsored a collaboration with us and [Antenna](https://antenna.insectai.org) software for processing bugs
 * Autodesk Foundation (Software Donation)
 * University of Washington (Project Storage Space)
